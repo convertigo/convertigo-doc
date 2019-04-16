@@ -17,5 +17,7 @@ topnav: topnavobj
 Name | Description 
 --- | ---
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Index parameter | Defines the parameter's name for index in loop. 
 Is active | Defines whether the component is active. 
+Item parameter | Defines the parameter's name for item in loop. 
 
