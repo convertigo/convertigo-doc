@@ -12,8 +12,8 @@ ObjIcon: /images/beans/mobile/components/images/uieventsubscriber_color_32x32.pn
 topnav: topnavobj
 ---
 ##### Defines a <i>Subscribe Handler</i> component. 
-  This component helps you subscribing to an event giving its topic and defining actions to execute when the event is triggered through a <i>PublishEvent</i> action component from any available page.
-You may add a <i>Subscribe Handler</i> under a <i>Page</i> and add to it any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFulSync<i> or <i>CustomAction<i> component.
+  This component helps you subscribing to an event giving its topic and defining actions to execute when the event is triggered through a <i>PublishEvent</i> action.
+You may add a <i>Subscribe Handler</i> under the <b>Application</b> or a <b>Page</b>, then add to it any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFullSync<i> or <i>CustomAction<i> component.
 
 Name | Description 
 --- | ---
