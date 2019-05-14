@@ -8,7 +8,7 @@ ObjGroup: Forms
 ObjCatName: form-components
 ObjName: ProgressBar
 ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
-ObjIcon: /images/beans/mobile/components/dynamic/images/default_color_32x32.png
+ObjIcon: /images/beans/mobile/components/dynamic/images/progressbar_color_32x32.png
 topnav: topnavobj
 ---
 angular-progress-bar
