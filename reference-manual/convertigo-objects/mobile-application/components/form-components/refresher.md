@@ -19,3 +19,9 @@ Pages can then listen to the refresher's various output events. The refresh outp
  Once the async operation has completed and the refreshing should end, call complete().
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/refresher/Refresher/' target='_blank'>Refresher</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

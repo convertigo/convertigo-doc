@@ -21,4 +21,6 @@ Name | Description
 --- | ---
 filePath | The file path.
 mocked response | The mocked response for the File opener action in case of running not supported platform. Must be a boolean.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

@@ -31,4 +31,7 @@ menu mode | Specifies menu mode.
 outline | Specifies ionic outline mode.
 shape | Specifies ionic shape.
 size | Specifies ionic size.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

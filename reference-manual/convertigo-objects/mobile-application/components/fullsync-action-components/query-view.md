@@ -44,4 +44,6 @@ key | Only return rows matching this key.
 keys | Array of keys to fetch in a single shot. Neither startkey nor endkey can be specified with this option. The rows are returned in the same order as the supplied keys array. The row for a deleted document will have the revision ID of the deletion, and an extra key 'deleted':true in the value property. The row for a nonexistent document will just contain an 'error' property with the value 'not_found'.
 limit | Maximum number of rows to return. Always limit your queries to some maximum to avoid UI lagging and excessive memory consumption.
 skip | Number of rows to skip before returning. Useful for pagination combined with the 'limit' property.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

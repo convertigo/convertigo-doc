@@ -26,4 +26,7 @@ Name | Description
 Control name | The associated declared form's control name.
 Default value | The value to be selected by default.
 List type | The type of list.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

@@ -19,4 +19,6 @@ Name | Description
 --- | ---
 Event data | The event data
 Event topic | The event topic
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

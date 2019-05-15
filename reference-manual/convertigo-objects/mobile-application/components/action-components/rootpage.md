@@ -18,4 +18,6 @@ For more information : <a target='_blank' href='https://ionicframework.com/docs/
 Name | Description 
 --- | ---
 Page | Defines the target page.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

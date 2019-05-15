@@ -25,4 +25,6 @@ Name | Description
 --- | ---
 Property | Name of the property to set.
 value | Value of the property, can be a simple string or any Object.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

@@ -20,4 +20,7 @@ Name | Description
 --- | ---
 Loading spinner | Define the loading spinner to use.
 Loading text | Define the loading text to display.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

@@ -22,4 +22,7 @@ Name | Description
 --- | ---
 full screen | Specifies a fullscreen scrollable content.
 padding | Specifies ionic padding mode.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

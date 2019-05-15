@@ -23,4 +23,7 @@ Name | Description
 Disabled | If true, the user cannot interact with this element.
 Selected | If true, the element is selected.
 Value | When this option is selected, the parent select object will have this value.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

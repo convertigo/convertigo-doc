@@ -22,4 +22,6 @@ Name | Description
 --- | ---
 mocked response | The mocked response for the Uninstaller action in case of running not supported platform. Must be a boolean.
 packageID | The package id.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

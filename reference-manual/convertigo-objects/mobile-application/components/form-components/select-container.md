@@ -31,4 +31,7 @@ Ok Text | The text to display on the ok button. Default: Ok
 Place holder | The text to display when the select is empty.
 Selected text | The text to display instead of the selected option's value.
 Type of dialog | Select choices can be displayed in alerts, action sheets or popovers, default is alerts. Multiple options are always displayed in alerts.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

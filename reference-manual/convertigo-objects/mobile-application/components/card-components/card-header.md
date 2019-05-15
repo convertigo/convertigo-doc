@@ -17,3 +17,9 @@ Just like a page, cards can be customized to include headers.
 Use a <i>Card Header</i> component inside of a <i>Card container</i>.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#card-header' target='_blank'>Card Header</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

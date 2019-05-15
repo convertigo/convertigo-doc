@@ -16,3 +16,9 @@ ion-list-header
 Each list can include a header at the top of the list.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#list-headers' target='_blank'>List Header</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

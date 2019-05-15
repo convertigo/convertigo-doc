@@ -20,4 +20,6 @@ Database | Defines the target FullSync Data base to get data from.
 Marker | Use Markers to differentiate <i>delete</i>s in order to be able to listen to a given <i>get</i> response. Use <code>listen([fs://mydatabase.delete#MYMARKER])</code> syntax to listen to a given 'Marked' delete.
 Revision | The Document revision id for this delete. (optional).
 Unique ID | The Document id for this delete.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

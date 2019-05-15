@@ -16,3 +16,9 @@ ion-item-group
 To make groups of items,<li>use <i>Group Item</i> instead of <i>List Container</i></li><li>use <i>Divider Item</i> components to divide the group in to multiple sections</li>.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#list-dividers' target='_blank'>Group Item</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

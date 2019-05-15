@@ -27,4 +27,7 @@ alt | Set the alt attribute which gets assigned to the inner img element.
 height | The image height (in pixels add px eg: 200px, in points add pt eg: 20pt).
 src | The image url. Can be absolute (http(s)://) or relative to project (assets/myimage.png). Can also be a Base64 Embedded images (data:image/png;base64,iVBORw0.......).
 width | The image width (in pixels add px eg: 200px, in points add pt eg: 20pt).
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

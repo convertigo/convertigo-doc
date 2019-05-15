@@ -23,4 +23,7 @@ Icon | Icon (the URL of the image) for the foreground. Leaving this field blank 
 Latitude | Number : The Marker will be displayed at this latitude. Must be a 'number' jSON type (ex: 51.678418).
 Longitude | Number : The Marker will be displayed at this longitude. Must be a 'number' jSON type (ex: 7.809007).
 Title | The marker title.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

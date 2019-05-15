@@ -24,4 +24,7 @@ Name | Description
 Checked | If true the component will be checked.
 Control name | The associated declared form's control name.
 Disabled | If true the component will be disabled, preventing the the user from changing the value.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

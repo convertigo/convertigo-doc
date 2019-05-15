@@ -18,3 +18,9 @@ Just add an <i>Information Window</i> component to a <i>Map Marker</i> component
 You can use any type of HTML markup in an <i>Information Window</i> component to format the details for this <i>Map Marker</i>.
  For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmInfoWindow.html' target='_blank'>AgmInfoWindow</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

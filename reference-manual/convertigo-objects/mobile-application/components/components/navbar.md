@@ -23,4 +23,7 @@ Name | Description
 Hide back button | Specifies whether back button is hidden or not.
 color | Specifies ionic color.
 mode | Specifies ionic bar mode.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

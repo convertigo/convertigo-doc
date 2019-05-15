@@ -30,4 +30,6 @@ mocked response | The mocked response for the action sheet in case of running no
 position | On an iPad, set the X,Y position.
 subtitle | The subtitle for the actionsheet.
 title | The title for the actionsheet.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

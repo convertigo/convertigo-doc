@@ -35,4 +35,7 @@ Span (Medium) | Number of slots this column spans on for medium devices (Width >
 Span (Small) | Number of slots this column spans on for small devices (Width >  576px and <  768px).
 Span (X-Large) | Number of slots this column spans on for Xtra large devices (Width >  1200px).
 Span (X-Small) | Number of slots this column spans on for Xtra small devices (Witdh <  576px).
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

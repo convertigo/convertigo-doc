@@ -24,4 +24,8 @@ Name | Description
 Badge | The initial badge value. The number can be changed through the SuperTabsController provider.
 Icon Name | Specifies the icon to be used in the tab.
 Title | The title of the tab to display.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+Page | Defines the associated page.  
 

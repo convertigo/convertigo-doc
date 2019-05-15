@@ -18,4 +18,6 @@ Name | Description
 --- | ---
 Level | Defines the log level.
 Message | Defines the log message.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

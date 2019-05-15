@@ -22,4 +22,7 @@ Name | Description
 Fixed | Set a max width based on the screen size.
 Height | Hight of the grid, pixel (px) or percentage (%). Use 100% to set a grid full screen, usefull for vertical centering.
 No padding | Removes padding from the grid and immediate children columns.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

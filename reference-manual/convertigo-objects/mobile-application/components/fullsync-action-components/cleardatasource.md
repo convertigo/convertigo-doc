@@ -17,4 +17,6 @@ topnav: topnavobj
 Name | Description 
 --- | ---
 requestables | Defines an array of fullsync requestables. Use (TS) expression <code>['fs://dbname.view#marker1']</code> or select from a source (SC)
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

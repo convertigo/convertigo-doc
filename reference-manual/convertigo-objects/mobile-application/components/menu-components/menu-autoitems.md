@@ -18,3 +18,9 @@ It will generate a menu with links to all your visible pages in the order you've
 A <i>Page</i> is considered as visible if it is <code>enabled</code> and if its <i>Include in auto menu</i> property is set to <ode>true</code>.
 You can not add child components to it except <i>Attr</i> components.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

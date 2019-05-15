@@ -22,4 +22,6 @@ Content type | The content type of this attachment.
 Database | Defines the target FullSync Data base to post data to.
 Document ID | The Document ID on an existing Document that will receive the attachment.
 Name | The name of the attachment to put on the document.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

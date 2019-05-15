@@ -17,3 +17,9 @@ This component acts as the standard HTML br tag.
 A <i>Break</i> makes a line space between two <i>Text</i> components.
  For more information: <a href='https://www.w3schools.com/tags/tag_br.asp' target='_blank'>Break</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

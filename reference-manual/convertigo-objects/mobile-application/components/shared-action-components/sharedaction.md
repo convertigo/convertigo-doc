@@ -13,7 +13,9 @@ topnav: topnavobj
 ---
 ##### Defines <i>SharedAction</i> component. 
  This component helps defining an entire action logic. It is shared between all your applications.
-You can add a <i>SharedAction</i> under an application and use it through an <i>InvokeSharedAction</i> from any application page.
+You can add a <i>SharedAction</i> under an application and use it through an <i>Invoke SharedAction</i> from any application page.
+You may add <i>SharedAction Variable</i>s to pass additional parameters to the executing function of the action.<br>To access a shared action <i>SharedAction Variable</i> from any child <i>Action</i> property or variable, use in script mode (TS) :<ul><li><code>params.&lt;variable-name&gt;</code></li><li><code>stack['&lt;shared-action-name&gt;'].vars.in.&lt;variable-name&gt;</code></li></ul>
+<u>For more information</u>:<br>See <i>Invoke SharedAction</i> component<br>See <i>SharedAction Variable</i> component
 
 Name | Description 
 --- | ---

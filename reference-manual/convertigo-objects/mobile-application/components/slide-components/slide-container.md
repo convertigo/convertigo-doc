@@ -31,4 +31,7 @@ Slides per view | Slides per view. Slides visible at the same time. Default, 1.
 Space between | Distance between slides in px. Default: 0
 Speed | Duration of transition between slides (in milliseconds). Default: 300
 Zoom | If true, enables zooming functionality.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

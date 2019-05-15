@@ -21,4 +21,6 @@ For more information : <a target='_blank' href='https://ionicframework.com/docs/
 Name | Description 
 --- | ---
 mocked response | The mocked response for the File chooser action in case of running not supported platform. Must be a string.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

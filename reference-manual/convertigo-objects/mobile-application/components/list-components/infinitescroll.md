@@ -39,4 +39,7 @@ Name | Description
 Enabled | Define whether or not the infinite scroll should be enabled or not.
 Position | Define the position of the infinite scroll element.
 Threshold | Define the threshold distance in percents or pixels, from the bottom of the content.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

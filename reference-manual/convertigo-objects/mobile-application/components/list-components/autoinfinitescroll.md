@@ -20,4 +20,8 @@ Name | Description
 Scroll position | Define the position of the infinite scroll element.
 Scroll threshold | Define the threshold distance in percents or pixels, from the bottom of the content.
 Scrollable items | Defines the array of items to bind to.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+Scroll action | Defines the action to perform when scrolling infinite.  
 

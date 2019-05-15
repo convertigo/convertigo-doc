@@ -20,4 +20,7 @@ To use an <code>&lt;ion-avatar&gt;</code>, add an <i>Avatar Item</i> component i
 Name | Description 
 --- | ---
 Item position | Specifies item position.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

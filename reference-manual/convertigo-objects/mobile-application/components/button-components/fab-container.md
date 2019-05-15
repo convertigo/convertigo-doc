@@ -21,4 +21,7 @@ Name | Description
 Edge | Specifies if the FAB must be positioned on the edge.
 Horizontal Position | Specifies the horizontal position.
 Vertical Position | Specifies the vertical position.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

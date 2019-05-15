@@ -17,3 +17,9 @@ This component acts as the standard HTML p tag.
 Use <i>Paragraph</i> with <i>Text</i> components inside to display text in your pages.
  For more information: <a href='https://www.w3schools.com/tags/tag_p.asp' target='_blank'>Paragraph</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

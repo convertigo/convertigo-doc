@@ -35,4 +35,7 @@ Step | Works with the min and max attributes to limit the increments at which a 
 Text Align | Aligns text left or right.
 Type | The type of control to display. The default type is text. Possible values are: 'text', 'password', 'email', 'number', 'search', 'tel', or 'url'.
 Value | The text value of the input.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

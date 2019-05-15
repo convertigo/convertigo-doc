@@ -39,4 +39,6 @@ Database | Defines the target FullSync Data base to sync.
 Retry policy | If true will attempt to retry replications in the case of failure (due to being offline), using a backoff algorithm that retries at longer and longer intervals until a connection is re-established. Only applicable if sync mode is continuous.
 Sync Mode | Sync mode can be one-shot, or continuous. .
 Sync direction | Direction of data synchronization, bi-directionnal, push (Data to Server), pull (Data from server).
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

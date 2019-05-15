@@ -35,4 +35,6 @@ Text 1 | Text for the button 1.
 Text 2 | Text for the button 2.
 Text 3 | Text for the button 3.
 Title | The title for the alert.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

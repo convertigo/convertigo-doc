@@ -30,4 +30,7 @@ Disabled | If true the component will be disabled, preventing the the user from 
 Placeholder | Instructional text that shows before the textarea has a value.
 Readonly | If true, the user cannot modify the value.
 Value | The text value of the textarea.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

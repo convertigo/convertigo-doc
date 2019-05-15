@@ -26,4 +26,6 @@ Marker | Defines the requestable's marker.
 Requestable | Defines the target requestable.
 Threshold | Defines the minimum time to wait for the Loading spinner to show up (in milliseconds).
 Timeout | Defines the maximum time to wait for the response (in milliseconds). May be used to detect slow network conditions.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

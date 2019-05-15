@@ -20,4 +20,7 @@ Name | Description
 Duration | How long it takes to do one loop. (in ms)
 Name | SVG spinner name.
 Paused | If true, pause the animation.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

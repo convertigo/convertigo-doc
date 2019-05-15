@@ -19,4 +19,6 @@ The <i>Loop Handler</i> exposes the loop's current item and index you can use in
 Name | Description 
 --- | ---
 Items | Specify the array of items to iterate on
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

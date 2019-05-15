@@ -18,3 +18,9 @@ They're are a great way to contain and organize information, while also setting 
 With so much content to display at once, and often so little screen realestate, cards have fast become the design pattern of choice for many companies, including the likes of Google, Twitter, and Spotify.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#cards' target='_blank'>Cards</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

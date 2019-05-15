@@ -25,4 +25,7 @@ Navbar Tooltip | boolean: add this attribute or set it's value to true to specif
 Showing event | string: the event to show the tooltip on. Can be either 'hover', 'click' or 'press'. Defaults to hover.
 Tooltip string | string: string to be displayed. 'empty string = disabled').
 Vertical Position | string: specifies the vertical position of the tooltip. Can be either 'top' or 'bottom'.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

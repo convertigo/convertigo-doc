@@ -15,3 +15,8 @@ topnav: topnavobj
  Use this action to close a modal page opened previously.
 Add a <i>CloseModal</i> action under an Event.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
+

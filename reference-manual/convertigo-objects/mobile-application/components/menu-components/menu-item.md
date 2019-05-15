@@ -17,3 +17,13 @@ A menu item acts as button and when clicked the navigation to the associated pag
 You can add <i>Menu Item</i>s under a <i>Menu</i> component, one per page you'd like to navigate to.
 You can not add child components to it except <i>Attr</i> components.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+Item icon | If set, overrides the associated page's icon.  
+Item icon position | If set, overrides the associated page's icon position.  
+Item page | Defines the associated page.  
+Item title | If set, overrides the associated page's title.  
+

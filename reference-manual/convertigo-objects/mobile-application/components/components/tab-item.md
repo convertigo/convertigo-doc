@@ -25,4 +25,8 @@ badge | Specifies the badge for the tab button.
 badge color | Specifies the badge color for the tab button.
 icon | Specifies the tab icon.
 title | Specifies the tab title.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+Page | Defines the associated page.  
 

@@ -19,4 +19,7 @@ Name | Description
 --- | ---
 Progress | string: progress to be displayed).
 color | color: color of the progress bar. Default value is #488aff 
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

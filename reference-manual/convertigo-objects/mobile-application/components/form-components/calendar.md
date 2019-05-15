@@ -35,4 +35,7 @@ Week start | Define the week start day.
 Weekdays labels | Define the week days labels.
 color | Specifies ionic color.
 format | Out data format.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

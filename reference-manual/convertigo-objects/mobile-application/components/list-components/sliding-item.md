@@ -18,3 +18,9 @@ To use a <code>&lt;ion-item-sliding&gt;</code>, add a <i>Sliding Item</i> compon
 Next, add a <i>Sliding Options</i> component inside of the sliding item to contain the buttons.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#sliding-list' target='_blank'>Sliding Item</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

@@ -21,4 +21,6 @@ Animate | If true, page will be animated in.
 Animation duration | The time in ms for the page animation.
 Page | Defines the target page to push on the stack.
 Page data | Additional page data object passed to the pushed page. You can access this data in the pushed page by using a (TS) expression <code>this.navParams.data</code>.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

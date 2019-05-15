@@ -24,4 +24,8 @@ Fill mode | Specify the animation fill mode
 Iteration count | Specify the animation iteration count or infinite
 Play state | Specify the animation play state
 Timing function | Specify the animation timing function
+Animatable | Defines the component to animate. 
+Apply mode | Defines whether the animation apply on a single component or on all components. 
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Is active | Defines whether the component is active. 
 

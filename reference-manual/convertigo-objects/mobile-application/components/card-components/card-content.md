@@ -17,3 +17,9 @@ This component is the content part of the card.
 Use a <i>Card Content</i> component inside of a <i>Card container</i>.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#cards' target='_blank'>Cards</a>.
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+

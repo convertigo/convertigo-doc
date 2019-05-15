@@ -23,4 +23,7 @@ Max. Zoom | Set the max zoom amount.
 Scroll X | If true, scrolling along the X axis is enabled.
 Scroll Y | If true, scrolling along the Y axis is enabled. (requires the following CSS declaration: <code>ion-scroll { white-space: nowrap; }</code>).
 Zoom | If true, zooming is enabled.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 

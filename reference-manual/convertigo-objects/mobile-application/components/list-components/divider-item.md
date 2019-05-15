@@ -19,4 +19,7 @@ To make groups of items,<li>use <i>Group Item</i> instead of <i>List Container</
 Name | Description 
 --- | ---
 color | Specifies ionic color.
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
 
