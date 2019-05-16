@@ -13,7 +13,8 @@ topnav: topnavobj
 ---
 ##### Defines an <i>Event</i> component. 
 This component stands for Angular's event bindind.
-Add an <i>Event</i> component to any other component which can emit an event such as the <i>Button</i> component.<br>Select the event's type through combo box or enter syntax of event to bind, e.g. <code>(click)</code>
+Add an <i>Event</i> component to any other component which can emit an event such as the <i>Button</i> component.
+Select the event's type through combo box or enter syntax of event to bind, e.g. <code>(click)</code>
 For more information: <a href='https://angular.io/guide/template-syntax#event-binding---event-' target='_blank'>Event binding</a>
 
 Name | Description 

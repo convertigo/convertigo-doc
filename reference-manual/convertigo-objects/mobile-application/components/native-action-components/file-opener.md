@@ -13,7 +13,10 @@ topnav: topnavobj
 ---
 ##### Defines a <i>File Opener</i> action component. 
  This component helps opening a file.
-<u>Supported platform(s):</u><ul><li>Android</li><li>iOS</li></ul>You can access data from the next action in the chain in (TS) mode with: <code><ul><li>out: a boolean thats indicates if the file has been opened</li></ul></code>Whenever cordova platform is not available, the value defined in mocking options is returned.
+<u>Supported platform(s):</u> - Android
+ - iOS
+You can access data from the next action in the chain in (TS) mode with: <code> - out: a boolean thats indicates if the file has been opened
+</code>Whenever cordova platform is not available, the value defined in mocking options is returned.
  Default value is <code>true</code>.
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/'>File Opener</a>.
 

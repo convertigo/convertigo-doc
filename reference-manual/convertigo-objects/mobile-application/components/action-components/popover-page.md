@@ -14,7 +14,10 @@ topnav: topnavobj
 Displays a Popover Page. 
  The Popover is a view that floats above an app’s content. Popovers provide an easy way to present or gather information from the user and are commonly used in the following situations:
 
-<ul><li>Show more info about the current view</li><li>Select a commonly used tool or configuration</li><li>Present a list of actions to perform inside one of your views</li></ul>.
+ - Show more info about the current view
+ - Select a commonly used tool or configuration
+ - Present a list of actions to perform inside one of your views
+.
 
 Name | Description 
 --- | ---
