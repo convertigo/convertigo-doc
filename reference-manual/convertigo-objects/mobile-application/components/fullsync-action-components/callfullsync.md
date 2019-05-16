@@ -14,10 +14,13 @@ topnav: topnavobj
 ##### Defines a <i>CallFullSync</i> action component. 
  FullSync calls are used to interact with the local offline data synchronized database. You can use this call to get, post, delete and query (View) data from the database.
 
-For more information about FullSync and local FullSync verbs see <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>.
+For more information about FullSync and local FullSync verbs see <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. 
+
+ If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---
+Disable loading controller | Defines if we want to disable loading controller showing
 Marker | Defines the requestable's marker. Markers are used to differentiate fullsync requests from one to another so you can handle routes more easily.
 Requestable | Defines the FullSync database.
 Verb | Defines the fullsync verb.

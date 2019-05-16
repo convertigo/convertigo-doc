@@ -16,10 +16,13 @@ topnav: topnavobj
  Add a <i>CallSequence</i> under a <i>PageEvent</i>, an <i>Event</i> or another <i>Action</i>.
 If the targeted sequence requires some input variables, you can add to your action the needed <i>Variable</i> components by hand or by the 'import' menu which appears by right-clicking on your <i>CallSequence</i> action.
 The returned data can be accessed from any underneath action using the <code>out</code> typescript variable.
-For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-objects/sequencer/'>Sequencer</a>.
+For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-objects/sequencer/'>Sequencer</a>. 
+
+ If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---
+Disable loading controller | Defines if we want to disable loading controller showing
 Local cache policy | Defines the local cache policy.
 Local cache time to live | Defines the local cache time to live (in milliseconds).
 Marker | Defines the requestable's marker.

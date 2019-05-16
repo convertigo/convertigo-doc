@@ -21,7 +21,9 @@ For more information about Views see <a  href='https://www.convertigo.com/docume
 To query a view, select it through the <i>View</i> property and configure the query parameters. Most of the parameters are optional, but the most useful ones are the <i>StartKey</i> and the <i>EndKey</i> defining the range of the index you want to query.
 
 See the <a href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/#view' target='_blank'>Query parameters</a> documentation for that.
-For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>.
+For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. 
+
+ If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---
@@ -29,6 +31,7 @@ Attachments | Include attachment data.
 Attachments binary | Return attachment data as Blobs/Buffers, instead of as base64-encoded strings.
 Conflicts | Include conflicts in the _conflicts field of a doc.
 Descending | Reverse the order of the output rows.
+Disable loading controller | Defines if we want to disable loading controller showing
 EndKey | Get rows with keys in a certain range (inclusive/inclusive) from the end key.
 Group level | Number of elements in a key to group by, assuming the keys are arrays. Defaults to the full length of the array.
 Inclusive end | Include rows having a key equal to the given options.endkey. Default: true
