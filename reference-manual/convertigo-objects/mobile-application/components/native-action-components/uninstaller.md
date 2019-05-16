@@ -13,11 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines an <i>Uninstaller</i> action component. 
 This component helps uninstalling an application on your device.
-<u>Supported platform(s):</u>
- - Android
-You can access data from the next action in the chain in (TS) mode with: <code>
- - out: A boolean thats indicates if the action succeed
-</code>Whenever cordova platform is not available, the value defined in mocking options is returned.
+<u>Supported platform(s):</u><ul><li>Android</li></ul>You can access data from the next action in the chain in (TS) mode with: <code><ul><li>out: A boolean thats indicates if the action succeed</li></ul></code>Whenever cordova platform is not available, the value defined in mocking options is returned.
  Default mocked value is <code>true</code>.
  It uses the native Cordova plugin which allows you to uninstall any application giving its package ID.
  For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/'>File Opener</a>.

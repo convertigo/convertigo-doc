@@ -13,8 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Attr</i> component. 
  This component acts as a standard HTML attribute.
-<it>Attr</i> components can be added to any component.
-You can add your custom attributes to customize a component behavior. For example you can add a <code>class</code> attribute to set a custom CSS class name to this component. When you set explicitly a class name attribute on a component, the class will be merged with any <i>Style</i> component positioned for  this component<br /><br /><i>Attr</i> components have two properties : 
+<it>Attr</i> components can be added to any component.<br>You can add your custom attributes to customize a component behavior. For example you can add a <code>class</code> attribute to set a custom CSS class name to this component. When you set explicitly a class name attribute on a component, the class will be merged with any <i>Style</i> component positioned for  this component<br /><br /><i>Attr</i> components have two properties : 
 • name : the name of the attribute such as <code>class</code>, <code>width</code>, <code>src</code>, ... 
 • value : the value of the attribute 
 

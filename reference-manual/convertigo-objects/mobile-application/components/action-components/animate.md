@@ -12,10 +12,7 @@ ObjIcon: /images/beans/mobile/components/dynamic/images/animateaction_color_32x3
 topnav: topnavobj
 ---
 ##### Defines an <i>Animate</i> action component. 
- You can use the <i>Animate</i> action to animate a component when an event occurs. To do this, just place the action under the event. It can be a (click) or (tap) event or even a Page didEnter event. The animation will take place when the event is triggered. <br />
- - <i>Animatable</i> <br />View the elements with an <b>Identifier</b> property set. Select here one element Identifier to animate.
- - <i>Apply mode</i> <br />Animate only the selected element (single) or all elements (all) with the same <b>Identifier</b> value.
- <br />You can also chain animations to animate in parrallel (Sibling <i>Animate</i> actions) or serial (Child <i>Animate actions</i>). <br /><br />Animations are based on the <a href='https://daneden.github.io/animate.css/' target='_blank'>animate.css</a> package
+ You can use the <i>Animate</i> action to animate a component when an event occurs. To do this, just place the action under the event. It can be a (click) or (tap) event or even a Page didEnter event. The animation will take place when the event is triggered. <br /><ul><li><i>Animatable</i> <br />View the elements with an <b>Identifier</b> property set. Select here one element Identifier to animate.</li><li><i>Apply mode</i> <br />Animate only the selected element (single) or all elements (all) with the same <b>Identifier</b> value.</li></ul> <br />You can also chain animations to animate in parrallel (Sibling <i>Animate</i> actions) or serial (Child <i>Animate actions</i>). <br /><br />Animations are based on the <a href='https://daneden.github.io/animate.css/' target='_blank'>animate.css</a> package
 
 Name | Description 
 --- | ---

@@ -13,11 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>File Chooser</i> action component. 
  This component helps selecting a file.
-<u>Supported platorm(s):</u> 
- - Android
-You can access data from the next action in the chain in (TS) mode with: <code>
- - out: The file URI
-</code>Whenever cordova platform is not available, the value defined in mocking option is returned.
+<u>Supported platorm(s):</u> <ul><li>Android</li></ul>You can access data from the next action in the chain in (TS) mode with: <code><ul><li>out: The file URI</li></ul></code>Whenever cordova platform is not available, the value defined in mocking option is returned.
  Default mocked value is <code>'https://www.convertigo.com/wp-content/uploads/2015/01/logoStudio.png'</code>.
 It uses the native Android file picker for the user to select a file.
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-chooser/'>File Chooser</a>.

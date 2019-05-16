@@ -18,22 +18,17 @@ This action will work on web and devices. On web browsers this will result by op
 
 This action requires the <b>lib_OAuth</b> project to be installed in the Studio workspace and deployed on the target Convertigo MBaaS servers.
 
-This actions outputs in the <i>out</i> an object that can be:
- - <code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server
- - <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server
-.
+This actions outputs in the <i>out</i> an object that can be:<ul><li><code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server</li><li><code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server</li></ul>.
 
-<h2>Provider Specific Documentation</h2>
- - Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.
+<h2>Provider Specific Documentation</h2><ul><li>Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.
 
 You must also configure two redirections urls:
 
  <i>http://localhost:18080/convertigo/projects/lib_OAuth/getToken.html</i> and.
  <i>https://login.live.com/oauth20_desktop.srf</i>.
 
-The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.
-
- - LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.
+The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server</li>.
+<li>LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.
 
 You must also declare two redirection URLs:
 
@@ -42,8 +37,7 @@ You must also declare two redirection URLs:
 
 The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.
 
-LinkedIn OAuth requires configuration on the client side and the Convertigo MBaaS server side. On the client side configure the given <b>Client ID</b> value in the <b>Client ID</b> property. On the Convertigo MBaaS side,  configure two symbols with the admin console :<table><tr><td>lib_oauth.linkedin.clientid</td><td>Client ID value</td></tr><tr><td>lib_oauth.linkedin.keysecret</td><td>Client Secret value</td></tr></table>
-.
+LinkedIn OAuth requires configuration on the client side and the Convertigo MBaaS server side. On the client side configure the given <b>Client ID</b> value in the <b>Client ID</b> property. On the Convertigo MBaaS side,  configure two symbols with the admin console :<table><tr><td>lib_oauth.linkedin.clientid</td><td>Client ID value</td></tr><tr><td>lib_oauth.linkedin.keysecret</td><td>Client Secret value</td></tr></table></li></ul>.
 
 Name | Description 
 --- | ---

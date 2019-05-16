@@ -17,12 +17,9 @@ This component helps displaying an image based on data retrieved from a FullSync
 
 Attachment images are automatically cached using the attachmentName as cache key by the CAF to enable fast rendering.
 
-In some cases you may want to clear this cache for example if the image content changes for the same attachmentName.
-In this case, use below code in a <i>CustomAction</i> :
-- to clear the cache for a given documentID and attachmentName
-<code>page.resetImageCache(documentID/attachmentName)</code>
-- to clear all cache entries
-<code>page.resetImageCache()</code>
+In some cases you may want to clear this cache for example if the image content changes for the same attachmentName.<br>In this case, use below code in a <i>CustomAction</i> :
+- to clear the cache for a given documentID and attachmentName<br><code>page.resetImageCache(documentID/attachmentName)</code>
+- to clear all cache entries<br><code>page.resetImageCache()</code>
 
 Name | Description 
 --- | ---

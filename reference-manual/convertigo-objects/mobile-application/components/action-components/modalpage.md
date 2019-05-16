@@ -15,14 +15,7 @@ Displays a Modal Page.
  A Modal is a content pane that goes over the user's current page. Usually it is used for making a choice or editing an item. You can use the <i>PopPage</i> action  to dismiss a Modal Page. You can also pass data to the page, the passed data will be available in the <i>NavParams</i> Object.
 
 By default, Modal pages will be displayed as full screen on small devices (SmartPhones) or as an Popup overlays on larget Devices (Tablets). If you want to change this behavior, you can customize the following parameters for your app in the <i>Theme</i> Component:
-
- - $modal-inset-min-width:768px; //Minimum width of the modal inset. Any device screen width larger than this value will display the page as a popup
- - $modal-inset-min-height-small:600px; 	//Minimum height of the small modal inset
- - $modal-inset-min-height-large:768px; 	//Minimum height of the large modal inset
- - $modal-inset-width:600px; 	//Width of the large modal inset
- - $modal-inset-height-small:500px;  //Height of the small modal inset
- - $modal-inset-height-large:600px;  //Height of the large modal inset
-.
+<li>$modal-inset-min-width:768px; //Minimum width of the modal inset. Any device screen width larger than this value will display the page as a popup</li><li>$modal-inset-min-height-small:600px; 	//Minimum height of the small modal inset</li><li>$modal-inset-min-height-large:768px; 	//Minimum height of the large modal inset</li><li>$modal-inset-width:600px; 	//Width of the large modal inset</li><li>$modal-inset-height-small:500px;  //Height of the small modal inset</li><li>$modal-inset-height-large:600px;  //Height of the large modal inset</li></ul>.
 
 Name | Description 
 --- | ---
