@@ -13,9 +13,9 @@ topnav: topnavobj
 ---
 ion-item-divider
 ##### Defines a <i>Divider Item</i> component.
-To make groups of items, - use <i>Group Item</i> instead of <i>List Container</i>
- - use <i>Divider Item</i> components to divide the group in to multiple sections
-.
+To make groups of items,
+ - use <i>Group Item</i> instead of <i>List Container</i>
+ - use <i>Divider Item</i> components to divide the group in to multiple sections.
  For more information: <a href='https://ionicframework.com/docs/v3/components/#list-dividers' target='_blank'>Divider Item</a>.
 
 Name | Description 

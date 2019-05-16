@@ -17,11 +17,11 @@ It tests the result of the given <i>condition</i> property. You can use the <cod
 
 You can use the <i>Negate</i> property to test the reverse condition. This is useful for an 'if then else' type of flow. For example :
 
+
  - if mycondition
  - &nbsp;&nbsp;&nbsp;&nbsp;Do some stuff
  - if not mycondition
  - &nbsp;&nbsp;&nbsp;&nbsp;Do some other stuff
-
 
 Name | Description 
 --- | ---

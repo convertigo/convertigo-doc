@@ -15,11 +15,11 @@ topnav: topnavobj
  Speaks a string.
 Note that more languages are avaible in an external browser, or device than in Convertigo viewer.
 
-<u>Supported platorm(s):</u>  - Android
+<u>Supported platorm(s):</u> 
+ - Android
  - iOS
- - Browser
-You can access data from the next action in the chain in (TS) mode with: <code> - out: A boolean thats indicates if the action succeed
-</code>For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/text-to-speech//'>TextToSpeech</a>.
+ - BrowserYou can access data from the next action in the chain in (TS) mode with: <code>
+ - out: A boolean thats indicates if the action succeed</code>For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/text-to-speech//'>TextToSpeech</a>.
 
 Name | Description 
 --- | ---
