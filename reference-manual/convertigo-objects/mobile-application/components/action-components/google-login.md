@@ -21,7 +21,7 @@ Use <a href='https://developers.google.com/mobile/add?platform=ios&cntapi=signin
 See also some documentation on <a target='_blank' href='https://ionicframework.com/docs/v3/native/google-plus/'>https://ionicframework.com/docs/v3/native/google-plus/</a> about the Cordova plugin used.
  You can access the data from the next action in the chain in (TS) mode with:
 
-<code><ul><li>out.email: The email</li><li>out.userId: the user id</li><li>out.displayName: the display name</li><li>out.familyName: the family name</li><li>out.givenName: the given name</li><li>out.imageUrl: the image url</li><li>out.idToken: the id token</li><li>out.serverAuthCode: the server authentication code</li><li>out.accessToken: the access token</li></ul></code>
+<code><br> • out.email: The email<br> • out.userId: the user id<br> • out.displayName: the display name<br> • out.familyName: the family name<br> • out.givenName: the given name<br> • out.imageUrl: the image url<br> • out.idToken: the id token<br> • out.serverAuthCode: the server authentication code<br> • out.accessToken: the access token</code>
  Whenever cordova platform is not available, the value defined in mocked response option is returned.
  Default mocked value for login are <code>{email: 'user@convertigo.com', userId: 'my_id', displayName: 'John Doe', familyName: 'Doe', givenName: 'John', imageUrl: 'http://saffroninteractive.com/wp-content/uploads/2017/10/empty-avatar2.png', idToken'my_id_token', serverAuthCode: '12', accessToken: 'my_access_token'}</code>.
  Default mocked value for logout is <code>true</code>.

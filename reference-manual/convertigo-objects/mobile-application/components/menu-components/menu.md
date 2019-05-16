@@ -3,7 +3,7 @@ layout: page
 title: Menu
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/menu-components/menu/
-metadesc: ion-menu  Defines a  Menu  component. A menu helps to navigate through pages. It may contains, or/and   a  MenuAutoItems  component to automatically a
+metadesc: ion-menu  Defines a  Menu  component. A menu helps to navigate through pages. It may contains, or/and   • a  MenuAutoItems  component to automatically
 ObjGroup: Menus
 ObjCatName: menu-components
 ObjName: Menu
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ion-menu
 ##### Defines a <i>Menu</i> component.
-A menu helps to navigate through pages. It may contains, or/and:<ul><li>a <i>MenuAutoItems</i> component to automatically add all your pages</li><li>several <i>MenuItem</i> components to add specific pages</ul>.
+A menu helps to navigate through pages. It may contains, or/and:<br> • a <i>MenuAutoItems</i> component to automatically add all your pages<br> • several <i>MenuItem</i> components to add specific pages.
 
 <span class='orangetwinsoft'><u>Note:</u></span> different menus may be added to an application but only the first one is used by default.
 If you'd like to use a specific menu for a given page, simply specify it in the <i>Menu id</i> property of your <i>Page</i> component.

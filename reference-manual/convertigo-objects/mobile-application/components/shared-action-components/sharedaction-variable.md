@@ -3,7 +3,7 @@ layout: page
 title: SharedAction Variable
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/shared-action-components/sharedaction-variable/
-metadesc: Defines a  SharedAction Variable  component.    SharedAction Variable s help specifying variables of a  SharedAction .  Set the variable default value
+metadesc: Defines a  SharedAction Variable  component.    SharedAction Variable s help specifying variables of a  SharedAction .   Set the variable default valu
 ObjGroup: Shared Actions
 ObjCatName: shared-action-components
 ObjName: UIStackVariable
@@ -12,9 +12,7 @@ ObjIcon: /images/beans/mobile/components/images/uistackvariable_color_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>SharedAction Variable</i> component. 
- <i>SharedAction Variable</i>s help specifying variables of a <i>SharedAction</i>.
-<b>Set the variable default value</b> through the <i>Variable value</i> property.<br>Any typescript expression is valid :<br> • string (with quotes): <code>'monday'</code><br> • number: <code>2019</code><br> • boolean: <code>true</code><br> • array: <code>['monday','friday']</code><br> • json: <code>{name: 'wood', age: 35}</code><br> • object: <code>this.myObject.data</code>
-<b>To access a shared action <i>SharedAction Variable</i></b><br>from any child <i>Action</i> property or variable, use in script mode (TS) :<br> • <code>params.&lt;variable-name&gt;</code><br> • <code>stack['&lt;shared-action-name&gt;'].vars.in.&lt;variable-name&gt;</code>
+ <i>SharedAction Variable</i>s help specifying variables of a <i>SharedAction</i>.<br><br><b>Set the variable default value</b> through the <i>Variable value</i> property.<br><u>Any typescript expression is valid</u>:<br> • string (with quotes): <code>'monday'</code><br> • number: <code>2019</code><br> • boolean: <code>true</code><br> • array: <code>['monday','friday']</code><br> • json: <code>{name: 'wood', age: 35}</code><br> • object: <code>this.myObject.data</code><br><br><b>To access a shared action <i>SharedAction Variable</i></b><br><u>from any child <i>Action</i> property or variable, use in script mode (TS)</u>:<br> • <code>params.&lt;variable-name&gt;</code><br> • <code>stack['&lt;shared-action-name&gt;'].vars.in.&lt;variable-name&gt;</code>
 
 Name | Description 
 --- | ---

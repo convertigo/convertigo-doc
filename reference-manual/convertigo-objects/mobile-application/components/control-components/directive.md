@@ -12,11 +12,8 @@ ObjIcon: /images/beans/mobile/components/images/uicontroldirective_color_32x32.p
 topnav: topnavobj
 ---
 ##### Defines a <i>Directive</i> component. 
- Angular's structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.<br>Directives can be:
-• <b>ForEach</b>  - each occurrence of a source collection will generate an UI Component 
-• <b>If</b> 		- the UI Component will be displayed If the source is true 
-• <b>Switch, Switch, SwichtDefault</b> 	- the UI Component will be displayed with the Switch options 
-
+ Angular's structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.
+Directives can be:<br> • <b>ForEach</b>  - each occurrence of a source collection will generate an UI Component<br> • <b>If</b> 		- the UI Component will be displayed If the source is true<br> • <b>Switch, Switch, SwichtDefault</b> 	- the UI Component will be displayed with the Switch options
 
 For more information: <a href='https://angular.io/guide/structural-directives' target='_blank'>Structural Directives</a>
 

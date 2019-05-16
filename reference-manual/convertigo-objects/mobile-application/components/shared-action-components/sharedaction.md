@@ -3,7 +3,7 @@ layout: page
 title: SharedAction
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/shared-action-components/sharedaction/
-metadesc: Defines  SharedAction  component.   This component helps defining an entire action logic. It is shared between all your applications. You can add a  S
+metadesc: Defines  SharedAction  component.   This component helps defining an entire action logic. It is shared between all your applications.  You can add a  
 ObjGroup: Shared Actions
 ObjCatName: shared-action-components
 ObjName: UIActionStack
@@ -12,10 +12,7 @@ ObjIcon: /images/beans/mobile/components/images/uiactionstack_color_32x32.png
 topnav: topnavobj
 ---
 ##### Defines <i>SharedAction</i> component. 
- This component helps defining an entire action logic. It is shared between all your applications.
-You can add a <i>SharedAction</i> under an application and use it through an <i>Invoke SharedAction</i> from any application page.
-You may add <i>SharedAction Variable</i>s to pass additional parameters to the executing function of the action.
-To access a shared action <i>SharedAction Variable</i> from any child <i>Action</i> property or variable, use in script mode (TS) :<br> • <code>params.&lt;variable-name&gt;</code><br> • <code>stack['&lt;shared-action-name&gt;'].vars.in.&lt;variable-name&gt;</code>
+ This component helps defining an entire action logic. It is shared between all your applications.<br><br>You can add a <i>SharedAction</i> under an application and use it through an <i>Invoke SharedAction</i> from any application page.<br><br>You may add <i>SharedAction Variable</i>s to pass additional parameters to the executing function of the action.<br><br>To access a shared action <i>SharedAction Variable</i> from any child <i>Action</i> property or variable, use in script mode (TS) :<br> • <code>params.&lt;variable-name&gt;</code><br> • <code>stack['&lt;shared-action-name&gt;'].vars.in.&lt;variable-name&gt;</code>
 
 <u>For more information</u>:<br>See <i>Invoke SharedAction</i> component<br>See <i>SharedAction Variable</i> component
 

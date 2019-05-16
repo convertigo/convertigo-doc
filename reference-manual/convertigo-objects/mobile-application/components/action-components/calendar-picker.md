@@ -14,7 +14,7 @@ topnav: topnavobj
 ##### Defines a <i>Calendar Picker</i> action component. 
  Use this action to display a Calendar to pick dates. When the date (or dates) are picked data will be available in the <code>out</code> (TS) object in this format :
 
-<ul><li><code>{ date: CalendarResult }</code> for 'single mode'</li><li><code>{ from: CalendarResult, to:CalendarResult  }</code> for 'range mode'</li><li><code>[CalendarResult]</code> for 'multi mode'</li></ul>.
+<br> • <code>{ date: CalendarResult }</code> for 'single mode'<br> • <code>{ from: CalendarResult, to:CalendarResult  }</code> for 'range mode'<br> • <code>[CalendarResult]</code> for 'multi mode'.
 Where <code>CalendarResult</code> is :
 
 <code>class CalendarResult {.
