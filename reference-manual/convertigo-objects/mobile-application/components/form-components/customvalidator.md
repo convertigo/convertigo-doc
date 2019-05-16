@@ -18,9 +18,11 @@ Specify whether your validation function is asynchronous or not through the <i>A
 Double click on the validator to open the Typescript editor and write the required code for your validation function.
 It has one parameter to allow you to access controls values:
 
-• when validator is under a form:</br><code>g:FormGroup</code> the form, use <code>g.get('&lt;control_name&gt;').value</code> to retrieve a control's value 
+• when validator is under a form:
+<code>g:FormGroup</code> the form, use <code>g.get('&lt;control_name&gt;').value</code> to retrieve a control's value 
 
-• when validator is under a control:</br><code>c:FormControl</code> the control, use <code>c.value</code> to retrieve control's value 
+• when validator is under a control:
+<code>c:FormControl</code> the control, use <code>c.value</code> to retrieve control's value 
 
 
 For a synchronous validator, your validation function should return <code>null</code> when valid, otherwise it should return any <code>json</code> object filled with error informations.

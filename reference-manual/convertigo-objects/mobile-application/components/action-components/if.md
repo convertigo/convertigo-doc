@@ -23,6 +23,7 @@ You can use the <i>Negate</i> property to test the reverse condition. This is us
  - if not mycondition
  - &nbsp;&nbsp;&nbsp;&nbsp;Do some other stuff
 
+
 Name | Description 
 --- | ---
 Condition | The expression to be tested.

@@ -15,7 +15,8 @@ ion-menu
 ##### Defines a <i>Menu</i> component.
 A menu helps to navigate through pages. It may contains, or/and:
  - a <i>MenuAutoItems</i> component to automatically add all your pages
- - several <i>MenuItem</i> components to add specific pages.
+ - several <i>MenuItem</i> components to add specific pages
+.
 
 <span class='orangetwinsoft'><u>Note:</u></span> different menus may be added to an application but only the first one is used by default.
 If you'd like to use a specific menu for a given page, simply specify it in the <i>Menu id</i> property of your <i>Page</i> component.

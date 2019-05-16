@@ -19,8 +19,10 @@ Note that more languages are avaible in an external browser, or device than in C
 <u>Supported platorm(s):</u> 
  - Android
  - iOS
- - BrowserYou can access data from the next action in the chain in (TS) mode with: <code>
- - out: A concatenation of spoken string(s) if the action succeed</code>For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/speech-recognition/'>SpeechRecognition</a>.
+ - Browser
+You can access data from the next action in the chain in (TS) mode with: <code>
+ - out: A concatenation of spoken string(s) if the action succeed
+</code>For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/speech-recognition/'>SpeechRecognition</a>.
 
 Name | Description 
 --- | ---

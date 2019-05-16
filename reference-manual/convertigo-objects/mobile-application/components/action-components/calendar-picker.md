@@ -17,7 +17,8 @@ topnav: topnavobj
 
  - <code>{ date: CalendarResult }</code> for 'single mode'
  - <code>{ from: CalendarResult, to:CalendarResult  }</code> for 'range mode'
- - <code>[CalendarResult]</code> for 'multi mode'.
+ - <code>[CalendarResult]</code> for 'multi mode'
+.
 Where <code>CalendarResult</code> is :
 
 <code>class CalendarResult {.

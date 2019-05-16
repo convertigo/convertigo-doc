@@ -21,7 +21,8 @@ By default, Modal pages will be displayed as full screen on small devices (Smart
  - $modal-inset-min-height-large:768px; 	//Minimum height of the large modal inset
  - $modal-inset-width:600px; 	//Width of the large modal inset
  - $modal-inset-height-small:500px;  //Height of the small modal inset
- - $modal-inset-height-large:600px;  //Height of the large modal inset.
+ - $modal-inset-height-large:600px;  //Height of the large modal inset
+.
 
 Name | Description 
 --- | ---

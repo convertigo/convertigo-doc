@@ -17,7 +17,8 @@ Displays a Popover Page.
 
  - Show more info about the current view
  - Select a commonly used tool or configuration
- - Present a list of actions to perform inside one of your views.
+ - Present a list of actions to perform inside one of your views
+.
 
 Name | Description 
 --- | ---

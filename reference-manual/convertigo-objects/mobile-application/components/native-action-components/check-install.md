@@ -14,8 +14,10 @@ topnav: topnavobj
 ##### Defines a <i>Check Install</i> action component. 
 This component helps verifying for application installation on your device.
 <u>Supported platform(s):</u>
- - AndroidYou can access data from the next action in the chain in (TS) mode with: <code>
- - out: A boolean indicating if the application is installed</code>Whenever cordova platform is not available, the value defined in mocking option is returned.
+ - Android
+You can access data from the next action in the chain in (TS) mode with: <code>
+ - out: A boolean indicating if the application is installed
+</code>Whenever cordova platform is not available, the value defined in mocking option is returned.
  Default mocked value is <code>true</code>.
 It uses the native Cordova plugin which allows you to check if an application is installed giving its package ID.
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/'>File Opener</a>.

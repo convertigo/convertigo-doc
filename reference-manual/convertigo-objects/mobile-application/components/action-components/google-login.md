@@ -30,7 +30,8 @@ See also some documentation on <a target='_blank' href='https://ionicframework.c
  - out.imageUrl: the image url
  - out.idToken: the id token
  - out.serverAuthCode: the server authentication code
- - out.accessToken: the access token</code>
+ - out.accessToken: the access token
+</code>
  Whenever cordova platform is not available, the value defined in mocked response option is returned.
  Default mocked value for login are <code>{email: 'user@convertigo.com', userId: 'my_id', displayName: 'John Doe', familyName: 'Doe', givenName: 'John', imageUrl: 'http://saffroninteractive.com/wp-content/uploads/2017/10/empty-avatar2.png', idToken'my_id_token', serverAuthCode: '12', accessToken: 'my_access_token'}</code>.
  Default mocked value for logout is <code>true</code>.

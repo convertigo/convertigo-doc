@@ -21,7 +21,8 @@ You can use <i>Sync Data</i> when you start an app, but you must have an authent
 
  - Authenticate the user on your app
  - Then call a 'login' server <i>Sequence</i> that will execute the <i>SetAuthenticatedUser</i> step providing it with the authenticated user
- - Then use <i>Sync Data</i> to sync the data from/to you mobile app.
+ - Then use <i>Sync Data</i> to sync the data from/to you mobile app
+.
 The <i>Sync Data</i> action will be finished when all the data will be synced to/from the device and when finished, you can display the first page of your app using a <i>RootPage</i> action.
 
 You can access the sync progress information from anywhere in your application using the.

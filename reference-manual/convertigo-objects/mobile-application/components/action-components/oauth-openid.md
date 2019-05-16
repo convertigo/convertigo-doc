@@ -20,7 +20,8 @@ This action requires the <b>lib_OAuth</b> project to be installed in the Studio 
 
 This actions outputs in the <i>out</i> an object that can be:
  - <code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server
- - <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server.
+ - <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server
+.
 
 <h2>Provider Specific Documentation</h2>
  - Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.
@@ -41,7 +42,8 @@ You must also declare two redirection URLs:
 
 The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.
 
-LinkedIn OAuth requires configuration on the client side and the Convertigo MBaaS server side. On the client side configure the given <b>Client ID</b> value in the <b>Client ID</b> property. On the Convertigo MBaaS side,  configure two symbols with the admin console :<table><tr><td>lib_oauth.linkedin.clientid</td><td>Client ID value</td></tr><tr><td>lib_oauth.linkedin.keysecret</td><td>Client Secret value</td></tr></table>.
+LinkedIn OAuth requires configuration on the client side and the Convertigo MBaaS server side. On the client side configure the given <b>Client ID</b> value in the <b>Client ID</b> property. On the Convertigo MBaaS side,  configure two symbols with the admin console :<table><tr><td>lib_oauth.linkedin.clientid</td><td>Client ID value</td></tr><tr><td>lib_oauth.linkedin.keysecret</td><td>Client Secret value</td></tr></table>
+.
 
 Name | Description 
 --- | ---

@@ -21,10 +21,12 @@ Any typescript expression is valid :
  - array: <code>['monday','friday']</code>
  - json: <code>{name: 'wood', age: 35}</code>
  - object: <code>this.myObject.data</code>
+
 <b>To access a shared action <i>SharedAction Variable</i></b>
 from any child <i>Action</i> property or variable, use in script mode (TS) :
  - <code>params.&lt;variable-name&gt;</code>
  - <code>stack['&lt;shared-action-name&gt;'].vars.in.&lt;variable-name&gt;</code>
+
 
 Name | Description 
 --- | ---

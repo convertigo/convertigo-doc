@@ -16,8 +16,10 @@ topnav: topnavobj
 <u>Supported platform(s):</u>
  - Android
  - iOS
- - BrowserYou can access data from the next action in the chain in (TS) mode with:<code>
- - out: the picture taken</code>If running in browser always return a base64-encoded string, else contains the format specified in the options.
+ - Browser
+You can access data from the next action in the chain in (TS) mode with:<code>
+ - out: the picture taken
+</code>If running in browser always return a base64-encoded string, else contains the format specified in the options.
 It uses the native Cordova camera plugin which provides an API for taking pictures and for choosing images from the system's image library.
 For more information : <a target='_blank' href='https://github.com/apache/cordova-plugin-camera'>Camera</a>.
 

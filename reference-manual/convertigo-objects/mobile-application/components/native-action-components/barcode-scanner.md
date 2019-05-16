@@ -15,10 +15,12 @@ topnav: topnavobj
  The Barcode Scanner Plugin opens a camera view and automatically scans a barcode, returning the data back to you.
 <u>Supported platorm(s):</u> 
  - Android
- - iOSYou can access scanned data from the next action in the chain in (TS) mode with:<code>
+ - iOS
+You can access scanned data from the next action in the chain in (TS) mode with:<code>
  - out.format: The scanned format code
  - out.cancelled: true if the user cancelled the scan
- - out.text: the scanned result</code>Whenever cordova platform is not available, the value defined in mocking option is returned.
+ - out.text: the scanned result
+</code>Whenever cordova platform is not available, the value defined in mocking option is returned.
  Default mocked value are: <code>{format: 'QR_CODE', cancel: false, text: 'http://www.convertigo.com/'}</code>.
 For more information : <a href='https://github.com/phonegap/phonegap-plugin-barcodescanner' target='_blank'>BarcodeScanner plugin docs</a>.
 
