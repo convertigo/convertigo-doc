@@ -5,7 +5,6 @@ sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/list-components/
 topnav: topnavobj
 ---
-* [AutoInfiniteScroll](autoinfinitescroll/)
 * [Avatar Item](avatar-item/)
 * [Divider Item](divider-item/)
 * [Group Item](group-item/)

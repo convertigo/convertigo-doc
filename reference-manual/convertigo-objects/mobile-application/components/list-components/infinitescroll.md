@@ -14,7 +14,7 @@ topnav: topnavobj
 ion-infinite-scroll. 
  The <i>InfiniteScroll</i> component holds an infinite scroll logic and requires a <b>child</b> <i>InfiniteScrollContent</i> component in order to display its content.
 It allows you to perform a given task when the user scrolls a specified distance from the bottom or top of the page.
-To do so, add the <b>ionInfinite</b> <i>Event</i> to your <i>Custom Scroll</i> with a <i>CustomAction</i> inside.
+To do so, add the <b>ionInfinite</b> <i>Event</i> to your <i>InfiniteScroll</i> with a <i>CustomAction</i> inside.
 Copy/paste below code in your action and add yours.
 <code><pre>//disable scroll
 event.enable(false);
