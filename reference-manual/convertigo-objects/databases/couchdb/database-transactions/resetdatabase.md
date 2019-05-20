@@ -3,7 +3,7 @@ layout: page
 title: ResetDatabase
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/databases/couchdb/database-transactions/resetdatabase/
-metadesc: Resets the database.   Resets the specified database. All documents in the database will be deleted, all server based indexed view will also be delete
+metadesc: Resets the database.   Resets the specified database. All documents in the database will be deleted, all server based indexed views will also be delet
 ObjGroup: Databases
 ObjCatName: database-transactions
 ObjName: ResetDatabase
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Resets the database. 
 
-Resets the specified database. All documents in the database will be deleted, all server based indexed view will also be deleted. When this transaction is executed, the FulLSync database will automatically be versioned to a new  
+Resets the specified database. All documents in the database will be deleted, all server based indexed views will also be deleted. When this transaction is executed, the FullSync database will automatically be versioned to a new  
 
 Property | Type | Category | Description
 --- | --- | --- | ---
