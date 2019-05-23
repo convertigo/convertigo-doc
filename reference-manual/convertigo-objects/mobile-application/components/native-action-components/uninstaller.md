@@ -3,7 +3,7 @@ layout: page
 title: Uninstaller
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/native-action-components/uninstaller/
-metadesc: Defines an  Uninstaller  action component.  This component helps uninstalling an application on your device.  Supported platform(s)    • AndroidYou ca
+metadesc: Defines an  Uninstaller  action component.  This component helps uninstalling an application on your device.  Supported platform(s)    • Android  You 
 ObjGroup: Native Actions
 ObjCatName: native-action-components
 ObjName: UninstallAction
@@ -13,10 +13,16 @@ topnav: topnavobj
 ---
 ##### Defines an <i>Uninstaller</i> action component. 
 This component helps uninstalling an application on your device.
-<u>Supported platform(s):</u><br> • AndroidYou can access data from the next action in the chain in (TS) mode with: <code><br> • out: A boolean thats indicates if the action succeed</code>Whenever cordova platform is not available, the value defined in mocking options is returned.
+<u>Supported platform(s):</u>
+ • Android
+
+You can access data from the next action in the chain in (TS) mode with: <code>
+ • out: A boolean thats indicates if the action succeed</code>
+
+Whenever cordova platform is not available, the value defined in mocking options is returned.
  Default mocked value is <code>true</code>.
  It uses the native Cordova plugin which allows you to uninstall any application giving its package ID.
- For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/'>File Opener</a>.
+ For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/#uninstall'>File Opener</a>.
 
 Name | Description 
 --- | ---

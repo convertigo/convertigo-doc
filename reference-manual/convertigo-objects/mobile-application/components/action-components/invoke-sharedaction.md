@@ -15,7 +15,9 @@ topnav: topnavobj
  This component helps invoking any mobile application's <i>SharedAction</i> component.
 You may select the targeted <i>SharedAction</i> using the <code>Shared action</code> proterty's picker, then import needed variables using right click menu and <code>Import variables from the targeted shared action</code>.
 For each variable created, you may set its value to override the default one set in the target.
-<u>For more information</u>:<br>See <i>SharedAction</i> component<br>See <i>Variable</i> component
+<u>For more information</u>:
+See <i>SharedAction</i> component
+See <i>Variable</i> component
 
 Name | Description 
 --- | ---

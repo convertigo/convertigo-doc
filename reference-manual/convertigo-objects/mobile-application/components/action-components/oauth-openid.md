@@ -18,9 +18,12 @@ This action will work on web and devices. On web browsers this will result by op
 
 This action requires the <b>lib_OAuth</b> project to be installed in the Studio workspace and deployed on the target Convertigo MBaaS servers.
 
-This actions outputs in the <i>out</i> an object that can be:<br> • <code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server<br> • <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server.
+This actions outputs in the <i>out</i> an object that can be:
+ • <code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server
+ • <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server.
 
-<h2>Provider Specific Documentation</h2><br> • Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.
+<h2>Provider Specific Documentation</h2>
+ • Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.
 
 You must also configure two redirections urls:
 
@@ -28,7 +31,8 @@ You must also configure two redirections urls:
  <i>https://login.live.com/oauth20_desktop.srf</i>.
 
 The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.
-<br> • LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.
+
+ • LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.
 
 You must also declare two redirection URLs:
 

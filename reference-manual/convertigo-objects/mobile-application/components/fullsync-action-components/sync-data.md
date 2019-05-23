@@ -18,7 +18,10 @@ Sync process can be bi-directional or just a pull or push. It can also be one sh
 If the sync is continuous, any data modification made locally on your mobile will be reflected real-time on the Convertigo server FullSync data base.
 
 You can use <i>Sync Data</i> when you start an app, but you must have an authenticated session to Convertigo server if you want to be able to push data to it. A typical flow would be :
-<br> • Authenticate the user on your app<br> • Then call a 'login' server <i>Sequence</i> that will execute the <i>SetAuthenticatedUser</i> step providing it with the authenticated user<br> • Then use <i>Sync Data</i> to sync the data from/to you mobile app.
+
+ • Authenticate the user on your app
+ • Then call a 'login' server <i>Sequence</i> that will execute the <i>SetAuthenticatedUser</i> step providing it with the authenticated user
+ • Then use <i>Sync Data</i> to sync the data from/to you mobile app.
 The <i>Sync Data</i> action will be finished when all the data will be synced to/from the device and when finished, you can display the first page of your app using a <i>RootPage</i> action.
 
 You can access the sync progress information from anywhere in your application using the.

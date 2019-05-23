@@ -13,7 +13,14 @@ topnav: topnavobj
 ---
 ##### Defines an <i>Action Sheet</i> action component. 
  The ActionSheet plugin shows a native list of options the user can choose from.
-<u>Supported platorm(s):</u> <br> • Android<br> • iOSYou can access data from the next action in the chain in (TS) mode with: <code><br> • out: The index of the selected button</code>Whenever cordova platform is not available, the value defined in mocking options is returned.
+<u>Supported platorm(s):</u> 
+ • Android
+ • iOS
+
+You can access data from the next action in the chain in (TS) mode with: <code>
+ • out: The index of the selected button</code>
+
+Whenever cordova platform is not available, the value defined in mocking options is returned.
  Default mocked value is <code>0</code>.
 For more information : <a target='_blank' href='https://github.com/EddyVerbruggen/cordova-plugin-actionsheet'>Action Sheet</a>.
 

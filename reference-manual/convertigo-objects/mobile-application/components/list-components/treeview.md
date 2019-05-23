@@ -3,7 +3,7 @@ layout: page
 title: Treeview
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/list-components/treeview/
-metadesc: c8o-treeview.   Displays data in a Tree View. This component is based on the <a href='angular-tree-component' target='_blank' >https //www.npmjs.com/p
+metadesc: c8o-treeview.   Displays data in a Tree View. This component is based on the <a href='https //www.npmjs.com/package/angular-tree-component' target='_b
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: TreeviewComponent
@@ -12,7 +12,7 @@ ObjIcon: /images/beans/mobile/components/dynamic/images/treeviewcomponent_color_
 topnav: topnavobj
 ---
 c8o-treeview. 
- Displays data in a Tree View. This component is based on the <a href='angular-tree-component' target='_blank' >https://www.npmjs.com/package/angular-tree-component</a> component. <br /><br />JSON data can be sourced from a Sequence or from the local FullSync database. JSON data format is described in the <b>treenodes</b> property
+ Displays data in a Tree View. This component is based on the <a href='https://www.npmjs.com/package/angular-tree-component' target='_blank' >angular-tree-component</a> component. <br /><br />JSON data can be sourced from a Sequence or from the local FullSync database. JSON data format is described in the <b>treenodes</b> property
 
 Name | Description 
 --- | ---
