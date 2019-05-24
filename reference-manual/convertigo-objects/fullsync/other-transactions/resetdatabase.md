@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Resets the database. 
 
-Resets the specified database. All documents in the database will be deleted, all server based indexed views will also be deleted. When this transaction is executed, the FullSync database will automatically be versioned to a new  
+Resets the specified database. All documents in the database will be deleted, all server based indexed views will also be deleted. When this transaction is executed, the FullSync database will automatically be versioned to a new Version tag. Any Convertigo SDK client syncing to this database will compare its current version tag to the the server version tag if they differ, the client will automatically RESET is local database to prevent any local document to flow back to the server.<br /><br />This implies that resetting a server database also automatically resets all client database synced to this server database.
 
 Property | Type | Category | Description
 --- | --- | --- | ---

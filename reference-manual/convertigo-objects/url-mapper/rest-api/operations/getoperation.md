@@ -19,4 +19,4 @@ Property | Type | Category | Description
 --- | --- | --- | ---
 Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
 Output content | DataContent | standard | Defines the data output content for the operation.<br/>
-Target requestable | String | standard | Defines the target sequence or transaction to request for the operation.<br/>
+property.targetRequestable.display_name | String | standard | Defines the target sequence or transaction to request for the operation.<br/>
