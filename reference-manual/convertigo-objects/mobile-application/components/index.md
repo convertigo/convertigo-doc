@@ -27,4 +27,5 @@ topnav: topnavobj
 * [Page Components](page-components/)
 * [Route Components](route-components/)
 * [Shared Actions Components](shared-action-components/)
+* [Shared Components](shared-components/)
 * [Slides Components](slide-components/)
