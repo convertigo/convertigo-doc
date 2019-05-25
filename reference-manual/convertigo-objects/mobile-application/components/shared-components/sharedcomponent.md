@@ -12,7 +12,9 @@ ObjIcon: /images/beans/mobile/components/images/uisharedcomponent_color_32x32.pn
 topnav: topnavobj
 ---
 ##### Defines <i>SharedComponent</i> component. 
- This component helps defining an entire composite component. This component will then be available To all other Pages within your project and to any other Project. Using SharedComponents is the best way to build modular projects and provide standard components shared among multiple Projects / Pages.<br /><br />
+ This component helps defining an entire composite component. This component will then be available To all other Pages within your project and to any other Project. Using SharedComponents is the best way to build modular projects and provide standard components shared among multiple Projects / Pages.
+
+
 
 Name | Description 
 --- | ---
