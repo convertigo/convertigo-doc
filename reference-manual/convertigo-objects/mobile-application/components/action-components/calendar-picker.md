@@ -20,15 +20,17 @@ topnav: topnavobj
  • <code>[CalendarResult]</code> for 'multi mode'.
 Where <code>CalendarResult</code> is :
 
-<code>class CalendarResult {.
-&nbsp;&nbsp;&nbsp;time: number;.
-&nbsp;&nbsp;&nbsp;unix: number;.
-&nbsp;&nbsp;&nbsp;dateObj: Date;.
-&nbsp;&nbsp;&nbsp;string: string;.
-&nbsp;&nbsp;&nbsp;years: number;.
-&nbsp;&nbsp;&nbsp;months: number;.
-&nbsp;&nbsp;&nbsp;date: number;.
-}</code>.
+<code>class CalendarResult {
+&nbsp;&nbsp;&nbsp;time: number;
+&nbsp;&nbsp;&nbsp;unix: number;
+&nbsp;&nbsp;&nbsp;dateObj: Date;
+&nbsp;&nbsp;&nbsp;string: string;
+&nbsp;&nbsp;&nbsp;years: number;
+&nbsp;&nbsp;&nbsp;months: number;
+&nbsp;&nbsp;&nbsp;date: number;
+}</code>
+
+For more information : <a target='_blank' href='https://github.com/hsuanxyz/ion2-calendar'>ion2-calendar</a>.
 
 Name | Description 
 --- | ---
