@@ -21,10 +21,10 @@ Name | Description
 Control name | The associated declared form's control name.
 Day Title | The default title displayed for Days.
 Days configuration | Define the days configuration.
-Disable weeks days | Weeks days to be disabled (0 to 6).
+Disable week days | Weeks days to be disabled (0 to 6).
 From | start date, default , today.
-Month fomat | Month format ('MMM YYYY').
-Month picker fomat | Month Labels.
+Month format | Month format ('MMM YYYY').
+Month picker format | Month Labels.
 Pick mode | Pick mode can be 'single', 'range' or 'multi'.
 Show month picker | Show or not the month picker to directly pick a month.
 Show toggle buttons | Show or not toggle buttons to switch to next or previous month.

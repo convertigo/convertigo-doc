@@ -42,11 +42,12 @@ Days configuration | Define the days configuration.
 Default date | Default selected date as a Javascript <code>Date()</code> object.
 Default dates (multi) | Default selected dates as an array of Javascript <code>Date()</code> objects. For 'multi' mode only.
 Default range (range) | Default selected date range as an <code>{from: Date(), to:Date()}</code> object. For 'range' mode only.
-Disable weeks days | Weeks days to be disabled (0 to 6).
+Disable week days | Weeks days to be disabled (0 to 6).
 Done icon | Display done icon.
 Done label | The done button label.
 From | start date, default , today.
-Month fomat | Month format ('MMM YYYY').
+Month format | Month format ('MMM YYYY').
+Month picker format | Month Labels.
 Pick mode | Picker mode.
 Subtitle | The default  subtitle displayed for Days.
 Title | The calendar title.
