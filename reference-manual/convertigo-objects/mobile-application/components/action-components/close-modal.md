@@ -1,9 +1,9 @@
 ---
 layout: page
-title: CloseModal
+title: Close Modal
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/closemodal/
-metadesc: Defines a  Close Modal  action component.   Use this action to close a modal page opened previously. It can also be used to close a PopOver Page. Add 
+permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/close-modal/
+metadesc: Defines a  Close Modal  action component.   Use this action to close a modal page previously opened through the  Modal Page  action. Add a  Close Moda
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: CloseModalAction
@@ -12,8 +12,8 @@ ObjIcon: /images/beans/mobile/components/dynamic/images/closemodalaction_color_3
 topnav: topnavobj
 ---
 ##### Defines a <i>Close Modal</i> action component. 
- Use this action to close a modal page opened previously. It can also be used to close a PopOver Page.
-Add a <i>CloseModal</i> action under an Event.
+ Use this action to close a modal page previously opened through the <i>Modal Page</i> action.
+Add a <i>Close Modal</i> action under an Event.
 
 Name | Description 
 --- | ---

@@ -19,6 +19,8 @@ Displays a Popover Page.
  • Select a commonly used tool or configuration
  • Present a list of actions to perform inside one of your views.
 
+You can use the <i>Close Popover</i> action to dismiss a Popover.
+
 Name | Description 
 --- | ---
 Css Class | Additional classes for custom styles, separated by spaces.

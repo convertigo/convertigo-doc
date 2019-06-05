@@ -1,8 +1,8 @@
 ---
 layout: page
-title: ModalPage
+title: Modal Page
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/modalpage/
+permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/modal-page/
 metadesc: Displays a Modal Page.   A Modal is a content pane that goes over the user's current page. Usually it is used for making a choice or editing an item. 
 ObjGroup: Actions
 ObjCatName: action-components
@@ -12,7 +12,9 @@ ObjIcon: /images/beans/mobile/components/dynamic/images/modalaction_color_32x32.
 topnav: topnavobj
 ---
 Displays a Modal Page. 
- A Modal is a content pane that goes over the user's current page. Usually it is used for making a choice or editing an item. You can use the <i>PopPage</i> action  to dismiss a Modal Page. You can also pass data to the page, the passed data will be available in the <i>NavParams</i> Object.
+ A Modal is a content pane that goes over the user's current page. Usually it is used for making a choice or editing an item.
+You can use the <i>Close Modal</i> action  to dismiss a Modal Page.
+You can also pass data to the page, the passed data will be available in the <i>NavParams</i> Object.
 
 By default, Modal pages will be displayed as full screen on small devices (SmartPhones) or as an Popup overlays on larget Devices (Tablets). If you want to change this behavior, you can customize the following parameters for your app in the <i>Theme</i> Component:
 
