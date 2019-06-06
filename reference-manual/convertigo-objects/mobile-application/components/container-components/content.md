@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/content_color_32x32.png
 topnav: topnavobj
 ---
-ion-content
-##### Defines a <i>Content</i> component.
-There should only be one <i>Content</i> per page, as for <i>Header</i> and <i>Footer</i>.
-This is the main space where other components will be inserted.
-You can use the <i>padding</i> property to automatically define some margins.
+ion-content<br/>
+
+##### Defines a <i>Content</i> component.<br/>
+There should only be one <i>Content</i> per page, as for <i>Header</i> and <i>Footer</i>.<br/>
+This is the main space where other components will be inserted.<br/>
+You can use the <i>padding</i> property to automatically define some margins.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/content/Content/' target='_blank'>Content</a>.
 
 Name | Description 

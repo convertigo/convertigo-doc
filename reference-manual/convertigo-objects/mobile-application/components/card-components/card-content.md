@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/cardcontent_color_32x32.png
 topnav: topnavobj
 ---
-ion-card-content
-##### Defines a <i>Card Content</i> component.
-This component is the content part of the card.
-Use a <i>Card Content</i> component inside of a <i>Card container</i>.
+ion-card-content<br/>
+
+##### Defines a <i>Card Content</i> component.<br/>
+This component is the content part of the card.<br/>
+Use a <i>Card Content</i> component inside of a <i>Card container</i>.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#cards' target='_blank'>Cards</a>.
 
 Name | Description 

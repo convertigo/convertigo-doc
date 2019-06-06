@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/chart_color_32x32.png
 topnav: topnavobj
 ---
-canvas
-##### Defines a <i>Chart</i> component.
-Charts can be <code>line, bar, radar, pie, polarArea or doughnut</code> according to the <i>chartType</i> property.
-Chart data are bound to properties provided by some TypeScript data or directly from a source.
+canvas<br/>
 
-Please refer to <a target='_blank' href='https://www.npmjs.com/package/ng2-charts'>chart.js</a> documentation for each property and data formats.
+##### Defines a <i>Chart</i> component.<br/>
+Charts can be <code>line, bar, radar, pie, polarArea or doughnut</code> according to the <i>chartType</i> property.<br/>
+Chart data are bound to properties provided by some TypeScript data or directly from a source.<br/>
+<br/>
+Please refer to <a target='_blank' href='https://www.npmjs.com/package/ng2-charts'>chart.js</a> documentation for each property and data formats.<br/>
 To set width and height properties, use the Grid system.
 
 Name | Description 

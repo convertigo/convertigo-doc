@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmapiwindow_color_32x32.png
 topnav: topnavobj
 ---
-agm-info-window
-##### Defines an <i>Information Window</i> component.
-Just add an <i>Information Window</i> component to a <i>Map Marker</i> component to have an information window displayed showing more details about a given marker when the user taps/clicks on it.
+agm-info-window<br/>
 
-You can use any type of HTML markup in an <i>Information Window</i> component to format the details for this <i>Map Marker</i>.
+##### Defines an <i>Information Window</i> component.<br/>
+Just add an <i>Information Window</i> component to a <i>Map Marker</i> component to have an information window displayed showing more details about a given marker when the user taps/clicks on it.<br/>
+<br/>
+You can use any type of HTML markup in an <i>Information Window</i> component to format the details for this <i>Map Marker</i>.<br/>
  For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmInfoWindow.html' target='_blank'>AgmInfoWindow</a>.
 
 Name | Description 

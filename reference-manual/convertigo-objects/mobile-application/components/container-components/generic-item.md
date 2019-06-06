@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/generic_item_32x32.png
 topnav: topnavobj
 ---
-ion-item
-##### Defines a <i>Generic Item</i> component.
-A <i>Generic Item</i> can be replaced by a <i>Button</i> with its <i>button type</i> property set to <code>ion-item</code> to make the item clickable.
-It can also contain <i>Sliding Options</i> to reveal buttons when swiped left or right.
+ion-item<br/>
+
+##### Defines a <i>Generic Item</i> component.<br/>
+A <i>Generic Item</i> can be replaced by a <i>Button</i> with its <i>button type</i> property set to <code>ion-item</code> to make the item clickable.<br/>
+It can also contain <i>Sliding Options</i> to reveal buttons when swiped left or right.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#lists' target='_blank'>Generic Item</a>.
 
 Name | Description 

@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/progressbar_color_32x32.png
 topnav: topnavobj
 ---
-angular-progress-bar
-##### Defines a ProgressBar component. This component displays a progress bar that helps to monitor progression 
+angular-progress-bar<br/>
+
+##### Defines a ProgressBar component. This component displays a progress bar that helps to monitor progression <br/>
  For more information: <a href='https://www.npmjs.com/package/angular-progress-bar' target='_blank'>angular-progress-bar</a>.
 
 Name | Description 

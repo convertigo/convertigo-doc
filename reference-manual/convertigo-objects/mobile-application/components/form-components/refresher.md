@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/refresher_color_32x32.png
 topnav: topnavobj
 ---
-ion-refresher
-##### Defines a <i>Refresher</i> component.
-This component provides pull-to-refresh functionality on a <i>Content</i> component.
-Place the <i>Refresher</i> as the first child of your <i>Content</i>.
-Pages can then listen to the refresher's various output events. The refresh output event is fired when the user has pulled down far enough to kick off the refreshing process.
- Once the async operation has completed and the refreshing should end, call complete().
+ion-refresher<br/>
+
+##### Defines a <i>Refresher</i> component.<br/>
+This component provides pull-to-refresh functionality on a <i>Content</i> component.<br/>
+Place the <i>Refresher</i> as the first child of your <i>Content</i>.<br/>
+Pages can then listen to the refresher's various output events. The refresh output event is fired when the user has pulled down far enough to kick off the refreshing process.<br/>
+ Once the async operation has completed and the refreshing should end, call complete().<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/refresher/Refresher/' target='_blank'>Refresher</a>.
 
 Name | Description 

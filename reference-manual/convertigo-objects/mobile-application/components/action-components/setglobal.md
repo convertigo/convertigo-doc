@@ -11,14 +11,15 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/setglobalaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>SetGlobal</i> action component. 
- This component helps storing some data in the global application wide space.
-In most apps, it is useful to store some global app-wide properties that can be retrieved from any page. You can use the <i>SetGlobal</i> action for that.
+##### Defines a <i>SetGlobal</i> action component. <br/>
 
-If you want to retrieve and use the value of a stored property (for example myProperty) to be displayed on a page, source a <i>Text</i> component in <b>TS</b> mode to :
-
-<code>this.global?.myProperty</code>
-
+ This component helps storing some data in the global application wide space.<br/>
+In most apps, it is useful to store some global app-wide properties that can be retrieved from any page. You can use the <i>SetGlobal</i> action for that.<br/>
+<br/>
+If you want to retrieve and use the value of a stored property (for example myProperty) to be displayed on a page, source a <i>Text</i> component in <b>TS</b> mode to :<br/>
+<br/>
+<code>this.global?.myProperty</code><br/>
+<br/>
 
 
 Name | Description 

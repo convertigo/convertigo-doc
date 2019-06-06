@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/header_color_32x32.png
 topnav: topnavobj
 ---
-ion-header
-##### Defines a <i>Header</i> component.
-There should only be one <i>Header</i> per page, as for <i>Content</i> and <i>Footer</i>.
-Header is a root component of a page that holds the <i>NavBar</i> and <i>Toolbar</i> components.
-It's important to note that <i>Header</i> needs to be the one of the three root elements of a page.
+ion-header<br/>
+
+##### Defines a <i>Header</i> component.<br/>
+There should only be one <i>Header</i> per page, as for <i>Content</i> and <i>Footer</i>.<br/>
+Header is a root component of a page that holds the <i>NavBar</i> and <i>Toolbar</i> components.<br/>
+It's important to note that <i>Header</i> needs to be the one of the three root elements of a page.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Header/' target='_blank'>Header</a>.
 
 Name | Description 

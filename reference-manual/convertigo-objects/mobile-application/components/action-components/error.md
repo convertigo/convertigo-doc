@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/erroraction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines an <i>Error</i> action component. 
+##### Defines an <i>Error</i> action component. <br/>
+
  This component helps generating an error with a given message.
 
 Name | Description 

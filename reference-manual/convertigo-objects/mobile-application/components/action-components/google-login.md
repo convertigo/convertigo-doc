@@ -11,28 +11,29 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/googleloginaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Google Login / Logout</i> action component. 
- This component helps login in or logout using Google. It uses Google login to authenticate users.
+##### Defines a <i>Google Login / Logout</i> action component. <br/>
 
-Setup needs some configuration. Declare your app in <a target='_blank' href='https://developers.google.com/mobile/add?platform=android&cntapi=signin'>https://developers.google.com/mobile/add?platform=android&cntapi=signin</a> for Android apps.
-
-Use <a href='https://developers.google.com/mobile/add?platform=ios&cntapi=signin' target='_blank'>https://developers.google.com/mobile/add?platform=ios&cntapi=signin</a> for iOS apps.
-
-See also some documentation on <a target='_blank' href='https://ionicframework.com/docs/v3/native/google-plus/'>https://ionicframework.com/docs/v3/native/google-plus/</a> about the Cordova plugin used.
- You can access the data from the next action in the chain in (TS) mode with:
-
-<code>
- • out.email: The email
- • out.userId: the user id
- • out.displayName: the display name
- • out.familyName: the family name
- • out.givenName: the given name
- • out.imageUrl: the image url
- • out.idToken: the id token
- • out.serverAuthCode: the server authentication code
- • out.accessToken: the access token</code>
- Whenever cordova platform is not available, the value defined in mocked response option is returned.
- Default mocked value for login are <code>{email: 'user@convertigo.com', userId: 'my_id', displayName: 'John Doe', familyName: 'Doe', givenName: 'John', imageUrl: 'http://saffroninteractive.com/wp-content/uploads/2017/10/empty-avatar2.png', idToken'my_id_token', serverAuthCode: '12', accessToken: 'my_access_token'}</code>.
+ This component helps login in or logout using Google. It uses Google login to authenticate users.<br/>
+<br/>
+Setup needs some configuration. Declare your app in <a target='_blank' href='https://developers.google.com/mobile/add?platform=android&cntapi=signin'>https://developers.google.com/mobile/add?platform=android&cntapi=signin</a> for Android apps.<br/>
+<br/>
+Use <a href='https://developers.google.com/mobile/add?platform=ios&cntapi=signin' target='_blank'>https://developers.google.com/mobile/add?platform=ios&cntapi=signin</a> for iOS apps.<br/>
+<br/>
+See also some documentation on <a target='_blank' href='https://ionicframework.com/docs/v3/native/google-plus/'>https://ionicframework.com/docs/v3/native/google-plus/</a> about the Cordova plugin used.<br/>
+ You can access the data from the next action in the chain in (TS) mode with:<br/>
+<br/>
+<code><br/>
+ • out.email: The email<br/>
+ • out.userId: the user id<br/>
+ • out.displayName: the display name<br/>
+ • out.familyName: the family name<br/>
+ • out.givenName: the given name<br/>
+ • out.imageUrl: the image url<br/>
+ • out.idToken: the id token<br/>
+ • out.serverAuthCode: the server authentication code<br/>
+ • out.accessToken: the access token</code><br/>
+ Whenever cordova platform is not available, the value defined in mocked response option is returned.<br/>
+ Default mocked value for login are <code>{email: 'user@convertigo.com', userId: 'my_id', displayName: 'John Doe', familyName: 'Doe', givenName: 'John', imageUrl: 'http://saffroninteractive.com/wp-content/uploads/2017/10/empty-avatar2.png', idToken'my_id_token', serverAuthCode: '12', accessToken: 'my_access_token'}</code>.<br/>
  Default mocked value for logout is <code>true</code>.
 
 Name | Description 

@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/publisheventaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>PublishEvent</i> action component. 
-This component helps publishing an event giving its topic and optional data. The event may be handled by an existing <i>Subscribe Handler</i> component in any available page.
+##### Defines a <i>PublishEvent</i> action component. <br/>
+
+This component helps publishing an event giving its topic and optional data. The event may be handled by an existing <i>Subscribe Handler</i> component in any available page.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/api/util/Events/'>Events</a>
 
 Name | Description 

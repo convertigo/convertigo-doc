@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/images/uiformvalidator_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>ControlValidator</i> component. 
- The <i>ControlValidator</i> is a component which helps to validate user input for a given form's input such as <i>Text Input</i>, <i>Toogle Button</i>,...
-It is a set of Angular's built-in synchronous functions called whenever the value of the control changes.
-Add a <i>ControlValidator</i> to a form's input component and select required validation through 'check' properties.
-Also, you can add a <i>Submit Button</i> to your <i>Form</i> with its <code>Auto disable</code> property set to <code>true</code> to avoid form submission by disabling the button whenever form data are not valid.
+##### Defines a <i>ControlValidator</i> component. <br/>
+
+ The <i>ControlValidator</i> is a component which helps to validate user input for a given form's input such as <i>Text Input</i>, <i>Toogle Button</i>,...<br/>
+It is a set of Angular's built-in synchronous functions called whenever the value of the control changes.<br/>
+Add a <i>ControlValidator</i> to a form's input component and select required validation through 'check' properties.<br/>
+Also, you can add a <i>Submit Button</i> to your <i>Form</i> with its <code>Auto disable</code> property set to <code>true</code> to avoid form submission by disabling the button whenever form data are not valid.<br/>
 For more information: <a href='https://angular.io/guide/form-validation#reactive-form-validation' target='_blank'>Reactive form validation</a>.
 
 Name | Description 

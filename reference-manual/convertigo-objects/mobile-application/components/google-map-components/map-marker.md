@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmapmarker_color_32x32.png
 topnav: topnavobj
 ---
-agm-marker
-##### Defines a <i>Map Marker</i> component.
-Markers indicate unique geographic points on the map. You can customize your markers by replacing the marker icon with a custom image.
-Several <i>Map Marker</i> can be displayed on a map, just add them in your <i>Goolgle Map</i> component.
+agm-marker<br/>
+
+##### Defines a <i>Map Marker</i> component.<br/>
+Markers indicate unique geographic points on the map. You can customize your markers by replacing the marker icon with a custom image.<br/>
+Several <i>Map Marker</i> can be displayed on a map, just add them in your <i>Goolgle Map</i> component.<br/>
  For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmMarker.html' target='_blank'>AgmMarker</a>.
 
 Name | Description 

@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/invokesharedaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines an <i>Invoke SharedAction</i> component. 
- This component helps invoking any mobile application's <i>SharedAction</i> component.
-You may select the targeted <i>SharedAction</i> using the <code>Shared action</code> proterty's picker, then import needed variables using right click menu and <code>Import variables from the targeted shared action</code>.
-For each variable created, you may set its value to override the default one set in the target.
-<u>For more information</u>:
-See <i>SharedAction</i> component
+##### Defines an <i>Invoke SharedAction</i> component. <br/>
+
+ This component helps invoking any mobile application's <i>SharedAction</i> component.<br/>
+You may select the targeted <i>SharedAction</i> using the <code>Shared action</code> proterty's picker, then import needed variables using right click menu and <code>Import variables from the targeted shared action</code>.<br/>
+For each variable created, you may set its value to override the default one set in the target.<br/>
+<u>For more information</u>:<br/>
+See <i>SharedAction</i> component<br/>
 See <i>Variable</i> component
 
 Name | Description 

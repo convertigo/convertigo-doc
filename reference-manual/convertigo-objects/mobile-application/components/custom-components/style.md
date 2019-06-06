@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/images/uistyle_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Style</i> component. 
- This component helps defining standard HTML CSS rules.
- You can add <i>Style</i> components to the <i>Application</i> component, to any <i>Page</i> or any single <i>Component</i>.
- Double-click on your <i>Style</i> component to open the editor and modify your CSS rules.
+##### Defines a <i>Style</i> component. <br/>
 
+ This component helps defining standard HTML CSS rules.<br/>
+ You can add <i>Style</i> components to the <i>Application</i> component, to any <i>Page</i> or any single <i>Component</i>.<br/>
+ Double-click on your <i>Style</i> component to open the editor and modify your CSS rules.<br/>
+<br/>
  For more information: <a href='https://www.w3schools.com/html/html_css.asp' target='_blank'>Styling HTML with CSS</a>, <a href='https://ionicframework.com/docs/v3/theming/css-utilities/' target='_blank'>Ionic CSS Utilities</a>
 
 Name | Description 

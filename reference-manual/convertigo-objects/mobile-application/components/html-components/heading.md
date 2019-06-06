@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
 topnav: topnavobj
 ---
- 
-##### Defines a <i>Heading</i> component.
-This component acts as the standard HTML heading tag.
-The <i>h1</i> to <i>h6</i> tags are used to define headings, from the most important to the least important ones.
-Use them for pages Titles for example. Add <i>Text</i> components inside.
+ <br/>
+
+##### Defines a <i>Heading</i> component.<br/>
+This component acts as the standard HTML heading tag.<br/>
+The <i>h1</i> to <i>h6</i> tags are used to define headings, from the most important to the least important ones.<br/>
+Use them for pages Titles for example. Add <i>Text</i> components inside.<br/>
  For more information: <a href='https://www.w3schools.com/tags/tag_hn.asp' target='_blank'>Headings</a>.
 
 Name | Description 

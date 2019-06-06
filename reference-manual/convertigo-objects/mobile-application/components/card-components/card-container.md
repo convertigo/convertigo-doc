@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/card_color_32x32.png
 topnav: topnavobj
 ---
-ion-card
-##### Defines a <i>Card container</i> component.
-Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for application.
-They're are a great way to contain and organize information, while also setting up predictable expectations for the user.
-With so much content to display at once, and often so little screen realestate, cards have fast become the design pattern of choice for many companies, including the likes of Google, Twitter, and Spotify.
+ion-card<br/>
+
+##### Defines a <i>Card container</i> component.<br/>
+Cards are a great way to display important pieces of content, and are quickly emerging as a core design pattern for application.<br/>
+They're are a great way to contain and organize information, while also setting up predictable expectations for the user.<br/>
+With so much content to display at once, and often so little screen realestate, cards have fast become the design pattern of choice for many companies, including the likes of Google, Twitter, and Spotify.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#cards' target='_blank'>Cards</a>.
 
 Name | Description 

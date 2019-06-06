@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/cleardatasourceaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>ClearDataSource</i> action component. 
+##### Defines a <i>ClearDataSource</i> action component. <br/>
+
  Use the <i>ClearDataSource</i> to delete data stored from a previous fullsync query or sequence call.
 
 Name | Description 

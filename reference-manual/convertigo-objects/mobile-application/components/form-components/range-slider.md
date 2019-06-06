@@ -11,13 +11,14 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/range_32x32.png
 topnav: topnavobj
 ---
-ion-range
-##### Defines a <i>Range Slider</i> component.
-The Range slider lets users select from a range of values by moving the slider knob.
-It can accept dual knobs, but by default one knob controls the value of the range.
-Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.
-For more information: <a href='https://ionicframework.com/docs/v3/components/#range' target='_blank'>Range</a>.
+ion-range<br/>
 
+##### Defines a <i>Range Slider</i> component.<br/>
+The Range slider lets users select from a range of values by moving the slider knob.<br/>
+It can accept dual knobs, but by default one knob controls the value of the range.<br/>
+Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
+For more information: <a href='https://ionicframework.com/docs/v3/components/#range' target='_blank'>Range</a>.<br/>
+<br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 

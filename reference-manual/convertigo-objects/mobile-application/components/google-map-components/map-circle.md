@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmapcircle_color_32x32.png
 topnav: topnavobj
 ---
-agm-circle
-##### Defines a <i>Map Circle</i> component.
-This component displays a circular area of a specified radius on a <i>Google Map</i>.
+agm-circle<br/>
+
+##### Defines a <i>Map Circle</i> component.<br/>
+This component displays a circular area of a specified radius on a <i>Google Map</i>.<br/>
  For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmCircle.html' target='_blank'>AgmCircle</a>.
 
 Name | Description 

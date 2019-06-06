@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/option_color_32x32.png
 topnav: topnavobj
 ---
-ion-option
-##### Defines a <i>Select Option</i> component.
-Each option component must be placed under a <i>Select Container</i> component to give a list of selectable options.
-To set the name or label of the option add a <i>Text</i> component to it.
-Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from changing the value.
+ion-option<br/>
+
+##### Defines a <i>Select Option</i> component.<br/>
+Each option component must be placed under a <i>Select Container</i> component to give a list of selectable options.<br/>
+To set the name or label of the option add a <i>Text</i> component to it.<br/>
+Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from changing the value.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#select' target='_blank'>Select</a>.
 
 Name | Description 

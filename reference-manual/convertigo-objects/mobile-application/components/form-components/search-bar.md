@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/searchbar_color_32x32.png
 topnav: topnavobj
 ---
-ion-searchbar
-##### Defines a <i>Search Bar</i> component.
-This component manages the display of a searchbar which can be used to search or filter items.
+ion-searchbar<br/>
+
+##### Defines a <i>Search Bar</i> component.<br/>
+This component manages the display of a searchbar which can be used to search or filter items.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/searchbar/Searchbar/' target='_blank'>Searchbar</a>.
 
 Name | Description 

@@ -11,13 +11,14 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/callsequenceaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>CallSequence</i> action component. 
- This component helps invoking a Convertigo <i>Sequence</i> which may be specified through the <i>Requestable</i> property.
- Add a <i>CallSequence</i> under a <i>PageEvent</i>, an <i>Event</i> or another <i>Action</i>.
-If the targeted sequence requires some input variables, you can add to your action the needed <i>Variable</i> components by hand or by the 'import' menu which appears by right-clicking on your <i>CallSequence</i> action.
-The returned data can be accessed from any underneath action using the <code>out</code> typescript variable.
-For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-objects/sequencer/'>Sequencer</a>. 
+##### Defines a <i>CallSequence</i> action component. <br/>
 
+ This component helps invoking a Convertigo <i>Sequence</i> which may be specified through the <i>Requestable</i> property.<br/>
+ Add a <i>CallSequence</i> under a <i>PageEvent</i>, an <i>Event</i> or another <i>Action</i>.<br/>
+If the targeted sequence requires some input variables, you can add to your action the needed <i>Variable</i> components by hand or by the 'import' menu which appears by right-clicking on your <i>CallSequence</i> action.<br/>
+The returned data can be accessed from any underneath action using the <code>out</code> typescript variable.<br/>
+For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-objects/sequencer/'>Sequencer</a>. <br/>
+<br/>
  If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 

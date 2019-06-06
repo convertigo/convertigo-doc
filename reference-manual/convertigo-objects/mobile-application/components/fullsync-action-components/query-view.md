@@ -11,18 +11,19 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/fsviewsaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Query View</i> action component. 
- This component helps querying a given view of a FullSync database.
-Views are pre-indexed FullSync documents you can query.
-They may be defined in the Convertigo Studio for a given <i>FullSync Connector</i> by writing a 'map' function defining how documents are indexed and what data you want place in front of an index.
+##### Defines a <i>Query View</i> action component. <br/>
 
-For more information about Views see <a  href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/understanding-views-and-queries/' target='_blank'>Understanding views and queries</a>.
-
-To query a view, select it through the <i>View</i> property and configure the query parameters. Most of the parameters are optional, but the most useful ones are the <i>StartKey</i> and the <i>EndKey</i> defining the range of the index you want to query.
-
-See the <a href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/#view' target='_blank'>Query parameters</a> documentation for that.
-For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. 
-
+ This component helps querying a given view of a FullSync database.<br/>
+Views are pre-indexed FullSync documents you can query.<br/>
+They may be defined in the Convertigo Studio for a given <i>FullSync Connector</i> by writing a 'map' function defining how documents are indexed and what data you want place in front of an index.<br/>
+<br/>
+For more information about Views see <a  href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/understanding-views-and-queries/' target='_blank'>Understanding views and queries</a>.<br/>
+<br/>
+To query a view, select it through the <i>View</i> property and configure the query parameters. Most of the parameters are optional, but the most useful ones are the <i>StartKey</i> and the <i>EndKey</i> defining the range of the index you want to query.<br/>
+<br/>
+See the <a href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/#view' target='_blank'>Query parameters</a> documentation for that.<br/>
+For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. <br/>
+<br/>
  If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
@@ -42,7 +43,7 @@ Stale | Can be one of: unspecified (default): Returns the latest results, waitin
 StartKey | Get rows with keys in a certain range (inclusive/inclusive) from the start key.
 View | The view to query (in the form Project.database.DesignDoc.view).
 group | True if you want the reduce function to group results by keys, rather than returning a single result. Defaults to false.
-include_docs | Include the document in each row in the doc field. This may be useful for joined queries or if you do not want to 'emit' too much 'values' in your map functions.<br/><br/>See <a href='https://wiki.apache.org/couchdb/Introduction_to_CouchDB_views#Linked_documents' target='_blank'>joined queries</a>.
+include_docs | ["Include the document in each row in the doc field. This may be useful for joined queries or if you do not want to 'emit' too much 'values' in your map functions.<br\/>","<br\/>","See <a href='https:\/\/wiki.apache.org\/couchdb\/Introduction_to_CouchDB_views#Linked_documents' target='_blank'>joined queries<\/a>."]
 key | Only return rows matching this key.
 keys | Array of keys to fetch in a single shot. Neither startkey nor endkey can be specified with this option. The rows are returned in the same order as the supplied keys array. The row for a deleted document will have the revision ID of the deletion, and an extra key 'deleted':true in the value property. The row for a nonexistent document will just contain an 'error' property with the value 'not_found'.
 limit | Maximum number of rows to return. Always limit your queries to some maximum to avoid UI lagging and excessive memory consumption.

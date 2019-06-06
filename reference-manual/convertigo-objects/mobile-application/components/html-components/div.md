@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
 topnav: topnavobj
 ---
-div
-##### Defines a <i>Div</i> component.
-This component acts as the standard HTML div tag.
-A <i>Div</i> defines a division or a section in an HTML document.
+div<br/>
+
+##### Defines a <i>Div</i> component.<br/>
+This component acts as the standard HTML div tag.<br/>
+A <i>Div</i> defines a division or a section in an HTML document.<br/>
  For more information: <a href='https://www.w3schools.com/tags/tag_div.asp' target='_blank'>Div</a>.
 
 Name | Description 

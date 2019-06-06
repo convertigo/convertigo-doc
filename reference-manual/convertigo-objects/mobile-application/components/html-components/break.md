@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
 topnav: topnavobj
 ---
-br
-##### Defines a <i>Break</i> component.
-This component acts as the standard HTML br tag.
-A <i>Break</i> makes a line space between two <i>Text</i> components.
+br<br/>
+
+##### Defines a <i>Break</i> component.<br/>
+This component acts as the standard HTML br tag.<br/>
+A <i>Break</i> makes a line space between two <i>Text</i> components.<br/>
  For more information: <a href='https://www.w3schools.com/tags/tag_br.asp' target='_blank'>Break</a>.
 
 Name | Description 

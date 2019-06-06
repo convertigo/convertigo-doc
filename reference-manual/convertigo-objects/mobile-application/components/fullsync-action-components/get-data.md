@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/fsgetaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Get Data</i> action component. 
- This component helps getting (get) data from a FullSync database. Get Data returns an object containing the requested document. From an underneath action, you can access this value trough the <i>out</i> typescript variable. For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. 
+##### Defines a <i>Get Data</i> action component. <br/>
 
+ This component helps getting (get) data from a FullSync database. Get Data returns an object containing the requested document. From an underneath action, you can access this value trough the <i>out</i> typescript variable. For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. <br/>
+<br/>
  If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 

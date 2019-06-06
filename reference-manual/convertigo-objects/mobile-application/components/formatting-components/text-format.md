@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/textformat_color_32x32.png
 topnav: topnavobj
 ---
-div
-##### Defines a <i>Text Format</i> component.
-Text formatting such as alignments to left right and center or text transformations.
-Will be applied to all underlying <i>Text</i> components.
+div<br/>
+
+##### Defines a <i>Text Format</i> component.<br/>
+Text formatting such as alignments to left right and center or text transformations.<br/>
+Will be applied to all underlying <i>Text</i> components.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/theming/css-utilities/#text-modification' target='_blank'>Text Modification</a>.
 
 Name | Description 

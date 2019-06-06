@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/calendar_color_32x32.png
 topnav: topnavobj
 ---
-ion-calendar. 
- Displays a Calendar with various options configured as properties.
+ion-calendar. <br/>
 
+ Displays a Calendar with various options configured as properties.<br/>
+<br/>
 Can trigger the (onChange), (monthChange) , (onSelect), (onSelectStart) and (onSelectEnd) events. .
 
 Name | Description 

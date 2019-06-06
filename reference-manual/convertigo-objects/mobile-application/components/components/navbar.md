@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/navbar_color_32x32.png
 topnav: topnavobj
 ---
-ion-navbar
-##### Defines a <i>NavBar</i> component.
-The <i>NavBar</i> acts as the navigational toolbar, which also comes with a back button.
-It must be placed within an <i>Header</i> in order to be placed above the <i>Content</i>.
-It's important to note that navbar's are part of the dynamic navigation stack. If you need a static toolbar, use the <i>ToolBar</i> component.
+ion-navbar<br/>
+
+##### Defines a <i>NavBar</i> component.<br/>
+The <i>NavBar</i> acts as the navigational toolbar, which also comes with a back button.<br/>
+It must be placed within an <i>Header</i> in order to be placed above the <i>Content</i>.<br/>
+It's important to note that navbar's are part of the dynamic navigation stack. If you need a static toolbar, use the <i>ToolBar</i> component.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Navbar/' target='_blank'>NavBar</a>.
 
 Name | Description 

@@ -11,13 +11,14 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/input_color_32x32.png
 topnav: topnavobj
 ---
-ion-input
-##### Defines a <i>Text Input</i> component.
-<i>Text Input</i> is meant for text type inputs only, such as text, password, email, number, search, tel, and url.
-Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from changing the value.
-Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.
- For more information: <a href='https://ionicframework.com/docs/v3/components/#inputs' target='_blank'>Inputs</a>.
+ion-input<br/>
 
+##### Defines a <i>Text Input</i> component.<br/>
+<i>Text Input</i> is meant for text type inputs only, such as text, password, email, number, search, tel, and url.<br/>
+Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from changing the value.<br/>
+Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#inputs' target='_blank'>Inputs</a>.<br/>
+<br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 

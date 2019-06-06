@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/grid_row_color_32x32.png
 topnav: topnavobj
 ---
-ion-row
-##### Defines a <i>Grid Row</i> component.
-This component must be inserted in a <i>Grid</i> and contains <i>Grid Column</i> components.
-A <i>Grid Row</i> is composed of 12 slots that can be filled with <i>Grid Column</i>s.
+ion-row<br/>
+
+##### Defines a <i>Grid Row</i> component.<br/>
+This component must be inserted in a <i>Grid</i> and contains <i>Grid Column</i> components.<br/>
+A <i>Grid Row</i> is composed of 12 slots that can be filled with <i>Grid Column</i>s.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#grid' target='_blank'>Grid</a>.
 
 Name | Description 

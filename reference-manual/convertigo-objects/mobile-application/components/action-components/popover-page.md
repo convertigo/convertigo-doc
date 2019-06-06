@@ -3,7 +3,7 @@ layout: page
 title: Popover Page
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/popover-page/
-metadesc: Displays a Popover Page.   The Popover is a view that floats above an app’s content. Popovers provide an easy way to present or gather information fro
+metadesc: Displays a Popover Page.   The Popover is a view that floats above an app's content. Popovers provide an easy way to present or gather information fro
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: PopoverAction
@@ -11,14 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/popoveraction_color_32x32.png
 topnav: topnavobj
 ---
-Displays a Popover Page. 
- The Popover is a view that floats above an app’s content. Popovers provide an easy way to present or gather information from the user and are commonly used in the following situations:
+Displays a Popover Page. <br/>
 
-
- • Show more info about the current view
- • Select a commonly used tool or configuration
- • Present a list of actions to perform inside one of your views.
-
+ The Popover is a view that floats above an app's content. Popovers provide an easy way to present or gather information from the user and are commonly used in the following situations:<br/>
+ • Show more info about the current view<br/>
+ • Select a commonly used tool or configuration<br/>
+ • Present a list of actions to perform inside one of your views.<br/>
+<br/>
 You can use the <i>Close Popover</i> action to dismiss a Popover.
 
 Name | Description 

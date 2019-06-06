@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/tabbar_color_32x32.png
 topnav: topnavobj
 ---
-ion-tabs
-##### Defines a <i>Tabs Container</i> component.
-A <i>Tabs Container</i> component is a container of individual <i>Tab Item</i> which make it easy to navigate between different pages.
+ion-tabs<br/>
+
+##### Defines a <i>Tabs Container</i> component.<br/>
+A <i>Tabs Container</i> component is a container of individual <i>Tab Item</i> which make it easy to navigate between different pages.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#tabs' target='_blank'>Tabs</a>.
 
 Name | Description 

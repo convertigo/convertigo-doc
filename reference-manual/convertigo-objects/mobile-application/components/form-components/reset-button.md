@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/button_color_32x32.png
 topnav: topnavobj
 ---
-button
-##### Defines a <i>Reset Button</i> component.
+button<br/>
+
+##### Defines a <i>Reset Button</i> component.<br/>
 A <i>Reset Button</i> works with a <i>Form</i> component. It will clear all fields of the form when taped.
 
 Name | Description 

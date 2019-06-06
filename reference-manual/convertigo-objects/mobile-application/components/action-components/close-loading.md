@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/closeloadingaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Close Loading</i> action component. 
+##### Defines a <i>Close Loading</i> action component. <br/>
+
  This component closes a laoding opened by 'Show Loading'
 
 Name | Description 

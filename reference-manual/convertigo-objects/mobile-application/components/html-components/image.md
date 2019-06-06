@@ -11,14 +11,15 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/img_HTML_color_32x32.png
 topnav: topnavobj
 ---
-img
-##### Defines an <i>Image</i> component.
-This component acts as the standard HTML img tag.
-An <i>Image</i> can be used alone or within a <i>Thumbnail Item</i> or <i>Avatar Item</i> component.
-Configure its <i>src</i> property to the source url of the image. It can be a local url: <code>assets/myimage.png</code> or a remote url: <code>https://server.data/image/myimage.png</code> or even a base64 data url.
+img<br/>
 
-<i>Image</i> used alone can be configured in size trough its <i>width</i> and <i>height</i> properties. These can be pixels: <code>100px</code> or percentage of the available space: <code>100%</code>.
-To center an <i>Image</i>, place it inside a <i>Text Format</i> component with property <i>Align center</i> set.
+##### Defines an <i>Image</i> component.<br/>
+This component acts as the standard HTML img tag.<br/>
+An <i>Image</i> can be used alone or within a <i>Thumbnail Item</i> or <i>Avatar Item</i> component.<br/>
+Configure its <i>src</i> property to the source url of the image. It can be a local url: <code>assets/myimage.png</code> or a remote url: <code>https://server.data/image/myimage.png</code> or even a base64 data url.<br/>
+<br/>
+<i>Image</i> used alone can be configured in size trough its <i>width</i> and <i>height</i> properties. These can be pixels: <code>100px</code> or percentage of the available space: <code>100%</code>.<br/>
+To center an <i>Image</i>, place it inside a <i>Text Format</i> component with property <i>Align center</i> set.<br/>
  For more information: <a href='https://www.w3schools.com/tags/tag_img.asp' target='_blank'>Image</a>.
 
 Name | Description 

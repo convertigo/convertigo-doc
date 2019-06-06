@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/putattachementaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Put Attachment</i> action component. 
- This component helps putting (put_attachment) attachments on a FullSync database document.
- For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. 
+##### Defines a <i>Put Attachment</i> action component. <br/>
 
+ This component helps putting (put_attachment) attachments on a FullSync database document.<br/>
+ For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. <br/>
+<br/>
  If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 

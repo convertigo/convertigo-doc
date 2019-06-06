@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
 topnav: topnavobj
 ---
-span
-##### Defines a <i>Span</i> component.
-This component acts as the standard HTML span tag.
-Use <i>Span</i> with <i>Text</i> components inside to hook part of text in your pages.
+span<br/>
+
+##### Defines a <i>Span</i> component.<br/>
+This component acts as the standard HTML span tag.<br/>
+Use <i>Span</i> with <i>Text</i> components inside to hook part of text in your pages.<br/>
  For more information: <a href='https://www.w3schools.com/tags/tag_span.asp' target='_blank'>Span</a>.
 
 Name | Description 

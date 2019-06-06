@@ -11,17 +11,18 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/fileopeneraction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>File Opener</i> action component. 
- This component helps opening a file.
-<u>Supported platform(s):</u>
- • Android
- • iOS
+##### Defines a <i>File Opener</i> action component. <br/>
 
-You can access data from the next action in the chain in (TS) mode with: <code>
- • out: a boolean thats indicates if the file has been opened</code>
-
-Whenever cordova platform is not available, the value defined in mocking options is returned.
- Default value is <code>true</code>.
+ This component helps opening a file.<br/>
+<u>Supported platform(s):</u><br/>
+ • Android<br/>
+ • iOS<br/>
+<br/>
+You can access data from the next action in the chain in (TS) mode with: <code><br/>
+ • out: a boolean thats indicates if the file has been opened</code><br/>
+<br/>
+Whenever cordova platform is not available, the value defined in mocking options is returned.<br/>
+ Default value is <code>true</code>.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/#open'>File Opener</a>.
 
 Name | Description 

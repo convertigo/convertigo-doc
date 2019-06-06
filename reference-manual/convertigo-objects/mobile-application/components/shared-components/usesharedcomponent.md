@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/images/uiuseshared_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a UseSharedComponent component. 
+##### Defines a UseSharedComponent component. <br/>
+
  
 
 Name | Description 

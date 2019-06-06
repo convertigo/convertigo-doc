@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/infinitescroll_color_32x32.png
 topnav: topnavobj
 ---
-ion-infinite-scroll. 
- The <i>InfiniteScroll</i> component holds an infinite scroll logic and requires a <b>child</b> <i>InfiniteScrollContent</i> component in order to display its content.
-It allows you to perform a given task when the user scrolls a specified distance from the bottom or top of the page.
-To do so, add the <b>ionInfinite</b> <i>Event</i> to your <i>InfiniteScroll</i> with a <i>CustomAction</i> inside.
-Copy/paste below code in your action and add yours.
+ion-infinite-scroll. <br/>
+
+ The <i>InfiniteScroll</i> component holds an infinite scroll logic and requires a <b>child</b> <i>InfiniteScrollContent</i> component in order to display its content.<br/>
+It allows you to perform a given task when the user scrolls a specified distance from the bottom or top of the page.<br/>
+To do so, add the <b>ionInfinite</b> <i>Event</i> to your <i>InfiniteScroll</i> with a <i>CustomAction</i> inside.<br/>
+Copy/paste below code in your action and add yours.<br/>
 <code><pre>//disable scroll
 event.enable(false);
 
@@ -31,7 +32,7 @@ if (isOK) {
 //specify loading is complete
 event.complete();
 resolve();
-</pre></code>
+</pre></code><br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/infinite-scroll/InfiniteScroll/' target='_blank'>InfiniteScroll</a>.
 
 Name | Description 

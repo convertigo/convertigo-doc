@@ -11,17 +11,18 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/uninstallaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines an <i>Uninstaller</i> action component. 
-This component helps uninstalling an application on your device.
-<u>Supported platform(s):</u>
- • Android
+##### Defines an <i>Uninstaller</i> action component. <br/>
 
-You can access data from the next action in the chain in (TS) mode with: <code>
- • out: A boolean thats indicates if the action succeed</code>
-
-Whenever cordova platform is not available, the value defined in mocking options is returned.
- Default mocked value is <code>true</code>.
- It uses the native Cordova plugin which allows you to uninstall any application giving its package ID.
+This component helps uninstalling an application on your device.<br/>
+<u>Supported platform(s):</u><br/>
+ • Android<br/>
+<br/>
+You can access data from the next action in the chain in (TS) mode with: <code><br/>
+ • out: A boolean thats indicates if the action succeed</code><br/>
+<br/>
+Whenever cordova platform is not available, the value defined in mocking options is returned.<br/>
+ Default mocked value is <code>true</code>.<br/>
+ It uses the native Cordova plugin which allows you to uninstall any application giving its package ID.<br/>
  For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/#uninstall'>File Opener</a>.
 
 Name | Description 

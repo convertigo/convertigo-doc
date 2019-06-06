@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/spinner_color_32x32.png
 topnav: topnavobj
 ---
-ion-spinner
- The ion-spinner component provides a variety of animated SVG spinners. Spinners enables you to give users feedback that the app is actively processing/thinking/waiting/chillin’ out, or whatever you’d like it to indicate.
+ion-spinner<br/>
+
+ The ion-spinner component provides a variety of animated SVG spinners. Spinners enables you to give users feedback that the app is actively processing/thinking/waiting/chillin’ out, or whatever you’d like it to indicate.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/spinner/Spinner/' target='_blank'>Spinner</a>.
 
 Name | Description 

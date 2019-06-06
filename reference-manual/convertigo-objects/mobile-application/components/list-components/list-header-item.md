@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/listheader_32x32.png
 topnav: topnavobj
 ---
-ion-list-header
-##### Defines a <i>List Header Item</i> component.
-Each list can include a header at the top of the list.
+ion-list-header<br/>
+
+##### Defines a <i>List Header Item</i> component.<br/>
+Each list can include a header at the top of the list.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#list-headers' target='_blank'>List Header</a>.
 
 Name | Description 

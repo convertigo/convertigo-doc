@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/list_32x32.png
 topnav: topnavobj
 ---
-ion-list
-##### Defines a <i>List Container</i> component.
-Lists are used to display rows of information.
-You can insert items or buttons in lists to make list items clickable. You can also add to list items many other components such as icons, avatars or thumbnails.
+ion-list<br/>
+
+##### Defines a <i>List Container</i> component.<br/>
+Lists are used to display rows of information.<br/>
+You can insert items or buttons in lists to make list items clickable. You can also add to list items many other components such as icons, avatars or thumbnails.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#lists' target='_blank'>Lists</a>.
 
 Name | Description 

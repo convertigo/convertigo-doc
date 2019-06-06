@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/slidingtab_color_32x32.png
 topnav: topnavobj
 ---
-super-tab
-##### Defines a <i>Sliding Tab Item</i> component.
-A sliding tab has to be inserted in a <i>Sliding Tabs Container</i> component.
-A sliding tab is associated to a page you can specify through its properties.
+super-tab<br/>
 
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.
+##### Defines a <i>Sliding Tab Item</i> component.<br/>
+A sliding tab has to be inserted in a <i>Sliding Tabs Container</i> component.<br/>
+A sliding tab is associated to a page you can specify through its properties.<br/>
+<br/>
+<span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.<br/>
  For more information: <a href='https://github.com/zyra/ionic2-super-tabs' target='_blank'>Swipeable Tabs</a>.
 
 Name | Description 

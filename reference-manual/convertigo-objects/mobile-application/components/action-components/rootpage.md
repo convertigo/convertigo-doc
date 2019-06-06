@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/rootpageaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>RootPage</i> action component. 
- This component helps setting a page as the root one. Setting a page as root will place it as the first page in the stack, ie. the page where we will return when the user hits the back button for each of the pages present on the stack.
+##### Defines a <i>RootPage</i> action component. <br/>
+
+ This component helps setting a page as the root one. Setting a page as root will place it as the first page in the stack, ie. the page where we will return when the user hits the back button for each of the pages present on the stack.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#navigation'>Navigation</a>.
 
 Name | Description 

@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/poppageaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>PopPage</i> action component. 
- This component helps navigating back to last page. Popping a page will return to the previous page in the stack, as if the user had clicked on the back button.
+##### Defines a <i>PopPage</i> action component. <br/>
+
+ This component helps navigating back to last page. Popping a page will return to the previous page in the stack, as if the user had clicked on the back button.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#navigation'>Navigation</a>.
 
 Name | Description 

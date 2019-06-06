@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/grid_color_32x32.png
 topnav: topnavobj
 ---
-ion-grid
-##### Defines a <i>Grid</i> component.
-Grid system is based on flexbox, a CSS feature supported by all devices.
-The grid is composed of three units : grid, rows and columns.
+ion-grid<br/>
+
+##### Defines a <i>Grid</i> component.<br/>
+Grid system is based on flexbox, a CSS feature supported by all devices.<br/>
+The grid is composed of three units : grid, rows and columns.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#grid' target='_blank'>Grid</a>.
 
 Name | Description 

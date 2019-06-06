@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/slidingoption_32x32.png
 topnav: topnavobj
 ---
-ion-item-options
-##### Defines a <i>Sliding Options</i> component.
-Add a <i>Sliding Options</i> component inside a <i>Sliding Item</i> to contain the buttons.
+ion-item-options<br/>
+
+##### Defines a <i>Sliding Options</i> component.<br/>
+Add a <i>Sliding Options</i> component inside a <i>Sliding Item</i> to contain the buttons.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#sliding-list' target='_blank'>Sliding Options</a>.
 
 Name | Description 

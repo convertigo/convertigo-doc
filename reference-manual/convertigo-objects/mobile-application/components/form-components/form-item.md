@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/form_item_32x32.png
 topnav: topnavobj
 ---
-ion-item
-##### Defines a <i>Form Item</i> component.
-A <i>Form Item</i> may be used to contain form's input components such as <i>Label</i> or <i>Text Input</i>.
+ion-item<br/>
+
+##### Defines a <i>Form Item</i> component.<br/>
+A <i>Form Item</i> may be used to contain form's input components such as <i>Label</i> or <i>Text Input</i>.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#lists' target='_blank'>Form Item</a>.
 
 Name | Description 

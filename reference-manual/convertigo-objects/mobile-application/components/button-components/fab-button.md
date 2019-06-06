@@ -11,13 +11,14 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/fab_32x32.png
 topnav: topnavobj
 ---
-button
-##### Defines a <i>FAB Button</i> component.
-FABs (Floating Action Buttons) are standard material design components.
-They are shaped as a circle that represents a promoted action.
-When pressed, it may contain more related actions.
-FABs as its name suggests are floating over the content in a fixed position.
-You can add <i>Icon</i> in the <i>FAB Button</i> to represent a given function.
+button<br/>
+
+##### Defines a <i>FAB Button</i> component.<br/>
+FABs (Floating Action Buttons) are standard material design components.<br/>
+They are shaped as a circle that represents a promoted action.<br/>
+When pressed, it may contain more related actions.<br/>
+FABs as its name suggests are floating over the content in a fixed position.<br/>
+You can add <i>Icon</i> in the <i>FAB Button</i> to represent a given function.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/fab/FabButton/' target='_blank'>FabButton</a>.
 
 Name | Description 

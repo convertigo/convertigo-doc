@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/images/uieventsubscriber_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Subscribe Handler</i> component. 
-  This component helps you subscribing to an event giving its topic and defining actions to execute when the event is triggered through a <i>PublishEvent</i> action.
+##### Defines a <i>Subscribe Handler</i> component. <br/>
+
+  This component helps you subscribing to an event giving its topic and defining actions to execute when the event is triggered through a <i>PublishEvent</i> action.<br/>
 You may add a <i>Subscribe Handler</i> under the <b>Application</b> or a <b>Page</b>, then add to it any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFullSync<i> or <i>CustomAction<i> component.
 
 Name | Description 

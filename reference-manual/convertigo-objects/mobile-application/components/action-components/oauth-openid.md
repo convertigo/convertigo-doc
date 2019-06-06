@@ -11,36 +11,37 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/oauthloginaction_color_32x32.png
 topnav: topnavobj
 ---
-OAuth login. 
- Enable the applications to use oAuth compliant authentication services such as LinkedIn, Microsoft Azure or any other OpenID compliant IDP.
+OAuth login. <br/>
 
-This action will work on web and devices. On web browsers this will result by opening a popup window asking the user for credentials. On devices, the provider login screen will be pushed on the page stack.
-
-This action requires the <b>lib_OAuth</b> project to be installed in the Studio workspace and deployed on the target Convertigo MBaaS servers.
-
-This actions outputs in the <i>out</i> an object that can be:
- • <code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server
- • <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server.
-
-<h2>Provider Specific Documentation</h2>
- • Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.
-
-You must also configure two redirections urls:
-
- <i>http://localhost:18080/convertigo/projects/lib_OAuth/getToken.html</i> and.
- <i>https://login.live.com/oauth20_desktop.srf</i>.
-
-The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.
-
- • LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.
-
-You must also declare two redirection URLs:
-
-<i>http://localhost:18080/convertigo/projects/lib_OAuth/getTokenLinkedIn.html</i> and.
-<i>https://www.convertigo.com/authorize</i>.
-
-The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.
-
+ Enable the applications to use oAuth compliant authentication services such as LinkedIn, Microsoft Azure or any other OpenID compliant IDP.<br/>
+<br/>
+This action will work on web and devices. On web browsers this will result by opening a popup window asking the user for credentials. On devices, the provider login screen will be pushed on the page stack.<br/>
+<br/>
+This action requires the <b>lib_OAuth</b> project to be installed in the Studio workspace and deployed on the target Convertigo MBaaS servers.<br/>
+<br/>
+This actions outputs in the <i>out</i> an object that can be:<br/>
+ • <code>{'login':'ok','object':{...provider metadata ...}}</code> if the users starts a new session with Convertigo MBaaS server<br/>
+ • <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server.<br/>
+<br/>
+<h2>Provider Specific Documentation</h2><br/>
+ • Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.<br/>
+<br/>
+You must also configure two redirections urls:<br/>
+<br/>
+ <i>http://localhost:18080/convertigo/projects/lib_OAuth/getToken.html</i> and.<br/>
+ <i>https://login.live.com/oauth20_desktop.srf</i>.<br/>
+<br/>
+The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.<br/>
+<br/>
+ • LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.<br/>
+<br/>
+You must also declare two redirection URLs:<br/>
+<br/>
+<i>http://localhost:18080/convertigo/projects/lib_OAuth/getTokenLinkedIn.html</i> and.<br/>
+<i>https://www.convertigo.com/authorize</i>.<br/>
+<br/>
+The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.<br/>
+<br/>
 LinkedIn OAuth requires configuration on the client side and the Convertigo MBaaS server side. On the client side configure the given <b>Client ID</b> value in the <b>Client ID</b> property. On the Convertigo MBaaS side,  configure two symbols with the admin console :<table><tr><td>lib_oauth.linkedin.clientid</td><td>Client ID value</td></tr><tr><td>lib_oauth.linkedin.keysecret</td><td>Client Secret value</td></tr></table>.
 
 Name | Description 

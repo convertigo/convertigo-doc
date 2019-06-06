@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/treeviewcomponent_color_32x32.png
 topnav: topnavobj
 ---
-c8o-treeview. 
+c8o-treeview. <br/>
+
  Displays data in a Tree View. This component is based on the <a href='https://www.npmjs.com/package/angular-tree-component' target='_blank' >angular-tree-component</a> component. <br /><br />JSON data can be sourced from a Sequence or from the local FullSync database. JSON data format is described in the <b>treenodes</b> property
 
 Name | Description 

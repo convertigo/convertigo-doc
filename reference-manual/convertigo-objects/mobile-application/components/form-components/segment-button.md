@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/segment-button_color_32x32.png
 topnav: topnavobj
 ---
-ion-segment-button
-##### Defines a <i>Segment Button</i> component.
-Add some <i>Segment Button</i> to a <i>Segment Container</i> component and assign them a value through their <i>Value</i> property.
+ion-segment-button<br/>
+
+##### Defines a <i>Segment Button</i> component.<br/>
+Add some <i>Segment Button</i> to a <i>Segment Container</i> component and assign them a value through their <i>Value</i> property.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/segment/SegmentButton/' target='_blank'>SegmentButton</a>.
 
 Name | Description 

@@ -11,14 +11,15 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/slidingtabs_color_32x32.png
 topnav: topnavobj
 ---
-super-tabs
-##### Defines a <i>Sliding Tabs Container</i> component.
-<i>Sliding Tab Container</i> can be used like <i>Tabs Container</i> but they usually appear on the top of the page below the <i>Header</i>.
-<i>Sliding Tab Container</i> should be inserted in the <i>Content</i> component with the <i>padding</i> property removed.
-Also you can use the <i>no-border</i> attribute on the <i>Header</i> to remove the border and the shadow of the <i>NavBar</i>.
+super-tabs<br/>
 
-Insert any number of <i>Sliding Tab Item</i> components, one for each tab.
-You can swipe from one tab to another or select a tab when you tap on it.
+##### Defines a <i>Sliding Tabs Container</i> component.<br/>
+<i>Sliding Tab Container</i> can be used like <i>Tabs Container</i> but they usually appear on the top of the page below the <i>Header</i>.<br/>
+<i>Sliding Tab Container</i> should be inserted in the <i>Content</i> component with the <i>padding</i> property removed.<br/>
+Also you can use the <i>no-border</i> attribute on the <i>Header</i> to remove the border and the shadow of the <i>NavBar</i>.<br/>
+<br/>
+Insert any number of <i>Sliding Tab Item</i> components, one for each tab.<br/>
+You can swipe from one tab to another or select a tab when you tap on it.<br/>
  For more information: <a href='https://github.com/zyra/ionic2-super-tabs' target='_blank'>Swipeable Tabs</a>.
 
 Name | Description 

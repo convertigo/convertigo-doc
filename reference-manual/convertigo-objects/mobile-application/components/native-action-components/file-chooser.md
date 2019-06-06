@@ -11,17 +11,18 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/filechooseraction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>File Chooser</i> action component. 
- This component helps selecting a file.
-<u>Supported platorm(s):</u> 
- • Android
+##### Defines a <i>File Chooser</i> action component. <br/>
 
-You can access data from the next action in the chain in (TS) mode with: <code>
- • out: The file URI</code>
-
-Whenever cordova platform is not available, the value defined in mocking option is returned.
- Default mocked value is <code>'https://www.convertigo.com/wp-content/uploads/2015/01/logoStudio.png'</code>.
-It uses the native Android file picker for the user to select a file.
+ This component helps selecting a file.<br/>
+<u>Supported platorm(s):</u> <br/>
+ • Android<br/>
+<br/>
+You can access data from the next action in the chain in (TS) mode with: <code><br/>
+ • out: The file URI</code><br/>
+<br/>
+Whenever cordova platform is not available, the value defined in mocking option is returned.<br/>
+ Default mocked value is <code>'https://www.convertigo.com/wp-content/uploads/2015/01/logoStudio.png'</code>.<br/>
+It uses the native Android file picker for the user to select a file.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-chooser/'>File Chooser</a>.
 
 Name | Description 

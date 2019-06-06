@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/listdivider_32x32.png
 topnav: topnavobj
 ---
-ion-item-divider
-##### Defines a <i>Divider Item</i> component.
-To make groups of items,
- • use <i>Group Item</i> instead of <i>List Container</i>
- • use <i>Divider Item</i> components to divide the group in to multiple sections.
+ion-item-divider<br/>
+
+##### Defines a <i>Divider Item</i> component.<br/>
+To make groups of items,<br/>
+ • use <i>Group Item</i> instead of <i>List Container</i><br/>
+ • use <i>Divider Item</i> components to divide the group in to multiple sections.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#list-dividers' target='_blank'>Divider Item</a>.
 
 Name | Description 

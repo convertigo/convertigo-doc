@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/refreshercontent_color_32x32.png
 topnav: topnavobj
 ---
-ion-refresher-content
-##### Defines a <i>Content Refresher</i> component.
-By default, Ionic provides the pulling icon and refreshing spinner that looks best for the platform the user is on. However, you can change the default icon and spinner, along with adding text for each state by adding properties to the child <i>Content Refresher</i> component.
+ion-refresher-content<br/>
+
+##### Defines a <i>Content Refresher</i> component.<br/>
+By default, Ionic provides the pulling icon and refreshing spinner that looks best for the platform the user is on. However, you can change the default icon and spinner, along with adding text for each state by adding properties to the child <i>Content Refresher</i> component.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/refresher/Refresher/' target='_blank'>Refresher</a>.
 
 Name | Description 

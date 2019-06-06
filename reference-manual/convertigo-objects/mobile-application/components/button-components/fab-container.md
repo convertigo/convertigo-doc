@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/container_fab_32x32.png
 topnav: topnavobj
 ---
-ion-fab
-##### Defines a <i>FAB Container</i> component.
-Place your <i>FAB Button</i> components in this container to make them non scrollable with <i>Content</i>.
+ion-fab<br/>
+
+##### Defines a <i>FAB Container</i> component.<br/>
+Place your <i>FAB Button</i> components in this container to make them non scrollable with <i>Content</i>.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/fab/FabContainer/' target='_blank'>FabContainer</a>.
 
 Name | Description 

@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/toastaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>ToastAction</i> action component. 
- This component helps displaying some informations.
-A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the applications content, and can be dismissed to resume user interaction with the application.
+##### Defines a <i>ToastAction</i> action component. <br/>
+
+ This component helps displaying some informations.<br/>
+A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the applications content, and can be dismissed to resume user interaction with the application.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#toast'>Toast</a>.
 
 Name | Description 

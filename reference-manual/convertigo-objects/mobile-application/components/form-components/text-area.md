@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/textarea_color_32x32.png
 topnav: topnavobj
 ---
-ion-textarea
-##### Defines a <i>Text Area</i> component.
-This component is meant for multiline text type inputs only, such as text, password, email, number, search, tel, and url.
-Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.
- For more information: <a href='https://ionicframework.com/docs/v3/components/#inputs' target='_blank'>Inputs</a>.
+ion-textarea<br/>
 
+##### Defines a <i>Text Area</i> component.<br/>
+This component is meant for multiline text type inputs only, such as text, password, email, number, search, tel, and url.<br/>
+Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#inputs' target='_blank'>Inputs</a>.<br/>
+<br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 

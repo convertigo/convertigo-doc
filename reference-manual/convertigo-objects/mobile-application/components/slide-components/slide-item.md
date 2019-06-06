@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/slide_color_32x32.png
 topnav: topnavobj
 ---
-ion-slide
-##### Defines a <i>Slide Item</i> component.
-Add <i>Slide Item</i> components inside a <i>Slides</i> component. Any slide content should be written in this component.
+ion-slide<br/>
+
+##### Defines a <i>Slide Item</i> component.<br/>
+Add <i>Slide Item</i> components inside a <i>Slides</i> component. Any slide content should be written in this component.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#slides' target='_blank'>Slide</a>.
 
 Name | Description 

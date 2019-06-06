@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/radio_color_32x32.png
 topnav: topnavobj
 ---
-ion-radio
-##### Defines a <i>Radio Button</i> component.
-When radio buttons are inside a <i>Radio List</i> component, exactly one <i>Radio Button</i> in the list can be checked at any time.
-Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from checking it.
- For more information: <a href='https://ionicframework.com/docs/v3/components/#radio' target='_blank'>Radio</a>.
+ion-radio<br/>
 
+##### Defines a <i>Radio Button</i> component.<br/>
+When radio buttons are inside a <i>Radio List</i> component, exactly one <i>Radio Button</i> in the list can be checked at any time.<br/>
+Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from checking it.<br/>
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#radio' target='_blank'>Radio</a>.<br/>
+<br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 

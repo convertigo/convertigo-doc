@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/scroll_color_32x32.png
 topnav: topnavobj
 ---
-ion-scroll
-##### Defines a <i>Scroll Area</i> component.
-This component is a non-flexboxed scroll area that can scroll horizontally or vertically.
-<i>Scroll Area</i> can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.
+ion-scroll<br/>
+
+##### Defines a <i>Scroll Area</i> component.<br/>
+This component is a non-flexboxed scroll area that can scroll horizontally or vertically.<br/>
+<i>Scroll Area</i> can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/scroll/Scroll/' target='_blank'>Scroll</a>.
 
 Name | Description 

@@ -11,14 +11,15 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/menu_color_32x32.png
 topnav: topnavobj
 ---
-ion-menu
-##### Defines a <i>Menu</i> component.
-A menu helps to navigate through pages. It may contains, or/and:
- • a <i>MenuAutoItems</i> component to automatically add all your pages
- • several <i>MenuItem</i> components to add specific pages.
+ion-menu<br/>
 
-<span class='orangetwinsoft'><u>Note:</u></span> different menus may be added to an application but only the first one is used by default.
-If you'd like to use a specific menu for a given page, simply specify it in the <i>Menu id</i> property of your <i>Page</i> component.
+##### Defines a <i>Menu</i> component.<br/>
+A menu helps to navigate through pages. It may contains, or/and:<br/>
+ • a <i>MenuAutoItems</i> component to automatically add all your pages<br/>
+ • several <i>MenuItem</i> components to add specific pages.<br/>
+<br/>
+<span class='orangetwinsoft'><u>Note:</u></span> different menus may be added to an application but only the first one is used by default.<br/>
+If you'd like to use a specific menu for a given page, simply specify it in the <i>Menu id</i> property of your <i>Page</i> component.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/menu/Menu/' target='_blank'>Menu</a>.
 
 Name | Description 

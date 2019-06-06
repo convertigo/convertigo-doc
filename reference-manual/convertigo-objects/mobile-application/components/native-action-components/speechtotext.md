@@ -11,18 +11,19 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/speechtotextaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>SpeechToText</i> action component. 
- Listen a speech.
-This component retrieves speech recognition's data.
-Note that more languages are avaible in an external browser, or device than in Convertigo viewer.
+##### Defines a <i>SpeechToText</i> action component. <br/>
 
-<u>Supported platorm(s):</u> 
- • Android
- • iOS
- • Browser
-
-You can access data from the next action in the chain in (TS) mode with: <code>
- • out: A concatenation of spoken string(s) if the action succeed</code>
+ Listen a speech.<br/>
+This component retrieves speech recognition's data.<br/>
+Note that more languages are avaible in an external browser, or device than in Convertigo viewer.<br/>
+<br/>
+<u>Supported platorm(s):</u> <br/>
+ • Android<br/>
+ • iOS<br/>
+ • Browser<br/>
+<br/>
+You can access data from the next action in the chain in (TS) mode with: <code><br/>
+ • out: A concatenation of spoken string(s) if the action succeed</code><br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/speech-recognition/'>SpeechRecognition</a>.
 
 Name | Description 

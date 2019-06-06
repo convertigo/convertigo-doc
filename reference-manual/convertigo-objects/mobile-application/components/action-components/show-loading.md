@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/showloadingaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Show Loading</i> action component. 
+##### Defines a <i>Show Loading</i> action component. <br/>
+
  This component show a laoding
 
 Name | Description 

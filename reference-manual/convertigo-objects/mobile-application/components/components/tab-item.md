@@ -11,12 +11,13 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/tab_color_32x32.png
 topnav: topnavobj
 ---
-ion-tab
-##### Defines a <i>Tab Item</i> component.
-A tab has to be inserted in a <i>Tabs Container</i> component.
-A tab is associated to a page you can specify through its properties.
+ion-tab<br/>
 
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.
+##### Defines a <i>Tab Item</i> component.<br/>
+A tab has to be inserted in a <i>Tabs Container</i> component.<br/>
+A tab is associated to a page you can specify through its properties.<br/>
+<br/>
+<span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#tabs' target='_blank'>Tabs</a>.
 
 Name | Description 

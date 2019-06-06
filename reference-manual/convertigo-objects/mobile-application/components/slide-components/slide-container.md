@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/slides_color_32x32.png
 topnav: topnavobj
 ---
-ion-slides
-##### Defines a <i>Slides Container</i> component.
-Slides make it easy to create galleries, tutorials, and page-based layouts. Slides take a number of configuration options.
-The <i>Slides Container</i> component is a multi-section container. Each section can be swiped or dragged between. It contains any number of <i>Slide Item</i> components.
+ion-slides<br/>
+
+##### Defines a <i>Slides Container</i> component.<br/>
+Slides make it easy to create galleries, tutorials, and page-based layouts. Slides take a number of configuration options.<br/>
+The <i>Slides Container</i> component is a multi-section container. Each section can be swiped or dragged between. It contains any number of <i>Slide Item</i> components.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#slides' target='_blank'>Slides</a>.
 
 Name | Description 

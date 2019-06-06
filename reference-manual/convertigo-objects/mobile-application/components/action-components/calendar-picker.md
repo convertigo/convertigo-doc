@@ -11,25 +11,24 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/calendaraction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Calendar Picker</i> action component. 
- Use this action to display a Calendar to pick dates. When the date (or dates) are picked data will be available in the <code>out</code> (TS) object in this format :
+##### Defines a <i>Calendar Picker</i> action component. <br/>
 
-
- • <code>{ date: CalendarResult }</code> for 'single mode'
- • <code>{ from: CalendarResult, to:CalendarResult  }</code> for 'range mode'
- • <code>[CalendarResult]</code> for 'multi mode'.
-Where <code>CalendarResult</code> is :
-
-<code>class CalendarResult {
-&nbsp;&nbsp;&nbsp;time: number;
-&nbsp;&nbsp;&nbsp;unix: number;
-&nbsp;&nbsp;&nbsp;dateObj: Date;
-&nbsp;&nbsp;&nbsp;string: string;
-&nbsp;&nbsp;&nbsp;years: number;
-&nbsp;&nbsp;&nbsp;months: number;
-&nbsp;&nbsp;&nbsp;date: number;
-}</code>
-
+ Use this action to display a Calendar to pick dates. When the date (or dates) are picked data will be available in the <code>out</code> (TS) object in this format :<br/>
+ • <code>{ date: CalendarResult }</code> for 'single mode'<br/>
+ • <code>{ from: CalendarResult, to:CalendarResult  }</code> for 'range mode'<br/>
+ • <code>[CalendarResult]</code> for 'multi mode'.<br/>
+Where <code>CalendarResult</code> is :<br/>
+<br/>
+<code>class CalendarResult {<br/>
+&nbsp;&nbsp;&nbsp;time: number;<br/>
+&nbsp;&nbsp;&nbsp;unix: number;<br/>
+&nbsp;&nbsp;&nbsp;dateObj: Date;<br/>
+&nbsp;&nbsp;&nbsp;string: string;<br/>
+&nbsp;&nbsp;&nbsp;years: number;<br/>
+&nbsp;&nbsp;&nbsp;months: number;<br/>
+&nbsp;&nbsp;&nbsp;date: number;<br/>
+}</code><br/>
+<br/>
 For more information : <a target='_blank' href='https://github.com/hsuanxyz/ion2-calendar'>ion2-calendar</a>.
 
 Name | Description 

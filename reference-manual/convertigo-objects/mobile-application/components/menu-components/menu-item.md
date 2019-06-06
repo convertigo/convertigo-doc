@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/menuitem_color_32x32.png
 topnav: topnavobj
 ---
-button
-##### Defines a <i>Menu Item</i> component.
-A menu item acts as button and when clicked the navigation to the associated page is done.
-You can add <i>Menu Item</i>s under a <i>Menu</i> component, one per page you'd like to navigate to.
+button<br/>
+
+##### Defines a <i>Menu Item</i> component.<br/>
+A menu item acts as button and when clicked the navigation to the associated page is done.<br/>
+You can add <i>Menu Item</i>s under a <i>Menu</i> component, one per page you'd like to navigate to.<br/>
 You can not add child components to it except <i>Attr</i> components.
 
 Name | Description 

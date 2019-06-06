@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/iterateaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines an <i>IterateAction</i> component. 
- This component helps iterating any objects array.
-To work properly the <i>IterateAction</i> needs a <i>Loop Handler</i> in which you may add any kind of action to be executed at each loop.
+##### Defines an <i>IterateAction</i> component. <br/>
+
+ This component helps iterating any objects array.<br/>
+To work properly the <i>IterateAction</i> needs a <i>Loop Handler</i> in which you may add any kind of action to be executed at each loop.<br/>
 The <i>Loop Handler</i> exposes the loop's current item and index you can use in actions.
 
 Name | Description 

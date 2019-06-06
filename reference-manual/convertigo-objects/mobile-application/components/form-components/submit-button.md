@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/button_color_32x32.png
 topnav: topnavobj
 ---
-button
-##### Defines a <i>Submit Button</i> component.
-A <i>Submit Button</i> works with a <i>Form</i> component.
-Add an <code>onSubmit</code> <i>Event</i> with chained <i>Actions</i> to the <i>Form</i> component to handle the form submission when the button is taped.
+button<br/>
 
+##### Defines a <i>Submit Button</i> component.<br/>
+A <i>Submit Button</i> works with a <i>Form</i> component.<br/>
+Add an <code>onSubmit</code> <i>Event</i> with chained <i>Actions</i> to the <i>Form</i> component to handle the form submission when the button is taped.<br/>
+<br/>
 You can use the <i>AutoDisabled</i> property of the <i>Submit Button</i> to disable it if the form data are not valid.
 
 Name | Description 

@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/bartitle_color_32x32.png
 topnav: topnavobj
 ---
-ion-title
-##### Defines a <i>Bar Title</i> component.
-<i>Bar Title</i> is a component that sets the title of a <i>ToolBar</i> or <i>NavBar</i> component.
+ion-title<br/>
+
+##### Defines a <i>Bar Title</i> component.<br/>
+<i>Bar Title</i> is a component that sets the title of a <i>ToolBar</i> or <i>NavBar</i> component.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Title/' target='_blank'>Title</a>.
 
 Name | Description 

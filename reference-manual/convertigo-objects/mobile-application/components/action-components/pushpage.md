@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/pushpageaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>PushPage</i> action component. 
-  This component helps to display a given page. Pushing a new page onto the top of the navigation stack causes the new page to be animated in.
+##### Defines a <i>PushPage</i> action component. <br/>
+
+  This component helps to display a given page. Pushing a new page onto the top of the navigation stack causes the new page to be animated in.<br/>
 For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#navigation'>Navigation</a>.
 
 Name | Description 

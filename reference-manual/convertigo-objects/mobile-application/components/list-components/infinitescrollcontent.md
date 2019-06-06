@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/infinitescrollcontent_color_32x32.png
 topnav: topnavobj
 ---
-ion-infinite-scroll-content. 
- The <i>InfiniteScrollContent</i> component displays its <b>parent</b> infinite scroll.
-You may add it under a <i>InfiniteScroll</i> component.
+ion-infinite-scroll-content. <br/>
+
+ The <i>InfiniteScrollContent</i> component displays its <b>parent</b> infinite scroll.<br/>
+You may add it under a <i>InfiniteScroll</i> component.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/infinite-scroll/InfiniteScroll/' target='_blank'>InfiniteScrollContent</a>.
 
 Name | Description 

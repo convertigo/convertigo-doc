@@ -11,15 +11,16 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmap_color_32x32.png
 topnav: topnavobj
 ---
-agm-map
-##### Defines a <i>Google Map</i> component.
-This component displays a Google map able to be positioned on a given latitude and longitude.
+agm-map<br/>
 
-You can insert in the map any number of <i>Map Marker</i> components to mark positions on the map, and within <i>Map Marker</i> an <i>Information Window</i> component to display more information on a given marker.
-
-<i>Information Window</i> components can have any type of HTML information inside to display formated information when the user clicks on a mark, including action buttons.
-
-All coordinates are of JSON <code>number</code> type. To be sure to generate <code>number</code> types within <i>Sequences</i>, add an <i>Attribute</i> step <code>type=double</code> to your <i>Element</i> steps.
+##### Defines a <i>Google Map</i> component.<br/>
+This component displays a Google map able to be positioned on a given latitude and longitude.<br/>
+<br/>
+You can insert in the map any number of <i>Map Marker</i> components to mark positions on the map, and within <i>Map Marker</i> an <i>Information Window</i> component to display more information on a given marker.<br/>
+<br/>
+<i>Information Window</i> components can have any type of HTML information inside to display formated information when the user clicks on a mark, including action buttons.<br/>
+<br/>
+All coordinates are of JSON <code>number</code> type. To be sure to generate <code>number</code> types within <i>Sequences</i>, add an <i>Attribute</i> step <code>type=double</code> to your <i>Element</i> steps.<br/>
  For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmMap.html' target='_blank'>AgmMap</a>.
 
 Name | Description 

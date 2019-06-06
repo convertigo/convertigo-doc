@@ -11,11 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/signaturecomponent_color_32x32.png
 topnav: topnavobj
 ---
-c8o-signature. 
- Displays a Signature pad. This component uses an Angular2 component based on the Signature Pad JavaScript library.
-For more information: <a href='https://www.npmjs.com/package/angular2-signaturepad' target='_blank'>angular2-signaturepad</a>.
+c8o-signature. <br/>
 
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
+ Displays a Signature pad. This component uses an Angular2 component based on the Signature Pad JavaScript library.<br/>
+For more information: <a href='https://www.npmjs.com/package/angular2-signaturepad' target='_blank'>angular2-signaturepad</a>.<br/>
+<br/>
+<span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.<br/>
 If you'd like to have some label, add a <i>Text</i> under a <i>Div</i>. Do not use <i>Label</i> component.
 
 Name | Description 

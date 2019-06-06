@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/images/uiform_color_32x32.png
 topnav: topnavobj
 ---
-form 
-##### Defines a <i>Form</i> component.
-As the standard HTML <code>&lt;form&gt;</code> this component is used to collect user inputs, but it acts as a reactive form based on the Angular 2’s form library.
-<span class="orangetwinsoft"><u>Note:</u></span> Every form's inputs such as <i>Text Input</i>, <i>Select Option</i>, <i>Toggle Button</i>,... should be added under a <i>Generic Item</i> to work properly in form.
+form <br/>
+
+##### Defines a <i>Form</i> component.<br/>
+As the standard HTML <code>&lt;form&gt;</code> this component is used to collect user inputs, but it acts as a reactive form based on the Angular 2’s form library.<br/>
+<span class="orangetwinsoft"><u>Note:</u></span> Every form's inputs such as <i>Text Input</i>, <i>Select Option</i>, <i>Toggle Button</i>,... should be added under a <i>Generic Item</i> to work properly in form.<br/>
 For more information: <a href='https://angular.io/guide/reactive-forms' target='_blank'>Reactive Forms</a>.
 
 Name | Description 

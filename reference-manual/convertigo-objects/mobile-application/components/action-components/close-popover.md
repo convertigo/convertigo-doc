@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/closepopoveraction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Close Popover</i> action component. 
- Use this action to close a popover page previously opened using a <i>Popover Page</i> action.
+##### Defines a <i>Close Popover</i> action component. <br/>
+
+ Use this action to close a popover page previously opened using a <i>Popover Page</i> action.<br/>
 Add a <i>Close Popover</i> action under an Event.
 
 Name | Description 

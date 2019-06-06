@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/tooltips_color_32x32.png
 topnav: topnavobj
 ---
-ionic-tooltips
-##### Defines a Tooltip component. This component displays a tooltip that can be positioned around any item giving the position properties. You can set as many tooltips in a page.
- To use it, you have to place the tooltip as a parent of the item. 
+ionic-tooltips<br/>
+
+##### Defines a Tooltip component. This component displays a tooltip that can be positioned around any item giving the position properties. You can set as many tooltips in a page.<br/>
+ To use it, you have to place the tooltip as a parent of the item. <br/>
  For more information: <a href='https://www.npmjs.com/package/ionic-tooltips' target='_blank'>ionic-tooltips</a>.
 
 Name | Description 

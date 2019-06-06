@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/grid_column_color_32x32.png
 topnav: topnavobj
 ---
-ion-col
-##### Defines a <i>Grid Column</i> component.
-This component must be inserted in a <i>Grid Row</i> and contains other components or HTML.
+ion-col<br/>
+
+##### Defines a <i>Grid Column</i> component.<br/>
+This component must be inserted in a <i>Grid Row</i> and contains other components or HTML.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#grid' target='_blank'>Grid</a>.
 
 Name | Description 

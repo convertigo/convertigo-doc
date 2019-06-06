@@ -11,10 +11,11 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/badge_color_32x32.png
 topnav: topnavobj
 ---
-ion-badge
-##### Defines a <i>Badge</i> component.
-Badges are small components that typically communicate a numerical value to the user.
-They are typically used within an <i>Generic Item</i>.
+ion-badge<br/>
+
+##### Defines a <i>Badge</i> component.<br/>
+Badges are small components that typically communicate a numerical value to the user.<br/>
+They are typically used within an <i>Generic Item</i>.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#badges' target='_blank'>Badge</a>.
 
 Name | Description 

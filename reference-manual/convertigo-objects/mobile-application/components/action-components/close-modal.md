@@ -11,8 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/dynamic/images/closemodalaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Close Modal</i> action component. 
- Use this action to close a modal page previously opened through the <i>Modal Page</i> action.
+##### Defines a <i>Close Modal</i> action component. <br/>
+
+ Use this action to close a modal page previously opened through the <i>Modal Page</i> action.<br/>
 Add a <i>Close Modal</i> action under an Event.
 
 Name | Description 

@@ -11,7 +11,8 @@ ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManag
 ObjIcon: /images/beans/mobile/components/images/uianimation_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines an <i>Animation</i> class for a component. 
+##### Defines an <i>Animation</i> class for a component. <br/>
+
  Adding an animation to a component will have this component animated automatically as soon as the component appears on the page. You can choose the animation name, and some other properties to control the animation.<br /><br />If you want the animation to be triggered by an event such as (tap) (click) or PageEvents, use instead the <b>Animate action</b>   
 
 Name | Description 
