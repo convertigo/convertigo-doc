@@ -7,7 +7,7 @@ metadesc: ion-avatar  Defines an  Avatar Item  component. Item avatars showcase 
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: Avatar
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/listavatar_32x32.png
 topnav: topnavobj
 ---

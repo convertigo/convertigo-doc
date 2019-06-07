@@ -7,7 +7,7 @@ metadesc: ion-list  Defines a  Radio List  component. This component is a contai
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: RadioList
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/radiolist_color_32x32.png
 topnav: topnavobj
 ---

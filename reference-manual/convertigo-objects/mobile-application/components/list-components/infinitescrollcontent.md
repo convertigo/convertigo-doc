@@ -7,7 +7,7 @@ metadesc: ion-infinite-scroll-content.   The  InfiniteScrollContent  component d
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: InfiniteScrollContent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/infinitescrollcontent_color_32x32.png
 topnav: topnavobj
 ---

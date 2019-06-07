@@ -7,7 +7,7 @@ metadesc: Defines  CustomAction  action component.   This component helps you wr
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: UICustomAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UICustomAction
 ObjIcon: /images/beans/mobile/components/images/uicustomaction_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: button  Defines a  Menu Item  component. A menu item acts as button an
 ObjGroup: Menus
 ObjCatName: menu-components
 ObjName: MenuItem
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/menuitem_color_32x32.png
 topnav: topnavobj
 ---

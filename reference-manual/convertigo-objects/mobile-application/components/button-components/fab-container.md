@@ -7,7 +7,7 @@ metadesc: ion-fab  Defines a  FAB Container  component. Place your  FAB Button  
 ObjGroup: Buttons
 ObjCatName: button-components
 ObjName: FabContainer
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/container_fab_32x32.png
 topnav: topnavobj
 ---

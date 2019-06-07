@@ -7,7 +7,7 @@ metadesc: br  Defines a  Break  component. This component acts as the standard H
 ObjGroup: HTML
 ObjCatName: html-components
 ObjName: Break
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
 topnav: topnavobj
 ---

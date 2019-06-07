@@ -7,7 +7,7 @@ metadesc: OAuth login.   Enable the applications to use oAuth compliant authenti
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: OAuthLoginAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/oauthloginaction_color_32x32.png
 topnav: topnavobj
 ---

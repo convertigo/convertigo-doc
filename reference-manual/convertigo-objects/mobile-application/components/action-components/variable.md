@@ -7,7 +7,7 @@ metadesc: Defines a  Variable  component.    Variable s allow you to pass additi
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: UIControlVariable
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIControlVariable
 ObjIcon: /images/beans/mobile/components/images/uicontrolvariable_color_32x32.png
 topnav: topnavobj
 ---

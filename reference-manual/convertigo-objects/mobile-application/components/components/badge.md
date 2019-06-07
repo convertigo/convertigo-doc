@@ -7,7 +7,7 @@ metadesc: ion-badge  Defines a  Badge  component. Badges are small components th
 ObjGroup: Components
 ObjCatName: components
 ObjName: Badge
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/badge_color_32x32.png
 topnav: topnavobj
 ---

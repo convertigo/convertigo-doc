@@ -7,7 +7,7 @@ metadesc: img.   Defines an  FSImage  component. This component helps displaying
 ObjGroup: FullSync Components
 ObjCatName: fullsync-components
 ObjName: FSImage
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/img_fs_color_32x32.png
 topnav: topnavobj
 ---

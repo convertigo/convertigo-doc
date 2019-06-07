@@ -7,7 +7,7 @@ metadesc: ion-row  Defines a  Grid Row  component. This component must be insert
 ObjGroup: Grid System
 ObjCatName: grid-system-components
 ObjName: GridRow
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/grid_row_color_32x32.png
 topnav: topnavobj
 ---

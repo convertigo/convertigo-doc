@@ -7,7 +7,7 @@ metadesc: Defines a  ClearDataSource  action component.   Use the  ClearDataSour
 ObjGroup: FullSync Actions
 ObjCatName: fullsync-action-components
 ObjName: ClearDataSourceAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/cleardatasourceaction_color_32x32.png
 topnav: topnavobj
 ---

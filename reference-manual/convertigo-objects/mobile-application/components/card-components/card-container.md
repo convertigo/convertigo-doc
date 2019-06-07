@@ -7,7 +7,7 @@ metadesc: ion-card  Defines a  Card container  component. Cards are a great way 
 ObjGroup: Cards
 ObjCatName: card-components
 ObjName: Card
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/card_color_32x32.png
 topnav: topnavobj
 ---

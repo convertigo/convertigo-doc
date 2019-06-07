@@ -7,7 +7,7 @@ metadesc: ion-slides  Defines a  Slides Container  component. Slides make it eas
 ObjGroup: Slides
 ObjCatName: slide-components
 ObjName: Slides
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/slides_color_32x32.png
 topnav: topnavobj
 ---

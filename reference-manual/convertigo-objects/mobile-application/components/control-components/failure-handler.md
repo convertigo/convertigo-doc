@@ -7,7 +7,7 @@ metadesc: Defines an action  Failure Handler  component.   Failure handlers can 
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIActionFailureEvent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIActionFailureEvent
 ObjIcon: /images/beans/mobile/components/images/uiactionfailureevent_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: ion-textarea  Defines a  Text Area  component. This component is meant
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: TextArea
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/textarea_color_32x32.png
 topnav: topnavobj
 ---

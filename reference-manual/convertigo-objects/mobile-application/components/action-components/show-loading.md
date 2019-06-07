@@ -7,7 +7,7 @@ metadesc: Defines a  Show Loading  action component.   This component show a lao
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: ShowLoadingAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/showloadingaction_color_32x32.png
 topnav: topnavobj
 ---

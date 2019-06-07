@@ -7,7 +7,7 @@ metadesc: Defines a  Camera  action component.   This component helps taking a p
 ObjGroup: Native Actions
 ObjCatName: native-action-components
 ObjName: CameraAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/cameraaction_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: button  Defines a  FAB Button  component. FABs (Floating Action Button
 ObjGroup: Buttons
 ObjCatName: button-components
 ObjName: FabButton
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/fab_32x32.png
 topnav: topnavobj
 ---

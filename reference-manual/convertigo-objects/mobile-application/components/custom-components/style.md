@@ -7,7 +7,7 @@ metadesc: Defines a  Style  component.   This component helps defining standard 
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UIStyle
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIStyle
 ObjIcon: /images/beans/mobile/components/images/uistyle_color_32x32.png
 topnav: topnavobj
 ---

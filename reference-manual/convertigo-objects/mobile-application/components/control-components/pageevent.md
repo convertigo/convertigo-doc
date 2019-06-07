@@ -7,7 +7,7 @@ metadesc: Defines a  PageEvent  component.   Page lifecycle events are fired dur
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIPageEvent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIPageEvent
 ObjIcon: /images/beans/mobile/components/images/uipageevent_color_32x32.png
 topnav: topnavobj
 ---

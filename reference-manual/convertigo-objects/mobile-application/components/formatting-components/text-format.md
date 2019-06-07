@@ -7,7 +7,7 @@ metadesc: div  Defines a  Text Format  component. Text formatting such as alignm
 ObjGroup: Formatting
 ObjCatName: formatting-components
 ObjName: TextFormat
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/textformat_color_32x32.png
 topnav: topnavobj
 ---

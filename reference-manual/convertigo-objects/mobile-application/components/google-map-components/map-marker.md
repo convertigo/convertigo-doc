@@ -7,7 +7,7 @@ metadesc: agm-marker  Defines a  Map Marker  component. Markers indicate unique 
 ObjGroup: Google Map
 ObjCatName: google-map-components
 ObjName: MapMarker
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmapmarker_color_32x32.png
 topnav: topnavobj
 ---

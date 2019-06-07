@@ -7,7 +7,7 @@ metadesc: agm-map  Defines a  Google Map  component. This component displays a G
 ObjGroup: Google Map
 ObjCatName: google-map-components
 ObjName: GoogleMap
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmap_color_32x32.png
 topnav: topnavobj
 ---

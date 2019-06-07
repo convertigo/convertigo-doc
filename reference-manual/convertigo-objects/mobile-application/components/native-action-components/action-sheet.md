@@ -7,7 +7,7 @@ metadesc: Defines an  Action Sheet  action component.   The ActionSheet plugin s
 ObjGroup: Native Actions
 ObjCatName: native-action-components
 ObjName: ActionSheetAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/actionsheetaction_color_32x32.png
 topnav: topnavobj
 ---

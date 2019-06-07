@@ -7,7 +7,7 @@ metadesc: ion-item  Defines a  Form Item  component. A  Form Item  may be used t
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: FormItem
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/form_item_32x32.png
 topnav: topnavobj
 ---

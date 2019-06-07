@@ -7,7 +7,7 @@ metadesc: Defines a  SharedAction Variable  component.    SharedAction Variable 
 ObjGroup: Shared Actions
 ObjCatName: shared-action-components
 ObjName: UIStackVariable
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIStackVariable
 ObjIcon: /images/beans/mobile/components/images/uistackvariable_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: Defines a  Check Install  action component.  This component helps veri
 ObjGroup: Native Actions
 ObjCatName: native-action-components
 ObjName: CheckInstallAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/checkinstallaction_color_32x32.png
 topnav: topnavobj
 ---

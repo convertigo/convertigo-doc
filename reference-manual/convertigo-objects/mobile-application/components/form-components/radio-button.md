@@ -7,7 +7,7 @@ metadesc: ion-radio  Defines a  Radio Button  component. When radio buttons are 
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: RadioButton
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/radio_color_32x32.png
 topnav: topnavobj
 ---

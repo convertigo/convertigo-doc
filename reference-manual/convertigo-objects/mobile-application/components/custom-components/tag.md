@@ -7,7 +7,7 @@ metadesc: Defines a  Tag  component.   This component acts as a standard HTML el
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UIElement
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIElement
 ObjIcon: /images/beans/mobile/components/images/uielement_color_32x32.png
 topnav: topnavobj
 ---

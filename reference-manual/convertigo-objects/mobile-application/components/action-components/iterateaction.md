@@ -7,7 +7,7 @@ metadesc: Defines an  IterateAction  component.   This component helps iterating
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: IterateAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/iterateaction_color_32x32.png
 topnav: topnavobj
 ---

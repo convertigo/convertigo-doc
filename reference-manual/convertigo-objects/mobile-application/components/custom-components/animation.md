@@ -7,7 +7,7 @@ metadesc: Defines an  Animation  class for a component.   Adding an animation to
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UIAnimation
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIAnimation
 ObjIcon: /images/beans/mobile/components/images/uianimation_color_32x32.png
 topnav: topnavobj
 ---

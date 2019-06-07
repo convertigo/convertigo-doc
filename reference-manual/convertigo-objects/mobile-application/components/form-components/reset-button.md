@@ -7,7 +7,7 @@ metadesc: button  Defines a  Reset Button  component. A  Reset Button  works wit
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: ResetButton
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/button_color_32x32.png
 topnav: topnavobj
 ---

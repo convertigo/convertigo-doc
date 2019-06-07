@@ -7,7 +7,7 @@ metadesc: ion-buttons  Defines a  Button Set  component. This component acts as 
 ObjGroup: Buttons
 ObjCatName: button-components
 ObjName: ButtonSet
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/buttonset_color_32x32.png
 topnav: topnavobj
 ---

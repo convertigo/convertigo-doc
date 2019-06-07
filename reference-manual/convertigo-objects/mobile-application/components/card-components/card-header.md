@@ -7,7 +7,7 @@ metadesc: ion-card-header  Defines a  Card Header  component. Just like a page, 
 ObjGroup: Cards
 ObjCatName: card-components
 ObjName: CardHeader
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/cardheader_color_32x32.png
 topnav: topnavobj
 ---

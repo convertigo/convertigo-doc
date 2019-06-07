@@ -7,7 +7,7 @@ metadesc: ion-grid  Defines a  Grid  component. Grid system is based on flexbox,
 ObjGroup: Grid System
 ObjCatName: grid-system-components
 ObjName: Grid
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/grid_color_32x32.png
 topnav: topnavobj
 ---

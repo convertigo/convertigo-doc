@@ -7,7 +7,7 @@ metadesc: Defines a  Attr  component.   This component acts as a standard HTML a
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UIAttribute
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIAttribute
 ObjIcon: /images/beans/mobile/components/images/uiattribute_color_32x32.png
 topnav: topnavobj
 ---

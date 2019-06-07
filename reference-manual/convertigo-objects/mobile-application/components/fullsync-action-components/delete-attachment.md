@@ -7,7 +7,7 @@ metadesc: Defines a  Delete Attachment  action component.   This component helps
 ObjGroup: FullSync Actions
 ObjCatName: fullsync-action-components
 ObjName: FullSyncDeleteAttachmentAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/deleteattachementaction_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: ion-scroll  Defines a  Scroll Area  component. This component is a non
 ObjGroup: Containers
 ObjCatName: container-components
 ObjName: Scroll
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/scroll_color_32x32.png
 topnav: topnavobj
 ---

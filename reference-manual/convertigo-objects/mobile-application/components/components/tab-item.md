@@ -7,7 +7,7 @@ metadesc: ion-tab  Defines a  Tab Item  component. A tab has to be inserted in a
 ObjGroup: Components
 ObjCatName: components
 ObjName: Tab
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/tab_color_32x32.png
 topnav: topnavobj
 ---

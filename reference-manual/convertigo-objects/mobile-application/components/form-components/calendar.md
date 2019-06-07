@@ -7,7 +7,7 @@ metadesc: ion-calendar.   Displays a Calendar with various options configured as
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: Calendar
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/calendar_color_32x32.png
 topnav: topnavobj
 ---

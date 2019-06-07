@@ -7,7 +7,7 @@ metadesc: ion-option  Defines a  Select Option  component. Each option component
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: Option
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/option_color_32x32.png
 topnav: topnavobj
 ---

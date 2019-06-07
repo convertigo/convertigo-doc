@@ -7,7 +7,7 @@ metadesc: Defines an  Animate  action component.   You can use the  Animate  act
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: AnimateAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/animateaction_color_32x32.png
 topnav: topnavobj
 ---

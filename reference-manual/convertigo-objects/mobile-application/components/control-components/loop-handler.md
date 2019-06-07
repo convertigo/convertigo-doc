@@ -7,7 +7,7 @@ metadesc: Defines a  Loop Handler .   A  Loop Handler  must be added inside an  
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIActionLoopEvent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIActionLoopEvent
 ObjIcon: /images/beans/mobile/components/images/uiactionloopevent_color_32x32.png
 topnav: topnavobj
 ---

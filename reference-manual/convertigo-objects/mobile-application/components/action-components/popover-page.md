@@ -7,7 +7,7 @@ metadesc: Displays a Popover Page.   The Popover is a view that floats above an 
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: PopoverAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/popoveraction_color_32x32.png
 topnav: topnavobj
 ---

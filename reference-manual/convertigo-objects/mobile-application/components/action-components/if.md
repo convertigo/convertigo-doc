@@ -7,7 +7,7 @@ metadesc: Defines an  If  action component.   This component helps handling deci
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: IfAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/ifaction_color_32x32.png
 topnav: topnavobj
 ---

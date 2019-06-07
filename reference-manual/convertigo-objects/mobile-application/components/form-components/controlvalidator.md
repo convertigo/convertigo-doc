@@ -7,7 +7,7 @@ metadesc: Defines a  ControlValidator  component.   The  ControlValidator  is a 
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: UIFormControlValidator
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIFormControlValidator
 ObjIcon: /images/beans/mobile/components/images/uiformvalidator_color_32x32.png
 topnav: topnavobj
 ---

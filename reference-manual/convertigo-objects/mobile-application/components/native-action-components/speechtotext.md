@@ -7,7 +7,7 @@ metadesc: Defines a  SpeechToText  action component.   Listen a speech. This com
 ObjGroup: Native Actions
 ObjCatName: native-action-components
 ObjName: SpeechToTextAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/speechtotextaction_color_32x32.png
 topnav: topnavobj
 ---

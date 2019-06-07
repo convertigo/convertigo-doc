@@ -7,7 +7,7 @@ metadesc: Defines a  Close Popover  action component.   Use this action to close
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: ClosePopoverAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/closepopoveraction_color_32x32.png
 topnav: topnavobj
 ---

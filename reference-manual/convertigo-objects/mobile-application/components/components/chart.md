@@ -7,7 +7,7 @@ metadesc: canvas  Defines a  Chart  component. Charts can be  line, bar, radar, 
 ObjGroup: Components
 ObjCatName: components
 ObjName: Charts
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/chart_color_32x32.png
 topnav: topnavobj
 ---

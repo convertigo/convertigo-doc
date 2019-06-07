@@ -7,7 +7,7 @@ metadesc: Defines a  Text  component.   This component acts as a standard HTML T
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UIText
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIText
 ObjIcon: /images/beans/mobile/components/images/uitext_color_32x32.png
 topnav: topnavobj
 ---

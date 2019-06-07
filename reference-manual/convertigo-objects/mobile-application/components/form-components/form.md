@@ -7,7 +7,7 @@ metadesc: form   Defines a  Form  component. As the standard HTML  &lt;form&gt; 
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: UIForm
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIForm
 ObjIcon: /images/beans/mobile/components/images/uiform_color_32x32.png
 topnav: topnavobj
 ---

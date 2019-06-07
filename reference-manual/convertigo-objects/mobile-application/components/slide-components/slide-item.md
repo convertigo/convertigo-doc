@@ -7,7 +7,7 @@ metadesc: ion-slide  Defines a  Slide Item  component. Add  Slide Item  componen
 ObjGroup: Slides
 ObjCatName: slide-components
 ObjName: Slide
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/slide_color_32x32.png
 topnav: topnavobj
 ---

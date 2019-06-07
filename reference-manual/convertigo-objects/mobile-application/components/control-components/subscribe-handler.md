@@ -7,7 +7,7 @@ metadesc: Defines a  Subscribe Handler  component.    This component helps you s
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIEventSubscriber
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIEventSubscriber
 ObjIcon: /images/beans/mobile/components/images/uieventsubscriber_color_32x32.png
 topnav: topnavobj
 ---

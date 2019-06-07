@@ -7,7 +7,7 @@ metadesc: Defines a  Put Attachment  action component.   This component helps pu
 ObjGroup: FullSync Actions
 ObjCatName: fullsync-action-components
 ObjName: FullSyncPutAttachmentAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/putattachementaction_color_32x32.png
 topnav: topnavobj
 ---

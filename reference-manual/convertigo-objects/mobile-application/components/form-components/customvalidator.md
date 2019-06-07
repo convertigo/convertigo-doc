@@ -7,7 +7,7 @@ metadesc: Defines a  CustomValidator  component.   The  CustomValidator  is a co
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: UIFormCustomValidator
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIFormCustomValidator
 ObjIcon: /images/beans/mobile/components/images/uiformvalidator_color_32x32.png
 topnav: topnavobj
 ---

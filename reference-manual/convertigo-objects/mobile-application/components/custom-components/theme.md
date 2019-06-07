@@ -7,7 +7,7 @@ metadesc: Defines a  Theme  component.   This component helps defining the Appli
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UITheme
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UITheme
 ObjIcon: /images/beans/mobile/components/images/uitheme_color_32x32.png
 topnav: topnavobj
 ---

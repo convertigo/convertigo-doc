@@ -7,7 +7,7 @@ metadesc:    Defines a  Heading  component. This component acts as the standard 
 ObjGroup: HTML
 ObjCatName: html-components
 ObjName: Heading
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: ion-item-group  Defines a  Group Item  component. To make groups of it
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: Listgroup
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/listgroup_32x32.png
 topnav: topnavobj
 ---

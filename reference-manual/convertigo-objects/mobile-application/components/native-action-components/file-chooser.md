@@ -7,7 +7,7 @@ metadesc: Defines a  File Chooser  action component.   This component helps sele
 ObjGroup: Native Actions
 ObjCatName: native-action-components
 ObjName: FileChooserAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/filechooseraction_color_32x32.png
 topnav: topnavobj
 ---

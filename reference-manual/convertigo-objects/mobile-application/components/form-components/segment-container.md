@@ -7,7 +7,7 @@ metadesc: ion-segment  Defines a  Segment Container  component. A Segment is a g
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: Segment
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/segment_color_32x32.png
 topnav: topnavobj
 ---

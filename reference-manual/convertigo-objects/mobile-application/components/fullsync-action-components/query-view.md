@@ -7,7 +7,7 @@ metadesc: Defines a  Query View  action component.   This component helps queryi
 ObjGroup: FullSync Actions
 ObjCatName: fullsync-action-components
 ObjName: FullSyncViewAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/fsviewsaction_color_32x32.png
 topnav: topnavobj
 ---

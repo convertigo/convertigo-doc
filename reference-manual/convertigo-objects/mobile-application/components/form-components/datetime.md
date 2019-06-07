@@ -7,7 +7,7 @@ metadesc: ion-datetime  Defines a  DateTime  component. The  DateTime  component
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: DateTime
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/input_datetime_32x32.png
 topnav: topnavobj
 ---

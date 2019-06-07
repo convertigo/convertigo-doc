@@ -7,7 +7,7 @@ metadesc: ion-title  Defines a  Bar Title  component.  Bar Title  is a component
 ObjGroup: Components
 ObjCatName: components
 ObjName: BarTitle
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/bartitle_color_32x32.png
 topnav: topnavobj
 ---

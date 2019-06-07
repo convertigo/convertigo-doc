@@ -7,7 +7,7 @@ metadesc: Defines a  Fragment  component.   This component acts as a standard HT
 ObjGroup: Customs
 ObjCatName: custom-components
 ObjName: UICustom
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UICustom
 ObjIcon: /images/beans/mobile/components/images/uicustom_color_32x32.png
 topnav: topnavobj
 ---

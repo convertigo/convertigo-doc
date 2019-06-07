@@ -7,7 +7,7 @@ metadesc: ion-item  Defines a  Generic Item  component. A  Generic Item  can be 
 ObjGroup: Containers
 ObjCatName: container-components
 ObjName: GenericItem
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/generic_item_32x32.png
 topnav: topnavobj
 ---

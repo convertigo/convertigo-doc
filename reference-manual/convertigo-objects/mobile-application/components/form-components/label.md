@@ -7,7 +7,7 @@ metadesc: ion-label  Defines a  Label  component. This component acts as the sta
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: Label
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/label_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: Defines a  PopPage  action component.   This component helps navigatin
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: PopPageAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/poppageaction_color_32x32.png
 topnav: topnavobj
 ---

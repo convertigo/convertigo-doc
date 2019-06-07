@@ -7,7 +7,7 @@ metadesc: ion-header  Defines a  Header  component. There should only be one  He
 ObjGroup: Containers
 ObjCatName: container-components
 ObjName: Header
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/header_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: Defines  SharedAction  component.   This component helps defining an e
 ObjGroup: Shared Actions
 ObjCatName: shared-action-components
 ObjName: UIActionStack
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIActionStack
 ObjIcon: /images/beans/mobile/components/images/uiactionstack_color_32x32.png
 topnav: topnavobj
 ---

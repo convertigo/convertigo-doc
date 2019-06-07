@@ -7,7 +7,7 @@ metadesc: agm-circle  Defines a  Map Circle  component. This component displays 
 ObjGroup: Google Map
 ObjCatName: google-map-components
 ObjName: MapCircle
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/gmapcircle_color_32x32.png
 topnav: topnavobj
 ---

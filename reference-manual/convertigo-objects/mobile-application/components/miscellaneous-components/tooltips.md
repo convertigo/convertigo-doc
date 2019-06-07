@@ -7,7 +7,7 @@ metadesc: ionic-tooltips  Defines a Tooltip component. This component displays a
 ObjGroup: Miscellaneous
 ObjCatName: miscellaneous-components
 ObjName: Tooltips
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/tooltips_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: ion-card-content  Defines a  Card Content  component. This component i
 ObjGroup: Cards
 ObjCatName: card-components
 ObjName: CardContent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/cardcontent_color_32x32.png
 topnav: topnavobj
 ---

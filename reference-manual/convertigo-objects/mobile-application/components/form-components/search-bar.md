@@ -7,7 +7,7 @@ metadesc: ion-searchbar  Defines a  Search Bar  component. This component manage
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: Searchbar
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/searchbar_color_32x32.png
 topnav: topnavobj
 ---

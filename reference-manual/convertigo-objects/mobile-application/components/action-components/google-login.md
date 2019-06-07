@@ -7,7 +7,7 @@ metadesc: Defines a  Google Login / Logout  action component.   This component h
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: GooglePlusLoginAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/googleloginaction_color_32x32.png
 topnav: topnavobj
 ---

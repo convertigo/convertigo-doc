@@ -7,7 +7,7 @@ metadesc: Defines a  PushPage  action component.    This component helps to disp
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: PushPageAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/pushpageaction_color_32x32.png
 topnav: topnavobj
 ---

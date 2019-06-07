@@ -7,7 +7,7 @@ metadesc: ion-segment-button  Defines a  Segment Button  component. Add some  Se
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: SegmentButton
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/segment-button_color_32x32.png
 topnav: topnavobj
 ---

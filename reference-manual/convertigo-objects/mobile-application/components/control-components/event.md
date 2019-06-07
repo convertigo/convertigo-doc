@@ -7,7 +7,7 @@ metadesc: Defines an  Event  component.  This component stands for Angular's eve
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIControlEvent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIControlEvent
 ObjIcon: /images/beans/mobile/components/images/uicontrolevent_color_32x32.png
 topnav: topnavobj
 ---

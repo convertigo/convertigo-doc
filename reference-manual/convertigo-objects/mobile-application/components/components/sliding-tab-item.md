@@ -7,7 +7,7 @@ metadesc: super-tab  Defines a  Sliding Tab Item  component. A sliding tab has t
 ObjGroup: Components
 ObjCatName: components
 ObjName: SlidingTab
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/slidingtab_color_32x32.png
 topnav: topnavobj
 ---

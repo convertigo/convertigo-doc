@@ -7,7 +7,7 @@ metadesc: Displays a Modal Page.   A Modal is a content pane that goes over the 
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: ModalAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/modalaction_color_32x32.png
 topnav: topnavobj
 ---

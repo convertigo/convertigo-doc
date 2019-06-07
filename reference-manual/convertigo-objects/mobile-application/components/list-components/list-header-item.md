@@ -7,7 +7,7 @@ metadesc: ion-list-header  Defines a  List Header Item  component. Each list can
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: Listheader
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/listheader_32x32.png
 topnav: topnavobj
 ---

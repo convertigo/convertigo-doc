@@ -7,7 +7,7 @@ metadesc: Defines a  Directive  component.   Angular's structural directives are
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIControlDirective
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIControlDirective
 ObjIcon: /images/beans/mobile/components/images/uicontroldirective_color_32x32.png
 topnav: topnavobj
 ---

@@ -7,7 +7,7 @@ metadesc: ion-item-divider  Defines a  Divider Item  component. To make groups o
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: Listdivider
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/listdivider_32x32.png
 topnav: topnavobj
 ---

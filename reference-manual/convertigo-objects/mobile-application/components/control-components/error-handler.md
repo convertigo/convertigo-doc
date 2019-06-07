@@ -7,7 +7,7 @@ metadesc: Defines an  Error Handler .      Error Handler  can be used to Catch a
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIActionErrorEvent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIActionErrorEvent
 ObjIcon: /images/beans/mobile/components/images/uiactionerrorevent_color_32x32.png
 topnav: topnavobj
 ---

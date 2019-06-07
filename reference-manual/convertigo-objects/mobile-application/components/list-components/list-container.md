@@ -7,7 +7,7 @@ metadesc: ion-list  Defines a  List Container  component. Lists are used to disp
 ObjGroup: Lists
 ObjCatName: list-components
 ObjName: List
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/list_32x32.png
 topnav: topnavobj
 ---

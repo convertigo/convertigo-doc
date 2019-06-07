@@ -7,7 +7,7 @@ metadesc: ion-navbar  Defines a  NavBar  component. The  NavBar  acts as the nav
 ObjGroup: Components
 ObjCatName: components
 ObjName: NavBar
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/navbar_color_32x32.png
 topnav: topnavobj
 ---

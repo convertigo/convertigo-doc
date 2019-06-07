@@ -7,7 +7,7 @@ metadesc: Defines an  AppEvent  component.   App lifecycle events are fired duri
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIAppEvent
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIAppEvent
 ObjIcon: /images/beans/mobile/components/images/uiappevent_color_32x32.png
 topnav: topnavobj
 ---

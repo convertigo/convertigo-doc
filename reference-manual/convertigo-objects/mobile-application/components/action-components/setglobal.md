@@ -7,7 +7,7 @@ metadesc: Defines a  SetGlobal  action component.   This component helps storing
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: SetGlobalAction
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/setglobalaction_color_32x32.png
 topnav: topnavobj
 ---

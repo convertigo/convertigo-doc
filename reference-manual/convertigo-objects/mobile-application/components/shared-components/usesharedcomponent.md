@@ -7,7 +7,7 @@ metadesc: Defines a UseSharedComponent component.
 ObjGroup: Shared Components
 ObjCatName: shared-components
 ObjName: UIUseShared
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$3
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.res.UIUseShared
 ObjIcon: /images/beans/mobile/components/images/uiuseshared_color_32x32.png
 topnav: topnavobj
 ---

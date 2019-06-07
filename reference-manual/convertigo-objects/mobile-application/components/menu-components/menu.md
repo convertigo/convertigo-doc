@@ -7,7 +7,7 @@ metadesc: ion-menu  Defines a  Menu  component. A menu helps to navigate through
 ObjGroup: Menus
 ObjCatName: menu-components
 ObjName: Menu
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/menu_color_32x32.png
 topnav: topnavobj
 ---

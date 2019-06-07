@@ -7,7 +7,7 @@ metadesc: ion-content  Defines a  Content  component. There should only be one  
 ObjGroup: Containers
 ObjCatName: container-components
 ObjName: Content
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/content_color_32x32.png
 topnav: topnavobj
 ---

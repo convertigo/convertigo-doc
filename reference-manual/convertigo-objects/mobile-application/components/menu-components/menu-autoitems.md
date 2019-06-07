@@ -7,7 +7,7 @@ metadesc: button  Defines a  Menu AutoItems  component. This component may be ad
 ObjGroup: Menus
 ObjCatName: menu-components
 ObjName: MenuAutoItems
-ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjClass: ion_objects.json
 ObjIcon: /images/beans/mobile/components/dynamic/images/menuautoitem_color_32x32.png
 topnav: topnavobj
 ---
