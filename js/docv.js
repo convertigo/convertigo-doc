@@ -16,12 +16,17 @@ function handleGitHubUrl(){
         newurl = newurl.replace("convertigo-doc","convertigo");
 
         if(location.href.includes("mobile-application/components")){
-            newurl += "/develop/engine/src/com/twinsoft/convertigo/beans/mobile/components/dynamic/ion_objects.json";
+            if(objclass == "ion_objects.json")
+                newurl += "/develop/engine/src/com/twinsoft/convertigo/beans/mobile/components/dynamic/ion_objects.json";
+            else{
+                objclass = objclass.replace(new RegExp(/[^a-zA-Z]/g),"/");
+                newurl += "/develop/engine/src/" + objclass + ".properties";
+            }
             $("#ghlink")[0].href = newurl;
         }
         else{
             objclass = objclass.replace(new RegExp(/[^a-zA-Z]/g),"/");
-            objclass = objclass.replace(new RegExp(/(.*?\/beans\/(.*)\/)/gi),"$1res/");
+            objclass = objclass.replace(new RegExp(/(.*?\/beans\/(.*)\/)/gi),"$1res/");                  
             newurl += "/develop/engine/src/" + objclass + ".properties";
             $("#ghlink")[0].href = newurl;
         }
