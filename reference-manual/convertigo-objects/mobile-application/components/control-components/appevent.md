@@ -15,7 +15,7 @@ topnav: topnavobj
 
  App lifecycle events are fired during various stages of navigation.</br>You may add an <i>AppEvent</i> component under the <b>Application</b> and chain in it any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFulSync<i> or <i>CustomAction<i> components.<br/>
 For more information about Ionic events: <a href='https://ionicframework.com/docs/v3/api/platform/Platform/' target='_blank'>Platform</a><br/>
-For more information about C8oSdk events: <a href='#' target='_blank'>C8oSdk</a><br /><br />App Events can be:- onAppPause : Will be fired when the app is pushed to the background, and not displayed anymore on the screen.
+For more information about C8oSdk events: <a href='#' target='_blank'>C8oSdk</a><br /><br />App Events can be:- onAppPause : Will be fired when the app is pushed to the background, and not displayed anymore on the screen.- onAppResume : Will be fired when the app is restored from the backround, and displayed again.- onAppResize : When the app is resized, for example by swiching to portrait orientation.- onSessionLost: When the app looses the session the Convertigo server. This may occur if the devices gets in offline mode for a time greater than the session timeout property in the Convertigo server project object. If this occurs you must ensure that you re-execute a 'Login' sequence on the server.
 
 Name | Description 
 --- | ---
