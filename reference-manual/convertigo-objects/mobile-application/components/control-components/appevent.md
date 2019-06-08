@@ -15,7 +15,7 @@ topnav: topnavobj
 
  App lifecycle events are fired during various stages of navigation.</br>You may add an <i>AppEvent</i> component under the <b>Application</b> and chain in it any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFulSync<i> or <i>CustomAction<i> components.<br/>
 For more information about Ionic events: <a href='https://ionicframework.com/docs/v3/api/platform/Platform/' target='_blank'>Platform</a><br/>
-For more information about C8oSdk events: <a href='#' target='_blank'>C8oSdk</a>   
+For more information about C8oSdk events: <a href='#' target='_blank'>C8oSdk</a><br /><br />App Events can be:- onAppPause : Will be fired when the app is pushed to the background, and not displayed anymore on the screen.
 
 Name | Description 
 --- | ---
