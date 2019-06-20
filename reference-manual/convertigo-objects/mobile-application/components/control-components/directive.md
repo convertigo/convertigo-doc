@@ -26,4 +26,6 @@ Is active | Defines whether the component is active.
 Tag name | Defines the HTML element's tag name. 
 Directive expression | Defines a directive condition or expression.  
 Directive source | Defines the directive source.  
+ForEach index | Defines the ForEach index name.  
+ForEach item | Defines the ForEach item name.  
 
