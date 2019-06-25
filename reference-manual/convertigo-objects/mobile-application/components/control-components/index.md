@@ -7,6 +7,7 @@ topnav: topnavobj
 ---
 * [AppEvent](appevent/)
 * [Directive](directive/)
+* [Else Handler](else-handler/)
 * [Error Handler](error-handler/)
 * [Event](event/)
 * [Failure Handler](failure-handler/)
