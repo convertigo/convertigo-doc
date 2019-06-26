@@ -46,7 +46,6 @@ Done icon | Display done icon.
 Done label | The done button label.
 From | start date, default , today.
 Month format | Month format ('MMM YYYY').
-Month picker format | Month Labels.
 Pick mode | Picker mode.
 Subtitle | The default  subtitle displayed for Days.
 Title | The calendar title.
