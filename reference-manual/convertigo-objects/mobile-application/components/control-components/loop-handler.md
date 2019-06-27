@@ -13,7 +13,8 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Loop Handler</i>. <br/>
 
- A <i>Loop Handler</i> must be added inside an <i>IterateAction</i>.</br>It helps defining actions to be executed for each loop.<br/>
+ A <i>Loop Handler</i> must be added inside an <i>IterateAction</i>.<br/>
+It helps defining actions to be executed for each loop.<br/>
  Each action can access the current loop index and item through the <code>index</code> and <code>item</code> parameters in TS mode. You can change the parameter names for more appropriate ones or to differentiate them in nested loops.
 
 Name | Description 

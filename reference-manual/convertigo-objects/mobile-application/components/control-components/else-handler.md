@@ -13,7 +13,8 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Else Handler</i>. <br/>
 
- A <i>Else Handler</i> must be added to an <i>IfElse</i> action.</br>It helps defining actions to be executed when the <i>IfElse</i> condition is not verified.
+ A <i>Else Handler</i> must be added to an <i>IfElse</i> action.<br/>
+It helps defining actions to be executed when the <i>IfElse</i> condition is not verified.
 
 Name | Description 
 --- | ---
