@@ -77,7 +77,11 @@ function createComboBoxWithJSON(json){
         $(select).on("change", function () {
             let currVersion = getCurrentVersion();
             let selectedVersion = select.selectedOptions[0].innerHTML;
-            location.href = location.href.replace("/" + currVersion + "/", "/" + selectedVersion + "/");
+            if (selectedVersion == "older") {
+                location.href = "/document/all/";
+            } else {
+                location.href = location.href.replace("/" + currVersion + "/", "/" + selectedVersion + "/");
+            }
         });
         let versionDiv = document.getElementById('versions');
         versionDiv.appendChild(select);
