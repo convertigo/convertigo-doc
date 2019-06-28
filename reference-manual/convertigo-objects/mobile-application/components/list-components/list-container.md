@@ -1,0 +1,24 @@
+---
+layout: page
+title: List Container
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/list-components/list-container/
+metadesc: ion-list  Defines a  List Container  component. Lists are used to display rows of information. You can insert items or buttons in lists to make list i
+ObjGroup: Lists
+ObjCatName: list-components
+ObjName: List
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/list_32x32.png
+topnav: topnavobj
+---
+ion-list
+##### Defines a <i>List Container</i> component.
+Lists are used to display rows of information.
+You can insert items or buttons in lists to make list items clickable. You can also add to list items many other components such as icons, avatars or thumbnails.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#lists' target='_blank'>Lists</a>.
+
+Name | Description 
+--- | ---
+Inset | Lists do not have an outside margin by default. To add one, add the inset attribute to ion-list component.
+nolines | Adding the no-lines attribute will hide the dividers between list items.
+

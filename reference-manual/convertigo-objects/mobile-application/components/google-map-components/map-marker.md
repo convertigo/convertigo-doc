@@ -1,0 +1,26 @@
+---
+layout: page
+title: Map Marker
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/google-map-components/map-marker/
+metadesc: agm-marker  Defines a  Map Marker  component. Markers indicate unique geographic points on the map. You can customize your markers by replacing the ma
+ObjGroup: Google Map
+ObjCatName: google-map-components
+ObjName: MapMarker
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/gmapmarker_color_32x32.png
+topnav: topnavobj
+---
+agm-marker
+##### Defines a <i>Map Marker</i> component.
+Markers indicate unique geographic points on the map. You can customize your markers by replacing the marker icon with a custom image.
+Several <i>Map Marker</i> can be displayed on a map, just add them in your <i>Goolgle Map</i> component.
+ For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmMarker.html' target='_blank'>AgmMarker</a>.
+
+Name | Description 
+--- | ---
+Icon | Icon (the URL of the image) for the foreground. Leaving this field blank will place the default Google Map Maker Icon.
+Latitude | Number : The Marker will be displayed at this latitude. Must be a 'number' jSON type (ex: 51.678418).
+Longitude | Number : The Marker will be displayed at this longitude. Must be a 'number' jSON type (ex: 7.809007).
+Title | The marker title.
+

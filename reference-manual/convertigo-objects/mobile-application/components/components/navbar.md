@@ -1,0 +1,26 @@
+---
+layout: page
+title: NavBar
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/components/navbar/
+metadesc: ion-navbar  Defines a  NavBar  component. The  NavBar  acts as the navigational toolbar, which also comes with a back button. It must be placed within
+ObjGroup: Components
+ObjCatName: components
+ObjName: NavBar
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/navbar_color_32x32.png
+topnav: topnavobj
+---
+ion-navbar
+##### Defines a <i>NavBar</i> component.
+The <i>NavBar</i> acts as the navigational toolbar, which also comes with a back button.
+It must be placed within an <i>Header</i> in order to be placed above the <i>Content</i>.
+It's important to note that navbar's are part of the dynamic navigation stack. If you need a static toolbar, use the <i>ToolBar</i> component.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Navbar/' target='_blank'>NavBar</a>.
+
+Name | Description 
+--- | ---
+Hide back button | Specifies whether back button is hidden or not.
+color | Specifies ionic color.
+mode | Specifies ionic bar mode.
+

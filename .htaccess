@@ -1,0 +1,347 @@
+Options -Indexes
+
+# Reference Manual ----
+
+# Mobile Builder 
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/mobile-builder-overview/ \
+                      $1/reference-manual/convertigo-mobile-builder/#mobile-builder-overview
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/application-viewer/ \
+                      $1/reference-manual/convertigo-mobile-builder/#application-viewer
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/mobile-components/ \
+                      $1/reference-manual/convertigo-mobile-builder/#mobile-components
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/handling-events/ \
+                      $1/reference-manual/convertigo-mobile-builder/#handling-events-and-actions
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/mobile-debugger/ \
+                      $1/reference-manual/convertigo-mobile-builder/#mobile-debugger
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/data-binding/ \
+                      $1/reference-manual/convertigo-mobile-builder/#data-binding
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/styling-applications/ \
+                      $1/reference-manual/convertigo-mobile-builder/#styling-applications
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/using-forms/ \
+                      $1/reference-manual/convertigo-mobile-builder/#using-forms
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mobile-builder/writing-custom-code/ \
+                      $1/reference-manual/convertigo-mobile-builder/#writing-custom-code
+# Mobile Builder 
+
+# MBaaS - Full Sync
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/architecture-design/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#architecture-design
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/userid-filtered-replication/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#userid-filtered-replication
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/global-full-sync-architecture/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#full-sync-underlying-technology
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/monitoring-a-container-data-change-on-the-server/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#monitoring-a-database-data-changes-on-the-server
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/understanding-views-and-queries/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#understanding-views-and-queries
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/authenticating-users-on-the-server/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#authenticating-users-on-the-server
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/fullsync-databases/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#full-sync-databases
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/interacting-locally-with-the-data/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-locally-on-the-mobile-with-the-data
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/interacting-with-a-fullsync-database-on-the-server/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-with-a-fullsync-database-on-the-server
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/using-groups/ \
+                      $1/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#using-groups
+# MBaaS - Full Sync
+
+# MBaaS - Client SDK
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/installation-guide/$ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#installation-guide
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/programming-guide/$ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#programming-guide
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/installation-guide/android-studio/$ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#android-studio
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/installation-guide/xcode/$ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#xcode
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/installation-guide/xamarin-studio/ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#xamarin-studio
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/installation-guide/visual-studio-2015/ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#angular
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/large-file-transfer-programming-guide/ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#large-file-transfer-programming-guide
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/api-reference/ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#api-reference
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/changelog/ \
+                    $1/reference-manual/convertigo-mbaas-server/convertigo-client-sdk/#changelog
+# MBaaS - Client SDK
+
+# MBaaS - Interfaces to convertigo
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/http-protocol-interface-to-convertigo/convertigo-urls/general-process/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#general-process
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/http-protocol-interface-to-convertigo/convertigo-urls/convertigo-requesters/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#convertigo-requesters
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/http-protocol-interface-to-convertigo/convertigo-urls/$ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#convertigo-urls
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/http-protocol-interface-to-convertigo/convertigo-reserved-parameters/engine-reserved-parameters/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#engine-reserved-parameters
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/http-protocol-interface-to-convertigo/convertigo-reserved-parameters/$ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#convertigo-reserved-parameters
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/http-protocol-interface-to-convertigo/$ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#http-protocol-interface-to-convertigo
+                    
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/web-service-interface-to-convertigo/soap-web-services/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#soap-web-services
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/web-service-interface-to-convertigo/rest-web-services/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#rest-web-services
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/web-service-interface-to-convertigo/context-state-conservation/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#context-state-conservation
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/web-service-interface-to-convertigo/ \
+                    $1/reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/#web-service-interface-to-convertigo
+# MBaaS - Interfaces to convertigo
+
+# MBaaS - Server JS Objects API's
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/javelin-object-javadoc/fields-detailed-list/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#fields-detailed-list
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/javelin-object-javadoc/methods-detailed-list/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#methods-detailed-list
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/javelin-object-javadoc/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#javelin-object-javadoc
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-general-presentation/definition/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#definition
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-general-presentation/identification/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#identification
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-general-presentation/context-object/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#context-object-1
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-general-presentation/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#context-general-presentation
+
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-api-documentation/fields-detailed-list/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#fields-detailed-list-1
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-api-documentation/methods-detailed-list/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#methods-detailed-list-1
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-api-documentation/interesting-methods-in-context-fields/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#interesting-methods-in-context-fields                    
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/context-api-documentation/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#context-api-documentation
+
+RedirectMatch 302 ^(.*?)/reference-manual/convertigo-mbaas-server/javascript-objects-apis/context-object/ \
+                    $1/reference-manual/convertigo-mbaas-server/javascript-objects-apis/#context-object
+# MBaaS - Server JS Objects API's
+
+# Reference Manual Appendixes                    
+RedirectMatch 302 ^(.*?)/reference-manual/appendixes/keycodes-table/ \
+                    $1/reference-manual/appendixes/#keycodes-table
+RedirectMatch 302 ^(.*?)/reference-manual/appendixes/date-format---usable-symbols/ \
+                    $1/reference-manual/appendixes/#date-format---usable-symbols
+RedirectMatch 302 ^(.*?)/reference-manual/appendixes/convertigo-paths-variables-usable-symbols/ \
+                    $1/reference-manual/appendixes/#convertigo-paths-variables---usable-symbols
+RedirectMatch 302 ^(.*?)/reference-manual/appendixes/legacy-emulator-actions-table/ \
+                    $1/reference-manual/appendixes/#legacy-emulator-actions-table
+# Reference Manual Appendixes                    
+# Reference Manual ----
+
+
+# Opération Guide ---- 
+# Introducing the Operating Guide
+RedirectMatch 302 ^(.*?)/operating-guide/introducing-the-operating-guide/introduction/ \
+                    $1/operating-guide/introducing-the-operating-guide/#introduction
+RedirectMatch 302 ^(.*?)/operating-guide/introducing-the-operating-guide/convertigo-software-elements/convertigo-studio/ \
+                    $1/operating-guide/introducing-the-operating-guide/#convertigo-studio
+RedirectMatch 302 ^(.*?)/operating-guide/introducing-the-operating-guide/convertigo-software-elements/convertigo-server/ \
+                    $1/operating-guide/introducing-the-operating-guide/#convertigo-server
+RedirectMatch 302 ^(.*?)/operating-guide/introducing-the-operating-guide/convertigo-software-elements/administration-console/ \
+                    $1/operating-guide/introducing-the-operating-guide/#administration-console
+RedirectMatch 302 ^(.*?)/operating-guide/introducing-the-operating-guide/convertigo-software-elements/ \
+                    $1/operating-guide/introducing-the-operating-guide/#convertigo-software-elements
+# Introducing the Operating Guide
+
+# Installing Convertigo Studio
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/installing-convertigo-studio-on-windows/ \
+                    $1/operating-guide/installing-convertigo-studio/#installing-convertigo-studio-on-windows
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/installing-convertigo-studio-on-linux/ \
+                    $1/operating-guide/installing-convertigo-studio/#installing-convertigo-studio-on-linux
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/installing-convertigo-studio-on-mac-os/ \
+                    $1/operating-guide/installing-convertigo-studio/#installing-convertigo-studio-on-mac-os
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/finish-installing-and-configuring-convertigo-studio-at-first-start/ \
+                    $1/operating-guide/installing-convertigo-studio/#finish-installing-and-configuring-convertigo-studio-at-first-start
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/convertigo-studio-default-configuration/convertigo-studio-default-configurations-and-access-urls/ \
+                    $1/operating-guide/installing-convertigo-studio/#convertigo-studio-default-configurations-and-access-urls
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/convertigo-studio-default-configuration/ \
+                    $1/operating-guide/installing-convertigo-studio/#convertigo-studio-default-configuration-1
+
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/general-purpose-and-packages/ \
+                    $1/operating-guide/installing-convertigo-studio/#general-purpose-and-packages
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-studio/convertigo-studio-installation/ \
+                    $1/operating-guide/installing-convertigo-studio/#convertigo-studio-installation
+# Installing Convertigo Studio
+
+# Installing Convertigo Server
+RedirectMatch 302 ^(.*?)/operating-guide/installing-convertigo-server/convertigo-studio-installation/ \
+                    $1/operating-guide/installing-convertigo-server/#convertigo-studio-installation
+# The rest of this cat is still Work In Progress
+# Installing Convertigo Server
+
+# Using Convertigo Administration Console
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/general-presentation-of-the-administration-console/accessing-the-administration-console/ \
+                    $1/operating-guide/using-convertigo-administration-console/#accessing-the-administration-console
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/general-presentation-of-the-administration-console/home-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#home-page
+
+# Using Convertigo Administration Console - Configuration
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/configuration-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#configuration-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/main-parameters/ \
+                    $1/operating-guide/using-convertigo-administration-console/#main-parameters
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/accounts/ \
+                    $1/operating-guide/using-convertigo-administration-console/#accounts
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/logs/ \
+                    $1/operating-guide/using-convertigo-administration-console/#logs
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/real-time-activity-monitoring/ \
+                    $1/operating-guide/using-convertigo-administration-console/#real-time-activity-monitoring
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/xml-generation/ \
+                    $1/operating-guide/using-convertigo-administration-console/#xml-generation
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/html-parser/ \
+                    $1/operating-guide/using-convertigo-administration-console/#html-parser
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/http-client/ \
+                    $1/operating-guide/using-convertigo-administration-console/#http-client
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/network/ \
+                    $1/operating-guide/using-convertigo-administration-console/#network
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/proxy/ \
+                    $1/operating-guide/using-convertigo-administration-console/#proxy
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/security-token/ \
+                    $1/operating-guide/using-convertigo-administration-console/#security-token
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/ssl/ \
+                    $1/operating-guide/using-convertigo-administration-console/#ssl
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/cache/ \
+                    $1/operating-guide/using-convertigo-administration-console/#cache
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/legacy-carioca-portal/ \
+                    $1/operating-guide/using-convertigo-administration-console/#legacy-carioca-portal
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/analytics/ \
+                    $1/operating-guide/using-convertigo-administration-console/#analytics
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/notifications/ \
+                    $1/operating-guide/using-convertigo-administration-console/#notification
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/minification/ \
+                    $1/operating-guide/using-convertigo-administration-console/#minification
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/mobile-builder/ \
+                    $1/operating-guide/using-convertigo-administration-console/#mobile-builder
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/full-sync/ \
+                    $1/operating-guide/using-convertigo-administration-console/#full-sync
+
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/configuration/ \
+                    $1/operating-guide/using-convertigo-administration-console/#configuration
+# Using Convertigo Administration Console - Configuration
+
+# Using Convertigo Administration Console - Connections
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/connections/connections-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#connections-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/connections/connections-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#connections-table
+
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/connections/ \
+                    $1/operating-guide/using-convertigo-administration-console/#connections
+# Using Convertigo Administration Console - Connections
+
+# Using Convertigo Administration Console - Projects
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/projects/projects-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#projects-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/projects/projects-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#projects-table
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/projects/ \
+                    $1/operating-guide/using-convertigo-administration-console/#projects
+# Using Convertigo Administration Console - Projects
+
+# Using Convertigo Administration Console - Certificates
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/certificates/ \
+                    $1/operating-guide/using-convertigo-administration-console/#certificates
+# Using Convertigo Administration Console - Certificates
+
+# Using Convertigo Administration Console - Logs
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/logs/ \
+                    $1/operating-guide/using-convertigo-administration-console/#logs-1
+# Using Convertigo Administration Console - Logs
+
+# Using Convertigo Administration Console - Trace Player
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/trace-player/ \
+                    $1/operating-guide/using-convertigo-administration-console/#trace-player
+# Using Convertigo Administration Console - Trace Player
+
+# Using Convertigo Administration Console - Cache
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/cache/cache-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#cache-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/cache/cache-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#cache-table
+
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/cache/ \
+                    $1/operating-guide/using-convertigo-administration-console/#cache-1
+# Using Convertigo Administration Console - Cache
+
+# Using Convertigo Administration Console - Scheduler
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/scheduler/scheduler-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#scheduler-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/scheduler/jobs-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#jobs-table
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/scheduler/schedules-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#schedules-table
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/scheduler/scheduled-jobs-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#scheduled-jobs-table
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/scheduler/ \
+                    $1/operating-guide/using-convertigo-administration-console/#scheduler
+# Using Convertigo Administration Console - Scheduler
+
+# Using Convertigo Administration Console - Keys
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/keys/keys-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#keys-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/keys/keys-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#keys-table
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/keys/ \
+                    $1/operating-guide/using-convertigo-administration-console/#keys
+# Using Convertigo Administration Console - Keys
+
+# Using Convertigo Administration Console - Global Symbols
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/global-symbols/global-symbols-page/ \
+                    $1/operating-guide/using-convertigo-administration-console/#global-symbols-page
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/global-symbols/global-symbols-table/ \
+                    $1/operating-guide/using-convertigo-administration-console/#global-symbols-table
+
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/global-symbols/ \
+                    $1/operating-guide/using-convertigo-administration-console/#global-symbols
+# Using Convertigo Administration Console - Global Symbols
+
+# Using Convertigo Administration Console - Store
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/store/download-the-store/ \
+                    $1/operating-guide/using-convertigo-administration-console/#download-the-store
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/store/upload-a-custom-store/ \
+                    $1/operating-guide/using-convertigo-administration-console/#upload-a-custom-store
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/store/delete-the-custom-store/ \
+                    $1/operating-guide/using-convertigo-administration-console/#delete-the-custom-store
+
+RedirectMatch 302 ^(.*?)/operating-guide/using-convertigo-administration-console/store/ \
+                    $1/operating-guide/using-convertigo-administration-console/#store
+# Using Convertigo Administration Console - Store
+
+# Operating Guide Appendixes
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/convertigo-java-system-properties/ \
+                    $1/operating-guide/appendixes/#convertigo-java-system-properties
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/sql-drivers-and-related-jar-files/ \
+                    $1/operating-guide/appendixes/#sql-drivers-and-related-jar-files
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/convertigo-workspace/presentation-of-convertigo-workspace/ \
+                    $1/operating-guide/appendixes/#presentation-of-convertigo-workspace
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/convertigo-workspace/setting-convertigo-workspace/ \
+                    $1/operating-guide/appendixes/#setting-convertigo-workspace
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/convertigo-workspace/updating-convertigo-workspace/ \
+                    $1/operating-guide/appendixes/#updating-convertigo-workspace
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/convertigo-workspace/ \
+                    $1/operating-guide/appendixes/#convertigo-workspace
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/connector-monitoring-windows/presentation-of-the-connector-monitoring-windows/ \
+                    $1/operating-guide/appendixes/#presentation-of-the-connector-monitoring-windows
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/connector-monitoring-windows/activate-the-connector-monitors-on-a-windows-based-system/ \
+                    $1/operating-guide/appendixes/#activate-the-connector-monitors-on-a-windows-based-system
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/connector-monitoring-windows/activate-the-connector-monitors-on-a-linux-based-system/ \
+                    $1/operating-guide/appendixes/#activate-the-connector-monitors-on-a-linux-based-system
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/connector-monitoring-windows/ \
+                    $1/operating-guide/appendixes/#connector-monitoring-windows
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/differences-between-convertigo-server-and-convertigo-cloud-in-administration-console/pages/ \
+                    $1/operating-guide/appendixes/#pages
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/differences-between-convertigo-server-and-convertigo-cloud-in-administration-console/configuration-categories-and-settings/ \
+                    $1/operating-guide/appendixes/#configuration-categories-and-settings
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/differences-between-convertigo-server-and-convertigo-cloud-in-administration-console/ \
+                    $1/operating-guide/appendixes/#differences-between-convertigo-server-and-convertigo-cloud-in-administration-console
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/analytics-in-convertigo-server/analytics-feature/ \
+                    $1/operating-guide/appendixes/#analytics-feature
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/analytics-in-convertigo-server/ticket-content/ \
+                    $1/operating-guide/appendixes/#ticket-content
+RedirectMatch 302 ^(.*?)/operating-guide/appendixes/analytics-in-convertigo-server/ \
+                    $1/operating-guide/appendixes/#analytics-in-convertigo-server
+# Operating Guide Appendixes

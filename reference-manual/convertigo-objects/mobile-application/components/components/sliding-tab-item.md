@@ -1,0 +1,27 @@
+---
+layout: page
+title: Sliding Tab Item
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/components/sliding-tab-item/
+metadesc: super-tab  Defines a  Sliding Tab Item  component. A sliding tab has to be inserted in a  Sliding Tabs Container  component. A sliding tab is associat
+ObjGroup: Components
+ObjCatName: components
+ObjName: SlidingTab
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/slidingtab_color_32x32.png
+topnav: topnavobj
+---
+super-tab
+##### Defines a <i>Sliding Tab Item</i> component.
+A sliding tab has to be inserted in a <i>Sliding Tabs Container</i> component.
+A sliding tab is associated to a page you can specify through its properties.
+
+<span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.
+ For more information: <a href='https://github.com/zyra/ionic2-super-tabs' target='_blank'>Swipeable Tabs</a>.
+
+Name | Description 
+--- | ---
+Badge | The initial badge value. The number can be changed through the SuperTabsController provider.
+Icon Name | Specifies the icon to be used in the tab.
+Title | The title of the tab to display.
+

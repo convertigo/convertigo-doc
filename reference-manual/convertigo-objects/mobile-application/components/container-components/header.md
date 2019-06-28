@@ -1,0 +1,24 @@
+---
+layout: page
+title: Header
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/container-components/header/
+metadesc: ion-header  Defines a  Header  component. There should only be one  Header  per page, as for  Content  and  Footer . Header is a root component of a p
+ObjGroup: Containers
+ObjCatName: container-components
+ObjName: Header
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/header_color_32x32.png
+topnav: topnavobj
+---
+ion-header
+##### Defines a <i>Header</i> component.
+There should only be one <i>Header</i> per page, as for <i>Content</i> and <i>Footer</i>.
+Header is a root component of a page that holds the <i>NavBar</i> and <i>Toolbar</i> components.
+It's important to note that <i>Header</i> needs to be the one of the three root elements of a page.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Header/' target='_blank'>Header</a>.
+
+Name | Description 
+--- | ---
+No border | If Set removes shadow and border below the header.
+

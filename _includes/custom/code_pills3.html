@@ -1,0 +1,7 @@
+<ul class="nav nav-tabs">
+  {% if include.content != "0" %}
+  <li class="active"><a data-toggle="tab" href="#android{{ include.content }}">Android</a></li>
+  <li><a data-toggle="tab" href="#xamarin{{ include.content }}">Xamarin</a></li>
+  <li><a data-toggle="tab" href="#swift{{ include.content }}">Swift</a></li>
+  {% endif %}
+</ul>

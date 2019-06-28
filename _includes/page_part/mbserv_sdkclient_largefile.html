@@ -1,0 +1,402 @@
+<!-- This page is for the "Large File Transfer programming guide" page -->
+
+{% if include.content == 'l1' %}
+{% assign id="l1" %}
+{% include /custom/code_pills3.html content='l1' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    try {
+        // We need a Convertigo Endpoint object
+        App.c8o = new C8o(this,  "http://my.server.address/convertigo/projects/MyBackEndProject");
+    
+        // Create a New C8oFileTransfer object on this endpoint
+        App.fileTransfer = new C8oFileTransfer(App.c8o);
+    
+        // Setup a Debug listener
+        App.fileTransfer.raiseDebug(new EventHandler<C8oFileTransfer, String>() {
+            @Override
+            public void on(C8oFileTransfer source, String event) {
+                App.c8o.log.info(event);
+            }
+        });
+    
+        ... Initialize the progress monitor .. see the "monitoring" part on how to do that....
+    
+        // Now we have setup all what is needed in our File Transfer Services. We will
+        // start the FileTransfer engine. This will make sure no interrupted file transfers
+        // are pending and if they are the transfers will be restarted automatically from
+        // the last known good chunk
+        App.fileTransfer.start();
+    
+    } catch (C8oException e) {
+        e.printStackTrace();
+    }
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    try{
+        // We need a Convertigo Endpoint object
+        app.c8o = new C8o("http://my.server.address/convertigo/projects/MyBackEndProject");
+    
+        // Create a New C8oFileTransfer object on this endpoint
+        app.fileTransfer = new C8oFileTransfer(app.c8o);
+    
+        // Setup a Debug listener
+        app.fileTransfer.RaiseDebug += (sender, transferStatus) =>
+            {
+                app.c8o.RunUI(() =>
+                {
+                    app.c8o.Log.Info(transferStatus);
+                });
+            };
+    
+        ... Initialize the progress monitor .. see the "monitoring" part on how to do that....
+    
+        // Now we have setup all what is needed in our File Transfer Services. We will
+        // start the FileTransfer engine. This will make sure no interrupted file transfers
+        // are pending and if they are the transfers will be restarted automatically from
+        // the last known good chunk
+        app.fileTransfer.start();
+    }
+    catch (Exception e)
+    {
+    
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    do{
+        // We need a Convertigo Endpoint object
+        appDelegate.c8o = try C8o(endpoint: "http://my.server.address/convertigo/projects/MyBackEndProject")
+    
+        // Create a New C8oFileTransfer object on this endpoint
+        appDelegate.c8oFileTransfer =  try C8oFileTransfer(c8o: appDelegate.c8o)
+    
+        // Setup a Debug listener
+        appDelegate.c8oFileTransfer?.raiseDebug({ (source, event) in
+                   self.appDelegate.c8o?.log.info(event)
+               })
+        ... Initialize the progress monitor .. see the "monitoring" part on how to do that....
+    
+        // Now we have setup all what is needed in our File Transfer Services. We will
+        // start the FileTransfer engine. This will make sure no interrupted file transfers
+        // are pending and if they are the transfers will be restarted automatically from
+        // the last known good chunk
+        appDelegate.c8oFileTransfer?.start()
+    
+    }
+    catch let e as NSError{
+    }
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == 'l2' %}
+{% assign id="l2" %}
+{% include /custom/code_pills3.html content='l2' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // We need to Authenticate to the Convertigo server first. For that
+    // We assume a call to a "Login" sequence has been done before.
+
+    // Call the custom "RequestFile" sequence in our Convertigo server .. This sequence will
+    // use the lib_FileTransfer.StoreLocalFileToDatabase to store our file to be transferred
+    // in the transfer database as sliced chunks. This sample code uses callXml but we could
+    // have used callJson just as well ...
+    App.c8o.callXml(".RequestFile",
+        "filename", file.name
+    ).thenUI(new C8oOnResponse<Document>() {
+        // When done...
+        @Override
+        public C8oPromise<Document> run(Document response, Map<String, Object> parameters) throws Throwable {
+            // get the uuid returned, representing the TransferID.
+            String uuid = App.xpath.evaluate("/document/uuid/text()", response);
+            if (uuid == null) {
+                // No uuid ? some thing went wrong...
+                ... Do error stuff...
+            }
+            if (uuid != null) {
+                // Ok we have an uuid so we can start a file transfer
+                ... See next part showing how to start a file transfer ....
+            }
+            return null;
+        }
+    });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // We need to Authenticate to the Convertigo server first. For that
+    // We assume a call to a "Login" sequence has been done before.
+
+    // Call the custom "RequestFile" sequence in our Convertigo server .. This sequence will
+    // use the lib_FileTransfer.StoreLocalFileToDatabase to store our file to be transferred
+    // in the transfer database as sliced chunks. This sample code uses callXml but we could
+    // have used callJson just as well ...
+    var doc = await app.c8o.CallXml(".RequestFile",
+                    "filename", file.name
+                ).Async();
+    // When done...
+    // get the uuid returned, representing the TransferID.
+    string xml = doc.ToString();
+    var uuid = doc.XPathSelectElement("/document/uuid");
+    if(uuid == null){
+        // No uuid ? some thing went wrong...
+        ... Do error stuff...
+    }
+    if (uuid != null) {
+        // Ok we have an uuid so we can start a file transfer
+        ... See next part showing how to start a file transfer ....
+    } 
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // We need to Authenticate to the Convertigo server first. For that
+    // We assume a call to a "Login" sequence has been done before.
+
+    // Call the custom "RequestFile" sequence in our Convertigo server .. This sequence will
+    // use the lib_FileTransfer.StoreLocalFileToDatabase to store our file to be transferred
+    // in the transfer database as sliced chunks. This sample code uses callXml but we could
+    // have used callJson just as well ...
+    appDelegate.c8o?.callXml(".RequestFile", parameters: "filename", file!.name
+        ).then({ (response, parameters) -> (C8oPromise?) in
+            // When done...
+            let uuid : String? = response["document"]["uuid"].stringValue
+            // get the uuid returned, representing the TransferID.
+            if(uuid == nil){
+                // No uuid ? some thing went wrong...
+                ... Do error stuff...
+            }
+            else{
+                // Ok we have an uuid so we can start a file transfer
+                ... See next part showing how to start a file transfer ....
+        }
+            return nil
+    })
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == 'l3' %}
+{% assign id="l3" %}
+{% include /custom/code_pills3.html content='l3' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // We have retreived a TransferID by geeting the uuid element from the custom
+    // RequestFile server sequence. Now use it to start the file transfer.
+    // In this sample we build the path where the file will be stored once all the chunks will be synced. 
+    App.fileTransfer.downloadFile(uuid, Environment.getExternalStorageDirectory() + "/" + uuid + "_" + file.name);
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // RequestFile server sequence. Now use it to start the file transfer.
+    // In this sample we build the path where the file will be stored once all the chunks will be synced.
+    await app.fileTransfer.DownloadFile(file.uuid, "C:\TMP\" + file.uuid + "_" + file.name);
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // RequestFile server sequence. Now use it to start the file transfer.
+    // In this sample we build the path where the file will be stored once all the chunks will be synced.
+
+    let path = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true))[0]
+
+    try! self.appDelegate.c8oFileTransfer?.downloadFile(self.file!.uuid, filePath: path + "/" + self.file!.uuid + "_" + self.file!.name)
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == 'l4' %}
+{% assign id="l4" %}
+{% include /custom/code_pills3.html content='l4' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // We setup the progress monitor call back. This must be done before
+    // the fileTransfer.start() method is called.
+    App.fileTransfer.raiseTransferStatus(new EventHandler<C8oFileTransfer, C8oFileTransferStatus>() {
+        @Override
+        public void on(C8oFileTransfer source, final C8oFileTransferStatus event) {
+            if (event.getState() == C8oFileTransferStatus.StateFinished) {
+                // This means that the file transfer is finished; You will find the transferred file
+                // in the path you requested when you called the downloadfile method
+                    .. do what has to be done with the file ...
+            } else {
+                if (event.getState() == C8oFileTransferStatus.StateReplicate) {
+                    // File is replicating. You can access some status information in the event object
+                    progress += " " + event.getCurrent() + 
+                                "/" + event.getTotal() + 
+                                " (" + event.getProgress() + ")";
+                }
+            }
+        }
+    });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // We setup the progress monitor call back. This must be done before
+    // the fileTransfer.start() method is called.
+    app.fileTransfer.RaiseTransferStatus += (sender, transferStatus) =>
+    {
+        app.c8o.RunUI(() =>
+        {
+            if (transferStatus.State == C8oFileTransferStatus.StateFinished) {
+                // This means that the file transfer is finished; You will find the transferred file
+                // in the path you requested when you called the downloadfile method
+                .. do what has to be done with the file ...
+            }
+            else{
+                if (transferStatus.State == C8oFileTransferStatus.StateReplicate) {
+                    // File is replicating. You can 
+
+    some status information in the event object
+                    progress += " " + transferStatus.Current + "/" + transferStatus.Total + " (" + transferStatus.Progress + ")";
+                }
+            }
+        }
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // We setup the progress monitor call back. This must be done before
+    // the fileTransfer.start() method is called.
+    appDelegate.c8oFileTransfer?.raiseTransferStatus({ (source, event) in
+        self.appDelegate.c8o?.runUI({
+            if(event.state.description == C8oFileTransferStatus.stateFinished.description){
+                // This means that the file transfer is finished; You will find the transferred file
+                // in the path you requested when you called the downloadfile method
+                .. do what has to be done with the file ...
+            }
+            else{
+                if(event.state.description == C8oFileTransferStatus.stateReplicate.description){
+                    // File is replicating. You can access some status information in the event object
+                    progress += event.current.description + "/" + event.total.description + " (" + event.progress.description + ")"
+                }
+            }
+                    
+        })
+    })
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == 'l5' %}
+{% assign id="l5" %}
+{% include /custom/code_pills3.html content='l5' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // Walk over all existing transfers
+    for (C8oFileTransferStatus transfer: App.fileTransfer.getAllFiletransferStatus()) {
+        String uuid = transfer.getUuid();
+        ...
+    }
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // Walk over all existing transfers
+    foreach (var transfer in (await app.fileTransfer.GetAllFiletransferStatus()))
+    {
+        var uuid = transfer.Uuid;
+        ...
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // Walk over all existing transfers
+    for transfer in appDelegate.c8oFileTransfer!.getAllFiletransferStatus() {
+        let uuid = transfer.uuid
+        ...
+    }
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == 'l6' %}
+{% assign id="l6" %}
+{% include /custom/code_pills3.html content='l6' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // Cancel all file transfers
+    App.fileTransfer.cancelFiletransfers();
+
+    // Cancel one file transfer by an uuid string
+    App.fileTransfer.cancelFiletransfer(uuid);
+
+    // Cancel one file transfer by a C8oFileTransferStatus
+    App.fileTransfer.cancelFiletransfer(fileTransferStatus);
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // Cancel all file transfers
+    await app.fileTransfer.CancelFiletransfers();
+
+    // Cancel one file transfer by an uuid string
+    await app.fileTransfer.CancelFiletransfer(uuid);
+
+    // Cancel one file transfer by a C8oFileTransferStatus
+    await app.fileTransfer.CancelFiletransfer(fileTransferStatus);
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // Cancel all file transfers
+    appDelegate.c8oFileTransfer!.cancelFiletransfers()
+
+    // Cancel one file transfer by an uuid string
+    appDelegate.c8oFileTransfer!.cancelFiletransfer(uuid)
+
+    // Cancel one file transfer by a C8oFileTransferStatus
+    appDelegate.c8oFileTransfer!.cancelFiletransfer(fileTransferStatus)
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}

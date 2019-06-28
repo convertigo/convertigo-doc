@@ -1,0 +1,17 @@
+{%- include base.html -%}
+<footer>
+        <div class="row">
+                <div class="col-lg-10">
+                        <p><img src="{{base}}/{{ "images/c8ologosmall2.png" }}" alt="Convertigo"/></p>
+                </div>
+                <div class="col-lg-2"></div>
+        </div>
+            <div class="row">
+                <div class="col-lg-2 footer">
+                </div>
+                <div class="col-lg-10 footer">
+                        &copy;{{ site.time | date: "%Y"  }} {{site.company_name}}. All rights reserved. <br />
+{%- if page.last_updated -%}<span>Page last updated:</span> {{page.last_updated}}<br/>{% endif %} Site last generated: {{ site.time | date: "%b %-d, %Y"  }} <br />
+                </div>
+            </div>
+</footer>

@@ -1,0 +1,2265 @@
+<!--- Initializing and creating a C8o instance for an Endpoint -->
+
+{% if include.content == '1' %}
+{% assign id="1" %}
+{% include /custom/code_pills6.html content='1' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" >
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    import com.convertigo.clientsdk.*;
+    …
+    C8o c8o = new C8o(getApplicationContext(), "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery");
+    // the C8o instance is ready to interact over https with the demo.convertigo.net server, using sampleMobileUsDirectoryDemo as default project.
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+    <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    using Convertigo.SDK;
+    …
+    // The .NET initialization for platform specific initialization, should be called once
+    C8oPlatform.Init();
+    …
+    var c8o = new C8o("https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery");
+    // the C8o instance is ready to interact over https with the demo.convertigo.net server, using sampleMobileUsDirectoryDemo as default project.
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %}
+    import C8o
+    // In swift there is two ways to handle errors :
+    // We can either choose to don't care about errors using the following syntax (this may produce in case of error an "EXC_BAD_INSTRUCTION")
+    let c8o : C8o = try! C8o(endpoint: "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", c8oSettings: nil)
+
+    // or we can choose to use do/catch syntax that will allow us to catch errors
+    do{
+        let c8o : C8o = try C8o(endpoint: "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", c8oSettings: nil)
+    }
+    catch let e as NSError{
+        print(e.description)
+    }
+    // the C8o instance is ready to interact over https with the demo.convertigo.net server, using sampleMobileUsDirectoryDemo as default project.
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+    <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    //Into app.module.ts
+    import {C8o} from "c8osdkangular";
+    import {HttpClientModule} from "@angular/common/http";
+
+    @NgModule({
+    imports: [
+        BrowserModule,
+        HttpClientModule
+    ],
+    providers: [
+        C8o
+    ]
+    });
+
+    //Into the target page
+    import { C8o, C8oSettings } from "c8osdkangular";
+
+    export class MyClass {
+
+        // Instanciate c8o thanks to Angular di (dependency injection)
+        constructor(private c8o: C8o) {
+            
+            // Call init method with a c8osettings class giving an endpoint
+            this.c8o.init(new C8oSettings().setEndPoint("http://localhost:18080/convertigo/projects/template_Ionic2"));
+            
+            // Use the specific method to be sure that init has been finished 
+            this.c8o.finalizeInit(()=>{
+                // Do stuff with c8o object
+            });
+        }
+    }
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+    <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    import { C8o, C8oSettings } from "c8osdkjs"
+
+    // Instantiate C8o
+    const c8o = new C8o()
+
+    // Call init method with a c8osettings class giving an endpoint
+    c8o.init(new C8oSettings().setEndPoint("http://localhost:18080/convertigo/projects/template_Ionic2"));
+
+    // Use the specific method to be sure that init has been finished 
+    c8o.finalizeInit(()=>{
+        // Do stuff with c8o object
+    });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE  --------------------------------------------------------- -->
+    {% highlight js %} 
+    import { C8o, C8oSettings } from "react-native-c8osdk";
+
+    // Instantiate C8o
+    let c8o: C8o = new C8o();
+
+    // Init Endpoint
+    c8o.init("https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", new C8oSettings());
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Advanced instance settings -->
+
+{% if include.content == '2' %}
+{% assign id="2" %}
+{% include /custom/code_pills6.html content='2' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // the common way
+    C8o c8o = new C8o(getApplicationContext(), "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", new C8oSettings()
+    .setDefaultDatabaseName("mydb_fullsync")
+    .setTimeout(30000));
+
+    // the verbose way
+    String endpoing = "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery";
+    C8oSettings c8oSettings = new C8oSettings();
+    c8oSettings.setDefaultDatabaseName("mydb_fullsync");
+    c8oSettings.setTimeout(30000);
+    c8o = new C8o(getApplicationContext(), endpoint, c8oSettings);
+
+    // customize existing settings
+    C8oSettings customSettings = new C8oSettings(c8oSettings).setTimeout(60000);
+    // or from a C8o instance
+    customSettings = new C8oSettings(c8o).setTimeout(60000);
+
+    // all settings can be retrieve from a C8o or C8oSettings instance
+    int timeout = c8o.getTimeout();
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // the common way
+    C8o c8o = new C8o("https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", new C8oSettings()
+    .SetDefaultDatabaseName("mydb_fullsync")
+    .SetTimeout(30000));
+
+    // the verbose way
+    string endpoing = "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery";
+    C8oSettings c8oSettings = new C8oSettings();
+    c8oSettings.SetDefaultDatabaseName("mydb_fullsync");
+    c8oSettings.SetTimeout(30000);
+    c8o = new C8o(endpoint, c8oSettings);
+
+    // customize existing settings
+    C8oSettings customSettings = new C8oSettings(c8oSettings).SetTimeout(60000);
+    // or from a C8o instance
+    customSettings = new C8oSettings(c8o).SetTimeout(60000);
+
+    // all settings can be retrieve from a C8o or C8oSettings instance
+    int timeout = c8o.Timeout;
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    import C8o
+    // In swift there is two ways to handle errors :
+    // We can either choose to don't care about errors using the following syntax (this may produce in case of error an "EXC_BAD_INSTRUCTION")
+    let c8o : C8o = try! C8o(endpoint: "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", c8oSettings: nil)
+
+    // or we can choose to use do/catch syntax that will allow us to catch errors
+    do{
+        let c8o : C8o = try C8o(endpoint: "https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", c8oSettings: nil)
+    }
+    catch let e as NSError{
+        print(e.description)
+    }
+    // the C8o instance is ready to interact over https with the demo.convertigo.net server, using sampleMobileUsDirectoryDemo as default project.
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    //Into app.module.ts
+    import {C8o} from "c8osdkangular";
+    import {HttpClientModule} from "@angular/common/http";
+
+    @NgModule({
+    imports: [
+        BrowserModule,
+        HttpClientModule
+    ],
+    providers: [
+        C8o
+    ]
+    });
+
+    //Into the target page
+    import { C8o, C8oSettings } from "c8osdkangular";
+
+    export class MyClass {
+
+        // Instanciate c8o thanks to Angular di (dependency injection)
+        constructor(private c8o: C8o) {
+            
+            // Call init method with a c8osettings class giving an endpoint
+            this.c8o.init(new C8oSettings().setEndPoint("http://localhost:18080/convertigo/projects/template_Ionic2"));
+            
+            // Use the specific method to be sure that init has been finished 
+            this.c8o.finalizeInit(()=>{
+                // Do stuff with c8o object
+            });
+        }
+    }
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    import { C8o, C8oSettings } from "c8osdkjs"
+    …
+    // The only way
+    let settings: C8oSettings = new C8oSettings();
+    settings
+        .setEndPoint("https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery")
+        .setDefaultDatabaseName("mydb_fullsync")
+        .setTimeout(30000);
+    //Then we need to assign C8oSettings object to our C8o object
+    c8o.init(settings);
+
+    //Then to use c8o Object and be sure that initialization has been properly done
+    c8o.finalizeInit().then(() => {
+        //Do stuff with c8o Object
+    })
+
+    // all settings can be retrieve from a C8o or C8oSettings instance
+    let timeout : number = c8o.timeout;
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    import {C8o, C8oSettings} from "react-native-c8osdk";
+    …
+    // Instanciate C8oSettings
+    let settings = new C8oSettings();
+
+    // Add Settings properties
+    settings
+    .setTimeout(3000)
+    .setDefaultDatabaseName("myfullsyncDbName")
+    .setTrustAllCertificates(true)
+    .setLogLevelLocal(C8oLogLevel.TRACE);
+
+    // Instanciate C8o
+    let c8o: C8o = new C8o();
+
+    // Init C8o instance with a given endpoint and settings
+    c8o.init("http://c8o-dev.convertigo.net:80/cems/projects/ClientSDKtestig", settings);
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Calling a Convertigo requestable -->
+
+{% if include.content == '3' %}
+{% assign id="3" %}
+{% include /custom/code_pills6.html content='3' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    import org.w3c.dom.Document;
+    …
+    // c8o is a C8o instance
+    Document document = c8o.callXml(".getSimpleData").sync();
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    using System.Xml.Linq;
+    …
+    // c8o is a C8o instance
+    XDocument document = c8o.CallXml(".getSimpleData").Sync();
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    import AEXML
+    …
+    // c8o is a C8o instance
+    let document : AEXMLDocument = try! c8o.callXml(".getSimpleData").sync()!
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    import { C8o, C8oSettings } from "c8osdkangular"
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax 
+    let result = await this.c8o.callJson('.login')
+                        .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson(".login")
+        .async()
+        .then((response)=>{
+        //handle result
+        });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
+    this.c8o.callJson(".login")
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    import { C8o, C8oSettings } from "c8osdkjs"
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax 
+    let result = await this.c8o.callJson('.login')
+                        .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson(".login")
+        .async()
+        .then((response)=>{
+        //handle result
+        });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
+    this.c8o.callJson(".login")
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    import {C8o, C8oSettings} from "react-native-c8osdk";
+    …
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax 
+    let result = await this.c8o.callJson('.login')
+                        .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson(".login")
+        .async()
+        .then((response)=>{
+        //handle result
+        });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
+    this.c8o.callJson(".login")
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == '4' %}
+{% assign id="4" %}
+{% include /custom/code_pills6.html content='4' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    import org.json.JSONObject;
+    …
+    // c8o is a C8o instance
+    JSONObject jObject = c8o.callJson(".getSimpleData").sync();
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    using Newtonsoft.Json.Linq;
+    …
+    // c8o is a C8o instance
+    JObject jObject = c8o.CallJson(".getSimpleData").Sync();
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    import SwiftyJSON
+    …
+    // c8o is a C8o instance
+    let JObject : JSON = try! c8o.callJson(".getSimpleData")!.sync()!
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    import { C8o, C8oSettings } from "c8osdkangular"
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax 
+    let result = await this.c8o.callJson('.login')
+                        .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson(".login")
+        .async()
+        .then((response)=>{
+        //handle result
+        });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
+    this.c8o.callJson(".login")
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    import { C8o, C8oSettings } from "c8osdkjs"
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax 
+    let result = await this.c8o.callJson('.login')
+                        .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson(".login")
+        .async()
+        .then((response)=>{
+        //handle result
+        });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
+    this.c8o.callJson(".login")
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    import {C8o, C8oSettings} from "react-native-c8osdk";
+    …
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax 
+    let result = await this.c8o.callJson('.login')
+                        .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson(".login")
+        .async()
+        .then((response)=>{
+        //handle result
+        });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
+    this.c8o.callJson(".login")
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Calls parameters -->
+
+{% if include.content == '5' %}
+{% assign id="5" %}
+{% include /custom/code_pills6.html content='5' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // the common way with parameters
+    JSONObject jObject = c8o.callJson(".getSimpleData",
+    "firstname", "John",
+    "lastname", "Doe"
+    ).sync();
+
+    // the verbose way
+    Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("firstname", "John");
+    parameters.put("lastname", "Doe");
+    JSONObject jObject = c8o.callJson(".getSimpleData", parameters).sync();
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // the common way with parameters
+    JObject jObject = c8o.CallJson(".getSimpleData",
+    "firstname", "John",
+    "lastname", "Doe"
+    ).Sync();
+
+    // the verbose way
+    IDictionnary<string, object> parameters = new Dictionnary<string, object>();
+    parameters["firstname"] = "John";
+    parameters["lastname"] = "Doe";
+    JSONObject jObject = c8o.CallJson(".getSimpleData", parameters).Sync();
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // the common way with parameters
+    let JObject : JSON = try! c8o.callJson(".getSimpleData",
+                parameters:
+                "firstname", "John",
+                "lastname", "Doe"
+    )!.sync()!
+
+    // the verbose way
+    var parameters : Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+    parameters["firstname"] = "John"
+    parameters["lastname"] = "Doe"
+    let JSONObject : JSON = try! c8o.callJson(".getSimpleData", parameters: parameters)!.sync()!
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax
+    let result = await this.c8o.callJsonObject('.login', {
+                            login: "barnett.christine",
+                            password: "mySuperPassword123"
+                            })
+                            .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJsonObject('.login', {
+        login: "barnett.christine",
+        password: "mySuperPassword123"
+    })
+    .async()
+    .then((response)=>{
+        // handle result
+    });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
+    this.c8o.callJsonObject(".login",{
+        login: "barnett.christine",
+        password: "mySuperPassword123"
+        })
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax
+    let result = await this.c8o.callJsonObject('.login', {
+                            login: "barnett.christine",
+                            password: "mySuperPassword123"
+                            })
+                            .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJsonObject('.login', {
+        login: "barnett.christine",
+        password: "mySuperPassword123"
+    })
+    .async()
+    .then((response)=>{
+        // handle result
+    });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
+    this.c8o.callJsonObject(".login",{
+        login: "barnett.christine",
+        password: "mySuperPassword123"
+        })
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter syntax
+    let result = await this.c8o.callJson('.login', {
+                            login: "barnett.christine",
+                            password: "mySuperPassword123"
+                            })
+                            .async();
+
+    // Here using Javascript's Promises with then/catch syntax
+    this.c8o.callJson('.login', {
+        login: "barnett.christine",
+        password: "mySuperPassword123"
+    })
+    .async()
+    .then((response)=>{
+        // handle result
+    });
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
+    this.c8o.callJson(".login",{
+        login: "barnett.christine",
+        password: "mySuperPassword123"
+        })
+        .then((response)=>{
+        //handle result
+        });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Working with threads -->
+
+{% if include.content == '6' %}
+{% assign id="6" %}
+{% include /custom/code_pills3.html content='6' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // lock the current thread while the request is done
+    JSONObject jObject = c8o.callJson(".getSimpleData").sync();
+    // the response can be used in this scope
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // lock the current thread while the request is done
+    JObject jObject = c8o.CallJson(".getSimpleData").Sync();
+    // the response can be used in this scope
+    …
+    public async Task OnClick(object sender, EventArgs args)
+    {
+    // doesn't lock the current thread, needs to be in a 'async' scope (function or method)
+    JObject jObject = await c8o.CallJson(".getSimpleData").Async();
+    // the response can be used in this scope
+    …
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // lock the current thread while the request is done
+    let JSONObject : JSON = try! c8o.callJson(".getSimpleData")!.sync()!
+    // the response can be used in this scope
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+{% if include.content == '7' %}
+{% assign id="7" %}
+{% include /custom/code_pills3.html content='7' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    // doesn't lock the current thread while the request is done
+    c8o.callJson(".getSimpleData").then(new C8oOnResponse<JSONObject>() {
+    @Override
+    public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+        // the jObject is available, the current code is executed in an another working thread
+        …
+        return null; // return null for a simple call
+    }
+    });
+    // following lines are executed immediately, before the end of the request.
+
+    c8o.callJson(".getSimpleData").thenUI(new C8oOnResponse<JSONObject>() {
+    @Override
+    public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+        // the jObject is available, the current code is executed in the UI thread
+        output.setText(jObject.toString());
+        …
+        return null; // return null for a simple call
+    }
+    });
+    // following lines are executed immediately, before the end of the request.
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // doesn't lock the current thread while the request is done
+    c8o.CallJson(".getSimpleData").Then((jObject, parameters) =>
+    {
+    // the jObject is available, the current code is executed in an another working thread
+    …
+    return null; // return null for a simple call
+    }
+    });
+    // following lines are executed immediately, before the end of the request.
+
+    c8o.CallJson(".getSimpleData").ThenUI((jObject, parameters) =>
+    {
+    // the jObject is available, the current code is executed in the UI thread
+    Output.Text = jObject.ToString();
+    …
+    return null; // return null for a simple call
+    }
+    });
+    // following lines are executed immediately, before the end of the request.
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // doesn't lock the current thread while the request is done
+    c8o.callJson(".getSimpleData")?.then({ (response, parameters) -> (C8oPromise?) in
+        // the jObject is available, the current code is executed in an another working thread
+        …
+        return nil // return nil for a simple call
+    })
+    // following lines are executed immediately, before the end of the request.
+            
+    c8o.callJson(".getSimpleData")?.thenUI({ (response, parameters) -> (C8oPromise?) in
+        // the jObject is available, the current code is executed in the UI thread
+        self.simpleLabel.text = response.stringValue
+        …
+        return nil // return nil for a simple call
+    })
+    // following lines are executed immediately, before the end of the request.
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Chaining calls -->
+
+{% if include.content == '8' %}
+{% assign id="8" %}
+{% include /custom/code_pills6.html content='8' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    c8o.callJson(".getSimpleData", "callNumber", 1).then(new C8oOnResponse<JSONObject>() {
+    @Override
+    public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+        // you can do stuff here and return the next C8oPromise<JSONObject> instead of deep nested blocks
+        return c8o.callJson(".getSimpleData", "callNumber", 2);
+    }
+    }).thenUI(new C8oOnResponse<JSONObject>() { // use .then or .thenUI is allowed
+    @Override
+    public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+        // you can do stuff here and even modify previous parameters
+        parameters.put("callNumber", 3);
+        parameters.put("extraParameter", "ok");
+        return c8o.callJson(".getSimpleData", parameters);
+    }
+    }).then(new C8oOnResponse<JSONObject>() { // use .then or .thenUI is allowed
+    @Override
+    public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+        // you can do stuff here and return null because this is the end of the chain
+        return null;
+    }
+    });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    c8o.CallJson(".getSimpleData", "callNumber", 1).Then((jObject, parameters) =>
+    {
+    // you can do stuff here and return the next C8oPromise<JObject> instead of deep nested blocks
+    return c8o.CallJson(".getSimpleData", "callNumber", 2);
+    }).ThenUI((jObject, parameters) => // use .Then or .ThenUI is allowed
+    {
+    // you can do stuff here and even modify previous parameters
+    parameters["callNumber"] = 3;
+    parameters["extraParameter"] = "ok";
+    return c8o.CallJson(".getSimpleData", parameters);
+    }).Then((jObject, parameters) =>
+    {
+    // you can do stuff here and return null because this is the end of the chain
+    return null;
+    });
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    c8o.callJson(".getSimpleData", parameters: "callNumber", 1)?.then({ (response, parameters) -> (C8oPromise?) in
+        // you can do stuff here and return the next C8oPromise instead of deep nested blocks
+        return c8o.callJson(".getSimpleData", parameters: "callNumber", 2)
+    })?.thenUI({ (response, parameters) -> (C8oPromise?) in
+        // you can do stuff here and even modify previous parameters
+        var parameters : [String : AnyObject]? = nil
+        parameters!["callNumber"] = 3
+        parameters!["extraParameter"] = "ok"
+        return c8o.callJson(".getSimpleData", parameters: parameters)
+    })?.then({ (response, parameters) -> (C8oPromise?) in
+        // you can do stuff here and return nil because this is the end of the chain
+        return nil
+    })
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    c8o.callJson(".getSimpleData", "callNumber", 1)
+    .then((response) => {
+        // you can do stuff here and return the next C8oPromise instead of deep nested blocks
+        return c8o.callJson(".getSimpleData", "callNumber", 2);
+    })
+    .then((response)=>{
+    // you can do stuff here and even modify previous parameters
+    parameters["callNumber"] = 3;
+    parameters["extraParameter"] = "ok";
+    return c8o.callJsonObject(".getSimpleData", parameters);
+    })
+    .then((response)=>{
+    // you can do stuff here and return null because this is the end of the chain
+    return null;
+    })
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    c8o.callJson(".getSimpleData", "callNumber", 1)
+    .then((response) => {
+        // you can do stuff here and return the next C8oPromise instead of deep nested blocks
+        return c8o.callJson(".getSimpleData", "callNumber", 2);
+    })
+    .then((response)=>{
+    // you can do stuff here and even modify previous parameters
+    parameters["callNumber"] = 3;
+    parameters["extraParameter"] = "ok";
+    return c8o.callJsonObject(".getSimpleData", parameters);
+    })
+    .then((response)=>{
+    // you can do stuff here and return null because this is the end of the chain
+    return null;
+    })
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    c8o.callJson(".getSimpleData", "callNumber", 1)
+    .then((response) => {
+        // you can do stuff here and return the next C8oPromise instead of deep nested blocks
+        return c8o.callJson(".getSimpleData", "callNumber", 2);
+    })
+    .then((response)=>{
+    // you can do stuff here and even modify previous parameters
+    parameters["callNumber"] = 3;
+    parameters["extraParameter"] = "ok";
+    return c8o.callJsonObject(".getSimpleData", parameters);
+    })
+    .then((response)=>{
+    // you can do stuff here and return null because this is the end of the chain
+    return null;
+    })
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Handling failures -->
+
+{% if include.content == '9' %}
+{% assign id="9" %}
+{% include /custom/code_pills6.html content='9' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    try {
+    c8o.callJson(".getSimpleData").sync();
+    } catch (Exception exception) {
+    // process the exception
+    }
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    try
+    {
+    c8o.CallJson(".getSimpleData").Sync();
+    // or in an async scope
+    await c8o.CallJson(".getSimpleData").Async();
+    }
+    catch (Exception exception)
+    {
+    // process the exception
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    do{
+        try c8o.callJson(".getSimpleData")!.sync()
+    } catch let Exception as NSError{
+        // process the exception
+    }
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter
+    try{
+    let result = await this.c8o.callJsonObject('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).async();
+    }
+    catch(error){
+    // Do something with the error
+    }
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter
+    try{
+    let result = await this.c8o.callJsonObject('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).async();
+    }
+    catch(error){
+    // Do something with the error
+    }
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
+
+    // Here using Javascript's Promises with awaiter
+    try{
+    let result = await this.c8o.callJson('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).async();
+    }
+    catch(error){
+    // Do something with the error
+    }
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == '10' %}
+{% assign id="10" %}
+{% include /custom/code_pills6.html content='10' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    c8o.callJson(".getSimpleData", "callNumber", 1).then(new C8oOnResponse<JSONObject>() {
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+          return c8o.callJson(".getSimpleData", "callNumber", 2);
+        }
+      }).thenUI(new C8oOnResponse<JSONObject>() {
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+          return null;
+        }
+      }).fail(new C8oOnFail() {
+        @Override
+        public void run(Throwable throwable, Map<String, Object> parameters) {
+          // throwable catched from the first or the second callJson, can be an Exception
+          // this code runs in a worker thread
+          …
+        }
+      });
+      
+      c8o.callJson(".getSimpleData", "callNumber", 1).then(new C8oOnResponse<JSONObject>() {
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+          return c8o.callJson(".getSimpleData", "callNumber", 2);
+        }
+      }).thenUI(new C8oOnResponse<JSONObject>() {
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject jObject, Map<String, Object> parameters) throws Throwable {
+          return null;
+        }
+      }).failUI(new C8oOnFail() {
+        @Override
+        public void run(Throwable throwable, Map<String, Object> parameters) {
+          // throwable catched from the first or the second callJson, can be an Exception
+          // this code runs in a UI thread
+          …
+        }
+      });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    c8o.CallJson(".getSimpleData", "callNumber", 1).Then((jObject, parameters) =>
+    {
+    return c8o.CallJson(".getSimpleData", "callNumber", 2);
+    }).ThenUI((jObject, parameters) =>
+    {
+    return null;
+    }).Fail((exception, parameters) =>
+    {
+        // exception catched from the first or the second CallJson, can be an Exception
+        // this code runs in a worker thread
+        …
+    });
+
+    c8o.CallJson(".getSimpleData", "callNumber", 1).Then((jObject, parameters) =>
+    {
+    return c8o.CallJson(".getSimpleData", "callNumber", 2);
+    }).ThenUI((jObject, parameters) =>
+    {
+    return null;
+    }).FailUI((exception, parameters) =>
+    {
+        // exception catched from the first or the second CallJson, can be an Exception
+        // this code runs in a UI thread
+        …
+    });
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    c8o.callJson(".getSimpleData", parameters: "callNumber", 1)?.then({ (jObject, parameters) -> (C8oPromise?) in
+        return c8o.callJson(".getSimpleData", parameters: "callNumber", 2)
+    })?.thenUI({ (response, parameters) -> (C8oPromise?) in
+        return nil
+    })?.fail({ (exception, parameters) in
+        // exception catched from the first or the second CallJson, can be an Exception
+        // this code runs in a worker thread
+        …
+    })
+            
+    c8o.callJson(".getSimpleData", parameters: "callNumber", 1)?.then({ (jObject, parameters) -> (C8oPromise?) in
+        return c8o.callJson(".getSimpleData", parameters: "callNumber", 2)
+    })?.thenUI({ (jObject, parameters) -> (C8oPromise?) in
+        return nil
+    })?.failUI({ (exception, parameters) in
+        // exception catched from the first or the second CallJson, can be an Exception
+        // this code runs in a UI thread
+        …
+    })
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // Here using Javascript's Promises
+    this.c8o.callJsonObject('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).
+                .async()
+                .then((response)=>{
+                //handle result
+                })
+                .catch((error)=>{
+                // Do something with the error
+                })
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
+    this.c8o.callJsonObject('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).
+                .then((response)=>{
+                //handle result
+                })
+                .fail((error)=>{
+                // Do something with the error
+                })
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // Here using Javascript's Promises
+    this.c8o.callJsonObject('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).
+                .async()
+                .then((response)=>{
+                //handle result
+                })
+                .catch((error)=>{
+                // Do something with the error
+                })
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
+    this.c8o.callJsonObject('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).
+                .then((response)=>{
+                //handle result
+                })
+                .fail((error)=>{
+                // Do something with the error
+                })
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // Here using Javascript's Promises
+    this.c8o.callJson('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).
+                .async()
+                .then((response)=>{
+                //handle result
+                })
+                .catch((error)=>{
+                // Do something with the error
+                })
+
+    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
+    this.c8o.callJson('.login', {
+                    login: "barnett.christine",
+                    password: "mySuperPassword123"
+                }).
+                .then((response)=>{
+                //handle result
+                })
+                .fail((error)=>{
+                // Do something with the error
+                })
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Writing the device logs to the Convertigo server  -->
+
+{% if include.content == '11' %}
+{% assign id="11" %}
+{% include /custom/code_pills6.html content='11' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    try {
+        c8o.log.info("hello world!"); // the message can be a simple string
+      } catch (Exception e) {
+        c8o.log.error("bye world...", e); // the message can also take an Exception argument
+      }
+      if (c8o.log.isDebug()) { // check if currents log levels are enough
+        // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
+        String msg = serializeData(); // compute a special string, like a Document serialization
+        c8o.log.debug(msg);
+      }
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    try
+    {
+    c8o.Log.Info("hello world!"); // the message can be a simple string
+    }
+    catch (Exception exception)
+    {
+    c8o.Log.Error("bye world...", e); // the message can also take an Exception argument
+    }
+    if (c8o.Log.IsDebug()) // check if currents log levels are enough
+    {
+    // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
+    string msg = serializeData(); // compute a special string, like a Document serialization
+    c8o.Log.Debug(msg);
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    do{
+        try c8o.log.info("hello world!") // the message can be a simple string
+    }
+    catch let e as C8oException{
+        c8o.log.error("bye world...", exceptions: e) // the message can also take an Exception argument
+    }
+    if(c8o.log.isDebug){ // check if currents log levels are enough
+        // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
+        let msg : String  = serializeData() // compute a special string, like a Document serialization
+        c8o.log.debug(msg)
+    }
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    try {
+        c8o.log.info("hello world!"); // the message can be a simple string
+    } catch (error) {
+        c8o.log.error("bye world...", error); // the message can also take an error argument
+    }
+    if (c8o.log.isDebug) { // check if currents log levels are enough
+        // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
+        let msg : string = serializeData(); // compute a special string, like a Document serialization
+        c8o.log.debug(msg);
+    }
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    try {
+        c8o.log.info("hello world!"); // the message can be a simple string
+    } catch (error) {
+        c8o.log.error("bye world...", error); // the message can also take an error argument
+    }
+    if (c8o.log.isDebug) { // check if currents log levels are enough
+        // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
+        let msg : string = serializeData(); // compute a special string, like a Document serialization
+        c8o.log.debug(msg);
+    }
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    try {
+        c8o.log.info("hello world!"); // the message can be a simple string
+    } catch (error) {
+        c8o.log.error("bye world..." + JSON.stringify(error)); // the message can also take an error argument
+    }
+    if (c8o.log.isDebug) { // check if currents log levels are enough
+        // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
+        let msg : string = serializeData(); // compute a special string, like a Document serialization
+        c8o.log.debug(msg);
+    }
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == '12' %}
+{% assign id="12" %}
+{% include /custom/code_pills6.html content='12' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    new C8oSetting()
+    .setLogC8o(false)    // disable log from the Convertigo Client SDK itself
+    .setLogRemote(false); // disable remote logging
+    // or
+    new C8oSetting().setLogOnFail(new C8oOnFail() {
+    @Override
+    public void run(Throwable throwable, Map<String, Object> parameters) {
+        // the throwable contains the cause of the remote logging failure
+    }
+    });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    new C8oSetting()
+    .SetLogC8o(false)    // disable log from the Convertigo Client SDK itself
+    .SetLogRemote(false) // disable remote logging
+    .SetLogLevelLocal(C8oLogLevel.TRACE);
+    // or
+    new C8oSetting().SetLogOnFail((exception, parameters) =>
+    {
+    // the exception contains the cause of the remote logging failure
+    });
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    C8oSettings()
+        .setLogC8o(false)   // disable log from the Convertigo Client SDK itself
+        .setLogRemote(false) // disable remote logging
+        .setLogLevelLocal(C8oLogLevel.TRACE)
+        // or
+    C8oSettings().setLogOnFail { (exception, parameters) -> (Void) in
+        // the exception contains the cause of the remote logging failure
+    }
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    C8oSettings()
+        .setLogC8o(false)   // disable log from the Convertigo Client SDK itself
+        .setLogRemote(false) // disable remote logging
+        .setLogLevelLocal(C8oLogLevel.TRACE);
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    C8oSettings()
+        .setLogC8o(false)   // disable log from the Convertigo Client SDK itself
+        .setLogRemote(false) // disable remote logging
+        .setLogLevelLocal(C8oLogLevel.TRACE);
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    C8oSettings()
+        .setLogC8o(false)   // disable log from the Convertigo Client SDK itself
+        .setLogRemote(false) // disable remote logging
+        .setLogLevelLocal(C8oLogLevel.TRACE);
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Using the Local Cache  -->
+
+{% if include.content == '13' %}
+{% assign id="13" %}
+{% include /custom/code_pills6.html content='13' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+        // return the response if is already know and less than 180 sec else call the server
+    c8o.callJson(".getSimpleData",
+    C8oLocalCache.PARAM, new C8oLocalCache(C8oLocalCache.Priority.LOCAL, 180 * 1000)
+    ).sync();
+
+    // same sample but with parameters, also acting as cache keys
+    c8o.callJson(".getSimpleData",
+    "firstname", "John",
+    "lastname", "Doe",
+    C8oLocalCache.PARAM, new C8oLocalCache(C8oLocalCache.Priority.LOCAL, 180 * 1000)
+    ).sync();
+
+    // make a standard network call with the server
+    // but in case of offline move or network failure
+    // return the response if is already know and less than 1 hour
+    c8o.callJson(".getSimpleData",
+    C8oLocalCache.PARAM, new C8oLocalCache(C8oLocalCache.Priority.SERVER, 3600 * 1000)
+    ).sync();
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // return the response if is already know and less than 180 sec else call the server
+    c8o.CallJson(".getSimpleData",
+    C8oLocalCache.PARAM, new C8oLocalCache(C8oLocalCache.Priority.LOCAL, 180 * 1000)
+    ).Sync();
+
+    // same sample but with parameters, also acting as cache keys
+    c8o.CallJson(".getSimpleData",
+    "firstname", "John",
+    "lastname", "Doe",
+    C8oLocalCache.PARAM, new C8oLocalCache(C8oLocalCache.Priority.LOCAL, 180 * 1000)
+    ).Sync();
+
+    // make a standard network call with the server
+    // but in case of offline move or network failure
+    // return the response if is already know and less than 1 hour
+    c8o.CallJson(".getSimpleData",
+    C8oLocalCache.PARAM, new C8oLocalCache(C8oLocalCache.Priority.SERVER, 3600 * 1000)
+    ).Sync();
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    // return the response if is already know and less than 180 sec else call the server
+    try! c8o.callJson(".getSimpleData",
+            parameters: C8oLocalCache.PARAM, C8oLocalCache(priority: C8oLocalCache.Priority.LOCAL, ttl: 180 * 1000)
+    )!.sync()
+            
+    // same sample but with parameters, also acting as cache keys
+    try! c8o.callJson(".getSimpleData",
+            parameters: "firstname", "John",
+                        "lastname", "Doe",
+            C8oLocalCache.PARAM, C8oLocalCache(priority: C8oLocalCache.Priority.LOCAL, ttl: 180 * 1000)
+    )!.sync()
+            
+    // make a standard network call with the server
+    // but in case of offline move or network failure
+    // return the response if is already know and less than 1 hour
+    try! c8o.callJson(".getSimpleData",
+                parameters: C8oLocalCache.PARAM, C8oLocalCache(priority: C8oLocalCache.Priority.SERVER, ttl: 3600 * 1000)
+    )!.sync()
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // return the response if is already know and less than 180 sec else call the server
+
+    c8o.callJson(".getSimpleData",
+            C8oLocalCache.PARAM, new C8oLocalCache(Priority.LOCAL, 180 * 1000)
+        )
+        .then((response: any, _) => {
+            // do stuff
+        });
+
+    // same sample but with parameters, also acting as cache keys
+
+    c8o.callJson(".getSimpleData",
+            "firstname", "John",
+            "lastname", "Doe",
+            C8oLocalCache.PARAM, new C8oLocalCache(Priority.LOCAL, 180 * 1000)
+        )
+        .then((response: any, _) => {
+            // do stuff
+        });
+
+    // make a standard network call with the server
+    // but in case of offline move or network failure
+    // return the response if is already know and less than 1 hour
+    c8o.callJson(".getSimpleData",
+            C8oLocalCache.PARAM, new C8oLocalCache(Priority.SERVER, 3600 * 1000)
+        )
+        .then((response: any, _) => {
+            // do stuff
+        });
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // Return the response if is already know and less than 180 seconds else call the server
+    this.c8o.callJsonObject(".getSimpleData",
+                {
+                "__localCache": new C8oLocalCache(Priority.LOCAL, 180 * 1000)
+                })
+                .then((response)=>{
+                // Do stuff 
+                });
+
+    // same sample but with parameters, also acting as cache keys
+    this.c8o.callJsonObject(".getSimpleData",
+                {
+                "firstname": "John",
+                    "lastname": "Doe",
+                "__localCache": new C8oLocalCache(Priority.LOCAL, 180 * 1000)
+                })
+                .then((response)=>{
+                // Do stuff 
+                });
+    // make a standard network call with the server
+    // but in case of offline move or network failure
+    // return the response if is already know and less than 1 hour
+    this.c8o.callJsonObject(".getSimpleData",
+                {
+                "__localCache": new C8oLocalCache(Priority.SERVER, 3600 * 1000)
+                })
+                .then((response)=>{
+                // Do stuff 
+                });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // Return the response if is already know and less than 180 seconds else call the server
+    this.c8o.callJson(".getSimpleData",
+                {
+                "__localCache": new C8oLocalCache(Priority.LOCAL, 180 * 1000)
+                })
+                .then((response)=>{
+                // Do stuff 
+                });
+
+    // same sample but with parameters, also acting as cache keys
+    this.c8o.callJson(".getSimpleData",
+                {
+                "firstname": "John",
+                    "lastname": "Doe",
+                "__localCache": new C8oLocalCache(Priority.LOCAL, 180 * 1000)
+                })
+                .then((response)=>{
+                // Do stuff 
+                });
+    // make a standard network call with the server
+    // but in case of offline move or network failure
+    // return the response if is already know and less than 1 hour
+    this.c8o.callJson(".getSimpleData",
+                {
+                "__localCache": new C8oLocalCache(Priority.SERVER, 3600 * 1000)
+                })
+                .then((response)=>{
+                // Do stuff 
+                });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Using the Full Sync -->
+
+{% if include.content == '14' %}
+{% assign id="14" %}
+{% include /custom/code_pills6.html content='14' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    c8o.callJson("fs://base.reset").then(new C8oOnResponse<JSONObject>() { // clear or create the "base" database
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+          // json content:
+          // { "ok": true }
+          return c8o.callJson("fs://base.post", // creates a new document on "base", with 2 key/value pairs
+            "firstname", "John",
+            "lastname", "Doe"
+          );
+        }
+      }).then(new C8oOnResponse<JSONObject>() {
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+          // json content:
+          // {
+          //   "ok": true,
+          //   "id": "6f1b52df",
+          //   "rev": "1-b0620371"
+          // }
+          return c8o.callJson("fs://base.get", "docid", json.getString("id")); // retrieves the complet document from its "docid"
+        }
+      }).then(new C8oOnResponse<JSONObject>() {
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+          // json content:
+          // {
+          //   "lastname": "Doe",
+          //   "rev": "1-b0620371",
+          //   "firstname": "John",
+          //   "_id": "6f1b52df"
+          // }
+          c8o.log.info(json.toString(2)); // output the document in the log
+          return null;
+        }
+      });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    c8o.CallJson("fs://base.reset").Then((jObject, parameters) => // clear or create the "base" database
+    {
+    // json content:
+    // { "ok": true }
+    return c8o.CallJson("fs://base.post", // creates a new document on "base", with 2 key/value pairs
+        "firstname", "John",
+        "lastname", "Doe"
+    );
+    }).Then((jObject, parameters) =>
+    {
+    // json content:
+    // {
+    //   "ok": true,
+    //   "id": "6f1b52df",
+    //   "rev": "1-b0620371"
+    // }
+    return c8o.CallJson("fs://base.get", "docid", json["id"].ToString()); // retrieves the complet document from its "docid"
+    }).Then((jObject, parameters) =>
+    {
+    // json content:
+    // {
+    //   "lastname": "Doe",
+    //   "rev": "1-b0620371",
+    //   "firstname": "John",
+    //   "_id": "6f1b52df"
+    // }
+    c8o.Log.Info(json.ToString()); // output the document in the log
+    return null;
+    });
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    c8o.callJson("fs://base.reset")?.then({ (json, parameters) -> (C8oPromise?) in
+        // json content:
+        // { "ok": true }
+        return c8o.callJson("fs://base.post", // creates a new document on "base", with 2 key/value pairs
+            parameters: "firstname", "John",
+            "lastname", "Doe"
+        )
+    })?.then({ (json, parameters) -> (C8oPromise?) in
+        // json content:
+        // {
+        //   "ok": true,
+        //   "id": "6f1b52df",
+        //   "rev": "1-b0620371"
+        // }
+        return c8o.callJson("fs://base.get",
+            parameters: "docid", json["id"].stringValue) // retrieves the complet document from its "docid"
+    })?.then({ (json, parameters) -> (C8oPromise?) in
+        // json content:
+        // {
+        //   "lastname": "Doe",
+        //   "rev": "1-b0620371",
+        //   "firstname": "John",
+        //   "_id": "6f1b52df"
+        // }
+        c8o.log.info(json.stringValue) // output the document in the log
+        return nil
+    })
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // clear or create the "base" database
+    c8o.callJson("fs://base.reset")
+        .then((response: any, parameters:Object) => {
+            // response content:
+            // { "ok": true }
+            return c8o.callJson("fs://base.post", // creates a new document on "base", with 2 key/value pairs
+                "firstname", "John",
+                "lastname", "Doe"
+            );
+        })
+        .then((response: any, parameters:Object) => {
+                // response content:
+                // {
+                //   "ok": true,
+                //   "id": "6f1b52df",
+                //   "rev": "1-b0620371"
+                // }
+                return c8o.callJson("fs://base.get", "docid", response["id"])); // retrieves the complet document from its "docid"
+        })
+        .then((response: any, parameters:Object) => {
+                // response content:
+                // {
+                //   "lastname": "Doe",
+                //   "rev": "1-b0620371",
+                //   "firstname": "John",
+                //   "_id": "6f1b52df"
+                // }
+                c8o.log.info(json.stringify(response)); // output the document in the log
+            return null;
+        });
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // clear or create the "base" database
+    c8o.callJson("fs://base.reset")
+        .then((response: any, parameters:Object) => {
+            // response content:
+            // { "ok": true }
+            return c8o.callJson("fs://base.post", // creates a new document on "base", with 2 key/value pairs
+                "firstname", "John",
+                "lastname", "Doe"
+            );
+        })
+        .then((response: any, parameters:Object) => {
+                // response content:
+                // {
+                //   "ok": true,
+                //   "id": "6f1b52df",
+                //   "rev": "1-b0620371"
+                // }
+                return c8o.callJson("fs://base.get", "docid", response["id"])); // retrieves the complet document from its "docid"
+        })
+        .then((response: any, parameters:Object) => {
+                // response content:
+                // {
+                //   "lastname": "Doe",
+                //   "rev": "1-b0620371",
+                //   "firstname": "John",
+                //   "_id": "6f1b52df"
+                // }
+                c8o.log.info(json.stringify(response)); // output the document in the log
+            return null;
+        });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // clear or create the "base" database
+    c8o.callJson("fs://base.reset")
+        .then((response: any, parameters:Object) => {
+            // response content:
+            // { "ok": true }
+            return c8o.callJson("fs://base.post",{
+                "firstname", "John",
+                "lastname", "Doe"}
+            );
+        })
+        .then((response) => {
+                // response content:
+                // {
+                //   "ok": true,
+                //   "id": "6f1b52df",
+                //   "rev": "1-b0620371"
+                // }
+                return c8o.callJson("fs://base.get", {"docid", response["id"]})); // retrieves the complet document from its "docid"
+        })
+        .then((response) => {
+                // response content:
+                // {
+                //   "lastname": "Doe",
+                //   "rev": "1-b0620371",
+                //   "firstname": "John",
+                //   "_id": "6f1b52df"
+                // }
+                c8o.log.info(json.stringify(response)); // output the document in the log
+            return null;
+        });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Replicating Full Sync databases  -->
+
+{% if include.content == '15' %}
+{% assign id="15" %}
+{% include /custom/code_pills6.html content='15' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    c8o.callJson("fs://base.replication_pull").then(new C8oOnResponse<JSONObject>() { // launches a database replication from the server to the device
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+          // json content:
+          // { "ok": true }
+          // the documents are retrieved from the server and can be used
+          return null;
+        }
+      }).progress(new C8oOnProgress() {
+        @Override
+        public void run(C8oProgress progress) throws Throwable {
+          // this code runs after each progression event
+          // progress.getTotal() is calculated and grows up then progress.getCurrent() increases to the total
+          c8o.log.info("progress: " + progress);
+        }
+      });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    c8o.CallJson("fs://base.replication_pull").Then((jObject, parameters) => // launches a database replication from the server to the device
+    {
+    // json content:
+    // { "ok": true }
+    // the documents are retrieved from the server and can be used
+    return null;
+    }).Progress((progress) =>
+    {
+    // this code runs after each progression event
+    // progress.Total is calculated and grows up then progress.Current increases to the total
+    c8o.Log.Info("progress: " + progress);
+    });
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    c8o.callJson("fs://base.replication_pull")?.then({ (json, parameters) -> (C8oPromise?) in  // launches a database replication from the server to the device
+        // json content:
+        // { "ok": true }
+        // the documents are retrieved from the server and can be used
+        return nil
+        
+    })?.progress({ (progress) in
+        // this code runs after each progression event
+        // progress.Total is calculated and grows up then progress.Current increases to the total
+        c8o.log.info("progress: " + progress.description)
+    })
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+
+    this.c8o.callJson('.login')
+    .then((response)=>{
+        if(response == "ok"){
+        // The progress can be handled only with C8oPromise,
+        // replication_pull can also be sync or replication_push
+        this.c8o.callJson('fs://base.replication_pull')
+            .then((response)=>{
+            // Do stuff with response
+            })
+            .progress((progress)=>{
+            // Do stuff with progress
+            });
+        }
+    });
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+
+    this.c8o.callJson('.login')
+    .then((response)=>{
+        if(response == "ok"){
+        // The progress can be handled only with C8oPromise,
+        // replication_pull can also be sync or replication_push
+        this.c8o.callJson('fs://base.replication_pull')
+            .then((response)=>{
+            // Do stuff with response
+            })
+            .progress((progress)=>{
+            // Do stuff with progress
+            });
+        }
+    });
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+
+    // The progress can be handled only with C8oPromise,
+    // replication_pull can also be sync or replication_push
+    this.c8o.callJson('fs://base.replication_pull')
+    .then((response)=>{
+        // Do stuff with response
+    })
+    .progress((progress)=>{
+        // Do stuff with progress
+    });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% if include.content == '16' %}
+{% assign id="16" %}
+{% include /custom/code_pills6.html content='16' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    c8o.callJson(".login", "user", user, "pass", pass).then(new C8oOnResponse<JSONObject>() { // launches a database replication from the server to the device
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+          // to push documents from the device to the remote database, the session must be authenticated
+          // sets the parameter "continuous" true to allow new documents to sync after the initial replication
+          return c8o.callJson("fs://base.sync", "continuous", true);
+        }
+      }).then(new C8oOnResponse<JSONObject>() { 
+        @Override
+        public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+          // all the documents at the replication time are retrieved from the server and can be used
+          // and local documents are pushed to the server
+          return null;
+        }
+      }).progressUI(new C8oOnProgress() {
+        @Override
+        public void run(C8oProgress progress) throws Throwable {
+          // this code runs after each progression event
+          if (progress.isContinuous()) {
+            if (progress.isPull) {
+              toast("new incomming modification");
+            } else {
+              toast("local modification synced")
+            }
+          } else {
+            if (progress.isPull) {
+              incommingGauge(progress.getCurrent(), progress.getTotal());
+            } else {
+              outgoingGauge(progress.getCurrent(), progress.getTotal());
+            }
+          }
+        }
+      });
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+    c8o.CallJson(".login").Then((jObject, parameters) => // login
+    {
+    if(jObject == "ok"){
+        // replication_pull can also be sync or replication_push
+        c8o.CallJson("fs://base.replication_pull").Then((jObject, parameters) => // launches a database replication from the server to the device
+        {
+            // json content:
+            // { "ok": true }
+            // the documents are retrieved from the server and can be used
+            return null;
+        }).Progress((progress) =>
+        {
+            // this code runs after each progression event
+            // progress.Total is calculated and grows up then progress.Current increases to the total
+            c8o.Log.Info("progress: " + progress);
+        });
+    }
+    }
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    c8o.callJson(".login")?.then({ (json, parameters) -> (C8oPromise?) in
+        if(json == "ok"){
+            // replication_pull can also be sync or replication_push
+            c8o.callJson("fs://base.replication_pull")?.then({ (json, parameters) -> (C8oPromise?) in  // launches a database replication from the server to the device
+                // json content:
+                // { "ok": true }
+                // the documents are retrieved from the server and can be used
+                return nil
+                
+            })?.progress({ (progress) in
+                // this code runs after each progression event
+                // progress.Total is calculated and grows up then progress.Current increases to the total
+                c8o.log.info("progress: " + progress.description)
+            })
+        }
+        return nil
+    })
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+
+    // The progress can be handled only with C8oPromise
+    this.c8o.callJsonObject('fs://base.replication_pull', {"continuous": true})
+        .then((response)=>{
+        // Do stuff with response
+        })
+        .progress((progress)=>{
+        // Do stuff with progress
+        })
+
+    // this will cancel the previous replication
+    this.c8o.callJsonObject('fs://base.replication_pull', {"cancel": true})
+        .then((response)=>{
+        // Do stuff with response
+        })
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+
+    // The progress can be handled only with C8oPromise
+    this.c8o.callJsonObject('fs://base.replication_pull', {"continuous": true})
+        .then((response)=>{
+        // Do stuff with response
+        })
+        .progress((progress)=>{
+        // Do stuff with progress
+        })
+
+    // this will cancel the previous replication
+    this.c8o.callJsonObject('fs://base.replication_pull', {"cancel": true})
+        .then((response)=>{
+        // Do stuff with response
+        })
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
+
+    this.c8o.callJson('.login')
+    .then((response)=>{
+        if(response == "ok"){
+        // The progress can be handled only with C8oPromise,
+        // replication_pull can also be sync or replication_push
+        this.c8o.callJson('fs://base.replication_pull')
+            .then((response)=>{
+            // Do stuff with response
+            })
+            .progress((progress)=>{
+            // Do stuff with progress
+            });
+        }
+    });
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!--- Full Sync FS_LIVE requests  -->
+
+{% if include.content == '17' %}
+{% assign id="17" %}
+{% include /custom/code_pills6.html content='17' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    c8o.callJson("fs://.view",
+        "ddoc", "design",
+        "view", "customers",
+        C8O.FS_LIVE, "customers").thenUI(new C8oOnResponse<JSONObject>() { // launches a live view
+    @Override
+    public C8oPromise<JSONObject> run(JSONObject json, Map<String, Object> parameters) throws Throwable {
+        // will be call now and after each database update
+        updateCustomersUI(json);
+        return null;
+    }
+    });
+    …
+    // cancel the previous FS_LIVE request, can be on application page change for example
+    c8o.cancelLive("customers");
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    c8o.CallJson("fs://.view",
+        "ddoc", "design",
+        "view", "customers",
+        C8O.FS_LIVE, "customers").ThenUI((jObject, parameters) => // launches a live view
+    {
+    // will be call now and after each database update
+    UpdateCustomersUI(jObject);
+    return null;
+    });
+    …
+    // cancel the previous FS_LIVE request, can be on application page change for example
+    c8o.CancelLive("customers");
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    c8o.callJson("fs://.view",
+        parameters: "ddoc", "design",
+        "view", "customers",
+        C8O.FS_LIVE, "customers")?.thenUI({ (json, parameters) -> (C8oPromise?) in  // launches a live view
+        // will be call now and after each database update
+        updateCustomersUI(json)
+    return nil
+    })?
+    …
+    // cancel the previous FS_LIVE request, can be on application page change for example
+    c8o.cancelLive("customers")
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    c8o.callJson("fs://.view",
+        "ddoc", "design",
+        "view", "customers",
+        C8O.FS_LIVE, "customers")
+        .then((response: any, _) => {  // launches a live view
+            // will be call now and after each database update
+            updateCustomersUI(json);
+            return null;
+        });
+    …
+    // cancel the previous FS_LIVE request, can be on application page change for example
+    c8o.cancelLive("customers");
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    c8o.callJson("fs://.view",
+        "ddoc", "design",
+        "view", "customers",
+        C8O.FS_LIVE, "customers")
+        .then((response: any, _) => {  // launches a live view
+            // will be call now and after each database update
+            updateCustomersUI(json);
+            return null;
+        });
+    …
+    // cancel the previous FS_LIVE request, can be on application page change for example
+    c8o.cancelLive("customers");
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    c8o.callJson("fs://.view",{
+        "ddoc", "design",
+        "view", "customers",
+        C8O.FS_LIVE, "customers"})
+        .then((response: any, _) => {  // launches a live view
+            // will be call now and after each database update
+            updateCustomersUI(json);
+            return null;
+        });
+    …
+    // cancel the previous FS_LIVE request, can be on application page change for example
+    c8o.cancelLive("customers");
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Full Sync change listener --->
+
+{% if include.content == '18' %}
+{% assign id="18" %}
+{% include /custom/code_pills6.html content='18' %}
+<div class="tab-content">
+    {% if id %}
+    <div id="android{{ id }}" class="tab-pane fade in active" > 
+    <!-- ANDROID --------------------------------------------------------- -->
+    {% highlight java %}
+    C8oFullSyncChangeListener changeListener = new C8oFullSyncChangeListener() {
+        @Override
+        public void onChange(JSONObject changes) {
+            checkChanges(changes);
+        }
+    };
+    …
+    c8o.addFullSyncChangeListener("base", changeListener); // add this listener for the database "base" ; null or "" while use the default database.
+    …
+    c8o.removeFullSyncChangeListener("base", changeListener); // remove this listener for the database "base" ; null or "" while use the default database.
+    {% endhighlight %}
+    </div>
+    <div id="xamarin{{ id }}" class="tab-pane fade">
+     <!-- XAMARIN --------------------------------------------------------- -->
+    {% highlight c# %}
+    C8oFullSyncChangeListener changeListener = (changes) =>
+    {
+        CheckChanges(changes);
+    };
+    …
+    c8o.AddFullSyncChangeListener("base", changeListener); // add this listener for the database "base" ; null or "" while use the default database.
+    …
+    c8o.RemoveFullSyncChangeListener("base", changeListener); // remove this listener for the database "base" ; null or "" while use the default database.
+    {% endhighlight %}
+    </div>
+    <div id="swift{{ id }}" class="tab-pane fade">
+    <!-- SWIFT --------------------------------------------------------- -->
+    {% highlight swift %} 
+    let changeListener = C8oFullSyncChangeListener(handler: {(changes: JSON) -> () in
+        checkChanges(changes)
+    })
+    …
+    c8o.addFullSyncChangeListener("base", changeListener) // add this listener for the database "base" ; null or "" while use the default database.
+    …
+    c8o.removeFullSyncChangeListener("base", changeListener) // remove this listener for the database "base" ; null or "" while use the default database.
+    {% endhighlight %}
+    </div>
+    <div id="angular{{ id }}" class="tab-pane fade">
+     <!-- ANGULAR --------------------------------------------------------- -->
+    {% highlight typescript %}
+    let changeListener : C8oFullSyncChangeListener = new C8oFullSyncChangeListener((changes:Object)=>{
+        checkChanges(changes);
+    });
+    …
+    c8o.addFullSyncChangeListener("base", changeListener); // add this listener for the database "base" ; null or "" while use the default database.
+    …
+    c8o.removeFullSyncChangeListener("base", changeListener); // remove this listener for the database "base" ; null or "" while use the default database.
+    {% endhighlight %}    
+    </div>
+    <div id="js{{ id }}" class="tab-pane fade">
+     <!-- JAVASCRIPT --------------------------------------------------------- -->
+    {% highlight js %}
+    let changeListener : C8oFullSyncChangeListener = new C8oFullSyncChangeListener((changes:Object)=>{
+        checkChanges(changes);
+    });
+    …
+    c8o.addFullSyncChangeListener("base", changeListener); // add this listener for the database "base" ; null or "" while use the default database.
+    …
+    c8o.removeFullSyncChangeListener("base", changeListener); // remove this listener for the database "base" ; null or "" while use the default database.
+    {% endhighlight %}
+    </div>
+    <div id="react{{ id }}" class="tab-pane fade">
+    <!-- REACT NATIVE ------------------------------------------------------- -->
+    {% highlight js %}
+    this.c8o.addFullSyncChangeListener("databaseName", "anyID")
+    .progress((change)=>{
+        // triggered at each change on the given databaseName
+        this.c8o.log.debug("progress addFullSyncChangeListener");
+    })
+    .then((resp)=>{
+        //resp returns "ok" if the change listener has been correctly added
+    })
+    .fail((err)=>{
+        // Throw any error
+    })
+    {% endhighlight %}
+    {% endif %}
+    </div>
+</div>
+{% endif %}

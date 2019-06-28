@@ -1,0 +1,21 @@
+{%- assign splitedPath = page.url | split: '/' -%}
+{%- assign path = '' | split: '' -%}
+{%- assign spliter = '/' | split: '' -%}
+{%- if page.url != "/" -%}
+<ul class="breadcrumb">
+    <li class="breadcrumb">
+    {%- for parts in splitedPath -%}
+    {%- if forloop.first -%}
+        <a href="{{ base }}"><i class="fa fa-home"></i></a> 
+    {%- endif -%}
+    {%- if parts != forloop.first and forloop.last == false -%}
+        {%- assign folderName = parts | split: '' -%}
+        {%- assign path = path | concat: folderName | concat: spliter  -%}
+        <a id="{{ forloop.index }}" href="{{ base }}{{ path }}">{{ parts | replace: '-', ' ' | capitalize }}</a><i class="fa fa-angle-right"></i>
+    {%- elsif forloop.last -%}
+        <a class="active">{{ parts | replace: '-', ' ' | capitalize }}</a>
+    {%- endif -%}
+    {%- endfor -%}
+    </li>
+</ul>
+{%- endif -%}

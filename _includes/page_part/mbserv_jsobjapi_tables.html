@@ -1,0 +1,630 @@
+<table>
+        <th>Return Type</th>
+        <th>Method signature</th>
+        <th>Description</th>
+        <tr>
+            <td>void</td>
+            <td><em>addKeyListener</em>(java.awt.event.KeyListener l)<br><br>
+                <strong>Parameters</strong>:<br>
+                l - the component interested by the events.
+            </td>
+            <td>Registers a client on the keyListener. <em>KeyListener</em> delivers events for keystokes on Javelin.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>addZoneListener(com.twinsoft.twinj.zoneListener l)<br><br>
+                    <strong>Parameters</strong>:<br>
+            l - the component interested by the events</td>
+            <td>Registers a client on the <em>zoneListener</em>. <em>ZoneListener</em> delivers events for selection changes.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>clearTrigger()</td>
+            <td>Remove all arrived trigger from the <em>MsgQueue</em>.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>connect()<br><br>
+                <strong>See also</strong>: connect(int), disconnect()
+            </td>
+            <td>Connects Javelin to a server. The connection is asynchronous. When the connection is made, the Connected event is thrown by Javelin.<br><br>
+                The connection is made with the parameters provided by helper functions such as <em>setDteAddress(), setCommDevice(), setServiceCode()</em>...
+            </td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>
+                connect(int timeout)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li><em>timeout</em> - the maximum amount of milliseconds during which the connection is expected.</li>
+                </ul>
+                <strong>Returns</strong>: <em>true</em> if connected, <em>false</em> if the timeout expired.<br>
+                <strong>See also</strong>: connect(), disconnect()
+            </td>
+            <td>Connects synchronously Javelin to a server.<br><br>
+                The connection is made with the parameters provided by helper functions such as setDteAddress(), setCommDevice(), setServiceCode()...
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>deleteWaitAts()<br><br>
+                <strong>See also</strong>: waitAt(String, int, int, long), waitAtId(int, String, int, int), waitForId(int, String), waitFor(String, long), deleteWaitFors()
+            </td>
+            <td>Deletes all triggers set by the <em>waitAt()</em> method.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>deleteWaitFors()<br><br>
+                <strong>See also</strong>: waitAt(String, int, int, long), waitAtId(int, String, int, int), waitForId(int, String), waitFor(String, long), deleteWaitAts()
+            </td>
+            <td>Deletes all triggers set by the <em>waitFor()</em> method.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>disconnect()<br><br>
+                <strong>See also</strong>: connect(), connect(int)
+            </td>
+            <td>Disconnects Javelin from the current connected server.<br>The disconnection is synchronous, i.e. Javelin is disconnected when the method <strong>Returns</strong>.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>doAction(java.lang.String action)<br><br>
+                <strong>Parameters</strong>:<br>                
+                <em>action</em> - the action to execute, see appendix <a href="../../appendixes/#legacy-emulator-actions-table" target="_blank">legacy emulator actions table</a>.</td>
+            <td>Executes an action on the emulator.</td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>getChar(int column, int line)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li>column - the horizontal coordinate from left to right beginning by 0.</li>
+                    <li>line - the vertical coordinate from top to bottom beginning by 0.</li>                    
+                </ul>
+                <strong>Returns</strong>: the read character at (column, line) coordinates.<br>
+                <strong>See also</strong>: getCharAttribute(int, int), getString(int, int, int), setChar(int, int, char)
+            </td>
+            <td><strong>Returns</strong> the ASCII code of the character at coordinates (<em>column</em>, <em>line</em>).</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getCharAttribute(int column, int line)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li><em>column</em> - the horizontal coordinate from left to right beginning by 0.</li>
+                    <li><em>line</em> - the vertical coordinate from top to bottom beginning by 0.</li>                    
+                </ul>
+                <strong>Returns</strong>: the character attribute at (column, line) coordinates.<br>
+                <strong>See also</strong>: getChar(int, int), getString(int, int, int), setChar(int, int, char)
+            </td>
+            <td><strong>Returns</strong> the character attribute at coordinates ( <em>column</em> , <em>line</em> ).<br>
+                You can access specific attribute bit with AT_xxx masks.
+            </td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getCurrentColumn()<br><br>
+                <strong>Returns</strong> the current column.<br>
+                <strong>See also</strong>: getCurrentLine()
+            </td>
+            <td><strong>Returns</strong> the current column of the caret.<br>
+                Columns are designed from top to bottom and beginning by 0.
+            </td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getCurrentLine()<br><br>
+                <strong>Returns</strong> the current line.<br>
+                <strong>See also</strong>: getCurrentColumn()
+            </td>
+            <td><strong>Returns</strong> the current line of the caret.<br>
+                Lines are designed from left to right and beginning by 0.
+            </td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>getDataStableOnCursorOn()<br><br>
+                <strong>Returns</strong> the DataStableOnCursorOn.
+            </td>
+            <td>Retrieves the DataStableOnCursorOn flag. This flag controls how the data stable condition is detected.<br>
+                For Videotex emulators. if true, this condition is met when a Videotex cursor is shown by the host.
+            </td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getDataStableThreshold()<br><br>
+                <strong>Returns</strong> the dataStableThreshold value.
+            </td>
+            <td>Gets the dataStableThreshold value.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getFieldAttribute(int fieldIndex)<br><br>
+                <strong>Parameters</strong>: <em>fieldIndex</em> - the index or the field from 0 to n.<br>
+                <strong>Returns</strong>: the attribute of the field.
+            </td>
+            <td>Gets the attribute of a given field.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getFieldColumn(int fieldIndex)<br><br>
+                <strong>Parameters</strong>: <em>fieldIndex</em> - the index or the field from 0 to n.<br>                    
+                <strong>Returns</strong>: the column of the field.
+            </td>
+            <td>Gets the column of a given field.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getFieldLength(int fieldIndex)<br><br>
+                <strong>Parameters</strong>: <em>fieldIndex</em> - the index or the field from 0 to n.<br>                    
+                <strong>Returns</strong>: the length of the field.
+            </td>
+            <td>Gets the length of a given field.<br>
+                If the length is greater than the width of the screen, it means that the field spans on several lines.
+            </td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>	
+                getFieldLine(int fieldIndex)<br><br>                
+                <strong>Parameters</strong>: <em>fieldIndex</em> - the index or the field from 0 to n.<br>                
+                <strong>Returns</strong>: the line of the field.
+            </td>
+            <td>Gets the line of a given field.</td>
+        </tr>
+        <tr>
+            <td>java.lang.String</td>
+            <td>getFieldText(int fieldIndex)<br><br>
+                <strong>Parameters</strong>: <em>fieldIndex</em> - the index or the field from 0 to n.<br>                    
+                <strong>Returns</strong>: the text of the field.
+            </td>
+            <td>Gets the text of a given field.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getNumberOfFields()<br><br>
+                <strong>Returns</strong>: the number of fields.<br>
+            </td>
+            <td>Gets the number of fields on the screen.<br>
+                If the number of fields is 0, then the screen is called "unformatted".<br><br>
+                This is always the case for VT and VDX emulators but can be the case for IBM in the case of a unformatted screen.
+            </td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getScreenHeight()<br><br>
+                <strong>Returns</strong>: the number of lines.<br>
+                <strong>See also</strong>: getScreenWidth()
+            </td>
+            <td>Gets the number of lines of the current emulator screen.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>getScreenWidth()<br><br>
+                <strong>Returns</strong>: the number of columns.<br>
+                <strong>See also</strong>: getScreenHeight()
+            </td>
+            <td>Gets the number of columns of the current emulator screen.</td>
+        </tr>
+        <tr>
+            <td>java.awt.Rectangle</td>
+            <td>getSelectionZone()<br><br>
+                <strong>Returns</strong>: zone - the rectangle that holds the zone<br>
+                (x = column 0 based, y = line 0 based, width = width of the selection in chars, height = height of the selection in chars)
+            </td>
+            <td>Gets the current selection zone on Javelin.</td>
+        </tr>
+        <tr>
+            <td>java.lang.String</td>
+            <td>getString(int column, int line, int length)<br><br>
+                <strong>Parameters</strong>:
+                <ul>
+                    <li><em>column</em> - the horizontal coordinate from left to right beginning by 0.</li>
+                    <li><em>line</em> - the vertical coordinate from top to bottom beginning by 0.</li>
+                    <li><em>length</em> - the string length to return.</li>
+                </ul>
+                <strong>Returns</strong>: the read string at (column, line) coordinates.<br>                
+                <strong>See also</strong>: getChar(int, int), getCharAttribute(int, int), setChar(int, int, char)
+            </td>
+            <td><strong>Returns</strong> the string at coordinates (column, line).</td>
+        </tr>
+        <tr>
+            <td>java.lang.String</td>
+            <td>getTerminalClass()<br><br>
+                <strong>Returns</strong>: the terminal class.<br>
+            </td>
+            <td>Retrieves the terminal class of the Javelin object.</td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>isConnected()<br><br>
+                <strong>Returns</strong>: true if connected, false otherwise.<br>
+                <strong>See also</strong>: connect(), connect(int), disconnect()
+            </td>
+            <td>Retrieves the Javelin connection state.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>moveCursor(int column, int line)<br><br>
+                <strong>Parameters</strong>:
+                <ul>
+                    <li><em>column</em> - the horizontal coordinate from left to right beginning by 0.</li>
+                    <li><em>line</em> - the vertical coordinate from top to bottom beginning by 0.</li>
+                </ul>
+            </td>
+            <td>Moves the cursor to coordinates (column, line).</td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>printBuffer(java.lang.String printerPort, java.lang.String buffer)<br><br>
+                <strong>Parameters</strong>:
+                <ul>
+                    <li><em>printerPort</em> - the printer port.</li>
+                    <li><em>buffer</em> - the buffer to be printed.</li>
+                </ul>
+                <strong>Returns</strong>: true if ok, false otherwise.
+            </td>
+            <td>Writes a string on a given printer port.<br>
+                This port can be any string containing LPTx or a network printer specification as SERVERPRINTER or a file as print.txt.<br>
+                The specified port will be opened, then the buffer will be written to it and the port will be closed in this sequence. <br>
+                If the port is null, then the port will be the default port specified as RawPrinter in the applet.
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>removeAllZoneListeners()</td>
+            <td>Unregister all clients on the zoneListener. ZoneListener delivers events for selection changes.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>removeKeyListener(java.awt.event.KeyListener l)<br><br>
+                <strong>Parameters</strong>:<br>
+                l - the component not anymore interested by the events.
+            </td>
+            <td>Unregister a client on the keyListener. KeyListener delivers events for keystokes on Javelin.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>removeZoneListener(com.twinsoft.twinj.zoneListener l)<br><br>
+                <strong>Parameters</strong>:<br>
+                l - the component not anymore interested by the events.</td>
+            <td>Unregister a client on the zoneListener. ZoneListener delivers events for selection changes.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>send(java.lang.String keystrokes)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>keystrokes</em> - the string to send.</td>
+            <td>Sends a string as if the user has stroken it on keyboard. All characters between 0x00 and 0xFF can be sent by this way.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setAutoConnect(boolean bAutoConnect)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>bAutoConnect</em> - indicates if automatic connection should be performed without having to call one of the connect() methods.
+            </td>
+            <td>Sets the auto connect flag.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setChar(int column, int line, char c)<br><br>
+                <strong>Parameters</strong>:
+                <ul>                                    
+                    <li><em>column</em> - the horizontal coordinate from left to right beginning by 0.</li>
+                    <li><em>line</em> - the vertical coordinate from top to bottom beginning by 0.</li>
+                    <li><em>c</em> - the ASCII character code to set.</li>
+                </ul>                 
+                <strong>See also</strong>: getChar(int, int), getCharAttribute(int, int), getString(int, int, int),
+            </td>
+            <td>Sets the ASCII code of the character at coordinates (column, line).</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setClientConfig(java.util.Properties p)<br><br>
+                <strong>Parameters</strong>:
+                <ul>                                    
+                    <li><em>p</em> - the properties ti set in the emulator.</li>
+                </ul>
+            </td>
+            <td>Sets the current terminal properties. The properties depends on the emulator technology. Only the 3270 and 5250 emulators support this api.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setClientConfig(java.lang.String configuration)<br><br>
+                <strong>Parameters</strong>:
+                <ul>
+                    <li><em>configuration</em> - the new configuration; this is a string of the form</li>
+                    <li><em>param1=value1&param2=value2&; ... &paramN=valueN.</em></li>
+                </ul>                
+                <em>NB</em>: each valuei should be in UTF8 format.
+            </td>
+            <td>Sets a new configuration for Javelin.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setDataStableOnCursorOn(boolean bool)<br><br>
+                <strong>Parameters</strong>: <em>bool</em> - the DataStableOnCursorOn flag.
+            </td>
+            <td>Sets the DataStableOnCursorOn flag.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setDataStableThreshold(int val)
+                <strong>Parameters</strong>:<br>
+                <em>val</em> - the dataStableThreshold value.
+            </td>
+            <td>Sets the dataStableThreshold value. This value is the maximum time allowed with no data received from the host to consider a dataStable condition.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setDoCapture(boolean bDoCapture)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>bDoCapture</em> - indicates if capture should be written or not.</td>
+            <td>Sets the capture flag.</td>
+        </tr>
+        <tr>
+            <td rowspan="2">void</td>
+            <td>setDteAddress(java.lang.String connectionString)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>connectionString</em> - the connection string using the following format:                    
+                < path>#< destination>-< source sub address>.< destination sub address>/< max level>.
+            </td>
+            <td>Sets the connection string.<br>
+                This method is ineffective for 5250 and 3270 emulators.
+            </td>          
+        </tr>
+        <tr>
+            <td colspan="2">For a direct telnet connection (mandatory for IBM and Bull emulators):
+                <ul>
+                    <li><em>path</em> = DIR</li>
+                    <li><em>destination</em> = < IP address>:< port></li>
+                </ul>                    
+                To connect to a PAVI + Eicon X25 board (there is no "-" character between destination and sourceSA in this case only):
+                <ul>
+                    <li><em>path</em> = EIC</li>
+                    <li><em>destination</em> = < Iremote X25 address></li>
+                    <li><em>source sub address</em> = called sub-address (for Intelmatique billings)</li>
+                    <li><em>destination sub address</em> = calling sub-address (for services filter selection)</li>
+                    <li><em>max level</em> = 0..255</li>
+                </ul> 
+                To connect to a PAVI + SAP/IP:                    
+                <ul>
+                    <li><em>path</em> = TCP</li>                        
+                    <li><em>destination</em> = < Intelmatique address>@port</li>
+                    <li><em>source sub address</em> = called sub-address (for Intelmatique billings)</li>
+                    <li><em>destination sub address</em> = calling sub-address (for services filter selection)</li>
+                    <li><em>max level</em> = 0..255</li>
+                </ul>
+                To connect to a PAVI + iMinitel (same as DIR but using the PAVI as a gateway ; iMinitel address: 172.31.0.20@7516):                    
+                <ul>
+                    <li><em>path</em> = MIP</li>
+                    <li><em>destination</em> = < iMinitel address>@port</li>
+                    <li><em>max level</em> = 0..255</li>
+                </ul>
+                To connect to a PAVI + iMinitel + RAS (using a modem or ISDN service ; iMinitel address: 172.31.0.20@7516):                
+                <ul>
+                    <li><em>path</em> = RAS</li>
+                    <li><em>destination</em> = < iMinitel address>@port</li>
+                    <li><em>max level</em> = 0..255</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setGroup(java.lang.String group)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>group</em> - the user group.
+            </td>
+            <td>Sets the group of the user.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setLogOutputStream(java.io.OutputStream outputStream)<br><br>
+                <strong>Parameters</strong>:<br>                    
+                <em>outputStream</em> - the output stream for traces.
+            </td>
+            <td>Defines the output stream for traces.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setSelectionZone(java.awt.Rectangle zone)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>zone</em> - the rectangle that holds the zone (x = column 0 based, y = line 0 based, width = width of the selection in chars, height = height of the selection in chars)
+            </td>
+            <td>Sets a selection zone on Javelin. This will result as if the user had selected the zone with the mouse.<br>
+                After this api is called, the user will be able to modify the selection zone.
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setServiceCode(java.lang.String serviceCode)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>serviceCode</em> - the service code using the following format :
+                <ul>
+                    <li>VT: n/a</li>
+                    <li>Bull: mailbox</li>
+                    <li>Videotex: service code</li>
+                    <li>IBM: device name</li>
+                </ul>
+            </td>
+            <td>Sets the service code (depending of the terminal class).</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>setVicUser(java.lang.String vicUser)<br><br>
+                <strong>Parameters</strong>:<br>                    
+                <em>vicUser</em> - the user name.
+            </td>
+            <td>Sets the name of the user.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>showZones(java.util.Vector rv, java.util.Vector cv)<br><br>
+                <strong>Parameters</strong>:<br>                
+                <ul>
+                    <li><em>rv</em> - the vector containing the zones rectangles. If <em>rv</em> is <em>null</em>, the zones will not be shown anymore.</li>
+                    <li><em>cv</em> - the vector containing the color of each zone.</li>
+                </ul>                    
+            </td>
+            <td>Shows Zones on the emulator screen. The zones will be represented as rectangles bounding characters.<br>
+                This feature can be used to enhance or to show a grid system on the emulator screen.<br>
+                Zones are described in a vector of rectangles in character 0 based coordinates.<br>
+                <em>For example, Rectangle (0, 0, 10, 1);</em><br>
+                will describe a zone in column 0, line 0, of 10 chars.
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>Trace(java.lang.Exception e)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>e</em> - the exception to log.
+            </td>
+            <td>Writes an exception in the emulator log output stream.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>Trace(int level, java.lang.String message)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li><em>level</em> - the log level to use.</li>
+                    <li><em>message</em> - the message to write.</li>
+                </ul>
+            </td>
+            <td>Writes a message in the emulator log output stream with a given log level.</td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>Trace(java.lang.String message)<br><br>
+                <strong>Parameters</strong>:<br>
+                <em>message</em> - the message to write.
+            </td>
+            <td>Writes a message in the emulator log output stream.</td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>waitAt(java.lang.String searchedString, int column, int line, long timeOut)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li><em>searchedString</em> - the string to be searched.</li>
+                    <li><em>column</em> - the horizontal coordinate of the trigger.</li>
+                    <li><em>line</em> - the vertical coordinate of the trigger.</li>
+                    <li><em>timeout</em> - the maximum amount of milliseconds during which the wait is made.</li>
+                </ul>  
+                <strong>Returns</strong>: true if the event is fired, false otherwise.<br>
+                <strong>See also</strong>: waitAtId(int, String, int, int), waitForId(int, String), waitFor(String, long), deleteWaitAts(), deleteWaitFors()
+            </td>
+            <td>Sets up a synchronous screen trigger.<br>
+                This method returns only when the string searchedString is recognized on the screen at coordinates (column, line).
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>waitAtId(int id, java.lang.String searchedString, int column, int line)<br><br>
+                <strong>Parameters</strong>:        
+                <ul>                    
+                    <li>id - the trigger id. This ID is transmitted by the WaitAtDone event.</li>
+                    <li>searchedString - the string to be searched.</li>
+                    <li>column - the horizontal coordinate of the trigger.</li>
+                    <li>line - the vertical coordinate of the trigger.</li>
+                </ul>                
+                <strong>See also</strong>: waitAt(String, int, int, long), waitForId(int, String), waitFor(String, long), deleteWaitAts(), deleteWaitFors()
+            </td>
+            <td>Sets up an asynchronous screen trigger.<br>
+                When the string searchedString is recognized on the screen at (column, line) coordinates, the WaitAtDone event is generated by the applet with the identificator id.<br><br>
+                You can set many observations at the same time. Once the event is generated, the observation is freed.
+            </td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>waitCursorAt(int column, int line, boolean here, long timeout)<br><br>
+                    <strong>Parameters</strong>:<br>
+                    <ul>
+                        <li><em>column</em> - the horizontal coordinate of the cursor.</li>
+                        <li><em>line</em> - the vertical coordinate of the cursor.</li>
+                        <li><em>here</em> - if true, the function waits for the cursor to be at the specified position. if false, the function waits for the cursor to be at any position different from the one specified.</li>
+                        <li><em>timeout</em> - the maximum amount of milliseconds to wait.</li>
+                    </ul>
+                    <strong>Returns</strong>: true if the cursor is found at this position before timeout, false otherwise.<br>                    
+                    <strong>See also</strong>: waitAtId(int, int, int, boolean)
+            </td>
+            <td>Waits synchronously for the cursor to be at a specified position.<br>
+                This function is useful to detect a new page coming in Videotex and VTxxx emulators.
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>waitCursorAtId(int Id, int column, int line, boolean here)<br><br>
+                    <strong>Parameters</strong>:<br>
+                    <ul>
+                        <li><em>id</em> - the trigger id. This ID is received in the WaitAtDone event or in the WaitTrigger() function.</li>
+                        <li><em>column</em> - the horizontal coordinate of the cursor.</li>
+                        <li><em>line</em> - the vertical coordinate of the cursor.</li>
+                        <li><em>here</em> - if true, the function waits for the cursor to be at the specified position. if false, the function waits for the cursor to be at any position different from the one specified.</li>
+                    </ul>
+                </td>
+            <td>Waits Asynchronously for the cursor to be at a specified position.<br>
+                This function is useful to detect a new page coming in Videotex and VTxxx emulators.
+            </td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>waitFor(java.lang.String searchedString, long timeout)<br><br>
+
+                    <strong>Parameters</strong>:<br>
+                    <ul>
+                        <li><em>searchedString</em> - the string to be searched.</li>
+                        <li><em>timeout</em> - the maximum amount of milliseconds during which the search is performed.</li>
+                    </ul>                    
+                    <strong>Returns</strong>: true if the string is found before timeout, false otherwise.<br>                    
+                    <strong>See also</strong>: waitAt(String, int, int, long), waitAtId(int, String, int, int), waitForId(int, String), deleteWaitAts(), deleteWaitFors()
+                </td>
+            <td>Set up a synchronous line trigger.</td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>waitForDataStable(int timeout, int dataStableThreshold)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li><em>timeout</em> - the maximum amount of milliseconds during which the search is performed.</li>
+                    <li><em>dataStableThreshold</em> - this value is the maximum time allowed with no data received from the host to consider a dataStable condition.</li>
+                </ul>
+                <strong>Returns</strong>: true if the screen is stable, false otherwise.
+            </td>
+            <td>Waits for the screen to be stable.<br>
+                This routine will return after timeout, even if the screen isn't still stable.
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>waitForId(int id, java.lang.String Str)<br><br>
+                <strong>Parameters</strong>:<br>
+                <ul>
+                    <li><em>id</em> - the trigger id. This ID is received in the WaitAtDone event or in the WaitTrigger() function.</li>
+                    <li><em>str</em> - the string to be observed.</li>
+                </ul>
+                <strong>See also</strong>: waitAt(String, int, int, long), waitAtId(int, String, int, int), waitFor(String, long), deleteWaitAts(), deleteWaitFors()
+            </td>
+            <td>Set up a screen trigger. When the string Str is recognized in the data stream the event id will be generated. You can set many Triggers at the same time.
+                Once the event is generated, the Trigger is freed. You can wait for these triggers with the WaitTrigger() function.
+            </td>
+        </tr>
+        <tr>
+            <td>void</td>
+            <td>waitSync(int timeOut)<br><br>
+                    <strong>Parameters</strong>:<br>
+                    <em>timeout</em> - the maximum amount of milliseconds during which the wait will occur.
+            </td>
+            <td>Calls the Javelin wait() method.</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>waitTrigger(long timeout)<br><br>
+                <strong>Parameters</strong>:<br>                    
+                <em>timeout</em> - the maximum amount of milliseconds during which the event is expected.<br>                   
+                <strong>Returns</strong>: -1 if the timeout has expired, otherwise the trigger ID.<br>
+                <strong>See also</strong>: waitAt(String, int, int, long), waitAtId(int, String, int, int), waitForId(int, String), deleteWaitAts(), deleteWaitFors()
+            </td>
+            <td>Waits for a trigger that has been set by one of the waitAt() or waitFor() functions.</td>
+        </tr>        
+    </table>

@@ -1,0 +1,33 @@
+---
+layout: page
+title: Button
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/button-components/button/
+metadesc: button  Defines a  Button  component. Buttons are an essential way to interact with and navigate through a mobile application, and should clearly comm
+ObjGroup: Buttons
+ObjCatName: button-components
+ObjName: Button
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/button_color_32x32.png
+topnav: topnavobj
+---
+button
+##### Defines a <i>Button</i> component.
+Buttons are an essential way to interact with and navigate through a mobile application, and should clearly communicate what action will occur after the user taps them.
+<i>Button</i> can consist of <i>Text</i> and/or <i>Icon</i>, and can be enhanced with a wide variety of properties/attributes.
+You can add <i>Event</i> component with chained <i>Actions</i> to a <i>Button</i> to handle button click.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#buttons' target='_blank'>Buttons</a>.
+
+Name | Description 
+--- | ---
+Icon only | Set if we only show the icon.
+button form type | Specifies form's button type.
+button type | Specifies ionic button style.
+clear | If set make a 'clear' component.
+color | Specifies ionic color.
+icon position | Specifies ionic icon position.
+menu mode | Specifies menu mode.
+outline | Specifies ionic outline mode.
+shape | Specifies ionic shape.
+size | Specifies ionic size.
+

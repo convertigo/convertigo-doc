@@ -1,0 +1,52 @@
+---
+layout: page
+title: Calendar Picker
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/calendar-picker/
+metadesc: Defines a  Calendar Picker  action component.   Use this action to display a Calendar to pick dates. When the date (or dates) are picked data will be 
+ObjGroup: Actions
+ObjCatName: action-components
+ObjName: CalendarPickerAction
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/calendaraction_color_32x32.png
+topnav: topnavobj
+---
+##### Defines a <i>Calendar Picker</i> action component. 
+ Use this action to display a Calendar to pick dates. When the date (or dates) are picked data will be available in the <code>out</code> (TS) object in this format :
+
+<ul><li><code>{ date: CalendarResult }</code> for 'single mode'</li><li><code>{ from: CalendarResult, to:CalendarResult  }</code> for 'range mode'</li><li><code>[CalendarResult]</code> for 'multi mode'</li></ul>.
+Where <code>CalendarResult</code> is :
+
+<code>class CalendarResult {.
+&nbsp;&nbsp;&nbsp;time: number;.
+&nbsp;&nbsp;&nbsp;unix: number;.
+&nbsp;&nbsp;&nbsp;dateObj: Date;.
+&nbsp;&nbsp;&nbsp;string: string;.
+&nbsp;&nbsp;&nbsp;years: number;.
+&nbsp;&nbsp;&nbsp;months: number;.
+&nbsp;&nbsp;&nbsp;date: number;.
+}</code>.
+
+Name | Description 
+--- | ---
+Can be backwards selected | Define if the calendar can be backwards selected.
+Close icon | Display close Icon.
+Close label | The close button label.
+Day Title | The default title displayed for Days.
+Days configuration | Define the days configuration.
+Default date | Default selected date as a Javascript <code>Date()</code> object.
+Default dates (multi) | Default selected dates as an array of Javascript <code>Date()</code> objects. For 'multi' mode only.
+Default range (range) | Default selected date range as an <code>{from: Date(), to:Date()}</code> object. For 'range' mode only.
+Disable weeks days | Weeks days to be disabled (0 to 6).
+Done icon | Display done icon.
+Done label | The done button label.
+From | start date, default , today.
+Month fomat | Month format ('MMM YYYY').
+Pick mode | Picker mode.
+Subtitle | The default  subtitle displayed for Days.
+Title | The calendar title.
+To | End date, default, infinite.
+Week start | Define the week start day.
+Weekdays labels | Define the week days labels.
+color | Specifies ionic color.
+

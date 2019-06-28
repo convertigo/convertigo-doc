@@ -1,0 +1,363 @@
+<!-- This page is for the "Interfaces to Convertigo" page -->
+
+<!-- Table 4 - 3: Generic engine reserved <strong>Parameters</strong> -->
+{% if include.content == '1' %}
+<table>
+    <th>Parameter Name</th>
+    <th>Description</th>
+    <tr>
+        <td>__connector</td>
+        <td>Name of the requested connector.<br>
+            If this parameter is not present, the default connector of the requested project is used.
+        </td>
+    </tr>
+    <tr>
+        <td>__transaction</td>
+        <td>Name of the transaction to run.<br> If this parameter is not present or its value is an empty string, the default transaction of specified connector is executed.
+        </td>
+    </tr>
+    <tr>
+        <td>__sequence</td>
+        <td>Name of the sequence to run. <br>As no default sequence exists for a project, if this parameter is not present or its value is an empty string, the default transaction from default connector is executed.
+        </td>
+    </tr>
+    <tr>
+        <td>__project</td>
+        <td> Overrides the name of the requested project. The project name is mostly set in the URI: {% highlight html %}http(s)://<ConvertigoServer>/<ConvertigoAppName>/projects/<ProjectName>/<ConvertigoRequester>?<<strong>Parameters</strong>>.{% endhighlight %}
+        For more information on HTTP request URI, see <a href="#convertigo-urls">Convertigo URLs</a> If this parameter is present, it overrides the project name from the URI.
+        </td>
+    </tr>
+    <tr>
+        <td>__testcase</td>
+        <td>Name of the test case to run, in specified transaction / sequence.<br>
+            If this parameter is present, the variable values will be retrieved from the test case definition.
+        </td>
+    </tr>
+    <tr>
+        <td>__context</td>
+        <td>Name of the context in which run the specified transaction / sequence.<br>
+            <br>If this parameter is not present, Convertigo automatically creates or reuses a context, named <i>default</i>, and attaches it to the client HTTP session cookie (<i>JSessionId</i>). <br>
+            <br>When XML response is returned from Convertigo, the context name is present in the <i>context</i> attribute of the document element.<br>
+            <br>To reuse a context that was previously created, the <i>__context</i> parameter should be set to the context name returned by Convertigo.
+        </td>
+    </tr>
+    <tr>
+        <td>__user_reference</td>
+        <td>This parameter is a user reference passed in entry to Convertigo transaction / sequence, which is automatically inserted unchanged in the resulting output response. <br>
+            <br>It can be useful for the caller to be able to exactly determine from which request a response belongs. The value of this parameter is automatically added in the generated XML in the userReference attribute of the document element.
+        </td>
+    </tr>
+    <tr>
+        <td>__stub</td>
+        <td>If true, the requested transaction/sequence response is retrieved from the stub response (if a stub response is present for this transaction/sequence in the project).
+        {{site.data.alerts.note}}
+        <ul>        
+            <li>When executing a transaction/sequence from stub, the Authenticated context required property of the transaction/sequence is ignored: the context would never be authenticated as the transaction/sequence setting the context as authenticated could also be executed from stub</li>
+            <li>In Convertigo Studio, a stub response can be easily created for a transaction/sequence. To do so, execute the transaction/sequence, possibly using a test case. Then, right-click on the transaction/sequence and select the Create stub from current generated XML option. A stub file is created from the current response XML for the transaction/sequence.</li>
+        </ul>
+        {{site.data.alerts.end}}
+        </td>
+    </tr>
+    <tr>
+        <td>__nocache</td>
+        <td>
+        If true, the requested transaction / sequence response is not retrieved from the cache (in the case of a cached transaction / sequence).<br>Convertigo ignores the cached response and returns a freshly built response.<br>
+        For more information about transaction / sequence cache parametrization, see Response life-time property documentation in chapter 2 of this manual.
+        </td>
+    </tr>
+    <tr>
+        <td>__responseExpiryDate</td>
+        <td>If true, the requested transaction/sequence response is retrieved from the stub response (if a stub response is present for this transaction/sequence in the project).
+        Allows to dynamically change the value of the Response life-time property of the requested transaction / sequence.
+        <ul>        
+            <li>If empty, the requested transaction / sequence response is not retrieved from the cache (in the case of a cached transaction / sequence). Convertigo ignores the cached response and returns a freshly built response.</li>
+            <li>If filled, the requested transaction / sequence response is retrieved from the cache if it exist and has not expired, otherwise it is rebuild and stored in cache.When executing a transaction/sequence from stub, the Authenticated context required property of the transaction/sequence is ignored: the context would never be authenticated as the transaction/sequence setting the context as authenticated could also be executed from stub</li>
+        </ul>
+        For more information about transaction / sequence cache parametrization, see Response life-time property documentation in chapter 2 of this manual.
+        {{site.data.alerts.warning}}At the end of the transaction / sequence execution, the Response life-time property is set back to its original value.{{site.data.alerts.end}}
+        </td>
+    </tr>
+    <tr>
+        <td>__supervision</td>
+        <td>If this parameter is present, the requested transaction / sequence response is not stored in the cache (in the case of a cached transaction / sequence).<br>
+        If a response was already stored in the cache, it is not updated.<br>
+        For more information about transaction / sequence cache parametrization, see Response life-time property documentation in chapter 2 of this manual
+        </td>
+    </tr>
+    <tr>
+        <td>__removeContext</td>
+        <td>If this parameter is present and its value not equal to false, the end of Convertigo context is required at the end of the transaction / sequence execution.<br>
+        This is mainly used in case of web Services projects.<br>
+        This parameter is similar to the following JavaScript statement set in the transaction / sequence core:<br>
+        {% highlight js %}context.requireEndOfContext = true;{% endhighlight %}
+        </td>
+    </tr>
+    <tr>
+        <td>__content_type</td>
+        <td>Overrides the Content-type HTTP header value of the Convertigo response for the REST requesters (.xml, .pxml, .json).</td>
+    </tr>
+    <tr>
+        <td>__lang</td>
+        <td>Defines the output language for the requested transaction/sequence response. This parameter value is added as a lang attribute in the document element of the output XML and has to be managed with the response XML. <br>
+            Once the __lang parameter is received for a transaction/sequence, the context keeps and re-uses this value in every other transaction/sequence output XML.<br>
+            <br>The lang attribute of the document element is automatically used by the legacy translation extraction rule. For more information, see Translate text extraction rule documentation in chapter 2 of this manual.
+        </td>
+    </tr>
+    <tr>
+        <td>__async</td>
+        <td>If true (or value 1), the requested transaction will be or is being processed asynchronously, an asynchronous job is created.
+        {{site.data.alerts.warning}}Asynchronous mode should be used in specific cases and has to be evaluated by a Convertigo expert developer.{{site.data.alerts.end}}
+        </td>
+    </tr>
+    <tr>
+        <td>__abort</td>
+        <td>If this parameter is present, the end of the asynchronous job is required.
+        If true (or value 1), the requested transaction will be or is being processed asynchronously, an asynchronous job is created.
+        {{site.data.alerts.warning}}Asynchronous mode should be used in specific cases and has to be evaluated by a Convertigo expert developer.{{site.data.alerts.end}}
+        </td>
+    </tr>
+</table>
+{% endif %}
+
+<!-- Table 4 - 5: Web connector-specific engine reserved <strong>Parameters</strong> -->
+{% if include.content == '2' %}
+<table>
+    <th>Parameter Name</th>
+    <th>Description</th>
+    <tr>
+        <td>__header_< headerName></td>
+        <td>Allows to dynamically pass an HTTP header to an HTTP transaction. It results into sending an HTTP header from Convertigo to the target HTTPserver.
+        This specific parameter defines two pieces of information:
+        <ul>        
+            <li> < headerName>: defines the HTTP header name to send to the target server</li>
+            <li>the parameter value is sent as header value to the target server.</li>
+        </ul>
+        For example, the following specific parameter can be sent to a transaction: 
+        {% highlight js %}__header_test=myTestHeader{% endhighlight %}        
+        which results in sending the following header to the target server reached by the HTTP connector: {% highlight http %}test=myTestHeader{% endhighlight %}
+        </td>
+    </tr>
+    <tr>
+        <td> __< HTTPverb>_< varName>
+        </td>
+        <td>
+                Allows to dynamically pass an HTTP variable to an HTTP transaction. It results into sending an HTTP variable from Convertigo to the target HTTPserver.
+
+                This specific parameter defines three pieces of information:
+                <ul>
+                    <li>< HTTPverb>: defines the HTTP verb to use to send this variable to the target server, can take both values POST or GET</li>
+                    <li>< varName>: defines the variable name to send to the target server</li>
+                    <li>the parameter value is sent as variable value to the target server</li>
+                </ul>
+                For example, the following specific <strong>Parameters</strong> can be sent to a transaction:                
+                {% highlight js %}__GET_login=johnsmith&__POST_password=mypassword{% endhighlight %}
+                
+                which results in sending the following variables to the target server reached by the HTTP connector:
+                <ul>
+                    <li><i>login=johnsmith - sent in the URL query string</i></li>
+                    <li><i>password=mypassword - sent in POST data</i></li>
+                </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>__uri</td>
+        <td>Allows to dynamically change the value of the Sub path property of the requested HTTP transaction.
+            {{site.data.alerts.warning}}At the end of the transaction execution, the Sub path property is set back to its original value{{site.data.alerts.end}}
+        </td>
+    </tr>
+    <tr>
+        <td>__statefull</td>
+        <td>Allows to dynamically change the value of the Maintains connector state property of the requested HTML transaction.<br>
+        If set to <i>true</i>, the running transaction property is changed to true. If set to false, the running transaction property is changed to false.
+        {{site.data.alerts.warning}}At the end of the transaction execution, the Maintains connector state property remains to the updated value: the original value is not set back{{site.data.alerts.end}}
+        </td>
+    </tr>
+</table>
+{% endif %}
+
+<!-- Table 4 - 6: Table 4 - 6: Legacy emulator-specific engine reserved <strong>Parameters</strong> -->
+{% if include.content == '3' %}
+<table>
+    <th>Parameter Name</th>
+    <th>Description</th>
+    <tr>
+        <td>__service</td>
+        <td>Optional. Used at connection time only to input a specific connection parameter depending on connector type:
+        <ul>        
+            <li>IBM 3270,5250: device name</li>
+            <li>Bull DKU: mailbox</li>
+            <li>VDX 40/80col: service code.</li>
+        </ul>
+        When this parameter is used, it also overrides the mainframe connection IP adress or name set in the project connector.
+        The correct syntax for this parameter value is:
+        {% highlight js %}<devicename>,DIR|<mainframe_ip>:<mainframe_port>{% endhighlight %}
+        </td>
+    </tr>
+    <tr>
+        <td>__javelin_modified_fields</td>
+        <td>This parameter holds the list of fields which have been modified. Its value is a serialized <i>Json</i> array of field names.
+        {% highlight js %}__javelin_modified_fields={"name":["__field_c1_l9"]}{% endhighlight %}
+        </td>
+    </tr>
+    <tr>
+        <td>__javelin_current_field</td>
+        <td>This parameter holds the name of the current selected field. Field names must be in the form <i> ___field_l< Y>_c< X> </i> with:
+        <ul>        
+            <li>X: the field column, starting at 1</li>
+            <li>Y: the field line,starting at 1.</li>
+        </ul>
+        Convertigo uses this value to position the input cursor on the specified field before issuing an action as 'KEY_ENTER'.
+        </td>
+    </tr>
+    <tr>
+        <td>__javelin_action</td>
+        <td>This parameter holds the name of the action to be done on the target application. Actions can be:
+            <ul>
+                <li>any emulator actions as described in the appendix <a href="../../appendixes/#legacy-emulator-actions-table" target="_blank">legacy emulator actions table</a></li>
+                <li>one of the following Convertigo commands:</li>
+                <li><i>convertigo_reconnect</i>: disconnects and reconnects the emulator session</li>
+                <li><i>convertigo_refresh</i>: does nothing, just get the current XML,</li>
+                <li><i>convertigo_destroy_session</i>: disconnects, and recreates an emulator instance (this may be used to reset completely an emulator session)</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>__field_l< y>_c< x></td>
+        <td>Any parameter of this form has its value inserted automatically in the target field, where:
+            <ul>
+                <li>X: the field column, starting at 1</li>
+                <li>Y: the field line,starting at 1</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+{% endif %}
+
+<!-- Table 4 - 8: Weblib reserved <strong>Parameters</strong> -->
+{% if include.content == '4' %}
+<table>
+    <th>Parameter Name</th>
+    <th>Description</th>
+    <tr>
+        <td>__ajax_method</td>
+        <td>This parameter enables modifying the HTTP method of the AJAX requests from the weblib to Convertigo.<br>
+        <br>It can take both values: "GET" or "POST". Default variable value is "POST".
+        </td>
+    </tr>
+    <tr>
+        <td>__auto_refresh</td>
+        <td>In case of a Web Clipper project, weblib framework is able to check current page’s DOM changes, and to automatically refresh the clipped page displayed to the user.<br>
+            <br>This variable is by default set to "true", enabling auto refreshing. Using this parameter to set it to "false" disables auto refreshing.<br>
+            <br>The auto refresh needs more network traffic because the weblib framework pools the connector state regularly to monitor DOM changes.
+        </td>
+    </tr>
+    <tr>
+        <td>__auto_resize</td>
+        <td>In case of a response presented as a widget in a portal, the weblib framework is able to automatically adapt the height of the widget to its content, when the content is modified by a transaction or sequence result.<br>
+            This variable is by default set to "true", enabling auto resizing. Using this parameter to set it to "false" disables auto resizing.
+        </td>
+    </tr>
+    <tr>
+        <td>__enc</td>
+        <td>If set to <i>true</i>, activates RSA encoding. Default variable value is <i>false</i>.
+        </td>
+    </tr>
+    <tr>
+        <td>__first_call</td>
+        <td>This parameter defines whether a call to Convertigo has to be performed using the page’s query/hash <strong>Parameters</strong>, after the <i>init_finished</i> hook. By default set to <i>true</i>>, the page automatically calls convertigo using these <strong>Parameters</strong>.<br>                
+            Beware that the return value of the <i>init_finished</i> hook has to be in adequacy with this parameter value or can affect the expected behavior.
+        </td>
+    </tr>    
+    <tr>
+        <td>__localCache</td>
+        <td>This parameter allows to configure the use of the Local Cache feature on C8O calls and responses. Thanks to the Local Cache, you can save network traffic between the device and the server, and you are able to display data when the device is not connected to the network.
+                When enabled, the Local Cache permits to store the responses to a C8O call locally on the device, using the variables and their values as cache key.                
+                This parameter takes a JSON structure composed as follows:                
+            <ul>
+                <li><i>"enabled"</i>: enables (true value) or disables (false value) the Local Cache on a Convertigo request. Default value is true.</li>
+                <li><i>"policy"</i>: defines whether the response should be retrieved from Local Cache or from Convertigo server when the device can access the network. Can take two values:</li>
+                <li><i>"priority-server"</i>: for server priority, meaning that if the device can access the network, the call is performed and the response is retrieved from server.</li>
+                <li><i>"priority-local"</i>: for local priority, meaning that even when the device can access the network, the call is not performed if a response is locally cached.</li>
+            </ul>
+            In any case, when the device has no network access, the local cached response is used, if existing.                
+            The <i>policy</i> parameter is mandatory as it has no default value.<br><br>
+            - <i>"ttl"</i>: defines the time to live of the cached response, in milliseconds. If no value is passed, the time to live is infinite.
+        </td>
+    </tr>
+    <tr>
+        <td>__requester_prefix</td>
+        <td>	
+            This parameter defines a prefix before the requester extension in the AJAX requests from the weblib to Convertigo. It matches the pool name part of the URL.<br>
+            This parameter can take any value: if a matching pool is found, it is used by Convertigo, if no pool is found, it is ignored and Convertigo returns to the default behavior.
+        </td>
+    </tr>    
+    <tr>
+        <td>__resize_offset</td>
+        <td>Linked to the auto-resizing functionality. This parameter enables defining an offset height (in pixels) to add to the automatically calculated height, in order to adjust the resizing height.<br>
+            This variable is by default set to "50" (pixels), the value must be a number (in pixels).
+        </td>
+    </tr>    
+    <tr>
+        <td>__send_portal_username</td>
+        <td>In case of a response presented as a widget in gatein portal (Convertigo Mashup Composer), the weblib framework is able to automatically add a portal_username parameter to the request to Convertigo with the name of the user logged in the portal as value.<br>
+            This variable is by default set to <i>true</i>, enabling sending portal username. Using this parameter to set it to "false" disables sending portal username.
+        </td> 
+    </tr>
+    <tr>
+        <td>__target_append</td>
+        <td>The response of a Convertigo transaction / sequence execution, possibly presented thanks to an XSL transformation, can either:
+            <ul>
+                <li>replace the whole previously displayed content.</li>
+                <li>be appended to the previously displayed content.</li>
+            </ul>thanks to the weblib framework.<br>
+            <ul>
+                <li>set it to <i>false</i>, the response replaces previous content.</li>
+                <li>set it to <i>true</i>, the response is appended to previous content.</li>
+            </ul>Default variable value is <i>false</i><br>
+            Paired with the <i>__target_id</i> variable, these settings enable to replace or add content to the whole content or a part of the widget.
+        </td>
+    </tr>
+    <tr>
+        <td>__target_id</td>
+        <td>The response of a Convertigo transaction / sequence execution, possibly presented thanks to an XSL transformation, can either:
+            <ul>
+                <li>be added at the root of the widget.</li>
+                <li>be added in an Element from the widget.</li>
+            </ul>thanks to the weblib framework.<br>
+            This variable enables defining the id of the Element into which the response has to be added.<br>
+            Default value is "" (empty string) and aims the body element. If this variable is left empty, the response is added at the root of the widget.<br>
+            Paired with the <i>__target_append</i> variable, these settings enable to replace or add content to the whole content or a part of the widget.
+        </td>
+    </tr>
+    <tr>
+        <td>__testplatform</td>
+        <td>If called with no <strong>Parameters</strong>, the weblib framework automatically redirects the client to the test-platform of the project. This parameter enables changing this default behavior.
+            <ul>
+                <li>If set to <i>true</i>, the client is always redirected to the test-platform.</li>
+                <li>If set to <i>false</i>, the client is never redirected to the test-platform.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>__use_siteclipper_plugin</td>
+        <td>In case of a Site Clipper project, this parameter enables using the iframe encapsulation for Site Clipper requests.<br>
+            If set to "true", the clipped web page is loaded through an iframe, which enables:
+            <ul>
+                <li>hiding the Site Clipper URL.</li>
+                <li>handling interactions and resizing, in case of a response presented as a widget in a portal.</li>
+            </ul>If set to <i>false</i>, the clipped page is loaded directly through Site Clipper URL.<br>
+            Default value is <i>true</i>.
+        </td>
+    </tr>
+    <tr>
+        <td>__xsl_side</td>
+        <td>This parameter enables modifying the side of response’s XSL transformation, client XSL transformation or server XSL transformation. It matches the requester extension to set in the AJAX requests from the weblib to Convertigo.
+                This variable can take two values :<br>
+            <ul>
+                <li>"<i>client</i>" that will call "<i>.xml</i>" requester extension</li>
+                <li>"<i>server</i>>" that will call "<i>.cxml</i>>" requester extension.</li>
+            </ul>Default value is "<i>client</i>".
+        </td>
+    </tr>
+</table>
+{% endif %}

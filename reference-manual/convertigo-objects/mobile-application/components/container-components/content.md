@@ -1,0 +1,25 @@
+---
+layout: page
+title: Content
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/container-components/content/
+metadesc: ion-content  Defines a  Content  component. There should only be one  Content  per page, as for  Header  and  Footer . This is the main space where ot
+ObjGroup: Containers
+ObjCatName: container-components
+ObjName: Content
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/content_color_32x32.png
+topnav: topnavobj
+---
+ion-content
+##### Defines a <i>Content</i> component.
+There should only be one <i>Content</i> per page, as for <i>Header</i> and <i>Footer</i>.
+This is the main space where other components will be inserted.
+You can use the <i>padding</i> property to automatically define some margins.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/content/Content/' target='_blank'>Content</a>.
+
+Name | Description 
+--- | ---
+full screen | Specifies a fullscreen scrollable content.
+padding | Specifies ionic padding mode.
+

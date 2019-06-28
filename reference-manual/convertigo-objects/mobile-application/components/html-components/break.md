@@ -1,0 +1,19 @@
+---
+layout: page
+title: Break
+sidebar: c8o_sidebar
+permalink: reference-manual/convertigo-objects/mobile-application/components/html-components/break/
+metadesc: br  Defines a  Break  component. This component acts as the standard HTML br tag. A  Break  makes a line space between two  Text  components.  For mor
+ObjGroup: HTML
+ObjCatName: html-components
+ObjName: Break
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.dynamic.ComponentManager$1
+ObjIcon: /images/beans/mobile/components/dynamic/images/HTML_color_32x32.png
+topnav: topnavobj
+---
+br
+##### Defines a <i>Break</i> component.
+This component acts as the standard HTML br tag.
+A <i>Break</i> makes a line space between two <i>Text</i> components.
+ For more information: <a href='https://www.w3schools.com/tags/tag_br.asp' target='_blank'>Break</a>.
+
