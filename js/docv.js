@@ -59,12 +59,21 @@ function createComboBoxWithJSON(json){
         select.className = "navselect";
 
         for(var i in json){
-            let option = document.createElement("option");
-            option.textContent = json[i];
-            if(json[i] == getCurrentVersion())
-                option.setAttribute("selected","selected");
-            select.options.add(option);
+            let value = json[i];
+            if (value != "master") {
+               let option = document.createElement("option");
+               option.textContent = json[i];
+               if(json[i] == getCurrentVersion()) {
+                  option.setAttribute("selected","selected");
+               }
+               select.options.add(option);
+            }
         }
+
+        let option = document.createElement("option");
+        option.textContent = "older";
+        select.options.add(option);
+
         $(select).on("change", function () {
             let currVersion = getCurrentVersion();
             let selectedVersion = select.selectedOptions[0].innerHTML;
