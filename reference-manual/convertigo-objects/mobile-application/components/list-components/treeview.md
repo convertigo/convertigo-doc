@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 c8o-treeview. <br/>
 
- Displays data in a Tree View. This component is based on the <a href='https://www.npmjs.com/package/angular-tree-component' target='_blank' >angular-tree-component</a> component. <br /><br />JSON data can be sourced from a Sequence or from the local FullSync database. JSON data format is described in the <b>treenodes</b> property
+ Displays data in a Tree View. This component is based on the <a href='https://www.npmjs.com/package/angular-tree-component' target='_blank' >angular-tree-component</a> component. <br /><br />JSON data can be sourced from a Sequence or from the local FullSync database. JSON data format is described in the <b>Tree data</b> property
 
 Name | Description 
 --- | ---
