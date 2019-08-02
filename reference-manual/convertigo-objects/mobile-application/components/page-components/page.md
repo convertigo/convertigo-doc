@@ -24,4 +24,5 @@ Menu icon | String | standard | Defines the page icon to be displayed in menu.<b
 Menu icon position | String | standard | Defines the menu icon position beside title text.<br/>
 Menu title | String | standard | Defines the page title to be displayed in menu.<br/>
 Page menu | String | standard | Defines the specific menu to use for this page instead of default root one.<br/>
+Preloading | String | standard | Defines the page's preloading priority at app bootstrap.<br/>The following values are possible for priority: <code>high</code>, <code>low</code>, and <code>off</code>.<br/>All pages with their priority set to <code>high</code> will be loaded first. Upon completion, all pages with a priority of <code>low</code> will be loaded.<br/>If the priority is set to <code>off</code> the page will not be preloaded.
 Segment | String | standard | Defines the page segment for direct route. Syntax: some-part or some-part/another-part or some-part/:param-name<br/>
