@@ -23,7 +23,7 @@ Css class 1 | A css class for button 1.
 Css class 2 | A css class for button 2.
 Css class 3 | A css class for button 3.
 CssClass | Additional classes for custom styles, separated by spaces.
-EnableBackdropDismiss | Whether the alert should be dismissed by tapping the backdrop. Default true.
+Enable Backdrop Dismiss | Whether the alert should be dismissed by tapping the backdrop. Default true.
 Message | The message for the alert.
 Return value 1 | A value to return for the button 1.
 Return value 2 | A value to return for the button 2.
