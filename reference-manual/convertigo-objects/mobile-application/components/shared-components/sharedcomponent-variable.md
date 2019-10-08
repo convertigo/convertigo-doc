@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>SharedComponent Variable</i> component. <br/>
 
- <i>SharedComponent Variable</i>s help specifying variables of a <i>SharedComponent</i>.<br><br><b>Set the variable default value</b> through the <i>Variable value</i> property.<br><u>Any typescript expression is valid</u>:<br> • string (with quotes): <code>'monday'</code><br> • number: <code>2019</code><br> • boolean: <code>true</code><br> • array: <code>['monday','friday']</code><br> • json: <code>{name: 'wood', age: 35}</code><br> • object: <code>this.myObject.data</code><br><br><b>To access a shared component <i>SharedComponent Variable</i></b><br><u>from any child <i>Action</i> property or variable, use in script mode (TS)</u>:<br> • <code>params.&lt;priority&gt;.&lt;variable-name&gt;</code><br> where <code>priority</code> is the shared component priority property
+ <i>SharedComponent Variable</i>s help specifying variables of a <i>SharedComponent</i>.<br><br><b>Set the variable default value</b> through the <i>Variable value</i> property.<br><u>Any typescript expression is valid</u>:<br> • string (with quotes): <code>'monday'</code><br> • number: <code>2019</code><br> • boolean: <code>true</code><br> • array: <code>['monday','friday']</code><br> • json: <code>{name: 'wood', age: 35}</code><br> • object: <code>this.myObject.data</code><br><br><b>To access within a shared component one of its <i>SharedComponent Variable</i></b><br><u>from any child <i>Action</i> property or variable, use in script mode (TS)</u>:<br> • <code>params&lt;priority&gt;.&lt;variable-name&gt;</code><br> where <code>priority</code> is the shared component priority property
 
 Name | Description 
 --- | ---
