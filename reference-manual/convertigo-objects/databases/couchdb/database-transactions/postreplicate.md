@@ -24,6 +24,7 @@ Param continuous | String | standard | (boolean) – Configure the replication t
 Param create_target | String | standard | (boolean) – Creates the target database. Required administrator’s privileges on target server
 Param db | String | standard | Database name
 Param doc_ids | String | standard | (array) – Array of document IDs to be synchronized
+Param filter | String | standard | (string) – The name of a filter function
 Param proxy | String | standard | (string) – Address of a proxy server through which replication should occur (protocol can be “http” or “socks5”)
 Param source | String | standard | (string) – Source database name or URL
 Param target | String | standard | (string) – Target database name or URL
