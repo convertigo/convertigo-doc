@@ -33,9 +33,12 @@ Query group_level | String | standard | (number) – Specify the group level to 
 Query include_docs | String | standard | (boolean) – Include the associated document with each row. Default is false
 Query inclusive_end | String | standard | (boolean) – Specifies whether the specified end key should be included in the result. Default is true
 Query key | String | standard | (string) – Return only documents that match the specified key. Optional
+Query keys | String | standard | (json-array) – Return only documents where the key matches one of the keys specified in the array. Optional
 Query limit | String | standard | (number) – Limit the number of the returned documents to the specified number. Optional
 Query reduce | String | standard | (boolean) – Use the reduction function. Default is true
 Query skip | String | standard | (number) – Skip this number of records before starting to return the results. Default is 0
+Query sorted | String | standard | (boolean) – Sort returned rows. Setting this to false offers a performance boost. The total_rows and offset fields are not available when this is set to false. Default is true
+Query stable | String | standard | (boolean) – Whether or not the view results should be returned from a stable set of shards. Default is false
 Query stale | String | standard | (string) – Allow the results from a stale view to be used. Supported values: ok and update_after. Optional
 Query startkey | String | standard | (string) – Return records starting with the specified key. Optional
 Query startkey_docid | String | standard | (string) – Return records starting with the specified document ID. Optional
