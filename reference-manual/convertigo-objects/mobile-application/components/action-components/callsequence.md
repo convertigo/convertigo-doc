@@ -23,7 +23,6 @@ For more information : <a target='_blank' href='https://www.convertigo.com/docum
 
 Name | Description 
 --- | ---
-Disable auto login | Defines if we want to disable auto login
 Disable loading controller | Defines if we want to disable loading controller showing
 Local cache policy | Defines the local cache policy.
 Local cache time to live | Defines the local cache time to live (in milliseconds).

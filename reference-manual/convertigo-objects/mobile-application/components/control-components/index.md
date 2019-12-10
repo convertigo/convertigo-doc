@@ -11,7 +11,6 @@ topnav: topnavobj
 * [Error Handler](error-handler/)
 * [Event](event/)
 * [Failure Handler](failure-handler/)
-* [Finally Handler](finally-handler/)
 * [Loop Handler](loop-handler/)
 * [PageEvent](pageevent/)
 * [Subscribe Handler](subscribe-handler/)

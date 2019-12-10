@@ -22,7 +22,6 @@ topnav: topnavobj
 * [Log](log/)
 * [Modal Page](modal-page/)
 * [OAuth / OpenID](oauth-openid/)
-* [PauseAction](pauseaction/)
 * [Popover Page](popover-page/)
 * [PopPage](poppage/)
 * [PublishEvent](publishevent/)

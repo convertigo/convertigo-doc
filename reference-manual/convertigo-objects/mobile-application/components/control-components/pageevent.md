@@ -22,7 +22,7 @@ topnav: topnavobj
  • <b>onWillLeave</b><br>Runs when the page is about to leave and no longer be the active page<br/>
  • <b>onDidLeave</b><br>Runs when the page has finished leaving and is no longer the active page<br/>
  • <b>onWillUnload</b><br>Runs when the page is about to be destroyed and have its elements removed<br/>
- You can add a <i>PageEvent</i> component under a <b><i>Page</i></b> or a <b><i>SharedComponent</i></b> component.<br> Within a <i>PageEvent</i> component, you can add and chain any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFulSync<i> or <i>CustomAction<i> component.<br/>
+ You can add and chain in a <i>PageEvent</i> component any type of <b>action</b> such as <i>CallSequence<i>, <i>CallFulSync<i> or <i>CustomAction<i> component.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/navigation/ViewController/' target='_blank'>ViewController</a>   
 
 Name | Description 
