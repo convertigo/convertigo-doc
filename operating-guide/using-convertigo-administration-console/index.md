@@ -17,7 +17,7 @@ This section introduces you to Convertigo Administration Console:
 
 ### Accessing the Administration Console
 
-This section explains step by step how to connect to your Convertigo Administration Console. Convertigo Server administrators can access the Administration Console of the Convertigo Server’s engine. Developers can access the Administration Console of the engine embedded in their Convertigo Studio.
+This section explains step by step how to connect to your Convertigo Administration Console. Convertigo Server administrators can access the Administration Console of the Convertigo Server's engine. Developers can access the Administration Console of the engine embedded in their Convertigo Studio.
 
 ##### To access Convertigo Administration Console
 
@@ -43,7 +43,7 @@ For example, to access a Convertigo Cloud administration:
 As seen in a Mozilla Firefox URL address bar:
 {% include image.html file="guide_img/c8oadmin3.jpg" caption="Figure 4 - 2: Convertigo Cloud administration URL" %}
 
-When validating the URL, the Administration Console’s Authentication page opens. You have to be authenticated to access the Administration Console.
+When validating the URL, the Administration Console's Authentication page opens. You have to be authenticated to access the Administration Console.
 {% include image.html file="guide_img/c8oadmin4.PNG" caption="Figure 4 - 3: Administration Console authentication page" %}
 
 **3**. Enter the Convertigo Server login credentials in the **User ID** and **Password** fields.
@@ -84,14 +84,14 @@ Below, the widget displays information about the the starting time of the Conver
 - **System Information** widget
 {% include image.html file="guide_img/c8oadmin8.PNG" caption="Figure 4 - 7: System Information widget in Administration Console Home page" %}
 
-This widget presents the system properties of the host and the browser you’re using. You can also see details about Java properties in a pop-up by clicking on the **Java system properties** button.
+This widget presents the system properties of the host and the browser you're using. You can also see details about Java properties in a pop-up by clicking on the **Java system properties** button.
 
 - **Monitor** widget
 {% include image.html file="guide_img/c8oadmin9.PNG" caption="Figure 4 - 8: Monitor widget in Administration Console Home page" %}
 
 This widget shows the engine activity in real-time: the number of threads in activity, the number of active contexts and the average request duration.
 
-##### What’s next
+##### What's next
 
 The following sections present information about the Administration Console pages that can be reached through the links on the Left menu.
 
@@ -118,13 +118,11 @@ This section explains step by step how to access to the Configuration page, its 
 - [HTTP client](#http-client)
 - [Network](#network)
 - [Proxy](#proxy)
-- [Security token](#security-token)
 - [SSL](#ssl)
 - [Cache](#cache)
 - [Legacy Carioca portal](#legacy-carioca-portal)
 - [Analytics](#analytics)
 - [Notifications](#notification)
-- [Minification](#minification)
 - [Mobile builder](#mobile-builder)
 - [Full sync](#full-sync)
 
@@ -195,7 +193,7 @@ The next procedure explains how to edit a Convertigo engine property in the Conf
 
 ##### To edit a Convertigo Engine setting using the Configuration page
 
-**1**. Access the category tab that contains the setting you need to change by following one of the procedures [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page) or [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category). For example here let’s access the Accounts category:
+**1**. Access the category tab that contains the setting you need to change by following one of the procedures [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page) or [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category). For example here let's access the Accounts category:
 
 The tab opens (for example here the Accounts tab):
 {% include image.html file="guide_img/c8oadmin_config9.PNG" caption="Figure 4 - 17: Accounts tab" %}
@@ -212,7 +210,7 @@ A pop-in appears to confirm that the new parameters have been taken into account
 
 The engine setting is updated. Beware that sometimes, the Convertigo engine needs to be restarted for the new property to be taken into account. This is specified on such properties documentation.
 
-**_What’s next_**
+**_What's next_**
 
 The following sections present in details the tabs present in the Configuration page and the specific settings that can be configured on each tab.
 
@@ -230,9 +228,13 @@ In the Advanced properties section, configure the main advanced Convertigo confi
 
 #### Properties
 
-- **Convertigo Server application URL** : Convertigo Server URL, this URL informs Convertigo Server of its external access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
+- **Convertigo Server local URL** : local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
     - This URL is used by several functionalities of Convertigo Server and it is very important that it is correctly configured, otherwise these functionalities would not work correctly (for example: Call Sequence or Call Transaction steps not using internal invoke, Scheduler, WSDL generation, etc.). This URL should be configured at the end of the Convertigo Server installation.
     - In case of Convertigo Studio, this URL is used in addition to define the listening port of the embedded server, as well as for the transaction or sequence executions using the "Execute" functionality.
+
+- **Convertigo Server endpooint URL** : public Convertigo Server URL, this URL informs Convertigo Server of its external access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
+    - This URL is used by the SiteClipper to compute the right full links.
+
 - **Maximum number of worker threads** : Maximum number of simultaneous worker threads Convertigo will open in the application server. Though there is no theoretical limit to this, some application servers seem to be unstable when too many worker threads are in use. Convertigo limits itself to prevent server collapse. 
 
 {{site.data.alerts.note}}
@@ -253,8 +255,10 @@ When one of these limits is reached, every new request to Convertigo is rejected
 
 #### Advanced properties
 
-- **Product version check** : Activated by default, this option enables the verification of Convertigo version number in projects that attempt to be deployed. This helps users not to deploy projects that were created in a greater version of Convertigo in an older version of Convertigo. Indeed, in this case, the projects may not be compatible, due to the add of objects or objects’ properties in the software, that an older version of Convertigo cannot handle. In the opposite case, a new version of Convertigo is always compatible with older version, that makes projects to be importable in newer version of Convertigo, possibly including an automatic migration of projects if need be.
+- **Product version check** : Activated by default, this option enables the verification of Convertigo version number in projects that attempt to be deployed. This helps users not to deploy projects that were created in a greater version of Convertigo in an older version of Convertigo. Indeed, in this case, the projects may not be compatible, due to the add of objects or objects' properties in the software, that an older version of Convertigo cannot handle. In the opposite case, a new version of Convertigo is always compatible with older version, that makes projects to be importable in newer version of Convertigo, possibly including an automatic migration of projects if need be.
+
 - **Use the Java Thread.stop() method in order to finish threads** : When a transaction or sequence timeout is reached, its thread is gracefully stopped. In some case, the transaction/sequence thread is locked (by reading blocking socket, or whatever) and cannot be gracefully stopped. Enabling this property allows Convertigo to use the deprecated Thread.stop() method in these cases to end the transaction/sequence thread.
+
 - **(Linux only) Launch Xvnc server using DISPLAY environment variable at startup** : On Linux operating systems, the HTML Connector and the Legacy Connector monitors need an X server. Convertigo uses the X server corresponding to the DISPLAY environment variable value. If there is no X server on this DISPLAY :
     - if this property is set to *true*, an Xvnc server is launched on that DISPLAY
     - if this property is set to *false*, the HTML connector is not available and a message is traced in log files
@@ -306,14 +310,22 @@ Convertigo Server uses the client session cookie (JSESSIONID) as a parameter to 
 
 - **Throw HTTP 500 in case of SOAP fault** : This option, activated by default, makes Convertigo Server return an HTTP 500 response to the requesting SOAP client when a SOAP fault exception is thrown (by the project managing an error or by the Web service requester of Convertigo). Unchecking this option makes Convertigo Server answer an HTTP 200 response containing the same content in such cases.
 
+- **Automatically performs a dated zip backup of replaced projects** : This option, activated by default, makes Convertigo Server archive the deployed project version to a zip file with the date in the filename, next to a project folder, just before a new version deployed.
+
+- **CORS Policy** : This option, =Origin by default, makes Convertigo Server return the Access-Control-Origin header according to this setting for CORS requests. The value =Origin use the value from the request Origin header. It can be a specific host or many hosts separated by #. This property can be overridden by project using the **CORS Origin** project property.
+
 ### Accounts
 
 Edit your Convertigo Server accounts in Accounts tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
 
 Two types of account are editable:
 
-- the Administrator account: Enter the administrator’s username and password in the Admin username and Admin password fields. This account is used to access the Administration Console of the Convertigo Server. Default values are admin/admin.
+- the Administrator account: Enter the administrator's username and password in the Admin username and Admin password fields. This account is used to access the Administration Console of the Convertigo Server. Default values are admin/admin.
 - the Test account: Enter the tester username and password in the Test Platform username and Test Platform password fields. This account is used to access the Test Platform of projects running in the Convertigo Server. Leaving the username field blank deactivates the Convertigo tester account for authentication process (anonymous access).
+
+#### Advanced properties
+
+2 other fields can be used to customize password validating policy when changing the admin or testplatform account and also accounts for the **Roles** part.
 
 ### Logs
 
@@ -360,7 +372,7 @@ In the Advanced properties section, configure the advanced parameters of XML gen
     - and are visible only when calling the transaction or sequence from a client (not visible in Studio execution).
 
 {{site.data.alerts.note}}
-This property has nothing to do with the transaction/sequence’s <b>Add statistics to response</b> property that can be edited for each transaction/sequence and does not have the same behavior in response.
+This property has nothing to do with the transaction/sequence's <b>Add statistics to response</b> property that can be edited for each transaction/sequence and does not have the same behavior in response.
 {{site.data.alerts.end}}
 
 #### Advanced properties
@@ -481,60 +493,6 @@ In case of NTLM authentication, if the proxy is related to LDAP, the username mu
 1. Proxy mode: automatic
 2. Autoconfiguration proxy url: http://192.168.100.141:18080/qualif/proxy.pac
 
-### Security token
-
-Edit the security token parameters for portal authentications in Security token tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
-
-This tab includes an Advanced properties section that can be opened by following the procedure [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category).
-In the Advanced properties section, configure the advanced parameters of security tokens for portal authentication.
-
-- [Properties](#properties-3)
-- [Advanced properties](#advanced-properties-3)
-
-#### Properties
-
-- **Security token lifetime (in seconds)** : This parameter allows to define the lifetime of security tokens generated by the Convertigo server to authenticate an execution context when running a transaction/sequence in a widget of a portal. The security token must be used by the widget to authenticate an execution context within this lifetime. Otherwise, it will not be validated.
-- **Security token generator password** : This parameter allows to define the password used by the Convertigo server to generate the encrypted security token and then to decrypt it when receiving it in a transaction/sequence’s execution request.
- 
-{{site.data.alerts.important}}
-The default Security token generator password is c8o-password. It is strongly recommended to change it as soon as you use this functionality of portal widgets authentication. 
-{{site.data.alerts.end}}
-
-{{site.data.alerts.note}}
-Since version 6.1.10, Convertigo includes a portal widgets authentication process. It allows any widget to use a security token in order to authenticate the context of execution of the transactions/sequences that it runs for getting data.<br><br>
-The authenticated context requirement for executing a transaction/sequence in the Convertigo server is defined in each transaction/sequence itself by the <b>Authenticated context required</b> property.
-{{site.data.alerts.end}}
-#### Advanced properties
-
-- **Storage mode** : This parameter allows to choose how the Convertigo server stores the valid security tokens during their lifetime. This property can take the following values:
-    - **memory** : The valid security tokens and their parameters (like their lifetime) are stored in the Convertigo server memory. This is the default value, mostly recommended for a single-instance Convertigo Server. Besides, this is a simpler configuration as you have nothing to configure, the following properties are not used.
-    - **database** : The valid security tokens and their parameters are stored in an external database. This is the recommended configuration for multiple instances of Convertigo Server, which would need to share the generated tokens. When using this value, you have to fill the following properties.
- 
-{{site.data.alerts.note}}
-When using database mode for storing security tokens, Convertigo uses Hibernate (version 4.3) to connect to this database. The following properties, that allow configuring the connection to the security token database, are based on Hibernate configuration.<br><br>
-For more information, see the Hibernate documentation at: http://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/ch01.html
-{{site.data.alerts.end}}
-
-- **SQL Dialect** : This parameter defines the Hibernate SQL Dialect to use to optimize SQL requests to the security tokens database with correct syntaxes.
- 
-{{site.data.alerts.note}}
-For more information on the Hibernate Dialects, see the Hibernate documentation at: http://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/ch01.html#configuring-dialects
-{{site.data.alerts.end}}
-
-- **JDBC driver** : This parameter defines the JDBC driver to use for connecting to the security tokens database. Any driver already existing in Convertigo for SQL connector can be used, until it corresponds to the defined Dialect. You can refer to appendix “SQL drivers and related jar files” or to the SQL connector documentation in the Reference Manual for more information about existing drivers. 
-
-{{site.data.alerts.note}}
-Other drivers than those existing for SQL connector may be used. They only have to be installed in Convertigo before use.<br><br>
-Request for Convertigo support for installing a new SQL driver in Convertigo.
-{{site.data.alerts.end}}
-
-- **JDBC URL** : This parameter defines the JDBC URL to use for connecting to the security tokens database. The URL depends on the specified driver. You can refer to appendix [SQL drivers and related jar files](../appendixes/#sql-drivers-and-related-jar-files) for more information about existing drivers and to the SQL connector documentation in the Reference Manual for more information about existing drivers and related connection URLs.
-- **JDBC username** and **JDBC password** : These parameters define the username and password to use for connecting to the security tokens database. 
-
-{{site.data.alerts.note}}
-For more information on the Hibernate JDBC configuration, see the Hibernate documentation at: http://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/ch01.html#hibernate-jdbc-properties
-{{site.data.alerts.end}}
-
 ### SSL
 
 Edit the communication security parameters in SSL tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
@@ -542,7 +500,7 @@ Edit the communication security parameters in SSL tab. This tab can be opened by
 - **SSL debug output (requires JVM restart)** : This option, when activated, makes the Java machine write traces about SSL dialogs in Convertigo in *stdout* console.
 
 {{site.data.alerts.note}}
-SLL dialogs are used in Convertigo in every connector trying to reach the host it is configured to connect to using SSL, i.e. when the connector’s SSL mode property is checked.
+SLL dialogs are used in Convertigo in every connector trying to reach the host it is configured to connect to using SSL, i.e. when the connector's SSL mode property is checked.
 {{site.data.alerts.end}} 
 
 {{site.data.alerts.important}}
@@ -667,23 +625,6 @@ Beware that checking this option requires filling the Advanced properties.
 - **STMP user** : this property defines the SMTP username of target email.
 - **STMP password** : this property defines the SMTP password of target email.
 
-### Minification
-
-Configure the minification feature in Minfication tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
-
-- **Common minification level** : This property defines the default minification level for all resources included using the minification feature, except for resources that define their own minification level in ’minification' property of resource’s option JSON structure, or files that end with .min.
-This property can take one of the following values:
-    - *none* (no *minification*): no minification at all,
-    - *lines* (no *minification* + lines): no minification of the regrouped files, but adds the original file's line numbers in comments (can be useful for debug purpose),
-    - *light* (express *minification*): fast and efficient resource minification,
-    - *b* (b *minification*): heavy and more efficient minification (can modify some code, should be bly tested).
-- **Show statistics** : This option, when activated, adds a comment at the end of the minified file with the size saved by the minification.
-- **Show filenames** : This option, when activated, adds comments with the original filenames before and after their content in the merged resource file.
-
-{{site.data.alerts.note}}
-For more information on the minification feature, see the inline documentation in comments of the header of index.html file in your project resources.
-{{site.data.alerts.end}}
-
 ### Mobile builder
 
 Edit the mobile builder parameters in Mobile builder tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
@@ -702,25 +643,25 @@ In the Advanced properties section, configure the advanced parameters of the mob
 The Convertigo mobile builder platform performs mobile application build thanks to PhoneGap build platform. Once a PhoneGap build account is configured thanks to the <b>Mobile builder authentication</b> token, do not forget to configure all mobile platforms certificates and keys in accordance. Find below the documentation of properties that need to be filled for mobile platforms certificates and keys.
 {{site.data.alerts.end}}
 
-- **Android certificate title, Android certificate password** and **Android keyStore password** : These properties define the Android certificate to use for building Android mobile applications. When building a mobile application for Android platform, an Android certificate (including title and password) is mandatory. When using default Convertigo’s Mobile builder account, Convertigo’s Android certificate is used. When using your own Mobile builder account, default PhoneGap Android certificate is used. These **Android certificate title, Android certificate password** and **Android keyStore password** properties allow to override the defaults Android certificate title, password and keystore password. They will be used by default for all Android mobile applications built by the Convertigo. They can still be overridden by the **Android certificate title, Android certificate password** and **Android keyStore password** properties in each Android mobile platform object in Convertigo projects.
+- **Android certificate title, Android certificate password** and **Android keyStore password** : These properties define the Android certificate to use for building Android mobile applications. When building a mobile application for Android platform, an Android certificate (including title and password) is mandatory. When using default Convertigo's Mobile builder account, Convertigo's Android certificate is used. When using your own Mobile builder account, default PhoneGap Android certificate is used. These **Android certificate title, Android certificate password** and **Android keyStore password** properties allow to override the defaults Android certificate title, password and keystore password. They will be used by default for all Android mobile applications built by the Convertigo. They can still be overridden by the **Android certificate title, Android certificate password** and **Android keyStore password** properties in each Android mobile platform object in Convertigo projects.
 
 {{site.data.alerts.note}}
 The Android certificate is linked to the PhoneGap build account. Be aware to configure the <b>Mobile builder authentication token</b> and the <b>Android certificate</b> accordingly: the <b>Android certificate</b> must be one of the "Signing keys" declared in the PhoneGap build account.
 {{site.data.alerts.end}}
 
-- **BlackBerry key title and BlackBerry key password** : These properties define the BlackBerry key to use for building BlackBerry mobile applications. When building a mobile application for BlackBerry platform, a BlackBerry key (including title and password) is mandatory. When using default Convertigo’s Mobile builder account, Convertigo’s BlackBerry key is used. When using your own Mobile builder account, default PhoneGap BlackBerry key is used. These **BlackBerry key title** and **BlackBerry key password** properties allow to override the defaults BlackBerry key title and password. They will be used by default for all BlackBerry mobile applications built by the Convertigo. They can still be overridden by the **BlackBerry key title** and **BlackBerry key password** properties in each BlackBerry mobile platform object in Convertigo projects.
+- **BlackBerry key title and BlackBerry key password** : These properties define the BlackBerry key to use for building BlackBerry mobile applications. When building a mobile application for BlackBerry platform, a BlackBerry key (including title and password) is mandatory. When using default Convertigo's Mobile builder account, Convertigo's BlackBerry key is used. When using your own Mobile builder account, default PhoneGap BlackBerry key is used. These **BlackBerry key title** and **BlackBerry key password** properties allow to override the defaults BlackBerry key title and password. They will be used by default for all BlackBerry mobile applications built by the Convertigo. They can still be overridden by the **BlackBerry key title** and **BlackBerry key password** properties in each BlackBerry mobile platform object in Convertigo projects.
 
 {{site.data.alerts.note}}
 The BlackBerry key is linked to the PhoneGap build account. Be aware to configure the <b>Mobile builder authentication token</b> and the BlackBerry key accordingly: the BlackBerry key must be one of the "Signing keys" declared in the PhoneGap build account.
 {{site.data.alerts.end}}
 
-- **iOS certificate title** and **iOS certificate password** : These properties define the iOS certificate to use for building iOS mobile applications. When building a mobile application for iOS platform, an iOS certificate (including title and password) is mandatory. When using default Convertigo’s Mobile builder account, Convertigo’s iOS certificate is used. When using your own Mobile builder account, default PhoneGap iOS certificate is used. These **iOS certificate title** and **iOS certificate password** properties allow to override the defaults iOS certificate title and password. They will be used by default for all iOS mobile applications built by the Convertigo. They can still be overridden by the **iOS certificate title** and **iOS certificate password** properties in each iOS mobile platform object in Convertigo projects.
+- **iOS certificate title** and **iOS certificate password** : These properties define the iOS certificate to use for building iOS mobile applications. When building a mobile application for iOS platform, an iOS certificate (including title and password) is mandatory. When using default Convertigo's Mobile builder account, Convertigo's iOS certificate is used. When using your own Mobile builder account, default PhoneGap iOS certificate is used. These **iOS certificate title** and **iOS certificate password** properties allow to override the defaults iOS certificate title and password. They will be used by default for all iOS mobile applications built by the Convertigo. They can still be overridden by the **iOS certificate title** and **iOS certificate password** properties in each iOS mobile platform object in Convertigo projects.
 
 {{site.data.alerts.note}}
 The iOS certificate is linked to the PhoneGap build account. Be aware to configure the <b>Mobile builder authentication token</b> and the <b>iOS certificate</b> accordingly: the <b>iOS certificate</b> must be one of the "Signing keys" declared in the PhoneGap build account.
 {{site.data.alerts.end}}
 
-- **Window Phone publisher ID title** : This property defines the Windows Phone publisher ID to use for building Windows Phone mobile applications. When building a mobile application for Windows Phone platform, a Windows Phone publisher ID (including its title) is mandatory. When using default Convertigo’s Mobile builder account, Convertigo’s Windows Phone publisher ID is used. When using your own Mobile builder account, default PhoneGap Windows Phone publisher ID is used. This Window Phone publisher ID title property allows to override the defaults Window Phone publisher ID title. It will be used by default for all Window Phone mobile applications built by the Convertigo. They can still be overridden by the Window Phone publisher ID title property in each Window Phone mobile platform object in Convertigo projects.
+- **Window Phone publisher ID title** : This property defines the Windows Phone publisher ID to use for building Windows Phone mobile applications. When building a mobile application for Windows Phone platform, a Windows Phone publisher ID (including its title) is mandatory. When using default Convertigo's Mobile builder account, Convertigo's Windows Phone publisher ID is used. When using your own Mobile builder account, default PhoneGap Windows Phone publisher ID is used. This Window Phone publisher ID title property allows to override the defaults Window Phone publisher ID title. It will be used by default for all Window Phone mobile applications built by the Convertigo. They can still be overridden by the Window Phone publisher ID title property in each Window Phone mobile platform object in Convertigo projects.
 
 {{site.data.alerts.note}}
 The Windows Phone publisher ID is linked to the PhoneGap build account. Be aware to configure the <b>Mobile builder authentication token</b> and the <b>Windows Phone publisher ID</b> accordingly: the <b>Windows Phone publisher ID</b> must be one of the "Signing keys" declared in the PhoneGap build account.
@@ -766,7 +707,7 @@ The Connections page displays in the Connections table all of your running conne
 
 {% include image.html file="guide_img/c8oadmin_connec2.png" caption="Figure: Administration Console Connections page" %}
 
-**_What’s next_**
+**_What's next_**
 
 The following section presents in details the Connections table which allows you to view and delete existing connections.
 
@@ -823,7 +764,7 @@ Navigate the Left menu using the link to the Projects page. For an example on ho
 The Projects page displays in the Projects table all the deployed projects on the Convertigo Server
 {% include image.html file="guide_img/projectsPage2.png" caption="Figure: Administration Console Projects page" %}
 
-**_What’s next_**
+**_What's next_**
 
 The following section presents in details the Projects table which allows you to deploy, reload, export, delete, edit and test projects.
 
@@ -1086,7 +1027,7 @@ The Cache page displays in the Cache table the current cache configuration on th
 
 {% include image.html file="guide_img/cachePage2.png" caption="Figure: Administration Console Cache page" %}
 
-**_What’s next_**
+**_What's next_**
 
 The following section presents in details the Cache table which allows you to configure the cache for the Convertigo server.
 
@@ -1177,7 +1118,7 @@ The Scheduler page contains three individual tables:
 
 Scheduling a Convertigo sequence or transaction execution consists in creating a scheduled job, which results in the association of a job, also known as task, and a schedule, also known as a time trigger.
 
-**_What’s next_**
+**_What's next_**
 
 The following sections present in details the three tables on the Scheduler page which are the tools to create jobs, schedules and scheduled jobs.
 
@@ -1203,7 +1144,7 @@ For each job, the Jobs table includes the following columns:
 {% include image.html file="guide_img/jobs2.jpg" caption="Figure 4 - 23: Jobs table Enabled column" %} 
 
 {{site.data.alerts.tip}}
-You can change a job’s state (enable or disable it) by editing the job. For more information on job edition, see "Editing a job".
+You can change a job's state (enable or disable it) by editing the job. For more information on job edition, see "Editing a job".
 {{site.data.alerts.end}}
 
 - **Name**: This is the name of the created job, filled by the user at its creation.
@@ -1339,7 +1280,7 @@ A popup window opens, asking for a confirmation before deleting the job:
 **3**. After clicking on the **Yes** button, the job is deleted from the Jobs table:
 {% include image.html file="guide_img/deleteJob2.jpg" caption="Figure 4 - 47: Jobs table without the deleted job" %}
 
-**_What’s next_**
+**_What's next_**
 
 Now that the Jobs table is fully described, the following section will present the Schedules table.
 
@@ -1363,7 +1304,7 @@ For each schedule, the Schedules table includes the following columns:
 {% include image.html file="guide_img/schedules2.jpg" caption="Figure 4 - 49: Schedules table Enabled column" %}
 
 {{site.data.alerts.tip}}
-You can change a schedule’s state (enable or disable it) by editing the schedule. For more information on schedule edition, <a href="#editing-a-schedule">see Editing a schedule</a>.
+You can change a schedule's state (enable or disable it) by editing the schedule. For more information on schedule edition, <a href="#editing-a-schedule">see Editing a schedule</a>.
 {{site.data.alerts.end}}
 
 - **Name**: This is the name of the created schedule, filled by the user at its creation.
@@ -1495,7 +1436,7 @@ A popup window opens, asking for a confirmation before deleting the schedule:
 **3**. After clicking on the **Yes** button, the schedule is deleted from the Schedules table:
 {% include image.html file="guide_img/deleteSchedule2.jpg" caption="Figure 4 - 70: Schedules table without the deleted schedule" %}
 
-**_What’s next_**
+**_What's next_**
 
 Now that the Schedules table is fully described, the following section will present the Scheduled Jobs table, in which you can combine a job and a schedule previously created.
 
@@ -1518,14 +1459,14 @@ For each scheduled job, the Scheduled Jobs table includes the following columns:
 {% include image.html file="guide_img/scheduledJobs2.jpg" caption="Figure 4 - 72: Scheduled Jobs table Enabled column" %}
  
 {{site.data.alerts.tip}}
-You can change a scheduled job’s state (enable or disable it) by editing the scheduled job. For more information on scheduled job edition, <a href="#editing-a-scheduled-job">see "Editing a scheduled job"</a>.
+You can change a scheduled job's state (enable or disable it) by editing the scheduled job. For more information on scheduled job edition, <a href="#editing-a-scheduled-job">see "Editing a scheduled job"</a>.
 {{site.data.alerts.end}}
 
 - **Name**: This is the name of the created scheduled job, automatically generated by the Scheduler depending on the combined job and shedule.
 {% include image.html file="guide_img/scheduledJobs3.jpg" caption="Figure 4 - 73: Scheduled jobs table Name column" %}
 
 - **Description**: This is the description of the created scheduled job, filled by the user at its creation.
-- **Info**: This column displays information about the scheduled job’s ability to be executed:
+- **Info**: This column displays information about the scheduled job's ability to be executed:
     - first, if the scheduled job is ready or not ready to run,
     - and, if applicable, the reason why the job is not ready to run (if it is the job or the schedule that is disabled). Nothing is written in this second part if it is the scheduled job itself that is disabled.
 
@@ -1625,7 +1566,7 @@ The Keys page displays in the Keys table all the keys available on the Convertig
 
 {% include image.html file="guide_img/keysPage2.png" caption="Figure: Administration Console Keys page" %} 
 
-**_What’s next_**
+**_What's next_**
 
 The following section presents in details the Keys table which allows you to add new keys.
 
@@ -1713,7 +1654,7 @@ The Global Symbols page displays in the Global Symbols table all the globals sym
 
 {% include image.html file="guide_img/symbolsPage2.png" caption="Figure: Administration Console Symbols page" %}
 
-**_What’s next_**
+**_What's next_**
 
 The following section present in details the Global symbols table which allow you to add, delete, edit, import and export symbols.
 
@@ -1902,135 +1843,3 @@ This file is named **global_symbols.properties**.
 Note that if you want to use a global symbol in a Convertigo project, use one of the following syntaxes for the object's property value:<br>
 <b> ${symbol_name} </b> or <b> ${symbol_name=default_value} </b> to set its default value
 {{site.data.alerts.end}}
-
-## Store
-
-The Left menu contains a link to the Store.
-
-The Convertigo AppStore enables users to browse mobile apps deployed on a Convertigo server and to install them on their mobile devices using the Convertigo Player
-
-This page describes how to download the Store, upload a custom Store and delete the custom Store.
-
-This section introduces the Store page and details these different functionalities:
-
-- [Download the Store](#download-the-store)
-- [Upload a custom Store](#upload-a-custom-store)
-- [Delete the custom Store](#delete-the-custom-store)
-
-### Download the Store
-
-This section is separated in the following paragraphs:
-
-- [Description of the Store resources](#description-of-the-store-resources)
-- [Download the Store](#download-the-store)
-
-#### Description of the Store resources
-
-- **CSS** : This folder contains all the style definitions.
-The two important CSS files are styles.css and theme.css.
-The style.css file contains all style definitions about positioning and size.
-The theme.css file contains all style definitions about colors, fonts and some images.
-Only these two files need to be edited to change the design of the Store.
-- **Fonts** : This folder contains the fonts.
-In this folder you can add the new fonts you wanted to use.
-- **i18n** : This folder contains files about the different languages.
-As the text of the Store has been written by using Convertigo Internationalization Framework, it is possible to have the Store in several languages.
-By default, only the english and french languages are available.
-If you want to add another language, you will have to create a new json file dedicated to the language.
-After that, the language must be enabled by adding it in the beginning of the scripts/store.js file, at the i18n_files line (see the image below).
-
-{% include image.html file="guide_img/enableI18nWithBorder.jpg" %} 
-
-{{site.data.alerts.tip}}
-For more information on how to use Internationalization Framework, <a href="https://www.convertigo.com/document/all/cmp-6/6-3-0/reference-manual/internationalization-framework/">see Internationalization Framework</a>.
-{{site.data.alerts.end}}
-
-- **Images** : This folder contains all images.
-In this folder you can add new images or replace the existing images.
-
-- **Scripts** : This folder contains all scripts.
-Only the **store.js** file should be edited. You can enable languages (i18n) or add JavaScript effects for example.
-
-- **Index.html** : This is the HTML source of the Store.
-By editing this file, it is possible to change the structure of the Store, add new images, add texts, etc.
-
-#### Download the Store
-
-The Store can be downloaded to be customized that is to say to change the styles, the fonts, add new languages, etc.
-
-##### To download the Store
-
-**1**. Click the **Download the Store** button located beneath the Download the Store text, to download the original Store.
-{% include image.html file="guide_img/downloadStoreBtn.jpg" %}
-
-**2**. Once clicked, the following window appears in front of the page:
-{% include image.html file="guide_img/storeResourcesWindow.jpg" %}
-
-**3**. Select the resources you want to download and click the **Download** button. The resources will be downloaded in a ZIP archive.
-{% include image.html file="guide_img/storeResourcesWindowDl.jpg" %}
-
-### Upload a custom Store
-
-It is possible to use a custom Store instead of using the original one.
-
-This section is separated in the following paragraphs:
-
-- [Create a custom Store](#create-a-custom-store)
-- [Upload a custom Store](#upload-a-custom-store)
-
-#### Create a custom Store
-
-After downloading the Store, the resources can be modified and be uploaded to use the latter instead of the original one.
-The custom Store to upload must be in a ZIP archive.
-
-The ZIP archive must have one of the following hierarchies:
-
-- **The files are in the root archive**
-{% include image.html file="guide_img/customStoreNormal.jpg" %}
-
-
-- **The files are in a sub folder which is in the root ZIP archive**
-{% include image.html file="guide_img/customStoreSub.jpg" %}
- 
-{{site.data.alerts.note}}
-The ZIP archive and the sub folder names do not matter, you can name them as you wish.
-{{site.data.alerts.end}}
-
-{{site.data.alerts.note}}
-All resources are not required; you can only upload the CSS resources for example. You can also add new resources.
-{{site.data.alerts.end}}
-
-#### Upload a custom Store
-
-##### To upload a custom Store
-
-**1**. Click the **Upload a custom Store** button located beneath the Upload a custom Store text, to upload a custom Store.
-{% include image.html file="guide_img/uploadStoreBtn.jpg" %}
-
-**2**. Once clicked, a system window appears where you have to select the ZIP archive to upload.
- 
-{{site.data.alerts.important}}
-Beware that if you add a new language, you should normally upload the i18n folder but also the scripts folder as this new language has to be enabled in the scripts/store.js file. 
-{{site.data.alerts.end}}
-
-{{site.data.alerts.important}}
-If a custom Store already exists and you upload a new custom Store, the new custom Store will automatically replace the old one. The old custom Store will be lost.
-{{site.data.alerts.end}}
-
-### Delete the custom Store
-
-This functionality allows to delete the uploaded custom Store in order to re-use the original one.
-
-#### Delete the custom Store
-
-##### To delete the custom Store
-
-**1**. Click the **Delete the custom Store** button located beneath the *Delete the custom Store* text, to delete the custom Store.
-{% include image.html file="guide_img/deleteStoreBtn.jpg" %}
-
-**2**. Once clicked, the following window appears in front of the page:
-{% include image.html file="guide_img/deleteStoreWindow.jpg" %}
-
-**3**. Click the **Yes** button to confirm the removal of the custom Store.
-
-{% include image.html file="guide_img/yesBtn.jpg" %}
