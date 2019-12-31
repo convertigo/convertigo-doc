@@ -9,5 +9,6 @@ topnav: topnavobj
 * [CustomTransaction](customtransaction/)
 * [GetView](getview/)
 * [PostCompact](postcompact/)
+* [PostFind](postfind/)
 * [PurgeDatabase](purgedatabase/)
 * [ResetDatabase](resetdatabase/)
