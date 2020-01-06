@@ -13,5 +13,6 @@ topnav: topnavobj
 * [FullSync Delete Listener View](fullsync-delete-listener-view/)
 * [FullSync Update Listener Filter](fullsync-update-listener-filter/)
 * [FullSync Update Listener View](fullsync-update-listener-view/)
+* [Json Index](json-index/)
 * [Other transactions](other-transactions/)
 * [Server transactions](server-transactions/)

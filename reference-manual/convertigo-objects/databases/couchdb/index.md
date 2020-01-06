@@ -10,6 +10,7 @@ topnav: topnavobj
 * [Database transactions](database-transactions/)
 * [Design document](design-document/)
 * [Document transactions](document-transactions/)
+* [Json Index](json-index/)
 * [Other transactions](other-transactions/)
 * [Server config transactions](server-config-transactions/)
 * [Server transactions](server-transactions/)
