@@ -695,10 +695,10 @@ Couch DB username and password properties are set to <b>empty</b> as default val
 
 {{site.data.alerts.important}}
 <b>Prefix name must respect CouchDB database restriction:</b>
-- Name must begin with a lowercase letter (a-z)
-- Lowercase characters (a-z)
-- Digits (0-9)
-- Any of the characters _, $, (, ), +, -, and /.
+<ul><li>Name must begin with a lowercase letter (a-z)</li>
+<li>Lowercase characters (a-z)</li>
+<li>Digits (0-9)</li>
+<li>Any of the characters _, $, (, ), +, -, and /</li></ul>
 {{site.data.alerts.end}}
 
 ## Connections
