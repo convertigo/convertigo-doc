@@ -684,9 +684,9 @@ Edit the Full sync parameters in Full sync tab. This tab can be opened by follow
 - **Couch DB password for FullSync**: This property defines the default password used by Convertigo for synchronization operations
 
 {{site.data.alerts.note}}
-Couch DB URL property is set to **http://127.0.0.1:5984** as default value.
+Couch DB URL property is set to <b>http://127.0.0.1:5984</b> as default value.
 
-Couch DB username and password properties are set to **empty** as default values.
+Couch DB username and password properties are set to <b>empty</b> as default values.
 {{site.data.alerts.end}}
 
 #### Advanced properties
