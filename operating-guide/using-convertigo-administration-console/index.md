@@ -683,11 +683,23 @@ Edit the Full sync parameters in Full sync tab. This tab can be opened by follow
 - **Couch DB username for FullSync**: This property defines the default username used by Convertigo for synchronization operations
 - **Couch DB password for FullSync**: This property defines the default password used by Convertigo for synchronization operations
 
-{{note.data.alerts.note}}
+{{site.data.alerts.note}}
 Couch DB URL property is set to **http://127.0.0.1:5984** as default value.
 
 Couch DB username and password properties are set to **empty** as default values.
-{{note.data.alerts.end}}
+{{site.data.alerts.end}}
+
+#### Advanced properties
+
+- **Couch DB prefix for all FullSync databases**: This property defines a prefix for the real CouchDB DB name for each FullSync connectors of the server. Set to **myprefix**, the **myfs** FullSync connector will be **myprefix_myfs** CouchDB database. Useful for a shared CouchDB cluster; acts like a **namespace**. Empty prefix means no prefix at all.
+
+{{site.data.alerts.important}}
+<b>Prefix name must respect CouchDB database restriction:</b>
+- Name must begin with a lowercase letter (a-z)
+- Lowercase characters (a-z)
+- Digits (0-9)
+- Any of the characters _, $, (, ), +, -, and /.
+{{site.data.alerts.end}}
 
 ## Connections
 
