@@ -20,7 +20,7 @@ Several <i>Map Marker</i> can be displayed on a map, just add them in your <i>Go
 
 Name | Description 
 --- | ---
-Icon | Icon (the URL of the image) for the foreground. Leaving this field blank will place the default Google Map Maker Icon.
+Icon | Icon (the URL of the image) for the foreground. Setting an empty string for this field will place the default Google Map Maker Icon.
 Latitude | Number : The Marker will be displayed at this latitude. Must be a 'number' jSON type (ex: 51.678418).
 Longitude | Number : The Marker will be displayed at this longitude. Must be a 'number' jSON type (ex: 7.809007).
 Title | The marker title.
