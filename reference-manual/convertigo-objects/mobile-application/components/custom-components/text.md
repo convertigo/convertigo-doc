@@ -22,6 +22,7 @@ You can add a <i>Text</i> component to any other component, for example to a <i>
 Name | Description 
 --- | ---
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+I18n translate | Defines whether the text should be translated (for TX mode only)
 Is active | Defines whether the component is active. 
-Text value | Defines the text to be  displayed  
+Text value | Defines the text to be displayed  
 
