@@ -17,7 +17,7 @@ button<br/>
 Buttons are an essential way to interact with and navigate through a mobile application, and should clearly communicate what action will occur after the user taps them.<br/>
 <i>Button</i> can consist of <i>Text</i> and/or <i>Icon</i>, and can be enhanced with a wide variety of properties/attributes.<br/>
 You can add <i>Event</i> component with chained <i>Actions</i> to a <i>Button</i> to handle button click.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#buttons' target='_blank'>Buttons</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#buttons'>Buttons</a>.
 
 Name | Description 
 --- | ---

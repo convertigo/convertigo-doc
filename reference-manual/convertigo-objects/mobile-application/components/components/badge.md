@@ -16,7 +16,7 @@ ion-badge<br/>
 ##### Defines a <i>Badge</i> component.<br/>
 Badges are small components that typically communicate a numerical value to the user.<br/>
 They are typically used within an <i>Generic Item</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#badges' target='_blank'>Badge</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#badges'>Badge</a>.
 
 Name | Description 
 --- | ---

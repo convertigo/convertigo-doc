@@ -16,7 +16,7 @@ ion-toggle<br/>
 ##### Defines a <i>Toggle Button</i> component.<br/>
 This component is technically the same thing as an HTML checkbox input, except it looks different and is easier to use on a touch device. Toggles can also have colors assigned to them, by adding any color attribute.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#toggle' target='_blank'>Toggle</a>.<br/>
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#toggle'>Toggle</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

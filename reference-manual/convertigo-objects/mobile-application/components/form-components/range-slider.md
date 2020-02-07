@@ -17,7 +17,7 @@ ion-range<br/>
 The Range slider lets users select from a range of values by moving the slider knob.<br/>
 It can accept dual knobs, but by default one knob controls the value of the range.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/components/#range' target='_blank'>Range</a>.<br/>
+For more information: <a href='https://ionicframework.com/docs/v3/components/#range'>Range</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

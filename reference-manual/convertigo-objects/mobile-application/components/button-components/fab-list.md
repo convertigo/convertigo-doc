@@ -15,7 +15,7 @@ ion-fab-list<br/>
 
 ##### Defines a <i>Fab List</i> component.<br/>
 This component is a container for multiple <i>FAB button</i>. They are components of <i>FAB Container</i> and allow you to specify the buttons position: <code>left, right, top, bottom</code>.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/fab/FabList/' target='_blank'>FabList</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/fab/FabList/'>FabList</a>.
 
 Name | Description 
 --- | ---

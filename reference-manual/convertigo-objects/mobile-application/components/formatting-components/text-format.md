@@ -16,7 +16,7 @@ div<br/>
 ##### Defines a <i>Text Format</i> component.<br/>
 Text formatting such as alignments to left right and center or text transformations.<br/>
 Will be applied to all underlying <i>Text</i> components.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/theming/css-utilities/#text-modification' target='_blank'>Text Modification</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/theming/css-utilities/#text-modification'>Text Modification</a>.
 
 Name | Description 
 --- | ---

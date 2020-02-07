@@ -16,7 +16,7 @@ ion-thumbnail<br/>
 ##### Defines a <i>Thumbnail Item</i> component.<br/>
 Item thumbnails showcase an image that takes up the entire height of an item.<br/>
 To use a <code>&lt;ion-thumbnail&gt;</code>, add a <i>Thumbnail Item</i> component inside of a <i>Generic Item</i> component. The <i>position</i> property of the <i>Thumbnail Item</i> can be set to <code>item-left</code> or <code>item-right</code> value.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#thumbnail-list' target='_blank'>Thumbnail</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#thumbnail-list'>Thumbnail</a>.
 
 Name | Description 
 --- | ---

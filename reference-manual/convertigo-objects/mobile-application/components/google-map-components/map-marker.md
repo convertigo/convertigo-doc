@@ -16,7 +16,7 @@ agm-marker<br/>
 ##### Defines a <i>Map Marker</i> component.<br/>
 Markers indicate unique geographic points on the map. You can customize your markers by replacing the marker icon with a custom image.<br/>
 Several <i>Map Marker</i> can be displayed on a map, just add them in your <i>Goolgle Map</i> component.<br/>
- For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmMarker.html' target='_blank'>AgmMarker</a>.
+ For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmMarker.html'>AgmMarker</a>.
 
 Name | Description 
 --- | ---

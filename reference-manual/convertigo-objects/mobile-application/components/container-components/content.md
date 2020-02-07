@@ -17,7 +17,7 @@ ion-content<br/>
 There should only be one <i>Content</i> per page, as for <i>Header</i> and <i>Footer</i>.<br/>
 This is the main space where other components will be inserted.<br/>
 You can use the <i>padding</i> property to automatically define some margins.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/api/components/content/Content/' target='_blank'>Content</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/content/Content/'>Content</a>.
 
 Name | Description 
 --- | ---

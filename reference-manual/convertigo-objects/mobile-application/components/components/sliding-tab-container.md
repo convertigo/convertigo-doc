@@ -20,7 +20,7 @@ Also you can use the <i>no-border</i> attribute on the <i>Header</i> to remove t
 <br/>
 Insert any number of <i>Sliding Tab Item</i> components, one for each tab.<br/>
 You can swipe from one tab to another or select a tab when you tap on it.<br/>
- For more information: <a href='https://github.com/zyra/ionic2-super-tabs' target='_blank'>Swipeable Tabs</a>.
+ For more information: <a href='https://github.com/zyra/ionic2-super-tabs'>Swipeable Tabs</a>.
 
 Name | Description 
 --- | ---

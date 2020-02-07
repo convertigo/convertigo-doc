@@ -15,7 +15,7 @@ ion-slide<br/>
 
 ##### Defines a <i>Slide Item</i> component.<br/>
 Add <i>Slide Item</i> components inside a <i>Slides</i> component. Any slide content should be written in this component.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#slides' target='_blank'>Slide</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#slides'>Slide</a>.
 
 Name | Description 
 --- | ---

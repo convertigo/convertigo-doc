@@ -15,7 +15,7 @@ agm-circle<br/>
 
 ##### Defines a <i>Map Circle</i> component.<br/>
 This component displays a circular area of a specified radius on a <i>Google Map</i>.<br/>
- For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmCircle.html' target='_blank'>AgmCircle</a>.
+ For more information: <a href='https://angular-maps.com/api-docs/agm-core/directives/AgmCircle.html'>AgmCircle</a>.
 
 Name | Description 
 --- | ---

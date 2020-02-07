@@ -15,7 +15,7 @@ topnav: topnavobj
 
  This component helps displaying some informations.<br/>
 A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the applications content, and can be dismissed to resume user interaction with the application.<br/>
-For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#toast'>Toast</a>.
+For more information : <a href='https://ionicframework.com/docs/v3/components/#toast'>Toast</a>.
 
 Name | Description 
 --- | ---

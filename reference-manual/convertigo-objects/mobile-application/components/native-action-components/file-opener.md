@@ -23,7 +23,7 @@ You can access data from the next action in the chain in (TS) mode with: <code><
 <br/>
 Whenever cordova platform is not available, the value defined in mocking options is returned.<br/>
  Default value is <code>true</code>.<br/>
-For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/native/file-opener/#open'>File Opener</a>.
+For more information : <a href='https://ionicframework.com/docs/v3/native/file-opener/#open'>File Opener</a>.
 
 Name | Description 
 --- | ---

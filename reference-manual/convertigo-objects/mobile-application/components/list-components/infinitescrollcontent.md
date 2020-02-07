@@ -15,7 +15,7 @@ ion-infinite-scroll-content. <br/>
 
  The <i>InfiniteScrollContent</i> component displays its <b>parent</b> infinite scroll.<br/>
 You may add it under a <i>InfiniteScroll</i> component.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/api/components/infinite-scroll/InfiniteScroll/' target='_blank'>InfiniteScrollContent</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/infinite-scroll/InfiniteScroll/'>InfiniteScrollContent</a>.
 
 Name | Description 
 --- | ---

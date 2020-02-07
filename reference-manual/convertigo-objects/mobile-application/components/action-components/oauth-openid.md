@@ -24,7 +24,7 @@ This actions outputs in the <i>out</i> an object that can be:<br/>
  • <code>{'token':'... OAuth token data ...'}</code> if a session has already been established with Convertigo MBaaS server.<br/>
 <br/>
 <h2>Provider Specific Documentation</h2><br/>
- • Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com' target='_blank'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.<br/>
+ • Microsoft Azure AD: You have to declare your app in the Microsoft Application Registration Portal (<a href='https://apps.dev.microsoft.com'>https://apps.dev.microsoft.com</a>). You will be given a Client Id, use this to configure the <b>Client ID</b> property.<br/>
 <br/>
 You must also configure two redirections urls:<br/>
 <br/>
@@ -33,7 +33,7 @@ You must also configure two redirections urls:<br/>
 <br/>
 The first one will be used for developping in the studio, the second one when the project will be deployed on a Convertigo MBaaS Server.<br/>
 <br/>
- • LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp=' target='_blank'>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.<br/>
+ • LinkedIn : You have to declare you app in the LinkedIn API portal (<a href='https://www.linkedin.com/secure/developer?newapp='>https://www.linkedin.com/secure/developer?newapp=</a>). You will be given a <b>Client ID</b> and a <b>Client Secret</b>.<br/>
 <br/>
 You must also declare two redirection URLs:<br/>
 <br/>

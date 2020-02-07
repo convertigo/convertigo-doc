@@ -17,7 +17,7 @@ ion-header<br/>
 There should only be one <i>Header</i> per page, as for <i>Content</i> and <i>Footer</i>.<br/>
 Header is a root component of a page that holds the <i>NavBar</i> and <i>Toolbar</i> components.<br/>
 It's important to note that <i>Header</i> needs to be the one of the three root elements of a page.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Header/' target='_blank'>Header</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Header/'>Header</a>.
 
 Name | Description 
 --- | ---

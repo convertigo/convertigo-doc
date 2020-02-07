@@ -16,7 +16,7 @@ ion-list<br/>
 ##### Defines a <i>List Container</i> component.<br/>
 Lists are used to display rows of information.<br/>
 You can insert items or buttons in lists to make list items clickable. You can also add to list items many other components such as icons, avatars or thumbnails.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#lists' target='_blank'>Lists</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#lists'>Lists</a>.
 
 Name | Description 
 --- | ---

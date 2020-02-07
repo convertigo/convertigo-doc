@@ -16,7 +16,7 @@ div<br/>
 ##### Defines a <i>Div</i> component.<br/>
 This component acts as the standard HTML div tag.<br/>
 A <i>Div</i> defines a division or a section in an HTML document.<br/>
- For more information: <a href='https://www.w3schools.com/tags/tag_div.asp' target='_blank'>Div</a>.
+ For more information: <a href='https://www.w3schools.com/tags/tag_div.asp'>Div</a>.
 
 Name | Description 
 --- | ---

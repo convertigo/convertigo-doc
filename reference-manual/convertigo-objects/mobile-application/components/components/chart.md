@@ -17,7 +17,7 @@ canvas<br/>
 Charts can be <code>line, bar, radar, pie, polarArea or doughnut</code> according to the <i>chartType</i> property.<br/>
 Chart data are bound to properties provided by some TypeScript data or directly from a source.<br/>
 <br/>
-Please refer to <a target='_blank' href='https://www.npmjs.com/package/ng2-charts'>chart.js</a> documentation for each property and data formats.<br/>
+Please refer to <a href='https://www.npmjs.com/package/ng2-charts'>chart.js</a> documentation for each property and data formats.<br/>
 To set width and height properties, use the Grid system.
 
 Name | Description 

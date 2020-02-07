@@ -15,7 +15,7 @@ ion-item<br/>
 
 ##### Defines a <i>Form Item</i> component.<br/>
 A <i>Form Item</i> may be used to contain form's input components such as <i>Label</i> or <i>Text Input</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#lists' target='_blank'>Form Item</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#lists'>Form Item</a>.
 
 Name | Description 
 --- | ---

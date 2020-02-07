@@ -15,7 +15,7 @@ topnav: topnavobj
 
  The Alerts are a great way to offer the user the ability to choose a specific action or list of actions. They also can provide the user with important information, or require them to make a decision.<br/>
 The return value can be accessed by the navigation stack, using <code> parent.out </code> for example.<br/>
- For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#alert'>Alert</a>.
+ For more information : <a href='https://ionicframework.com/docs/v3/components/#alert'>Alert</a>.
 
 Name | Description 
 --- | ---

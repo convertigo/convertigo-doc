@@ -18,7 +18,7 @@ This component is similar to an HTML select tag, however, Ionic's select compone
 Add as many <i>Select Option</i> you want under a <i>Select Container</i> component.<br/>
 Use the <i>Default value</i> property to set its default value. If an option has the same value it will be selected by default, otherwise the first option is selected.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/components/#select' target='_blank'>Select</a>.<br/>
+For more information: <a href='https://ionicframework.com/docs/v3/components/#select'>Select</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

@@ -14,7 +14,7 @@ topnav: topnavobj
 ##### Defines a <i>PublishEvent</i> action component. <br/>
 
 This component helps publishing an event giving its topic and optional data. The event may be handled by an existing <i>Subscribe Handler</i> component in any available page.<br/>
-For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/api/util/Events/'>Events</a>
+For more information : <a href='https://ionicframework.com/docs/v3/api/util/Events/'>Events</a>
 
 Name | Description 
 --- | ---

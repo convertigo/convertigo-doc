@@ -16,7 +16,7 @@ ion-card-header<br/>
 ##### Defines a <i>Card Header</i> component.<br/>
 Just like a page, cards can be customized to include headers.<br/>
 Use a <i>Card Header</i> component inside of a <i>Card container</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#card-header' target='_blank'>Card Header</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#card-header'>Card Header</a>.
 
 Name | Description 
 --- | ---

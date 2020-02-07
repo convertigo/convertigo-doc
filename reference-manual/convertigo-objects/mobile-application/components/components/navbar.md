@@ -17,7 +17,7 @@ ion-navbar<br/>
 The <i>NavBar</i> acts as the navigational toolbar, which also comes with a back button.<br/>
 It must be placed within an <i>Header</i> in order to be placed above the <i>Content</i>.<br/>
 It's important to note that navbar's are part of the dynamic navigation stack. If you need a static toolbar, use the <i>ToolBar</i> component.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Navbar/' target='_blank'>NavBar</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Navbar/'>NavBar</a>.
 
 Name | Description 
 --- | ---
