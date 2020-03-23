@@ -19,7 +19,7 @@ If the targeted sequence requires some input variables, you can add to your acti
 The returned data can be accessed from any underneath action using the <code>out</code> typescript variable.<br/>
 For more information : <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-objects/sequencer/'>Sequencer</a>. <br/>
 <br/>
- If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
+ If you want to disable loading controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---

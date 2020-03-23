@@ -24,7 +24,7 @@ To query a view, select it through the <i>View</i> property and configure the qu
 See the <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#get-view'>Query parameters</a> documentation for that.<br/>
 For more information : <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-locally-on-the-mobile-with-the-data'>interacting-locally-with-the-data/</a>. <br/>
 <br/>
- If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
+ If you want to disable loading controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---

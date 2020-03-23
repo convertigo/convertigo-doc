@@ -22,7 +22,7 @@ Also, if used in a form <code>submit</code> <i>Event</i>, all form inputs values
 You can use the <i>root key</i> property to place the posted data in a wrapper object.<br/>
 For more information : <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-locally-on-the-mobile-with-the-data'>interacting-locally-with-the-data/</a>. <br/>
 <br/>
- If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
+ If you want to disable loading controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---
