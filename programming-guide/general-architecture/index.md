@@ -10,8 +10,16 @@ This chapter describes the Converigo general architecture.
 
 ## Server
 
+fhgdjfhbgdkjgfjkdgdg
+
 ## Clients
+
+gjkjfhgjkfhgjfhfhhfd
 
 ## FullSync offline data
 
+fhfdhfhfddhf
+
 ## Studio
+
+fdhh
