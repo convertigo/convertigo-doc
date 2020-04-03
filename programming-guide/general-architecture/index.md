@@ -20,7 +20,7 @@ Convertigo Server also handles back-end data repository in an NoSQL database and
 
 Convertigo Server is built on Java technology and runs in a standard application server such as Tomcat, but is also packaged as a Docker Image so it can be run in any Docker container platform such as Cloud providers, Kubernetes on premises or cloud implementations.
 
-Internal server architecture is modelized as is :
+Internal server architecture is modelized as is:
 
 {% include image.html file="pguide_img/shema_server.png" caption="Figure 1 - 1: Server architecture" max-width=400 %}
 
@@ -28,12 +28,24 @@ You will learn about Sequences, transactions and other Convertigo objects in the
 
 ## Clients
 
-gjkjfhgjkfhgjfhfhhfd
+Convertigo Clients connects to the Convertigo Server using standard https:// protocols Clients can be different types :
+
+client    | Low Code Client | Client Language | FullSync & Advanced capabilities Supported | Chapter
+---|---|---|---|---
+Convertigo Mobile Builder Low Code Clients  | Yes | Convertigo Low Code | Yes | [Client Side Programming Guide](../frontend-developers)
+Convertigo SDK Based clients| No| JS (Angular, ReactJS, Vue.js, ReactNative) , Java Android & Kotlin , iOS SWIFT | Yes | [Convertigo SDK Documentation](https://www.npmjs.com/package/c8osdkangular) (Starts with Angular SDK but from there see other SDK documentations)
+Agnostic clients| No| Any Type of client side language as long as it can consume JSon REST WS | No | [URL Mapper & Swagger portal](../understanding-convertigo-objects)
+
+The best value for your projects is the use the Mobile Builder Low Code Client, but if you still want to use your existing Angular, ReactJS or Vue.js programming skills, this is also possible using SDKs, but you will not benefit from the Client Side Low Code technology.
+
+Although today, UX performances are awesome using JS frameworks, you may still want to program client side using native technology such as Kotlin or Swift. This is also possible using the Native SDKS, but you will not benefit from the Client Side Low Code technology.
+
+
+## Studio
+
+fdhh
 
 ## FullSync offline data
 
 fhfdhfhfddhf
 
-## Studio
-
-fdhh
