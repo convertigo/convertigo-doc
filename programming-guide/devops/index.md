@@ -15,7 +15,7 @@ permalink: /programming-guide/devops/
 
 ### Sharing git project
 
-## Setiing up gradle tasks
+## Setting up gradle tasks
 
 ## Integrating in CI
 
