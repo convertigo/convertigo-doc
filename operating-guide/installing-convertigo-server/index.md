@@ -1,7 +1,7 @@
 ---
 title: Installing Convertigo Server
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
+last_updated: 03/04/2020
 summary: "This chapter describes how to install Convertigo Server in several qualified environments and operating systems."
 sidebar: c8o_sidebar
 permalink: /operating-guide/installing-convertigo-server/
@@ -19,11 +19,11 @@ In standard, Convertigo Server installation is available as 2 packages:<br>
  • docker imagess
 
 
-### CONVERTIGO WAR FILE
+### Convertigo war file
 
 Convertigo war file can be used with application servers in 64bits environments. It can be installed  on Tomcat, WebSphere and JBOSS servers.
 
-The minimum version of java must be 1.8, and for Tomcat 7.0.
+The minimum version of java must be 11, and for Tomcat 9.
 
 The war file, convertigo-X.Y.Z.war, is available on https://github.com/convertigo/convertigo/releases
 
@@ -38,7 +38,10 @@ Table 3 - 1: Specific java options for convertigo
 -Dconvertigo.engine.application_server.convertigo.url | Local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server). This option override the parameter Convertigo Server local URL in web administration<br>Example:<br> -Dconvertigo.engine.application_server.convertigo.url=<br>http://192.168.100.69:8080/convertigo 
 
 
-### CONVERTIGO DOCKER IMAGES
+<a href="../appendixes/#list-of-convertigo-java-system-properties">You can find complete list of Convertigo Java System Properties on this link</a>.
+
+
+### Convertigo docker images
 
 Using docker images from convertigo is the easiest way to install the server.
 
@@ -46,7 +49,7 @@ Using docker images from convertigo is the easiest way to install the server.
 
 On a linux server with docker installed and running you can start a container with the minimum Convertigo server. Convertigo uses images' /workspace directory to store configuration file and deployed projects as an docker volume.
 
-$ docker run --name C8O -d -p 28080:28080 convertigo
+    $ docker run --name C8O -d -p 28080:28080 convertigo
 
 You can access the server admin console on http://[dockerhost]:28080/convertigo and login using the default credentials: admin / admin
 
@@ -57,18 +60,18 @@ If you need fullsync functions, Convertigo FullSync module uses Apache CouchDB a
 
 Launch CouchDB container and name it 'fullsync'
 
-$ docker run -d --name fullsync couchdb:2.3.1
+    $ docker run -d --name fullsync couchdb:2.3.1
 
 Then launch Convertigo and link it to the running 'fullsync' container. Convertigo server will automatically uses it as its fullsync repository.
 
-$ docker run -d --name C8O --link fullsync:couchdb -p 28080:28080 convertigo
+    $ docker run -d --name C8O --link fullsync:couchdb -p 28080:28080 convertigo
 
 
 #### Link Convertigo to a Billing & Analytics database
 
 MySQL is the recommended database for holding Convertigo MBaaS server analytics. You can use this command to run convertigo and link it to a running MySQL container. Change [mysql-container] to the container name, and [username for the c8oAnalytics db], [password for specified db user] with the values for your MySQL configuration.
 
-$ docker run -d --name C8O --link [mysql-container]:mysql -p 28080:28080                             \
+    $ docker run -d --name C8O --link [mysql-container]:mysql -p 28080:28080                             \
     -e JAVA_OPTS="-Dconvertigo.engine.billing.enabled=true                                           \ 
             -Dconvertigo.engine.billing.persistence.jdbc.username=[username for the c8oAnalytics db] \
             -Dconvertigo.engine.billing.persistence.jdbc.password=[password for specified db user]   \
@@ -79,7 +82,7 @@ convertigo
 
 Projects are deployed in the Convertigo workspace, a simple file system directory. You can map the docker container /workspace to your physical system by using :
 
-$ docker run --name C8O -v $(pwd):/workspace -d -p 28080:28080 convertigo
+    $ docker run --name C8O -v $(pwd):/workspace -d -p 28080:28080 convertigo
 
 You can share the same workspace by all Convertigo containers. In this case, when you deploy a project on a Convertigo container, it will be seen by others. This is the best way to build multi-instance load balanced Convertigo server farms.
 
@@ -91,12 +94,12 @@ These accounts can be configured through the administration console and saved in
 
 You can change the default administration account :
 
-$ docker run -d --name C8O -e CONVERTIGO_ADMIN_USER=administrator -e CONVERTIGO_ADMIN_PASSWORD=s3cret -p 28080:28080 convertigo
+    $ docker run -d --name C8O -e CONVERTIGO_ADMIN_USER=administrator -e CONVERTIGO_ADMIN_PASSWORD=s3cret -p 28080:28080 convertigo
 
 
 You can lock the testplatform by setting the account :
 
-$ docker run -d --name C8O -e CONVERTIGO_TESTPLATFORM_USER=tp_user -e CONVERTIGO_TESTPLATFORM_PASSWORD=s3cret -p 28080:28080 convertigo
+    $ docker run -d --name C8O -e CONVERTIGO_TESTPLATFORM_USER=tp_user -e CONVERTIGO_TESTPLATFORM_PASSWORD=s3cret -p 28080:28080 convertigo
 
 
 #### Environment variables
@@ -117,8 +120,8 @@ COOKIE_SECURE|Convertigo use a cookie to maintain sessions. Requests on port 280
 
 You can use this stack to run a complete Convertigo MBaaS server with FullSync repository and MySQL analytics in a few command lines.<br>
 <br>
-$ mkdir c8oMBaaS<br>
-$ cd c8oMBaaS<br>
-$ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml<br>
-$ docker-compose up -d<br>
+    $ mkdir c8oMBaaS<br>
+    $ cd c8oMBaaS<br>
+    $ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml<br>
+    $ docker-compose up -d<br>
 
