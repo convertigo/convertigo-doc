@@ -16,12 +16,12 @@ In standard, Convertigo Server installation is available as 2 packages:<br>
 
 
  • convertigo-X.Y.Z.war file<br>
- • docker image
+ • docker imagess
 
 
 ### CONVERTIGO WAR FILE
 
-convertigo war file can be used with application servers in 64bits environments. It can be installed  on Tomcat, WebSphere and JBOSS servers.
+Convertigo war file can be used with application servers in 64bits environments. It can be installed  on Tomcat, WebSphere and JBOSS servers.
 
 The minimum version of java must be 1.8, and for Tomcat 7.0.
 
@@ -44,22 +44,22 @@ Using docker images from convertigo is the easiest way to install the server.
 
 #### minimum Convertigo server
 
-On a linux server with docker installed and running you can start a container with the minimum Convertigo MBaaS server. Convertigo MBaaS uses images' /workspace directory to store configuration file and deployed projects as an Docker volume.
+On a linux server with docker installed and running you can start a container with the minimum Convertigo server. Convertigo uses images' /workspace directory to store configuration file and deployed projects as an docker volume.
 
 $ docker run --name C8O -d -p 28080:28080 convertigo
 
-You can access the Server admin console on http://[dockerhost]:28080/convertigo and login using the default credentials: admin / admin
+You can access the server admin console on http://[dockerhost]:28080/convertigo and login using the default credentials: admin / admin
 
 #### Link Convertigo to a CouchDB database for FullSync 
 
 
-If you need fullsync functions, Convertigo MBaaS FullSync module uses Apache CouchDB as NoSQL repository. You can use the couchdb docker image and link to it convertigo this way:
+If you need fullsync functions, Convertigo FullSync module uses Apache CouchDB as NoSQL repository. You can use the couchdb docker image and link to it convertigo this way:
 
 Launch CouchDB container and name it 'fullsync'
 
 $ docker run -d --name fullsync couchdb:2.3.1
 
-Then launch Convertigo and link it to the running 'fullsync' container. Convertigo MBaaS sever will automatically use it as its fullsync repository.
+Then launch Convertigo and link it to the running 'fullsync' container. Convertigo server will automatically uses it as its fullsync repository.
 
 $ docker run -d --name C8O --link fullsync:couchdb -p 28080:28080 convertigo
 
@@ -81,7 +81,7 @@ Projects are deployed in the Convertigo workspace, a simple file system director
 
 $ docker run --name C8O -v $(pwd):/workspace -d -p 28080:28080 convertigo
 
-You can share the same workspace by all Convertigo containers. This this case, when you deploy a project on a Convertigo container, it will be seen by others. This is the best way to build multi-instance load balanced Convertigo server farms.
+You can share the same workspace by all Convertigo containers. In this case, when you deploy a project on a Convertigo container, it will be seen by others. This is the best way to build multi-instance load balanced Convertigo server farms.
 
 #### Security
 
@@ -103,7 +103,7 @@ $ docker run -d --name C8O -e CONVERTIGO_TESTPLATFORM_USER=tp_user -e CONVERTIGO
 
 Convertigo is based on a Java process with some defaults JVM options. You can override our defaults JVM options with you own.
 
-Table 3 - 2: Environment variable
+Table 3 - 2: Environment variables
 
  Environment variable | Meaning  
 --- | ---  
