@@ -28,13 +28,14 @@ You will learn about Sequences, transactions and other Convertigo objects in the
 
 ## Clients
 
-Convertigo Clients connects to the Convertigo Server using standard https:// protocols Clients can be different types :
+Convertigo Clients connects to the Convertigo Server using standard https:// protocols. Clients can be different types :
 
-client    | Low Code Client | Client Language | FullSync & Advanced capabilities Supported | Chapter
+| | Low Code Client | Client Language | FullSync & Advanced capabilities Supported | Chapter
 ---|---|---|---|---
 Convertigo Mobile Builder Low Code Clients  | Yes | Convertigo Low Code | Yes | [Client Side Programming Guide](../frontend-developers)
-Convertigo SDK Based clients| No| JS (Angular, ReactJS, Vue.js, ReactNative) , Java Android & Kotlin , iOS SWIFT | Yes | [Convertigo SDK Documentation](https://www.npmjs.com/package/c8osdkangular) (Starts with Angular SDK but from there see other SDK documentations)
-Agnostic clients| No| Any Type of client side language as long as it can consume JSon REST WS | No | [URL Mapper & Swagger portal](../understanding-convertigo-objects)
+Convertigo SDK JS Based clients| No| JS Angular, ReactJS, Vue.js, ReactNative | Yes | [Convertigo JS SDK Documentation](https://www.npmjs.com/package/c8osdkangular)
+Convertigo SDK Native clients| No| Java Android & Kotlin, iOS SWIFT | Yes | [Convertigo Native SDK Documentation (Android)](https://github.com/convertigo/c8osdk-android) <br>&<br> [Convertigo Native SDK Documentation (iOS)](https://github.com/convertigo/c8osdk-ios)
+Agnostic clients| No| Any Type of client side language as long as it can consume jSON REST WS | No | [URL Mapper & Swagger portal](../understanding-convertigo-objects)
 
 The best value for your projects is the use the Mobile Builder Low Code Client, but if you still want to use your existing Angular, ReactJS or Vue.js programming skills, this is also possible using SDKs, but you will not benefit from the Client Side Low Code technology.
 
