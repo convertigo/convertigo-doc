@@ -61,3 +61,25 @@ entries:
     - title: Appendixes
       url: /operating-guide/appendixes/
       output: web, pdf
+
+  - title: Convertigo Programming Guide
+    output: web, pdf
+    folderitems:
+    - title: General Architecture
+      url: /programming-guide/general-architecture/
+      output: web, pdf
+    - title: Understanding Convertigo Objects
+      url: /programming-guide/understanding-convertigo-objects/
+      output: web, pdf
+    - title: BackEnd Developers
+      url: /programming-guide/backend-developers/
+      output: web, pdf
+    - title: FrontEnd Developers
+      url: /programming-guide/frontend-developers/
+      output: web, pdf
+    - title: DevOps
+      url: /programming-guide/devops/
+      output: web, pdf
+    - title: Test Developers
+      url: /programming-guide/test-developers/
+      output: web, pdf
