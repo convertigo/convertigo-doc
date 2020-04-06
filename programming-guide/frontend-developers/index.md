@@ -46,7 +46,38 @@ You can manipulate menus in custom action by getting the instance, see below : <
 
 #### Navigation Routes
 
-#### Send an retrieve data
+#### Send and retrieve data
+
+##### Send data
+
+###### PushPage Action
+
+To send data from a page to an other you have two possibilities. You can use a PushPage Action and use the property "Page data" of it. For this one, you can send a string (in txt mode), a JSON object (in TS mode) or even a JSON object in the form of a string (but you will need to parse it before using it).
+
+In addition of your data, of course, you have to source the targetted page.
+
+###### Segment
+
+If you don't want to use a PushPage Action, you can use the classical way with segments' routes. 
+In your Page properties, change the segment property with parameters such as :
+
+<code>segmentName/:param/:param</code>
+
+
+##### Retrieve data
+
+Then, admit that we have this object : 
+<code>{id: 1, name: "John Doe"}</code>
+
+I want to display the name of my user on my targetted page. <br />
+All the data you sent is in the object <code>this.navParams.data</code>.<br />
+
+So if I want to display my user's name I will use a TypeScript expression to display it : <br />
+<code>this.navParams.data.name</code>
+
+FIGURE 3 - showing writing navParams and reload with username.
+
+
 
 #### Page classes
 
