@@ -1,10 +1,8 @@
 {%- include base.html -%}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{%- if page.summary or page.metadesc -%}
-<meta name="description" content="{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{{ page.metadesc | strip_html | strip_newlines | truncate: 160 }}">
-{%- endif -%}
+<meta name="viewport" content="width=device-width, initial-scale=1"> {%- if page.summary or page.metadesc -%}
+<meta name="description" content="{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{{ page.metadesc | strip_html | strip_newlines | truncate: 160 }}"> {%- endif -%}
 <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
 <title>{{ page.title }} | {{ site.site_title }}</title>
 <link rel="stylesheet" href="{{base}}/css/syntax.css">
@@ -46,4 +44,7 @@
 
 <script src="{{base}}/js/docv.js"></script>
 
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.url }}">
+
+<!-- Clipboard.js-->
+<script src="{{base}}/js/clipboard.min.js"></script>
