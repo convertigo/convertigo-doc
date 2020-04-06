@@ -99,8 +99,25 @@ Documents Group and user relationship :
 * A document can belong to several groups
 * Users can belong to several groups.
 
-{% include image.html file="man_img/fullsync5.png" url="images/man_img/fullsync5.png" alt="Full Sync" max-width="500" %}
+{% include image.html file="pguide_img/FullSyncGroups.png"  alt="Full Sync"  %}
 
+To be replicated on a client a document must :
+
+* have a __~c8oAcl__ property equal to the current __authenticatedUser__ or
+* have the current __authenticatedUser__ belong to the list of groups defined in the __c8oGrp__ property. the __c8oGrp__ is a simple string (Document belongs ton one group only) or a structured object such as :
+ 
+        {"groupName1": true, "groupName2": false, "groupName3": "true”}
+    
+    In this last case the document belongs to __groupName1__ and __groupName3__
+
+You must use the lib [FullSyncGrp](https://github.com/convertigo/c8oprj-lib-fullsync-grp) to manage user and groups. To be sure this library will be downloaded and installed in your studio just __copy/paste__ the fowlowing fragment on your projects's root object.
+
+    <?xml version="1.0" encoding="ISO-8859-1"?><convertigo-clipboard>
+    <reference classname="com.twinsoft.convertigo.beans.references.ProjectSchemaReference" priority="0" version="7.8.0.m006">
+    <property name="projectName"><java.lang.String value="lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=master"/></property>
+    </reference></convertigo-clipboard>
+
+This will create a project reference object to the [FullSyncGrp](https://github.com/convertigo/c8oprj-lib-fullsync-grp) and the library will be automatically pulled to your studio when you open / refresh the project or when you deploy it to a Convertigo Server.
 
 ### User id specific or anonymous data
 
