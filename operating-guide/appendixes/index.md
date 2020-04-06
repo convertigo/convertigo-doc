@@ -332,7 +332,7 @@ convertigo.xsrf.projects | Enable XSRF protection for projects | false
 ### Main advance properties
 
 property key | meaning | default value
---- | --- | --- | ---
+--- | --- | --- 
 convertigo.product_version_check | Product version check | true
 document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads (not to be used) | false
 linux.xvnc.launch | (Linux only) Launch Xvnc server using DISPLAY environment variable at startup | true
@@ -354,3 +354,12 @@ delegate.url | Delegate URL for extra functionality |
 
 ### Accounts
 
+property key | meaning | default value
+--- | --- | --- 
+admin.username | Admin username | admin
+admin.password | Admin password encoded | "admin" encoded with PropertyType.PasswordHash
+testplatform.username | Test Platform username (leave it blank for anonymous access) | 
+testplatform.password | Test Platform password | "" encoded with PropertyType.PasswordHash
+security.filter | Activate Security Filter with file security_filter.json| false
+user.password.regexp | RegularExpression used to validate password change for Admin accounts | ``^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=`|{}:;!.?\\\"()\\[\\]-]{8,20}$``
+user.password.instruction | Instruction in case of RegularExpression failure for password change | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters
