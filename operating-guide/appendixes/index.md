@@ -363,3 +363,34 @@ testplatform.password | Test Platform password | "" encoded with PropertyType.Pa
 security.filter | Activate Security Filter with file security_filter.json| false
 user.password.regexp | RegularExpression used to validate password change for Admin accounts | ``^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=`|{}:;!.?\\\"()\\[\\]-]{8,20}$``
 user.password.instruction | Instruction in case of RegularExpression failure for password change | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters
+
+### Logs
+
+property key | meaning | default value
+--- | --- | --- 
+log4j.logger.cems | Log4J root logger | INFO
+log4j.logger.cems.Admin| Log4J admin logger| WARN
+log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
+log4j.logger.cems.Beans| Log4J beans logger| INHERITED
+log4j.logger.cems.Billers| Log4J billers logger| WARN
+log4j.logger.cems.CacheManager| Log4J cache manager logger| WARN
+log4j.logger.cems.CertificateManager| Log4J certificate manager logger| WARN
+log4j.logger.cems.Context| Log4J context logger| INHERITED
+log4j.logger.cems.ContextManager| Log4J context manager logger| WARN
+log4j.logger.cems.CouchDbManager| Log4J couch DB manager output logger| WARN
+log4j.logger.cems.DatabaseObjectManager| Log4J database objects manager logger| WARN
+log4j.logger.cems.Devices| Log4J devices output logger| INFO
+log4j.logger.cems.Emulators| Log4J emulators output logger| INFO
+log4j.logger.cems.Engine| Log4J engine logger| INHERITED
+log4j.logger.cems.JobManager| Log4J job manager logger| WARN
+log4j.logger.cems.ProxyManager| Log4J proxy manager logger| INFO
+log4j.logger.cems.Scheduler| Log4J scheduler output logger| INFO
+log4j.logger.cems.SecurityFilter| Log4J security filter output logger| WARN
+log4j.logger.cems.SecurityTokenManager| Log4J security token manager output logger| INFO
+log4j.logger.cems.SiteClipper| Log4J site clipper output logger| INFO
+log4j.logger.cems.Statistics| Log4J statistics logger| INFO
+log4j.logger.cems.Studio| Log4J studio logger| WARN
+log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
+log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
+log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
+log4j.logger.cems.User| Log4J user output logger| INFO
