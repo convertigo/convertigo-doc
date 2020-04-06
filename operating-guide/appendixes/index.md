@@ -330,3 +330,36 @@ convertigo.xsrf.admin | Enable XSRF protection for Administration Console | true
 convertigo.xsrf.projects | Enable XSRF protection for projects | false
 
 ### Main advance properties
+
+property key | meaning | default value
+--- | --- | --- 
+convertigo.product_version_check | Product version check | true
+document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads (not to be used) | false
+linux.xvnc.launch | (Linux only) Launch Xvnc server using DISPLAY environment variable at startup | true
+linux.xvnc.depth | (Linux only) Depth parameter for the Xvnc, default is 16 | 16
+linux.xvnc.geometry | (Linux only) Geometry parameter for Xvnc | 320x240
+migration.3.0.0 | Migration 3.0.0 ? | false
+pool.manager.timeout | Time allowed for pool management task in seconds (-1 for disable) | -1
+projects_data.compatibility_mode | Enable the compatibility mode for projects data (required for JSP usage); engine restart required | false
+sequence.steps.use_same_jsession | Use same JSESSIONID for sequences and steps | true
+soap.request.add_xml_encoding_charset | Add XML encoding charset for SOAP requests | false
+throw_http_500 | Throw HTTP 500 in case of unrecoverable servlet error | false
+hiding_error_information | Hide detailed information in case of unrecoverable servlet error | false
+throw_http_500.soap_fault | Throw HTTP 500 in case of SOAP fault | false
+update.steps | update.steps | false
+crypto.passphrase | Cryptographic services passphrase | A8dkLmsdfkKze0e34FGh
+project.zip_backup_old | Automatically performs a dated zip backup of replaced projects | true
+cors.policy | CORS Policy\n• empty: disallow all\n• '=Origin': use client 'Origin' header\n• 'url1#url2#url3': allow if 'Origin' one of 'url' | =Origin
+delegate.url | Delegate URL for extra functionality | 
+
+### Accounts
+
+property key | meaning | default value
+--- | --- | --- 
+admin.username | Admin username | admin
+admin.password | Admin password encoded | "admin" encoded with PropertyType.PasswordHash
+testplatform.username | Test Platform username (leave it blank for anonymous access) | 
+testplatform.password | Test Platform password | "" encoded with PropertyType.PasswordHash
+security.filter | Activate Security Filter with file security_filter.json| false
+user.password.regexp | RegularExpression used to validate password change for Admin accounts | ``^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=`|{}:;!.?\\\"()\\[\\]-]{8,20}$``
+user.password.instruction | Instruction in case of RegularExpression failure for password change | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters
