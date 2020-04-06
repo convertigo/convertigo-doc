@@ -311,3 +311,22 @@ org.hsqldb.jdbcDriver | HSQLDB database | hsqldb.jar | true
 com.ibm.db2.jcc.DB2Driver | IBM DB2 Server database | db2jcc.jar<br> + db2jcc-licence.jar | false (fake jars)
 oracle.jdbc.driver.OracleDriver | ORACLE database | ojdbc5.jar | true
 org.mariadb.jdbc.Driver | MariaDB database, community-developed fork of MySQL | mariadb-java-client-1.1.3.jar | true
+
+## List of Convertigo Java System Properties
+
+To set a Java System Property when the JVM is launched, just add -Dconvertigo.engine.{property key}={property value}.
+
+### Main properties
+
+property key | meaning | default value
+--- | --- | --- | ---
+application_server.convertigo.url | Convertigo Server local URL | http://localhost:18080/convertigo
+application_server.convertigo.endpoint | Convertigo Server endpoint URL | 
+application_server.mashup.url | Mashup composer server base URL | http://localhost:18080/convertigo
+document.threading.max_worker_threads | Maximum number of worker threads | 100
+convertigo.max_context | Maximum number of contexts | 750
+convertigo.git.container | ? | ?
+convertigo.xsrf.admin | Enable XSRF protection for Administration Console | true
+convertigo.xsrf.projects | Enable XSRF protection for projects | false
+
+### Main advance properties

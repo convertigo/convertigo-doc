@@ -66,7 +66,7 @@ This chapter describes you how to use Convertigo backend objects to connect your
 
 ### Optionally expose Services as RESTful services
 
-### Deploying & test projects on Servers
+### Deploying & testing projects on Servers
 
 ### Debugging & Monitoring
 
