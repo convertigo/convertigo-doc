@@ -12,7 +12,7 @@ This chapter describes how to install Convertigo Server in several qualified env
 
 Convertigo Server can be installed on different operating systems and application servers. The installation can be done on Windows or Linux operating systems.
 
-Convertigo Server installation is available as 2 packaging type:<br>
+Convertigo Server installation is available as 2 packaging types  :<br>
 
 * convertigo-X.Y.Z.war file
 * docker images
@@ -54,7 +54,7 @@ You can access the server admin console on http://[dockerhost]:28080/convertigo 
 #### Link Convertigo to a CouchDB database for FullSync 
 
 
-If you need fullsync functions, Convertigo FullSync module uses Apache CouchDB as NoSQL repository. You can use the couchdb docker image and link to it convertigo this way:
+If you need fullsync functions, Convertigo FullSync module uses Apache CouchDB as NoSQL repository. You can use the couchdb docker image and link to it Convertigo this way:
 
 Launch CouchDB container and name it 'fullsync'
 
@@ -86,7 +86,7 @@ You can share the same workspace by all Convertigo containers. In this case, whe
 
 #### Security
 
-The default administration account of a Convertigo serveur is admin / admin and the testplatform is anonymous.
+The default administration account of a Convertigo server is admin / admin and the test platform is anonymous.
 
 These accounts can be configured through the administration console and saved in the workspace or with CONVERTIGO_ADMIN_USER and CONVERTIGO_ADMIN_PASSWORD variables.
 
@@ -113,7 +113,6 @@ JXMX|Convertigo tries to allocate this amount of memory in the container and wil
 COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined this way:<br><pre>$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo</pre>
 COOKIE_SECURE|Convertigo use a cookie to maintain sessions. Requests on port 28080 are HTTP but we advice to use an HTTPS front for production (nginx, kubenetes ingress, ...). In this case, you can secure yours cookies to be used only with secured connections by adding the Secure flag.<br>The Secure flag can be enabled by setting the COOKIE_SECURE environment variable to true. Once enabled, cookies and sessions will not anymore on non HTTPS connection.<br><br>The default COOKIE_SECURE value is false and can be defined this way: <br /><pre>$ docker run -d --name C8O -e COOKIE_SECURE="true" -p 28080:28080 convertigo</pre>
 
-
 ### Pre configurated Docker compose stack
 
 You can use this stack to run a complete Convertigo MBaaS server with FullSync repository and MySQL analytics in a few command lines.
@@ -124,4 +123,3 @@ $ cd c8oMBaaS<br>
 $ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml<br>
 $ docker-compose up -d<br>
 ```
-
