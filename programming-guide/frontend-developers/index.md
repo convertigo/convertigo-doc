@@ -53,7 +53,7 @@ menuCtrl.open(<id/name, swipe(left, right) or empty>);
 
 To send data from a page to an other you have two possibilities. You can use a PushPage Action with its property "Page data". For this one, you can send a __string__ (in txt mode), a __JSON object__ (in TS mode) or even a JSON object in the form of a string (but you will need to parse it before using it).
 
-You can source your data from a [Call Sequence](../../../reference-manual/convertigo-objects/sequencer/steps/convertigo-request-steps/call-sequence/) result.
+You can source your data from a [Call Sequence](../../../reference-manual/convertigo-objects/mobile-application/components/action-components/callsequence/) result.
 
 
 In addition of your data, of course, you have to source the targetted page.
@@ -118,6 +118,21 @@ To add methods or functions specific to your page :
 ```
 
 ## Binding with Backend services
+
+To bind data with Backend services, you have to pass by the Source mode. 
+On the UI component you want your data to be displayed, click on the Source mode. A window with all the Sequences from your project and others opens.
+Select the one you are interested in and select the data you want in your data structure.
+
+
+If you want to be freer you can also do it by TS mode with the listen() function, see below:
+
+```js
+listen(['FlightShare.CreateFlight'])?.flight?.from
+```
+
+{{site.data.alerts.note}}
+Don't forget to add "?" before your key name or you'll have some undefined errors.
+{{site.data.alerts.end}}
 
 ## Custom Actions
 
