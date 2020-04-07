@@ -12,12 +12,10 @@ This chapter describes how to install Convertigo Server in several qualified env
 
 Convertigo Server can be installed on different operating systems and application servers. The installation can be done on Windows or Linux operating systems.
 
-In standard, Convertigo Server installation is available as 2 packages:<br>
+Convertigo Server installation is available as 2 packaging type:<br>
 
-
- • convertigo-X.Y.Z.war file<br>
- • docker imagess
-
+* convertigo-X.Y.Z.war file
+* docker images
 
 ### Convertigo war file
 
