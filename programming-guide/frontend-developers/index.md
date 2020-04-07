@@ -13,7 +13,7 @@ This chapter describes you how to use Convertigo frontend objects to build your 
 ### Mobile Palette
 
 #### Using a component
-To use a component, it is very simple. Click on the one you want and drag'n'drop it where you want it in your page. Once it is done, you can name it to be clearer in your app tree by taping F2. 
+To use a component, it is very simple. Click on the one you want and drag'n'drop it where you want it in your application tree or directly in the viewver (Windows only). Once it is done, you can name it to be clearer in your app tree by taping F2. 
 
 FIGURE 1 - showing drag’n’drop and naming
 
@@ -30,7 +30,7 @@ By default pages are designed with header, content and footer.
 In the properties panel, you can choose to add the page to the hamburger menu, with its icon, title etc. 
 The preloading property allows you to choose the priority for ease loading. 
 
-The Segment is the route for your page. Then if your segment is “one” then your route would be “/one” in live testing in your browser url.
+The Segment property is the route for your page. Then if your segment is “one” then your route would be “/one” in live testing in your browser url.
 
 #### Menus
 
@@ -47,43 +47,75 @@ let menuCtrl = page.getInstance(MenuController);
 menuCtrl.open(<id/name, swipe(left, right) or empty>);
 ```
 
-#### Navigation Routes
-
 #### Send and retrieve data
 
 ##### Send data
 
-###### PushPage Action
+To send data from a page to an other you have two possibilities. You can use a PushPage Action with its property "Page data". For this one, you can send a __string__ (in txt mode), a __JSON object__ (in TS mode) or even a JSON object in the form of a string (but you will need to parse it before using it).
 
-To send data from a page to an other you have two possibilities. You can use a PushPage Action and use the property "Page data" of it. For this one, you can send a string (in txt mode), a JSON object (in TS mode) or even a JSON object in the form of a string (but you will need to parse it before using it).
+You can source your data from a [Call Sequence](../../../reference-manual/convertigo-objects/sequencer/steps/convertigo-request-steps/call-sequence/) result.
+
 
 In addition of your data, of course, you have to source the targetted page.
 
-###### Segment
-
-If you don't want to use a PushPage Action, you can use the classical way with segments' routes. 
+The other possibility to send data is to use segment's route.
 In your Page properties, change the segment property with parameters such as :
 
-    segmentName/:param/:param
+    segmentName:/param/:param
 
+You can add params as many as you want.
 
 ##### Retrieve data
 
 Then, admit that we have this object :
 
-    {id: 1, name: "John Doe"}
+    {id: 1, from: "Paris", to: "NYC"}
 
 I want to display the name of my user on my targetted page.
 All the data you sent is in the object <code>this.navParams.data</code>.
 
-So if I want to display my user's name I will use a TypeScript expression to display it : <br />
-<code>this.navParams.data.name</code>
+So if you want to display the flight's destination just use a TypeScript expression to display it : <br />
+```java
+this.navParams.data.to
+```
+To retrieve data from the segment's route, the way of going about it remains the same via the object <code>this.navParams.data</code>.
 
 FIGURE 3 - showing writing navParams and reload with username.
 
-
-
 #### Page classes
+
+Page classes are editable, to do this, just right click on your page in application tree and click "Edit page class". The page's code appears into the text editor.
+To customize the application class, you need to add your code between comments, otherwise your code will be lost when application will be generated.
+
+You can write any TypeScript or JavaScript code.
+
+To make some import, add your code between :
+
+```js
+/*Begin_c8o_PageImport*/
+/*End_c8o_PageImport*/
+```
+
+To make page declarations :
+
+```js
+/*Begin_c8o_PageDeclaration*/
+/*End_c8o_PageDeclaration*/
+```
+
+To custom constructor :
+
+```js
+/*Begin_c8o_PageConstructor*/
+/*End_c8o_PageConstructor*/
+```
+
+To add methods or functions specific to your page :
+
+```js
+/*Begin_c8o_PageFunction*/
+/*End_c8o_PageFunction*/
+```
 
 ## Binding with Backend services
 
