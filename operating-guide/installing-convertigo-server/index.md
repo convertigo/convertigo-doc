@@ -34,11 +34,11 @@ Table 3 - 1: Specific java options for convertigo
  
   java option | Meaning  
 --- | --- | --- 
--Dconvertigo.cems.user_workspace_path  | Convertigo workspace path<br>Example:<br>  -Dconvertigo.cems.user_workspace_path=<br>/home/convertigoMobilityPlatform/convertigo
--Dconvertigo.engine.application_server.convertigo.url | Local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server). This option override the parameter Convertigo Server local URL in web administration<br>Example:<br> -Dconvertigo.engine.application_server.convertigo.url=<br>http://192.168.100.69:8080/convertigo 
+-Dconvertigo.cems.user_workspace_path  | Convertigo workspace path<br>Example:<br><pre>-Dconvertigo.cems.user_workspace_path=<br>/home/convertigoMobilityPlatform/convertigo</pre>
+-Dconvertigo.engine.application_server.convertigo.url | Local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server). This option override the parameter Convertigo Server local URL in web administration<br>Example:<br><pre>-Dconvertigo.engine.application_server.convertigo.url=<br>http://192.168.100.69:8080/convertigo</pre>
 
 
-<a href="../appendixes/#list-of-convertigo-java-system-properties">You can find complete list of Convertigo Java System Properties on this link</a>.
+[find complete list of Convertigo Java System Properties on this link](../appendixes/#list-of-convertigo-java-system-properties)
 
 
 ### Convertigo docker images
@@ -110,18 +110,20 @@ Table 3 - 2: Environment variables
 
  Environment variable | Meaning  
 --- | ---  
-JAVA_OPTS  |Add any Java JVM options such as -D[something] : <br>$ docker run -d --name C8O -e JAVA_OPTS="-DjvmRoute=server1" -p 28080:28080 convertigo
-JXMX|Convertigo tries to allocate this amount of memory in the container and will automatically reduce it until the value is compatible for the Docker memory constraints. Once the best value found, it is used as -Xmx=${JXMX}m parameter for the JVM.<br>The default JXMX value is 2048 and can be defined :<br>$ docker run -d --name C8O -e JXMX="4096" -p 28080:28080 convertigo
-COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined :<br>$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo
-COOKIE_SECURE|Convertigo use a cookie to maintain sessions. Requests on port 28080 are HTTP but we advice to use an HTTPS front for production (nginx, kubenetes ingress, ...). In this case, you can secure yours cookies to be used only with secured connections by adding the Secure flag.<br>The Secure flag can be enabled by setting the COOKIE_SECURE environment variable to true. Once enabled, cookies and sessions aren't working through an HTTP connection.<br>The default COOKIE_SECURE value is false and can be defined :<br>$ docker run -d --name C8O -e COOKIE_SECURE="true" -p 28080:28080 convertigo
+JAVA_OPTS  |Add any Java JVM options such as -D[something] : <br><pre>$ docker run -d --name C8O -e JAVA_OPTS="-DjvmRoute=server1" -p 28080:28080 convertigo</pre>
+JXMX|Convertigo tries to allocate this amount of memory in the container and will automatically reduce it until the value is compatible for the Docker memory constraints. Once the best value found, it is used as -Xmx={JXMX}m parameter for the JVM.<br>The default JXMX value is 2048 and can be defined :<br><pre>$ docker run -d --name C8O -e JXMX="4096" -p 28080:28080 convertigo</pre>
+COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined this way:<br><pre>$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo</pre>
+COOKIE_SECURE|Convertigo use a cookie to maintain sessions. Requests on port 28080 are HTTP but we advice to use an HTTPS front for production (nginx, kubenetes ingress, ...). In this case, you can secure yours cookies to be used only with secured connections by adding the Secure flag.<br>The Secure flag can be enabled by setting the COOKIE_SECURE environment variable to true. Once enabled, cookies and sessions will not anymore on non HTTPS connection.<br><br>The default COOKIE_SECURE value is false and can be defined this way: <br /><pre>$ docker run -d --name C8O -e COOKIE_SECURE="true" -p 28080:28080 convertigo</pre>
 
 
 ### Pre configurated Docker compose stack
 
-You can use this stack to run a complete Convertigo MBaaS server with FullSync repository and MySQL analytics in a few command lines.<br>
-<br>
-    $ mkdir c8oMBaaS<br>
-    $ cd c8oMBaaS<br>
-    $ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml<br>
-    $ docker-compose up -d<br>
+You can use this stack to run a complete Convertigo MBaaS server with FullSync repository and MySQL analytics in a few command lines.
+
+```
+$ mkdir c8oMBaaS<br>
+$ cd c8oMBaaS<br>
+$ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml<br>
+$ docker-compose up -d<br>
+```
 
