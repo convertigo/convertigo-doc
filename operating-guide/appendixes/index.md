@@ -414,3 +414,66 @@ log4j.appender.CemsAppender.layout<br>.ConversionPattern| ? Log4J default append
 log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup index|25
 log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
 log4j.additivity.cems| ? Log4J root logger additivity| false
+
+### Network
+
+property key | meaning | default value
+--- | --- | --- 
+net.gzip| Enable GZip response for most text responses (need the header Accept-Encoding: gzip)| true
+net.max-age| Set the Cache-Control: max-age value in seconds, for static resources| 10
+net.reverse_dns| Use DNS reverse search for finding host names| false
+net.upload.max_request_size| Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit.| -1
+net.upload.max_request_size| Maximum allowed size of a single uploaded file (in bytes).| 10485760
+
+### HTTP Client
+
+property key | meaning | default value
+--- | --- | --- 
+http_client.max_total_connections| Maximal number of HTTP connections (from 1 to 65535)| 100
+http_client.max_connections_per_host| Maximal number of HTTP connections per host (from 1 to 255)| 50
+
+### Connector legacy monitoring
+
+property key | meaning | default value
+--- | --- | ---
+connectors.monitoring| Display running connectors in monitor of Legacy connectors| false
+document.log.screen_dumps| Trace in logs the screen dumps of the running Legacy connectors | false
+
+### XML generation
+
+property key | meaning | default value
+--- | --- | ---
+document.include_statistics| Insert statistics in the generated document| false
+document.xslt_engine| XSLT engine| XsltEngine.xalan_xsltc
+document.namespace.aware| Set namespace aware| false
+document.fromschema.depth| Maximum number of elements for XML sample generation based on schema | 100
+
+### Proxy
+
+property key | meaning | default value
+--- | --- | ---
+htmlProxy.mode| Proxy mode| ProxyMode.off
+htmlProxy.port| Proxy port| 8080
+htmlProxy.host| Proxy host| localhost
+htmlProxy.bpdomains| Do not apply proxy settings on | localhost,127.0.0.1
+htmlProxy.auto| Autoconfiguration proxy url| 
+htmlProxy.method| Proxy authentication method| ProxyMethod.anonymous
+htmlProxy.user| Username| 
+htmlProxy.password| Password|
+
+### SSL
+
+property key | meaning | default value
+--- | --- | ---
+ssl.debug| SSL debug output ; only available for HTTP connectors | false
+ssl.issuers| SSL issuers|
+
+### Cache
+
+property key | meaning | default value
+--- | --- | ---
+cache_manager.class| Cache manager class| com.twinsoft.convertigo.engine.cache.FileCacheManager
+cache_manager.filecache.directory| File cache directory| workspace/cache
+cache_manager.scan_delay| Cache scan delay (in seconds)| 60
+cache_manager.weak| Allow to cache responses in memory until the next GC | false
+disable.cache| Disable Cache | false
