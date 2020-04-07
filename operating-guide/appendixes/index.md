@@ -394,3 +394,23 @@ log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
 log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
 log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
 log4j.logger.cems.User| Log4J user output logger| INFO
+
+### Logs advance
+
+property key | meaning | default value
+--- | --- | --- 
+log.explicit_variables| ? Explicit variables| contextid,project,sequence,connector,<br>transaction,user,clientip,clienthostname,
+log4j.appender.AuditAppender| Log4J audit appender|org.apache.log4j.RollingFileAppender
+log4j.appender.AuditAppender.File| Log4J audit appender file| ${log.directory}/audit.log
+log4j.appender.AuditAppender.layout| Log4J audit appender layout|org.apache.log4j.PatternLayout
+log4j.appender.AuditAppender.layout<br>.ConversionPattern| ? Log4J audit appender layout conversion pattern| ``!%c{1} | %d | %-5p | %m%n``
+log4j.appender.AuditAppender.MaxBackupIndex| Log4J audit appender max backup index| 25
+log4j.appender.AuditAppender.MaxFileSize| Log4J audit appender max file size| 10MB
+log4j.appender.CemsAppender| Log4J default appender| org.apache.log4j.RollingFileAppender
+log4j.appender.CemsAppender.Encoding| Log4J default appender encoding | UTF-8
+log4j.appender.CemsAppender.File| Log4J default appender file| ${log.directory}/engine.log
+log4j.appender.CemsAppender.layout| Log4J default appender layout| org.apache.log4j.PatternLayout
+log4j.appender.CemsAppender.layout<br>.ConversionPattern| ? Log4J default appender layout conversion pattern| ``!%-28c{1} | %d | %-5p | %-32t | %X{ContextualParameters}%m%n``
+log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup index|25
+log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
+log4j.additivity.cems| ? Log4J root logger additivity| false
