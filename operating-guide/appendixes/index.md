@@ -363,3 +363,54 @@ testplatform.password | Test Platform password | "" encoded with PropertyType.Pa
 security.filter | Activate Security Filter with file security_filter.json| false
 user.password.regexp | RegularExpression used to validate password change for Admin accounts | ``^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=`|{}:;!.?\\\"()\\[\\]-]{8,20}$``
 user.password.instruction | Instruction in case of RegularExpression failure for password change | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters
+
+### Logs
+
+property key | meaning | default value
+--- | --- | --- 
+log4j.logger.cems | Log4J root logger | INFO
+log4j.logger.cems.Admin| Log4J admin logger| WARN
+log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
+log4j.logger.cems.Beans| Log4J beans logger| INHERITED
+log4j.logger.cems.Billers| Log4J billers logger| WARN
+log4j.logger.cems.CacheManager| Log4J cache manager logger| WARN
+log4j.logger.cems.CertificateManager| Log4J certificate manager logger| WARN
+log4j.logger.cems.Context| Log4J context logger| INHERITED
+log4j.logger.cems.ContextManager| Log4J context manager logger| WARN
+log4j.logger.cems.CouchDbManager| Log4J couch DB manager output logger| WARN
+log4j.logger.cems.DatabaseObjectManager| Log4J database objects manager logger| WARN
+log4j.logger.cems.Devices| Log4J devices output logger| INFO
+log4j.logger.cems.Emulators| Log4J emulators output logger| INFO
+log4j.logger.cems.Engine| Log4J engine logger| INHERITED
+log4j.logger.cems.JobManager| Log4J job manager logger| WARN
+log4j.logger.cems.ProxyManager| Log4J proxy manager logger| INFO
+log4j.logger.cems.Scheduler| Log4J scheduler output logger| INFO
+log4j.logger.cems.SecurityFilter| Log4J security filter output logger| WARN
+log4j.logger.cems.SecurityTokenManager| Log4J security token manager output logger| INFO
+log4j.logger.cems.SiteClipper| Log4J site clipper output logger| INFO
+log4j.logger.cems.Statistics| Log4J statistics logger| INFO
+log4j.logger.cems.Studio| Log4J studio logger| WARN
+log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
+log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
+log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
+log4j.logger.cems.User| Log4J user output logger| INFO
+
+### Logs advance
+
+property key | meaning | default value
+--- | --- | --- 
+log.explicit_variables| ? Explicit variables| contextid,project,sequence,connector,<br>transaction,user,clientip,clienthostname,
+log4j.appender.AuditAppender| Log4J audit appender|org.apache.log4j.RollingFileAppender
+log4j.appender.AuditAppender.File| Log4J audit appender file| ${log.directory}/audit.log
+log4j.appender.AuditAppender.layout| Log4J audit appender layout|org.apache.log4j.PatternLayout
+log4j.appender.AuditAppender.layout<br>.ConversionPattern| ? Log4J audit appender layout conversion pattern| ``!%c{1} | %d | %-5p | %m%n``
+log4j.appender.AuditAppender.MaxBackupIndex| Log4J audit appender max backup index| 25
+log4j.appender.AuditAppender.MaxFileSize| Log4J audit appender max file size| 10MB
+log4j.appender.CemsAppender| Log4J default appender| org.apache.log4j.RollingFileAppender
+log4j.appender.CemsAppender.Encoding| Log4J default appender encoding | UTF-8
+log4j.appender.CemsAppender.File| Log4J default appender file| ${log.directory}/engine.log
+log4j.appender.CemsAppender.layout| Log4J default appender layout| org.apache.log4j.PatternLayout
+log4j.appender.CemsAppender.layout<br>.ConversionPattern| ? Log4J default appender layout conversion pattern| ``!%-28c{1} | %d | %-5p | %-32t | %X{ContextualParameters}%m%n``
+log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup index|25
+log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
+log4j.additivity.cems| ? Log4J root logger additivity| false
