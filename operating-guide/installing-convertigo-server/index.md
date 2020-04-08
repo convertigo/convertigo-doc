@@ -122,6 +122,6 @@ You can use this stack to run a complete Convertigo MBaaS server with FullSync r
 ```shell
 $ mkdir c8oMBaaS<br>
 $ cd c8oMBaaS<br>
-$ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml<br>
+$ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/docker-compose.yml
 $ docker-compose up -d
 ```
