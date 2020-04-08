@@ -368,7 +368,7 @@ user.password.instruction | Instruction in case of RegularExpression failure for
 
 property key | meaning | default value
 --- | --- | --- 
-log4j.logger.cems | Log4J root logger | INFO
+log4j.logger.cems | Log4J root logger | INFO, CemsAppender
 log4j.logger.cems.Admin| Log4J admin logger| WARN
 log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
 log4j.logger.cems.Beans| Log4J beans logger| INHERITED
@@ -394,6 +394,12 @@ log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
 log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
 log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
 log4j.logger.cems.User| Log4J user output logger| INFO
+
+
+The different available values are : FATAL, ERROR, WARN, INFO, DEBUG, TRACE
+To set INHERITED, put '' (empty). *Inherited from root logger* uses the value from  *Log4J root logger*.
+[To know how to position these values go on this link](../using-convertigo-administration-console/#logs)
+
 
 ### Logs advance
 
@@ -477,3 +483,52 @@ cache_manager.filecache.directory| File cache directory| workspace/cache
 cache_manager.scan_delay| Cache scan delay (in seconds)| 60
 cache_manager.weak| Allow to cache responses in memory until the next GC | false
 disable.cache| Disable Cache | false
+
+### Analytics
+
+property key | meaning | default value
+--- | --- | ---
+billing.enabled| Enable persistence analytics (JDBC)| false
+billing.google.enabled| Enable google analytics| false
+billing.persistence.dialect| Persistence SQL Dialect| org.hibernate.dialect.MySQL5InnoDBDialect
+billing.persistence.jdbc.driver| Persistence JDBC driver| org.mariadb.jdbc.Driver
+billing.persistence.jdbc.password| Persistence JDBC password| 
+billing.persistence.jdbc.url| Persistence JDBC URL| jdbc:mysql://localhost:3306/c8oAnalytics
+billing.persistence.jdbc.username| Persistence JDBC username|
+billing.persistence.jdbc.maxretry| JDBC max retry on connection failed| 2
+billing.google.analytics.id| Google Analytics ID|
+
+### Notifications
+
+property key | meaning | default value
+--- | --- | ---
+notifications.notify.project_deployment| Notify project deployment| false
+notifications.target_email| Target email| 
+notifications.smtp.host| STMP host|
+notifications.smtp.port| STMP port| 465
+notifications.smtp.user| STMP user| 
+notifications.smtp.password| STMP password|
+
+### Mobile builder
+
+property key | meaning | default value
+--- | --- | ---
+mobile.builder.auth_token| Mobile builder authentication token|  
+mobile.builder.android_certificate_title| Android certificate title| 
+mobile.builder.android_certificate_pw| Android certificate password|
+mobile.builder.android_keystore_pw| Android keyStore password|
+mobile.builder.ios_certificate_title| iOS certificate title| 
+mobile.builder.ios_certificate_pw| iOS certificate password|
+mobile.builder.platform_url|Mobile builder platform URL|  https://build.convertigo.net/cmb/PhoneGapBuilder
+
+### Full Sync
+
+property key | meaning | default value
+--- | --- | ---
+fullsync.couch.url| Couch DB URL for FullSync| http://127.0.0.1:5984
+fullsync.couch.username| Couch DB username for FullSync| 
+fullsync.couch.password| Couch DB password for FullSync|
+fullsync.couch.prefix| Couch DB prefix for all FullSync databases|
+
+
+
