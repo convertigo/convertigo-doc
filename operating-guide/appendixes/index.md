@@ -368,7 +368,7 @@ user.password.instruction | Instruction in case of RegularExpression failure for
 
 property key | meaning | default value
 --- | --- | --- 
-log4j.logger.cems | Log4J root logger | INFO
+log4j.logger.cems | Log4J root logger | INFO, CemsAppender
 log4j.logger.cems.Admin| Log4J admin logger| WARN
 log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
 log4j.logger.cems.Beans| Log4J beans logger| INHERITED
@@ -394,6 +394,12 @@ log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
 log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
 log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
 log4j.logger.cems.User| Log4J user output logger| INFO
+
+
+The different available values are : FATAL, ERROR, WARN, INFO, DEBUG, TRACE
+To set INHERITED, put '' (empty). *Inherited from root logger* uses the value from  *Log4J root logger*.
+[To know how to position these values go on this link](../using-convertigo-administration-console/#logs)
+
 
 ### Logs advance
 
