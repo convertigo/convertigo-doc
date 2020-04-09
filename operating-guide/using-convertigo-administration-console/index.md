@@ -228,14 +228,14 @@ In the Advanced properties section, configure the main advanced Convertigo confi
 
 #### Properties
 
-- **Convertigo Server local URL** : local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
+- **Convertigo Server local URL** : <a id="Convertigo-Server-local-URL"></a> local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
     - This URL is used by several functionalities of Convertigo Server and it is very important that it is correctly configured, otherwise these functionalities would not work correctly (for example: Call Sequence or Call Transaction steps not using internal invoke, Scheduler, WSDL generation, etc.). This URL should be configured at the end of the Convertigo Server installation.
     - In case of Convertigo Studio, this URL is used in addition to define the listening port of the embedded server, as well as for the transaction or sequence executions using the "Execute" functionality.
 
-- **Convertigo Server endpooint URL** : public Convertigo Server URL, this URL informs Convertigo Server of its external access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
+- **Convertigo Server endpoint URL** : <a id="Convertigo-Server-endpoint-URL"></a>public Convertigo Server URL, this URL informs Convertigo Server of its external access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
     - This URL is used by the SiteClipper to compute the right full links.
 
-- **Maximum number of worker threads** : Maximum number of simultaneous worker threads Convertigo will open in the application server. Though there is no theoretical limit to this, some application servers seem to be unstable when too many worker threads are in use. Convertigo limits itself to prevent server collapse. 
+- **Maximum number of worker threads** : <a id="Maximum-number-of-worker-threads"></a>Maximum number of simultaneous worker threads Convertigo will open in the application server. Though there is no theoretical limit to this, some application servers seem to be unstable when too many worker threads are in use. Convertigo limits itself to prevent server collapse. 
 
 {{site.data.alerts.note}}
 <b>What are worker threads ?</b><br><br>
@@ -243,7 +243,7 @@ For every request sent to Convertigo, a thread of the application server (Tomcat
 The arbitrary limit set with the <b>Maximum number of worker threads</b> property is never exceeded. When this limit is reached, every new request to Convertigo is rejected (the Convertigo engine throws an Exception) until a <b>worker thread</b> has finished performing its request and is available for a new one.
 {{site.data.alerts.end}}
 
-- **Maximum number of contexts** : Maximum number of simultaneous contexts Convertigo will create. This parameter allows the Convertigo server to protect itself from massive context creation policies. Too many contexts created in a server could lead to OutOfMemory errors, resulting in completely blocked server. Convertigo limits its number of contexts to prevent server collapse. 
+- **Maximum number of contexts** : <a id="Maximum-number-of-contexts"></a>Maximum number of simultaneous contexts Convertigo will create. This parameter allows the Convertigo server to protect itself from massive context creation policies. Too many contexts created in a server could lead to OutOfMemory errors, resulting in completely blocked server. Convertigo limits its number of contexts to prevent server collapse. 
 
 {{site.data.alerts.note}}
 <b>What is the difference between contexts and worker threads ?</b><br><br>
