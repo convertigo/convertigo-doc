@@ -123,6 +123,7 @@ To bind data with Backend services, you have to pass by the Source mode.
 On the UI component you want your data to be displayed, click on the Source mode. A window with all the Sequences from your project and others opens.
 Select the one you are interested in and select the data you want in your data structure.
 
+FIG 4 - showing selecting a sequence
 
 If you want to be freer you can also do it by TS mode with the listen() function, see below:
 
@@ -136,6 +137,11 @@ Don't forget to add "?" before your key name or you'll have some undefined error
 
 ## Custom Actions
 
+This component helps you writing your own processing code.<br/>
+To edit code, double click the <i>CustomAction</i>. You are free to code in TypeScript any custom processing you want. Be sure to write your code between the<br /><code>/*Begin_c8o_function */<br />/*End_c8o_function */</code><br />delimiters.<br />
+
+Custom actions can be inserted in an [Event](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/event/) processing chain, combined with any other <i>Actions</i>. For example, you could have a <i>Camera</i> Action called when the user clicks on a button an you would like to process this action's output. To do this, place a <i>CustomAction</i> under the <i>Camera</i> action. This way, the <i>CustomAction</i> will be called <b>after</b> the <i>Camera</i> has finished (when the user clicks on ok to save the image...).<br /><br />When you finish processing in your CustomAction, you can call <code>resolve(data)</code> to pass control to the next CustomAction in the chain. The <code>data</code> object will be seen a the <code>parent.out</code> or <code>stack["ActionName"].out</code> object you can configure in the (TS) source of the next action in the chain.You can also call <code>reject(err)</code> to signal an error in the Custom Action processing. In this case, the <i>Failure Handler</i> or <i>Error Handler</i> error handler will be called. <br /><br />You can pass <i>Variable</i>s to any action. To do so, simply add <i>Variable</i> components under the <i>CustomAction</i>. You are free to associate the variable to any fixed text (<b>TX</b>) , TypeScript expression (<b>TS</b>), source (<b>SC</b>) and the value will be transmitted to the action.<br /><br />You can access the variables value in your custom action code by using : <br /><br /> <code>vars.myVariable</code> (where myVariable is the variable name)<br /><br />
+
 ## Events
 
 ## Actions
@@ -146,7 +152,44 @@ Don't forget to add "?" before your key name or you'll have some undefined error
 
 ## Theming
 
+Ionic is built on top of Sass, which allows you to set some defaults styles for your application but makes it extremly easy for you to change Ionic defaults.
+To modify the default thme, double click on "Theme" in the style section of your application tree. The file will be opened in the text editor on right.
+
+As for the page class there are different section to modify in function of what you want.
+
+This includes :
+
+* Name colors variables
+* App iOS variables
+* App Material Design variables
+* App Windows variables
+* Import for App theme 
+* Import for Ionicons
+* Import for fonts
+
+You can add as many as themes you want.
+
 ## Styling
+
+By default Ionic is coming with the Bootstrap framework for styling. You can overwrite default classes by adding new styles.
+
+A good practice is to add new stylesheet for each global element you want to style. For example, if you have some text inputs with the same style anywhere in your application, just create a new stylesheet named "textInputs".<br> 
+All stylesheets you create will be compiled in one file.
+
+{{site.data.alerts.note}}
+Take care about the order you when you create multiple stylesheets, it will be added one after another in the final file.
+{{site.data.alerts.end}}
+
+It is also possible to style an UI Component if you need a specific style. 
+
+For this, make right click on your element in your application tree, click New -> UI Component then choose __Style__.
+This is will generate a new style attribute on your element. To write some CSS code, double click on the new Style component, it will be opened in the text editor.
+
+{{site.data.alerts.note}}
+If you combine the both ways for an element with the same style property in both, the style attribute will overwrite the property.<br> 
+Use it for specific cases only.
+{{site.data.alerts.end}}
+
 
 ## Using extended libraries
 
