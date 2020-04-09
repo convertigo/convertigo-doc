@@ -255,9 +255,18 @@ When one of these limits is reached, every new request to Convertigo is rejected
 
 - **Git container (autoimport)** : <a id="Git-container"></a>
 
-- **Enable XSRF protection for Administration Console** : <a id="Enable-XSRF-Admin"></a>
+- **Enable XSRF protection for Administration Console** : <a id="Enable-XSRF-Admin"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your administration console by enabling this setting. The protection will be done by issuing a session live time token that that the console will use each time it invokes and admin service.
 
-- **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>
+
+- **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your PWA and Web applications by enabling this setting. The protection will be done by issuing a session life-time token that that the Application will use each time it invokes and admin service.
+
+{{site.data.alerts.note}}
+Only applications Developed with Mobile Builder Convertigo 7.8.0 and further versions are compatible with XSRF protection.
+
+Also Only applications developed on Convertigo Angular/Vue/JS SK Version 3.0.9 and further supports XSRF protection.
+{{site.data.alerts.end}}
+
+
 
 #### Advanced properties
 
