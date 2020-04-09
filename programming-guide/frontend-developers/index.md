@@ -120,6 +120,9 @@ To add methods or functions specific to your page :
 ## Binding with Backend services
 
 To bind data with Backend services, you have to pass by the Source mode. 
+
+But first and foremost, you have to make a [CallSequence](../../../reference-manual/convertigo-objects/mobile-application/components/action-components/callsequence/) in an event processing chain, this can be a classical [event](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/event/) or a [PageEvent](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/pageevent/), to get the data to be displayed. 
+
 On the UI component you want your data to be displayed, click on the Source mode. A window with all the Sequences from your project and others opens.
 Select the one you are interested in and select the data you want in your data structure.
 
@@ -135,12 +138,54 @@ listen(['FlightShare.CreateFlight'])?.flight?.from
 Don't forget to add "?" before your key name or you'll have some undefined errors.
 {{site.data.alerts.end}}
 
+To send data to back end, you'll have to make a new [CallSequence](../../../reference-manual/convertigo-objects/mobile-application/components/action-components/callsequence/) selecting the targeted requestable which post data to your backend service.<br/>
+Then right click on your callSequence and click "Import variables from targeted sequence". This is what you will have to bind to send data.<br>
+To store your data, you can use the [SetGlobal](../../../reference-manual/convertigo-objects/mobile-application/components/action-components/setglobal/) object. <br/>
+To retrieve this value to bind it, in TS mode use <code>this.global?.myPropety</code>.
+
+FIG 5 - showing sending data to backend
+
 ## Custom Actions
 
 This component helps you writing your own processing code.<br/>
-To edit code, double click the <i>CustomAction</i>. You are free to code in TypeScript any custom processing you want. Be sure to write your code between the<br /><code>/*Begin_c8o_function */<br />/*End_c8o_function */</code><br />delimiters.<br />
+To edit code, double click the <i>CustomAction</i>. You are free to code in TypeScript any custom processing you want. Be sure to write your code between the<br />
+```js
+/*Begin_c8o_function */
+/*End_c8o_function */
+```
+delimiters.<br />
 
-Custom actions can be inserted in an [Event](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/event/) processing chain, combined with any other <i>Actions</i>. For example, you could have a <i>Camera</i> Action called when the user clicks on a button an you would like to process this action's output. To do this, place a <i>CustomAction</i> under the <i>Camera</i> action. This way, the <i>CustomAction</i> will be called <b>after</b> the <i>Camera</i> has finished (when the user clicks on ok to save the image...).<br /><br />When you finish processing in your CustomAction, you can call <code>resolve(data)</code> to pass control to the next CustomAction in the chain. The <code>data</code> object will be seen a the <code>parent.out</code> or <code>stack["ActionName"].out</code> object you can configure in the (TS) source of the next action in the chain.You can also call <code>reject(err)</code> to signal an error in the Custom Action processing. In this case, the <i>Failure Handler</i> or <i>Error Handler</i> error handler will be called. <br /><br />You can pass <i>Variable</i>s to any action. To do so, simply add <i>Variable</i> components under the <i>CustomAction</i>. You are free to associate the variable to any fixed text (<b>TX</b>) , TypeScript expression (<b>TS</b>), source (<b>SC</b>) and the value will be transmitted to the action.<br /><br />You can access the variables value in your custom action code by using : <br /><br /> <code>vars.myVariable</code> (where myVariable is the variable name)<br /><br />
+Custom actions can be inserted in an [Event](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/event/) processing chain, combined with any other <i>Actions</i>. For example, you could have a <i>Camera</i> Action called when the user clicks on a button an you would like to process this action's output. To do this, place a <i>CustomAction</i> under the <i>Camera</i> action. This way, the <i>CustomAction</i> will be called <b>after</b> the <i>Camera</i> has finished (when the user clicks on ok to save the image...).<br />
+
+When you finish processing in your CustomAction, you can call <code>resolve(data)</code> to pass control to the next CustomAction in the chain. The <code>data</code> object will be seen a the <code>parent.out</code> or <code>stack["ActionName"].out</code> object you can configure in the (TS) source of the next action in the chain.You can also call <code>reject(err)</code> to signal an error in the Custom Action processing. In this case, the <i>Failure Handler</i> or <i>Error Handler</i> error handler will be called. <br /><br />You can pass <i>Variable</i>s to any action. To do so, simply add <i>Variable</i> components under the <i>CustomAction</i>. You are free to associate the variable to any fixed text (**TXT**) , TypeScript expression (**TS**), source (**SC**) and the value will be transmitted to the action.
+
+```js
+	/**
+	 * Function CustomAction
+	 *   
+	 * 
+	 * @param page  , the current page
+	 * @param props , the object which holds properties key-value pairs
+	 * @param vars  , the object which holds variables key-value pairs
+	 * @param event , the current event object
+	 */
+	CTS1586435482725(page: C8oPageBase, props, vars, event: any) : Promise<any> {
+		return new Promise((resolve, reject) => {
+		/*Begin_c8o_function:CTS1586435482725*/
+		page.c8o.log.debug('[MB] '+ props.actionFunction +': '+ props.actionName);
+		resolve();
+		/*End_c8o_function:CTS1586435482725*/
+		});
+    }
+```
+
+The code above is the default code for a CustomAction.
+
+You can access the variables value in your custom action code by using :
+
+<code>vars.myVariable</code> (where myVariable is the variable name).
+
+You can access event data through the <code>event</code> object.
 
 ## Events
 
