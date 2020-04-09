@@ -253,6 +253,12 @@ The arbitrary limits set with the <b>Maximum number of worker threads</b> and <b
 When one of these limits is reached, every new request to Convertigo is rejected (the Convertigo engine throws an Exception) until a worker thread has finished performing its request or a context is destroyed and/or is available for a new request.
 {{site.data.alerts.end}}
 
+- **Git container (autoimport)** : <a id="Git-container"></a>
+
+- **Enable XSRF protection for Administration Console** : <a id="Enable-XSRF-Admin"></a>
+
+- **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>
+
 #### Advanced properties
 
 - **Product version check** : Activated by default, this option enables the verification of Convertigo version number in projects that attempt to be deployed. This helps users not to deploy projects that were created in a greater version of Convertigo in an older version of Convertigo. Indeed, in this case, the projects may not be compatible, due to the add of objects or objects' properties in the software, that an older version of Convertigo cannot handle. In the opposite case, a new version of Convertigo is always compatible with older version, that makes projects to be importable in newer version of Convertigo, possibly including an automatic migration of projects if need be.

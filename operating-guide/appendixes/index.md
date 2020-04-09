@@ -325,9 +325,9 @@ application_server.convertigo.endpoint | Convertigo Server endpoint URL<br>[More
 application_server.mashup.url | Mashup composer server base URL | http://localhost:18080/convertigo
 document.threading.max_worker_threads | Maximum number of worker threads <br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-worker-threads) | 100
 convertigo.max_context | Maximum number of contexts <br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-contexts)| 750
-convertigo.git.container | ? <br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL)| ?
-convertigo.xsrf.admin | Enable XSRF protection for Administration Console <br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL) | true
-convertigo.xsrf.projects | Enable XSRF protection for projects <br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL)| false
+convertigo.git.container | ? <br>[More information on this parameter](../using-convertigo-administration-console/#Git-container)| ?
+convertigo.xsrf.admin | Enable XSRF protection for Administration Console <br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Admin) | true
+convertigo.xsrf.projects | Enable XSRF protection for projects <br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Projects)| false
 
 ### Main advance properties
 
