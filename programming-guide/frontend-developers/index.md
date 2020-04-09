@@ -138,9 +138,20 @@ Don't forget to add "?" before your key name or you'll have some undefined error
 ## Custom Actions
 
 This component helps you writing your own processing code.<br/>
-To edit code, double click the <i>CustomAction</i>. You are free to code in TypeScript any custom processing you want. Be sure to write your code between the<br /><code>/*Begin_c8o_function */<br />/*End_c8o_function */</code><br />delimiters.<br />
+To edit code, double click the <i>CustomAction</i>. You are free to code in TypeScript any custom processing you want. Be sure to write your code between the<br />
+```js
+/*Begin_c8o_function */
+/*End_c8o_function */
+```
+delimiters.<br />
 
-Custom actions can be inserted in an [Event](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/event/) processing chain, combined with any other <i>Actions</i>. For example, you could have a <i>Camera</i> Action called when the user clicks on a button an you would like to process this action's output. To do this, place a <i>CustomAction</i> under the <i>Camera</i> action. This way, the <i>CustomAction</i> will be called <b>after</b> the <i>Camera</i> has finished (when the user clicks on ok to save the image...).<br /><br />When you finish processing in your CustomAction, you can call <code>resolve(data)</code> to pass control to the next CustomAction in the chain. The <code>data</code> object will be seen a the <code>parent.out</code> or <code>stack["ActionName"].out</code> object you can configure in the (TS) source of the next action in the chain.You can also call <code>reject(err)</code> to signal an error in the Custom Action processing. In this case, the <i>Failure Handler</i> or <i>Error Handler</i> error handler will be called. <br /><br />You can pass <i>Variable</i>s to any action. To do so, simply add <i>Variable</i> components under the <i>CustomAction</i>. You are free to associate the variable to any fixed text (<b>TX</b>) , TypeScript expression (<b>TS</b>), source (<b>SC</b>) and the value will be transmitted to the action.<br /><br />You can access the variables value in your custom action code by using : <br /><br /> <code>vars.myVariable</code> (where myVariable is the variable name)<br /><br />
+Custom actions can be inserted in an [Event](../../../reference-manual/convertigo-objects/mobile-application/components/control-components/event/) processing chain, combined with any other <i>Actions</i>. For example, you could have a <i>Camera</i> Action called when the user clicks on a button an you would like to process this action's output. To do this, place a <i>CustomAction</i> under the <i>Camera</i> action. This way, the <i>CustomAction</i> will be called <b>after</b> the <i>Camera</i> has finished (when the user clicks on ok to save the image...).<br />
+
+When you finish processing in your CustomAction, you can call <code>resolve(data)</code> to pass control to the next CustomAction in the chain. The <code>data</code> object will be seen a the <code>parent.out</code> or <code>stack["ActionName"].out</code> object you can configure in the (TS) source of the next action in the chain.You can also call <code>reject(err)</code> to signal an error in the Custom Action processing. In this case, the <i>Failure Handler</i> or <i>Error Handler</i> error handler will be called. <br /><br />You can pass <i>Variable</i>s to any action. To do so, simply add <i>Variable</i> components under the <i>CustomAction</i>. You are free to associate the variable to any fixed text (**TXT**) , TypeScript expression (**TS**), source (**SC**) and the value will be transmitted to the action.
+
+You can access the variables value in your custom action code by using :
+
+<code>vars.myVariable</code> (where myVariable is the variable name).
 
 ## Events
 
