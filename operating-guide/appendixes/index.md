@@ -318,7 +318,7 @@ To set a Java System Property when the JVM is launched, just add -Dconvertigo.en
 
 ### Main properties
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- | ---
 application_server.convertigo.url | Convertigo Server local URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL) | http://localhost:18080/convertigo
 application_server.convertigo.endpoint | Convertigo Server endpoint URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-endpoint-URL) | 
@@ -331,7 +331,7 @@ convertigo.xsrf.projects | Enable XSRF protection for projects <br>[More informa
 
 ### Main advance properties
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- 
 convertigo.product_version_check | Product version check | true
 document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads (not to be used) | false
@@ -354,7 +354,7 @@ delegate.url | Delegate URL for extra functionality |
 
 ### Accounts
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- 
 admin.username | Admin username | admin
 admin.password | Admin password encoded | "admin" encoded with PropertyType.PasswordHash
@@ -366,7 +366,7 @@ user.password.instruction | Instruction in case of RegularExpression failure for
 
 ### Logs
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- 
 log4j.logger.cems | Log4J root logger | INFO, CemsAppender
 log4j.logger.cems.Admin| Log4J admin logger| WARN
@@ -404,7 +404,7 @@ To set INHERITED, put '' (empty). *Inherited from root logger* uses the value fr
 ### Logs advance
 
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- 
 log.explicit_variables| ? Explicit variables| contextid,project,sequence,connector,<br>transaction,user,clientip,clienthostname,
 log4j.appender.AuditAppender| Log4J audit appender|org.apache.log4j.RollingFileAppender
@@ -424,7 +424,7 @@ log4j.additivity.cems| ? Log4J root logger additivity| false
 
 ### Network
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- 
 net.gzip| Enable GZip response for most text responses (need the header Accept-Encoding: gzip)| true
 net.max-age| Set the Cache-Control: max-age value in seconds, for static resources| 10
@@ -434,21 +434,21 @@ net.upload.max_request_size| Maximum allowed size of a single uploaded file (in 
 
 ### HTTP Client
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | --- 
 http_client.max_total_connections| Maximal number of HTTP connections (from 1 to 65535)| 100
 http_client.max_connections_per_host| Maximal number of HTTP connections per host (from 1 to 255)| 50
 
 ### Connector legacy monitoring
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 connectors.monitoring| Display running connectors in monitor of Legacy connectors| false
 document.log.screen_dumps| Trace in logs the screen dumps of the running Legacy connectors | false
 
 ### XML generation
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 document.include_statistics| Insert statistics in the generated document| false
 document.xslt_engine| XSLT engine| XsltEngine.xalan_xsltc
@@ -457,7 +457,7 @@ document.fromschema.depth| Maximum number of elements for XML sample generation 
 
 ### Proxy
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 htmlProxy.mode| Proxy mode| ProxyMode.off
 htmlProxy.port| Proxy port| 8080
@@ -470,14 +470,14 @@ htmlProxy.password| Password|
 
 ### SSL
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 ssl.debug| SSL debug output ; only available for HTTP connectors | false
 ssl.issuers| SSL issuers|
 
 ### Cache
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 cache_manager.class| Cache manager class| com.twinsoft.convertigo.engine.cache.FileCacheManager
 cache_manager.filecache.directory| File cache directory| workspace/cache
@@ -487,7 +487,7 @@ disable.cache| Disable Cache | false
 
 ### Analytics
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 billing.enabled| Enable persistence analytics (JDBC)| false
 billing.google.enabled| Enable google analytics| false
@@ -501,7 +501,7 @@ billing.google.analytics.id| Google Analytics ID|
 
 ### Notifications
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 notifications.notify.project_deployment| Notify project deployment| false
 notifications.target_email| Target email| 
@@ -512,7 +512,7 @@ notifications.smtp.password| STMP password|
 
 ### Mobile builder
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 mobile.builder.auth_token| Mobile builder authentication token|  
 mobile.builder.android_certificate_title| Android certificate title| 
@@ -524,7 +524,7 @@ mobile.builder.platform_url|Mobile builder platform URL|  https://build.converti
 
 ### Full Sync
 
-property key | meaning | default value
+property key | description | default value
 --- | --- | ---
 fullsync.couch.url| Couch DB URL for FullSync| http://127.0.0.1:5984
 fullsync.couch.username| Couch DB username for FullSync| 

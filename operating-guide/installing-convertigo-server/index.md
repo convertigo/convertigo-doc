@@ -6,11 +6,11 @@ summary: "This chapter describes how to install Convertigo Server in several qua
 sidebar: c8o_sidebar
 permalink: /operating-guide/installing-convertigo-server/
 ---
-This chapter describes how to install Convertigo Server in several qualified environments , operating systems , docker and containers.
+This chapter describes how to install Convertigo Server in several qualified environments , operating systems , docker and Kubernetes.
 
 ## General purpose and packages
 
-Convertigo Server can be installed on different operating systems and application servers. The installation can be done on Windows or Linux operating systems and application container technology. 
+Convertigo Server can be installed on different operating systems and application servers. The installation can be done on Windows or Linux operating systems and Kubernetes.
 
 Convertigo Server installation is available as 2 packaging types  :<br>
 
@@ -27,7 +27,7 @@ You can use java options to parameter Convertigo at run time.
 
 Table 3 - 1: Specific java options for Convertigo
 
-java option | meaning  
+java option | description  
 --- | ---
 -Dconvertigo.cems.user_workspace_path| Convertigo workspace path<br>Example:<br>_-Dconvertigo.cems.user_workspace_path=<br>/home/convertigoMobilityPlatform/convertigo_<br>[More information on this parameter](../appendixes/#convertigo-workspace)
 -Dconvertigo.cems.global_symbols_file| By default the symbols file is located in the ``<absolute_path_to_the_convertigo_workspace_directory>/configuration`` and is named _global_symbols.properties_. With this option, it is possible to specify a different path and name.<br>Example:<br>_-Dconvertigo.cems.global_symbols_file=<br>/opt/convertigo79/global_symbols_Company.properties_<br>[More information on this parameter](../using-convertigo-administration-console/#global-symbols)
@@ -116,7 +116,7 @@ Convertigo is based on a Java process with some defaults JVM options. You can ov
 
 Table 3 - 2: Environment variables
 
- Environment variable | Meaning  
+ Environment variable | Description  
 --- | ---  
 JAVA_OPTS  |Add any Java JVM options such as -D[something] : <br><br>_$ docker run -d --name C8O -e JAVA_OPTS="-DjvmRoute=server1" -p 28080:28080 convertigo_<br>All the configuration parameters in the convertigo administration console can be set when running docker.<br>[Find complete list of Convertigo Java System Properties on this link](../appendixes/#list-of-convertigo-java-system-properties).
 JXMX|Convertigo tries to allocate this amount of memory in the container and will automatically reduce it until the value is compatible for the Docker memory constraints. Once the best value found, it is used as -Xmx={JXMX}m parameter for the JVM.<br>The default JXMX value is 2048 and can be defined :<br><br>_$ docker run -d --name C8O -e JXMX="4096" -p 28080:28080 convertigo_
@@ -134,5 +134,100 @@ $ wget https://raw.githubusercontent.com/convertigo/docker/master/compose/mbaas/
 $ docker-compose up -d
 ```
 
-### Use Convertigo with application container
+### Use Convertigo with kubernetes
 
+Kubernetes objects are represented in the Kubernetes API, and we use them in .yaml format.
+For a Kubernetes Deployment, we need to create a deployment.yaml file which include all information about the application.
+
+Here is an example of Convertigo deployment file on AKS (Azure Kubernetes Service):
+
+```yaml
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+ name: convertigo-site
+spec:
+ serviceName: c8o-front-site
+ replicas: 1
+ updateStrategy:
+   type: RollingUpdate
+ template:
+   metadata:
+     labels:
+       app: convertigo-site
+     annotations:
+       version: '1.0'
+       hash: '123654988765'
+   spec:
+     containers:
+     - name: convertigo-container-site
+       image: convertigo/convertigo:latest-aks
+       imagePullPolicy: Always
+       volumeMounts:
+       - mountPath: "/workspace"
+         name: c8o-workspace-volume-site
+       ports:
+       - containerPort: 28080
+       env:
+       - name: MY_POD_NAME
+         valueFrom:
+           fieldRef:
+             fieldPath: metadata.name
+       - name: JAVA_OPTS
+         value: "
+ -XX:+UseG1GC
+ -Dconvertigo.engine.billing.enabled=true
+ -Dconvertigo.engine.billing.persistence.jdbc.password=n188jF28H8OfTSj1rXwexbz7AuWK8F9pi1WGbx4ofjI=
+ -Dconvertigo.engine.billing.persistence.jdbc.username=analytics
+ -Dconvertigo.engine.billing.persistence.jdbc.url=jdbc:mysql://my-sql-mysql.default.svc.cluster.local:3306/c8oAnalytics
+ -Dconvertigo.engine.billing.google.analytics.id=ga
+ -Dconvertigo.engine.billing.google.enabled=true
+ -Dconvertigo.engine.log4j.appender.CemsAppender.File=/workspace/logs/MY_POD_NAME/engine.log
+ -Dconvertigo.engine.fullsync.couch.username=site
+ -Dconvertigo.engine.fullsync.couch.password=site_couch_password
+ -Dconvertigo.engine.fullsync.couch.url=http://cdb-fullsync-svc-couchdb:5984
+ -Dconvertigo.engine.fullsync.couch.prefix=site_couch_prefix
+ -Dconvertigo.engine.project.zip_backup_old=false
+ -Dconvertigo.engine.delegate.url=https://c8ocloud.convertigo.net/convertigo/projects/C8oCloudKubernetes/.json?__sequence=Delegate\\&url=https://site.convertigo.net/convertigo/delegate
+ -Dconvertigo.engine.admin.username=admin
+ -Dconvertigo.engine.admin.password=adminpassword
+ -Dconvertigo.cloud.customer_name=site
+ -Djava.rmi.server.hostname=localhost
+ -Dcom.sun.management.jmxremote.port=9010
+ -Dcom.sun.management.jmxremote.rmi.port=9010
+ -Dcom.sun.management.jmxremote.authenticate=false
+ -Dcom.sun.management.jmxremote.ssl=false"
+     volumes:
+     - name: c8o-workspace-volume-site
+       persistentVolumeClaim:
+         claimName: c8o-volume-claim-site
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: c8o-front-site
+spec:
+ externalTrafficPolicy: Local
+ type: NodePort
+ ports:
+ - port: 80
+   targetPort: 28080
+ selector:
+   app: convertigo-site
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: c8o-volume-claim-site
+spec:
+ accessModes:
+   - ReadWriteMany
+ storageClassName: c8o-volume-storage-class
+ resources:
+   requests:
+     storage: 1Gi
+```
+{{site.data.alerts.note}}
+You can add in value JAVA_OPT all convertigo options defined<a href="../appendixes/#list-of-convertigo-java-system-properties"> on this link.</a>
+{{site.data.alerts.end}}
