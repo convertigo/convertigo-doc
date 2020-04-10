@@ -253,11 +253,22 @@ The arbitrary limits set with the <b>Maximum number of worker threads</b> and <b
 When one of these limits is reached, every new request to Convertigo is rejected (the Convertigo engine throws an Exception) until a worker thread has finished performing its request or a context is destroyed and/or is available for a new request.
 {{site.data.alerts.end}}
 
-- **Git container (autoimport)** : <a id="Git-container"></a>
+- **Git container (autoimport)** : <a id="Git-container"></a>When a project is deployed to a Convertigo server, the server will check all the projects's reference objects. It it finds in a reference a link to a __git__ repository, he will clone the repository containing the referenced project and will import automatically the referenced project.
 
-- **Enable XSRF protection for Administration Console** : <a id="Enable-XSRF-Admin"></a>
+    By default the project will be cloned in the __workspace/git__ directory, but you can override this by modifying the property.
 
-- **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>
+- **Enable XSRF protection for Administration Console** : <a id="Enable-XSRF-Admin"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your administration console by enabling this setting. The protection will be done by issuing a session life-time token that that the console will use each time it invokes and admin service.
+
+
+- **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your PWA and Web applications by enabling this setting. The protection will be done by issuing a session life-time token that that the Application will use each time it invokes and admin service.
+
+{{site.data.alerts.note}}
+Only applications Developed with Mobile Builder Convertigo 7.8.0 and further versions are compatible with XSRF protection.
+
+Also Only applications developed on Convertigo Angular/Vue/JS SK Version 3.0.9 and further supports XSRF protection.
+{{site.data.alerts.end}}
+
+
 
 #### Advanced properties
 
