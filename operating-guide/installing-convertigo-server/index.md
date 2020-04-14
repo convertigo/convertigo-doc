@@ -32,7 +32,7 @@ java option | description
 -Dconvertigo.cems.user_workspace_path| Convertigo workspace path<br>Example:<br>_-Dconvertigo.cems.user_workspace_path=<br>/home/convertigoMobilityPlatform/convertigo_<br>[More information on this parameter](../appendixes/#convertigo-workspace)
 -Dconvertigo.cems.global_symbols_file| By default the symbols file is located in the ``<absolute_path_to_the_convertigo_workspace_directory>/configuration`` and is named _global_symbols.properties_. With this option, it is possible to specify a different path and name.<br>Example:<br>_-Dconvertigo.cems.global_symbols_file=<br>/opt/convertigo79/global_symbols_Company.properties_<br>[More information on this parameter](../using-convertigo-administration-console/#global-symbols)
 
-All the configuration parameters in the convertigo administration console can be set when launching convertigo.<br>
+All the configuration parameters in the Convertigo administration console can be set when launching Convertigo.<br>
 [Find complete list of Convertigo Java System Properties on this link](../appendixes/#list-of-convertigo-java-system-properties).
 
 ### Convertigo docker images
@@ -47,7 +47,7 @@ On a linux server with docker installed and running you can start a container wi
 $ docker run --name C8O -d -p 28080:28080 convertigo
 ```
 
-You can access the server admin console on http://[dockerhost]:28080/convertigo and login using the default credentials: admin / admin
+You can access the server admin console on ***http://[dockerhost]:28080/convertigo*** and login using the default credentials: admin / admin
 
 #### Link Convertigo to a CouchDB database for FullSync 
 
@@ -60,14 +60,14 @@ Launch CouchDB container and name it ***fullsync***
 $ docker run -d --name fullsync couchdb:2.3.1
 ```
 
-Then launch Convertigo and link it to the running ***fullsync*** container. Convertigo server will automatically uses it as its fullsync repository.
+Then launch Convertigo and link it to the running ***fullsync*** container. Convertigo server will automatically uses it as its fullsync repository:
 
 ```shell
 $ docker run -d --name C8O --link fullsync:couchdb -p 28080:28080 convertigo
 ```
 #### Link Convertigo to a Billing & Analytics database
 
-MySQL is the recommended database for holding Convertigo MBaaS server analytics. You can use this command to run convertigo and link it to a running MySQL container. Change [mysql-container] to the container name, and [username for the c8oAnalytics db], [password for specified db user] with the values for your MySQL configuration.
+MySQL is the recommended database for holding Convertigo server analytics. You can use this command to run Convertigo and link it to a running MySQL container. Change [mysql-container] to the container name, and [username for the c8oAnalytics db], [password for specified db user] with the values for your MySQL configuration.
 
 ```shell
 $ docker run -d --name C8O --link [mysql-container]:mysql -p 28080:28080                             \
@@ -91,7 +91,7 @@ You can share the same workspace by all Convertigo containers. In this case, whe
 
 * Stop the container to perform a backup. And just back the workspace directory. This will backup all the projects definitions and some project data.
 * Start a new Convertigo docker container mapping the workspace
-* All the workspace (Projects) will be automatically migrated to the new Convertigo  version
+* All the workspace (projects) will be automatically migrated to the new Convertigo  version
 
 #### Security
 
@@ -118,14 +118,14 @@ Table 3 - 2: Environment variables
 
  Environment variable | Description  
 --- | ---  
-JAVA_OPTS  |Add any Java JVM options such as -D[something] : <br><br>_$ docker run -d --name C8O -e JAVA_OPTS="-DjvmRoute=server1" -p 28080:28080 convertigo_<br>All the configuration parameters in the convertigo administration console can be set when running docker.<br>[Find complete list of Convertigo Java System Properties on this link](../appendixes/#list-of-convertigo-java-system-properties).
+JAVA_OPTS  |Add any Java JVM options such as -D[something] : <br><br>_$ docker run -d --name C8O -e JAVA_OPTS="-DjvmRoute=server1" -p 28080:28080 convertigo_<br>All the configuration parameters in the Convertigo administration console can be set when running docker.<br>[Find complete list of Convertigo Java System Properties on this link](../appendixes/#list-of-convertigo-java-system-properties).
 JXMX|Convertigo tries to allocate this amount of memory in the container and will automatically reduce it until the value is compatible for the Docker memory constraints. Once the best value found, it is used as -Xmx={JXMX}m parameter for the JVM.<br>The default JXMX value is 2048 and can be defined :<br><br>_$ docker run -d --name C8O -e JXMX="4096" -p 28080:28080 convertigo_
 COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined this way:<br><br>_$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo_
-COOKIE_SAMESITE|Convertigo use ??.<br><br>The default COOKIE_SAMESITE value is false and can be defined this way: <br /><br>_$ docker run -d --name C8O -e COOKIE_SAMESITE="true" -p 28080:28080 convertigo_
+COOKIE_SAMESITE|Allow to configure the SameSite parameter for generated cookies. Can be empty, "none", "lax" or "strict".<br>The default COOKIE_SAMESITE value is empty and can be defined this way: <br /><br>_$ docker run -d --name C8O -e COOKIE_SAMESITE=lax -p 28080:28080 convertigo_
 
 ### Pre configurated Docker compose stack
 
-You can use this stack to run a complete Convertigo MBaaS server with FullSync repository and MySQL analytics in a few command lines.
+You can use this stack to run a complete Convertigo server with FullSync repository and MySQL analytics in a few command lines:
 
 ```shell
 $ mkdir c8oMBaaS<br>
@@ -136,8 +136,8 @@ $ docker-compose up -d
 
 ### Use Convertigo with kubernetes
 
-Kubernetes objects are represented in the Kubernetes API, and we use them in .yaml format.
-For a Kubernetes Deployment, we need to create a deployment.yaml file which include all information about the application.
+Kubernetes objects are represented in the Kubernetes API, and can be used with file in ***.yaml*** format.
+For a Kubernetes deployment, we need to create a ***deployment.yaml*** file which include all information about the application.
 
 Here is an example of Convertigo deployment file on AKS (Azure Kubernetes Service):
 
