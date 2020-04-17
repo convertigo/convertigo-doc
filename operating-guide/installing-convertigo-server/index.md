@@ -229,5 +229,5 @@ spec:
      storage: 1Gi
 ```
 {{site.data.alerts.note}}
-You can add in value JAVA_OPT all convertigo options defined<a href="../appendixes/#list-of-convertigo-java-system-properties"> on this link.</a>
+You can add in value JAVA_OPT all convertigo options defined <a href="../appendixes/#list-of-convertigo-java-system-properties">on this link.</a>
 {{site.data.alerts.end}}

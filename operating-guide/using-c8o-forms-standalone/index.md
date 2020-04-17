@@ -25,84 +25,86 @@ This a is the dockerized version of Convertigo forms that able you to run it on 
 ## Pre-requisites ##
 Linux platform is recommended.
 
-* You need to have acces to internet
+* You need to have access to internet
 * You need to install:
-  * Docker Engine
-     * [Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)
-     * [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
-     * [Install Docker Engine on Fedora](https://docs.docker.com/engine/install/fedora/)
-     * [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-  * Docker Compose
-     * [Install Docker Compose on Linux systems](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
+  * Docker Engine<br>[Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)<br> [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)<br>[Install Docker Engine on Fedora](https://docs.docker.com/engine/install/fedora/)<br>[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)<br>
+  * Docker Compose<br>[Install Docker Compose on Linux systems](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
 
  
 ## Installation guide ##
 
-First of all, extract tar.gz
+First of all, extract tar.gz (This file is given by a download link in a message) :
 ```shell
 $ tar -xzvf c8oforms_standalone.tar.gz
 ```
-Then, start docker as a deamon
+{{site.data.alerts.note}}
+A <em>c8oforms_standalone</em> sub-folder is created after the <em>tar</em> command.
+{{site.data.alerts.end}}
+
+
+Then, start docker as a deamon :
  ```shell
 $ systemctl start docker
 ```
-Then, make sur you have correct permissions on folder c8oforms_standalone (Read/Write/Execute)
+Then, make sure you have correct permissions on folder _c8oforms_standalone_ (read/write/execute)
 
  ```shell
 $ sudo chmod -R 777 ./c8oforms_standalone
 ```
-Then, navigate to folder, and start-up docker
+Then, navigate to folder, and start-up docker :
 ```shell
 $ cd c8oforms_standalone
 $ docker-compose up -d
 ```
-When its done, on first launch you must to configure couchdb you can either use init_couchdb.sh that configure for you automatically couchdb in single node mode.
+When its done, on first launch you must configure **couchdb**. You can either use _init_couchdb.sh_ that configure for you automatically **couchdb** in single-node mode :
 ```shell
 $ ./init_couchdb.sh
 ```
-or configure it manually by using fauxton.
+You can also configure it by using fauxton.
 
-You maight wait about 5 minutes before whole environement fished setup after starting...
+You have to wait about 5 minutes for the environment to finish setting up to start.
 
-Go to [convertigo Administration](#convertigo-server), into projects to check that all projects has been loaded.
+Go to [Convertigo administration](../using-convertigo-administration-console/#projects-page), into projects to check that all projects has been loaded.
 After 5 minutes you must see following projects:
-* C8Oforms
-* lib_ExtendedComponents
-* lib_FullSyncGrp
-* lib_UserManager
-* lib_OAuth
 
-To shutdown docker exit process and run:
+{% include image.html file="guide_img/projectsPageForms.png" caption="Figure: Projects Forms" %}
+
+Convertigo projects used by **Forms** are:
+
+- C8Oforms
+- lib_ExtendedComponents
+- lib_FullSyncGrp
+- lib_UserManager
+- lib_OAuth
+
+To shutdown docker,and stop **Forms**, run:
 ```shell
 $ docker-compose down
 ```
 
 
-
-## Environnement ##
-You maight wait about 5 minutes before whole environement fished setup after starting..
-
-When previous step is done you can access to:
+## Environment ##
 ### C8oForms ###
-  - url: [http://localhost:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html](http://localhost:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
-  - To login into forms you can either [create a new account]() or [setup authentication with active directory](#authentication-active-directory)
+  - Connect to url: [http://**your_server**:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html](http://localhost:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
+  - To login into **FORMS** you can either [create a new account]() or [setup authentication with active directory](#authentication-active-directory)
 ### Convertigo Server ###
-  - root url: [http://localhost:28080/convertigo/](http://localhost:28080/convertigo/)
-  - administration url: [http://localhost:28080/convertigo/admin/main.html](http://localhost:28080/convertigo/admin/main.html)
-  - login: admin
-  - password: admin
+  - root url: [http://**your_server**:28080/convertigo/](http://localhost:28080/convertigo/)
+  - administration url: [http://**your_server**:28080/convertigo/admin/main.html](http://localhost:28080/convertigo/admin/main.html)<br>login: _admin_  password: _admin_
 ### Couchdb fauxton ###
-  - url: [http://localhost:28081/_utils](http://localhost:28081/_utils)
-  - login: admin
-  - password: fullsyncpassword
+  - Connect to url: [http://**your_server**:28081/_utils](http://localhost:28081/_utils)<br>login: _admin_  password: _fullsyncpassword_
+
 ### Workspace ###
-you can find your workspace into folder c8oforms_standalone
+you can find your _workspace_ into folder _c8oforms_standalone_.
 
 ## Create a new c8oforms account ##
-Go to [convertigo administration](#convertigo-server) and login,
+Go to [convertigo administration](../using-convertigo-administration-console/#accessing-the-administration-console) and login,
 then navigate to test platform, and click on lib_UserManager, execute sequence AddUser with user email and password.
 
-Be carefull to use an email like "myemail@mail.com". If you don't you won't be able to login... 
+
+
+
+
+Be careful to use an email like "myemail@mail.com". If you don't, you won't be able to login... 
 
 ## Authentication Active directory ##
 

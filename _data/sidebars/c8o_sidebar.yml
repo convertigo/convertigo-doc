@@ -61,7 +61,7 @@ entries:
     - title: Using C8o Forms Standalone
       url: /operating-guide/using-c8o-forms-standalone/
       output: web, pdf
-    - title: AppendixesXX
+    - title: Appendixes
       url: /operating-guide/appendixes/
       output: web, pdf
 
