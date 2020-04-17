@@ -13,4 +13,5 @@ permalink: /operating-guide/
 - [Installing Convertigo Server](./installing-convertigo-server/)
 - [Using Convertigo Administration Console](./using-convertigo-administration-console/)
 - [Using Convertigo Test Platform](./using-convertigo-test-console/)
+- [Using C8o Forms Standalone](./using-c8o-forms-standalone/)
 - [Appendixes](./appendixes/)

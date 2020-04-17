@@ -58,7 +58,10 @@ entries:
     - title: Using Convertigo Test Platform
       url: /operating-guide/using-convertigo-test-platform/
       output: web, pdf
-    - title: Appendixes
+    - title: Using C8o Forms Standalone
+      url: /operating-guide/using-c8o-forms-standalone/
+      output: web, pdf
+    - title: AppendixesXX
       url: /operating-guide/appendixes/
       output: web, pdf
 
