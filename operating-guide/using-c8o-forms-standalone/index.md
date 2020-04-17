@@ -7,7 +7,7 @@ sidebar: c8o_sidebar
 permalink: /operating-guide/using-c8o-forms-standalone/
 ---
 
-# C8o Forms Standalone #
+# C8o Forms Standalone
 
 This a is the dockerized version of Convertigo forms that able you to run it on premises.
 
@@ -22,7 +22,7 @@ This a is the dockerized version of Convertigo forms that able you to run it on 
   - [Create a new c8oforms account](#create-a-new-c8oforms-account)
   - [Authentication Active directory](#authentication-active-directory)
 
-## Pre-requisites ##
+## Pre-requisites
 Linux platform is recommended.
 
 * You need to have access to internet
@@ -31,7 +31,7 @@ Linux platform is recommended.
   * Docker Compose<br>[Install Docker Compose on Linux systems](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
 
  
-## Installation guide ##
+## Installation guide 
 
 First of all, extract tar.gz (This file is given by a download link in a message) :
 ```shell
@@ -83,41 +83,55 @@ $ docker-compose down
 ```
 
 
-## Environment ##
-### C8oForms ###
+## Environment
+### C8oForms
   - Connect to url: [http://**your_server**:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html](http://localhost:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
-  - To login into **FORMS** you can either [create a new account]() or [setup authentication with active directory](#authentication-active-directory)
-### Convertigo Server ###
+  - To login into **FORMS** you can either [create a new account](#create-a-new-c8oforms-account) or [setup authentication with active directory](#authentication-active-directory)
+
+### Convertigo Server
+
   - root url: [http://**your_server**:28080/convertigo/](http://localhost:28080/convertigo/)
   - administration url: [http://**your_server**:28080/convertigo/admin/main.html](http://localhost:28080/convertigo/admin/main.html)<br>login: _admin_  password: _admin_
-### Couchdb fauxton ###
-  - Connect to url: [http://**your_server**:28081/_utils](http://localhost:28081/_utils)<br>login: _admin_  password: _fullsyncpassword_
 
-### Workspace ###
+### Couchdb fauxton
+
+  - Connect to url: <a href="http://localhost:28081/_utils">http://your_server:28081/_utils</a><br>login: _admin_  password: _fullsyncpassword_
+
+### Workspace
+
 you can find your _workspace_ into folder _c8oforms_standalone_.
 
-## Create a new c8oforms account ##
+## Create a new c8oforms account 
 Go to [convertigo administration](../using-convertigo-administration-console/#accessing-the-administration-console) and login,
-then navigate to test platform, and click on lib_UserManager, execute sequence AddUser with user email and password.
+then navigate to test platform, and click on _lib_UserManager_, execute sequence **AddUser** with user email and password.
+
+{% include image.html file="guide_img/projectsPageCreateAccountForms.png" caption="Figure: CreateAccount Forms" %}
 
 
 
+Be careful to use an email like "myemail@mail.com". If you don't, you won't be able to login. 
 
+## Authentication Active directory
 
-Be careful to use an email like "myemail@mail.com". If you don't, you won't be able to login... 
+{{site.data.alerts.note}}
+Before configuring symbols ensure that you have write rights on workspace folder.
+{{site.data.alerts.end}}
 
-## Authentication Active directory ##
+You have to configure project _lib_UserManager_ .
+To do so go to convertigo admin console: http://**your_server**:28080/convertigo/admin/login.html and type [login and password](../using-convertigo-administration-console/#accessing-the-administration-console).
+Then, click on project on the left hand side to access to project list view. On the left side of _lib_UserManager_ project, you will se a red warning icon, click on it to create symbols.
 
-Before configuring symboles ensure that you have write right on workspace folder !
+{% include image.html file="guide_img/UserManagerForms.png" caption="Figure: Symbols UserManager 1" %}
 
-You have to configure project lib_UserManager project, to do so go to convertigo admin console: http://localhost:28080/convertigo/admin/login.html and type [login and password](#convertigo-server).
-Then, click on project on the left hand side to access to project list view. On the left side of lib_UserManager project, you will se a red warning icon, click on it to create symbols.
 Now that its done, click on symbols on the left hand side.
+
+{% include image.html file="guide_img/UserManagerSymbols.png" caption="Figure: Symbols UserManager 2" %}
+
+
 You will have to define 3 symbols:  
 * lib_UserManager.adminUser
-  * This user must be an active directory account, who has at least read only access right, and so can execute research and whole tree
-    * expected synthax is DOMAIN_NAME\USER 
+  * This user must be an active directory account, who has at least read only access right, and so can execute research on whole tree (expected synthax is DOMAIN_NAME\USER)
 * lib_UserManager.adminPassword.secret
   * Password of our active directory user
 * lib_UserManager.ldapServer
-  * url of LDAP server such as ldap://localhost:389
+  * Url of LDAP server such as ldap://**LDAP_SERVER**:389
