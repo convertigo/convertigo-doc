@@ -1,25 +1,25 @@
 ---
-title: Using C8o Forms Standalone
+title: Using  Convertigo Form Builder Standalone
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 17/04/2020
-summary: "This chapter describes how to install C8o Forms Standalone on premise"
+summary: "This chapter describes how to install Convertigo Form Builder Standalone on premise"
 sidebar: c8o_sidebar
 permalink: /operating-guide/using-c8o-forms-standalone/
 ---
 
-# C8o Forms Standalone
+#  Convertigo Form Builder Standalone
 
 This a is the dockerized version of Convertigo forms that able you to run it on premises.
 
-- [C8o Forms Standalone](#c8o-forms-standalone)
+- [Convertigo Form Builder Standalone](#c8o-forms-standalone)
   - [Pre-requisites](#pre-requisites)
   - [Installation guide](#installation-guide)
   - [Environnement](#environnement)
-    - [C8oForms](#c8oforms)
+    - [Convertigo Form Builder](#c8oforms)
     - [Convertigo Server](#convertigo-server)
     - [Couchdb fauxton](#couchdb-fauxton)
     - [Workspace](#workspace)
-  - [Create a new c8oforms account](#create-a-new-c8oforms-account)
+  - [Create a new Convertigo Form Builder account](#create-a-new-c8oforms-account)
   - [Authentication Active directory](#authentication-active-directory)
 
 ## Pre-requisites
@@ -60,7 +60,7 @@ When its done, on first launch you must configure **couchdb**. You can either us
 ```shell
 $ ./init_couchdb.sh
 ```
-You can also configure it by using fauxton.
+You can also configure it by using [fauxton](#couchdb-fauxton).
 
 You have to wait about 5 minutes for the environment to finish setting up to start.
 
@@ -69,7 +69,7 @@ After 5 minutes you must see following projects:
 
 {% include image.html file="guide_img/projectsPageForms.png" caption="Figure: Projects Forms" %}
 
-Convertigo projects used by **Forms** are:
+Convertigo projects used by **Convertigo Form Builder** are:
 
 - C8Oforms
 - lib_ExtendedComponents
@@ -77,14 +77,14 @@ Convertigo projects used by **Forms** are:
 - lib_UserManager
 - lib_OAuth
 
-To shutdown docker,and stop **Forms**, run:
+To shutdown docker,and stop **Convertigo Form Builder**, run:
 ```shell
 $ docker-compose down
 ```
 
 
 ## Environment
-### C8oForms
+### Convertigo Form Builder
   - Connect to url: [http://**your_server**:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html](http://localhost:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
   - To login into **FORMS** you can either [create a new account](#create-a-new-c8oforms-account) or [setup authentication with active directory](#authentication-active-directory)
 
@@ -101,7 +101,7 @@ $ docker-compose down
 
 you can find your _workspace_ into folder _c8oforms_standalone_.
 
-## Create a new c8oforms account 
+## Create a new  Convertigo Form Builder account 
 Go to [convertigo administration](../using-convertigo-administration-console/#accessing-the-administration-console) and login,
 then navigate to test platform, and click on _lib_UserManager_, execute sequence **AddUser** with user email and password.
 
