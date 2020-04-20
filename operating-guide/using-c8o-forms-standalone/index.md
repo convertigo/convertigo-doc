@@ -1,5 +1,5 @@
 ---
-title: Using  Convertigo Form Builder Standalone
+title: Using Convertigo Form Builder Standalone
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 17/04/2020
 summary: "This chapter describes how to install Convertigo Form Builder Standalone on premise"
@@ -9,7 +9,7 @@ permalink: /operating-guide/using-c8o-forms-standalone/
 
 #  Convertigo Form Builder Standalone
 
-This a is the dockerized version of Convertigo forms that able you to run it on premises.
+This a is the dockerized version of Convertigo Form Builder that able you to run it on premises.
 
 - [Convertigo Form Builder Standalone](#c8o-forms-standalone)
   - [Pre-requisites](#pre-requisites)
