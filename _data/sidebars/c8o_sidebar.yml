@@ -52,14 +52,14 @@ entries:
     - title: Installing Convertigo Server
       url: /operating-guide/installing-convertigo-server/
       output: web, pdf
+    - title: Installing Convertigo Form Builder Standalone
+      url: /operating-guide/using-c8o-forms-standalone/
+      output: web, pdf
     - title: Using Convertigo Administration Console
       url: /operating-guide/using-convertigo-administration-console/
       output: web, pdf
     - title: Using Convertigo Test Platform
       url: /operating-guide/using-convertigo-test-platform/
-      output: web, pdf
-    - title: Using Convertigo Form Builder Standalone
-      url: /operating-guide/using-c8o-forms-standalone/
       output: web, pdf
     - title: Appendixes
       url: /operating-guide/appendixes/

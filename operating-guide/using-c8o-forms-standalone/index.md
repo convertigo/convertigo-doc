@@ -1,5 +1,5 @@
 ---
-title: Using Convertigo Form Builder Standalone
+title: Installing Convertigo Form Builder Standalone
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 17/04/2020
 summary: "This chapter describes how to install Convertigo Form Builder Standalone on premise"
@@ -9,7 +9,7 @@ permalink: /operating-guide/using-c8o-forms-standalone/
 
 #  Convertigo Form Builder Standalone
 
-This a is the dockerized version of Convertigo Form Builder that able you to run it on premises.
+This a is the dockerized version of Convertigo Form Builder that enables you to run it on premises.
 
 - [Convertigo Form Builder Standalone](#c8o-forms-standalone)
   - [Pre-requisites](#pre-requisites)
@@ -86,20 +86,22 @@ $ docker-compose down
 ## Environment
 ### Convertigo Form Builder
   - Connect to url: [http://**your_server**:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html](http://localhost:28080/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
-  - To login into **FORMS** you can either [create a new account](#create-a-new-c8oforms-account) or [setup authentication with active directory](#authentication-active-directory)
+  - To login into **Convertigo Form Builder** you can either [create a new account](#create-a-new-c8oforms-account) or [setup authentication with active directory](#authentication-active-directory)
 
 ### Convertigo Server
 
-  - root url: [http://**your_server**:28080/convertigo/](http://localhost:28080/convertigo/)
-  - administration url: [http://**your_server**:28080/convertigo/admin/main.html](http://localhost:28080/convertigo/admin/main.html)<br>login: _admin_  password: _admin_
+  - Root url: [http://**your_server**:28080/convertigo/](http://localhost:28080/convertigo/)
+  - Administration url: [http://**your_server**:28080/convertigo/admin/main.html](http://localhost:28080/convertigo/admin/main.html)<br>login: _admin_  password: _admin_
 
 ### Couchdb fauxton
 
   - Connect to url: <a href="http://localhost:28081/_utils">http://your_server:28081/_utils</a><br>login: _admin_  password: _fullsyncpassword_
+  - The Couchdb directory which includes databases is in folder _c8oforms_standalone/couchdb_.
 
 ### Workspace
 
-you can find your _workspace_ into folder _c8oforms_standalone_.
+  - You can find your _workspace_ into folder _c8oforms_standalone/workspace_.
+  - This workspace contains all Convertigo user data: the projects, the configuration files, the logs, etc.
 
 ## Create a new  Convertigo Form Builder account 
 Go to [convertigo administration](../using-convertigo-administration-console/#accessing-the-administration-console) and login,
@@ -135,3 +137,12 @@ You will have to define 3 symbols:
   * Password of our active directory user
 * lib_UserManager.ldapServer
   * Url of LDAP server such as ldap://**LDAP_SERVER**:389
+
+## Backup
+
+Directories to save in the event of a machine crash :
+
+- All the _workspace_ directory except logs folder. This contains all the specifics parameters as well as the symbols set.
+- All the _couchdb_ directory. This directory contains all the databases used for Convertigo Form Builder. In particular the definitions of forms, users, rights, ... 
+
+Restoration is easy. It consists of replacing the installed directories with those saved.
