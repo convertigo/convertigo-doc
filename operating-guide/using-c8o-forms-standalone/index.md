@@ -33,7 +33,8 @@ Linux platform is recommended.
  
 ## Installation guide 
 
-You can access the FromBuilder Repository here : (https://c8oforms.s3-eu-west-3.amazonaws.com/index.html)
+You can access the FromBuilder Repository here : (https://c8oforms.s3-eu-west-3.amazonaws.com/index.html).
+
 First of all, extract tar.gz (This file is given by a download link in a message) :
 ```shell
 $ tar -xzvf c8oforms_standalone.tar.gz
