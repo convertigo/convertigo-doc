@@ -228,14 +228,14 @@ In the Advanced properties section, configure the main advanced Convertigo confi
 
 #### Properties
 
-- **Convertigo Server local URL** : local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
+- **Convertigo Server local URL** : <a id="Convertigo-Server-local-URL"></a> local Convertigo Server URL, this URL informs Convertigo Server of its local access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
     - This URL is used by several functionalities of Convertigo Server and it is very important that it is correctly configured, otherwise these functionalities would not work correctly (for example: Call Sequence or Call Transaction steps not using internal invoke, Scheduler, WSDL generation, etc.). This URL should be configured at the end of the Convertigo Server installation.
     - In case of Convertigo Studio, this URL is used in addition to define the listening port of the embedded server, as well as for the transaction or sequence executions using the "Execute" functionality.
 
-- **Convertigo Server endpooint URL** : public Convertigo Server URL, this URL informs Convertigo Server of its external access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
+- **Convertigo Server endpoint URL** : <a id="Convertigo-Server-endpoint-URL"></a>public Convertigo Server URL, this URL informs Convertigo Server of its external access URL, including the domain or IP address of the server, and the listening port of the server (configured in the application server).
     - This URL is used by the SiteClipper to compute the right full links.
 
-- **Maximum number of worker threads** : Maximum number of simultaneous worker threads Convertigo will open in the application server. Though there is no theoretical limit to this, some application servers seem to be unstable when too many worker threads are in use. Convertigo limits itself to prevent server collapse. 
+- **Maximum number of worker threads** : <a id="Maximum-number-of-worker-threads"></a>Maximum number of simultaneous worker threads Convertigo will open in the application server. Though there is no theoretical limit to this, some application servers seem to be unstable when too many worker threads are in use. Convertigo limits itself to prevent server collapse. 
 
 {{site.data.alerts.note}}
 <b>What are worker threads ?</b><br><br>
@@ -243,7 +243,7 @@ For every request sent to Convertigo, a thread of the application server (Tomcat
 The arbitrary limit set with the <b>Maximum number of worker threads</b> property is never exceeded. When this limit is reached, every new request to Convertigo is rejected (the Convertigo engine throws an Exception) until a <b>worker thread</b> has finished performing its request and is available for a new one.
 {{site.data.alerts.end}}
 
-- **Maximum number of contexts** : Maximum number of simultaneous contexts Convertigo will create. This parameter allows the Convertigo server to protect itself from massive context creation policies. Too many contexts created in a server could lead to OutOfMemory errors, resulting in completely blocked server. Convertigo limits its number of contexts to prevent server collapse. 
+- **Maximum number of contexts** : <a id="Maximum-number-of-contexts"></a>Maximum number of simultaneous contexts Convertigo will create. This parameter allows the Convertigo server to protect itself from massive context creation policies. Too many contexts created in a server could lead to OutOfMemory errors, resulting in completely blocked server. Convertigo limits its number of contexts to prevent server collapse. 
 
 {{site.data.alerts.note}}
 <b>What is the difference between contexts and worker threads ?</b><br><br>
@@ -252,6 +252,23 @@ Once the request is performed, the <b>worker thread</b> is released and can be u
 The arbitrary limits set with the <b>Maximum number of worker threads</b> and <b>Maximum number of contexts</b> properties are not managing the same objects. They are not reached at the same time nor in the same conditions. Depending on the projects and environments, one of these properties or both may be used.<br><br>
 When one of these limits is reached, every new request to Convertigo is rejected (the Convertigo engine throws an Exception) until a worker thread has finished performing its request or a context is destroyed and/or is available for a new request.
 {{site.data.alerts.end}}
+
+- **Git container (autoimport)** : <a id="Git-container"></a>When a project is deployed to a Convertigo server, the server will check all the projects's reference objects. It it finds in a reference a link to a __git__ repository, he will clone the repository containing the referenced project and will import automatically the referenced project.
+
+    By default the project will be cloned in the __workspace/git__ directory, but you can override this by modifying the property.
+
+- **Enable XSRF protection for Administration Console** : <a id="Enable-XSRF-Admin"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your administration console by enabling this setting. The protection will be done by issuing a session life-time token that that the console will use each time it invokes and admin service.
+
+
+- **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your PWA and Web applications by enabling this setting. The protection will be done by issuing a session life-time token that that the Application will use each time it invokes and admin service.
+
+{{site.data.alerts.note}}
+Only applications Developed with Mobile Builder Convertigo 7.8.0 and further versions are compatible with XSRF protection.
+
+Also Only applications developed on Convertigo Angular/Vue/JS SK Version 3.0.9 and further supports XSRF protection.
+{{site.data.alerts.end}}
+
+
 
 #### Advanced properties
 
@@ -683,11 +700,23 @@ Edit the Full sync parameters in Full sync tab. This tab can be opened by follow
 - **Couch DB username for FullSync**: This property defines the default username used by Convertigo for synchronization operations
 - **Couch DB password for FullSync**: This property defines the default password used by Convertigo for synchronization operations
 
-{{note.data.alerts.note}}
-Couch DB URL property is set to **http://127.0.0.1:5984** as default value.
+{{site.data.alerts.note}}
+Couch DB URL property is set to <b>http://127.0.0.1:5984</b> as default value.
 
-Couch DB username and password properties are set to **empty** as default values.
-{{note.data.alerts.end}}
+Couch DB username and password properties are set to <b>empty</b> as default values.
+{{site.data.alerts.end}}
+
+#### Advanced properties
+
+- **Couch DB prefix for all FullSync databases**: This property defines a prefix for the real CouchDB DB name for each FullSync connectors of the server. Set to **myprefix**, the **myfs** FullSync connector will be **myprefix_myfs** CouchDB database. Useful for a shared CouchDB cluster; acts like a **namespace**. Empty prefix means no prefix at all.
+
+{{site.data.alerts.important}}
+<b>Prefix name must respect CouchDB database restriction:</b>
+<ul><li>Name must begin with a lowercase letter (a-z)</li>
+<li>Lowercase characters (a-z)</li>
+<li>Digits (0-9)</li>
+<li>Any of the characters _, $, (, ), +, -, and /</li></ul>
+{{site.data.alerts.end}}
 
 ## Connections
 

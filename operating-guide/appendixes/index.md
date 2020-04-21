@@ -311,3 +311,225 @@ org.hsqldb.jdbcDriver | HSQLDB database | hsqldb.jar | true
 com.ibm.db2.jcc.DB2Driver | IBM DB2 Server database | db2jcc.jar<br> + db2jcc-licence.jar | false (fake jars)
 oracle.jdbc.driver.OracleDriver | ORACLE database | ojdbc5.jar | true
 org.mariadb.jdbc.Driver | MariaDB database, community-developed fork of MySQL | mariadb-java-client-1.1.3.jar | true
+
+## List of Convertigo Java System Properties
+
+To set a Java System Property when the JVM is launched, just add -Dconvertigo.engine.{property key}={property value}.
+
+### Main properties
+
+property key | description | default value
+--- | --- | --- | ---
+application_server.convertigo.url | Convertigo Server local URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL) | http://localhost:18080/convertigo
+application_server.convertigo.endpoint | Convertigo Server endpoint URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-endpoint-URL) | 
+application_server.mashup.url | Mashup composer server base URL | http://localhost:18080/convertigo
+document.threading.max_worker_threads | Maximum number of worker threads <br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-worker-threads) | 100
+convertigo.max_context | Maximum number of contexts <br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-contexts)| 750
+convertigo.git.container |  Git repository for projects’s reference objects<br>[More information on this parameter](../using-convertigo-administration-console/#Git-container)| 
+convertigo.xsrf.admin | Enable XSRF protection for Administration Console <br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Admin) | true
+convertigo.xsrf.projects | Enable XSRF protection for projects <br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Projects)| false
+
+### Main advance properties
+
+property key | description | default value
+--- | --- | --- 
+convertigo.product_version_check | Product version check | true
+document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads (not to be used) | false
+linux.xvnc.launch | (Linux only) Launch Xvnc server using DISPLAY environment variable at startup | true
+linux.xvnc.depth | (Linux only) Depth parameter for the Xvnc, default is 16 | 16
+linux.xvnc.geometry | (Linux only) Geometry parameter for Xvnc | 320x240
+migration.3.0.0 | Migration 3.0.0 ? | false
+pool.manager.timeout | Time allowed for pool management task in seconds (-1 for disable) | -1
+projects_data.compatibility_mode | Enable the compatibility mode for projects data (required for JSP usage); engine restart required | false
+sequence.steps.use_same_jsession | Use same JSESSIONID for sequences and steps | true
+soap.request.add_xml_encoding_charset | Add XML encoding charset for SOAP requests | false
+throw_http_500 | Throw HTTP 500 in case of unrecoverable servlet error | false
+hiding_error_information | Hide detailed information in case of unrecoverable servlet error | false
+throw_http_500.soap_fault | Throw HTTP 500 in case of SOAP fault | false
+update.steps | update.steps | false
+crypto.passphrase | Cryptographic services passphrase | A8dkLmsdfkKze0e34FGh
+project.zip_backup_old | Automatically performs a dated zip backup of replaced projects | true
+cors.policy | CORS Policy\n• empty: disallow all\n• '=Origin': use client 'Origin' header\n• 'url1#url2#url3': allow if 'Origin' one of 'url' | =Origin
+delegate.url | Delegate URL for extra functionality | 
+
+### Accounts
+
+property key | description | default value
+--- | --- | --- 
+admin.username | Admin username | admin
+admin.password | Admin password encoded | "admin" encoded with PropertyType.PasswordHash
+testplatform.username | Test Platform username (leave it blank for anonymous access) | 
+testplatform.password | Test Platform password | "" encoded with PropertyType.PasswordHash
+security.filter | Activate Security Filter with file security_filter.json| false
+user.password.regexp | RegularExpression used to validate password change for Admin accounts | ``^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=`|{}:;!.?\\\"()\\[\\]-]{8,20}$``
+user.password.instruction | Instruction in case of RegularExpression failure for password change | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters
+
+### Logs
+
+property key | description | default value
+--- | --- | --- 
+log4j.logger.cems | Log4J root logger | INFO, CemsAppender
+log4j.logger.cems.Admin| Log4J admin logger| WARN
+log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
+log4j.logger.cems.Beans| Log4J beans logger| INHERITED
+log4j.logger.cems.Billers| Log4J billers logger| WARN
+log4j.logger.cems.CacheManager| Log4J cache manager logger| WARN
+log4j.logger.cems.CertificateManager| Log4J certificate manager logger| WARN
+log4j.logger.cems.Context| Log4J context logger| INHERITED
+log4j.logger.cems.ContextManager| Log4J context manager logger| WARN
+log4j.logger.cems.CouchDbManager| Log4J couch DB manager output logger| WARN
+log4j.logger.cems.DatabaseObjectManager| Log4J database objects manager logger| WARN
+log4j.logger.cems.Devices| Log4J devices output logger| INFO
+log4j.logger.cems.Emulators| Log4J emulators output logger| INFO
+log4j.logger.cems.Engine| Log4J engine logger| INHERITED
+log4j.logger.cems.JobManager| Log4J job manager logger| WARN
+log4j.logger.cems.ProxyManager| Log4J proxy manager logger| INFO
+log4j.logger.cems.Scheduler| Log4J scheduler output logger| INFO
+log4j.logger.cems.SecurityFilter| Log4J security filter output logger| WARN
+log4j.logger.cems.SecurityTokenManager| Log4J security token manager output logger| INFO
+log4j.logger.cems.SiteClipper| Log4J site clipper output logger| INFO
+log4j.logger.cems.Statistics| Log4J statistics logger| INFO
+log4j.logger.cems.Studio| Log4J studio logger| WARN
+log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
+log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
+log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
+log4j.logger.cems.User| Log4J user output logger| INFO
+
+
+The different available values are : FATAL, ERROR, WARN, INFO, DEBUG, TRACE.
+To set INHERITED, put '' (empty). *Inherited from root logger* uses the value from  *Log4J root logger*.
+[To know how to position these values go on this link](../using-convertigo-administration-console/#logs)
+
+
+### Logs advance
+
+
+property key | description | default value
+--- | --- | --- 
+log.explicit_variables| ? Explicit variables| contextid,project,sequence,connector,<br>transaction,user,clientip,clienthostname,
+log4j.appender.AuditAppender| Log4J audit appender|org.apache.log4j.RollingFileAppender
+log4j.appender.AuditAppender.File| Log4J audit appender file| ${log.directory}/audit.log
+log4j.appender.AuditAppender.layout| Log4J audit appender layout|org.apache.log4j.PatternLayout
+log4j.appender.AuditAppender.layout<br>.ConversionPattern| ? Log4J audit appender layout conversion pattern| ``!%c{1} | %d | %-5p | %m%n``
+log4j.appender.AuditAppender.MaxBackupIndex| Log4J audit appender max backup index| 25
+log4j.appender.AuditAppender.MaxFileSize| Log4J audit appender max file size| 10MB
+log4j.appender.CemsAppender| Log4J default appender| org.apache.log4j.RollingFileAppender
+log4j.appender.CemsAppender.Encoding| Log4J default appender encoding | UTF-8
+log4j.appender.CemsAppender.File| Log4J default appender file| ${log.directory}/engine.log
+log4j.appender.CemsAppender.layout| Log4J default appender layout| org.apache.log4j.PatternLayout
+log4j.appender.CemsAppender.layout<br>.ConversionPattern| ? Log4J default appender layout conversion pattern| ``!%-28c{1} | %d | %-5p | %-32t | %X{ContextualParameters}%m%n``
+log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup index|25
+log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
+log4j.additivity.cems| ? Log4J root logger additivity| false
+
+### Network
+
+property key | description | default value
+--- | --- | --- 
+net.gzip| Enable GZip response for most text responses (need the header Accept-Encoding: gzip)| true
+net.max-age| Set the Cache-Control: max-age value in seconds, for static resources| 10
+net.reverse_dns| Use DNS reverse search for finding host names| false
+net.upload.max_request_size| Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit.| -1
+net.upload.max_request_size| Maximum allowed size of a single uploaded file (in bytes).| 10485760
+
+### HTTP Client
+
+property key | description | default value
+--- | --- | --- 
+http_client.max_total_connections| Maximal number of HTTP connections (from 1 to 65535)| 100
+http_client.max_connections_per_host| Maximal number of HTTP connections per host (from 1 to 255)| 50
+
+### Connector legacy monitoring
+
+property key | description | default value
+--- | --- | ---
+connectors.monitoring| Display running connectors in monitor of Legacy connectors| false
+document.log.screen_dumps| Trace in logs the screen dumps of the running Legacy connectors | false
+
+### XML generation
+
+property key | description | default value
+--- | --- | ---
+document.include_statistics| Insert statistics in the generated document| false
+document.xslt_engine| XSLT engine| XsltEngine.xalan_xsltc
+document.namespace.aware| Set namespace aware| false
+document.fromschema.depth| Maximum number of elements for XML sample generation based on schema | 100
+
+### Proxy
+
+property key | description | default value
+--- | --- | ---
+htmlProxy.mode| Proxy mode| ProxyMode.off
+htmlProxy.port| Proxy port| 8080
+htmlProxy.host| Proxy host| localhost
+htmlProxy.bpdomains| Do not apply proxy settings on | localhost,127.0.0.1
+htmlProxy.auto| Autoconfiguration proxy url| 
+htmlProxy.method| Proxy authentication method| ProxyMethod.anonymous
+htmlProxy.user| Username| 
+htmlProxy.password| Password|
+
+### SSL
+
+property key | description | default value
+--- | --- | ---
+ssl.debug| SSL debug output ; only available for HTTP connectors | false
+ssl.issuers| SSL issuers|
+
+### Cache
+
+property key | description | default value
+--- | --- | ---
+cache_manager.class| Cache manager class| com.twinsoft.convertigo.engine.cache.FileCacheManager
+cache_manager.filecache.directory| File cache directory| workspace/cache
+cache_manager.scan_delay| Cache scan delay (in seconds)| 60
+cache_manager.weak| Allow to cache responses in memory until the next GC | false
+disable.cache| Disable Cache | false
+
+### Analytics
+
+property key | description | default value
+--- | --- | ---
+billing.enabled| Enable persistence analytics (JDBC)| false
+billing.google.enabled| Enable google analytics| false
+billing.persistence.dialect| Persistence SQL Dialect| org.hibernate.dialect.MySQL5InnoDBDialect
+billing.persistence.jdbc.driver| Persistence JDBC driver| org.mariadb.jdbc.Driver
+billing.persistence.jdbc.password| Persistence JDBC password| 
+billing.persistence.jdbc.url| Persistence JDBC URL| jdbc:mysql://localhost:3306/c8oAnalytics
+billing.persistence.jdbc.username| Persistence JDBC username|
+billing.persistence.jdbc.maxretry| JDBC max retry on connection failed| 2
+billing.google.analytics.id| Google Analytics ID|
+
+### Notifications
+
+property key | description | default value
+--- | --- | ---
+notifications.notify.project_deployment| Notify project deployment| false
+notifications.target_email| Target email| 
+notifications.smtp.host| STMP host|
+notifications.smtp.port| STMP port| 465
+notifications.smtp.user| STMP user| 
+notifications.smtp.password| STMP password|
+
+### Mobile builder
+
+property key | description | default value
+--- | --- | ---
+mobile.builder.auth_token| Mobile builder authentication token|  
+mobile.builder.android_certificate_title| Android certificate title| 
+mobile.builder.android_certificate_pw| Android certificate password|
+mobile.builder.android_keystore_pw| Android keyStore password|
+mobile.builder.ios_certificate_title| iOS certificate title| 
+mobile.builder.ios_certificate_pw| iOS certificate password|
+mobile.builder.platform_url|Mobile builder platform URL|  https://build.convertigo.net/cmb/PhoneGapBuilder
+
+### Full Sync
+
+property key | description | default value
+--- | --- | ---
+fullsync.couch.url| Couch DB URL for FullSync| http://127.0.0.1:5984
+fullsync.couch.username| Couch DB username for FullSync| 
+fullsync.couch.password| Couch DB password for FullSync|
+fullsync.couch.prefix| Couch DB prefix for all FullSync databases|
+
+
+
