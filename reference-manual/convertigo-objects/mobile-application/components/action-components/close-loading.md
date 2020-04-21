@@ -3,7 +3,7 @@ layout: page
 title: Close Loading
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/close-loading/
-metadesc: Defines a  Close Loading  action component.   This component closes a laoding opened by 'Show Loading'
+metadesc: Defines a  Close Loading  action component.   This component closes a loading opened by 'Show Loading'
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: CloseLoadingAction
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Close Loading</i> action component. <br/>
 
- This component closes a laoding opened by 'Show Loading'
+ This component closes a loading opened by 'Show Loading'
 
 Name | Description 
 --- | ---

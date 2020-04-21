@@ -16,7 +16,7 @@ ion-scroll<br/>
 ##### Defines a <i>Scroll Area</i> component.<br/>
 This component is a non-flexboxed scroll area that can scroll horizontally or vertically.<br/>
 <i>Scroll Area</i> can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/api/components/scroll/Scroll/' target='_blank'>Scroll</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/scroll/Scroll/'>Scroll</a>.
 
 Name | Description 
 --- | ---

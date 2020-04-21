@@ -16,7 +16,7 @@ video. <br/>
 ##### Defines a <i>Video</i> component.<br/>
 This component acts as the standard HTML5 video tag which embed a video in a web page.<br/>
 It helps to display a video from a remote or local video ressource.<br/>
- For more information: <a href='https://www.w3schools.com/html/html5_video.asp' target='_blank'>Video</a>.
+ For more information: <a href='https://www.w3schools.com/html/html5_video.asp'>Video</a>.
 
 Name | Description 
 --- | ---

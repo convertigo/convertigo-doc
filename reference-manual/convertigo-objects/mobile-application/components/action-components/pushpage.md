@@ -14,7 +14,7 @@ topnav: topnavobj
 ##### Defines a <i>PushPage</i> action component. <br/>
 
   This component helps to display a given page. Pushing a new page onto the top of the navigation stack causes the new page to be animated in.<br/>
-For more information : <a target='_blank' href='https://ionicframework.com/docs/v3/components/#navigation'>Navigation</a>.
+For more information : <a href='https://ionicframework.com/docs/v3/components/#navigation'>Navigation</a>.
 
 Name | Description 
 --- | ---

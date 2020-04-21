@@ -17,7 +17,7 @@ ion-item-sliding<br/>
 Sliding items can be swiped to the left or right to reveal a hidden set of buttons.<br/>
 To use a <code>&lt;ion-item-sliding&gt;</code>, add a <i>Sliding Item</i> component inside of an <i>List Container</i> component.<br/>
 Next, add a <i>Sliding Options</i> component inside of the sliding item to contain the buttons.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#sliding-list' target='_blank'>Sliding Item</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#sliding-list'>Sliding Item</a>.
 
 Name | Description 
 --- | ---

@@ -21,7 +21,7 @@ You can insert in the map any number of <i>Map Marker</i> components to mark pos
 <i>Information Window</i> components can have any type of HTML information inside to display formated information when the user clicks on a mark, including action buttons.<br/>
 <br/>
 All coordinates are of JSON <code>number</code> type. To be sure to generate <code>number</code> types within <i>Sequences</i>, add an <i>Attribute</i> step <code>type=double</code> to your <i>Element</i> steps.<br/>
- For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmMap.html' target='_blank'>AgmMap</a>.
+ For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmMap.html'>AgmMap</a>.
 
 Name | Description 
 --- | ---

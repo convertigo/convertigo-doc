@@ -20,7 +20,7 @@ A menu helps to navigate through pages. It may contains, or/and:<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> different menus may be added to an application but only the first one is used by default.<br/>
 If you'd like to use a specific menu for a given page, simply specify it in the <i>Menu id</i> property of your <i>Page</i> component.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/api/components/menu/Menu/' target='_blank'>Menu</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/menu/Menu/'>Menu</a>.
 
 Name | Description 
 --- | ---

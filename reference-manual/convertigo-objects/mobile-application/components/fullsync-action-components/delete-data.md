@@ -13,9 +13,9 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Delete Data</i> action component. <br/>
 
- This component helps deletting (delete) data from a FullSync database. Delete Data returns an object containing deletion status and document id and rev. From an underneath action, you can access this value trough the out typescript variable. For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. <br/>
+ This component helps deletting (delete) data from a FullSync database. Delete Data returns an object containing deletion status and document id and rev. From an underneath action, you can access this value trough the out typescript variable. For more information : <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-locally-on-the-mobile-with-the-data'>interacting-locally-with-the-data/</a>. <br/>
 <br/>
- If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
+ If you want to disable loading controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---

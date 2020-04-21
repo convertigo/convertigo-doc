@@ -18,7 +18,7 @@ This component is a container for a set of radio buttons. It allows a user to se
 Add as many <i>Radio Button</i> you want under your <i>Radio List</i> component.<br/>
 Use the <i>Default value</i> property to set its default value. If a radio button has the same value it will be checked by default.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/radio/RadioGroup/' target='_blank'>Radio Group</a>.<br/>
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/radio/RadioGroup/'>Radio Group</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add each <i>Radio Button</i> under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

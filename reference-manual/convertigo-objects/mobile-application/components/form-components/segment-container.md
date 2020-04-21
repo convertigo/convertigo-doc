@@ -17,7 +17,7 @@ ion-segment<br/>
 A Segment is a group of buttons, sometimes known as segmented controls, that allow the user to interact with a compact group of a number of controls.<br/>
 Segments provide functionality similar to tabs, selecting one will unselect all others.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/components/#segment' target='_blank'>Segment</a>.<br/>
+For more information: <a href='https://ionicframework.com/docs/v3/components/#segment'>Segment</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

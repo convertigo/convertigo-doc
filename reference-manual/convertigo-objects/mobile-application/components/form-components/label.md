@@ -16,7 +16,7 @@ ion-label<br/>
 ##### Defines a <i>Label</i> component.<br/>
 This component acts as the standard HTML label tag.<br/>
 It lets you give a label to a form field.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/label/Label/' target='_blank'>Label</a>.<br/>
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/label/Label/'>Label</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

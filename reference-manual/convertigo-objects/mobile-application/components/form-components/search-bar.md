@@ -15,7 +15,7 @@ ion-searchbar<br/>
 
 ##### Defines a <i>Search Bar</i> component.<br/>
 This component manages the display of a searchbar which can be used to search or filter items.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/searchbar/Searchbar/' target='_blank'>Searchbar</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/searchbar/Searchbar/'>Searchbar</a>.
 
 Name | Description 
 --- | ---

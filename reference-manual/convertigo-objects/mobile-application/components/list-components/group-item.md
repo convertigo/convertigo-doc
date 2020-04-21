@@ -17,7 +17,7 @@ ion-item-group<br/>
 To make groups of items,<br/>
  • use <i>Group Item</i> instead of <i>List Container</i><br/>
  • use <i>Divider Item</i> components to divide the group in to multiple sections.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#list-dividers' target='_blank'>Group Item</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#list-dividers'>Group Item</a>.
 
 Name | Description 
 --- | ---

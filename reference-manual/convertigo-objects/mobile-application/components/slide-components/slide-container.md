@@ -16,7 +16,7 @@ ion-slides<br/>
 ##### Defines a <i>Slides Container</i> component.<br/>
 Slides make it easy to create galleries, tutorials, and page-based layouts. Slides take a number of configuration options.<br/>
 The <i>Slides Container</i> component is a multi-section container. Each section can be swiped or dragged between. It contains any number of <i>Slide Item</i> components.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#slides' target='_blank'>Slides</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#slides'>Slides</a>.
 
 Name | Description 
 --- | ---

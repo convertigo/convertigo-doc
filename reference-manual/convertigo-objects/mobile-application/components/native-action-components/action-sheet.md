@@ -23,7 +23,7 @@ You can access data from the next action in the chain in (TS) mode with: <code><
 <br/>
 Whenever cordova platform is not available, the value defined in mocking options is returned.<br/>
  Default mocked value is <code>0</code>.<br/>
-For more information : <a target='_blank' href='https://github.com/EddyVerbruggen/cordova-plugin-actionsheet'>Action Sheet</a>.
+For more information : <a href='https://github.com/EddyVerbruggen/cordova-plugin-actionsheet'>Action Sheet</a>.
 
 Name | Description 
 --- | ---

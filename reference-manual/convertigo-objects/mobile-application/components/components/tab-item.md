@@ -18,7 +18,7 @@ A tab has to be inserted in a <i>Tabs Container</i> component.<br/>
 A tab is associated to a page you can specify through its properties.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#tabs' target='_blank'>Tabs</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#tabs'>Tabs</a>.
 
 Name | Description 
 --- | ---

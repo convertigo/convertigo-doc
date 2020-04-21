@@ -20,7 +20,7 @@ Configure its <i>src</i> property to the source url of the image. It can be a lo
 <br/>
 <i>Image</i> used alone can be configured in size trough its <i>width</i> and <i>height</i> properties. These can be pixels: <code>100px</code> or percentage of the available space: <code>100%</code>.<br/>
 To center an <i>Image</i>, place it inside a <i>Text Format</i> component with property <i>Align center</i> set.<br/>
- For more information: <a href='https://www.w3schools.com/tags/tag_img.asp' target='_blank'>Image</a>.
+ For more information: <a href='https://www.w3schools.com/tags/tag_img.asp'>Image</a>.
 
 Name | Description 
 --- | ---

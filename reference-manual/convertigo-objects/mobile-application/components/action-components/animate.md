@@ -15,11 +15,11 @@ topnav: topnavobj
 
  You can use the <i>Animate</i> action to animate a component when an event occurs. To do this, just place the action under the event. It can be a (click) or (tap) event or even a Page didEnter event. The animation will take place when the event is triggered. <br /><br/>
  • <i>Animatable</i> <br />View the elements with an <b>Identifier</b> property set. Select here one element Identifier to animate.<br/>
- • <i>Apply mode</i> <br />Animate only the selected element (single) or all elements (all) with the same <b>Identifier</b> value. <br />You can also chain animations to animate in parrallel (Sibling <i>Animate</i> actions) or serial (Child <i>Animate actions</i>). <br /><br />Animations are based on the <a href='https://daneden.github.io/animate.css/' target='_blank'>animate.css</a> package
+ • <i>Apply mode</i> <br />Animate only the selected element (single) or all elements (all) with the same <b>Identifier</b> value. <br />You can also chain animations to animate in parrallel (Sibling <i>Animate</i> actions) or serial (Child <i>Animate actions</i>). <br /><br />Animations are based on the <a href='https://daneden.github.io/animate.css/'>animate.css</a> package
 
 Name | Description 
 --- | ---
-Animation name | Specify the animation name see <a href='https://daneden.github.io/animate.css/' target='_blank'>animate.css</a>
+Animation name | Specify the animation name see <a href='https://daneden.github.io/animate.css/'>animate.css</a>
 Delay | Specify the animation delay in ms
 Direction | Specify the animation direction
 Duration | Specify the animation duration in ms. If not specified, duration is 0ms by default which means no animation will run.

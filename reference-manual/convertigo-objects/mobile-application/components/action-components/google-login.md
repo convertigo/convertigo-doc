@@ -15,11 +15,11 @@ topnav: topnavobj
 
  This component helps login in or logout using Google. It uses Google login to authenticate users.<br/>
 <br/>
-Setup needs some configuration. Declare your app in <a target='_blank' href='https://developers.google.com/mobile/add?platform=android&cntapi=signin'>https://developers.google.com/mobile/add?platform=android&cntapi=signin</a> for Android apps.<br/>
+Setup needs some configuration. Declare your app in <a href='https://developers.google.com/mobile/add?platform=android&cntapi=signin'>https://developers.google.com/mobile/add?platform=android&cntapi=signin</a> for Android apps.<br/>
 <br/>
-Use <a href='https://developers.google.com/mobile/add?platform=ios&cntapi=signin' target='_blank'>https://developers.google.com/mobile/add?platform=ios&cntapi=signin</a> for iOS apps.<br/>
+Use <a href='https://developers.google.com/mobile/add?platform=ios&cntapi=signin'>https://developers.google.com/mobile/add?platform=ios&cntapi=signin</a> for iOS apps.<br/>
 <br/>
-See also some documentation on <a target='_blank' href='https://ionicframework.com/docs/v3/native/google-plus/'>https://ionicframework.com/docs/v3/native/google-plus/</a> about the Cordova plugin used.<br/>
+See also some documentation on <a href='https://ionicframework.com/docs/v3/native/google-plus/'>https://ionicframework.com/docs/v3/native/google-plus/</a> about the Cordova plugin used.<br/>
  You can access the data from the next action in the chain in (TS) mode with:<br/>
 <br/>
 <code><br/>

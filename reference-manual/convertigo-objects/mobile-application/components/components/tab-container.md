@@ -15,7 +15,7 @@ ion-tabs<br/>
 
 ##### Defines a <i>Tabs Container</i> component.<br/>
 A <i>Tabs Container</i> component is a container of individual <i>Tab Item</i> which make it easy to navigate between different pages.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#tabs' target='_blank'>Tabs</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#tabs'>Tabs</a>.
 
 Name | Description 
 --- | ---

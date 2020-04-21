@@ -29,7 +29,7 @@ Where <code>CalendarResult</code> is :<br/>
 &nbsp;&nbsp;&nbsp;date: number;<br/>
 }</code><br/>
 <br/>
-For more information : <a target='_blank' href='https://github.com/hsuanxyz/ion2-calendar'>ion2-calendar</a>.
+For more information : <a href='https://github.com/hsuanxyz/ion2-calendar'>ion2-calendar</a>.
 
 Name | Description 
 --- | ---

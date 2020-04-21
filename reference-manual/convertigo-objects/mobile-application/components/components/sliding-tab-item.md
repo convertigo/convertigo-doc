@@ -18,7 +18,7 @@ A sliding tab has to be inserted in a <i>Sliding Tabs Container</i> component.<b
 A sliding tab is associated to a page you can specify through its properties.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in tab.<br/>
- For more information: <a href='https://github.com/zyra/ionic2-super-tabs' target='_blank'>Swipeable Tabs</a>.
+ For more information: <a href='https://github.com/zyra/ionic2-super-tabs'>Swipeable Tabs</a>.
 
 Name | Description 
 --- | ---

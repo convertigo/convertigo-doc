@@ -15,7 +15,7 @@ ion-segment-button<br/>
 
 ##### Defines a <i>Segment Button</i> component.<br/>
 Add some <i>Segment Button</i> to a <i>Segment Container</i> component and assign them a value through their <i>Value</i> property.<br/>
-For more information: <a href='https://ionicframework.com/docs/v3/api/components/segment/SegmentButton/' target='_blank'>SegmentButton</a>.
+For more information: <a href='https://ionicframework.com/docs/v3/api/components/segment/SegmentButton/'>SegmentButton</a>.
 
 Name | Description 
 --- | ---

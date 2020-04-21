@@ -14,7 +14,7 @@ topnav: topnavobj
 ion-spinner<br/>
 
  The ion-spinner component provides a variety of animated SVG spinners. Spinners enables you to give users feedback that the app is actively processing/thinking/waiting/chillin’ out, or whatever you’d like it to indicate.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/spinner/Spinner/' target='_blank'>Spinner</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/spinner/Spinner/'>Spinner</a>.
 
 Name | Description 
 --- | ---

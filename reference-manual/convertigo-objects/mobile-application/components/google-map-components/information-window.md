@@ -17,7 +17,7 @@ agm-info-window<br/>
 Just add an <i>Information Window</i> component to a <i>Map Marker</i> component to have an information window displayed showing more details about a given marker when the user taps/clicks on it.<br/>
 <br/>
 You can use any type of HTML markup in an <i>Information Window</i> component to format the details for this <i>Map Marker</i>.<br/>
- For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmInfoWindow.html' target='_blank'>AgmInfoWindow</a>.
+ For more information: <a href='https://angular-maps.com/api-docs/agm-core/components/AgmInfoWindow.html'>AgmInfoWindow</a>.
 
 Name | Description 
 --- | ---

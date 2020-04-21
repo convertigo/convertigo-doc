@@ -26,7 +26,7 @@ You can access scanned data from the next action in the chain in (TS) mode with:
 Whenever cordova platform is not available, the value defined in mocking option is returned.<br/>
  Default mocked value are: <br/>
 <code>{format: 'QR_CODE', cancel: false, text: 'http://www.convertigo.com/'}</code>.<br/>
-For more information : <a href='https://github.com/phonegap/phonegap-plugin-barcodescanner' target='_blank'>BarcodeScanner plugin docs</a>.
+For more information : <a href='https://github.com/phonegap/phonegap-plugin-barcodescanner'>BarcodeScanner plugin docs</a>.
 
 Name | Description 
 --- | ---

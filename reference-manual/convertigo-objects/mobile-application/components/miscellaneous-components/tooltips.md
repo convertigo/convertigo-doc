@@ -15,7 +15,7 @@ ionic-tooltips<br/>
 
 ##### Defines a Tooltip component. This component displays a tooltip that can be positioned around any item giving the position properties. You can set as many tooltips in a page.<br/>
  To use it, you have to place the tooltip as a parent of the item. <br/>
- For more information: <a href='https://www.npmjs.com/package/ionic-tooltips' target='_blank'>ionic-tooltips</a>.
+ For more information: <a href='https://www.npmjs.com/package/ionic-tooltips'>ionic-tooltips</a>.
 
 Name | Description 
 --- | ---

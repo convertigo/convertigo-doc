@@ -15,7 +15,7 @@ ion-title<br/>
 
 ##### Defines a <i>Bar Title</i> component.<br/>
 <i>Bar Title</i> is a component that sets the title of a <i>ToolBar</i> or <i>NavBar</i> component.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Title/' target='_blank'>Title</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/toolbar/Title/'>Title</a>.
 
 Name | Description 
 --- | ---

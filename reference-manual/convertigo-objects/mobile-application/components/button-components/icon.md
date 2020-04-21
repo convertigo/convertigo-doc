@@ -16,7 +16,7 @@ ion-icon<br/>
 ##### Defines an <i>Icon</i> component.<br/>
 More than 700+ Ionicons icons we all come to know and love.<br/>
 Icons can be used on their own, or inside of a number of components.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/api/components/icon/Icon/' target='_blank'>Icon</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/api/components/icon/Icon/'>Icon</a>.
 
 Name | Description 
 --- | ---

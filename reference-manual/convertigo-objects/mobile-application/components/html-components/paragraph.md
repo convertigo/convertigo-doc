@@ -16,7 +16,7 @@ p<br/>
 ##### Defines a <i>Paragraph</i> component.<br/>
 This component acts as the standard HTML p tag.<br/>
 Use <i>Paragraph</i> with <i>Text</i> components inside to display text in your pages.<br/>
- For more information: <a href='https://www.w3schools.com/tags/tag_p.asp' target='_blank'>Paragraph</a>.
+ For more information: <a href='https://www.w3schools.com/tags/tag_p.asp'>Paragraph</a>.
 
 Name | Description 
 --- | ---

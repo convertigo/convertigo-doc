@@ -3,7 +3,7 @@ layout: page
 title: Show Loading
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/components/action-components/show-loading/
-metadesc: Defines a  Show Loading  action component.   This component show a laoding
+metadesc: Defines a  Show Loading  action component.   This component show a loading
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: ShowLoadingAction
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Show Loading</i> action component. <br/>
 
- This component show a laoding
+ This component show a loading
 
 Name | Description 
 --- | ---

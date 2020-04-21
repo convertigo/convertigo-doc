@@ -30,7 +30,7 @@ You can access the sync progress information from anywhere in your application u
 <code>router.sharedObject.FullSyncSyncAction.progress.current</code>.<br/>
 <br/>
 object.<br/>
-For more information : <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>.<br/>
+For more information : <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-locally-on-the-mobile-with-the-data'>interacting-locally-with-the-data/</a>.<br/>
 <br/>
 <b>Note :</b>.<br/>
 If the database is replicated for the first time, the action will wait for a full replication before executing next action. If the database has already been replicated once, the replication will start and execute next action immediately having the replication going on in the background, thus allowing to display the first page of the app immediately.

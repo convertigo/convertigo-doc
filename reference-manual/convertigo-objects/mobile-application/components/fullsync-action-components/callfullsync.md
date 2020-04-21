@@ -15,9 +15,9 @@ topnav: topnavobj
 
  FullSync calls are used to interact with the local offline data synchronized database. You can use this call to get, post, delete and query (View) data from the database.<br/>
 <br/>
-For more information about FullSync and local FullSync verbs see <a target='_blank' href='https://www.convertigo.com/document/latest/reference-manual/convertigo-full-sync-architecture/interacting-locally-with-the-data/'>interacting-locally-with-the-data/</a>. <br/>
+For more information about FullSync and local FullSync verbs see <a href='https://www.convertigo.com/documentation/latest/reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/#interacting-locally-on-the-mobile-with-the-data'>interacting-locally-with-the-data/</a>. <br/>
 <br/>
- If you want to disable laoding controller, you can set property <i>disable loading controller</i> to true.
+ If you want to disable loading controller, you can set property <i>disable loading controller</i> to true.
 
 Name | Description 
 --- | ---

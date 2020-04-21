@@ -15,7 +15,7 @@ ion-item-options<br/>
 
 ##### Defines a <i>Sliding Options</i> component.<br/>
 Add a <i>Sliding Options</i> component inside a <i>Sliding Item</i> to contain the buttons.<br/>
- For more information: <a href='https://ionicframework.com/docs/v3/components/#sliding-list' target='_blank'>Sliding Options</a>.
+ For more information: <a href='https://ionicframework.com/docs/v3/components/#sliding-list'>Sliding Options</a>.
 
 Name | Description 
 --- | ---
