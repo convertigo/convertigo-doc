@@ -140,7 +140,7 @@ You will have to define 3 symbols:
 With default installation, a self-signed certificate is embedded. This configuration enables **https** connections but induces a security alert in your browser.
 
 You can add your certificates store in _c8oforms_standalone/tomcat/conf_.
-If you don't have a certificates store but the site certificate, you can insert him in **certificates.jk** by using specifics ***openssl*** and ***keytool*** commands.
+If you don't have a certificates store but the site certificate, you can insert it in **certificates.jks** by using specifics [openssl](https://wiki.openssl.org/index.php/Command_Line_Utilities)  and  [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html).commands.
 
 You have to modify the file _c8oforms_standalone/tomcat/conf/server.xml_.
 
@@ -154,10 +154,28 @@ In this file, find the following section:
 ```
 Change the ***keystoreFile*** with the name of your jks store and the ***keystorePass*** too.
 
-The modification will be validated after a restart of the container.
+The modification will be validated after a restart of the container :
 
-To see if your certificate store is correctly validated, look at the log files in  _c8oforms_standalone/tomcat/logs/catalina.<date>.log_
+```shell
+$ docker-compose down
+Stopping c8oforms_standalone_convertigo_1 ... done
+Stopping c8oforms_standalone_couchdb_1    ... done
+Removing c8oforms_standalone_convertigo_1 ... done
+Removing c8oforms_standalone_couchdb_1    ... done
+Removing network c8oforms_standalone_default
+$ docker-compose up -d
+Creating network "c8oforms_standalone_default" with the default driver
+Creating c8oforms_standalone_couchdb_1 ... done
+Creating c8oforms_standalone_convertigo_1 ... done
+```
 
+To see if your certificate store is correctly validated, look at the log files in  _c8oforms_standalone/tomcat/logs/catalina.date.log_
+
+Info log file, you have to find :
+```log
+org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["https-jsse-nio-8443"]
+```
+with no exception after.
 
 
 ## Backup
