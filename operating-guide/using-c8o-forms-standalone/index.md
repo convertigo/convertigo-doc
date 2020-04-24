@@ -23,7 +23,9 @@ Linux platform is recommended.
  
 ## Installation guide 
 
-First of all, extract tar.gz (this file is given by a download link in a message) :
+You can access the Form Builder Repository [here :](https://c8oforms.s3-eu-west-3.amazonaws.com/index.html).
+
+First of all, extract tar.gz (This file is given by a download link in a message) :
 ```shell
 $ tar -xzvf c8oforms_standalone.tar.gz
 ```
