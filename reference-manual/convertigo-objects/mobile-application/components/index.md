@@ -6,7 +6,6 @@ permalink: reference-manual/convertigo-objects/mobile-application/components/
 topnav: topnavobj
 ---
 * [Actions Components](action-components/)
-* [Application Components](application-components/)
 * [Buttons Components](button-components/)
 * [Cards Components](card-components/)
 * [Components](components/)
@@ -24,8 +23,6 @@ topnav: topnavobj
 * [Menus Components](menu-components/)
 * [Miscellaneous Components](miscellaneous-components/)
 * [Native Actions Components](native-action-components/)
-* [Page Components](page-components/)
-* [Route Components](route-components/)
 * [Shared Actions Components](shared-action-components/)
 * [Shared Components](shared-components/)
 * [Slides Components](slide-components/)
