@@ -7,6 +7,7 @@ topnav: topnavobj
 ---
 * [Animation](animation/)
 * [Attr](attr/)
+* [DynamicAttr](dynamicattr/)
 * [Fragment](fragment/)
 * [Style](style/)
 * [Tag](tag/)
