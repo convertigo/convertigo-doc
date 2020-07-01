@@ -74,6 +74,15 @@ To shutdown docker,and stop **Convertigo Form Builder**, run:
 $ docker-compose down
 ```
 
+## Update guide ##
+You can access the Form Builder Repository [here :](https://c8oforms.s3-eu-west-3.amazonaws.com/index.html).
+
+First of all, downlaod C8Oforms.car, and then Go to [Convertigo administration](../using-convertigo-administration-console/#projects-page), into projects to import your C8oForms.car
+
+Click on Deploy a project, and then browse file on your system.
+
+{% include image.html file="guide_img/projectsPageForms_update.PNG" caption="Figure: Deploy a project" %}
+
 
 ## Environment
 ### Convertigo Form Builder
@@ -117,7 +126,7 @@ Before configuring symbols ensure that you have write rights on workspace folder
 
 You have to configure project _lib_UserManager_ .
 To do so go to convertigo admin console: http://**your_server**:28080/convertigo/admin/login.html and type [login and password](../using-convertigo-administration-console/#accessing-the-administration-console).
-Then, click on project on the left hand side to access to project list view. On the left side of _lib_UserManager_ project, you will se a red warning icon, click on it to create symbols.
+Then, click on project on the left hand side to access to project list view. On the left side of _lib_UserManager_ and _C8Oforms_ projects, you will se a red warning icon, click on it to create symbols.
 
 {% include image.html file="guide_img/UserManagerForms.png" caption="Figure: Symbols UserManager 1" %}
 
@@ -125,14 +134,17 @@ Now that its done, click on symbols on the left hand side.
 
 {% include image.html file="guide_img/UserManagerSymbols.png" caption="Figure: Symbols UserManager 2" %}
 
-
-You will have to define 3 symbols:  
+For _lib_UserManager_, you will have to define 3 symbols:  
 * lib_UserManager.adminUser
   * This user must be an active directory account, who has at least read only access right, and so can execute research on whole tree (expected synthax is DOMAIN_NAME\USER)
 * lib_UserManager.adminPassword.secret
   * Password of our active directory user
 * lib_UserManager.ldapServer
   * Url of LDAP server such as ldap://**LDAP_SERVER**:389
+
+For _C8Oforms_, you will have to define 1 symbol:
+* C8Oforms.loginAdGroup
+  * This group, is used to determine if an active directory user will be able to connect to _Convertigo Forms_. If symbol is empty, any Active directory user will have acess to _Convertigo Forms_, but if symbol is defined, only users that are members of this group will have acess to _Convertigo Forms_.
 
 
 ## Add your certificates store
