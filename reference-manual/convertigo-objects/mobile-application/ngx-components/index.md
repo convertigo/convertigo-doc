@@ -11,5 +11,4 @@ topnav: topnavobj
 * [Customs Components](custom-components/)
 * [Forms Components](form-components/)
 * [Page Components](page-components/)
-* [Route Components](route-components/)
 * [Shared Components](shared-components/)
