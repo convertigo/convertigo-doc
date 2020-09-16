@@ -198,4 +198,4 @@ Directories to save in the event of a machine crash :
 - All the _couchdb_ directory. This directory contains all the databases used for Convertigo Form Builder. In particular the definitions of forms, users, rights, ... 
 - The _tomcat/conf_ directory, only if you have changed the configuration like add a certificate store.
 
-Restoration is easy. It consists of replacing the installed directories with those saved.
+Restoration is easy. It consists of replacing the installed directories with those saved. Note that backup can be done while CouchDB is running see this article in CouhcDB documentation [Couchdb Backups](https://docs.couchdb.org/en/stable/maintenance/backups.html)
