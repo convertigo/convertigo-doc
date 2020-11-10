@@ -7,3 +7,5 @@ topnav: topnavobj
 ---
 * [Android](android/)
 * [iOS](ios/)
+* [Windows Phone 8](windows-phone-8/)
+* [Windows](windows/)

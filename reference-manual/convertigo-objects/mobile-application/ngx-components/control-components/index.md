@@ -6,7 +6,6 @@ permalink: reference-manual/convertigo-objects/mobile-application/ngx-components
 topnav: topnavobj
 ---
 * [AppEvent](appevent/)
-* [AppGuard](appguard/)
 * [Directive](directive/)
 * [Else Handler](else-handler/)
 * [Error Handler](error-handler/)
