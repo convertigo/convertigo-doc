@@ -18,6 +18,7 @@ Add a <i>Close Modal</i> action under an Event.
 
 Name | Description 
 --- | ---
+data | Define the data to be returned by the modal bean (works only if modal has been used with block while display option)
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
 Is active | Defines whether the component is active. 
 
