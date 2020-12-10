@@ -19,11 +19,21 @@ Linux platform is recommended.
   * Docker Engine<br>[Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)<br> [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)<br>[Install Docker Engine on Fedora](https://docs.docker.com/engine/install/fedora/)<br>[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)<br>
   * Docker Compose<br>[Install Docker Compose on Linux systems](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
  * You need at least 2 GB of disk space. 20 GB is recommended.
-
+ * For CENTOS 7 you must enable user namespaces in kernel to support PWA creations
+     * Add `user.max_user_namespaces=28633` to `/etc/sysctl.conf` (or `/etc/sysctl.d`) 
+     * And then run 
+       ```shell
+       $ sudo sysctl --system
+       ```
+     * For older release than CENTOS 7.7, you have to run additional commands
+       ```shell
+       $ sudo grubby --update-kernel=ALL --args="user_namespace.enable=1"
+       $ reboot
+       ```
  
 ## Installation guide 
 
-You can access the Form Builder Repository [here :](https://c8oforms.s3-eu-west-3.amazonaws.com/index.html).
+You can access the Form Builder Releases [here](https://github.com/convertigo/C8oForms/releases)
 
 First of all, extract tar.gz (This file is given by a download link in a message) :
 ```shell
