@@ -17,7 +17,7 @@ You can get any data from **any kind of services**, transform it, and then deliv
 
 # Creating a data source for Convertigo Form Builder #
 
-Data sources, are created with Convertigo’s low-code platform [Convertigo studio](https://www.convertigo.com/mobile-application-development-studio/). Download it from [there](https://www.convertigo.com/download/).
+Data sources, are created with Convertigo’s low-code platform [Convertigo studio](https://www.convertigo.com/mobile-application-development-studio/). Download it from [there](https://github.com/convertigo/convertigo/releases).
 
 To do so, you will have to create a [Sequence](https://www.convertigo.com/documentation/develop/reference-manual/convertigo-objects/sequencer/generic-sequence/). A Sequence defines and orchestrates a series of actions in a low-code way.
 
