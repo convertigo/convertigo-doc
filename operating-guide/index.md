@@ -14,4 +14,5 @@ permalink: /operating-guide/
 - [Using Convertigo Administration Console](./using-convertigo-administration-console/)
 - [Using Convertigo Test Platform](./using-convertigo-test-console/)
 - [Using C8o Forms Standalone](./using-c8o-forms-standalone/)
+- [Creating a data source for Convertigo Form Builder](./creating-data-for-c8o-forms)
 - [Appendixes](./appendixes/)
