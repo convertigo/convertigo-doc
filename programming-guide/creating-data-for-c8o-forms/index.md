@@ -23,9 +23,14 @@ Data sources, are created with Convertigo’s low-code platform [Convertigo stud
 To do so, you will have to create a [Sequence](https://www.convertigo.com/documentation/develop/reference-manual/convertigo-objects/sequencer/generic-sequence/). A Sequence defines and orchestrates a series of actions in a low-code way.
 
 #### Make a data source sequence ready for Convertigo Form Builder ####
+You can find a project with some examples [here](https://github.com/convertigo/c8oprj-lib-actions-c8oforms).
+
+Currently they are two components that supports data source:
+* Grids
+* Selects
 ##### Expose a sequence as a data source #####
 
-A sequence name has to be **prefixed** by “formssource_” to be visible as a source from Convertigo Form Builder
+A sequence name has to be **prefixed** by “formssource_” to be visible as a source from Convertigo Form Builder.
 
 ##### Expose a variable as an option of the data source #####
 If you want to expose some sequence's variables, you'll have to prefix their names by "forms_".
@@ -56,8 +61,44 @@ You can use any of the [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes
 Depending on the language of the no-code maker user, the correct language will use to display the documentation. 
 
 #### Data sources compatible with grids ####
-Each kind of component is expecting different kind of data. So they are some specificities for grids.
-##### example of structure expected #####
+Each kind of component is expecting different kind of data. To be compatible with grids, a data source sequence has to respect some specificities about  values returned.
+##### structure expected #####
+
+* **data** => *An array always named data, with 0,n items*
+  * **item** => *An object containing row data with 0,n items*
+    * **__rowValue** *(optional) Any object, the value to be retured by the row*
+    * **first column** => *An object named as you want, with 2,n items*
+      * *displayValue* => *A string with the data to be displayed*
+      * *displayName* => *A string with the name of the column to be displayed*
+      * *value* => *(optional) Any object, conaining the value to be returned, if not set, displayValue will be returned*
+      * *type* => *(optional) A string, can be "html" or "text". If html is set, the displayValue will be rendered as innerHTML.*
+
+
+``` xml
+<data type="array">
+  <item type="object">
+    <__rowValue type="any"></__rowValue> 
+      <image>
+        <displayValue type="string"></displayValue>
+        <displayName type="string"></displayName>
+        <value type="any"></value>
+        <type type="string"></type>
+      </image>
+      <name>
+        <displayValue type="string"></displayValue>
+        <displayName type="string"></displayName>
+        <value type="any"></value>
+        <type type="string"></type>
+      </name>
+      <Price>
+        <displayValue type="string"></displayValue>
+        <displayName type="string"></displayName>
+        <value type="any"></value>
+        <type type="string"></type>
+      </nameHTML>
+  </item>
+</data>
+```
 
 ![alt illustration](../../images/c8oForms/example_data_source_grid.PNG)
 
@@ -89,8 +130,16 @@ Each kind of component is expecting different kind of data. So they are some spe
  ]
 }
 ```
+#### Data sources compatible with selects ####
+Each kind of component is expecting different kind of data. To be compatible with selects, a data source sequence has to respect some specificities about values returned, and about some variables.
 
+##### structure expected #####
 
+* **value** => *An array always named value, with 0,n strings*
+
+##### forms_filter variable #####
+
+This variable contains the value of the filter typed by the user; you'll have to use it to filter your returned values 
 ## Actions ##
 
 ### Why do we need actions for Form Builder ? ###
@@ -107,6 +156,7 @@ Actions, are created with Convertigo’s low-code platform [Convertigo studio](h
 To do so, you will have to create a [Sequence](https://www.convertigo.com/documentation/develop/reference-manual/convertigo-objects/sequencer/generic-sequence/). A Sequence defines and orchestrates a series of actions in a low-code way.
 
 #### Make a submit action sequence ready for Convertigo Form Builder ####
+You can find a project with some examples [here](https://github.com/convertigo/c8oprj-lib-actions-c8oforms)
 ##### Expose a sequence as a submit action #####
 
 A sequence name has to be **prefixed** by “forms_” to be visible as a submit action from Convertigo Form Builder
