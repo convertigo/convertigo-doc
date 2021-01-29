@@ -1,13 +1,13 @@
 ---
-title: Providing backend services to no-code Forms
+title: Providing backend services to no-code Form Builder
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 28/01/2021
-summary: "This chapter describes how to create data for Convertigo Form Builder"
+summary: "This chapter describes how to provide services to no-code Form Builder"
 sidebar: c8o_sidebar
 permalink: /programming-guide/creating-data-for-c8o-forms/
 ---
 
-# Why do we need data sources for Convertigo Form Builder ? # 
+## Why do we need data sources for Form Builder ? ## 
 
 Convertigo Form Builder data source is a **powerful feature** that allows you to **expose data** from external services to your end users. 
 
@@ -15,18 +15,18 @@ You can get any data from **any kind of services**, transform it, and then deliv
 
 **Write once, use many times**: Once you have created a data source, it can be used by any of your users to create powerful **No-code applications in a few clicks**. 
 
-# Creating a data source for Convertigo Form Builder #
+## Creating a data source for Form Builder ##
 
 Data sources, are created with Convertigo’s low-code platform [Convertigo studio](https://www.convertigo.com/mobile-application-development-studio/). Download it from [there](https://github.com/convertigo/convertigo/releases).
 
 To do so, you will have to create a [Sequence](https://www.convertigo.com/documentation/develop/reference-manual/convertigo-objects/sequencer/generic-sequence/). A Sequence defines and orchestrates a series of actions in a low-code way.
 
-## Make a sequence ready for Convertigo Form Builder ##
-### Expose a sequence as a data source ###
+### Make a sequence ready for Convertigo Form Builder ###
+#### Expose a sequence as a data source ####
 
 A sequence name has to be **prefixed** by “formssource_” to be visible as a source from Convertigo Form Builder
 
-### Expose a variable as an option of the data source ###
+#### Expose a variable as an option of the data source ####
 If you want to expose some sequence's variables, you'll have to prefix their names by "forms_".
 Thoses variables will be seen as **options** by the no-code maker. 
 
@@ -36,7 +36,7 @@ Actually, they are two types of variables:
 
 By default variable's type are standard, if you want to use HTML ones enter "html" value into Descripiton field of Properties of the variable 
 
-### Documentation and internationalization for the users of data sources ###
+#### Documentation and internationalization for the users of data sources ####
 
 You can provide documentation using the comment field of the Sequence, or of the variable. This documentation will be displayed within the no-code studio to the app maker. 
 If you want to internationalize your comments you can follow the following syntax: 
@@ -54,9 +54,9 @@ You can use any of the [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes
 
 Depending on the language of the no-code maker user, the correct language will use to display the documentation. 
 
-## Data sources compatible with grids
+### Data sources compatible with grids ###
 Each kind of component is expecting different kind of data. So they are some specificities for grids.
-### example of structure expected ###
+#### example of structure expected ####
 
 ![alt illustration](../../images/c8oForms/example_data_source_grid.PNG)
 
