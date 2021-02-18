@@ -16,3 +16,5 @@ topnav: topnavobj
 * [Loop Handler](loop-handler/)
 * [PageEvent](pageevent/)
 * [Subscribe Handler](subscribe-handler/)
+* [SwitchCase Handler](switchcase-handler/)
+* [SwitchDefault Handler](switchdefault-handler/)
