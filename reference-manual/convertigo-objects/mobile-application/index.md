@@ -8,5 +8,4 @@ topnav: topnavobj
 * [Components](components/)
 * [Mobile Application](mobile-application/)
 * [Mobile Components](mobile-components/)
-* [Ngx Components](ngx-components/)
 * [Platforms](platforms/)
