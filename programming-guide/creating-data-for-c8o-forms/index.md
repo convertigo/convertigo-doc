@@ -66,12 +66,12 @@ Each kind of component is expecting different kind of data. To be compatible wit
 
 * **data** => *An array always named data, with 0,n items*
   * **item** => *An object containing row data with 0,n items*
-    * **__rowValue** *(optional) Any object, the value to be retured by the row*
+    * **__rowValue** *(optional) Any object, the value to be returned by the row*
     * **first column** => *An object named as you want, with 2,n items*
       * *displayValue* => *A string with the data to be displayed*
       * *displayName* => *A string with the name of the column to be displayed*
-      * *value* => *(optional) Any object, conaining the value to be returned, if not set, displayValue will be returned*
-      * *type* => *(optional) A string, can be "html" or "text". If html is set, the displayValue will be rendered as innerHTML.*
+      * *value* => *(optional) Any object, containing the value to be returned, if not set, displayValue will be returned*
+      * *type* => *(optional) A string, can be "html" or "string". If html is set, the displayValue will be rendered as innerHTML.*
 
 
 ``` xml
@@ -82,19 +82,14 @@ Each kind of component is expecting different kind of data. To be compatible wit
         <displayValue type="string"></displayValue>
         <displayName type="string"></displayName>
         <value type="any"></value>
-        <type type="string"></type>
+        <type type="string">'html' or 'string'</type>
       </image>
-      <name>
+      <name  type="string">Your text here</name>
+      <nameHTML>
         <displayValue type="string"></displayValue>
         <displayName type="string"></displayName>
         <value type="any"></value>
-        <type type="string"></type>
-      </name>
-      <Price>
-        <displayValue type="string"></displayValue>
-        <displayName type="string"></displayName>
-        <value type="any"></value>
-        <type type="string"></type>
+        <type type="string">'html' or 'string'</type>
       </nameHTML>
   </item>
 </data>
@@ -110,9 +105,9 @@ Each kind of component is expecting different kind of data. To be compatible wit
     "__rowValue":"productRef123456",
     "image": {
         "displayValue": "<img style=\"width:50px\" src=\"https:\/\/static.openfoodfacts.org\/images\/products\/327\/408\/000\/5003\/front_en.574.200.jpg\" \/>",
-        "displayName":"Logo",
+        "displayName": "Logo",
         "type": "html",
-        "value":"front_en.574.200.jpg"
+        "value": "front_en.574.200.jpg"
     },
     "name": "Eau de source naturelle",
 
@@ -176,14 +171,27 @@ By default variable's type are standard, if you want to use HTML ones enter "htm
 You can provide documentation using the comment field of the Sequence, or of the variable. This documentation will be displayed within the no-code studio to the app maker. 
 If you want to internationalize your comments you can follow the following syntax: 
 
-```html
-<div class="en">Get the list of <b>company's</b> employees</div> <!--for English support-->
-<div class="fr">Obtenir la liste des employés de <b>l'entreprise</b></div> <!--for French support-->
-<div class="es">Obtener la lista de empleados de la <b>empresa</b></div> <!--for Spanish support-->
-<div class="it">Ottenere l'elenco dei dipendenti <b>dell'azienda<b></div> <!--for Italian support-->
+```javascript
+{
+    "en":{ /* for English support */
+        "displayName": "<p>Email body</p>",
+        "comment": "<div>Email body (short string). || <i>(optional)</i></div>"
+    },
+    "fr":{ /* for French support */
+        "displayName": "<p>Corps de l'e-mail</p>",
+        "comment": "<div>Corps de l'e-mail (chaîne courte). || <i>(optionnel)</i></div>"
+    },
+    "es":{ /* for Spanish support */
+        "displayName": "<p>Cuerpo del correo</p>",
+        "comment": "<div>Cuerpo del correo electrónico (cadena corta). || <i>(opcional)</i></div>"
+    },
+    "it":{ /* for Italian support */
+        "displayName": "<p>Corpo dell'email</p>",
+        "comment": "<div>Corpo dell'email (stringa breve). || <i>(facoltativo)</div>"
+    }
+}
 ```
-
-Each div contains a class called "en" for English, "fr" for French, "es" for Spanish, and "it" for Italian. 
+ 
 
 You can use any of the [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1) to tag your documentation
 
