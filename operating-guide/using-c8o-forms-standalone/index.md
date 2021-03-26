@@ -2,7 +2,7 @@
 title: Installing Convertigo Form Builder Standalone
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 17/04/2020
-summary: "This chapter describes how to install Convertigo Form Builder Standalone on premise"
+summary: "This chapter describes how to install Convertigo Form Builder Standalone on premises"
 sidebar: c8o_sidebar
 permalink: /operating-guide/using-c8o-forms-standalone/
 ---
