@@ -2,7 +2,7 @@
 layout: page
 title: Application
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/application-components/application/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/application-components/application/
 metadesc: Defines the mobile  Application  component.   An application represents the whole application with all the components needed to build it (pages, menus
 ObjGroup: Mobile Application
 ObjCatName: application-components

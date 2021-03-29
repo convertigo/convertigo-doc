@@ -2,7 +2,7 @@
 layout: page
 title: NavRoute
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/route-components/navroute/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/route-components/navroute/
 metadesc: Defines a  NavRoute  component.   This component helps creating navigation routes for your application.  NavRoute  component works on events to trigge
 ObjGroup: Mobile Application
 ObjCatName: route-components

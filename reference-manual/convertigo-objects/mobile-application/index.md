@@ -7,4 +7,5 @@ topnav: topnavobj
 ---
 * [Components](components/)
 * [Mobile Application](mobile-application/)
+* [Mobile Components](mobile-components/)
 * [Platforms](platforms/)

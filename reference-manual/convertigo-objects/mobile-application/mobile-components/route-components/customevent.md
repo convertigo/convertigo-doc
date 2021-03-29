@@ -2,7 +2,7 @@
 layout: page
 title: CustomEvent
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/route-components/customevent/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/route-components/customevent/
 metadesc: Defines a route  CustomEvent  component.   This component helps defining an event which is emitted when any Convertigo  requestable  response is retri
 ObjGroup: Mobile Application
 ObjCatName: route-components

@@ -2,7 +2,7 @@
 layout: page
 title: DataAction
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/route-components/dataaction/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/route-components/dataaction/
 metadesc: Defines a route  DataAction  component.   This component helps defining a page navigation when a given condition is verified on the received data.
 ObjGroup: Mobile Application
 ObjCatName: route-components

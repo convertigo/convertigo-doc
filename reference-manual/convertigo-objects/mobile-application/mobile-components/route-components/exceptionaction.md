@@ -2,7 +2,7 @@
 layout: page
 title: ExceptionAction
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/route-components/exceptionaction/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/route-components/exceptionaction/
 metadesc: Defines a route  ExceptionAction  component.   This component helps defining a toast when an exception occurred while retrieving data.
 ObjGroup: Mobile Application
 ObjCatName: route-components

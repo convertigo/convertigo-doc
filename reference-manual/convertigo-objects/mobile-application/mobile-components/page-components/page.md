@@ -2,7 +2,7 @@
 layout: page
 title: Page
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/page-components/page/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/page-components/page/
 metadesc: Defines a  Page  component.   This component helps creating pages for your application with all required files and references. To be displayed correct
 ObjGroup: Mobile Application
 ObjCatName: page-components

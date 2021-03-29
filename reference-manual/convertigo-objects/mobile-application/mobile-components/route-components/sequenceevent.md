@@ -2,7 +2,7 @@
 layout: page
 title: SequenceEvent
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/route-components/sequenceevent/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/route-components/sequenceevent/
 metadesc: Defines a route  SequenceEvent  component.   This component helps defining an event which is emitted when a Convertigo  Sequence  response is retrieve
 ObjGroup: Mobile Application
 ObjCatName: route-components

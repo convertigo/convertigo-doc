@@ -2,7 +2,7 @@
 layout: page
 title: FullSyncEvent
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/components/route-components/fullsyncevent/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/route-components/fullsyncevent/
 metadesc: Defines a route  FullSyncEvent  component.   This component helps defining an event which is emitted when a Convertigo  FullSync  response is retrieve
 ObjGroup: Mobile Application
 ObjCatName: route-components
