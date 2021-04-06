@@ -30,6 +30,5 @@ topnav: topnavobj
 * [RootPage](rootpage/)
 * [SetGlobal](setglobal/)
 * [Show Loading](show-loading/)
-* [SwitchAction](switchaction/)
 * [Toast](toast/)
 * [Variable](variable/)
