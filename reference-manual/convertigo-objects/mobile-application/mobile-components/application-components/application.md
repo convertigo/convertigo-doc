@@ -7,8 +7,8 @@ metadesc: Defines the mobile  Application  component.   An application represent
 ObjGroup: Mobile Application
 ObjCatName: application-components
 ObjName: Application
-ObjClass: com.twinsoft.convertigo.beans.ngx.components.ApplicationComponent
-ObjIcon: /images/beans/ngx/components/images/applicationcomponent_color_32x32.png
+ObjClass: com.twinsoft.convertigo.beans.mobile.components.ApplicationComponent
+ObjIcon: /images/beans/mobile/components/images/applicationcomponent_color_32x32.png
 topnav: topnavobj
 ---
 ##### Defines the mobile <i>Application</i> component. 
