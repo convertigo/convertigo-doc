@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: SwitchDefault Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIActionCaseDefaultEvent
-ObjIcon: /images/beans/ngx/components/images/uiactioncasedefaultevent_color_32x32.png
+ObjIcon: /images/beans/core/images/default_color_16x16.png
 topnav: topnavobj
 ---
 ##### Defines a <i>SwitchDefault Handler</i>. 

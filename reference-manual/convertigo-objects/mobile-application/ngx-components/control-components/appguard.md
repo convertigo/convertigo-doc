@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: AppGuard
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIAppGuard
-ObjIcon: /images/beans/ngx/components/images/uiappguard_color_32x32.png
+ObjIcon: /images/beans/core/images/default_color_16x16.png
 topnav: topnavobj
 ---
 ##### Defines an <i>AppGuard</i> component. 

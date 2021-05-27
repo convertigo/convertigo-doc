@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: SwitchCase Handler
 ObjClass: com.twinsoft.convertigo.beans.mobile.components.UIActionCaseEvent
-ObjIcon: /images/beans/mobile/components/images/uiactioncaseevent_color_32x32.png
+ObjIcon: /images/beans/core/images/default_color_16x16.png
 topnav: topnavobj
 ---
 ##### Defines a <i>SwitchCase Handler</i>. 
