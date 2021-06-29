@@ -1,6 +1,6 @@
 ---
 title: Installing Convertigo Form Builder Standalone
-keywords: pages, authoring, exclusion, frontmatter
+keywords: pages, authoring, exclusion, frontmatter, GDPR, RGPD 
 last_updated: 17/04/2020
 summary: "This chapter describes how to install Convertigo Form Builder Standalone on premises"
 sidebar: c8o_sidebar
@@ -209,3 +209,16 @@ Directories to save in the event of a machine crash :
 - The _tomcat/conf_ directory, only if you have changed the configuration like add a certificate store.
 
 Restoration is easy. It consists of replacing the installed directories with those saved. Note that backup can be done while CouchDB is running see this article in CouhcDB documentation [Couchdb Backups](https://docs.couchdb.org/en/stable/maintenance/backups.html)
+
+## GDPR Compliance
+
+They are two built in features in Convertigo Forms to help you comply with the General Data Protection Regulation - GDPR.
+
+1) You can define a text (HTML is supported) to display in the GDPR menu of the application.
+
+2) You can display a message each time a user creates a form, to make him aware of the GDPR rules.
+
+To do this, Go to [Convertigo administration](../using-convertigo-administration-console/#projects-page), into symbols section, and create the following symbols:
+
+* `C8Oforms.GDRP-MENU` To define the text and show the GDPR menu (1)
+* `C8Oforms.GDRP-TOAST` To define and display the message before creating a new form (2)
