@@ -168,7 +168,7 @@ In example below, the “ForEach” component contains one “Button” componen
 
 ## Styling applications
 
-Convertigo Mobile Builder RMAD applications can be easily styled as they are based on the powerful Ionic 2 framework.
+Convertigo Mobile Builder RMAD applications can be easily styled as they are based on the powerful Ionic framework.
 You can use the “Style” component to apply styles to the entire application, to a whole page and/or to given a mobile component.
 
 Simply Drag & Drop the “Style” component from the mobile palette. The following picture shows a “Style” component which will apply for a whole page.
