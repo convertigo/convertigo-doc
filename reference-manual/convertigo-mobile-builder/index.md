@@ -20,7 +20,7 @@ Convertigo Mobile Builder uses a new graphical user interface builder able to bu
 
 Unlike other RAD systems, an application produced with Convertigo Mobile Builder is not a “prototype” nor a “quick & dirty” app. Built applications are fully deployable on cross-platform devices and work on complex enterprise data.
 
-Convertigo Mobile Builder RMAD is based on well-known industry standard technologies such as Cordova, Angular 5 and Ionic 3 frameworks.
+Convertigo Mobile Builder RMAD is based on well-known industry standard technologies such as Cordova, Angular  and Ionic  frameworks.
 
 {% include image.html file="man_img/MB-Overview.png" url="images/man_img/MB-Overview.png" alt="Convertigo Mobile Builder overview" caption="Convertigo Mobile Builder overview" %}
 
