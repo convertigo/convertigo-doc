@@ -132,6 +132,13 @@ Each kind of component is expecting different kind of data. To be compatible wit
 
 * **value** => *An array always named value, with 0,n strings*
 
+or 
+
+* **value** => *An array always named value, with 0,n items*
+  * **item** => *An object containing data with 2 items*
+    * *displayValue* => *A string with the data to be displayed*
+    * *value* => *(optional) Any object, containing the value to be returned, if not set, displayValue will be returned*
+
 ##### forms_filter variable #####
 
 This variable contains the value of the filter typed by the user; you'll have to use it to filter your returned values 
