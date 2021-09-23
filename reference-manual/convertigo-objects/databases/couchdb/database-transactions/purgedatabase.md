@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Purge permanently references of deleted document of the specified database. 
 
-POST /{db}/_purge<br/>This will cause any client database synced to this server database to be reset, in order to sync a fresh new purged database. Warning ! . Any _local documement held in the client database will be deleted as a RESET will be done on this database.<br/><b>Response JSON Object:</b><br/>• <b>ok</b> (boolean) – Operation status <br/><br/><b>Status Codes:</b><br/>• 200 OK – completed successfully <br/>• 400 Bad Request – Invalid database name or JSON payload <br/><br/>Every properties of the form "Param xyz" or "Query xyz" can be overridden dynamically by declaring and using a "_use_xyz" variable. Those variables can be added using the right-click menu "Add variables for dynamic properties" of this transaction.
+POST /{db}/_purge<br/>This will cause any client database synced to this server database to be reset, in order to sync a fresh new purged database. Warning ! . Any _local document held in the client database will be deleted as a RESET will be done on this database.<br/><b>Response JSON Object:</b><br/>• <b>ok</b> (boolean) – Operation status <br/><br/><b>Status Codes:</b><br/>• 200 OK – completed successfully <br/>• 400 Bad Request – Invalid database name or JSON payload <br/><br/>Every properties of the form "Param xyz" or "Query xyz" can be overridden dynamically by declaring and using a "_use_xyz" variable. Those variables can be added using the right-click menu "Add variables for dynamic properties" of this transaction.
 
 Property | Type | Category | Description
 --- | --- | --- | ---
