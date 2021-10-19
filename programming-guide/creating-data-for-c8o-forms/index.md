@@ -72,6 +72,8 @@ Each kind of component is expecting different kind of data. To be compatible wit
       * *displayName* => *A string with the name of the column to be displayed*
       * *value* => *(optional) Any object, containing the value to be returned, if not set, displayValue will be returned*
       * *type* => *(optional) A string, can be "html" or "string". If html is set, the displayValue will be rendered as innerHTML.*
+      * *sortingType* *(optional) A string, can be "text" or "number". Default value: "text"
+      * *sortingField* *(optional) A string, can be "displayValue" or "value". Default value: "displayValue"
 
 
 ``` xml
