@@ -3,7 +3,7 @@ layout: page
 title: Object
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/sequencer/steps/json-steps/object/
-metadesc: Creates an XML element ready to output a JSON Object with the .json requester.   The  Object  step adds an element node ready to output a JSON Object 
+metadesc: Creates an JSON Object.   The  Object  step adds an JSON Object.  The element resulting from this step can be output in the response of the sequence i
 ObjGroup: Sequencer
 ObjCatName: json-steps
 ObjName: Object
@@ -11,9 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.steps.JsonObjectStep
 ObjIcon: /images/beans/steps/images/jsonobject_32x32.png
 topnav: topnavobj
 ---
-##### Creates an XML element ready to output a JSON Object with the .json requester. 
+##### Creates an JSON Object. 
 
-The <i>Object</i> step adds an element node ready to output a JSON Object with the <i>.json</i> requester. <br/>The XML element resulting from this step can be output in the response XML of the sequence if the <b>Output</b> property is set to <span class="computer">true</span>, or used as a source by any other following step.<br/><i>Object</i> will be inserted to its <i>Object</i> parent using the <b>key</b> property as JSON key. Its value is set thanks to a source defined in <b>Source</b> property. If no source is defined or if its results is empty, the XML element contains the value of the <b>Default value</b> property, if a value is defined in this property. <br/><span class="orangetwinsoft">Notes:</span> <br/><br/>• Child steps can be added under this step to create a data structure. The <i>key</i> property of children step is used for the JSON transformation.<br/>
+The <i>Object</i> step adds an JSON Object. <br/>The element resulting from this step can be output in the response of the sequence if the <b>Output</b> property is set to <span class="computer">true</span>, or used as a source by any other following step.<br/><i>Object</i> will be inserted to its <i>Object</i> parent using the <b>key</b> property as JSON key. Its value is set thanks to a source defined in <b>Source</b> property. If no source is defined or if its results is empty, the element contains the value of the <b>Default value</b> property, if a value is defined in this property. <br/><span class="orangetwinsoft">Notes:</span> <br/><br/>• Other Child steps can be added under this step to create a data structure. The <i>key</i> property of children step is used for the JSON key.<br/>
 
 Property | Type | Category | Description
 --- | --- | --- | ---

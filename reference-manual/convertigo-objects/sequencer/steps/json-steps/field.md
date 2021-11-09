@@ -3,7 +3,7 @@ layout: page
 title: Field
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/sequencer/steps/json-steps/field/
-metadesc: Creates an XML element ready to output a JSON base type with the .json requester.   The  Field  step adds an element node ready to output a JSON strin
+metadesc: Creates a JSON base type.   The  Field  step adds a JSON string, number, boolean or null. The element resulting from this step can be output in the re
 ObjGroup: Sequencer
 ObjCatName: json-steps
 ObjName: Field
@@ -11,9 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.steps.JsonFieldStep
 ObjIcon: /images/beans/steps/images/jsonfield_32x32.png
 topnav: topnavobj
 ---
-##### Creates an XML element ready to output a JSON base type with the .json requester. 
+##### Creates a JSON base type. 
 
-The <i>Field</i> step adds an element node ready to output a JSON string, number, boolean or null with the <i>.json</i> requester. <br/>The XML element resulting from this step can be output in the response XML of the sequence if the <b>Output</b> property is set to <span class="computer">true</span>, or used as a source by any other following step.<br/><i>Field</i> will be inserted to its <i>Object</i> parent using the <b>key</b> property as JSON key. Its value is set thanks to a source defined in <b>Source</b> property. If no source is defined or if its results is empty, the XML element contains the value of the <b>Default value</b> property, if a value is defined in this property. <br/>
+The <i>Field</i> step adds a JSON string, number, boolean or null.<br/>The element resulting from this step can be output in the response of the sequence if the <b>Output</b> property is set to <span class="computer">true</span>, or used as a source by any other following step.<br/><i>Field</i> will be inserted to its <i>Object</i> parent using the <b>key</b> property as JSON key. Its value is set thanks to a source defined in <b>Source</b> property. If no source is defined or if its results is empty, the element contains the value of the <b>Default value</b> property, if a value is defined in this property. <br/>
 
 Property | Type | Category | Description
 --- | --- | --- | ---
