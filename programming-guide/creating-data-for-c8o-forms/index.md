@@ -45,16 +45,37 @@ By default variable's type are standard, if you want to use HTML ones enter "htm
 ##### Documentation and internationalization for the users of data sources #####
 
 You can provide documentation using the comment field of the Sequence, or of the variable. This documentation will be displayed within the no-code studio to the app maker. 
+
+You must specify the type of component supported by your data source using the types fields. See below
+
 If you want to internationalize your comments you can follow the following syntax: 
 
-```html
-<div class="en">Get the list of <b>company's</b> employees</div> <!--for English support-->
-<div class="fr">Obtenir la liste des employés de <b>l'entreprise</b></div> <!--for French support-->
-<div class="es">Obtener la lista de empleados de la <b>empresa</b></div> <!--for Spanish support-->
-<div class="it">Ottenere l'elenco dei dipendenti <b>dell'azienda<b></div> <!--for Italian support-->
-```
-
-Each div contains a class called "en" for English, "fr" for French, "es" for Spanish, and "it" for Italian. 
+```JSON
+{
+        // English support
+        "en": {
+            "displayName": "Fake list of company employees",
+            "comment": "Returns a fake list of company employees"
+        },
+        // French support
+        "fr": {
+            "displayName": "Fausse liste des collaborateurs de l'entreprise",
+            "comment": "Renvoi une fausse liste des collaborateurs de l'entreprise"
+        },
+        // Spanish support
+        "es": {
+            "displayName": "Falsa lista de los empleados de la empresa",
+            "comment": "Devuelve una lista falsa de los empleados de la empresa"
+        },
+        // Italian support
+        "it": {
+            "displayName": "Falso elenco dei dipendenti dell'azienda",
+            "comment": "Restituisce un falso elenco di dipendenti dell'azienda"
+        },
+        // Supported types 
+	      "types":["select", "grid"]
+}
+``` 
 
 You can use any of the [ISO 639-1](https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1) to tag your documentation
 
