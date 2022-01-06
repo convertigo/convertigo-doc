@@ -48,9 +48,11 @@ function getCurrentVersion() {
 }
 
 function getAllVersions() {
-	$.getJSON($(".fa-home")[0].href + "../index.php","v=k").done(function(res) {
-		createComboBoxWithJSON(res);
-	});	
+	$.get("https://c8o-documentation.s3.eu-west-3.amazonaws.com/", {delimiter:"/", prefix:"documentation/"}, function(xml) {
+		var versions = $(xml).find("Prefix").map(function(d) { var t = this.textContent; return t.substring(14, t.length -1) }).get();
+		versions.shift();
+		createComboBoxWithJSON(versions);
+	});
 }
 
 function createComboBoxWithJSON(json) {
@@ -73,18 +75,10 @@ function createComboBoxWithJSON(json) {
 			}
 		}
 
-		let option = document.createElement("option");
-		option.textContent = "older";
-		select.options.add(option);
-
 		$(select).on("change", function () {
 			let currVersion = getCurrentVersion();
 			let selectedVersion = select.selectedOptions[0].innerHTML;
-			if (selectedVersion == "older") {
-				location.href = "/document/all/";
-			} else {
-				location.href = location.href.replace("/" + currVersion + "/", "/" + selectedVersion + "/");
-			}
+			location.href = location.href.replace("/" + currVersion + "/", "/" + selectedVersion + "/");
 		});
 		let versionDiv = document.getElementById('versions');
 		versionDiv.appendChild(select);
