@@ -5,12 +5,9 @@ jobs:
     - image: jekyll/jekyll:3.8
     working_directory: /srv/jekyll
     steps:
-    - add_ssh_keys:
-        fingerprints:
-        - "8b:eb:d2:c3:a4:2a:d8:c1:16:21:1e:32:83:21:7c:c5"
     - run:
         name: Install dependencies
-        command: apk add --no-cache rsync openssh-client
+        command: apk add --no-cache py-pip && pip install --upgrade s3cmd
     - checkout
     - restore_cache:
         keys:
@@ -26,8 +23,8 @@ jobs:
     - run:
         name: Copy documentation to the web server
         command: |
-          ssh-keyscan -H $(echo ${DESTINATION} | sed -e "s,.*@\(.*\):.*,\1,") >> ~/.ssh/known_hosts
-          rsync -azv --no-perms --no-owner --no-group --no-times --del _site/ ${DESTINATION}$(echo $CIRCLE_BRANCH | sed s,/,-,g)/
+          export VERS=$(echo $CIRCLE_BRANCH | sed s,/,-,g)
+          s3cmd sync -P _site/* ${DESTINATION}/${VERS}/
 workflows:
   version: 2
   all:
