@@ -3,7 +3,7 @@ layout: page
 title: Write JSON
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/sequencer/steps/file-management-steps/write-json/
-metadesc: Writes XML content converted to JSON in an JSON file.   The  Write JSON  step allows outputting XML content converted to JSON in an JSON file on the d
+metadesc: Writes XML content converted to JSON in a JSON file.   The  Write JSON  step allows outputting XML content converted to JSON in a JSON file on disk. I
 ObjGroup: Sequencer
 ObjCatName: file-management-steps
 ObjName: Write JSON
@@ -11,9 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.steps.WriteJSONStep
 ObjIcon: /images/beans/steps/images/jsonW_32x32.png
 topnav: topnavobj
 ---
-##### Writes XML content converted to JSON in an JSON file. 
+##### Writes XML content converted to JSON in a JSON file. 
 
-The <i>Write JSON</i> step allows outputting XML content converted to JSON in an JSON file on the disk. It can either create a new JSON file or update an existing JSON file as JSON array. 
+The <i>Write JSON</i> step allows outputting XML content converted to JSON in a JSON file on disk. It can either create a new JSON file or update an existing JSON file as JSON array. 
 
 Property | Type | Category | Description
 --- | --- | --- | ---

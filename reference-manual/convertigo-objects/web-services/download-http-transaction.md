@@ -3,7 +3,7 @@ layout: page
 title: Download HTTP transaction
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/web-services/download-http-transaction/
-metadesc: Defines an Download file HTTP transaction.   An  Download HTTP transaction  is a Convertigo transaction based on HTTP requests. It allows to perform a
+metadesc: Defines a Download file HTTP transaction.   A  Download HTTP transaction  is a Convertigo transaction based on HTTP requests. It allows to perform an 
 ObjGroup: Web services
 ObjCatName: 
 ObjName: Download HTTP transaction
@@ -11,9 +11,9 @@ ObjClass: com.twinsoft.convertigo.beans.transactions.DownloadHttpTransaction
 ObjIcon: /images/beans/transactions/images/downloadhttptransaction_color_32x32.png
 topnav: topnavobj
 ---
-##### Defines an Download file HTTP transaction. 
+##### Defines a Download file HTTP transaction. 
 
-An <i>Download HTTP transaction</i> is a Convertigo transaction based on HTTP requests. It allows to perform an HTTP request and get the response store in a file. <br/>It is used to retrieve any data in HTTP protocol (non XML-based REST web service, image or file getting, etc.). <br/>Be default, files are downloaded in the current project <b>_data/download/[random]</b> directory, cleared at project initialization. <br/><span class="orangetwinsoft">Note:</span> <i>HTTP connector</i> supports OAuth authentication. To enable OAuth, you simply need to provide four variables to any kind of <i>HTTP transaction</i>: <span class="computer">__header_oAuthKey</span>, <span class="computer">__header_oAuthSecret</span>, <span class="computer">__header_oAuthToken</span> and <span class="computer">__header_oAuthTokenSecret</span>. For more information about OAuth in <i>HTTP connector</i>, refer to the following article in our Technical Blog: <i>http://www.convertigo.com/en/how-to/technical-blog/entry/using-oauth-with-convertigo-http-connector.html</i><br/>Dynamic parameter exists:<br/>• <span class="computer">__header_[name]</span>: dynamically add a header <b>name</b>,<br/>• <span class="computer">__GET_[name]</span>: dynamically add a GET parameter <b>name</b>,<br/>• <span class="computer">__POST_[name]</span>: dynamically add a POST parameter <b>name</b>,<br/>• <span class="computer">__download_folder</span>: dynamically set the file destination <b>folder</b>,<br/>• <span class="computer">__download_filename[name]</span>: dynamically set the file destination <b>filename</b>,<br/>
+A <i>Download HTTP transaction</i> is a Convertigo transaction based on HTTP requests. It allows to perform an HTTP request and get the response store in a file. <br/>It is used to retrieve any data in HTTP protocol (non XML-based REST web service, image or file getting, etc.). <br/>Be default, files are downloaded in the current project <b>_data/download/[random]</b> directory, cleared at project initialization. <br/><span class="orangetwinsoft">Note:</span> <i>HTTP connector</i> supports OAuth authentication. To enable OAuth, you simply need to provide four variables to any kind of <i>HTTP transaction</i>: <span class="computer">__header_oAuthKey</span>, <span class="computer">__header_oAuthSecret</span>, <span class="computer">__header_oAuthToken</span> and <span class="computer">__header_oAuthTokenSecret</span>. For more information about OAuth in <i>HTTP connector</i>, refer to the following article in our Technical Blog: <i>http://www.convertigo.com/en/how-to/technical-blog/entry/using-oauth-with-convertigo-http-connector.html</i><br/>Dynamic parameter exists:<br/>• <span class="computer">__header_[name]</span>: dynamically add a header <b>name</b>,<br/>• <span class="computer">__GET_[name]</span>: dynamically add a GET parameter <b>name</b>,<br/>• <span class="computer">__POST_[name]</span>: dynamically add a POST parameter <b>name</b>,<br/>• <span class="computer">__download_folder</span>: dynamically set the file destination <b>folder</b>,<br/>• <span class="computer">__download_filename[name]</span>: dynamically set the file destination <b>filename</b>,<br/>
 
 Property | Type | Category | Description
 --- | --- | --- | ---
