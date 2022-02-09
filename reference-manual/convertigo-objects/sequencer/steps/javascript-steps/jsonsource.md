@@ -3,7 +3,7 @@ layout: page
 title: JsonSource
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/sequencer/steps/javascript-steps/jsonsource/
-metadesc: Defines a step extracting a JSON typed XML structure from a source into a variable in Javascript scope.   The  JsonSource  step use the source defined
+metadesc: Defines a step extracting a JSON typed XML structure from a source into a variable in Javascript scope.   The  JsonSource  step uses the source define
 ObjGroup: Sequencer
 ObjCatName: javascript-steps
 ObjName: JsonSource
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a step extracting a JSON typed XML structure from a source into a variable in Javascript scope. 
 
-The <i>JsonSource</i> step use the source defined in the <b>Source</b> property, parse it as JSON and sets a JavaScript variable in the current executed sequence JavaScript scope. This variable contains a <span class="computer">JS Object</span> or a <span class="computer">JS Array</span>.<br/>The variable is named after the <b>Variable name</b> property value. It exists while the sequence is running.<br/>If no node matches, the variable is <span class="computer">null</span>.
+The <i>JsonSource</i> step uses the source defined in the <b>Source</b> property, parses it as JSON and sets a JavaScript variable in the current executed sequence JavaScript scope. This variable contains a <span class="computer">JS Object</span> or a <span class="computer">JS Array</span>.<br/>The variable is named after the <b>Variable name</b> property value. It exists while the sequence is running.<br/>If no node matches, the variable is <span class="computer">null</span>.
 
 Property | Type | Category | Description
 --- | --- | --- | ---
