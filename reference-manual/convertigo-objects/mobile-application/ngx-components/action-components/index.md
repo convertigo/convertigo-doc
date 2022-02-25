@@ -6,5 +6,6 @@ permalink: reference-manual/convertigo-objects/mobile-application/ngx-components
 topnav: topnavobj
 ---
 * [CustomAction](customaction/)
+* [CustomAsyncAction](customasyncaction/)
 * [UseVariable](usevariable/)
 * [Variable](variable/)
