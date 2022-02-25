@@ -19,6 +19,7 @@ Property | Type | Category | Description
 --- | --- | --- | ---
 Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
 Is active | boolean | standard | Defines whether the component is active.<br/>
+Application assets | XMLVector | expert | Defines the assets needed by this action.<br/>Add here any additional json to be inserted in the app:architect:build:option:assets[] of angular.json (Ex {"glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/"})
 Application imports | XMLVector | expert | Defines the imports needed by this action.<br/>Add here any 'Import' statements needed in the app.module.ts
 Application modules | XMLVector | expert | Defines the modules needed by this action.<br/>Add here any application module to be inserted in the @NgModule({Imports[]}) in app.module.ts
 Application packages | XMLVector | expert | Defines the packages needed by this action.<br/>Add here any NPM Package needed by you code. They will be automatically added to the app's Packages.json
