@@ -25,4 +25,6 @@ Application modules | XMLVector | expert | Defines the modules needed by this ac
 Application packages | XMLVector | expert | Defines the packages needed by this action.<br/>Add here any NPM Package needed by you code. They will be automatically added to the app's Packages.json
 Application plugins | XMLVector | expert | Defines the plugins needed by this action.<br/>Add here any additional Cordova plugin your code needs (Ex ion native Packages).
 Application providers | XMLVector | expert | Defines the providers needed by this action.<br/>Add here any application module to be inserted in the @NgModule({Providers[]}) in app.module.ts
+Application scripts | XMLVector | expert | Defines the scripts needed by this action.<br/>Add here any additional path to script file needed by your code
+Application styles | XMLVector | expert | Defines the styles needed by this action.<br/>Add here any additional path to scss file needed by your code
 Page imports | XMLVector | expert | Defines the imports needed by this action.<br/>Add here any 'Import' statements your code would require to compile.
