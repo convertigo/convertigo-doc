@@ -10,7 +10,15 @@ This chapter describes you how to use Convertigo backend objects to connect your
 
 ## Connecting to Data
 
+Convertigo features a powerful connector librray to enable your apps to read and write data to extarnal systems. You can use connectors for many type of data fomr Web services to SQL or NoSQL databases. In this chapiper you will learn how to configure and use your connectors.
+
 ### Connect to Rest Web Services
+
+Convertigo use the HTTP connector to connectot REST/JSON REST /XML and SOAP/XML web services. You can cerate connectors and transactioons manually or use the Web services impirt Wizrd to do this automatically.
+
+#### Creating manual Connector
+Right Click on Project->New->Connector Choose connector technology and 
+<imG>
 
 ### Connect to SOAP Web Services
 
