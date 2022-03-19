@@ -3,7 +3,7 @@ title: Homepage
 keywords: homepage
 sidebar: c8o_sidebar
 permalink: /
-summary: Please find here our official documentations for Convertigo Studio and Convertigo Enterprise Mobility Server.
+summary: Please find here our official documentations for Convertigo Studio and Convertigo Low Code Platform.
 ---
 On this website, you will find the Latest documentation available.
 
