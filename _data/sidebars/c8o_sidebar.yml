@@ -33,7 +33,7 @@ entries:
     - title: Convertigo Mobile Builder
       url: /reference-manual/convertigo-mobile-builder/
       output: web, pdf
-    - title: Convertigo MBaaS Server
+    - title: Convertigo Server
       url: /reference-manual/convertigo-mbaas-server/
       output: web, pdf
     - title: Appendixes
