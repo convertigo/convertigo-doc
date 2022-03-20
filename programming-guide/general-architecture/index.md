@@ -158,11 +158,11 @@ Starting from Convertigo 8.0.0, a local CouchDB server is included in the studio
 But, if you do not want to use the integrated PouchDB server, You can link your Studio with your local CouchDB server. To do this  :
 
 - Window->Preferences->Convertigo->Engine->Full sync
-- Check the CouchDB option
+- Uncheck the PouchDB option
 - Setup the URL to access CouchDB server, by default this is set to http://127.0.0.1:5984 to access a CouchDB server running on the same workstation than your Studio.
 - Setup username and password to access the CouchDB server. By default these are left blank as the default installation of CouchDB server does not require credentials.
 
-The same, you can link your Server with a CouchDB server. To do this  :
+The same, you can link your Convertigo Server with a CouchDB server. To do this  :
 
 - Launch the admin console on a web browser , url is http://< your server>:28080/convertigo/admin
 - Login (By default admin, admin)
