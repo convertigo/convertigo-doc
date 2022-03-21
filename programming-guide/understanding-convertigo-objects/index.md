@@ -32,3 +32,9 @@ To create a new Project using the **Ngx** components use the **Ngx Mobile Builde
 
 By Default, all Front-end applications are Web based (or Progressive Web Apps - PWA)  applications automatically served by the Convertigo Servers. These applications can be accessed by simple URL. You can optionally build Native iOS or Android applications by using the [platforms](../../reference-manual/convertigo-objects/mobile-application/platforms/mobile-platforms) Objects. **Platforms** Objects will be automatically created when you use the New Project Wizard under the **Application** Object.
 
+### Native Mobile Platform Objects.
+
+You can use 2 different methods to build the iOS or the Android applications :
+* Use the Studio Local build: Right Click on the Platform Object ->Cordova->Local Build (Or Any other option in the menu). This will launch a local build process on your Workstation, downloading all the required components to achieve the task (Cordova, Android SDKs, JDK and so on..). Local Build can only Build iOS applications on MacOS workstations.
+* Use Cloud Build: Launch the test platform (Right click on project->Open Test Platform). Open the **Android** or the **iOS** section, And click on the **Build Mobile Platform** button. This will upload your project resources to Convertigo Cloud build and start a Native application Build process. Once the build is done (Several minutes), a QR code will be displayed. Clicking on the QR code will download the .IPA or the .APK file of your app you will be able to to upload to the Apple App Store (.IPA) or to the Google PlayStore (.APK).
+
