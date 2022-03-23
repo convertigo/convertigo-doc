@@ -264,7 +264,17 @@ Select the Step from where you want to 'Source' data from. (All Red Steps can no
 
 ### Build logic flows
 
+Sequences can have logic flows such as If/The/else decisions, Iterators and loop or Parallel executions. The execution is based on a graphic tree as follow :
+* For **If** steps, every step under a If node will be executed if the If condition matches. If not the flow will continue to steps on the same level.
+* For **If / Then / Else** steps, every step under the **Then** Step will be executed if the If condition matches. If not all the steps un the **Else** will be executed. At the end the flow will continue to steps on the same level.
+* For **Iterators** and **loops** all steps under an **Iterator** Step will be executed repeatedly for each Iteration. When the iterations are finished the flow will continue to the step at the same level.
+* For **Parallel** steps, Each step under a **Parallel** Step will be executed at the same time. The sequence will resume to the next Step at the same level when all the Steps finished their executions.
+
+...image...
+
 ### Iterate on patterns
+
+
 
 ### Understanding variables
 
