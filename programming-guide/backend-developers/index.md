@@ -130,7 +130,7 @@ In the Project Explorer view, you will see the SOAP templates in the **soap-temp
 ![SOAP Web Service SOAP template](../../images/pguide_img/backend/soap/09_soap_explorer_templates.png)
 ### Connect to SQL Databases
 
-The SQL Connector is capable to connect to different Database Servers:  
+The SQL Connector is able to connect to different Database Servers:  
 
 | Supported Database   | Driver                                                           |
 |----------------------|------------------------------------------------------------------|
@@ -145,9 +145,9 @@ The SQL Connector is capable to connect to different Database Servers:
 | ODBC Bridge          | sun.jdbc.odbc.JdbcOdbcDriver                                     |
 
 
-**JNDI** Database access is also available. In This case The database has to be referenced in the Application Server definition. This is only to be used in the case Convertigo Servers are deployed in J2EE Application Servers such as IBM WebSphere for example.
+**JNDI** Database access is also available. In This case The database has to be referenced in the Application Server definition. This is only to be used in the case Convertigo Servers are deployed in J2EE Application Servers such as IBM WebSphere.
 
-You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from you project. You will just have to know explicitly the driver URL to access it.
+You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from your project. You will just have to know explicitly the driver URL to access it.
 
 ### Create a SQL Connector based project
 To create a new SQL project, click New > File > Project... > Convertigo Projects > **SQL project**
@@ -292,16 +292,26 @@ Select the Step from where you want to 'Source' data from. (All Red Steps can no
 
 |XPath  sample | Usage |
 |--------|-------|
-|/data1/data2/data3/text() | Will select the data3 node value if there is only one data3 occurrence in the structure or all data3 values (concatenated) if there are several occurrences of data3 |
-|/data1/data2/data3[1]/text() | Will select all the first data3 occurrence value |
-|/data1/data2/data3[@orginalKeyName = 'MyKey']/text() | Will select the data3 occurrence having a attribute 'originalKeyname' equal to 'MyKey' |
-|/data1//data4/text() | Will select all data4 node values that are under the data1 node whatever is their tree depth |
+|/data1/data2/data3/text() | Will select the **data3** node value if there is only one **data3** occurrence in the structure or all **data3** values (concatenated) if there are several occurrences of **data3** |
+|/data1/data2/data3[1]/text() | Will select all the first **data3** occurrence value |
+|/data1/data2/data3[@orginalKeyName = 'MyKey']/text() | Will select the **data3** occurrence having a attribute **'originalKeyname'** equal to **'MyKey'** |
+|/data1//data4/text() | Will select all **data4** node values that are under the **data1** node whatever is their tree depth |
 
 **XPaths** are a powerful selector tools to be able to 'Source' data from any structure
 
 ### Build logic flows
 
+Sequences can have logic flows such as If/The/else decisions, Iterators and loop or Parallel executions. The execution is based on a graphic tree as follow :
+* For **If** steps, every step under a If node will be executed if the If condition matches. If not the flow will continue to steps on the same level.
+* For **If / Then / Else** steps, every step under the **Then** Step will be executed if the If condition matches. If not all the steps un the **Else** will be executed. At the end the flow will continue to steps on the same level.
+* For **Iterators** and **loops** all steps under an **Iterator** Step will be executed repeatedly for each Iteration. When the iterations are finished the flow will continue to the step at the same level.
+* For **Parallel** steps, Each step under a **Parallel** Step will be executed at the same time. The sequence will resume to the next Step at the same level when all the Steps finished their executions.
+
+...image...
+
 ### Iterate on patterns
+
+
 
 ### Understanding variables
 
