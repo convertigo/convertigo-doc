@@ -37,7 +37,7 @@ The project is created in the Studio, in the **Projects** view
 
 ![REST project projects view](../../images/pguide_img/backend/ws/06_restws_projects_view.png)
 
-There are two ways of creating the transactions in the Connector. If the Web Service has a yaml or json schema you can import it and transactions will be automatically created or else you can manually set up the transactions.
+There are two ways of creating Connector and Transactions. If the Web Service has a YAML or JSWON openAPI definition (Swagger definition) you can import it and transactions will be automatically created or else you can manually set up the transactions.
 
 #### __Manual transactions__
 
@@ -93,20 +93,26 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 
 ### Connect to SQL Databases
 
-The SQL Connector is capable to connect to multiple SGBD.  
-| Supported SGBD       | Driver                                                           |
+The SQL Connector is capable to connect to different Database Servers:  
+
+| Supported Database   | Driver                                                           |
 |----------------------|------------------------------------------------------------------|
-| mySQL                | com.mysql.jdbc.Driver / com.mysql.cj.jdbc.Driver (8+)            |
+| mySQL                | com.mysql.jdbc.Driver / com.mysql.cj.jdbc.Driver (V8+)           |
 | MariaDB              | org.mariadb.jdbc.Driver                                          |
 | Microsoft SQL Server | net.sourceforge.jtds.jdbc.Driver                                 |
 | Oracle               | oracle.jdbc.driver.OracleDriver                                  |
 | PostgreSQL           | org.postgresql.Driver                                            |
 | HSQLDB               | org.hsqldb.jdbcDriver                                            |
-| DB2                  | com.ibm.db2.jcc.DB2Driver / com.ibm.as400.access.AS400JDBCDriver |
+| IBM DB2 on AS/400    | com.ibm.as400.access.AS400JDBCDriver                             |
+| IBM DB2              | com.ibm.db2.jcc.DB2Driver                                        |  
 | ODBC Bridge          | sun.jdbc.odbc.JdbcOdbcDriver                                     |
 
-**JNDI** Database access is also available.
 
+**JNDI** Database access is also available. In This case The database has to be referenced in the Application Server definition. This is only to be used in the case Convertigo Servers are deployed in J2EE Application Servers such as IBM WebSphere for example.
+
+You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from you project. You will just have to know explicitly the driver URL to access it.
+
+### Create a SQL Connector based project
 To create a new SQL project, click New > File > Project... > Convertigo Projects > **SQL project**
 
 ![New SQL project](../../images/pguide_img/backend/sql/01_new_project_sql.png)
@@ -139,11 +145,11 @@ In the final wizard page, you have the possibility to write your SQL query. Encl
 
 ![SQL project transaction query](../../images/pguide_img/backend/sql/08_sql_new_transaction_query.png)
 
-**my_id** transaction variable has been automatically created in the SQL transaction. Convertigo variables are String based variables. Some SGBD need the data to be cast to the correct type (**::integer** for PostgreSQL query, for example)
+**my_id** transaction variable has been automatically created in the SQL transaction. Convertigo variables are String based variables. Some Database Servers need the data to be casted to the correct type (**::integer** for PostgreSQL query, for example)
 
 ![SQL project transaction variables](../../images/pguide_img/backend/sql/081_sql_query_variables.png)
 
-If you double-clic the SQL connector this will open a Tab with the Connector buttons and the transaction response data.  
+If you double-click the SQL connector this will open a Tab with the Connector buttons and the transaction response data.  
 If you haven't checked already, there is a button to test connection to your database.
 
 ![SQL project connector test connection](../../images/pguide_img/backend/sql/09_sql_test_connection.png)
@@ -154,15 +160,15 @@ Right-click the transaction > Execute or press F5 key to execute transaction and
 
 If your transaction requires dynamic data, use Test cases as below
 
-![SQL project tes case response](../../images/pguide_img/backend/sql/10.1_sql_new_transaction_response.png)
+![SQL project test case response](../../images/pguide_img/backend/sql/10.1_sql_new_transaction_response.png)
 
-![SQL project tes case response](../../images/pguide_img/backend/sql/15_sql_testcase_variables.png)
+![SQL project test case response](../../images/pguide_img/backend/sql/15_sql_testcase_variables.png)
 
 You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
 
 ![SQL call transaction step](../../images/pguide_img/backend/sql/11_sql_call_transaction_step.gif)
 
-To update transaction schema to be used in Sequence **Source picker**, execute the transaction at least once, right-click it and select **Update schema from current connector data**
+To update transaction schema to be used in Sequence **Source picker**, execute the transaction at least once, right-click it and select **Update schema from current connector data** or **Update schema from transaction definition**
 
 ![SQL transaction update schema](../../images/pguide_img/backend/sql/12_sql_source_picker.png)
 
@@ -172,9 +178,9 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 
 ### Connect to NoSQL Databases
 
-### Connect to SAP Netweaver Systems
+### Connect to SAP NetWeaver Systems
 
-### Understanding data models & schemas
+### Understanding Data schemas
 
 ## Building Backend Services
 
@@ -182,7 +188,7 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 
 ### Understanding the "Source" concept
 
-#### Xpath models
+#### XPath models
 
 ### Build logic flows
 
@@ -192,13 +198,13 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 
 ### Compute data & business logic
 
-#### Integrating Javascript code
+#### Integrating JavaScript code
 
 ##### Calling some java code
 
 ##### Using third party java libraries
 
-##### Using third party Javascript libraries
+##### Using third party JavaScript libraries
 
 ### Reading & Writing data files
 
