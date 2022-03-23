@@ -12,8 +12,8 @@ This chapter describes you how to use Convertigo backend objects to connect your
 
 ### Connect to Rest Web Services
 
-The HTTP Connector is capable to connect to Rest API Web Services.  
-To create a new REST project, click New > File > Project... > Convertigo Projects > **REST Empty Web service**
+Convertigo features the HTTP Connector able to connect and consume Rest API Web Services. 
+To create a new REST project, click New->File->Project...->Convertigo Projects->**REST Empty Web service** . This template will most of the work, but you can also manually create an HTTP Connector in any existing project by Right Click on project ->New->Connector->HTTP Connector. The Connector will be placed in the Connectors folder.
 
 ![New REST project](../../images/pguide_img/backend/ws/01_new_project_restws.png)
 
@@ -25,7 +25,7 @@ You have the possibility to give the HTTP connector a name
 
 ![REST project conenctor name](../../images/pguide_img/backend/ws/03_new_project_restws_connector.png)
 
-In next screen, set the address of the Rest Web Service to connect to (without http(s) protocol)
+In next screen, set the address of the Rest Web Service to connect to. (Do not type http:// or https://) as this is automatically computed according to the SSL setting).
 
 ![REST project connector parameters](../../images/pguide_img/backend/ws/04_new_project_restws_connector_parameters.png)
 
@@ -46,14 +46,20 @@ Right-click the Connector or its **Transactions** folder, then select New > Tran
 ![New REST transaction](../../images/pguide_img/backend/ws/07_restws_new_transaction.png)
 
 Depending on the target Rest Web Service choose the appropriate transaction type:
+* **XML HTTP Transaction** will consume XML based REST Webservices (Data returned by the web services in XML format), mostly for XML/RPC type of web services
+* **JSON HTTP Transaction** will consume jSON based REST Webservices (Data returned by the web services in jSON format), mostly for standard RESTful web services available today.
+* **Download HTTP Transaction** will consume Binary based REST Webservices (Data returned by the web services in Binary format), mostly for downloading data in Binary format.
+* **HTTP Transaction** will consume a REST based on unknown format. The data will be returned as raw data, you will have to parse by hand.
 
 ![New REST transaction type](../../images/pguide_img/backend/ws/08_restws_new_transaction_json.png)
 
-Give the transaction a name, add built-in and/or custom variables (they can be edited or added later)
+Give the transaction a name, add built-in and/or custom variables (they can be edited or added later). These variables will enable you to invoke the transactions with a given BODY, ContentType or any other POST or GET element in the HTTP Request.
 
 ![REST transaction name and variables](../../images/pguide_img/backend/ws/09_restws_new_transaction_json_name.png)
 
-Right-click the transaction > Execute or press F5 key to execute transaction and get result
+Once the Transaction is created, you can right-click the transaction > Execute or press F5 key to execute transaction to test it and get results.
+
+Also you can add a **Test Case** to it (Right Click o Transaction->New->Test Case) and set values in Variables to test your Transaction with a Given set of Input Variables. To set the value in a Variable, give the value in the **Default Value** Test Case variable's property.
 
 ![REST transaction response](../../images/pguide_img/backend/ws/10_restws_new_transaction_json_response.png)
 
