@@ -23,7 +23,7 @@ Choose a name wisely ;)
 
 You have the possibility to give the HTTP connector a name
 
-![REST project conenctor name](../../images/pguide_img/backend/ws/03_new_project_restws_connector.png)
+![REST project connector name](../../images/pguide_img/backend/ws/03_new_project_restws_connector.png)
 
 In next screen, set the address of the Rest Web Service to connect to. (Do not type http:// or https://) as this is automatically computed according to the SSL setting).
 
@@ -92,6 +92,83 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 ### Connect to SOAP Web Services
 
 ### Connect to SQL Databases
+
+The SQL Connector is capable to connect to multiple SGBD.  
+| Supported SGBD       | Driver                                                           |
+|----------------------|------------------------------------------------------------------|
+| mySQL                | com.mysql.jdbc.Driver / com.mysql.cj.jdbc.Driver (8+)            |
+| MariaDB              | org.mariadb.jdbc.Driver                                          |
+| Microsoft SQL Server | net.sourceforge.jtds.jdbc.Driver                                 |
+| Oracle               | oracle.jdbc.driver.OracleDriver                                  |
+| PostgreSQL           | org.postgresql.Driver                                            |
+| HSQLDB               | org.hsqldb.jdbcDriver                                            |
+| DB2                  | com.ibm.db2.jcc.DB2Driver / com.ibm.as400.access.AS400JDBCDriver |
+| ODBC Bridge          | sun.jdbc.odbc.JdbcOdbcDriver                                     |
+
+**JNDI** Database access is also available.
+
+To create a new SQL project, click New > File > Project... > Convertigo Projects > **SQL project**
+
+![New SQL project](../../images/pguide_img/backend/sql/01_new_project_sql.png)
+
+Choose a name for the project
+
+![SQL project name](../../images/pguide_img/backend/sql/02_new_project_sql_name.png)
+
+You have the possibility to give the SQL connector a name
+
+![SQL project connector name](../../images/pguide_img/backend/sql/03_new_project_sql_connector.png)
+
+In next screen, choose the **JDBC driver** for your database connection and enter **JDBC URL** from proposed template. Fill in **Username** and **Password**, if needed. You can test the connection to the database using the **Test connection** button.
+
+![SQL project connector parameters](../../images/pguide_img/backend/sql/04_new_project_sql_parameters.png)
+
+The project is created in the Studio, in the **Projects** view
+
+![SQL project projects view](../../images/pguide_img/backend/sql/05_new_project_sql_created.png)
+
+To create a new SQL query, create a new SQL transaction. Right-click the Connector or its **Transactions** folder, then select New > Transaction
+
+![SQL project new transaction](../../images/pguide_img/backend/sql/06_sql_new_transaction.png)
+
+There is currently only one transaction type, choose **SQL transaction**
+
+![SQL project new transaction type](../../images/pguide_img/backend/sql/07_sql_new_transaction_type.png)
+
+In the final wizard page, you have the possibility to write your SQL query. Enclose transaction variables (dynamic values) with brackets **{my_variable}**, this will also automatically creates the variables.
+
+![SQL project transaction query](../../images/pguide_img/backend/sql/08_sql_new_transaction_query.png)
+
+**my_id** transaction variable has been automatically created in the SQL transaction. Convertigo variables are String based variables. Some SGBD need the data to be cast to the correct type (**::integer** for PostgreSQL query, for example)
+
+![SQL project transaction variables](../../images/pguide_img/backend/sql/081_sql_query_variables.png)
+
+If you double-clic the SQL connector this will open a Tab with the Connector buttons and the transaction response data.  
+If you haven't checked already, there is a button to test connection to your database.
+
+![SQL project connector test connection](../../images/pguide_img/backend/sql/09_sql_test_connection.png)
+
+Right-click the transaction > Execute or press F5 key to execute transaction and get result
+
+![SQL project transaction response](../../images/pguide_img/backend/sql/10_sql_new_transaction_response.png)
+
+If your transaction requires dynamic data, use Test cases as below
+
+![SQL project tes case response](../../images/pguide_img/backend/sql/10.1_sql_new_transaction_response.png)
+
+![SQL project tes case response](../../images/pguide_img/backend/sql/15_sql_testcase_variables.png)
+
+You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
+
+![SQL call transaction step](../../images/pguide_img/backend/sql/11_sql_call_transaction_step.gif)
+
+To update transaction schema to be used in Sequence **Source picker**, execute the transaction at least once, right-click it and select **Update schema from current connector data**
+
+![SQL transaction update schema](../../images/pguide_img/backend/sql/12_sql_source_picker.png)
+
+Double-click your **Call Transaction** Step to refresh and display schema in the Source picker tab
+
+![SQL transaction updated schema](../../images/pguide_img/backend/sql/14_sql_source_picker_updated.png)
 
 ### Connect to NoSQL Databases
 
