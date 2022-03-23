@@ -13,7 +13,7 @@ This chapter describes you how to use Convertigo backend objects to connect your
 ### Connect to Rest Web Services
 
 Convertigo features the HTTP Connector able to connect and consume Rest API Web Services. 
-To create a new REST project, click New->File->Project...->Convertigo Projects->**REST Empty Web service** . This template will most of the work, but you can also manually create an HTTP Connector in any existing project by Right Click on project ->New->Connector->HTTP Connector. The Connector will be placed in the Connectors folder.
+To create a new REST project, click New > File > Project... > Convertigo Projects > **REST Empty Web service**. This template will do most of the work, but you can also manually create an HTTP Connector in any existing project by Right Click on project  > New > Connector > HTTP Connector. The Connector will be placed in the Connectors folder.
 
 ![New REST project](../../images/pguide_img/backend/ws/01_new_project_restws.png)
 
@@ -91,6 +91,43 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 
 ### Connect to SOAP Web Services
 
+Convertigo HTTP connector is able to connect to SOAP Web Services (XML messaging) through the import of a WSDL file or url.
+
+To create a new SOAP project, click New > File > Project... > Convertigo Projects > **SOAP Web service**.
+
+![SOAP Web Service New project](../../images/pguide_img/backend/soap/01_soap_new_project.png)
+
+Give your project a name
+
+![SOAP Web Service New project name](../../images/pguide_img/backend/soap/02_soap_new_project_name.png)
+
+Next screen will ask for an URL or a file to the distant SOAP Web Service WSDL.
+
+![SOAP Web Service New project WSDL](../../images/pguide_img/backend/soap/03_soap_new_project_wsdl.png)
+
+The HTTP Connector is automatically created and named. **XML HTTP Transaction** are also automatically created and named by the SOAP method name and prefixed by a '**C**'
+
+![SOAP Web Service project created](../../images/pguide_img/backend/soap/04_soap_new_project_created.png)
+
+You can right-click the transaction > Execute or press F5 key to execute transaction to test it and get results. Left Panel is the Raw response of the WS and right panel is the XML or JSON response as seen in the transaction itself
+
+![SOAP Web Service transaction execute](../../images/pguide_img/backend/soap/05_soap_transaction_execute.png)
+
+You can test the other WS methods that require variable values using Test Cases.
+
+![SOAP Web Service transaction testcase](../../images/pguide_img/backend/soap/06_soap_transaction_testcase.png)
+
+You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
+
+![SOAP Web Service Call Step](../../images/pguide_img/backend/soap/07_soap_call_transaction_step.gif)
+
+No need to update the transaction schema for the Sequence Source Picker, it was automatically created when the WSDL was imported.
+
+![SOAP Web Service Source Picker](../../images/pguide_img/backend/soap/08_soap_call_step_source_picker.png)
+
+In the Project Explorer view, you will see the SOAP templates in the **soap-templates** folder. This can be edited at your convinience (variable name, etc...).
+
+![SOAP Web Service SOAP template](../../images/pguide_img/backend/soap/09_soap_explorer_templates.png)
 ### Connect to SQL Databases
 
 The SQL Connector is capable to connect to different Database Servers:  
