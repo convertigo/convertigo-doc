@@ -229,10 +229,38 @@ One of the most commons tasks performed by a **Sequence** is to call a Connector
 
 A Sequence can call a transaction from its own project or form any Other project installed in your workspace. When executed the [Call Transaction Step](../../reference-manual/convertigo-objects/sequencer/steps/convertigo-request-steps/call-transaction/) Step will provide the data returned by the Connector as a **Source** to any other following step in the Sequence.
 
-
 ### Understanding the "Source" concept
 
+**Sources** are a key concept in Convertigo. The basic idea is that each **Step** can provide data to the following steps in the execution flow. So, a given step can 'Source' some data from an other step previously executed.
+
+The **Source Picker Tool** will display the data structure tree provided by a step when you right click on a step ->Show in Picker
+
+... image ...
+
+If you want to link (We can also say 'Source') data provided by a step to an other Step, you will just have to Drag & Drop the wanted tree element **TXT** to the destination steps.
+
+... Image ... 
+
+An other way to do this is to use the **Source** property of a Step and click on the [...] button to open source selector window.
+
+... Image ...
+
+Select the Step from where you want to 'Source' data from. (All Red Steps can not be sourced as they will be executed after your step) And pick in the tree data structure the **TXT** element you want to bind to your step.
+
+... Image ...
+
 #### XPath models
+
+**XPaths** are a way to point to the data structure elements values we will want to source. This follows a standard syntax described [here](https://www.w3schools.com/xml/xpath_syntax.asp). In most cases, the source picker will generate for the you a Valid XPath so you do not have to bother so much about this. You can find below some very common XPath Use cases:
+
+|XPath  sample | Usage |
+|--------|-------|
+|/data1/data2/data3/text() | Will select the data3 node value if there is only one data3 occurrence in the structure or all data3 values (concatenated) if there are several occurrences of data3 |
+|/data1/data2/data3[1]/text() | Will select all the first data3 occurrence value |
+|/data1/data2/data3[@orginalKeyName = 'MyKey']/text() | Will select the data3 occurrence having a attribute 'originalKeyname' equal to 'MyKey' |
+|/data1//data4/text() | Will select all data4 node values that are under the data1 node whatever is their tree depth |
+
+**XPaths** are a powerful selector tools to be able to 'Source' data from any structure
 
 ### Build logic flows
 
