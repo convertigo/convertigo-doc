@@ -93,7 +93,7 @@ Double-click your **Call Transaction** Step to refresh and display schema in the
 
 ### Connect to SQL Databases
 
-The SQL Connector is capable to connect to different Database Servers:  
+The SQL Connector is able to connect to different Database Servers:  
 
 | Supported Database   | Driver                                                           |
 |----------------------|------------------------------------------------------------------|
@@ -108,9 +108,9 @@ The SQL Connector is capable to connect to different Database Servers:
 | ODBC Bridge          | sun.jdbc.odbc.JdbcOdbcDriver                                     |
 
 
-**JNDI** Database access is also available. In This case The database has to be referenced in the Application Server definition. This is only to be used in the case Convertigo Servers are deployed in J2EE Application Servers such as IBM WebSphere for example.
+**JNDI** Database access is also available. In This case The database has to be referenced in the Application Server definition. This is only to be used in the case Convertigo Servers are deployed in J2EE Application Servers such as IBM WebSphere.
 
-You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from you project. You will just have to know explicitly the driver URL to access it.
+You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from your project. You will just have to know explicitly the driver URL to access it.
 
 ### Create a SQL Connector based project
 To create a new SQL project, click New > File > Project... > Convertigo Projects > **SQL project**
@@ -255,10 +255,10 @@ Select the Step from where you want to 'Source' data from. (All Red Steps can no
 
 |XPath  sample | Usage |
 |--------|-------|
-|/data1/data2/data3/text() | Will select the data3 node value if there is only one data3 occurrence in the structure or all data3 values (concatenated) if there are several occurrences of data3 |
-|/data1/data2/data3[1]/text() | Will select all the first data3 occurrence value |
-|/data1/data2/data3[@orginalKeyName = 'MyKey']/text() | Will select the data3 occurrence having a attribute 'originalKeyname' equal to 'MyKey' |
-|/data1//data4/text() | Will select all data4 node values that are under the data1 node whatever is their tree depth |
+|/data1/data2/data3/text() | Will select the **data3** node value if there is only one **data3** occurrence in the structure or all **data3** values (concatenated) if there are several occurrences of **data3** |
+|/data1/data2/data3[1]/text() | Will select all the first **data3** occurrence value |
+|/data1/data2/data3[@orginalKeyName = 'MyKey']/text() | Will select the **data3** occurrence having a attribute **'originalKeyname'** equal to **'MyKey'** |
+|/data1//data4/text() | Will select all **data4** node values that are under the **data1** node whatever is their tree depth |
 
 **XPaths** are a powerful selector tools to be able to 'Source' data from any structure
 
