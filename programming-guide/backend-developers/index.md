@@ -223,7 +223,7 @@ In Convertigo, all data coming from connectors are described by **Schemas**. Thi
 
 **Schemas** Can be displayed in the **Schema View**
 
-...Schema View...
+![SOAP Web Service Schema View](../../images/pguide_img/backend/soap/10_soap_schema_view.png)
 
 By Default, Convertigo is not aware of the Structure (Schema) of data retrieved from a Connector, except when :
 
@@ -261,7 +261,7 @@ Sequences can call Connector's transactions and of course other Sequences (Sub S
 One of the most commons tasks performed by a **Sequence** is to call a Connector's transaction. You can do this by using the [Call Transaction Step](../../reference-manual/convertigo-objects/sequencer/steps/convertigo-request-steps/call-transaction/)
 
 
-... Image... 
+![Step Call Transaction](../../images/pguide_img/backend/steps/step_call_transaction.png)
 
 
 A Sequence can call a transaction from its own project or form any Other project installed in your workspace. When executed the [Call Transaction Step](../../reference-manual/convertigo-objects/sequencer/steps/convertigo-request-steps/call-transaction/) Step will provide the data returned by the Connector as a **Source** to any other following step in the Sequence.
@@ -272,19 +272,19 @@ A Sequence can call a transaction from its own project or form any Other project
 
 The **Source Picker Tool** will display the data structure tree provided by a step when you right click on a step ->Show in Picker
 
-... image ...
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/soap/08a_soap_call_step_source_picker.png)
 
 If you want to link (We can also say 'Source') data provided by a step to an other Step, you will just have to Drag & Drop the wanted tree element **TXT** to the destination steps.
 
-... Image ... 
+![Source Picker Drag](../../images/pguide_img/backend/steps/step_call_transaction_drag_source.gif) 
 
 An other way to do this is to use the **Source** property of a Step and click on the [...] button to open source selector window.
 
-... Image ...
+![Step Element Drag Source](../../images/pguide_img/backend/steps/step_element_source.png)
 
 Select the Step from where you want to 'Source' data from. (All Red Steps can not be sourced as they will be executed after your step) And pick in the tree data structure the **TXT** element you want to bind to your step.
 
-... Image ...
+![SOAP Web Service New project name](../../images/pguide_img/backend/steps/step_element_source_select_manually.png)
 
 #### XPath models
 
@@ -307,7 +307,7 @@ Sequences can have logic flows such as If/The/else decisions, Iterators and loop
 * For **Iterators** and **loops** all steps under an **Iterator** Step will be executed repeatedly for each Iteration. When the iterations are finished the flow will continue to the step at the same level.
 * For **Parallel** steps, Each step under a **Parallel** Step will be executed at the same time. The sequence will resume to the next Step at the same level when all the Steps finished their executions.
 
-...image...
+![SOAP Web Service New project name](../../images/pguide_img/backend/steps/steps_flow.png)
 
 ### Iterate on patterns
 
@@ -347,7 +347,14 @@ This is why in any Step under an **Iterator** you can source it from the Iterato
 
 ### Understanding variables
 
-Any Sequence in Convertigo can have input variables. 
+Any Sequence in Convertigo can have input variables. These variables can be used all along the Sequence execution flow and passed to Subsequences or Transactions. Variables can be accessed within the Sequence in 2 ways :
+
+* By Using the [Input Variables](../../reference-manual/convertigo-objects/sequencer/steps/others/input-variables/) step. This step is generally the  first step in a sequence and represents all the Input Variables of the sequence. Any other step can 'Source' a given variable from this step.
+* The variable is also automatically inserted in the JavaScript scope of the Sequence. You can access it within any [SequenceJS](../..reference-manual/convertigo-objects/sequencer/steps/javascript-steps/sequence-js/) or within any **jXXXX** type of step such as [jIf](../../reference-manual/convertigo-objects/sequencer/steps/flow-control-steps/jif/) or [jDoWhile](../../reference-manual/convertigo-objects/sequencer/steps/flow-control-steps/jdowhile/)
+
+Variables are not typed and are always considered as Strings. It is the Sequence (And Connector) responsibility to handle type conversions properly. For example if you a variable is passed to a SQL connector Transaction, be sure in the Transaction's SQL request to properly CAST this variable to match a give SQL table column type.
+
+Sequences variables will also appear in the Front End builder as [CallSequence](../../reference-manual/convertigo-objects/mobile-application/components/action-components/callsequence/) Variables you will be able to bind to UI components.
 
 ### Compute data & business logic
 
