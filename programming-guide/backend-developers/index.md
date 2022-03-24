@@ -347,7 +347,14 @@ This is why in any Step under an **Iterator** you can source it from the Iterato
 
 ### Understanding variables
 
-Any Sequence in Convertigo can have input variables. 
+Any Sequence in Convertigo can have input variables. These variables can be used all along the Sequence execution flow and passed to Subsequences or Transactions. Variables can be accessed within the Sequence in 2 ways :
+
+* By Using the [Input Variables](../../reference-manual/convertigo-objects/sequencer/steps/others/input-variables/) step. This step is generally the  first step in a sequence and represents all the Input Variables of the sequence. Any other step can 'Source' a given variable from this step.
+* The variable is also automatically inserted in the JavaScript scope of the Sequence. You can access it within any [SequenceJS](../..reference-manual/convertigo-objects/sequencer/steps/javascript-steps/sequence-js/) or within any **jXXXX** type of step such as [jIf](../../reference-manual/convertigo-objects/sequencer/steps/flow-control-steps/jif/) or [jDoWhile](../../reference-manual/convertigo-objects/sequencer/steps/flow-control-steps/jdowhile/)
+
+Variables are not typed and are always considered as Strings. It is the Sequence (And Connector) responsibility to handle type conversions properly. For example if you a variable is passed to a SQL connector Transaction, be sure in the Transaction's SQL request to properly CAST this variable to match a give SQL table column type.
+
+Sequences variables will also appear in the Front End builder as [CallSequence](../../reference-manual/convertigo-objects/mobile-application/components/action-components/callsequence/) Variables you will be able to bind to UI components.
 
 ### Compute data & business logic
 
