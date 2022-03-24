@@ -80,9 +80,15 @@ entries:
     - title: FrontEnd Developers
       url: /programming-guide/frontend-developers/
       output: web, pdf
-    - title: Providing backend services to no-code Forms
-      url: /programming-guide/creating-data-for-c8o-forms/
+    - title: Convertigo no-code Forms
       output: web, pdf
+      folderitems:
+      - title: Providing backend services to Convertigo no-code Forms
+        url: /programming-guide/creating-data-for-c8o-forms/
+        output: web, pdf
+      - title: Fill out a PDF document from Convertigo no-code Forms
+        url: /programming-guide/no-code-forms/fill-out-pdf
+        output: web, pdf
     - title: DevOps
       url: /programming-guide/devops/
       output: web, pdf
