@@ -274,9 +274,43 @@ Sequences can have logic flows such as If/The/else decisions, Iterators and loop
 
 ### Iterate on patterns
 
+Sequences can use iterators or Loops Steps to perform several times step executions. The most used step for this is the [Iterator](../../reference-manual/convertigo-objects/sequencer/steps/flow-control-steps/iterator/) Step. The step's **source** property will be used to know on what occurrences the Iterator Step should loop. You can use the **Source Picker** to bind the Iterator's source to any previous step data structure holding multiple occurrences of data. for example if a **Call Transaction** Step returns this data structure :
+
+```
+{
+    clients: [
+        item: {
+            id:"1",
+            name:"test"
+        },
+        item: {
+            id:"2",
+            name:"test2"
+        }
+    ]
+}
+```
+
+| XPath | Will Iterate on on |
+|-------|---------------|
+|/clients/item | All **item** objects in **clients** |
+|/clients/item/name | All **name** of **item** objects in **clients** |
+|//item | All **item** objects |
+|/clients/item[contains(./name/text(), 'test')] | All **item** objects where the **name** field contains the 'text' string |
+
+As you see you can use the full power of **XPath** expressions to fine tune your iteration patterns. If you remember, all Steps can be a 'Source' to other Steps. This is also true for the **Iterator** step. The step can be sourced to get current Iteration data.
+
+This is why in any Step under an **Iterator** you can source it from the Iterator with a given XPath. for example if the Iterator iterates on **/clients/item** :
+
+| XPath | data |
+|-------|---------------|
+|./id/text() | Will represent the **id** value of the current  iterated **item** in **clients** |
+|./name/text() | Will represent the **name** value of the current  iterated **item** in **clients** |
 
 
 ### Understanding variables
+
+Any Sequence in Convertigo can have input variables. 
 
 ### Compute data & business logic
 
