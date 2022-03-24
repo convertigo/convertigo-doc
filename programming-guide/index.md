@@ -12,6 +12,5 @@ permalink: /programming-guide/
 - [Understanding Convertigo Objects](./understanding-convertigo-objects/)
 - [Back-End Developers](./backend-developers/)
 - [Front-End Developers](./frontend-developers/)
-- [Providing backend services to No Code Forms](./creating-data-for-c8o-forms)
 - [DevOps](./devops/)
 - [Test Developers](./test-developers/)
