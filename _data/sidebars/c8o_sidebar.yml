@@ -52,9 +52,6 @@ entries:
     - title: Installing Convertigo Server
       url: /operating-guide/installing-convertigo-server/
       output: web, pdf
-    - title: Installing Convertigo Form Builder Standalone
-      url: /operating-guide/using-c8o-forms-standalone/
-      output: web, pdf
     - title: Using Convertigo Administration Console
       url: /operating-guide/using-convertigo-administration-console/
       output: web, pdf
@@ -80,12 +77,22 @@ entries:
     - title: FrontEnd Developers
       url: /programming-guide/frontend-developers/
       output: web, pdf
-    - title: Providing backend services to no-code Forms
-      url: /programming-guide/creating-data-for-c8o-forms/
-      output: web, pdf
     - title: DevOps
       url: /programming-guide/devops/
       output: web, pdf
     - title: Test Developers
       url: /programming-guide/test-developers/
+      output: web, pdf
+      
+  - title: Convertigo no-code Forms
+    output: web, pdf
+    folderitems:
+    - title: Installing Convertigo no-code Forms Standalone 2
+      url: /no-code-forms/using-c8o-forms-standalone/
+      output: web, pdf
+    - title: Providing backend services to Convertigo no-code Forms 2
+      url: /no-code-forms/creating-data-for-c8o-forms/
+      output: web, pdf
+    - title: Fill out a PDF document from Convertigo no-code Forms 2
+      url: /no-code-forms/fill-out-pdf/
       output: web, pdf
