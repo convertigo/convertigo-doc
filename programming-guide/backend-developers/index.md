@@ -149,7 +149,7 @@ The SQL Connector is able to connect to different Database Servers:
 
 You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from your project. You will just have to know explicitly the driver URL to access it.
 
-### Create a SQL Connector based project
+#### Create a SQL Connector based project
 To create a new SQL project, click New > File > Project... > Convertigo Projects > **SQL project**
 
 ![New SQL project](../../images/pguide_img/backend/sql/01_new_project_sql.png)
