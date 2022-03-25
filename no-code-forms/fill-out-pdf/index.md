@@ -119,7 +119,7 @@ In the furthers sections, we will show you how to make your PDF a Fillable PDF F
     
 13. You can now see the pdf on your responses.
 
-### answer to a form with a PDF Action and download the result ###
+### Answer to a form with a PDF Action and download the result ###
 
 ![](/images/c8oForms/forms_fill_out_pdf_4.gif)
 
