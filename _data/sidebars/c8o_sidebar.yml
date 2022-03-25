@@ -87,12 +87,12 @@ entries:
   - title: Convertigo no-code Forms
     output: web, pdf
     folderitems:
-    - title: Installing Convertigo no-code Forms Standalone 2
+    - title: Installing Convertigo no-code Forms Standalone
       url: /no-code-forms/using-c8o-forms-standalone/
       output: web, pdf
-    - title: Providing backend services to Convertigo no-code Forms 2
+    - title: Providing backend services to Convertigo no-code Forms
       url: /no-code-forms/creating-data-for-c8o-forms/
       output: web, pdf
-    - title: Fill out a PDF document from Convertigo no-code Forms 2
+    - title: Fill out a PDF document from Convertigo no-code Forms
       url: /no-code-forms/fill-out-pdf/
       output: web, pdf
