@@ -8,26 +8,31 @@ permalink: /programming-guide/devops/
 ---
 Convertigo Platform enables collaborative development and DevOps operations using Continuous Integration techniques. DevOps is usually a set of tasks that can be described this way :
 
-__ __Coding__ : code development and review, source code management tools, code merging.
-  
-  Convertigo enables coding using Low Code technologies. You can have more information on collaborative development & source control / code merging [here](#collaborative_development).
-__ __Building__ : continuous integration tools, build status.
+__Coding__ : code development and review, source code management tools, code merging.
 
-  On Convertigo platform building can be made manually or using Continuous integration tools. More information on this [here](#integrating_in_ci).
-__ __Testing__ : continuous testing tools that provide quick and timely feedback on business risks
-__ __Packaging__ : artifact repository, application pre-deployment staging. 
-  
-  On Convertigo platform application packaging is done using the .CAR (Convertigo ARchive) format. This can be done manually by simply exporting a project from studio , or using Continuous Integration. see [here](#integrating_in_ci).
-__ __Releasing__ : change management, release approvals, release automation.
+Convertigo enables coding using Low Code technologies. You can have more information on collaborative development & source control / code merging [here](#collaborative_development).
 
-    On Convertigo platform, release is simply done by deploying projects on a Convertigo server. This can be done manually using the studio's deploy menu or by using Continuous Integration as described [here](#integrating_in_ci).
-__ __Configuring__ : infrastructure configuration and management, infrastructure as code tools.
+__Building__ : continuous integration tools, build status.
 
-    On Convertigo platform, configuration and environment settings is done via the Administration console. More information on this [here](../../operating-guide/using-convertigo-administration-console).
+On Convertigo platform building can be made manually or using Continuous integration tools. More information on this [here](#integrating_in_ci).
 
-__ __Monitoring__ : applications performance monitoring, end-user experience
+__Testing__ : continuous testing tools that provide quick and timely feedback on business risks
 
-    On Convertigo platform, performance monitoring is done via the Administration console. More information on this [here](../../operating-guide/using-convertigo-administration-console).
+__Packaging__ : artifact repository, application pre-deployment staging. 
+
+On Convertigo platform application packaging is done using the .CAR (Convertigo ARchive) format. This can be done manually by simply exporting a project from studio , or using Continuous Integration. see [here](#integrating_in_ci).
+
+__Releasing__ : change management, release approvals, release automation.
+
+On Convertigo platform, release is simply done by deploying projects on a Convertigo server. This can be done manually using the studio's deploy menu or by using Continuous Integration as described [here](#integrating_in_ci).
+
+__Configuring__ : infrastructure configuration and management, infrastructure as code tools.
+
+On Convertigo platform, configuration and environment settings is done via the Administration console. More information on this [here](../../operating-guide/using-convertigo-administration-console).
+
+__Monitoring__ : applications performance monitoring, end-user experience
+
+On Convertigo platform, performance monitoring is done via the Administration console. More information on this [here](../../operating-guide/using-convertigo-administration-console).
 
 ## Collaborative development
 Convertigo Platform host Application and API describes in Convertigo projects.
@@ -90,6 +95,26 @@ Take care to stage the `c8oProject.yaml` and other `yaml` listed because they re
 ### Sharing git project
 
 If you start a new project or have an existing one, you can share it with git using the Convertigo Studio.
+
+First, you have to create a local repository. Open the right-clic menu on your project and select __Team > Share Project...__.
+
+![Share menu](../../images/pguide_img/devops/share_menu.png)
+
+A wizard opens. You have to check __Use or create repository in parent folder of project__, focus your project bellow then press the __Create Repository__ button and finally the __Finish__ button.
+
+![Share wizard](../../images/pguide_img/devops/share_wizard.png)
+
+Your are ready for the initial commit. Write a comment and stage all your project files. A recommanded `.gitignore` is ready to skip unecessary files and folders.
+
+![Share wizard](../../images/pguide_img/devops/initial_commit.png)
+
+Before pushing your project, you have to create a git repository (github, bitbucket, gitlab ...) and copy the URL to your clipboard.
+
+Click the __Commit and Push__ button. The next wizard read the clipboard to initialize the git URL.
+
+![Push project](../../images/pguide_img/devops/push_project.png)
+
+Click __Preview >__ button and follow the wizard to the end. If successful, you can Fetch/Push your project with that remote repository.
 
 ## Setting up gradle tasks
 
