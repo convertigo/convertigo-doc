@@ -359,13 +359,41 @@ Sequences variables will also appear in the Front End builder as [CallSequence](
 ### Compute data & business logic
 
 #### Integrating JavaScript code
+To write JavaScript code in a Sequence use the **Sequence JS** step. There is completion for some standard JS objects and functions.
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_math_completion.png)
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_math_floor_completion.png)
+
+Once a JavaScript variable is declared, it is available in all JS Steps of the Sequence.
+Variables of a sequence are automatically added to the JavaScript scope of the Sequence and are available as Strings by their name.  
+
+JavaScript variables can come from JS Steps too (JSimpleSource, etc...) and are accessible in a Sequence JS step where they can be modified. You can also access JS variables and modify them directly in a jElement Step, for example, in the '**Expression**' property of the Step, but this is a one line editor. For longer script, use preferably a **Sequence JS** step.
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_random_number_result.png)
 
 ##### Calling some java code
 
+To write Java code in a Sequence use the **Sequence JS** step. As there is no import directive, you will have to write the full package name.  
+For the standard JDK classes there is completion for the classes and methods.
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_java_completion.png)
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_java_sleep.png)
+
 ##### Using third party java libraries
 
-##### Using third party JavaScript libraries
+To use external Java libraries, copy the classes or JAR files in a folder called '**libs**' in your project or in the workspace. Then, write your Java code in a **Sequence JS** step. There will be no completion though. As there is no import, you will have to write the full package name prefixed with the word '**Packages**'.
 
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_load_jar_libs.png)
+
+Often, to display and use properly variables data, you will have to convert them to Strings. To do so, just add an empty string to it (empty double quotes).
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_number_non_cast.png)
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_number_string_cast.png)
+
+##### Using third party JavaScript libraries
 ### Reading & Writing data files
 
 ### Understanding session management
