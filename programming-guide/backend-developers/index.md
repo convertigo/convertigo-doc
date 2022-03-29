@@ -394,6 +394,10 @@ Often, to display and use properly variables data, you will have to convert them
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_number_string_cast.png)
 
 ##### Using third party JavaScript libraries
+
+To use an external JS library, copy the JS file in your project and in a **Sequence JS** Step use function '**include("<path_to_js_file>")**' to load file. This will automatically eval script in the Sequence JS scope and you can use it in a **Sequence JS** Step or in **JS element** Steps.
+
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_external_lib.png)
 ### Reading & Writing data files
 
 ### Understanding session management
