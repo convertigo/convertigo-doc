@@ -92,6 +92,8 @@ Once all needed files validated in the __Staged Changes__ part and comment added
 
 Take care to stage the `c8oProject.yaml` and other `yaml` listed because they refer each other. If you miss it, you could commit orphean code.
 
+Don't forget, a commit is local and have to be pushed to the remote git repository, so use the __Push__ button or the option from the project menu.
+
 ### Sharing git project
 
 If you start a new project or have an existing one, you can share it with git using the Convertigo Studio.
@@ -118,7 +120,67 @@ Click __Preview >__ button and follow the wizard to the end. If successful, you 
 
 ## Setting up gradle tasks
 
+To enable __Continuious Integration__ build, you have to add __Gradle__ resources to your Convertigo project. Gradle is a tool use to build and to perform some tasks.
+
+To integrat configuration files, do a right clic on your project and inside the __Continuous Integration__ menu you can choose Gradle files only, or also add configuration for GitHub Actions or CircleCI.
+
+![CI menu](../../images/pguide_img/devops/ci_menu.png)
+
+You can see Gradle files in the __Project Explorer__ view:
+
+![Gradle files](../../images/pguide_img/devops/gradle_files.png)
+
+The `build.gradle` file is the key file to open. It's self documented, with available options to be edited or used as command line arguments:
+
+![Gradle configuration](../../images/pguide_img/devops/gradle_conf.png)
+
+The project also contains `gradlew`. This is a standalone version of Gradle ready to use in your project.
+
+It's only need Java to be configured in your shell. It can be invocated in Window, Linux or MacOS.
+
+Here the command to list all available tasks:
+
+![Gradlew tasks](../../images/pguide_img/devops/gradlew_tasks.png)
+
 ## Integrating in CI
+
+Thanks to the __Continuious Integration__ menu on a project, you can load template CI configuration for __GitHub Actions__ or __CircleCI__.
+
+### GitHub Actions
+
+__GitHub Actions__ is the CI integrated with GitHub and share the same administration interface. Of course your git repository must be on GitHub. 
+
+Once __Update GitHub Actions and Gradle__ from the __Continuious Integration__ menu, the `.github/workflows/main.yml` file is created.
+
+It can be edited from the __Project Explorer__ view but it can be hidden the first time. You have to remove the filter to see file or folder starting with a dot.
+
+Reveal the `.github` folder using the 3-dots menu and `Filters and Customization...` and uncheck the `.* resources` entry.
+
+Now you can open and edit the `.github/workflows/main.yml` configuration file:
+
+![GitHub Actions yml](../../images/pguide_img/devops/github_actions_yml.png)
+
+The file is self documented and must be edited.
+
+Instead of put your secrets like password in the file, you should configure them on your GitHub interface.
+
+### CircleCI
+
+__CircleCI__ is a popular CI. It can be configured with many git repositories. 
+
+Once __Update CircleCI and Gradle__ from the __Continuious Integration__ menu, the `.circleci/config.yml` file is created.
+
+It can be edited from the __Project Explorer__ view but it can be hidden the first time. You have to remove the filter to see file or folder starting with a dot.
+
+Reveal the `.github` folder using the 3-dots menu and `Filters and Customization...` and uncheck the `.* resources` entry.
+
+Now you can open and edit the `.circleci/config.yml` configuration file:
+
+![CircleCI yml](../../images/pguide_img/devops/circleci_yml.png)
+
+The file is self documented and must be edited.
+
+Instead of put your secrets like password in the file, you should configure them on your CircleCI interface.
 
 ## Building iOS & Android apps
 
