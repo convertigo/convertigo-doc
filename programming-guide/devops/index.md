@@ -130,7 +130,7 @@ You can see Gradle files in the __Project Explorer__ view:
 
 ![Gradle files](../../images/pguide_img/devops/gradle_files.png)
 
-The `build.gradle` file is the key file to open. It's self documented, with available options to be edited or used as command line arguments:
+The `build.gradle` file is the key file to open. It's self documented, with available options to be edited or used as command line arguments. [See the online full version](https://github.com/convertigo/convertigo-common-resources/blob/8.0.0/gradle/build.gradle):
 
 ![Gradle configuration](../../images/pguide_img/devops/gradle_conf.png)
 
@@ -156,7 +156,7 @@ It can be edited from the __Project Explorer__ view but it can be hidden the fir
 
 Reveal the `.github` folder using the 3-dots menu and `Filters and Customization...` and uncheck the `.* resources` entry.
 
-Now you can open and edit the `.github/workflows/main.yml` configuration file:
+Now you can open and edit the `.github/workflows/main.yml` configuration file. [See the online full version](https://github.com/convertigo/convertigo-common-resources/blob/8.0.0/github-actions/main.yml):
 
 ![GitHub Actions yml](../../images/pguide_img/devops/github_actions_yml.png)
 
@@ -174,7 +174,7 @@ It can be edited from the __Project Explorer__ view but it can be hidden the fir
 
 Reveal the `.github` folder using the 3-dots menu and `Filters and Customization...` and uncheck the `.* resources` entry.
 
-Now you can open and edit the `.circleci/config.yml` configuration file:
+Now you can open and edit the `.circleci/config.yml` configuration file. [See the online full version](https://github.com/convertigo/convertigo-common-resources/blob/8.0.0/circleci/config.yml):
 
 ![CircleCI yml](../../images/pguide_img/devops/circleci_yml.png)
 
@@ -183,5 +183,53 @@ The file is self documented and must be edited.
 Instead of put your secrets like password in the file, you should configure them on your CircleCI interface.
 
 ## Building iOS & Android apps
+
+If your project is configured with Gradle, it's ready to build native mobile applications. The target Gradle task is __localBuild__.
+
+Your project must have one or many __Platforms__ objects declared. New mobile projects are configured with an __Android__ and an __iOS__ plaform:
+
+![Platforms objects](../../images/pguide_img/devops/platforms_objects.png)
+
+Mobile builds are __Cordova__ based. Each platforms have its configuration file that can be see through the __Project Explorer__ view: `DisplayObjects/platforms/<platform name>/config.xml`.
+
+All platforms are built except iOS based platforms on a non-MacOS build host. You can restrict which platform to build using the __-Pconvertigo.localBuild.platforms__ parameter or edit the value in the __build.gradle__:
+
+`gradlew localBuild -Pconvertigo.localBuild.platforms=[Android]`
+
+### Android build
+
+The default build mode is __debug__ and doesn't need signing configuration.
+
+If you need a __release__ build, enable this mode in the __build.gradle__ or add the `-Pconvertigo.localBuild.mode=release`. You also have to configure your signing key.
+
+You can use __Android Studio__  to [generate your signing key](https://developer.android.com/studio/publish/app-signing#generate-key).
+
+You will obtain a `.keystore` file, with a __keystore password__, a certificate __alias__ and a certificate __password__.
+
+All can be added to your __build.gradle__ but for security reason, we recommand to add them to __gradlew__ parameters and use secrets of your CI:
+
+```
+gradlew localBuild -Pconvertigo.localBuild.mode=release \
+  -Pconvertigo.localBuild.androidKeystore=android.keystore \
+  -Pconvertigo.localBuild.androidKeystorePassword=$ANDROID_KS_PASSWORD \
+  -Pconvertigo.localBuild.androidAlias=MyAlias \
+  -Pconvertigo.localBuild.androidPassword=$ANDROID_PASSWORD
+```
+
+### iOS build
+
+The default build mode is __debug__ and you have to configure your signing key.
+
+If you need a __release__ build, enable this mode in the __build.gradle__ or add the `-Pconvertigo.localBuild.mode=release`. You also have to configure your signing key.
+
+Mac OS code signing must be configured for your CI. [Configure Application signing with GitHub Actions](https://developer.android.com/studio/publish/app-signing#generate-key).
+
+Once configured, you have to configure __Provisioning Profile__ file path and the __ iOS Sign Identity__.
+
+```
+gradlew localBuild -Pconvertigo.localBuild.mode=release \
+  -Pconvertigo.localBuild.iosProvisioningProfile=ios.mobileprovision \
+  -Pconvertigo.localBuild.iosSignIdentity="iPhone Developer"
+```
 
 ## Deploying apps on Stores
