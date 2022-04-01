@@ -160,7 +160,7 @@ Now you can open and edit the `.github/workflows/main.yml` configuration file. [
  
 The file is self documented and must be edited.
  
-Instead of putting your secrets like password in this file, you should configure them on your GitHub interface. See GitHub documentation about secrets [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
+Instead of putting your secrets like password in this file, you should configure them on your GitHub interface. See GitHub documentation about secrets [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
  
 ### CircleCI
  
@@ -182,7 +182,7 @@ Instead of put your secrets like password in the file, you should configure them
  
 ### Other Continuous CI/CD Pipelines
  
-This mechanism can apply to any other CI/CD platform such as Jenkins, AzurePipelines etc... They all work by using a configuration file you can add to you project. Read documentation  about the CI/CD platform you wan to use to create this file and use the Convertigo Gradle commands to perform the tasks you need.
+This mechanism can apply to any other CI/CD platform such as Jenkins, AzurePipelines etc... They all work by using a configuration file you can add to you project. Read documentation about the CI/CD platform you wan to use to create this file and use the Convertigo Gradle commands to perform the tasks you need.
  
 ## Building iOS & Android apps
  
@@ -206,17 +206,17 @@ The default build mode is __debug__ and doesn't need signing configuration.
  
 If you need a __release__ build, enable this mode in the __build.gradle__ or add the `-Pconvertigo.localBuild.mode=release`. You also have to configure your signing key.
  
-You can use __Android Studio__  to [generate your signing key](https://developer.android.com/studio/publish/app-signing#generate-key).
+You can use __Android Studio__ to [generate your signing key](https://developer.android.com/studio/publish/app-signing#generate-key).
  
 You will obtain a `.keystore` file, with a __keystore password__, a certificate __alias__ and a certificate __password__.
  
 All can be added to your __build.gradle__ but for security reason, we recommand to add them to __gradlew__ parameters and use secrets of your CI:
  
 ```
-gradlew localBuild -Pconvertigo.localBuild.mode=release ¥
-  -Pconvertigo.localBuild.androidKeystore=android.keystore ¥
-  -Pconvertigo.localBuild.androidKeystorePassword=$ANDROID_KS_PASSWORD ¥
-  -Pconvertigo.localBuild.androidAlias=MyAlias ¥
+gradlew localBuild -Pconvertigo.localBuild.mode=release \
+  -Pconvertigo.localBuild.androidKeystore=android.keystore \
+  -Pconvertigo.localBuild.androidKeystorePassword=$ANDROID_KS_PASSWORD \
+  -Pconvertigo.localBuild.androidAlias=MyAlias \
   -Pconvertigo.localBuild.androidPassword=$ANDROID_PASSWORD
 ```
  
@@ -231,8 +231,8 @@ Mac OS code signing must be configured for your CI. [Configure Application signi
 Once configured, you have to configure __Provisioning Profile__ file path and the __ iOS Sign Identity__.
  
 ```
-gradlew localBuild -Pconvertigo.localBuild.mode=release ¥
-  -Pconvertigo.localBuild.iosProvisioningProfile=ios.mobileprovision ¥
+gradlew localBuild -Pconvertigo.localBuild.mode=release \
+  -Pconvertigo.localBuild.iosProvisioningProfile=ios.mobileprovision \
   -Pconvertigo.localBuild.iosSignIdentity="iPhone Developer"
 ```
  
