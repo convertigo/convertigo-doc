@@ -401,9 +401,44 @@ To use an external JS library, copy the JS file in your project and in a **Seque
 
 ### Understanding session management
 
-#### Stateless programming
+A Session represents the relation between a Convertigo Server Client (Mobile App, Web App or API Consumer) to the Backend. Each time a client invokes a backend service a session is established. Sessions a kept in the Convertigo Server tables and represented as HTTP Cookies on the front side. If A Client provides the same Cookie he received from a previous backend service invocation in a new Service invocation, he will be attached to the same session.
+
+Sessions enables Stateful programming having the Convertigo Server to hold some backend client data across multiple service invocations. This dose not mean that Stateful programming is mandatory, you can also be stateless by explicitly destroying sessions after each service invocation.
+
+Sessions are automatically handled by Convertigo Server and are kept alive using the **HTTP session Timeout**  property in the project (See [Project](../../reference-manual/convertigo-objects/common/project) Object). If no requests come from a client for a given session after the Timeout, the session will be automatically closed.
 
 #### Stateful programming
+
+This is the default mode for Convertigo Applications. When a client invokes a service (Sequence), a session will be established between this client and the Convertigo server. All subsequent calls will be done within this same session.
+
+One of the main usage of sessions are Authentication mechanisms. By default sessions are not Authenticated, preventing Sequences having having the **Authenticated context required** property set to **true** to run. At any time, If a Sequence calls the [SetAuthenticatedUser](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/set-authenticated-user) step, the session will be authenticated and any Sequence having the **Authenticated context required** property set to **true** will be allowed to run. 
+
+As the the current Authenticated user is kept in the session, you can at any type use the [GetAuthenticatedUser](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/get-authenticated-user) step to retrieve the current authenticated user from the session. You can also use the the session steps to store and retrieve data from the session.
+
+| Step | Description|
+|------|------------|
+|[GetFromSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/get-from-session) | Get A String from the current Session |
+|[GetObjectFromSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/get-object-from-session) | Get a JavaScript Object from the current session |
+|[SetInSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/set-in-session) | Set a String an the current session |
+|[SetObjectInSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/set-object-in-session) | Set a JavaScript Object in the current session |
+
+{{site.data.alerts.note}}
+Sessions are use for Licensing control for Concurrent session licensing Schemes (B2C Licensing). Your Convertigo Server license will authorize a limited amount of sessions. Be sure to set your project's Session timeout to a reasonable amount to make sure they will be automatically closed on user inactivity. The Default is 30 minutes (1800 Seconds).
+{{site.data.alerts.end}}
+
+#### Stateless programming
+
+Stateless programming is done by just closing the session explicitly after having executed a Sequence. In this case Convertigo server will not hold data across different service (Sequence) invocations. This is some time used in RESTful APIs contexts where the State is held on the client side. In this mode your Sequences must be authorized to run  un authenticated, so be sure the Sequences's **Authenticated context required** property are set to **false**.
+
+Also you will be responsible for checking if the Sequence is allowed to to run in the business flow itself by checking a Token API key or whatever the client will provide you.
+
+To explicitly close a session after a Sequence execution add as the last step a **Sequences JS** Step with the following code :
+
+```
+context.httpSession.setMaxInactiveInterval(0)
+```
+
+This will set the **Session Timeout** to 0 and the session will be immediately removed.
 
 ### Setting up FullSync on back-ends
 
