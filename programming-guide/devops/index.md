@@ -194,7 +194,7 @@ Your project must have one or many __Platforms__ objects declared. New mobile pr
  
 Mobile builds are __Cordova__ based. Each platforms have its configuration file that can be see through the __Project Explorer__ view: `DisplayObjects/platforms/<platform name>/config.xml`.
  
-All platforms are built except iOS based platforms on a non-MacOS build host. You can restrict which platform to build using the __-Pconvertigo.localBuild.platforms__ parameter or edit the value in the __build.gradle__:
+All platforms can be built except iOS based platforms on a non-MacOS build host. You can restrict which platform to build using the __-Pconvertigo.localBuild.platforms__ parameter or edit the value in the __build.gradle__:
  
 ```
 gradlew localBuild -Pconvertigo.localBuild.platforms=[Android]

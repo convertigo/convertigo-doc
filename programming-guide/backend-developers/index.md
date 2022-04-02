@@ -77,7 +77,7 @@ API methods are automatically created as transactions of the corresponding type
 
 ![REST imported transactions](../../images/pguide_img/backend/ws/13_restws_import_reference_created.png)
 
-You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
+You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with **CTRL key** (Windows) or **Command KEY** (Mac) pressed
 
 ![REST call transaction step](../../images/pguide_img/backend/ws/14_restws_call_transaction_step.gif)
 
@@ -117,7 +117,7 @@ You can test the other WS methods that require variable values using Test Cases.
 
 ![SOAP Web Service transaction testcase](../../images/pguide_img/backend/soap/06_soap_transaction_testcase.png)
 
-You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
+You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with **CTRL key** (Windows) or **Command Key** (Mac) pressed
 
 ![SOAP Web Service Call Step](../../images/pguide_img/backend/soap/07_soap_call_transaction_step.gif)
 
@@ -374,8 +374,7 @@ JavaScript variables can come from JS Steps too (JSimpleSource, etc...) and are 
 
 ##### Calling some java code
 
-To write Java code in a Sequence use the **Sequence JS** step. As there is no import directive, you will have to write the full package name.  
-For the standard JDK classes there is completion for the classes and methods.
+To write Java invocation code in a Sequence use the **Sequence JS** step. You will just have to write the full package name to reference the Java class. For the standard JDK classes there is completion for the classes and methods.
 
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_java_completion.png)
 
@@ -383,7 +382,7 @@ For the standard JDK classes there is completion for the classes and methods.
 
 ##### Using third party java libraries
 
-To use external Java libraries, copy the classes or JAR files in a folder called '**libs**' in your project or in the workspace. Then, write your Java code in a **Sequence JS** step. There will be no completion though. As there is no import, you will have to write the full package name prefixed with the word '**Packages**'.
+To use external Java libraries, copy the classes or JAR files in a folder called '**libs**' in your project. Then, write your Java invocation code in a **Sequence JS** step. There will be no completion though. You will just have to write the full package name prefixed with the word '**Packages**'.
 
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_load_jar_libs.png)
 
