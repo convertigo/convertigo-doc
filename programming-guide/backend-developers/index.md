@@ -400,6 +400,22 @@ To use an external JS library, copy the JS file in your project and in a **Seque
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_external_lib.png)
 ### Reading & Writing data files
 
+Convertigo has different Steps to Read or Write data files from different formats (XML, CSV, JSON). You can also write your own data file reader/writer in a Sequence JS step using Java.
+
+#### Read JSON Step
+Use the Read JSON Step to load data from a JSON file.
+#### Write JSON Step
+
+#### Read CSV Step
+#### Write CSV Step
+
+#### Read XML Step
+#### Write XML Step
+
+#### Write B64 Binary Step
+
+#### Read Text file
+#### Write Text file
 ### Understanding session management
 
 #### Stateless programming
