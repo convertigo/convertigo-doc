@@ -77,7 +77,7 @@ API methods are automatically created as transactions of the corresponding type
 
 ![REST imported transactions](../../images/pguide_img/backend/ws/13_restws_import_reference_created.png)
 
-You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
+You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with **CTRL key** (Windows) or **Command KEY** (Mac) pressed
 
 ![REST call transaction step](../../images/pguide_img/backend/ws/14_restws_call_transaction_step.gif)
 
@@ -117,7 +117,7 @@ You can test the other WS methods that require variable values using Test Cases.
 
 ![SOAP Web Service transaction testcase](../../images/pguide_img/backend/soap/06_soap_transaction_testcase.png)
 
-You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with CTRL key down
+You can easily create the **Call Transaction** Step by dragging and dropping the transaction a sequence with **CTRL key** (Windows) or **Command Key** (Mac) pressed
 
 ![SOAP Web Service Call Step](../../images/pguide_img/backend/soap/07_soap_call_transaction_step.gif)
 
@@ -374,8 +374,7 @@ JavaScript variables can come from JS Steps too (JSimpleSource, etc...) and are 
 
 ##### Calling some java code
 
-To write Java code in a Sequence use the **Sequence JS** step. As there is no import directive, you will have to write the full package name.  
-For the standard JDK classes there is completion for the classes and methods.
+To write Java invocation code in a Sequence use the **Sequence JS** step. You will just have to write the full package name to reference the Java class. For the standard JDK classes there is completion for the classes and methods.
 
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_java_completion.png)
 
@@ -383,7 +382,7 @@ For the standard JDK classes there is completion for the classes and methods.
 
 ##### Using third party java libraries
 
-To use external Java libraries, copy the classes or JAR files in a folder called '**libs**' in your project or in the workspace. Then, write your Java code in a **Sequence JS** step. There will be no completion though. As there is no import, you will have to write the full package name prefixed with the word '**Packages**'.
+To use external Java libraries, copy the classes or JAR files in a folder called '**libs**' in your project. Then, write your Java invocation code in a **Sequence JS** step. There will be no completion though. You will just have to write the full package name prefixed with the word '**Packages**'.
 
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_load_jar_libs.png)
 
@@ -399,14 +398,41 @@ To use an external JS library, copy the JS file in your project and in a **Seque
 
 ![Step Call Transaction Source Picker](../../images/pguide_img/backend/js/sequence_js_external_lib.png)
 ### Reading & Writing data files
-
 Convertigo has different Steps to Read or Write data files from different formats (XML, CSV, JSON). You can also write your own data file reader/writer in a Sequence JS step using Java.
 
 #### Read JSON Step
-Use the Read JSON Step to load data from a JSON file.
+Use the [Read JSON](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-json/) Step to load data from a JSON file.
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/read_write_file/read_json.png)
+
+| Property | Description |
+|----------|-------------|
+| **Key**      | Fill this property with a value for the parent object. |
+| **Source**   | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+
 #### Write JSON Step
+Use the [Write JSON](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/write-json/) Step to write data to a JSON file.
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/read_write_file/write_json.png)
+
+| Property | Description |
+|----------|-------------|
+| **Encoding**      | Set the **Encoding** property with a value for the charset encoding (ISO-8859-1, UTF-8, ...). |
+|   **Output file**     | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+
 
 #### Read CSV Step
+Use the [Read CSV](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-csv/) Step to load data from a CSV file.
+![Step Call Transaction Source Picker](../../images/pguide_img/backend/read_write_file/read_csv.png)
+
+| Property | Description |
+|----------|-------------|
+| **Column tag**      |  Defines the columns tag name. Default value is **col**. Unused if **Title line** is set to **true**  |
+| **Encoding**   | Set the **Encoding** property with a value for the charset encoding (ISO-8859-1, UTF-8, ...). |
+| **Line tag**  |  Defines the lines tag name. Default value is **line**.  |
+|   **Source**   |  This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder)  |
+|   **Separator**   |  Defines the CSV default separator symbol. Default value is **;**.  |
+|   **Title line**   |  Defines whether the CSV file has a title line or not. If exists, the keys are named by the first title line of CSV file. Default value is **false**.   |
+|    **Vertical direction**  |  Defines the array reading direction. Default value is **false** (horizontal) |
+
 #### Write CSV Step
 
 #### Read XML Step
@@ -421,6 +447,47 @@ Use the Read JSON Step to load data from a JSON file.
 #### Stateless programming
 
 #### Stateful programming
+
+### Understanding session management
+
+A Session represents the relation between a Convertigo Server Client (Mobile App, Web App or API Consumer) to the Backend. Each time a client invokes a backend service a session is established. Sessions a kept in the Convertigo Server tables and represented as HTTP Cookies on the front side. If A Client provides the same Cookie he received from a previous backend service invocation in a new Service invocation, he will be attached to the same session.
+
+Sessions enables Stateful programming having the Convertigo Server to hold some backend client data across multiple service invocations. This dose not mean that Stateful programming is mandatory, you can also be stateless by explicitly destroying sessions after each service invocation.
+
+Sessions are automatically handled by Convertigo Server and are kept alive using the **HTTP session Timeout**  property in the project (See [Project](../../reference-manual/convertigo-objects/common/project) Object). If no requests come from a client for a given session after the Timeout, the session will be automatically closed.
+
+#### Stateful programming
+
+This is the default mode for Convertigo Applications. When a client invokes a service (Sequence), a session will be established between this client and the Convertigo server. All subsequent calls will be done within this same session.
+
+One of the main usage of sessions are Authentication mechanisms. By default sessions are not Authenticated, preventing Sequences having having the **Authenticated context required** property set to **true** to run. At any time, If a Sequence calls the [SetAuthenticatedUser](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/set-authenticated-user) step, the session will be authenticated and any Sequence having the **Authenticated context required** property set to **true** will be allowed to run. 
+
+As the the current Authenticated user is kept in the session, you can at any type use the [GetAuthenticatedUser](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/get-authenticated-user) step to retrieve the current authenticated user from the session. You can also use the the session steps to store and retrieve data from the session.
+
+| Step | Description|
+|------|------------|
+|[GetFromSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/get-from-session) | Get A String from the current Session |
+|[GetObjectFromSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/get-object-from-session) | Get a JavaScript Object from the current session |
+|[SetInSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/set-in-session) | Set a String an the current session |
+|[SetObjectInSession](../../reference-manual/convertigo-objects/sequencer/steps/http-session-management/set-object-in-session) | Set a JavaScript Object in the current session |
+
+{{site.data.alerts.note}}
+Sessions are use for Licensing control for Concurrent session licensing Schemes (B2C Licensing). Your Convertigo Server license will authorize a limited amount of sessions. Be sure to set your project's Session timeout to a reasonable amount to make sure they will be automatically closed on user inactivity. The Default is 30 minutes (1800 Seconds).
+{{site.data.alerts.end}}
+
+#### Stateless programming
+
+Stateless programming is done by just closing the session explicitly after having executed a Sequence. In this case Convertigo server will not hold data across different service (Sequence) invocations. This is some time used in RESTful APIs contexts where the State is held on the client side. In this mode your Sequences must be authorized to run  un authenticated, so be sure the Sequences's **Authenticated context required** property are set to **false**.
+
+Also you will be responsible for checking if the Sequence is allowed to to run in the business flow itself by checking a Token API key or whatever the client will provide you.
+
+To explicitly close a session after a Sequence execution add as the last step a **Sequences JS** Step with the following code :
+
+```
+context.httpSession.setMaxInactiveInterval(0)
+```
+
+This will set the **Session Timeout** to 0 and the session will be immediately removed.
 
 ### Setting up FullSync on back-ends
 
