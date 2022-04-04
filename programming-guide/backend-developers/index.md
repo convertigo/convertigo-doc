@@ -436,13 +436,7 @@ Stateless programming is done by just closing the session explicitly after havin
 
 Also you will be responsible for checking if the Sequence is allowed to to run in the business flow itself by checking a Token API key or whatever the client will provide you.
 
-To explicitly close a session after a Sequence execution add as the last step a **Sequences JS** Step with the following code :
-
-```
-context.httpSession.setMaxInactiveInterval(0)
-```
-
-This will set the **Session Timeout** to 0 and the session will be immediately removed.
+To explicitly close a session after a Sequence execution add as the last step a **RemoveSession** Step.
 
 ### Setting up FullSync on back-ends
 
