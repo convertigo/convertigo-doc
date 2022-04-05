@@ -910,16 +910,19 @@ Convertigo has different Steps to Read or Write data files from different format
 
 #### Read JSON Step
 Use the [Read JSON](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-json/) Step to load data from a JSON file.
-![Step Call Transaction Source Picker](../../images/pguide_img/backend/read_write_file/read_json.png)
+![Step READ JSON](../../images/pguide_img/backend/read_write_file/read_json.png)
 
 | Property | Description |
 |----------|-------------|
 | **Key**      | Fill this property with a value for the parent object. |
 | **Source**   | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+| **JSON Sample**      | Fill this property with the result JSON structure in order to have a schema usable in the Source picker. |
+
+If you double-click the [Read JSON](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-json/) Step, it will update the Source picker schema.
 
 #### Write JSON Step
 Use the [Write JSON](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/write-json/) Step to write data to a JSON file.
-![Step Call Transaction Source Picker](../../images/pguide_img/backend/read_write_file/write_json.png)
+![Step WRITE JSON](../../images/pguide_img/backend/read_write_file/write_json.png)
 
 | Property | Description |
 |----------|-------------|
@@ -929,7 +932,7 @@ Use the [Write JSON](../../reference-manual/convertigo-objects/sequencer/steps/f
 
 #### Read CSV Step
 Use the [Read CSV](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-csv/) Step to load data from a CSV file.
-![Step Call Transaction Source Picker](../../images/pguide_img/backend/read_write_file/read_csv.png)
+![Step READ CSV](../../images/pguide_img/backend/read_write_file/read_csv.png)
 
 | Property | Description |
 |----------|-------------|
@@ -941,15 +944,58 @@ Use the [Read CSV](../../reference-manual/convertigo-objects/sequencer/steps/fil
 |   **Title line**   |  Defines whether the CSV file has a title line or not. If exists, the keys are named by the first title line of CSV file. Default value is **false**.   |
 |    **Vertical direction**  |  Defines the array reading direction. Default value is **false** (horizontal) |
 
+If you double-click the [Read CSV](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-csv/) Step, it will update the Source picker schema.
+
 #### Write CSV Step
+Use the [Write CSV](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/write-csv/) Step to write data to a CSV file.
+![Step WRITE CSV](../../images/pguide_img/backend/read_write_file/write_csv.png)
+
+| Property | Description |
+|----------|-------------|
+| **Append timestamp**   | If **true**, **yyyymmddHHmmssSSS** format is concatenated at the end of file name. Default value is **false** |
+| **Encoding**   | Set the **Encoding** property with a value for the charset encoding (ISO-8859-1, UTF-8, ...). |
+|   **Output file**     | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+| **Append Result**   | If **true**, add data result at the end of the file. Default value is **false** |
+| **End line type**   | Define the new line character for each row in file. Default value is **windows** |
 
 #### Read XML Step
+Use the [Read XML](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-xml/) Step to load data from a JSON file.
+![Step READ XML](../../images/pguide_img/backend/read_write_file/read_xml.png)
+
+| Property | Description |
+|----------|-------------|
+| **Source**   | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+
+If you double-click the [Read XML](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/read-xml/) Step, it will update the Source picker schema.
+
 #### Write XML Step
+Use the [Write XML](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/write-xml/) Step to write data to an XML file.
+![Step WRITE XML](../../images/pguide_img/backend/read_write_file/write_xml.png)
+
+| Property | Description |
+|----------|-------------|
+| **Append timestamp**   | If **true**, **yyyymmddHHmmssSSS** format is concatenated at the end of file name. Default value is **false** |
+| **Default root tag name**   | Defines the root element tag name. Default value is **document** |
+| **Encoding**   | Set the **Encoding** property with a value for the charset encoding (ISO-8859-1, UTF-8, ...). |
+|   **Output file**     | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+| **Append Result**   | If **true**, add data result at the end of the file. Default value is **false** |
 
 #### Write B64 Binary Step
+Use the [WriteBase64](../../reference-manual/convertigo-objects/sequencer/steps/file-management-steps/write-binary-from-base64/) Step to write data to a binary file.
+![Step WRITE B64](../../images/pguide_img/backend/read_write_file/write_b64.png)
+
+| Property | Description |
+|----------|-------------|
+| **Append timestamp**   | If **true**, **yyyymmddHHmmssSSS** format is concatenated at the end of file name. Default value is **false** |
+|   **Output file**     | This property is a Javascript field to fill with a file path. I can be an **absolute** path or a **relative** path using **./** (relative to the workspace folder) or **.//** (relative to the project folder) |
+| **Source**   | Defines the source data to write and ste from a reference on a previously existing step in the parent sequence. |
 
 #### Read Text file
+If you need to read data from a Text file or any other data format not covered by existing Steps you can write your own Java code, for example:
+![Step READ TEXT](../../images/pguide_img/backend/read_write_file/read_java.png)
 #### Write Text file
+If you need to write data to a Text file or any other data format not covered by existing Steps you can write your own Java code, for example:
+![Step READ TEXT](../../images/pguide_img/backend/read_write_file/write_java.png)
 
 ### Understanding session management
 
