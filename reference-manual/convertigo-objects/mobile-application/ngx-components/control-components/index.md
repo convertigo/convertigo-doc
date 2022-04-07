@@ -15,6 +15,7 @@ topnav: topnavobj
 * [Finally Handler](finally-handler/)
 * [Loop Handler](loop-handler/)
 * [PageEvent](pageevent/)
+* [SharedComponent BindingEvent](sharedcomponent-bindingevent/)
 * [SharedComponent Event](sharedcomponent-event/)
 * [Subscribe Handler](subscribe-handler/)
 * [SwitchCase Handler](switchcase-handler/)
