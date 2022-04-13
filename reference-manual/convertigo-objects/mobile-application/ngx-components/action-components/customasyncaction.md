@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: action-components
 ObjName: CustomAsyncAction
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UICustomAsyncAction
-ObjIcon: /images/beans/core/images/default_color_16x16.png
+ObjIcon: /images/beans/ngx/components/images/uicustomasyncaction_color_32x32.png
 topnav: topnavobj
 ---
 ##### Defines <i>CustomAsyncAction</i> action component. 
