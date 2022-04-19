@@ -1048,6 +1048,33 @@ To explicitly close a session after a Sequence execution add as the last step a 
 
 ### Debugging & Monitoring
 
+Debugging a sequence can consist of adding Log steps or more complex custom logs throughout its execution. It is also possible to perform a Step by Step execution of a sequence by using its Debug mode feature.
 #### Setting log levels
 
+Setting log levels for the different loggers will permit you to [debug your sequences](#debugging--monitoring-1) or to see only important your [custom logs](#adding-custom-logs-1) as milestones throughout execution.
+Lowering log levels will be used to save CPU and I/O disk, but debugging an application will be harder.
+Raising log levels will consume more CPU, I/O disk ans disk space, but it will be easier to debug an application or to follow the application flow.
+Each log levels display logs from **ERROR** up to the target level.
+**ERROR** is the lowest log level and **TRACE** is the higher.
+##### Studio
+![Log Level Studio](../../images/pguide_img/backend/logs/custom_logs_level_studio_05.png)
+
+##### Server
+![Log Level Server](../../images/pguide_img/backend/logs/custom_logs_level_server_06.png)
 #### Adding custom logs
+
+Throughout sequence execution you can add [Logs](https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/sequencer/steps/others/log/) Steps to place different messages, data or debug values in Convertigo logs.
+
+![Log Step](../../images/pguide_img/backend/logs/custom_logs_step_01.png)
+
+![Log Step](../../images/pguide_img/backend/logs/custom_logs_step_02.png)
+
+You may also use the **log** object in a **sequence JS** step to add logs when using more complex code. The different log methods are *error(String)*, *warn(String)*, *info(String)*, *debug(String)*, *trace(String)*. They affect the **Context** logger.
+
+![JS Log](../../images/pguide_img/backend/logs/custom_logs_js_03.png)
+
+![JS Log](../../images/pguide_img/backend/logs/custom_logs_js_04.png)
+
+**Note:** To be able to see your different log levels, you must set the target logger high enough to see logs and below levels. For example, if you set the **Context** logger level to **WARN**, you will only see logs *ERROR* and *WARN*. If you set it to **TRACE** you will see *ERROR*, *WARN*, *INFO*, *DEBUG* and *TRACE* logs. See [Setting log levels](#setting-log-levels-1) for more details.
+
+#### Debug mode
