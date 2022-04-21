@@ -3,7 +3,7 @@ layout: page
 title: SharedComponent BindingEvent
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/control-components/sharedcomponent-bindingevent/
-metadesc: Defines a  SharedComponent BindingEvent  component.  This component stands for Angular's event bindind. It helps defining an event a shared component 
+metadesc: Defines a  SharedComponent BindingEvent  component.  This component stands for Angular's event binding. It helps defining an event a shared component 
 ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: SharedComponent BindingEvent
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>SharedComponent BindingEvent</i> component. 
 
-This component stands for Angular's event bindind.<br/>It helps defining an event a shared component may emit.<br/>For more information: <a href='https://angular.io/guide/template-syntax#event-binding---event-' target='_blank'>Event binding</a>
+This component stands for Angular's event binding.<br/>It helps defining an event a shared component may emit.<br/>For more information: <a href='https://angular.io/guide/event-binding' target='_blank'>Event binding</a>
 
 Property | Type | Category | Description
 --- | --- | --- | ---
