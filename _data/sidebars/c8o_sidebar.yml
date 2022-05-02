@@ -80,9 +80,6 @@ entries:
     - title: DevOps
       url: /programming-guide/devops/
       output: web, pdf
-    - title: Test Developers
-      url: /programming-guide/test-developers/
-      output: web, pdf
       
   - title: Convertigo no-code Forms
     output: web, pdf

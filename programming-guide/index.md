@@ -13,4 +13,3 @@ permalink: /programming-guide/
 - [Back-End Developers](./backend-developers/)
 - [Front-End Developers](./frontend-developers/)
 - [DevOps](./devops/)
-- [Test Developers](./test-developers/)
