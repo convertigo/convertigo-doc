@@ -30,9 +30,6 @@ entries:
     - title: Convertigo Objects
       url: /reference-manual/convertigo-objects/
       output: web, pdf
-    - title: Convertigo Mobile Builder
-      url: /reference-manual/convertigo-mobile-builder/
-      output: web, pdf
     - title: Convertigo Server
       url: /reference-manual/convertigo-mbaas-server/
       output: web, pdf
@@ -70,6 +67,9 @@ entries:
       output: web, pdf
     - title: Understanding Convertigo Objects
       url: /programming-guide/understanding-convertigo-objects/
+      output: web, pdf
+    - title: Convertigo Builder
+      url: /reference-manual/convertigo-mobile-builder/
       output: web, pdf
     - title: BackEnd Developers
       url: /programming-guide/backend-developers/

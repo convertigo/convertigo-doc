@@ -1,30 +1,28 @@
 ---
-title: Convertigo Mobile Builder
+title: Convertigo Builder
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
-summary: "Convertigo Mobile Builder is the Visual Drag & Drop Mobile App module for Convertigo Mobility Platform"
+last_updated: 04/05/2022
+summary: "Convertigo Builder is the visual Drag & Drop Application module for Convertigo Low Code Platform"
 sidebar: c8o_sidebar
 permalink: /reference-manual/convertigo-mobile-builder/
 ---
 {{site.data.alerts.note}}
-With Convertigo Mobile builder, you can build in minutes, Cross – Platform UIs based on the Ionic / Angular technology accessing the full power of Convertigo MBaaS server.
+With {{site.data.strings.product_name}}, you can build in minutes, Cross–Platform UIs based on the Ionic / Angular technology accessing the full power of Convertigo MBaaS server.
 {{site.data.alerts.end}}
 
-## Mobile builder overview
+## Builder overview
 
-RAD (Rapid Application Development) is now a very well-known concept for classic application development. This type of technology is called RMAD when it is applied to Mobile Applications.
+{{site.data.strings.product_name}} is building the next generation product including one of the most powerful Front End Low code builder on the market.
 
-Convertigo is building the next generation product including one of the most powerful RMAD module on the market.
+It uses a new graphical user interface builder able to build, in a few minutes, ready-to-deploy applications leveraging the full power of Convertigo MBaaS backend!
 
-Convertigo Mobile Builder uses a new graphical user interface builder able to build, in a few minutes, ready-to-deploy applications leveraging the full power of Convertigo MBaaS backend!
+An application produced with {{site.data.strings.product_name}} is not a “prototype” nor a “quick & dirty” application. Built applications are fully deployable on cross-platform devices and work on complex enterprise data.
 
-Unlike other RAD systems, an application produced with Convertigo Mobile Builder is not a “prototype” nor a “quick & dirty” app. Built applications are fully deployable on cross-platform devices and work on complex enterprise data.
+{{site.data.strings.product_name}} is based on well-known industry standard technologies such as Cordova, Angular 13 and Ionic 6 frameworks.
 
-Convertigo Mobile Builder RMAD is based on well-known industry standard technologies such as Cordova, Angular 5 and Ionic 3 frameworks.
+{% include image.html file="man_img/MB-Overview.png" url="images/man_img/MB-Overview.png" alt="Convertigo Builder overview" caption="Convertigo Builder overview" %}
 
-{% include image.html file="man_img/MB-Overview.png" url="images/man_img/MB-Overview.png" alt="Convertigo Mobile Builder overview" caption="Convertigo Mobile Builder overview" %}
-
-The new Mobile Builder module brings an “Application” object in project tree under the “MobileApplication” object. This object is representing the graphical UI displayed on the right pane. To design and build an application, the user simply drags & drops mobile components from the mobile palette to the correct location in the Application tree.
+The new Builder module brings an “Application” object in project tree under the “NgxApp” object. This object is representing the graphical UI displayed on the right pane. To design and build an application, the user simply drags & drops mobile components from the mobile palette to the correct location in the Application tree.
 
 The Viewer right pane will automatically reflect the changes in real time showing the user what the app will look like. The user can also modify any of the mobile component properties and see in real time the result in the right pane app viewer.
 
@@ -35,15 +33,15 @@ The application you are working on will be displayed in the “Application Viewe
 Right click on the “Application” component -> Execute
 Double click on the “Application” component
 Hit the “ENTER” key when the application component is selected
-When the application viewer is launched, it will start to build in real time the current application described in your project. For this, the viewer will need to download from Internet all your application dependencies modules. This download is done once from the NPM repository using the standard NPM tool. This is why you should have NPM (NodeJS > 8.X) installed on your workstation to use Mobile Builder.
+When the application viewer is launched, it will start to build in real time the current application described in your project. For this, the viewer will need to download from Internet all your application dependencies modules. This download is done once from the NPM repository using the standard NPM tool. This is why you should have NPM (NodeJS > 8.X) installed on your workstation to use Builder.
 
 The NPM install process can last several minutes according to your Internet Bandwith and CPU power. A progress indicator will show you how much data has been downloaded. A typical application will require about 180MB of packages dependencies to be downloaded and installed in your project. In most cases the NPM install process is done only once in the life of your project, but you can choose to re-install NPM dependencies, or to update them by right-clicking on:
 
 “Application” component -> “Update packages and Execute…”
 “Application” component -> “Re-install packages and Execute…”
-Once the packages have been downloaded, the viewer will start to build your app to be displayed. This process will take about 20 to 30 seconds and will be done only once when you launch the viewer. While the viewer is displayed, any modification in the Mobile Builder project tree will be reflected in real time in the viewer.
+Once the packages have been downloaded, the viewer will start to build your app to be displayed. This process will take about 20 to 30 seconds and will be done only once when you launch the viewer. While the viewer is displayed, any modification in the Builder project tree will be reflected in real time in the viewer.
 
-Applications can be shown as iOS devices (iPhones, iPADs) as Android devices or as Windows Mobile devices. The user can click on the device menu to show all available devices. Custom devices can also be created by giving the device a name and configuring its width and height in pixels. Users can Zoom in and Zoom out the apps to see more details or to fit the whole app in the app viewer.
+Applications can be shown as iOS devices (iPhones, iPADs) as Android devices or as a Desktop application. The user can click on the device menu to show all available devices. Custom devices can also be created by giving the device a name and configuring its width and height in pixels. Users can Zoom in and Zoom out the apps to see more details or to fit the whole app in the app viewer.
 
 {% include image.html file="man_img/landscape-viewer.png" url="images/man_img/landscape-viewer.png" alt="Landscape-viewer" caption="Landscape-viewer" max-width="400" %}
 {% include image.html file="man_img/Portrait-viewer.png" url="images/man_img/Portrait-viewer.png" alt="Portrait-viewer" caption="Portrait-viewer" max-width="400" %}
@@ -68,25 +66,25 @@ The Mobile Builder has several controls you can use to help you running the app 
 - **Save Dataset**: Saves current data in the app as a dataset
 - **Delete Dataset**: Deletes a dataset
 
-## Mobile components
+##  NGX Components
 
-The Mobile Builder comes with a “Mobile Palette” containing the main components useful for creating the content of your application pages. Components are grouped by categories, but you can quickly find a component using the search bar. When you select a component, help for its use is displayed in the right pane. Simply drag and drop your components from the palette into the tree view of your pages.
+The Builder comes with a “NGX Palette” containing the main components useful for creating the content of your application pages. Components are grouped by categories, but you can quickly find a component using the search bar. When you select a component, help for its use is displayed in the right pane. Simply drag and drop your components from the palette into the tree view of your pages.
 
-{% include image.html file="man_img/MobilePalette.png" url="images/man_img/MobilePalette.png" alt="MobilePalette" caption="MobilePalette" max-width="400" %}
+{% include image.html file="man_img/MobilePalette.png" url="images/man_img/MobilePalette.png" alt="NGXPalette" caption="NGXPalette" max-width="400" %}
 
 When you drop a component on existing one in the tree, it will be inserted under. You can reorder it by using the ‘up’ and ‘down’ buttons on the top of the project tree. You can also move the component to another position in the tree branch by drag & dropping it on the same branch.
 
 Although this is not as precise as dragging on the tree, you can also drag a component directly on the Application Viewer space. In this case, the zone where the component will be droppped will be highlighted in blue.
 
-{% include image.html file="man_img/mobile-components.png" url="images/man_img/mobile-components.png" alt="Mobile Component" caption="Mobile Components" max-width="400" %}
+{% include image.html file="man_img/mobile-components.png" url="images/man_img/mobile-components.png" alt="NGX Component" caption="NGX Components" max-width="400" %}
 
-Any mobile component can be selected from the project tree view which allows you to access and modify its properties in the “Properties” view. When you double-click on a component it is automatically highlighted in blue with a red dotted border in the application viewer. You can also double-click on a page to display this exact page on the app viewer. The other way round, if you right-click on a component in the application viewer, it will be highlighted and its mobile component will also be selected in the project tree.
+Any component can be selected from the project tree view which allows you to access and modify its properties in the “Properties” view. When you double-click on a component it is automatically highlighted in blue with a red dotted border in the application viewer. You can also double-click on a page to display this exact page on the app viewer. The other way round, if you right-click on a component in the application viewer, it will be highlighted and its component will also be selected in the project tree.
 
 ## Handling events and actions
 
-An application reacts to events generated by users, for example when they click on a button, submit a form, or wipe and object. You can handle these events by dropping the ‘Event’ component from the palette on a mobile component. A ‘control’ folder will be created with the event in it. Any mobile component can receive an 'Event component (buttons, images, containers, etc …). Once the ‘Event’ is placed, you can configure its ‘Event Type’ property to the event of your choice. Mobile builder has a built-in event list (click, tap, swipe, ect …) but you may use your own by typing yourself the event enclosed by parenthesis, eg: (myEvent)
+An application reacts to events generated by users, for example when they click on a button, submit a form, or wipe and object. You can handle these events by dropping the ‘Event’ component from the palette on a mobile component. A ‘control’ folder will be created with the event in it. Any component can receive an 'Event component (buttons, images, containers, etc …). Once the ‘Event’ is placed, you can configure its ‘Event Type’ property to the event of your choice. Builder has a built-in event list (click, tap, swipe, ect …) but you may use your own by typing yourself the event enclosed by parenthesis, eg: (myEvent)
 
-An application also reacts to some internal events triggered by mobile ‘Pages’, for example when a page is displayed, or created. To handle these type of events you can use the the ‘Page event’ component by dropping it directly on a ‘Page’.
+An application also reacts to some internal events triggered by ‘Pages’, for example when a page is displayed, or created. To handle these type of events you can use the ‘Page event’ component by dropping it directly on a ‘Page’.
 
 ### Using Actions in events
 
@@ -129,7 +127,7 @@ You can add variable objects to this action by dropping ‘Variable’ component
 
 ## Mobile debugger
 
-Convertigo Mobile Builder includes a 100% visual debugger able to monitor and debug your mobile apps. This debugger has roughly the same features and usage than the Google Chrome debugger. To activate it, just click on the mobile debug tab(1) and click the debugger icon(2). The tool can be used to adjust styles, margins, and components placements precisely. Therefore, unlike other RMAD platforms, Convertigo mobile Builder can be used to create tailored applications.
+{{site.data.strings.product_name}} includes a 100% visual debugger able to monitor and debug your apps. This debugger has roughly the same features and usage than the Google Chrome debugger. To activate it, just click on the mobile debug tab(1) and click the debugger icon(2). The tool can be used to adjust styles, margins, and components placements precisely. Therefore, unlike other platforms, {{site.data.strings.product_name}} can be used to create tailored applications.
 
 {% include image.html file="man_img/Mobile-debugger-12.png" url="images/man_img/Mobile-debugger-12.png" alt="Mobile debugger 1" caption="Mobile debugger 1" max-width="400" %}
 
@@ -139,9 +137,9 @@ The mobile debugger also shows all the network interaction between the device an
 
 ## Data binding
 
-Data binding makes mobile applications able to display data from the backend services. With Convertigo this is done by a simple Drag & Drop!
-One of the most powerful features of Convertigo Mobile builder RMAD is the Automatic Databinding. Data can be linked inbound and outbound without writing any line of code!
-This can be done by using the “Mobile Picker” tool. This picker displays all the Sequences, FullSync databases, Iterator directives and Forms available for your project and for each of them the data model returned. Drag & dropping one of the model fields to a Mobile component will automatically bind it to the data.
+Data binding makes applications able to display data from the backend services. With Convertigo this is done by a simple Drag & Drop!
+One of the most powerful features of {{site.data.strings.product_name}} RMAD is the Automatic Databinding. Data can be linked inbound and outbound without writing any line of code!
+This can be done by using the NGX Picker” tool. This picker displays all the Sequences, FullSync databases, Iterator directives and Forms available for your project and for each of them the data model returned. Drag & dropping one of the model fields to a component will automatically bind it to the data.
 
 {% include image.html file="man_img/photo-1.png" url="images/man_img/photo-1.png" max-width="400" %}
 
@@ -152,14 +150,14 @@ Every component property can be bound in different modes. Click on one of the mo
 - (TX) mode : property will be bound to some static text.
 - (TS) mode : property will be bound to a TypeScript expression.
 It can be a string (write it within enclosing simple quotes), a number (write it as is) or an expression calling some of the page methods, for example myMethod()
-- (SC) mode : property will be bound to a source picked by the mobile picker tool, coming from a Sequence call, a FullSync call, an Iterator directive or a Form.
+- (SC) mode : property will be bound to a source picked by the NGX picker tool, coming from a Sequence call, a FullSync call, an Iterator directive or a Form.
 
 ### Collection binding
 
 Collection binding will make a component with its content repeated for each data occurrence. This is useful to display a list of items.
 
 Sometimes, you’d like the returned data to be bound to a collection, for example when you want to display a list of items.
-Use the “ForEach” directive component by drag & dropping it in a mobile “List Container” component. 
+Use the “ForEach” directive component by drag & dropping it in a “List Container” component. 
 Configure its “Directive source” property by clicking the “SC” toggle and the “…” button, then select the recurring data field of your source.
 
 In example below, the “ForEach” component contains one “Button” component which will be repeated for each “employee”.
@@ -168,10 +166,10 @@ In example below, the “ForEach” component contains one “Button” componen
 
 ## Styling applications
 
-Convertigo Mobile Builder RMAD applications can be easily styled as they are based on the powerful Ionic 2 framework.
-You can use the “Style” component to apply styles to the entire application, to a whole page and/or to given a mobile component.
+{{site.data.strings.product_name}} applications can be easily styled as they are based on the powerful Ionic 2 framework.
+You can use the “Style” component to apply styles to the entire application, to a whole page and/or to given a component.
 
-Simply Drag & Drop the “Style” component from the mobile palette. The following picture shows a “Style” component which will apply for a whole page.
+Simply Drag & Drop the “Style” component from the NGX palette. The following picture shows a “Style” component which will apply for a whole page.
 
 {% include image.html file="man_img/Styling-appllications-1.png" url="images/man_img/Styling-appllications-1.png" alt="Styling appllications 1" caption="Styling appllications 1" max-width="400" %}
 
@@ -183,14 +181,14 @@ Double clicking on a “Style” will open the “Style editor” where you can 
 
 {% include image.html file="man_img/Styling-applications-3.png" url="images/man_img/Styling-applications-3.png" alt="Styling appllications 3" caption="Styling appllications 3" max-width="400" %}
 
-You can also use the “Theme” component to apply a theme to your application by dragging & dropping it from the mobile palette on the project “Application” component.
+You can also use the “Theme” component to apply a theme to your application by dragging & dropping it from the NGX palette on the project “Application” component.
 The “Theme” can be edited by double-clicking on it.
 
 {% include image.html file="man_img/Styling-applications-4.png" url="images/man_img/Styling-applications-4.png" alt="Styling appllications 4" caption="Styling appllications 4" max-width="400" %}
 
 ## Using forms
 
-Form management is a built-in feature of Convertigo Mobile Builder RMAD.
+Form management is a built-in feature of {{site.data.strings.product_name}}.
 
 To add and design a form, simply drag & drop a “Form” and its ‘input’ components in the content of a page. 
 Form ‘input’ components can be input fields, check boxes, range sliders, select drop downs, radio buttons, toggles or any other HTML form element. 
@@ -198,7 +196,7 @@ Drop an “onSubmit” Event on the form to handle submission. Bind this event b
 
 {% include image.html file="man_img/Using-forms-1.png" url="images/man_img/Using-forms-1.png" alt="Using forms 1" max-width="500" %}
 
-Even better, you can build a form in just one action by drag & dropping a “Sequence” directly on a “Form” component! Convertigo Mobile Builder will automatically generate for you all the form ‘input’ components with labels, bind the “onSubmit” event to this sequence, and bind all the form ‘input’ components to the sequence input variables. You are then free to customize the form the way you want.
+Even better, you can build a form in just one action by drag & dropping a “Sequence” directly on a “Form” component! {{site.data.strings.product_name}} will automatically generate for you all the form ‘input’ components with labels, bind the “onSubmit” event to this sequence, and bind all the form ‘input’ components to the sequence input variables. You are then free to customize the form the way you want.
 
 Forms also support field validators. To use them, just drag & drop on an ‘input’ component a “ControlValidator” component and change its properties, or use a “CustomValidator” component to write a custom validation function. Simply double-click on the validator to open its editor, scroll down to the function and write your code between the /* Begin_c8o_function:validateXXX */ and the /* End_c8o_function:validate */ comments. You can also add a “CustomValidator” component to your “Form” component if you’d like to handle the whole form validation.
 
@@ -206,7 +204,7 @@ Forms also support field validators. To use them, just drag & drop on an ‘inpu
 
 ## Writing custom code
 
-Although RMAD technology helps in writing mobile applications in a few clicks, you might want to write your own custom code to perform some bespoke processing in your app. Convertigo Mobile Builder enables this by letting you write some TypeScript code at the application level or at a specific page level.
+Although RMAD technology helps in writing applications in a few clicks, you might want to write your own custom code to perform some bespoke processing in your app. {{site.data.strings.product_name}} enables this by letting you write some TypeScript code at the application level or at a specific page level.
 
 ### Customizing code at the application level
 
@@ -214,7 +212,7 @@ To write code at the application level, right-click on the application component
 
 {% include image.html file="man_img/Write-Custom-code-1.png" url="images/man_img/Write-Custom-code-1.png" alt="Write Custom code 1" max-width="500" %}
 
-Write your TypeScript code between the /* Begin_c8o_XXX */ and the /* End_c8o_XXX */ comments. This code will be saved in the application or the page component. Convertigo Mobile Builder TypeScript editor supports syntax coloring and code assist completion.
+Write your TypeScript code between the /* Begin_c8o_XXX */ and the /* End_c8o_XXX */ comments. This code will be saved in the application or the page component. {{site.data.strings.product_name}} TypeScript editor supports syntax coloring and code assist completion.
 
 ### Customizing code at the page level
 
