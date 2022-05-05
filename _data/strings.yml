@@ -5,3 +5,5 @@ search_placeholder_text: Search...
 search_no_results_text: No results found.
 product_name: Convertigo Builder
 platform_name: Convertigo Low Code Platform
+ionic_version: 6
+angular_version: 13
