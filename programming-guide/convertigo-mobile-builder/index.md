@@ -124,11 +124,11 @@ You can write your own actions by using the ‘**CustomAction**’ action compon
 The action can be coded in TypeScript. For this, double-click on the action and edit the code between the comments :
 
 {% highlight js %}
-/* begin_c8o.... */ 
+/* Begin_c8o.... */ 
 
   /* --- Your code here --- */
 
-/* end_c8o .... */ 
+/* End_c8o .... */ 
 {% endhighlight js %}
 
 You can add variable objects to this action by dropping ‘**Variable**’ components on the ‘**CustomAction**’. You will be able to use data binding on these variables, and as they will be transmitted to the ‘**CustomAction**’, you will be able to use these variable values in your custom code. To access a variable value, use **vars.VariableName** where **VariableName** is the name of the variable you want to target.
@@ -208,13 +208,13 @@ Drop an “**onSubmit**” Event on the form to handle submission. Bind this eve
 
 Even better, you can build a form in just one action by drag & dropping a “Sequence” directly on a “Form” component! {{site.data.strings.product_name}} will automatically generate for you all the form ‘input’ components with labels, bind the “onSubmit” event to this sequence, and bind all the form ‘input’ components to the sequence input variables. You are then free to customize the form the way you want.
 
-Forms also support field validators. To use them, just drag & drop on an “**input**” component a “**ControlValidator**” component and change its properties, or use a “CustomValidator” component to write a custom validation function. Simply double-click on the validator to open its editor, scroll down to the function and write your code between the /* Begin_c8o_function:validateXXX */ and the /* End_c8o_function:validate */ comments. You can also add a “CustomValidator” component to your “Form” component if you’d like to handle the whole form validation.
+Forms also support field validators. They are now directly accessible from within components properties. For example, an “**input**” component has a “**Required**” property to disable submit button until it is filled with a value:
 
 {% include image.html file="man_img/Using-forms-2.png" url="images/man_img/Using-forms-2.png" alt="Using forms 2" max-width="400" %}
 
 ## Writing custom code
 
-Although RMAD technology helps in writing applications in a few clicks, you might want to write your own custom code to perform some bespoke processing in your app. {{site.data.strings.product_name}} enables this by letting you write some TypeScript code at the application level or at a specific page level.
+Although Low Code technology helps in writing applications in a few clicks, you might want to write your own custom code to perform some bespoke processing in your app. {{site.data.strings.product_name}} enables this by letting you write some TypeScript code at the application level or at a specific page level.
 
 ### Customizing code at the application level
 
@@ -222,19 +222,29 @@ To write code at the application level, right-click on the application component
 
 {% include image.html file="man_img/Write-Custom-code-1.png" url="images/man_img/Write-Custom-code-1.png" alt="Write Custom code 1" max-width="500" %}
 
-Write your TypeScript code between the /* Begin_c8o_XXX */ and the /* End_c8o_XXX */ comments. This code will be saved in the application or the page component. {{site.data.strings.product_name}} TypeScript editor supports syntax coloring and code assist completion.
+Write your TypeScript code between comments:
+
+{% highlight js %}
+/* Begin_c8o.... */ 
+
+  /* --- Your code here --- */
+
+/* End_c8o .... */ 
+{% endhighlight js %}
+
+This code will be saved in the application or the page component. {{site.data.strings.product_name}} TypeScript editor supports syntax coloring and code assist completion.
 
 ### Customizing code at the page level
 
-You can do the same at the page level to customize code for a given page. You will be able to add new page methods, import your components and do some initialization tasks in the constructor. For this, right-click on page and select “Edit Page class…”. Again, be sure to write your TypeScript code between the /* Begin_c8o_XXX */ and the /* End_c8o_XXX */ comments.
+You can do the same at the page level to customize code for a given page. You will be able to add new page methods, import your components and do some initialization tasks in the constructor. For this, right-click on page and select “**Edit Page class…**”. Again, be sure to write your TypeScript code between the /* Begin_c8o_XXX */ and the /* End_c8o_XXX */ comments.
 
 ### Using Custom Actions
 
-You can also write TypeScript custom code for a “CustomAction” component. To do this, drag & drop the “CustomAction” component on an “Event” component. Then, double click on the “CustomAction” to open the editor.
+You can also write TypeScript custom code for a “CustomAction” component. To do this, drag & drop the “**CustomAction**” component on an “**Event**” component. Then, double click on the “**CustomAction**” to open the editor.
 
 {% include image.html file="man_img/Write-Custom-code-2.png" url="images/man_img/Write-Custom-code-2.png" alt="Write Custom code 2" max-width="500" %}
 
-Be sure to use the resolve() function in your custom code to execute the next action in the chain.
+Be sure to use the **resolve()** function in your custom code to execute the next action in the chain.
 
 ### Injecting Services
 
@@ -256,4 +266,4 @@ Of course, you may need to inject other services to be able to use them. This is
 let myService = this.getInstance(ServiceName) 
 {% endhighlight %}
 
-will inject dynamically “ServiceName” and let you use it by the “myService” reference variable.
+will inject dynamically “ServiceName” and let you use it by the “**myService**” reference variable.
