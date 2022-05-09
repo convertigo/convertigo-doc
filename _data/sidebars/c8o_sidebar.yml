@@ -68,9 +68,6 @@ entries:
     - title: Understanding Convertigo Objects
       url: /programming-guide/understanding-convertigo-objects/
       output: web, pdf
-    - title: Convertigo Builder
-      url: /reference-manual/convertigo-mobile-builder/
-      output: web, pdf
     - title: BackEnd Developers
       url: /programming-guide/backend-developers/
       output: web, pdf
