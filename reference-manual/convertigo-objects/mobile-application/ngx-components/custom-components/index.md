@@ -8,6 +8,8 @@ topnav: topnavobj
 * [Animation](animation/)
 * [Attr](attr/)
 * [DynamicAttr](dynamicattr/)
+* [Font](font/)
+* [FontStyle](fontstyle/)
 * [Fragment](fragment/)
 * [Style](style/)
 * [Tag](tag/)
