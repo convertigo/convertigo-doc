@@ -468,3 +468,39 @@ will inject dynamically “ServiceName” and let you use it by the “**myServi
 ## Using FullSync in Convertigo front-end
 
 ## Debugging front end applications
+	
+## Deploy front end applications on Android device
+
+There are two methods to test your application on a Android device:
+
+### Remote build (Integrated Phonegap service)
+
+Generate the files in the Studio by clicking the "**Build Locally**" button and choosing '**production**' or '**fast**':
+
+{% include image.html file="pguide_img/frontend/pg_guide_front_end_build_locally.png" url="images/pguide_img/frontend/pg_guide_front_end_build_locally.png" alt="Build Locally" max-width="500" %}
+
+Don't forget to set the "**Convertigo server endpoint**" (**Application** object in project's treeview) to the Studio or the server URL:
+
+{% include image.html file="pguide_img/frontend/pg_guide_front_end_c8o_endpoint.png" url="images/pguide_img/frontend/pg_guide_front_end_c8o_endpoint.png" alt="Convertigo Server Endpoint" max-width="500" %}
+
+Then, in the **Test Platform**, in **Android** header, click the "**Build mobile platform**" to remotely build  on our Phonegap server the APK and generate the QR you will scan from your Android Device to install the application:
+
+{% include image.html file="pguide_img/frontend/pg_guide_front_end_tp_build_mobile.png" url="images/pguide_img/frontend/pg_guide_front_end_tp_build_mobile.png" alt="Build Mobile Platform" max-width="500" %}
+
+### Local Build (from Studio)
+
+Generate the files in the Studio by clicking the "**Build Locally**" button and choosing '**production**' or '**fast**':
+
+{% include image.html file="pguide_img/frontend/pg_guide_front_end_build_locally.png" url="images/pguide_img/frontend/pg_guide_front_end_build_locally.png" alt="Build Locally" max-width="500" %}
+
+Don't forget to set the "**Convertigo server endpoint**" (**Application** object in project's treeview) to the Studio or the server URL:
+
+{% include image.html file="pguide_img/frontend/pg_guide_front_end_c8o_endpoint.png" url="images/pguide_img/frontend/pg_guide_front_end_c8o_endpoint.png" alt="Convertigo Server Endpoint" max-width="500" %}
+ 
+Then, locally build the APK using **Application > Platforms > Android > Cordova > Run on Device**.\
+**ADB** must be installed and set on the machine.\
+The Device must be in USB debug mode and plugged to the PC (more info at https://developer.chrome.com/docs/devtools/remote-debugging/)
+
+{% include image.html file="pguide_img/frontend/pg_guide_front_end_local_build.png" url="images/pguide_img/frontend/pg_guide_front_end_local_build.png" alt="Convertigo Server Endpoint" max-width="500" %}
+
+You can debug the Android application using Google Chrome and going to **chrome://inspect#devices** in address bar.
