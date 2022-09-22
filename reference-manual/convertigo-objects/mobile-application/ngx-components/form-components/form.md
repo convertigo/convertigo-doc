@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: form-components
 ObjName: Form
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIForm
-ObjIcon: /images/beans/ngx/components/images/uiform_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiform_32x32.png
 topnav: topnavobj
 ---
 ##### form 

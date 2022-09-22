@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Error Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIActionErrorEvent
-ObjIcon: /images/beans/ngx/components/images/uiactionerrorevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiactionerrorevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines an <i>Error Handler</i>. 

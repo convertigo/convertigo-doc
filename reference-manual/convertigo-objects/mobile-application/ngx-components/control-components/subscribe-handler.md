@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Subscribe Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIEventSubscriber
-ObjIcon: /images/beans/ngx/components/images/uieventsubscriber_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uieventsubscriber_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Subscribe Handler</i> component. 

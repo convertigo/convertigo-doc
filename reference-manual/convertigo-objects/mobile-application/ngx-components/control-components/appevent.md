@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: AppEvent
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIAppEvent
-ObjIcon: /images/beans/ngx/components/images/uiappevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiappevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines an <i>AppEvent</i> component. 

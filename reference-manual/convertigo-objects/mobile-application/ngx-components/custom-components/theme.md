@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: custom-components
 ObjName: Theme
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UITheme
-ObjIcon: /images/beans/ngx/components/images/uitheme_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uitheme_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Theme</i> component. 

@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: action-components
 ObjName: CustomAction
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UICustomAction
-ObjIcon: /images/beans/ngx/components/images/uicustomaction_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uicustomaction_32x32.png
 topnav: topnavobj
 ---
 ##### Defines <i>CustomAction</i> action component. 

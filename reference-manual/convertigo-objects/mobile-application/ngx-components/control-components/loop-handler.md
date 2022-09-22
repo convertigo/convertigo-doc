@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Loop Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIActionLoopEvent
-ObjIcon: /images/beans/ngx/components/images/uiactionloopevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiactionloopevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Loop Handler</i>. 

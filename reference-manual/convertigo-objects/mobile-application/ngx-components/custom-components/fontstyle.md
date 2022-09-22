@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: custom-components
 ObjName: FontStyle
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIFontStyle
-ObjIcon: /images/beans/ngx/components/images/uifontstyle_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uifontstyle_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>FontStyle</i> component. 

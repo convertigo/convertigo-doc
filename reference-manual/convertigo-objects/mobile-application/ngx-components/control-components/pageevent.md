@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: PageEvent
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIPageEvent
-ObjIcon: /images/beans/ngx/components/images/uipageevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uipageevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>PageEvent</i> component. 

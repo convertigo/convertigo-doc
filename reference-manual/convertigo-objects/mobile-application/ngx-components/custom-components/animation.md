@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: custom-components
 ObjName: Animation
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIAnimation
-ObjIcon: /images/beans/ngx/components/images/uianimation_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uianimation_32x32.png
 topnav: topnavobj
 ---
 ##### Defines an <i>Animation</i> class for a component. 

@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Finally Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIActionFinallyEvent
-ObjIcon: /images/beans/ngx/components/images/uiactionfinallyevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiactionfinallyevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines an <i>Finally Handler</i>. 

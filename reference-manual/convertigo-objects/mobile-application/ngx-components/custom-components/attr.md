@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: custom-components
 ObjName: Attr
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIAttribute
-ObjIcon: /images/beans/ngx/components/images/uiattribute_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiattribute_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Attr</i> component. 

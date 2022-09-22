@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: SharedComponent Event
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UISharedComponentEvent
-ObjIcon: /images/beans/ngx/components/images/uisharedcomponentevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uisharedcomponentevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>SharedComponent Event</i> component. 
