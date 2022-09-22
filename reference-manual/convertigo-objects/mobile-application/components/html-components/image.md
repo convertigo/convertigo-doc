@@ -17,6 +17,11 @@ img<br/>
 This component acts as the standard HTML img tag.<br/>
 An <i>Image</i> can be used alone or within a <i>Thumbnail Item</i> or <i>Avatar Item</i> component.<br/>
 Configure its <i>src</i> property to the source url of the image. It can be a local url: <code>assets/myimage.png</code> or a remote url: <code>https://server.data/image/myimage.png</code> or even a base64 data url.<br/>
+
+Local resources for your Application has to be copied in the **.../DisplayObjects/mobile/assets** folder of your Project. Click the **Project Explorer** tab in the Studio to reach the folder. You can create new folders under the **assets** one and place your files there.<br/>
+The **Src** property is relative to the **mobile** folder, so the local url will start with **'assets/...'**<br/>
+Don't forget to put simple quotes (**NOT** double quotes) around your path when using TS mode (blue background) for the **Src** property. In TX mode (yellow background), quotes are optional.
+
 <br/>
 <i>Image</i> used alone can be configured in size trough its <i>width</i> and <i>height</i> properties. These can be pixels: <code>100px</code> or percentage of the available space: <code>100%</code>.<br/>
 To center an <i>Image</i>, place it inside a <i>Text Format</i> component with property <i>Align center</i> set.<br/>
