@@ -23,4 +23,4 @@ Is active | boolean | standard | Defines whether the component is active.<br/>
 Selectors/Classes | String | standard | Selectors/Classes
 Size | String | standard | Defines the font size.<br/>
 Style | String | standard | Defines the font style.<br/>
-Weight | String | standard | Defines the selector(s) and or class(es) for which this font style applies.<br/>
+Weight | String | standard | Defines the selector(s) and or class(es) for which this font style applies. e.g.: ion-text<br/>
