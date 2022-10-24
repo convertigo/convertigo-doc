@@ -188,7 +188,9 @@ The Low Code Studio offers all the needed components to interact with the mobile
 
 {% include image.html file="man_img/FS_actions.png" url="images/man_img/FS_actions.png" alt="FS Actions" max-width="500" %}
 
-##### Using policy modifiers
+### Capacities to know
+
+#### Using policy modifiers
 
 Some policy modifiers can be applied when a posting or updating a document.
 Use the **Post Data** component in the **Ngx Palette** to write (post) data to a FullSync database.
@@ -208,7 +210,7 @@ Policies can be:
 - override: the document with the specified id will be replaced by this post data. Revision Number management is handled automatically.
 - merge: the documents with this specified id will be merged by this post data. All fields with the same name will hold new values, all new fields will be added. No fields are deleted.
 
-##### Specifying additional parameters
+#### Specifying additional parameters
 
 Most of the FullSync components use additional parameters. For example the
 **Query View** component can have a startkey, endkey, limit and many other parameters you can find in the CouchDb documentation.
@@ -222,7 +224,7 @@ Select the target view of the Fullsync Database:
 
 You can then set the different variables (StartKey, EndKey or Key...) to use with that View.
 
-##### Differentiate FullSync responses
+#### Differentiate FullSync responses
 
 You can add to any FullSync component a ‘**suffix**’ (can be any name) that will help you differentiate responses. For example, in **Query View** Component:
 

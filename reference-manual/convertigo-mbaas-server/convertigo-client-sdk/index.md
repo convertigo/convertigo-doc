@@ -53,7 +53,7 @@ For the .NET SDK, there is a common static initialization to be done before usin
 
 For the Angular there is some imports and declaration to do in the app’s module to do.
 
-For the Angular, Javascript and React Native there is a specific initialization to do.
+For the Angular and Javascript there is a specific initialization to do.
 
 For the Angular and Javascript a specific method must be called “finalized init” to be sure that initialization has been finished
 

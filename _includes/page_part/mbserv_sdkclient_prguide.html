@@ -58,19 +58,7 @@
     });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE  --------------------------------------------------------- -->
-    {% highlight js %} 
-    import { C8o, C8oSettings } from "react-native-c8osdk";
-
-    // Instantiate C8o
-    let c8o: C8o = new C8o();
-
-    // Init Endpoint
-    c8o.init("https://demo.convertigo.net/cems/projects/sampleMobileCtfGallery", new C8oSettings());
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -140,29 +128,7 @@
     let timeout : number = c8o.timeout;
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    import {C8o, C8oSettings} from "react-native-c8osdk";
-    …
-    // Instanciate C8oSettings
-    let settings = new C8oSettings();
-
-    // Add Settings properties
-    settings
-    .setTimeout(3000)
-    .setDefaultDatabaseName("myfullsyncDbName")
-    .setTrustAllCertificates(true)
-    .setLogLevelLocal(C8oLogLevel.TRACE);
-
-    // Instanciate C8o
-    let c8o: C8o = new C8o();
-
-    // Init C8o instance with a given endpoint and settings
-    c8o.init("http://c8o-dev.convertigo.net:80/cems/projects/ClientSDKtestig", settings);
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -221,32 +187,7 @@
         });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    import {C8o, C8oSettings} from "react-native-c8osdk";
-    …
-    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
-
-    // Here using Javascript's Promises with awaiter syntax 
-    let result = await this.c8o.callJson('.login')
-                        .async();
-
-    // Here using Javascript's Promises with then/catch syntax
-    this.c8o.callJson(".login")
-        .async()
-        .then((response)=>{
-        //handle result
-        });
-
-    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
-    this.c8o.callJson(".login")
-        .then((response)=>{
-        //handle result
-        });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -303,32 +244,7 @@
         });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    import {C8o, C8oSettings} from "react-native-c8osdk";
-    …
-    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
-
-    // Here using Javascript's Promises with awaiter syntax 
-    let result = await this.c8o.callJson('.login')
-                        .async();
-
-    // Here using Javascript's Promises with then/catch syntax
-    this.c8o.callJson(".login")
-        .async()
-        .then((response)=>{
-        //handle result
-        });
-
-    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README
-    this.c8o.callJson(".login")
-        .then((response)=>{
-        //handle result
-        });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -403,39 +319,7 @@
         });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
-
-    // Here using Javascript's Promises with awaiter syntax
-    let result = await this.c8o.callJson('.login', {
-                            login: "barnett.christine",
-                            password: "mySuperPassword123"
-                            })
-                            .async();
-
-    // Here using Javascript's Promises with then/catch syntax
-    this.c8o.callJson('.login', {
-        login: "barnett.christine",
-        password: "mySuperPassword123"
-    })
-    .async()
-    .then((response)=>{
-        // handle result
-    });
-
-    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
-    this.c8o.callJson(".login",{
-        login: "barnett.christine",
-        password: "mySuperPassword123"
-        })
-        .then((response)=>{
-        //handle result
-        });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -497,27 +381,7 @@
     })
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    c8o.callJson(".getSimpleData", "callNumber", 1)
-    .then((response) => {
-        // you can do stuff here and return the next C8oPromise instead of deep nested blocks
-        return c8o.callJson(".getSimpleData", "callNumber", 2);
-    })
-    .then((response)=>{
-    // you can do stuff here and even modify previous parameters
-    parameters["callNumber"] = 3;
-    parameters["extraParameter"] = "ok";
-    return c8o.callJsonObject(".getSimpleData", parameters);
-    })
-    .then((response)=>{
-    // you can do stuff here and return null because this is the end of the chain
-    return null;
-    })
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -562,24 +426,7 @@
     }
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above, and '.login' is the name of a sequence of your project
-
-    // Here using Javascript's Promises with awaiter
-    try{
-    let result = await this.c8o.callJson('.login', {
-                    login: "barnett.christine",
-                    password: "mySuperPassword123"
-                }).async();
-    }
-    catch(error){
-    // Do something with the error
-    }
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -646,36 +493,7 @@
                 })
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // Here using Javascript's Promises
-    this.c8o.callJson('.login', {
-                    login: "barnett.christine",
-                    password: "mySuperPassword123"
-                }).
-                .async()
-                .then((response)=>{
-                //handle result
-                })
-                .catch((error)=>{
-                // Do something with the error
-                })
-
-    // Using C8oPromise that allow for example progress and Live. C8oPromise is described in Api doc in section Api documentation of this README.
-    this.c8o.callJson('.login', {
-                    login: "barnett.christine",
-                    password: "mySuperPassword123"
-                }).
-                .then((response)=>{
-                //handle result
-                })
-                .fail((error)=>{
-                // Do something with the error
-                })
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -716,22 +534,7 @@
     }
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    try {
-        c8o.log.info("hello world!"); // the message can be a simple string
-    } catch (error) {
-        c8o.log.error("bye world..." + JSON.stringify(error)); // the message can also take an error argument
-    }
-    if (c8o.log.isDebug) { // check if currents log levels are enough
-        // enter here only if a log level is 'trace' or 'debug', can prevent unnecessary CPU usage
-        let msg : string = serializeData(); // compute a special string, like a Document serialization
-        c8o.log.debug(msg);
-    }
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -758,16 +561,7 @@
         .setLogLevelLocal(C8oLogLevel.TRACE);
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    C8oSettings()
-        .setLogC8o(false)   // disable log from the Convertigo Client SDK itself
-        .setLogRemote(false) // disable remote logging
-        .setLogLevelLocal(C8oLogLevel.TRACE);
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -846,41 +640,7 @@
                 });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // Return the response if is already know and less than 180 seconds else call the server
-    this.c8o.callJson(".getSimpleData",
-                {
-                "__localCache": new C8oLocalCache(Priority.LOCAL, 180 * 1000)
-                })
-                .then((response)=>{
-                // Do stuff 
-                });
-
-    // same sample but with parameters, also acting as cache keys
-    this.c8o.callJson(".getSimpleData",
-                {
-                "firstname": "John",
-                    "lastname": "Doe",
-                "__localCache": new C8oLocalCache(Priority.LOCAL, 180 * 1000)
-                })
-                .then((response)=>{
-                // Do stuff 
-                });
-    // make a standard network call with the server
-    // but in case of offline move or network failure
-    // return the response if is already know and less than 1 hour
-    this.c8o.callJson(".getSimpleData",
-                {
-                "__localCache": new C8oLocalCache(Priority.SERVER, 3600 * 1000)
-                })
-                .then((response)=>{
-                // Do stuff 
-                });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -961,42 +721,7 @@
         });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // clear or create the "base" database
-    c8o.callJson("fs://base.reset")
-        .then((response: any, parameters:Object) => {
-            // response content:
-            // { "ok": true }
-            return c8o.callJson("fs://base.post",{
-                "firstname", "John",
-                "lastname", "Doe"}
-            );
-        })
-        .then((response) => {
-                // response content:
-                // {
-                //   "ok": true,
-                //   "id": "6f1b52df",
-                //   "rev": "1-b0620371"
-                // }
-                return c8o.callJson("fs://base.get", {"docid", response["id"]})); // retrieves the complet document from its "docid"
-        })
-        .then((response) => {
-                // response content:
-                // {
-                //   "lastname": "Doe",
-                //   "rev": "1-b0620371",
-                //   "firstname": "John",
-                //   "_id": "6f1b52df"
-                // }
-                c8o.log.info(json.stringify(response)); // output the document in the log
-            return null;
-        });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -1049,23 +774,7 @@
     });
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
-
-    // The progress can be handled only with C8oPromise,
-    // replication_pull can also be sync or replication_push
-    this.c8o.callJson('fs://base.replication_pull')
-    .then((response)=>{
-        // Do stuff with response
-    })
-    .progress((progress)=>{
-        // Do stuff with progress
-    });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -1116,28 +825,7 @@
         })
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    // Assuming c8o is a C8o instance properly instanciated and initiated as describe above.
-
-    this.c8o.callJson('.login')
-    .then((response)=>{
-        if(response == "ok"){
-        // The progress can be handled only with C8oPromise,
-        // replication_pull can also be sync or replication_push
-        this.c8o.callJson('fs://base.replication_pull')
-            .then((response)=>{
-            // Do stuff with response
-            })
-            .progress((progress)=>{
-            // Do stuff with progress
-            });
-        }
-    });
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -1182,24 +870,7 @@
     c8o.cancelLive("customers");
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    c8o.callJson("fs://.view",{
-        "ddoc", "design",
-        "view", "customers",
-        C8O.FS_LIVE, "customers"})
-        .then((response: any, _) => {  // launches a live view
-            // will be call now and after each database update
-            updateCustomersUI(json);
-            return null;
-        });
-    …
-    // cancel the previous FS_LIVE request, can be on application page change for example
-    c8o.cancelLive("customers");
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
 
@@ -1234,22 +905,6 @@
     c8o.removeFullSyncChangeListener("base", changeListener); // remove this listener for the database "base" ; null or "" while use the default database.
     {% endhighlight %}
     </div>
-    <div id="react{{ id }}" class="tab-pane fade">
-    <!-- REACT NATIVE ------------------------------------------------------- -->
-    {% highlight js %}
-    this.c8o.addFullSyncChangeListener("databaseName", "anyID")
-    .progress((change)=>{
-        // triggered at each change on the given databaseName
-        this.c8o.log.debug("progress addFullSyncChangeListener");
-    })
-    .then((resp)=>{
-        //resp returns "ok" if the change listener has been correctly added
-    })
-    .fail((err)=>{
-        // Throw any error
-    })
-    {% endhighlight %}
     {% endif %}
-    </div>
 </div>
 {% endif %}
