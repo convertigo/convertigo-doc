@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Else Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIActionElseEvent
-ObjIcon: /images/beans/ngx/components/images/uiactionelseevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiactionelseevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Else Handler</i>. 

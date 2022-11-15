@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: action-components
 ObjName: UseVariable
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIUseVariable
-ObjIcon: /images/beans/ngx/components/images/uiusevariable_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiusevariable_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>UseVariable</i> component. 

@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Directive
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIControlDirective
-ObjIcon: /images/beans/ngx/components/images/uicontroldirective_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uicontroldirective_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Directive</i> component. 

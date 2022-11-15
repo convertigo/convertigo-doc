@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: control-components
 ObjName: Failure Handler
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIActionFailureEvent
-ObjIcon: /images/beans/ngx/components/images/uiactionfailureevent_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiactionfailureevent_32x32.png
 topnav: topnavobj
 ---
 ##### Defines an action <i>Failure Handler</i> component. 

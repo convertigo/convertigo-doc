@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: shared-components
 ObjName: UseSharedComponent
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIUseShared
-ObjIcon: /images/beans/ngx/components/images/uiuseshared_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uiuseshared_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a UseSharedComponent component. 

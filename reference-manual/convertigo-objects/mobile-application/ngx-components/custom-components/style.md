@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: custom-components
 ObjName: Style
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIStyle
-ObjIcon: /images/beans/ngx/components/images/uistyle_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uistyle_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Style</i> component. 

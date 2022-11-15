@@ -8,7 +8,7 @@ ObjGroup: Mobile Application
 ObjCatName: action-components
 ObjName: Variable
 ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIControlVariable
-ObjIcon: /images/beans/ngx/components/images/uicontrolvariable_color_32x32.png
+ObjIcon: /images/beans/ngx/components/images/uicontrolvariable_32x32.png
 topnav: topnavobj
 ---
 ##### Defines a <i>Variable</i> component. 
