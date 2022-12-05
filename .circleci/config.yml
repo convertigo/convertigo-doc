@@ -24,7 +24,7 @@ jobs:
         name: Copy documentation to the web server
         command: |
           export VERS=$(echo $CIRCLE_BRANCH | sed s,/,-,g)
-          s3cmd sync -P _site/* ${DESTINATION}/${VERS}/
+          s3cmd sync --no-mime-magic -P _site/* ${DESTINATION}/${VERS}/
 workflows:
   version: 2
   all:
