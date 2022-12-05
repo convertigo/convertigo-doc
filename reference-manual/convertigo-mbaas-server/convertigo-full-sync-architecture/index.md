@@ -1,7 +1,7 @@
 ---
 title: Convertigo Full Sync
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
+last_updated: 05/10/2022
 summary: "Full Sync enables mobile apps to handle fully disconnected scenarios, still having data handled and controlled by back end business logic"
 sidebar: c8o_sidebar
 permalink: /reference-manual/convertigo-mbaas-server/convertigo-full-sync-architecture/
@@ -69,36 +69,7 @@ The same, you can link your Server with a CouchDB server. To do this  :
 
 ### Mobile client side NoSQL technology
 
-The mobile client side NoSQL repository in Convertigo applications can be based on two different technologies to the programmer’s choice. see here a table comparing these technologies :
-
-<table>
-  <tr>
-    <th>Full javascript</th>
-    <th>Cordova plugin based</th>
-  </tr>
-  <tr>
-    <td>Uses a 100% javascript NoSQL engine and uses the HTML 5 indexedDB or WebSQL  as repository, can be used by local builds or cloud builds</td>
-    <td>Based on the Couchbase Lite Cordova plugin providing NoSQL technology. can be used by local builds or cloud builds by setting up this line in the platform’s config.xml :
-        {% highlight xml %} 
-        <gap:plugin name=”com.couchbase.lite.phonegap” source=”plugins.cordova.io” git=”https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin.git”/> 
-        {% endhighlight %}
-        Having this line in the config.xml will automatically enable the Couchbase Lite mode
-    </td>
-  </tr>
-  <tr>
-    <td>Runs on iOS, Android, Windows Phone 8.x, Windows 8.x Store apps and even web browser apps.</td>
-    <td>Runs on iOS and Android.</td>
-  </tr>
-  <tr>
-    <td>Database size can be limited to underlying HTML5 repository limits, although modern devices now supports large databases based on IndexedDB</td>
-    <td>No Size limit for database</td>
-  </tr>
-  <tr>
-    <td>Indexing time for large databases can be long, and re-indexing after some changes takes the same time as initial indexing.</td>
-    <td>Indexing time is faster, and re-indexing only indexes modified documents, thus saving time</td>
-  </tr>
-</table>
-As a general recommendation, use Cordova Couchbase Lite plugin for large databases as full javascript engine is simpler to setup.
+The mobile client side NoSQL repository in Convertigo applications are based on our [C8oSDK Angular API](https://github.com/convertigo/c8osdk-angular#-c8osdk-angular) and [PouchDB](https://pouchdb.com/).
 
 ## Monitoring a database data changes on the server
 
@@ -112,11 +83,13 @@ The FullSync connector can define a set of listeners based on filters to monitor
 Listener views map functions must be able to “filter” the documents and must use the document id as the index. Here is a sample listener view map:
 
 {% highlight js %}
-function (doc) 
-{
-	if (doc.object.attributes.type.text == "Account") 
-        {
-		emit(doc._id, doc);
+function map (doc) {
+	try {
+    if (doc.object.attributes.type.text == "Account"){
+		  emit(doc._id, doc._rev);
+    }
+	} catch (err) {
+		log(err.message);
 	}
 }
 {% endhighlight %}
@@ -207,63 +180,28 @@ When a design document is created, you can create in it views with map and reduc
 
 ### Linking a Mobile client app to a database
 
-Your mobile application has to know on what server database it has to synchronize. This is simply done by using the method c8oSettings.setDefaultDatabaseName() in the client SDKs. for example set the default database to 'mydb_fullsync' using the Angular SDK:
-
-{% highlight js %}
-import { C8o, C8oSettings } from "c8osdkjs"
-…
-// The only way
-let settings: C8oSettings = new C8oSettings();
-settings
-      .setDefaultDatabaseName("mydb_fullsync")
-//Then we need to assign C8oSettings object to our C8o object
-c8o.init(settings);
-
-//Then to use c8o Object and be sure that initialization has been properly done
-c8o.finalizeInit().then(() => {
-	//Do stuff with c8o Object
-})
-{% endhighlight %}
-
-Instead, if you use Mobile Builder, then the link is automatically done when you you use a FullSync Action such as 'Query View' as the database name is just an actions's property you may configure.
+In Low Code Studio, the link is automatically done when you you use a FullSync Action such as 'Query View' as the database name is just an actions's property you may configure. Be sure to first use a **Sync Data** component to synchronize data between your application and the Convertigo server, after a login page, for example.
 
 ## Interacting locally on the mobile with the data
 
-Convertigo Client Framework (Hybrid or Native) provides a high level access to local data following the standard Convertigo “Sequence” paradigm. They differ from standard sequences by a ‘fs://’ prefix. Calling these local fullsync “Sequences” will enable the app to read, write, query and delete data from the local database:
+The Low Code Studio offers all the needed components to interact with the mobile local database. They can be found in the **Ngx Palette** tab under the **Fullsync Actions** section:
 
-- [fs://< database >.view](#get-view): queries a view from the local database
-- [fs://< database >.get](#get-document): reads an object from the local database
-- [fs://< database >.post](#postdocument): writes/update an object to the local database
-- [fs://< database >.delete](#deletedocument): deletes an object from the local database
-- [fs://< database >.all](#getalldocs): gets all objects from the local database
-- [fs://< database >.sync](#synchronization): synchronize with server database
-- [fs://< database >.replicate_push](#synchronization): push local modifications on the database server
-- [fs://< database >.replicate_pull](#synchronization): get all database server modifications
-- [fs://< database >.reset](#reset): resets a database by removing all the data in it.
+{% include image.html file="man_img/FS_actions.png" url="images/man_img/FS_actions.png" alt="FS Actions" max-width="500" %}
 
-Where < database > is the name of a specific FullSync Connector in a project. Mobile clients may have a default FullSync Connector configured in the **DisplayObject/mobile/custom.js** as **C8O.fs_default_db**. So, to access the default FullSync connector, do not specify a database. Just use
+### Capacities to know
 
-*fs://.get or fs://.post* for example.
+#### Using policy modifiers
 
-##### Using policy modifiers
+Some policy modifiers can be applied when a posting or updating a document.
+Use the **Post Data** component in the **Ngx Palette** to write (post) data to a FullSync database.
 
-Some client sequences such as fs://.post can have policy modifiers to handle specific policies.
-To use a modifier just pass it as a _use_policy variable to your "requestable". For example with CTF:
+{% include image.html file="man_img/FS_actions.png" url="images/man_img/FS_actions.png" alt="FS Actions" max-width="500" %}
 
-{% highlight js %} data-c8o-call="fs://.post" data-c8o-variables='{"_use_policy":"merge"}' {% endhighlight %}
+Select the target Fullsync Database:
+{% include image.html file="man_img/FS_postdata_props_db.png" url="images/man_img/FS_postdata_props_db.png" alt="FS PostData Prop DB" max-width="500" %}
 
-Or in javascript :
-
-{% highlight js %}
-C8O.call("fs://.post", 
-{
-   "_use_policy": "merge",
-   "key1":"value1",
-   "key2":"value2",
-   …
-});
-{% endhighlight %}
-Will have the merge policy applied to the post sequence.
+Then choose the policy:
+{% include image.html file="man_img/FS_postdata_props_policy.png" url="images/man_img/FS_postdata_props_policy.png" alt="FS PostData Prop Policy" max-width="500" %}
 
 Policies can be:
 
@@ -272,353 +210,92 @@ Policies can be:
 - override: the document with the specified id will be replaced by this post data. Revision Number management is handled automatically.
 - merge: the documents with this specified id will be merged by this post data. All fields with the same name will hold new values, all new fields will be added. No fields are deleted.
 
-##### Specifying additional parameters
+#### Specifying additional parameters
 
-Most of the FullSync sequences use additional parameters. For example the
-{% highlight js %}
-fs://database.view
-{% endhighlight %}
-Sequence can have a startkey, endkey, limit and many other parameters you can find in in the CouchDb documentation.
+Most of the FullSync components use additional parameters. For example the
+**Query View** component can have a startkey, endkey, limit and many other parameters you can find in the CouchDb documentation.
 
-To use a parameter just pass it as a standard requester variable. For example with CTF:
+Use the **Query View** component in the **Ngx Palette** to query a given view of a FullSync database.
 
-{% highlight js %} data-c8o-variables='{"startkey":"value", …}' {% endhighlight %}
-where startkey is the parameter you want to pass the view, and value is the value of this parameter. Or:
-{% highlight js %}
-C8O.call("fs://.view", {
-   "startkey": "value",
-	...
-});
-{% endhighlight %}
+{% include image.html file="man_img/FS_actions.png" url="images/man_img/FS_actions.png" alt="FS Actions" max-width="500" %}
 
-##### Differentiate FullSync responses for CTF_**
+Select the target view of the Fullsync Database:
+{% include image.html file="man_img/FS_queryview_props_view.png" url="images/man_img/FS_queryview_props_view.png" alt="FS QueryView Prop View" max-width="500" %}
 
-You can add to any FullSync sequence a ‘#suffix’ that will help you differentiate responses in the CTF routing table and listeners. For example:
-{% highlight html %}
-<button data-c8o-call="fs://mydatabase.view#displayusers">Click me</button>
-{% endhighlight %}
-and
-{% highlight html %}
-<ul data-role="listview" data-c8o-listen="fs://mydatabase.view#displayusers" data-c8o-each="item">
-   <li>.... data .... </li>
-</ul>
-{% endhighlight %}
+You can then set the different variables (StartKey, EndKey or Key...) to use with that View.
 
+#### Differentiate FullSync responses
 
-### Sequences
+You can add to any FullSync component a ‘**suffix**’ (can be any name) that will help you differentiate responses. For example, in **Query View** Component:
 
-#### Get View
+{% include image.html file="man_img/FS_queryview_props_marker.png" url="images/man_img/FS_queryview_props_marker.png" alt="FS QueryView Prop Marker" max-width="500" %}
 
-  Queries a view from the local database.
+The response of the query View will be 'tagged' as 'suffix' and you can select it in the **Ngx Picker** to fill any text component in your App:
 
-  **fs://< database >.view**
+{% include image.html file="man_img/FS_queryview_listen_picker.png" url="images/man_img/FS_queryview_listen_picker.png" alt="FS Ngx Picker Marker" max-width="500" %}
+
+### Fullsync Actions
+
+{% include image.html file="man_img/FS_actions.png" url="images/man_img/FS_actions.png" alt="FS Actions" max-width="500" %}
 
 <table>
   <tr>
-    <th>Parameters</th>
+    <th>Component</th>
     <th>Description</th>
+    <th>Link</th>
   </tr>
   <tr>
-    <td>ddoc</td>
-    <td>Design document name as created in “Documents” folder of a fullsync connector (Do not use “_design/” prefix). This is an optional parameter if C8O.fs_default_design is not defined in custom.js</td>
+    <td>CallFullSync</td>
+    <td>FullSync calls are used to interact with the local offline data synchronized database. You can use this call to get, post, delete and query (View) data from the database.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/callfullsync/">CallFullSync</a></td>
   </tr>
   <tr>
-    <td>view</td>
-    <td>View name. The view name as created in the design document.</td>
+    <td>ClearDataSource</td>
+    <td>Use the ClearDataSource to delete data stored from a previous fullsync query or sequence call.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/cleardatasource/">ClearDataSource</a></td>
   </tr>
   <tr>
-    <td>include_docs</td>
-    <td>Include the document in each row in the doc field</td>
+    <td>Delete Attachment</td>
+    <td>This component helps deleting (delete_attachment) attachments on a local FullSync database document.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/delete-attachment/">Delete Attachment</a></td>
   </tr>
   <tr>
-    <td>conflicts</td>
-    <td>Include conflicts in the _conflicts field of a doc</td>
+    <td>Delete Data</td>
+    <td>This component helps deletting (delete) data from a FullSync database.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/delete-data/">Delete Data</a></td>
   </tr>
   <tr>
-    <td>attachments</td>
-    <td>Include attachment data.</td>
+    <td>Get Data</td>
+    <td>This component helps getting (get) data from a FullSync database.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/get-data/">Get Data</a></td>
   </tr>
   <tr>
-    <td>startkey & endkey</td>
-    <td>Get rows with keys in a certain range (inclusive/inclusive). these are jSON data and can be strings or any other jSON structures for example 
-    {% highlight json %}
-    <button data-c8o-call="fs://.view" data-c8o-variables'{
-		"view":"myview",
-		"startkey":"mystartkey", // or "startkey":[10, 20]
-		"endkey":"myendkey" // or "endkey": [100, {}]
-    }'>Click me</button> {% endhighlight %}
-    Or
-    {% highlight js %}
-    C8O.call("fs://.view", {
-        "view":"myview",
-        "startkey":"mystartkey", // or "startkey":[10, 20]
-        "endkey":"myendkey" // or "endkey": [100, {}]
-    });
-    {% endhighlight %}   
-    </td>
+    <td>Post Data</td>
+    <td>This component helps writing (post) data to a FullSync database.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/post-data/">Post Data</a></td>
   </tr>
   <tr>
-    <td>inclusive_end</td>
-    <td>Include rows having a key equal to the given endkey. boolean, Default: true.</td>
+    <td>Put Attachment</td>
+    <td>This component helps putting (put_attachment) attachments on a FullSync database document.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/put-attachment/">Put Attachment</a></td>
   </tr>
   <tr>
-    <td>limit</td>
-    <td>Maximum number of rows to return.</td>
+    <td>Query View</td>
+    <td>This component helps querying a given view of a FullSync database.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/query-view/">Query View</a></td>
   </tr>
   <tr>
-    <td>skip</td>
-    <td>Number of rows to skip before returning. integer, if not present returns all the rows.</td>
-  </tr>
-  <tr>
-    <td>descending</td>
-    <td>Reverse the order of the output rows. boolean</td>
-  </tr>
-  <tr>
-    <td>key</td>
-    <td>Only return rows matching this key. this can be jSON data as start key and endkey</td>
-  </tr>
-  <tr>
-    <td>keys</td>
-    <td>Array of keys to fetch in a single shot. Neither startkey nor endkey can be specified with this option.</td>
-  </tr>
-  <tr>
-    <td>group</td>
-    <td>True if you want the reduce function to group results by keys, rather than returning a single result. Defaults to false.</td>
-  </tr>  
-  <tr>
-    <td>group_level</td>
-    <td>Number of elements in a key to group by, assuming the keys are arrays. Defaults to the full length of the array.</td>
-  </tr>  
-  <tr>
-    <td>stale</td>
-    <td>One of ok(=returns results immediately, even if they’re out-of-date.) or update_after(=returns results immediately, but kicks off a build afterwards.). Only applies to saved views</td>
-  </tr>
-  <tr>
-    <td>__live</td>
-    <td>true or false. If true, the view will automatically be triggered when there is a database (caused by a local change or by a replication from the server). This gives the opportunity to refresh the UI automatically with the new data returned by the view.</td>
-  </tr>  
-</table>
-
-#### Get Document
-Reads an object from the local database.
-
-**fs://< database >.get**
-
-Parameters | Description
---- | ---
-docid | Document identifier
-rev | Fetch specific revision of a document. Defaults to winning revision. as a string.
-revs | Include revision history of the document.
-revs_info | Include a list of revisions of the document, and their availability.
-open_revs | Fetch all leaf revisions if open_revs=”all” or fetch all leaf revisions specified in open_revs array. Leaves will be returned in the same order as specified in input array.
-conflicts | If specified, conflicting leaf revisions will be attached in _conflicts array.
-attachments | Include attachment data.
-
-#### PostDocument
-
-Writes an object to the local database. The data you write must be an object as described below. If you do an update, one of the data fields must be “_id” to specify the ID of the document you want to update
-
-**fs://< database >.post**
-
-<table>
-  <tr>
-    <th>Parameters</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>my.specific.key</td>
-    <td>this key will be used a structured key to build a document to be posted to the local database. for example this call :
-      {% highlight js %}<button data-c8o-call="fs://.post" data-c8o-variables='{"my.specific.key":"data"}'>Clickme</button>{% endhighlight %}
-      or
-      {% highlight js %} C8O.call("fs://.post", {
-        "my.specific.key":"data" // or
-        });
-      {% endhighlight %}
-      or
-      {% highlight js %} 
-      C8O.call("fs://.post", {
-          "my":{
-              "specific":{
-                  "key":"data"
-            }
-          }
-      });
-      {% endhighlight %}
-      will post a document of this form :
-      {% highlight js %} 
-      {
-          "my":{
-            "specific":{
-                      "key":"data"
-                  }
-          }
-      }
-      {% endhighlight %}
-      </td>
-  </tr>
-  <tr>
-    <td>_use_policy</td>
-    <td>
-      <ul>
-        <li>none: Don’t modify.</li>
-        <li>create: Create document.</li>
-        <li>override: Override documents</li>
-        <li>merge: Merge documents.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>_use_subkey_separator</td>
-    <td>Include the document in each row in the doc field</td>
-  </tr>  
-  <tr>
-    <td>startkey & endkey</td>
-    <td></td>
+    <td>Sync Data</td>
+    <td>This component helps synchronizing data using FullSync.</td>
+    <td><a href="https://doc.convertigo.com/documentation/develop/reference-manual/convertigo-objects/mobile-application/components/fullsync-action-components/sync-data/">Sync Data</a></td>
   </tr>
 </table>
- 
-#### DeleteDocument
-
-Deletes an object from the local database.
-
-**fs://< database >.delete**
-
-Parameters | Description
---- | ---
-docid | Document identifier.
-docrev | Document revision.
- 
-#### GetAllDocs
-
-Gets all objects from the local database.
-
-**fs://< database >.all**
-
-Parameters | Description
---- | ---
-include_docs | Include the document itself in each row in the doc field. Otherwise by default you only get the _id and _rev properties.
-startkey & endkey | Get documents with IDs in a certain range (inclusive/inclusive).
-inclusive_end | Include documents having an ID equal to the given **endkey**. Default: **true**.
-limit | Maximum number of documents to return.
-skip | Number of docs to skip before returning (warning: poor performance on IndexedDB/LevelDB!).
-descending | Reverse the order of the output documents.
-key | Only return documents with IDs matching this string key.
-keys | Array of keys to fetch in a single shot. Neither **startkey** nor **endkey** can be specified with this option.
- 
-#### Synchronization
-
-**fs://< database >.sync**
-Synchronize with database server and get all modifications and push local modifications.
-
-**fs://< database >.replicate_push**
-Push local modifications on the server database.
-
-**fs://< database >.replicate_pull**
-Get all server database modifications.
-
-<table>
-  <tr>
-    <th>Parameters</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>live</td>
-    <td>If true, starts subscribing to future changes in the source database and continue replicating them.</td>
-  </tr>
-  <tr>
-    <td>retry</td>
-    <td>If true will attempt to retry replications in the case of failure (due to being offline), using a backoff algorithm that retries at longer and longer intervals until a connection is re-established. Only applicable if live is also true.</td>
-  </tr>
-  <tr>
-    <td>batch_size</td>
-    <td>Number of documents to process at a time. Defaults to 100. This affects the number of docs held in memory and the number sent at a time to the target server.</td>
-  </tr>  
-  <tr>
-    <td>batches_limit</td>
-    <td>Number of batches to process at a time. Defaults to 10. This (along with batch_size) controls how many docs are kept in memory at a time, so the maximum docs in memory at once would equal batch_size × batches_limit.</td>
-  </tr>
-  <tr>
-    <td>heartbeat</td>
-    <td>Configure the heartbeat supported by CouchDB which keeps the change connection alive. Usefull is some network equipment closes connections if no traffic is detected</td>
-  </tr>
-  <tr>
-    <td>timeout</td>
-    <td>Configures the timeout for longpoll request. Continuous sync works by issuing a http request waiting for a long amout of time. This time is configured by this parameter</td>
-  </tr>
-  <tr>
-    <td>cancel</td>
-    <td>If cancel is set to true, any existing continuous replication will be stopped</td>
-  </tr>
-  <tr>
-    <td>change</td>
-    <td>if true will monitor changes while replicating, will generate automatically a C8O response that can be received in the xml_response hook. CTF will use this response as any other response in the routing table. This is useful to create progress bars while replicating. the hook will receive documents like: 
-    {% highlight xml %}
-    <couchdb_output>
-      <event>change</event>
-      <data>
-        <direction>push or pull</direction>
-        <current>actual number of documents replicated</current>
-        <total>estimated number of documents to replicate</total>
-        <progress>current on total replication ratio (0 to 100)</progress>
-        <ok>true</ok>
-      </data>
-    </couchdb_output>
-    {% endhighlight %}
-    
-    For example in your application you can have a :
-        {% highlight xml %}
-        <div data-c8o-listen="fs://mydatabase.sync">
-            <p>Nb Documents replicated : __=progress__</p>
-        </div>
-        {% endhighlight %}
-    To display processed document.</td>
-  </tr>  
-  <tr>
-    <td>complete</td>
-    <td>if true will monitor replication status. It will generate automatically a C8O response that can be received in the xml_response hook. CTF will use this response as any other response in the routing table. This is useful to know when the replication is finished. the hook will receive documents like this when replication is complete:    
-    {% highlight xml %}
-    <couchdb_output>
-      <event>complete</event>
-      <data>
-        <direction>push, pull or pushpull</direction>
-        <ok>true</ok>
-      </data>
-    </couchdb_output>
-    {% endhighlight %}
-
-    </td>
-  </tr>  
-  <tr>
-    <td>change</td>
-    <td>if true will monitor errors while replicating. It will generate automatically a C8O response that can be received in the xml_response hook. CTF will use this response as any other response in the routing table. This is useful to know when an error occurs. the hook will receive documents like this:
-    {% highlight xml %}
-    <couchdb_output>
-      <event>error</event>
-      <data>
-        <direction>push, pull or pushpull</direction>
-      .... Error .....
-      </data>
-    </couchdb_output>
-    {% endhighlight %}   
-    </td>
-  </tr>  
-</table>
- 
-#### Reset
-
-Deletes all documents from a database
-
-**fs://< database >.reset**
-
-Parameters | Description
---- | ---
-no parameters | N/A
 
 ## Interacting with a FullSync database on the server
 
 ### Pushing and getting data server side
 
-Server side business logic interacts will a full sync database through the FullSync connector. This connector, like any other Convertigo connector can be called from a sequence. The FullSync connector supports predefined transaction types able to read, write, delete and update data in the database.
+Server side business logic interacts with a Fullsync database through the FullSync connector. This connector, like any other Convertigo connector can be called from a sequence. The FullSync connector supports predefined transaction types able to read, write, delete and update data in the database.
 
 As seen above, data pushed to the database will automatically be tagged to belong to the user running the sequence and replicated only to this user.
 
@@ -638,6 +315,17 @@ Some transaction such as the GetView transaction require some additional paramet
 - Choose the transaction type you want , click Next
 - Rename the transaction if you want to be more explicit
 - Choose the transaction variables you want to create for this transaction. These variables will be used by calling sequence
+
+Dynamic variables are added this way:
+
+- Right click on a Transaction
+- Choose '**Add variables for dynamic properties**'
+
+{% include image.html file="man_img/FS_transaction_add_variables.png" url="images/man_img/FS_transaction_add_variables.png" alt="FS Transaction Dynamic Variables" max-width="500" %}
+
+Available variables depend on the type of the Fullsync Transaction:
+
+{% include image.html file="man_img/FS_transaction_add_variables_avail.png" url="images/man_img/FS_transaction_add_variables_avail.png" alt="FS Transaction Dynamic Variables Available" max-width="500" %}
 
 ## Using Groups
 

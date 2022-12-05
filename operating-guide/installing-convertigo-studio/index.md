@@ -18,7 +18,7 @@ Table 2 - 1: Operating systems and Convertigo Studio installation packages table
 
 OS | Supported versions | Convertigo package name
 --- | --- | ---
-Windows | • Windows XP Service Pack 2 (32 bits)<br>• Windows Seven (32 and 64 bits)<br>• Windows 8  | convertigo-studio-X.Y.Z-v12345-win32-install.exe
+Windows | • Windows XP Service Pack 2 (32 bits)<br>• Windows Seven (32 and 64 bits)<br>• Windows 8<br>• Windows 10<br>• Windows 11  | convertigo-studio-X.Y.Z-v12345-win32-install.exe
 Linux  | • RedHat, starting from version 5.2 (32 bits and 64 bits)<br>• Ubuntu, versions 8.04 (LTS) , 10.04 (LTS), 12.04 (LTS) and 14.04 (LTS) (32 bitsand 64 bits) <br>• Debian version 6.0 (32 bitsand 64 bits) | convertigo-studio-X.Y.Z-v12345-linux32.tar.gz
 Mac OS | • Mac OS X 10.5 (Leopard) or greater (32 bits and 64 bits) | convertigo-studio-X.Y.Z-v12345-macosx32.tar.gz
 
@@ -542,3 +542,10 @@ The Test Platform can be accessed authenticating with the **tester** account. Th
 {{site.data.alerts.note}}
 For more information about the Test Platform accounts, you can consult the Using the Test Platform chapter of the User Guide (coming soon).
 {{site.data.alerts.end}}
+
+## Convertigo Studio uninstallation
+
+To uninstall the Convertigo Studio, simply delete the Convertigo folder.
+On Windows, nothing was added to registry or in the system folder.
+Default installation folder is C:\Users\<your_user_name>\Convertigo
+On Linux or MacOS, remove the Convertigo Studio folder.

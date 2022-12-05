@@ -1,7 +1,7 @@
 ---
 title: Convertigo Client SDK
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
+last_updated: 10/10/2022
 summary: "Convertigo Client SDK is a set of native libraries used by mobile or Windows desktop applications to access Convertigo Server services."
 sidebar: c8o_sidebar
 permalink: /reference-manual/convertigo-mbaas-server/convertigo-client-sdk/
@@ -15,133 +15,11 @@ The Client SDK will abstract the programmer from handling the communication prot
 
 Client SDK is available for:
 
-- Android Native apps as a standard Gradle dependency
-- iOS native apps as a standard Cocoapod
-- Windows desktop or Xamarin apps as Nugets or Xamarin Components
 - Google Angular (Ex Angular 2) JavaScript framework as an NPM package
 
 More information about Client SDK in the sections below
 
 ## Installation Guide
-
-### Android Studio
-
-The Convertigo Client SDK for Android is provided on jCenter:
-
-{% include image.html file="man_img/bintray_badge_bw.png" url="https://bintray.com/opicciotto/maven/convertigo-sdk-android?source=watch" alt="Convertigo Client SDK for Android" %}
-
-To use it in your project, you just have to reference the SDK in the “dependencies” closure of your module build.gradle file. Be sure to update the sdk reference to the correct version.
-
-Sample gradle file : 
-{% highlight gradle %}
-apply plugin: 'com.android.application'
-
-android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.0"
-
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
-    }
-
-    defaultConfig {
-        applicationId "com.example.opic.myc8osdkapp"
-        minSdkVersion 10
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-
-    /*
-     * Include Convertigo Client SDK version 2.1.2
-     */
-    compile 'com.convertigo.sdk:c8oSDKAndroid:2.1.2'
-}
-{% endhighlight %}
-By default Convertigo SDK Brings several Database Storage engines :
-- SQLite for standard SQLite storage
-- SQLiteCipher for Encrypted SQLite storage
-- ForestDB for High performance Encrypted or not Storage
-You can reduce the size of your applications by excluding the unwanted storage engines.
-{% highlight java %}
-compile ('com.convertigo.sdk:c8oSDKAndroid:2.1.2') {
-    exclude module: 'couchbase-lite-android-sqlcipher' // Exclude if you dont need the optional SQLCipher Storage Engine
-    exclude module: 'couchbase-lite-android-forestdb'  // Exclude if you dont need the optional ForestDB Storage Engine
-}
-{% endhighlight %}
-
-As a reminder, don’t forget to grant INTERNET permission to your app in the AndroidManifest.xml file.
-{% highlight xml %}‹uses-permission android:name="android.permission.INTERNET" /›{% endhighlight %}
-
-### Xcode
-
-The Convertigo SDK provided as pod on Cocoapods here : [Convertigo Xcode SDK](https://cocoapods.org/pods/C8oSDK)
-
-Create a PodFile with :
-{% highlight swift %}
-use_frameworks!
-target 'MyApp' do
-  pod 'C8oSDK', '2.1.0'
-end
-{% endhighlight %}
-
-Then in the console, run:
-
-{% highlight Console %} pod install {% endhighlight %}
-Restart Xcode and open the .xcworkspace And there you go !
-
-Be sure to read the installation information on Cocoapods
-
-### Xamarin Studio
-
-The Convertigo Client SDK for Android is provided as a convertigo-mbaas-x.y.xam component. In order to be able to use it, you need to import the component for each target platform (Android, IOs, etc …).
-
-The xam file can be found under the **SDK_x.y.z/c# + Xamarin** folder of our [SourceForge files](https://sourceforge.net/projects/convertigo/files/).
-
-
-component **-----------------(IMAGE)--------------------**
-
-Once the module imported, you should see the package in the Component folder.
-
-componentInstalled **---------------(IMAGE)---------------------**
-
-Before using any SDK function you need to initialize the SDK. Although all other code calling the SDK can be used in a shared project the initialisation code must be done in an Android or iOS project. The best place to initialize the SDK is in: 
-
-- the MainActivity.cs (Android):
-{% highlight c# %}
-protected override void OnCreate (Bundle bundle)
-	{
-		base.OnCreate (bundle);
-		global::Xamarin.Forms.Forms.Init (this, bundle);
-		// Initialize the SDK Here.
-		C8oPlatform.Init();
-		LoadApplication (new App ());
-	}
-{% endhighlight %}
-- the AppDelegate.cs (Apple)
-{% highlight c# %}
-public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-	{
-		global::Xamarin.Forms.Forms.Init ();
-		LoadApplication (new AppTestSDK.App ());
-		// Initialize the SDK Here.
-		C8oPlatform.Init();
-		return base.FinishedLaunching (app, options);
-	}
-{% endhighlight %}
 
 ### Angular
 
@@ -175,7 +53,7 @@ For the .NET SDK, there is a common static initialization to be done before usin
 
 For the Angular there is some imports and declaration to do in the app’s module to do.
 
-For the Angular, Javascript and React Native there is a specific initialization to do.
+For the Angular and Javascript there is a specific initialization to do.
 
 For the Angular and Javascript a specific method must be called “finalized init” to be sure that initialization has been finished
 
@@ -236,7 +114,6 @@ However The .Net language offers the async/await mechanism that allows to wait a
 
 Of course this does not apply to Angular as there is not threading for this framework.
 
-{% include /page_part/mbserv_sdkclient_prguide.html content='6' %}
 
 As in many cases, locking the current thread is not recommended, the .then() method allows to register a callback that will be executed on a worker thread.
 
@@ -244,7 +121,6 @@ The .thenUI() method does the same but the callback will be executed on a UI thr
 
 The **.then()** and **.thenUI()** callbacks receives as parameters the response and the request parameters.
 
-{% include /page_part/mbserv_sdkclient_prguide.html content='7' %}
 
 ### Chaining calls
 
@@ -367,196 +243,8 @@ Sometimes, it’s nice to know what is changed in the database. The Full Sync ch
 
 {% include /page_part/mbserv_sdkclient_prguide.html content='18' %}
 
-## Large File Transfer programming guide
-
-- [Large file transfer service description](#large-file-transfer-service-description)
-- [Convertigo backend project](#convertigo-backend-project)
-- [Downloading large files](#downloading-large-files)
-- [Uploading large files](#uploading-large-files)
-
-### Large file transfer service description
-
-Convertigo SDK offers a large file transfer service able to download and to upload very large files from Convertigo server to the mobile device. This service is based on FullSync technology. File Transfer service is availble to SDK programmers as an API and uses a special Convertigo Backend project .CAR named **lib_FileTransfer.car**.
-
-The whole file transfer must be done within a valid session with Convertigo Server identified by a setAuthenticatedUser step executed within a login sequence.
-
-Here is how this service works for downloads:
-
-- Client must initialize the File Transfer API from a valid c8o object end point, setup monitors and call the **start()** method.
-- Then, the client app must first execute a custom project’s Sequence on Convertigo server using a standard **c8o.callJson(“.customGetMyFile”, …)** or **callXml(“.customGetMyFile”, …)**
-- On the Server, this custom sequence is responsible to get the file from any repository (File system, ECM, HTTP GET, SOAP Request, …) and to call the StoreLocalFileToDatabase Sequence available in the **lib_FileTransfer.car** project.
-- On Convertigo server, the **StoreLocalFileToDatabase** Sequence will slice the target file in to chunks and push each chunk in a special download FullSync database
-- Once the slicing is done, the **StoreLocalFileToDatabase** Sequence will return a **TransferID** to the calling sequence, and this sequence will return the **TransferID** to the client app.
-- The Client App will use the SDK file Transfer API to start the Transfer providing this **TransferID**.
-- The transfer will occur, by “syncing” the chunks. When all the chunks will be replicated, the service will automatically re-assemble the chunks to a transferred file and delete the chunks from the download database
-- A download progress call-back function will be called to monitor the file transfer status
-- If the network breaks, or if the app is killed while the transfer is still running, it will restart automatically when the FileTransfer **start()** method will be called
-
-And for uploads:
-
-- Client must initialize the File Transfer API from a valid c8o object end point, setup monitors and call the start() method.
-- Client opens a stream from a resource such as a file or any other streamable resource
-- Then the client calls the **Filetransfer.uploadFile()** giving the stream and the name of the destination filename on Convertigo server
-- The file transfer starts by slicing the file on the mobile devices in chunks and inserts the chunks in a special download fullsync data base
-- When the file is sliced, the progress monitor call back is called to monitor the upload process
-- When all the chunks are transferred, the file will be available on the server on the destination file name given by the client
-- If the network breaks, or if the app is killed while the transfer is still running, it will restart automatically when the FileTransfer **start()** method will be called
-  
-### Convertigo Backend project
-
-As described in the general process, the FileTransfer service needs a Convertigo utility library packaged in the **lib_FileTransfer.car** project file. You will need to install this library in the Studio and deploy it to the target Convertigo Server. To install in Studio :
-
-- Use File->New->Project
-- Choose “Libraries->FileTransfer” library
-Be sure to have a working FullSync environment (CouchDB server installed and running, Convertigo FullSync properly configured…) before using the FileTransfer services
-
-You will have to prepare in your Convertigo backend project a **getMyFile** sequence responsible for getting the file from a given repository. Within this sequence you will call the **lib_FileTransfer.StoreLocalFileToDatabase** sequence passing as **filepath** variable the path of the file you want to transfer to the mobile device. The **lib_FileTransfer.StoreLocalFileToDatabase** will return a **TransferID** you will be able to “source” and return from your **getMyFile** sequence.
-
-### Downloading a Large file
-
-Here is some sample code to download a large file…
-Initializing the FileTransfer Service
-
-{% include /page_part/mbserv_sdkclient_largefile.html content='l1' %}
-
-Calling Convertigo Server to request a File and get the TransferID
-
-{% include /page_part/mbserv_sdkclient_largefile.html content='l2' %}
-
-Starting a file Transfer
-
-{% include /page_part/mbserv_sdkclient_largefile.html content='l3' %}
-
-Monitoring FileTransfer Progress
-
-{% include /page_part/mbserv_sdkclient_largefile.html content='l4' %}
-
-List current transfers
-
-{% include /page_part/mbserv_sdkclient_largefile.html content='l5' %}
-
-Cancel file transfers
-
-{% include /page_part/mbserv_sdkclient_largefile.html content='l6' %}
 
 ## API reference
 
-### Android
- - [2.1.0](https://www.convertigo.com/sdk-api/android/2.1.0/)
- - [2.0.7](https://www.convertigo.com/sdk-api/android/2.0.7/)
-
-### Dot Net
- - [2.1.0](https://www.convertigo.com/sdk-api/dot-net-pcl/2.1.0/html/7E550B48.htm)
- - [2.0.7](https://www.convertigo.com/sdk-api/dot-net-pcl/2.0.7/html/7E550B48.htm)
-
-### iOS
- - [2.0.7](https://www.convertigo.com/sdk-api/ios/2.0.7/)
-
-## Changelog
-
-============================
- Version 2.1.0 | 2016-12-16
-============================
-
- NEW FEATURES (1)
-  * [Android + iOS + .NET] Add "live" and "changeListener" features
-
- BUGS (2)
-  * [Android] Fixed, remote calls now respects the Timeout setting.
-  * [Android + iOS] Fixed the usage of .progress and .progressUI after a callXml: no more exception throw.
-
-============================
- Version 2.0.7 | 2016-10-12
-============================
-
- NEW FEATURES (1)
-  * [Android + iOS + .NET] New filetransfer methods to list and cancel transfers.
-
- IMPROVEMENTS (1)
-  * [.NET] Add replication options to C8oSettings.
-
-============================
- Version 2.0.6 | 2016-09-26
-============================
-
- IMPROVEMENTS (1)
-  * [Android + .NET] Use Couchbase-lite 1.3.1.
-
- BUGS (1)
-  * [Android + iOS + .NET] Fixed, deadlock if "cancel" a replication
-
-============================
- Version 2.0.5 | 2016-09-12
-============================
-
- IMPROVEMENTS (2)
-  * [Android + .NET] Use Couchbase-lite 1.3.0 for Android & .NET (iOS stick to CBL 1.2.1).
-  * [Android + iOS + .NET] Add C8o settings to select the fullsync database storage engine and set the fullsync encryption key.
-
-============================
- Version 2.0.4 | 2016-08-16
-============================
-
- NEW FEATURES (2)
-  * [Android + iOS + .NET] Add the FileTransfer upload feature.
-  * [iOS] New Swift SDK with support of the new C8OPromise API.
-
- IMPROVEMENTS (3)
-  * [Android + iOS + .NET] API harmonization.
-  * [Android + iOS + .NET] fs://.post support plain Object as value (also for merge).
-  * [iOS] Use of Alamofire 3.4.1 .
-
- BUGS (2)
-  * [Android] Fixed, deadlock in case of "call().sync()" in a background task
-  * [Android] Fixed, for Android <= 4.3, documents from a FullSync call are now deep JSONObject.
-
-============================
- Version 2.0.3 | 2016-03-22
-============================
-
- NEW FEATURES (2)
-  * [Android + .NET] Add the FileTransfer download feature.
-  * [Android + .NET] C8o.Log also send the current device UUID.
-
- IMPROVEMENTS (2)
-  * [Android + .NET] Handle array or collection C8O call parameters values as mutli-valued variables.
-  * [Android + .NET] Allow to change local loglevel and re-enable remote logs.
-
-============================
- Version 2.0.2 | 2016-02-02
-============================
-
- BUGS (2)
-  * [.NET] Fixed, HTTPS connection with a valid certificate for a WPF application.
-  * [Android] Fixed, fs://.post ignore the _id parameter.
-
-============================
- Version 2.0.1 | 2016-01-29
-============================
-
- BUGS (1)
-  * [Android + .NET] Fixed replication issues (end of replication not correctly detected).
-
-============================
- Version 2.0.0 | 2016-01-17
-============================
-
- NEW FEATURES (4)
-  * [.NET] Initial version.
-  * [Android + .NET] Improve error handling.
-  * [Android] Support of the new C8OPromise API.
-  * [.NET] Support of the new C8OPromise API.
-
- IMPROVEMENTS (1)
-  * [Android + .NET] API harmonization.
-
- BUGS (1)
-  * [Android] Fixed, NPE using the local cache feature.
-
-============================
- Version 1.0.0 | 2015-10-01
-============================
-
- NEW FEATURES (2)
-  * [Android] Initial version.
-  * [iOS] Initial version.
+### Angular
+ - [4.0.18-beta4](https://github.com/convertigo/c8osdk-angular/tree/4.0.18-beta4)

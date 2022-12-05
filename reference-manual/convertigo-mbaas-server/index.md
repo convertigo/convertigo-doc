@@ -1,8 +1,8 @@
 ---
-title: Convertigo MBaaS Server
+title: Convertigo Low Code Server
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 21/03/2019
-summary: "Convertigo MBaaS server is the server part of Convertigo mobility Platform"
+summary: "Convertigo Low Code server is the server part of Convertigo mobility Platform"
 sidebar: c8o_sidebar
 permalink: /reference-manual/convertigo-mbaas-server/
 --- 

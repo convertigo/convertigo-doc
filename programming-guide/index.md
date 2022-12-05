@@ -1,5 +1,5 @@
 ---
-title: Convertigo Programming Guide
+title: Convertigo Low Code Programming Guide
 keywords: pages, authoring, exclusion, frontmatter
 last_updated: 02/04/2020
 summary: "This chapter presents the purpose of the Convertigo Programming Guide, as well as key information about Convertigo softwares."
@@ -13,4 +13,3 @@ permalink: /programming-guide/
 - [Back-End Developers](./backend-developers/)
 - [Front-End Developers](./frontend-developers/)
 - [DevOps](./devops/)
-- [Test Developers](./test-developers/)

@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: Convertigo Mobility Platform
+  product: Convertigo Low Code Platform
   levels: one
   version: 8.1.0
   folders:
@@ -33,7 +33,7 @@ entries:
     - title: Convertigo Mobile Builder
       url: /reference-manual/convertigo-mobile-builder/
       output: web, pdf
-    - title: Convertigo MBaaS Server
+    - title: Convertigo Server
       url: /reference-manual/convertigo-mbaas-server/
       output: web, pdf
     - title: Appendixes
@@ -83,6 +83,16 @@ entries:
     - title: DevOps
       url: /programming-guide/devops/
       output: web, pdf
-    - title: Test Developers
-      url: /programming-guide/test-developers/
+      
+  - title: Convertigo no-code Forms
+    output: web, pdf
+    folderitems:
+    - title: Installing Convertigo no-code Forms Standalone
+      url: /no-code-forms/using-c8o-forms-standalone/
+      output: web, pdf
+    - title: Providing backend services to Convertigo no-code Forms
+      url: /no-code-forms/creating-data-for-c8o-forms/
+      output: web, pdf
+    - title: Fill out a PDF document from Convertigo no-code Forms
+      url: /no-code-forms/fill-out-pdf/
       output: web, pdf

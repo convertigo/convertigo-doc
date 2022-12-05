@@ -32,14 +32,14 @@ Convertigo Clients connects to the Convertigo Server using standard https:// pro
 
 | | Low Code Client | Client Language | FullSync & Advanced capabilities Supported | Chapter
 ---|---|---|---|---
-Convertigo Mobile Builder Low Code Clients  | Yes | Convertigo Low Code | Yes | [Client Side Programming Guide](../frontend-developers)
+Convertigo UI Builder Low Code Clients  | Yes | Convertigo Low Code | Yes | [Client Side Programming Guide](../frontend-developers)
 Convertigo SDK JS Based clients| No| JS Angular, ReactJS, Vue.js, ReactNative | Yes | [Convertigo JS SDK Documentation](https://www.npmjs.com/package/c8osdkangular)
 Convertigo SDK Native clients| No| Java Android & Kotlin, iOS SWIFT | Yes | [Convertigo Native SDK Documentation (Android)](https://github.com/convertigo/c8osdk-android) <br>&<br> [Convertigo Native SDK Documentation (iOS)](https://github.com/convertigo/c8osdk-ios)
 Agnostic clients| No| Any Type of client side language as long as it can consume jSON REST WS | No | [URL Mapper & Swagger portal](../understanding-convertigo-objects)
 
 The best value for your projects is the use the Mobile Builder Low Code Client, but if you still want to use your existing Angular, ReactJS or Vue.js programming skills, this is also possible using SDKs, but you will not benefit from the Client Side Low Code technology.
 
-Although today, UX performances are awesome using JS frameworks, you may still want to program client side using native technology such as Kotlin or Swift. This is also possible using the Native SDKS, but you will not benefit from the Client Side Low Code technology.
+You may still want to program client side using native technology such as Kotlin or Swift. This is also possible using the Native SDKS, but you will not benefit from the Client Side Low Code technology.
 
 
 ## Studio
@@ -151,15 +151,18 @@ As most of technologies used by Convertigo, syncing protocol is not proprietary 
 
 Server Side repository is handled by an Apache CouchDB server controlled by Convertigo Server. In order to use Full Sync you will have to install a CouchDB server on a server that can be accessed by Convertigo Server.  This can be the same machine Convertigo Server is running on. Also in order to develop Full Sync projects, you will have to install a CouchDB server on the same workstation Convertigo running on.
 
-### Configuring server and studio to access a CouchDB Server
+### Configuring server and studio to access internal PouchDB or an external CouchDB Server
 
-You can link your Studio with your local CouchDB server. To do this  :
+Starting from Convertigo 8.0.0, a local CouchDB server is included in the studio based on the PouchDB technology. This will enable FullSync and NoSQL even without using an external CouchDB server. PouchDB is enabled by default.
+
+But, if you do not want to use the integrated PouchDB server, You can link your Studio with your local CouchDB server. To do this  :
 
 - Window->Preferences->Convertigo->Engine->Full sync
-- Setup the url to access CouchDB server, by default this is set to http://127.0.0.1:5984 to access a CouchDB server running on the same workstation than your Studio.
+- Uncheck the PouchDB option
+- Setup the URL to access CouchDB server, by default this is set to http://127.0.0.1:5984 to access a CouchDB server running on the same workstation than your Studio.
 - Setup username and password to access the CouchDB server. By default these are left blank as the default installation of CouchDB server does not require credentials.
 
-The same, you can link your Server with a CouchDB server. To do this  :
+The same, you can link your Convertigo Server with a CouchDB server. To do this  :
 
 - Launch the admin console on a web browser , url is http://< your server>:28080/convertigo/admin
 - Login (By default admin, admin)

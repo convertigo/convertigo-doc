@@ -11,4 +11,3 @@ permalink: /reference-manual/
 * [Convertigo Objects](convertigo-objects/)
 * [JavaScript Objects APIs](javascript-objects-apis/)
 * [Interfaces to Convertigo](convertigo-mbaas-server/interfaces-to-convertigo/)
-* [Convertigo Mobile Builder](convertigo-mobile-builder/)
