@@ -6,4 +6,4 @@ summary: "This chapter describes how to install Convertigo Form Builder Standalo
 sidebar: c8o_sidebar
 permalink: /operating-guide/using-c8o-forms-standalone/
 ---
-# This Documentation has been moved over [here](/no-code-forms/using-c8o-forms-standalone) #
+# This Documentation has been moved over [here](../../no-code-forms/using-c8o-forms-standalone) #
