@@ -18,9 +18,9 @@ Table 2 - 1: Operating systems and Convertigo Studio installation packages table
 
 OS | Supported versions | Convertigo package name
 --- | --- | ---
-Windows | • Windows XP Service Pack 2 (32 bits)<br>• Windows Seven (32 and 64 bits)<br>• Windows 8<br>• Windows 10<br>• Windows 11  | convertigo-studio-X.Y.Z-v12345-win32-install.exe
-Linux  | • RedHat, starting from version 5.2 (32 bits and 64 bits)<br>• Ubuntu, versions 8.04 (LTS) , 10.04 (LTS), 12.04 (LTS) and 14.04 (LTS) (32 bitsand 64 bits) <br>• Debian version 6.0 (32 bitsand 64 bits) | convertigo-studio-X.Y.Z-v12345-linux32.tar.gz
-Mac OS | • Mac OS X 10.5 (Leopard) or greater (32 bits and 64 bits) | convertigo-studio-X.Y.Z-v12345-macosx32.tar.gz
+Windows | • Windows 10<br>• Windows 11  | convertigo-studio-X.Y.Z-tag-win64-install.exe
+Linux  | • Ubuntu, versions 20.04 (LTS) and 22.04 (LTS)<br>• Debian version 11.0 | convertigo-studio-X.Y.Z-tag-linux64.tar.gz
+Mac OS | • Mac OS X 10.5 (Leopard) or greater | convertigo-studio-X.Y.Z-tag-macosx.tar.gz
 
 In standard, Convertigo Studio installation is packaged as:
 
@@ -50,7 +50,7 @@ RAM | 2 Gb
 Disk space | 1 Gb
 
 ##### Installation requirements
-- The Convertigo Studio installer file: convertigo-studio-X.Y.Z-v12345-win64.zip
+- The Convertigo Studio installer file: convertigo-studio-X.Y.Z-tag-win64.zip
 
 #### Installation procedure
 
@@ -67,21 +67,6 @@ The minimum machine prerequisites for installing Convertigo Studio are the follo
 - CPU: Dual Core
 - RAM: 4Gb
 - Disk space: 10Gb.
-
-The following table describes the required packages to install prior to Convertigo Studio installation, depending on the Linux OS and version:
-
-Table 2 - 3: Packages prerequisites 
-
-.. | Version | Packages 32 bits
---- | --- | ---
-RedHat 32 bits | starting from version *5.2*<br>32 bits | • xulrunner-1.9.0.19-1.el5_5 and all dependencies<br>• libXtst-1.0.1-3.1.i386 and all dependencies<br>• xorg-x11-fonts-Type1-7.1-2.1.el5<br>• unzip<br>• glibc and all dependencies<br>• libXi and all dependencies
-RedHat 64 bits | starting from version *5.2*<br>64 bits | • xulrunner-1.9.0.19-1.el5_5 and all dependencies<br>• libXtst-1.0.1-3.1.i386 and all dependencies<br>• xorg-x11-fonts-Type1-7.1-2.1.el5<br>• unzip<br>• glibc.i686 and all dependencies<br>• libXi and all dependencies
-Ubuntu 32 bits | versions<br>8.04 (LTS)<br>10.04 (LTS)<br>and 12.04 (LTS)<br>32 bits | • libgtk2.0-0<br>• libxt6<br>• libxtst6<br>• unzip<br>• glibc and all dependencies
-Ubuntu 64 bits | versions<br>8.04 (LTS)<br>10.04 (LTS)<br>and 12.04 (LTS)<br>64 bits | • libgtk2.0-0<br>• libxt6<br>• libxtst6<br>• unzip<br>• glibc and all dependencies<br>• ia32-libs
-Ubuntu 32 bits | version 14.04 (LTS) 64 bits | • libgtk2.0-0:i386<br>• libstdc++6:i386<br>• libxft2:i386<br>• libxt6:i386<br>• libxtst6:i386<br>
-Ubuntu 64 bits | version 14.04 (LTS) 64 bits | • lib32z1<br>• libgtk2.0-0:i386<br>• libstdc++6:i386<br>• libxft2:i386<br>• libxt6:i386<br>• libxtst6:i386<br>
-Debian 32 bits | version 6.0 | • libgtk2.0-0<br>• libxt6<br>• libxtst6<br>• unzip<br>• bzip2<br>• glibc and all dependencies<br>
-Debian 64 bits | version 6.0 | • libgtk2.0-0<br>• libxt6<br>• libxtst6<br>• unzip<br>• bzip2<br>• glibc and all dependencies<br>• ia32-libs
  
 {{site.data.alerts.note}}
 Specified packages are necessary for using web connectors or legacy connectors. These lists of packages are not exhaustive. If you have problems with your installation of Convertigo Server on Linux/Tomcat, please contact us.
@@ -89,7 +74,7 @@ Specified packages are necessary for using web connectors or legacy connectors. 
 
 ##### Installation requirements
 
-- The Convertigo Studio compressed file: convertigo-studio-X.Y.Z-v12345-linux32.tar.gz
+- The Convertigo Studio compressed file: convertigo-studio-X.Y.Z-tag-linux64.tar.gz
 
 #### Installation procedure
 
@@ -97,7 +82,7 @@ The following procedures explain step by step how to install and to configure Co
 
 **To install Convertigo Studio on Linux**
 
-1. Expand the archive file convertigo-studio-X.Y.Z-v12345-linux32.tar.gz in a destination directory where you have the rights to.
+1. Expand the archive file convertigo-studio-X.Y.Z-tag-linux64.tar.gz in a destination directory where you have the rights to.
 2. Then, follow procedure [To start and configure Convertigo Studio on Windows/Linux/Mac OS](#to-start-and-configure-convertigo-studio-on-windowslinuxmac-os).
 
 
@@ -112,13 +97,13 @@ Table 2 - 4: Machine prerequisites
 
 MAC OS | 
 --- | ---
-Version | Mac OS X 10.5 (Leopard) or greater (32 or 64 bits)
+Version | Mac OS X 10.5 (Leopard) or greater
 CPU | Dual Core, Intel processor
 RAM | 2 Gb
 Disk space | 1 Gb
 
 ##### Installation requirements
-- The Convertigo Studio compressed file: convertigo-studio-X.Y.Z-v12345-macosx32.tar.gz
+- The Convertigo Studio compressed file: convertigo-studio-X.Y.Z-tag-macosx.tar.gz
 
 #### Installation procedure
 
@@ -126,7 +111,7 @@ The following procedures explain step by step how to install and to configure Co
 
 **To install Convertigo Studio on Mac OS**
 
-1. Expand the archive file convertigo-studio-X.Y.Z-v12345-macosx32.tar.gz in a destination directory where you have the rights to.
+1. Expand the archive file convertigo-studio-X.Y.Z-tag-macosx.tar.gz in a destination directory where you have the rights to.
 2. Then, follow procedure [To start and configure Convertigo Studio on Windows/Linux/Mac OS](#to-start-and-configure-convertigo-studio-on-windowslinuxmac-os).
 
 ### Finish installing and configuring Convertigo Studio at first start
