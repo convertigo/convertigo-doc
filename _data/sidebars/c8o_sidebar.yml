@@ -30,9 +30,6 @@ entries:
     - title: Convertigo Objects
       url: /reference-manual/convertigo-objects/
       output: web, pdf
-    - title: Convertigo Mobile Builder
-      url: /reference-manual/convertigo-mobile-builder/
-      output: web, pdf
     - title: Convertigo Server
       url: /reference-manual/convertigo-mbaas-server/
       output: web, pdf
@@ -51,9 +48,6 @@ entries:
       output: web, pdf
     - title: Installing Convertigo Server
       url: /operating-guide/installing-convertigo-server/
-      output: web, pdf
-    - title: Installing Convertigo Form Builder Standalone
-      url: /operating-guide/using-c8o-forms-standalone/
       output: web, pdf
     - title: Using Convertigo Administration Console
       url: /operating-guide/using-convertigo-administration-console/
