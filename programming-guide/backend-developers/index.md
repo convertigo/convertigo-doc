@@ -292,7 +292,7 @@ Select the Step from where you want to 'Source' data from. (All Red Steps can no
 
 #### XPath models
 
-**XPaths** are a way to point to the data structure elements values we will want to source. This follows a standard syntax described [here](https://www.w3schools.com/xml/xpath_syntax.asp). In most cases, the source picker will generate for the you a Valid XPath so you do not have to bother so much about this. You can include dynamic JavaScript expression using **{{{ expression }}}**. You can find below some very common XPath Use cases:
+**XPaths** are a way to point to the data structure elements values we will want to source. This follows a standard syntax described [here](https://www.w3schools.com/xml/xpath_syntax.asp). In most cases, the source picker will generate for the you a Valid XPath so you do not have to bother so much about this. You can include dynamic JavaScript expression using **{% raw %}{{{ expression }}}{% endraw %}**. You can find below some very common XPath Use cases:
 
 |XPath  sample | Usage |
 |--------|-------|
@@ -300,7 +300,7 @@ Select the Step from where you want to 'Source' data from. (All Red Steps can no
 |/data1/data2/data3[1]/text() | Will select all the first **data3** occurrence value |
 |/data1/data2/data3[@orginalKeyName = 'MyKey']/text() | Will select the **data3** occurrence having a attribute **'originalKeyname'** equal to **'MyKey'** |
 |/data1//data4/text() | Will select all **data4** node values that are under the **data1** node whatever is their tree depth |
-|/data1/data2/data3[@name = '{{{ myVarName.toLowerCase() }}}']/text() | Will select the **data3** occurrence having a attribute **'name'** equal to the dynamic JavaScript expression **myVarName.toLowerCase()** |
+|/data1/data2/data3[@name = '{% raw %}{{{ myVarName.toLowerCase() }}}{% endraw %}']/text() | Will select the **data3** occurrence having a attribute **'name'** equal to the dynamic JavaScript expression **myVarName.toLowerCase()** |
 
 **XPaths** are a powerful selector tools to be able to 'Source' data from any structure.
 
