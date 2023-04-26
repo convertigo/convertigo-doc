@@ -11,7 +11,6 @@ topnav: topnavobj
 * [Input variables](input-variables/)
 * [Log](log/)
 * [Process execute](process-execute/)
-* [Push Notifications](push-notifications/)
 * [Remove context](remove-context/)
 * [Remove session](remove-session/)
 * [Set response header](set-response-header/)
