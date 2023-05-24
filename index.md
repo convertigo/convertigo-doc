@@ -3,7 +3,7 @@ title: Homepage
 keywords: homepage
 sidebar: c8o_sidebar
 permalink: /
-summary: Please find here our official documentations for Convertigo Studio and Convertigo Low Code Platform.
+summary: Please find here our official documentations for Convertigo Studio and Convertigo Low Code Platform including Convertigo No Code Studio for Citizen Developpers
 ---
 On this website, you will find the Latest documentation available.
 
@@ -16,3 +16,4 @@ To access the documentation feel free to use the sidebar on the left or just cli
 ## [Reference Manual](reference-manual/)
 ## [Operating Guide](operating-guide/)
 ## [Convertigo Programming Guide](programming-guide/)
+
