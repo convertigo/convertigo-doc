@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a Convertigo project. 
 
-The <i>Project</i> is the basic entity of a Convertigo project. It contains all Convertigo objects needed for a Convertigo project to run properly:<br/><br/>• connectors,<br/>• screen classes (with criteria, extraction rules and style sheets),<br/>• transactions (with handlers, style sheets, variables and test cases),<br/>• pools, <br/>• sequences  (with steps, style sheets, variables and test cases).<br/>
+The <i>Project</i> is the basic entity of a Convertigo project. It contains all Convertigo objects needed for a Convertigo project to run properly:<br/><br/>• connectors,<br/>• screen classes (with criteria, extraction rules and style sheets),<br/>• transactions (with handlers, statements, style sheets, variables and test cases),<br/>• pools, <br/>• sequences  (with steps, style sheets, variables and test cases).<br/>
 
 Property | Type | Category | Description
 --- | --- | --- | ---

@@ -15,4 +15,5 @@ topnav: topnavobj
 * [Sequencer](sequencer/)
 * [SiteClipper](siteclipper/)
 * [URL Mapper](url-mapper/)
+* [Web](web/)
 * [Web services](web-services/)

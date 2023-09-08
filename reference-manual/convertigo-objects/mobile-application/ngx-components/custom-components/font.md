@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>Font</i> component. 
 
-This component helps installing open font sources.<br/> You can add <i>Font</i> components to the <i>Application</i> and to any <i>Shared component</i>.<br/> The precedence depends on the <i>Font</i> components ordering.<br/> If <i>Font</i> is set as <code>default</code> it will be installed and used by default for whole app or shared component.<br/> Otherwise it will be installed and you may use a <i>FontStyle</i> under any Text container component to use it.<br/><br/> For more information: <a href='https://fontsource.org'>Fontsource</a>.
+This component helps installing open font sources.<br/> You can add <i>Font</i> components to the <i>Application</i> and to any <i>Shared component</i>.<br/> The precedence depends on the <i>Font</i> components ordering.<br/> If <i>Font</i> is set as <code>default</code> it will be installed and used by default for whole app or shared component.<br/> Otherwise it will be installed and you may use a <i>FontStyle</i> under any Text container component to use it.<br/><br/> For more information: <a href='https://fontsource.org/fonts'>Fontsource</a>.
 
 Property | Type | Category | Description
 --- | --- | --- | ---
