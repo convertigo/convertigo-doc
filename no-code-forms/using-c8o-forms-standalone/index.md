@@ -85,7 +85,7 @@ $ docker-compose down
 ```
 
 ## Update guide ##
-You can access the Form Builder Repository [here :](https://c8oforms.s3-eu-west-3.amazonaws.com/index.html).
+You can access the Form Builder Repository [here :](https://github.com/convertigo/C8oForms/releases).
 
 First of all, downlaod C8Oforms.car, and then Go to [Convertigo administration](../using-convertigo-administration-console/#projects-page), into projects to import your C8oForms.car
 
