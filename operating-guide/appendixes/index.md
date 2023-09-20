@@ -368,7 +368,9 @@ user.password.instruction | Instruction in case of RegularExpression failure for
 
 property key | description | default value
 --- | --- | --- 
-log4j.logger.cems | Log4J root logger | INFO, CemsAppender
+log.file.enable | Log into files | true
+log.stdout.enable | Log into the standard console output | false
+log4j.logger.cems | Log4J root logger | INFO
 log4j.logger.cems.Admin| Log4J admin logger| WARN
 log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
 log4j.logger.cems.Beans| Log4J beans logger| INHERITED
