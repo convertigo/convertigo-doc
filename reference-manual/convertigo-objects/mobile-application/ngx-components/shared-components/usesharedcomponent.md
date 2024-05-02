@@ -4,20 +4,21 @@ title: UseSharedComponent
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/shared-components/usesharedcomponent/
 metadesc: Defines a UseSharedComponent component.   
-ObjGroup: Mobile Application
+ObjGroup: Shared Components
 ObjCatName: shared-components
-ObjName: UseSharedComponent
-ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIUseShared
-ObjIcon: /images/beans/ngx/components/images/uiuseshared_32x32.png
+ObjName: UIUseShared
+ObjClass: com.twinsoft.convertigo.beans.ngx.components.res.UIUseShared
+ObjIcon: /images/beans/ngx/components/dynamic/images/uiuseshared_32x32.png
 topnav: topnavobj
 ---
-##### Defines a UseSharedComponent component. 
+##### Defines a UseSharedComponent component. <br/>
 
+ 
 
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Identifier | Defines the component identifier.  
+Is active | Defines whether the component is active. 
+Shared component | Defines the target shared component to use. 
 
-Property | Type | Category | Description
---- | --- | --- | ---
-Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
-Identifier | String | standard | Defines the component identifier.<br/>
-Is active | boolean | standard | Defines whether the component is active.<br/>
-Shared component | String | standard | Defines the target shared component to use.<br/>
