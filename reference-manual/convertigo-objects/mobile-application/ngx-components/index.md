@@ -17,7 +17,6 @@ topnav: topnavobj
 * [Forms Components](form-components/)
 * [FullSync Actions Components](fullsync-action-components/)
 * [FullSync Components](fullsync-components/)
-* [Google Map Components](google-map-components/)
 * [Grid System Components](grid-system-components/)
 * [HTML Components](html-components/)
 * [Lists Components](list-components/)
