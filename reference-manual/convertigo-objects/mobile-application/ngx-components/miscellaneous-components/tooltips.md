@@ -28,7 +28,7 @@ Display on touch screen | Display the tooltip on mobile devices.
 Hide delay | The delay in ms before removing the tooltip.
 Hide delay (click) | Tooltip hiding delay for 'click' trigger.
 Hide delay (touch) | Delay in milliseconds before hiding the tooltip (for mobile devices).
-Max width | Maximum width of the tooltip in pixels.
+Max width | Maximum width of the tooltip in pixels (default: 200px)
 Offset | Offset the tooltip relative to the item.
 Pointer events | Defines whether or not an element reacts to pointer events.
 Position | The position of the tooltip.
@@ -42,7 +42,7 @@ Tooltip content | The content to be displayed in the popup according to the <i>T
 
 Tooltip content type | The content type passed to the tooltip.
 Trigger event | Specifies how the tooltip is triggered. Control the closing time with 'Hide delay' property.
-Width | Width of the tooltip in pixels.
+Width | Width of the tooltip in pixels. E.g: 150px
 Z-index | Z-index of the tooltip.
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
 Identifier | Defines the component identifier.  
