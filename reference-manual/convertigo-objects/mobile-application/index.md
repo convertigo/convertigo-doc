@@ -6,7 +6,6 @@ permalink: reference-manual/convertigo-objects/mobile-application/
 topnav: topnavobj
 ---
 * [Application](application/)
-* [Components](components/)
 * [Mobile Components](mobile-components/)
 * [Ngx Components](ngx-components/)
 * [Platforms](platforms/)

@@ -4,24 +4,28 @@ title: Directive
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/control-components/directive/
 metadesc: Defines a  Directive  component.   Angular's structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typical
-ObjGroup: Mobile Application
+ObjGroup: Controls
 ObjCatName: control-components
-ObjName: Directive
-ObjClass: com.twinsoft.convertigo.beans.ngx.components.UIControlDirective
-ObjIcon: /images/beans/ngx/components/images/uicontroldirective_32x32.png
+ObjName: UIControlDirective
+ObjClass: com.twinsoft.convertigo.beans.ngx.components.res.UIControlDirective
+ObjIcon: /images/beans/ngx/components/dynamic/images/uicontroldirective_32x32.png
 topnav: topnavobj
 ---
-##### Defines a <i>Directive</i> component. 
+##### Defines a <i>Directive</i> component. <br/>
 
-Angular's structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.<br/>Directives can be:<br> • <b>ForEach</b>  - each occurrence of a source collection will generate an UI Component<br> • <b>If</b> 		- the UI Component will be displayed If the source is true<br> • <b>Switch, Switch, SwichtDefault</b> 	- the UI Component will be displayed with the Switch options<br/><br/>For more information: <a href='https://angular.io/guide/structural-directives' target='_blank'>Structural Directives</a>
+ Angular's structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.<br/>
+Directives can be:<br> • <b>ForEach</b>  - each occurrence of a source collection will generate an UI Component<br> • <b>If</b> 		- the UI Component will be displayed If the source is true<br> • <b>Switch, Switch, SwichtDefault</b> 	- the UI Component will be displayed with the Switch options<br/>
+<br/>
+For more information: <a href='https://angular.io/guide/structural-directives' target='_blank'>Structural Directives</a>
 
-Property | Type | Category | Description
---- | --- | --- | ---
-Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
-Directive type | String | standard | Defines the directive type.<br/>
-Is active | boolean | standard | Defines whether the component is active.<br/>
-Tag name | String | standard | Defines the HTML element's tag name.<br/>
-Directive expression | JS expression | expert | Defines a directive condition or expression.<br/>
-Directive source | MobileSmartSourceType | expert | Defines the directive source.<br/>
-ForEach index | String | expert | Defines the ForEach index name.<br/>Use TS <b>scope.indexName</b> to access its value in other components.
-ForEach item | String | expert | Defines the ForEach item name.<br/>Use TS <b>scope.itemName</b> to access its value in other components.
+Name | Description 
+--- | ---
+Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Directive type | Defines the directive type.  
+Is active | Defines whether the component is active. 
+Tag name | Defines the HTML element's tag name. 
+Directive expression | Defines a directive condition or expression.  
+Directive source | Defines the directive source.  
+ForEach index | Defines the ForEach index name.  Use TS <b>scope.indexName</b> to access its value in other components.
+ForEach item | Defines the ForEach item name.  Use TS <b>scope.itemName</b> to access its value in other components.
+
