@@ -16,7 +16,7 @@ ion-grid<br/>
 ##### Defines a <i>Grid</i> component.<br/>
 Grid system is based on flexbox, a CSS feature supported by all devices.<br/>
 The grid is composed of three units : grid, rows and columns.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/grid'>Grid</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/grid'>Grid</a>.
 
 Name | Description 
 --- | ---

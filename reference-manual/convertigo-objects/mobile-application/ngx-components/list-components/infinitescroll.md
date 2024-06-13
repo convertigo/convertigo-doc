@@ -33,7 +33,7 @@ if (isOK) {
 event.target.complete();
 resolve();
 </pre></code><br/>
-For more information: <a href='https://ionicframework.com/docs/api/infinite-scroll'>InfiniteScroll</a>.
+For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/infinite-scroll'>InfiniteScroll</a>.
 
 Name | Description 
 --- | ---

@@ -16,7 +16,7 @@ ion-thumbnail<br/>
 ##### Defines a <i>Thumbnail Item</i> component.<br/>
 Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.<br/>
 Thumbnails can be used by themselves or inside of any element. If placed inside of a <i>List item</i>, the thumbnail will resize to fit the parent component.To position a thumbnail on the left or right side of an item, set its Slot property to 'start' or 'end', respectively.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/thumbnail'>Thumbnail</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/thumbnail'>Thumbnail</a>.
 
 Name | Description 
 --- | ---

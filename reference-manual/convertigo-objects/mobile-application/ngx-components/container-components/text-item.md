@@ -15,7 +15,7 @@ ion-text<br/>
 
 ##### Defines a <i>Text Item</i> component.<br/>
 A <i>Text Item</i> is a simple component that can be used to style the text color of an inner <i>Text</i> component.<br/>
-For more information: <a href='https://ionicframework.com/docs/api/text'>Text Item</a>.
+For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/text'>Text Item</a>.
 
 Name | Description 
 --- | ---

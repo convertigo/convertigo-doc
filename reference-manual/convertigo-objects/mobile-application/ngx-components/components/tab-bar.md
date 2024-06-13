@@ -15,7 +15,7 @@ ion-tab-bar<br/>
 
 ##### Defines a <i>Tab Bar</i> component.<br/>
 A <i>Tab Bar</i> is component that contains a set of <i>Tab Button</i>s. It must be provided inside of a <i>Tabs Container</i> to communicate with each tab.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/tab-bar'>Tab Bar</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/tab-bar'>Tab Bar</a>.
 
 Name | Description 
 --- | ---

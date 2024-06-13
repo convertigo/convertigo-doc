@@ -18,7 +18,7 @@ A <i>CheckBox</i> is a form's input component that holds a boolean value.<br/>
 Checkboxes are no different than HTML checkbox inputs. However, like other Ionic components, checkboxes are styled differently on each platform.<br/>
 Use the <i>Checked</i> property to set its default value, and the <i>Disabled</i> property to prevent the user from changing the value.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a custom validation function.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/checkbox'>Checkbox</a>.<br/>
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/checkbox'>Checkbox</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

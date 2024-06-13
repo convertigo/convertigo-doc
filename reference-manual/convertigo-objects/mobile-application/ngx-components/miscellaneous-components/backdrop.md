@@ -16,7 +16,7 @@ ion-backdrop <br/>
 ##### Defines a <i>Backdrop</i> component.<br/>
 Backdrops are full screen components that overlay other components and prevents clicking or tapping on the content behind.<br>They are useful behind components that transition in on top of other content and can be used to dismiss that component.<br/>
 A <i>Backdrop</i> is transparent by default, so you should include CSS to make it visible.<br>It can be customized by assigning common CSS properties including <code>background-color</code>, <code>background</code> and <code>opacity</code>.<br>Content can be displayed above the backdrop by setting a <code>z-index</code> on the content, higher than the backdrop (defaults to 2).<br/>
- For more information: <a href='https://ionicframework.com/docs/api/backdrop'>Backdrop</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/backdrop'>Backdrop</a>.
 
 Name | Description 
 --- | ---

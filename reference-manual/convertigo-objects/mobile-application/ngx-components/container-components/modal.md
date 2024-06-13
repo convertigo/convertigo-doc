@@ -19,7 +19,7 @@ To do so:<br/>
  • first add a trigger component (button, item,...) for opening the modal and add to it an <b>id</b> <i>Attr</i><br/>
  • then add a <i>Modal</i> component and set its <b>trigger</b> property with the previous <b>id</b><br/>
  • finally add any component you'd like to show, under the <i>Modal</i> component.<br/>
-You can use the <i>Close Modal</i> action to dismiss a Modal. For more information: <a href='https://ionicframework.com/docs/api/modal'>Modal</a>.
+You can use the <i>Close Modal</i> action to dismiss a Modal. For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/modal'>Modal</a>.
 
 Name | Description 
 --- | ---
@@ -27,7 +27,7 @@ Animated | If true, the modal will animate.
 Animation (enter) | (TS mode) Animation to use when the modal is presented. ((baseEl: any, opts?: any) => Animation).
 Animation (leave) | (TS mode) Animation to use when the modal is dismissed. ((baseEl: any, opts?: any) => Animation).
 Backdrop dismiss | If true, the modal will be dismissed when the backdrop is clicked.
-Can dismiss | Determines whether or not a modal can dismiss when calling the dismiss method.If the value is true or the value's function returns true, the modal will close when trying to dismiss.If the value is false or the value's function returns false, the modal will not close when trying to dismiss.See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access this from within the callback.Type: ((data?: any, role?: string ｜ undefined) => Promise<boolean>) ｜ boolean
+Can dismiss | Determines whether or not a modal can dismiss when calling the dismiss method.If the value is true or the value's function returns true, the modal will close when trying to dismiss.If the value is false or the value's function returns false, the modal will not close when trying to dismiss.See https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/troubleshooting/runtime#accessing-this if you need to access this from within the callback.Type: ((data?: any, role?: string ｜ undefined) => Promise<boolean>) ｜ boolean
 Control id | The modal id.
 Is open | If true, the modal will open. If false, the modal will close. Use this if you need finer grained control over presentation, otherwise just use the modalController or the trigger property. Note: isOpen will not automatically be set back to false when the modal dismisses. You will need to do that in your code.
 Keep contents mounted | If true, the component passed into ion-modal will automatically be mounted when the modal is created. The component will remain mounted even when the modal is dismissed. However, the component will be destroyed when the modal is destroyed. This property is not reactive and should only be used when initially creating a modal.

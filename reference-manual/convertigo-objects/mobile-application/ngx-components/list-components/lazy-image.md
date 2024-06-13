@@ -16,7 +16,7 @@ ion-img<br/>
 ##### Defines a <i>Lazy Image</i> component.<br/>
 This component will lazily load an image when ever it is in the viewport.<br/>
 This is extremely useful when generating a large list as images are only loaded when they're visible.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/img'>Img</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/img'>Img</a>.
 
 Name | Description 
 --- | ---

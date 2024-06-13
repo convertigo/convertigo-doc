@@ -15,7 +15,7 @@ ion-item-options<br/>
 
 ##### Defines a <i>Sliding ButtonSet</i> component.<br/>
 A <i>Sliding ButtonSet</i> contains one or more <i>Sliding Button</i>s which reveals while sliding.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/item-options'>Sliding options</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/item-options'>Sliding options</a>.
 
 Name | Description 
 --- | ---

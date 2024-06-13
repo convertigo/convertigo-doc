@@ -15,7 +15,7 @@ topnav: topnavobj
 
  The Alerts are a great way to offer the user the ability to choose a specific action or list of actions.They also can provide the user with important information, or require them to make a decision.<br/>
 <i>Alert</i> action component can be added under an <i>Event</i> or another action. Its returned value can be accessed by the navigation stack, using <code> parent.out </code> for example.<br/>
- For more information : <a href='https://ionicframework.com/docs/api/alert#controller-alerts'>Controller Alerts</a>.
+ For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/alert#controller-alerts'>Controller Alerts</a>.
 
 Name | Description 
 --- | ---

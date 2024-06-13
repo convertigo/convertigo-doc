@@ -24,7 +24,7 @@ Note that more languages are avaible in an external browser, or device than in C
 <br/>
 You can access data from the next action in the chain in (TS) mode with: <code><br/>
  • out: A concatenation of spoken string(s) if the action succeed</code><br/>
-For more information : <a href='https://ionicframework.com/docs/native/speech-recognition'>SpeechRecognition</a>.
+For more information : <a href='https://www.npmjs.com/package/@ionic-native/speech-recognition'>SpeechRecognition</a>.
 
 Name | Description 
 --- | ---

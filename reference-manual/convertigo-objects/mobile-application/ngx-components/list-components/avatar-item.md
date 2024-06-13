@@ -16,7 +16,7 @@ ion-avatar<br/>
 ##### Defines an <i>Avatar Item</i> component.<br/>
 Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.<br/>
 Avatars can be used by themselves or inside of any element. If placed inside of a <i>Chip</i> or <i>List item</i>, the avatar will resize to fit the parent component.To position an avatar on the left or right side of an item, set its Slot property to 'start' or 'end', respectively.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/avatar'>Avatar</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/avatar'>Avatar</a>.
 
 Name | Description 
 --- | ---

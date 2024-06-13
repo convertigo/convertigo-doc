@@ -16,7 +16,7 @@ ion-reorder<br/>
 ##### Defines a <i>Reorder</i> component.<br/>
 The <i>Reorder</i> is the anchor component used to drag and drop the items inside of the <i>Reorder Group</i>.<br/>
 It allows an item in a group of items to be dragged to change its order within that group. It must be used within a <i>Reorder Group</i> to provide a visual drag and drop interface.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/reorder'>Reorder</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/reorder'>Reorder</a>.
 
 Name | Description 
 --- | ---

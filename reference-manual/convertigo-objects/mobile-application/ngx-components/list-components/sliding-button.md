@@ -15,7 +15,7 @@ ion-item-option<br/>
 
 ##### Defines a <i>Sliding Button</i> component.<br/>
 A <i>Sliding Button</i> must be place inside a <i>Sliding ButtonSet</i> of a <i>Sliding Container</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/item-option'>Sliding option</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/item-option'>Sliding option</a>.
 
 Name | Description 
 --- | ---

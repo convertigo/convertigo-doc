@@ -16,7 +16,7 @@ ion-toolbar<br/>
 ##### Defines a <i>ToolBar</i> component.<br/>
 A <i>ToolBar</i> is a generic bar that can be used in an application as a header, sub-header, footer, or even sub-footer.<br/>
 Since it is based on flexbox, no matter how many toolbars you have in your page, they will be displayed correctly and content will adjust accordingly.<br/>
-For more information: <a href='https://ionicframework.com/docs/api/toolbar'>Toolbar</a>.
+For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/toolbar'>Toolbar</a>.
 
 Name | Description 
 --- | ---

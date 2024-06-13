@@ -16,7 +16,7 @@ topnav: topnavobj
  An overlay that can be used to indicate activity.<br/>
 Once presented, the loading indicator will automatically dismiss after a <code>duration</code> of 3s by default.<br>If the <i>Duration</i> property is set to <code>false</code>, the loading will display indefinitely until dismissed by a <i>Close Loading</i> action or a backdrop click.<br/>
 Place a <i>Show Loading</i> action at the very beginning of an action chain, under an <i>Event</i> or <i>Shared action</i>.<br>Place a <i>Close Loading</i> action under a <i>Finally handler</i>.<br/>
-For more information : <a href='https://ionicframework.com/docs/api/loading#controller'>Controller</a>
+For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/loading#controller'>Controller</a>
 
 Name | Description 
 --- | ---

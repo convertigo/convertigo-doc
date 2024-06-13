@@ -16,7 +16,7 @@ ion-tabs<br/>
 ##### Defines a <i>Tabs Container</i> component.<br/>
 The <i>Tabs Container</i> is a top level navigation component to implement a tab-based navigation. It is a container of individual Tab components.<br/>
 The <i>Tabs Container</i> does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, a <i>Tab Bar</i> should be provided as a direct child.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/tabs'>Tabs</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/tabs'>Tabs</a>.
 
 Name | Description 
 --- | ---

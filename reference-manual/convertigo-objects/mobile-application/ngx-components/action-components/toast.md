@@ -16,7 +16,7 @@ topnav: topnavobj
  This component helps displaying some informations.<br/>
 A <i>Toast</i> is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the applications content, and can be dismissed to resume user interaction with the application.<br/>
 <i>Toast</i> action component can be added under an <i>Event</i> or another action.<br/>
-For more information : <a href='https://ionicframework.com/docs/api/toast#controller-toasts'>Controller Toasts</a>.
+For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/toast#controller-toasts'>Controller Toasts</a>.
 
 Name | Description 
 --- | ---

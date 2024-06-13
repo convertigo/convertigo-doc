@@ -17,7 +17,7 @@ ion-range<br/>
 The Range slider lets users select from a range of values by moving the slider knob.<br/>
 It can accept dual knobs, but by default one knob controls the value of the range.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a custom validation function.<br/>
-For more information: <a href='https://ionicframework.com/docs/api/range'>Range</a>.<br/>
+For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/range'>Range</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
@@ -38,7 +38,7 @@ Maximum | Minimum and maximum values can be passed to the range through the min 
 Minimum | Minimum and maximum values can be passed to the range through the min and max properties, respectively. By default, the range sets the min to 0 and the max to 100.
 Mode | Specifies ionic mode.
 Pin | If true, a pin with integer value is shown when the knob is pressed. Defaults to false.
-Pin formatter | A callback used to format the pin text. By default the pin text is set to Math.round(value).<br/>See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access this from within the callback.
+Pin formatter | A callback used to format the pin text. By default the pin text is set to Math.round(value).<br/>See https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/troubleshooting/runtime#accessing-this if you need to access this from within the callback.
 Snaps | The step property specifies the value granularity of the range's value. It can be useful to set the step when the value isn't in increments of 1. Setting the step property will show tick marks on the range for each step. The snaps property can be set to automatically move the knob to the nearest tick mark based on the step property value.
 Step | The step property specifies the value granularity of the range's value. It can be useful to set the step when the value isn't in increments of 1. Setting the step property will show tick marks on the range for each step. The snaps property can be set to automatically move the knob to the nearest tick mark based on the step property value.
 Ticks | If true, tick marks are displayed based on the step value. Only applies when snaps is true.

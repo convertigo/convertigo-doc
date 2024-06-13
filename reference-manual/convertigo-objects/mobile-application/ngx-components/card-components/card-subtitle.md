@@ -15,7 +15,7 @@ ion-card-subtitle<br/>
 
 ##### Defines a <i>Card SubTitle</i> component.<br/>
 Use a <i>Card SubTitle</i> component inside of a <i>Card Header</i> component.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/card-subtitle'>CardSubTitle</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/card-subtitle'>CardSubTitle</a>.
 
 Name | Description 
 --- | ---

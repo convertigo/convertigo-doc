@@ -15,11 +15,11 @@ ion-action-sheet <br/>
 
 ##### Defines an inline <i>ActionSheet</i> component.<br/>
 An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app.<br/>
- For more information : <a href='https://ionicframework.com/docs/api/action-sheet'>Inline Action Sheet</a>.
+ For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/action-sheet'>Inline Action Sheet</a>.
 
 Name | Description 
 --- | ---
-Alert buttons | (TS mode) Array of buttons to be added to the action sheet. Type: (string ｜ ActionSheetButton)[]<br/> See: https://ionicframework.com/docs/api/action-sheet#actionsheetbutton
+Alert buttons | (TS mode) Array of buttons to be added to the action sheet. Type: (string ｜ ActionSheetButton)[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/action-sheet#actionsheetbutton
 Animated | If true, the action sheet will animate.
 Animation (enter) | (TS mode) Animation to use when the action sheet is presented. ((baseEl: any, opts?: any) => Animation).
 Animation (leave) | (TS mode) Animation to use when the action sheet is dismissed. ((baseEl: any, opts?: any) => Animation).

@@ -15,7 +15,7 @@ ion-fab<br/>
 
 ##### Defines a <i>FAB Container</i> component.<br/>
 Place your <i>FAB Button</i> components in this container to make them non scrollable with <i>Content</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/fab'>FabContainer</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/fab'>FabContainer</a>.
 
 Name | Description 
 --- | ---

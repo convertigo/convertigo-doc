@@ -17,7 +17,7 @@ ion-reorder-group<br/>
 The <i>Reorder Group</i> is a container for items using the <i>Reorder</i> component that is used to drag items within the group.<br/>
 Once the user drags an item and drops it in a new position, the ionItemReorder event is dispatched. A handler for it should be implemented that calls the event.target.complete() method.<br/>
 The detail property of the ionItemReorder event includes all of the relevant information about the reorder operation, including the 'from' and 'to' indexes.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/reorder-group'>Reorder Group</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/reorder-group'>Reorder Group</a>.
 
 Name | Description 
 --- | ---
