@@ -16,7 +16,7 @@ ion-breadcrumb<br/>
 ##### Defines a <i>Breadcrumb</i> component.<br/>
 A <i>Breadcrumb</i> is a single navigation item that is a child of the a <i>Breadcrumbs</i> component.<br/>
 It can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/breadcrumb'>Breadcrumb</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/breadcrumb'>Breadcrumb</a>.
 
 Name | Description 
 --- | ---

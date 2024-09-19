@@ -16,7 +16,7 @@ ion-accordion-group<br/>
 ##### Defines an <i>Accordion Group</i> component.<br/>
 It is a container for <i>Accordion</i> instances. It manages the state of the accordions and provides keyboard navigation.<br/>
 <i>Accordion</i> components components should be grouped inside an <i>Accordion Group</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/accordion-group'>Accordion group</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/accordion-group'>Accordion group</a>.
 
 Name | Description 
 --- | ---

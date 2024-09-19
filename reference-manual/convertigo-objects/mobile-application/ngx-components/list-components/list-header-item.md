@@ -15,7 +15,7 @@ ion-list-header<br/>
 
 ##### Defines a <i>List Header Item</i> component.<br/>
 Each list can include a header at the top of the list.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/list-header'>List Header</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/list-header'>List Header</a>.
 
 Name | Description 
 --- | ---

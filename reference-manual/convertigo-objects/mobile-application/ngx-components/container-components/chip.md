@@ -15,7 +15,7 @@ ion-chip<br/>
 
 ##### Defines a <i>Chip</i> component.<br/>
 Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/chip'>Chip</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/chip'>Chip</a>.
 
 Name | Description 
 --- | ---

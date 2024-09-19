@@ -16,7 +16,7 @@ ion-row<br/>
 ##### Defines a <i>Grid Row</i> component.<br/>
 This component must be inserted in a <i>Grid</i> and contains <i>Grid Column</i> components.<br/>
 A <i>Grid Row</i> is composed of 12 slots that can be filled with <i>Grid Column</i>s.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/row'>GridRow</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/row'>GridRow</a>.
 
 Name | Description 
 --- | ---

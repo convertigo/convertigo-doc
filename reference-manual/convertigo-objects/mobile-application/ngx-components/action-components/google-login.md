@@ -19,7 +19,7 @@ Setup needs some configuration. Declare your app in <a href='https://developers.
 <br/>
 Use <a href='https://developers.google.com/mobile/add?platform=ios&cntapi=signin'>https://developers.google.com/mobile/add?platform=ios&cntapi=signin</a> for iOS apps.<br/>
 <br/>
-See also some documentation on <a href='https://ionicframework.com/docs/native/google-plus'>https://ionicframework.com/docs/native/google-plus</a> about the Cordova plugin used.<br/>
+See also some documentation on <a href='https://www.npmjs.com/package/@ionic-native/google-plus'>https://www.npmjs.com/package/@ionic-native/google-plus</a> about the Cordova plugin used.<br/>
  You can access the data from the next action in the chain in (TS) mode with:<br/>
 <br/>
 <code><br/>

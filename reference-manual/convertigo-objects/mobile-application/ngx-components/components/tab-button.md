@@ -18,7 +18,7 @@ A <i>Tab Button</i> has to be inserted in a <i>Tab Bar</i> component.<br/>
 It is associated to a page you can specify through its properties.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure the page you associate contains a <i>Content</i> or <code>&lt;ion-content&gt;</code> to make it work properly in a <i>Tab Button</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/tab-button'>Tab Button</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/tab-button'>Tab Button</a>.
 
 Name | Description 
 --- | ---

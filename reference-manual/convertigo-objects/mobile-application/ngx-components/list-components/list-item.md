@@ -16,7 +16,7 @@ ion-item<br/>
 ##### Defines a <i>List Item</i> component.<br/>
 A <i>List Item</i> can be replaced by a <i>Button</i> with its <i>button type</i> property set to <code>ion-item</code> to make the item clickable.<br/>
 It can also contain <i>Sliding Options</i> to reveal buttons when swiped left or right.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/item'>List Item</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/item'>List Item</a>.
 
 Name | Description 
 --- | ---

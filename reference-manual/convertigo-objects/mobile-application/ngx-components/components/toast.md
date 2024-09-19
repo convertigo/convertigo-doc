@@ -18,7 +18,7 @@ ion-toast <br/>
  This component helps displaying some informations.<br/>
 A <i>Toast</i> is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message.The toast appears on top of the applications content, and can be dismissed to resume user interaction with the application.<br/>
 <i>Toast</i> is presented following an action on a trigger component.<br/>
-For more information : <a href='https://ionicframework.com/docs/api/toast#inline-toasts-recommended'>Inline Toasts</a>.
+For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/toast#inline-toasts-recommended'>Inline Toasts</a>.
 
 Name | Description 
 --- | ---

@@ -16,12 +16,12 @@ ion-alert <br/>
 ##### Defines an inline <i>Alert</i> component.<br/>
 Alerts are dialogs that presents users with information or collects information from the user using inputs.<br/>
 The <i>Alert</i> is presented following an action on a trigger component.<br/>
- For more information : <a href='https://ionicframework.com/docs/api/alert#inline-alerts-recommended'>Inline Alerts</a>.
+ For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/alert#inline-alerts-recommended'>Inline Alerts</a>.
 
 Name | Description 
 --- | ---
-Alert buttons | (TS mode) Array of buttons to be added to the alert. Type: (string ｜ AlertButton)[]<br/> See: https://ionicframework.com/docs/api/alert#alertbutton
-Alert inputs | (TS mode) Array of input to show in the alert. Type: AlertInput[]<br/> See: https://ionicframework.com/docs/api/alert#alertinput
+Alert buttons | (TS mode) Array of buttons to be added to the alert. Type: (string ｜ AlertButton)[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/alert#alertbutton
+Alert inputs | (TS mode) Array of input to show in the alert. Type: AlertInput[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/alert#alertinput
 Animated | If true, the alert will animate.
 Animation (enter) | (TS mode) Animation to use when the alert is presented. ((baseEl: any, opts?: any) => Animation).
 Animation (leave) | (TS mode) Animation to use when the alert is dismissed. ((baseEl: any, opts?: any) => Animation).

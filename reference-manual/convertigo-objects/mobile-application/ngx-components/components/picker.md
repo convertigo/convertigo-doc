@@ -15,7 +15,7 @@ ion-picker <br/>
 
 ##### Defines an inline <i>Picker</i> component.<br/>
 A Picker is a dialog that displays a row of buttons and columns underneath.<br>It appears on top of the app's content, and at the bottom of the viewport.<br/>
- For more information : <a href='https://ionicframework.com/docs/api/picker#inline-pickers-recommended'>Inline Pickers</a>.
+ For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/picker#inline-pickers-recommended'>Inline Pickers</a>.
 
 Name | Description 
 --- | ---
@@ -29,8 +29,8 @@ Duration | Number of milliseconds to wait before dismissing the picker.
 Is open | If true, the picker will open. If false, the picker will close.<br/>Use this if you need finer grained control over presentation, otherwise just use the pickerController or the trigger property.<br/>Note: isOpen will not automatically be set back to false when the picker dismisses. You will need to do that in your code.
 Keyboard close | If true, the keyboard will be automatically dismissed when the overlay is presented.
 Mode | Specifies ionic mode.
-Picker buttons | (TS mode) Array of buttons to be displayed at the top of the picker. Type: PickerButton[]<br/> See: https://ionicframework.com/docs/api/picker#pickerbutton
-Picker columns | (TS mode) Array of columns to be displayed in the picker. Type: PickerColumn[]<br/> See: https://ionicframework.com/docs/api/picker#pickercolumn
+Picker buttons | (TS mode) Array of buttons to be displayed at the top of the picker. Type: PickerButton[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/picker#pickerbutton
+Picker columns | (TS mode) Array of columns to be displayed in the picker. Type: PickerColumn[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/picker#pickercolumn
 Trigger | An ID corresponding to the trigger element that causes the picker to open.
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
 Identifier | Defines the component identifier.  

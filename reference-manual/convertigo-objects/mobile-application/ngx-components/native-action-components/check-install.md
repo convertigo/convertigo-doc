@@ -25,7 +25,7 @@ You can access data from the next action in the chain in (TS) mode with: <code><
 Whenever cordova platform is not available, the value defined in mocking option is returned.<br/>
  Default mocked value is <code>true</code>.<br/>
 It uses the native Cordova plugin which allows you to check if an application is installed giving its package ID.<br/>
-For more information : <a href='https://ionicframework.com/docs/native/file-opener'>File Opener</a>.
+For more information : <a href='https://www.npmjs.com/package/@ionic-native/file-opener'>File Opener</a>.
 
 Name | Description 
 --- | ---

@@ -18,7 +18,7 @@ A <i>Menu Toggle</i> component can be used with a <i>Button</i> or <i>GenericIte
 By default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed.<br/>
 If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and <i>MenuToggle</i> hides itself.<br/>
 In case it's desired to keep <i>MenuToggle</i> always visible, the AutoHide property can be set to false.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/menu-toggle'>MenuToggle</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/menu-toggle'>MenuToggle</a>.
 
 Name | Description 
 --- | ---

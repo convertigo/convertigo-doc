@@ -15,7 +15,7 @@ ion-progress-bar<br/>
 
 ##### Defines a ProgressBar component. This component is a horizontal progress bar to visualize the progression of an operation and activity.<br/>
 You can choose between two types: determinate and indeterminate.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/progress-bar'>ProgressBar</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/progress-bar'>ProgressBar</a>.
 
 Name | Description 
 --- | ---

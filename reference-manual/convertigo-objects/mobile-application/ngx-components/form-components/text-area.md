@@ -16,7 +16,7 @@ ion-textarea<br/>
 ##### Defines a <i>Text Area</i> component.<br/>
 This component is meant for multiline text type inputs only, such as text, password, email, number, search, tel, and url.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a custom validation function.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/textarea'>TextArea</a>.<br/>
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/textarea'>TextArea</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
@@ -35,7 +35,7 @@ Color | Specifies ionic color.
 Control default value | The default text value of the area.
 Control name | The associated declared control name.
 Counter | If true, a character counter will display the ratio of characters used and the total character limit.Developers must also set the maxlength property for the counter to be calculated correctly.
-Counter formatter | A callback used to format the counter text. By default the counter text is set to 'itemLength / maxLength'.See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access <b>this</b> from within the callback.
+Counter formatter | A callback used to format the counter text. By default the counter text is set to 'itemLength / maxLength'.See https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/troubleshooting/runtime#accessing-this if you need to access <b>this</b> from within the callback.
 Debounce | Set the amount of time, in milliseconds, to wait to trigger the ionChange event after each keystroke.
 Disabled | If true the component will be disabled, preventing the the user from changing the value.
 Error text | Text that is placed under the textarea and displayed when an error is detected.

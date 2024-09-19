@@ -15,7 +15,7 @@ ion-col<br/>
 
 ##### Defines a <i>Grid Column</i> component.<br/>
 This component must be inserted in a <i>Grid Row</i> and contains other components or HTML.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/col'>GridCol</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/col'>GridCol</a>.
 
 Name | Description 
 --- | ---

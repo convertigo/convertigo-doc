@@ -16,7 +16,7 @@ ion-datetime-button<br/>
 ##### Defines a <i>DateTimeButton</i> component.<br/>
 <i>DatetimeButton</i> links with a <i>DateTime</i> component to display the formatted date and time.<br/>
 This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.<br/>
-For more information: <a href='https://ionicframework.com/docs/api/datetime-button'>DateTime Button</a>.<br/>
+For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/datetime-button'>DateTime Button</a>.<br/>
 <br/>
 
 

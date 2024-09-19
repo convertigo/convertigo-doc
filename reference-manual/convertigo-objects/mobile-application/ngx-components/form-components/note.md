@@ -16,7 +16,7 @@ ion-note<br/>
 ##### Defines a <i>Note</i> component.<br/>
 Notes are text elements generally used as subtitles that provide more information.<br/>
 Notes are styled to appear grey by default. Notes can be used in an item as metadata text.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/note'>Note</a>.<br/>
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/note'>Note</a>.<br/>
 
 
 Name | Description 

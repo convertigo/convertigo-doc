@@ -24,7 +24,7 @@ You can access data from the next action in the chain in (TS) mode with: <code><
 Whenever cordova platform is not available, the value defined in mocking option is returned.<br/>
  Default mocked value is <code>'https://www.convertigo.com/wp-content/uploads/2015/01/logoStudio.png'</code>.<br/>
 It uses the native Chooser to select a file.<br/>
-For more information : <a href='https://ionicframework.com/docs/native/chooser'>Chooser</a>.
+For more information : <a href='https://www.npmjs.com/package/@ionic-native/chooser'>Chooser</a>.
 
 Name | Description 
 --- | ---

@@ -14,7 +14,7 @@ topnav: topnavobj
 ##### Defines a <i>PopPage</i> action component. <br/>
 
  This component helps navigating back to last page. Popping a page will return to the previous page in the stack, as if the user had clicked on the back button.<br/>
-For more information : <a href='https://ionicframework.com/docs/angular/navigation'>Navigation</a>.
+For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/angular/navigation'>Navigation</a>.
 
 Name | Description 
 --- | ---

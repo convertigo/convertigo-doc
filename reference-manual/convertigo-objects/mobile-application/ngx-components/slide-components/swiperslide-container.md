@@ -18,7 +18,7 @@ The <i>SwiperSlides Container</i> component is a multi-section container. It con
 Slides make it easy to create galleries, tutorials, and page-based layouts.<br/>
 By setting the <i>Identifier</i> property you can access from your typescript code the swiper instance through <code>page['my-identifier'].swiper</code><br/>
  For more information: <a href='https://swiperjs.com/'>Swiper</a> library.<br/>
- See also <a href='https://ionicframework.com/docs/angular/slides'>Migrating from ion-slides to Swiper.js</a><br/>
+ See also <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/angular/slides'>Migrating from ion-slides to Swiper.js</a><br/>
 
 
 Name | Description 

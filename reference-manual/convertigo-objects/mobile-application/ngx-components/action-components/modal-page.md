@@ -31,7 +31,8 @@ Name | Description
 Animated | If true, the modal will animate
 Animation (enter) | Animation to use when the modal is presented. ((baseEl: any, opts?: any) => Animation).
 Animation (leave) | Animation to use when the modal is dismissed. ((baseEl: any, opts?: any) => Animation).
-Can dismiss | Determines whether or not a modal can dismiss when calling the dismiss method.If the value is true or the value's function returns true, the modal will close when trying to dismiss.If the value is false or the value's function returns false, the modal will not close when trying to dismiss.See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access this from within the callback.Type: ((data?: any, role?: string ｜ undefined) => Promise<boolean>) ｜ boolean
+Block while displayed | Define if execution of next actions has to be blocked while modal page is displayed
+Can dismiss | Determines whether or not a modal can dismiss when calling the dismiss method.If the value is true or the value's function returns true, the modal will close when trying to dismiss.If the value is false or the value's function returns false, the modal will not close when trying to dismiss.See https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/troubleshooting/runtime#accessing-this if you need to access this from within the callback.Type: ((data?: any, role?: string ｜ undefined) => Promise<boolean>) ｜ boolean
 Css Classes | Additional classes for custom styles. Type: string | string[]
 Enable backdrop dismiss | If true, tapping on the back drop will dismiss the page.
 Html Attributes | Additional attributes to pass to the modal. Type: { [key: string]: any }

@@ -19,7 +19,7 @@ To do so:<br/>
  • first add a trigger component (button, item,...) for opening the popover and add to it an <b>id</b> <i>Attr</i><br/>
  • then add a <i>Popover</i> component and set its <b>trigger</b> property with the previous <b>id</b><br/>
  • finally add any component you'd like to show, under the <i>Popover</i> component<br/>
-You can use the <i>Close Popover</i> action to dismiss a Popover. For more information: <a href='https://ionicframework.com/docs/api/popover'>Popover</a>.
+You can use the <i>Close Popover</i> action to dismiss a Popover. For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/popover'>Popover</a>.
 
 Name | Description 
 --- | ---

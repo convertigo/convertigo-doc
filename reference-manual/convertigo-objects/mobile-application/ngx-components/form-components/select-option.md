@@ -17,7 +17,7 @@ ion-select-option<br/>
 Each option component must be placed under a <i>Select Container</i> component to give a list of selectable options.<br/>
 To set the name or label of the option add a <i>Text</i> component to it.<br/>
 Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from changing the value.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/select-option'>SelectOption</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/select-option'>SelectOption</a>.
 
 Name | Description 
 --- | ---

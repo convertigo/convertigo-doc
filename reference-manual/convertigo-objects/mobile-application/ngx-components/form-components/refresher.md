@@ -18,7 +18,7 @@ This component provides pull-to-refresh functionality on a <i>Content</i> compon
 Place the <i>Refresher</i> as the first child of your <i>Content</i>.<br/>
 Pages can then listen to the refresher's various output events. The refresh output event is fired when the user has pulled down far enough to kick off the refreshing process.<br/>
  Once the async operation has completed and the refreshing should end, call complete().<br/>
- For more information: <a href='https://ionicframework.com/docs/api/refresher'>Refresher</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/refresher'>Refresher</a>.
 
 Name | Description 
 --- | ---

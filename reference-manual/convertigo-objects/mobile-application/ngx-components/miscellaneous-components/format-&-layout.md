@@ -15,7 +15,7 @@ topnav: topnavobj
 
 ##### Defines a <i>Format &amp; Layout</i> component.<br/>
 This component can be used on any component in order to modify the text, element placement or adjust the padding and margin.<br/>
- For more information: <a href='https://ionicframework.com/docs/layout/css-utilities'>CSS Utilities</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/layout/css-utilities'>CSS Utilities</a>.
 
 Name | Description 
 --- | ---

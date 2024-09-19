@@ -19,7 +19,7 @@ They are shaped as a circle that represents a promoted action.<br/>
 When pressed, it may contain more related actions.<br/>
 FABs as its name suggests are floating over the content in a fixed position.<br/>
 You can add <i>Icon</i> in the <i>FAB Button</i> to represent a given function.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/fab-button'>FabButton</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/fab-button'>FabButton</a>.
 
 Name | Description 
 --- | ---

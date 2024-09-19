@@ -14,7 +14,7 @@ topnav: topnavobj
 ##### Defines an <i>Action Sheet</i> component. <br/>
 
  An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app.<br/>
- For more information : <a href='https://ionicframework.com/docs/api/action-sheet'>Action sheet</a>.
+ For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/action-sheet'>Action sheet</a>.
 
 Name | Description 
 --- | ---

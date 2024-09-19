@@ -16,7 +16,7 @@ ion-fab-list<br/>
 ##### Defines a <i>FAB List</i> component.<br/>
 The <i>FAB List</i> is a container for multiple <i>FAB Button</i>s. It contains actions related to the main fab button and is flung out on click.<br/>
  To specify what side the buttons should appear on, set the side property to 'start', 'end', 'top', 'bottom'.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/fab-list'>FabList</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/fab-list'>FabList</a>.
 
 Name | Description 
 --- | ---

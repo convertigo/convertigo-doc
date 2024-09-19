@@ -17,7 +17,7 @@ ion-radio-group<br/>
 This component is a container for a set of radio buttons. It allows a user to select at most one radio button from the set. Checking one radio button that belongs to a <i>Radio Group</i> unchecks any previous checked radio button within the same group.<br/>
 Add as many <i>Radio Button</i> you want under your <i>Radio Group</i> component.<br/>
 Use the <i>Default value</i> property to set its default value. If a radio button has the same value it will be checked by default.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/radio-group'>Radio Group</a>.<br/>
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/radio-group'>Radio Group</a>.<br/>
 <br/>
 <span class='orangetwinsoft'><u>Note:</u></span> Make sure to add each <i>Radio Button</i> under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 

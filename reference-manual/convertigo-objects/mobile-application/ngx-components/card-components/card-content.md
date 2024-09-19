@@ -16,7 +16,7 @@ ion-card-content<br/>
 ##### Defines a <i>Card Content</i> component.<br/>
 This component is the content part of the card.<br/>
 Use a <i>Card Content</i> component inside of a <i>Card Container</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/card-content'>CardContent</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/card-content'>CardContent</a>.
 
 Name | Description 
 --- | ---

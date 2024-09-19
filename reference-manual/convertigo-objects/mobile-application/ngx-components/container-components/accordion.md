@@ -17,7 +17,7 @@ ion-accordion<br/>
 Accordions make it possible to organize large amounts of content in an easy-to-understand way.<br/>
 They provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information.<br/>
 <i>Accordion</i> components should be grouped inside an <i>Accordion Group</i>.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/accordion'>Accordion</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/accordion'>Accordion</a>.
 
 Name | Description 
 --- | ---

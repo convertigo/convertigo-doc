@@ -15,7 +15,7 @@ ion-refresher-content<br/>
 
 ##### Defines a <i>Content Refresher</i> component.<br/>
 By default, Ionic provides the pulling icon and refreshing spinner that looks best for the platform the user is on. However, you can change the default icon and spinner, along with adding text for each state by adding properties to the child <i>Content Refresher</i> component.<br/>
- For more information: <a href='https://ionicframework.com/docs/api/refresher-content'>RefresherContent</a>.
+ For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/refresher-content'>RefresherContent</a>.
 
 Name | Description 
 --- | ---

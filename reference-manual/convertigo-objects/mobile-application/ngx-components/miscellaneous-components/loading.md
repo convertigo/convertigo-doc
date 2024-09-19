@@ -17,7 +17,7 @@ ion-loading <br/>
 
  An overlay that can be used to indicate activity.<br/>
 Once presented, the loading indicator will automatically dismiss after a <code>duration</code> of 3s by default.<br>If the <i>Duration</i> property is set to <code>false</code>, the loading will display indefinitely until dismissed by clicking on the backdrop or by a calling the <code>dismiss()</code> method.<br/>
-For more information : <a href='https://ionicframework.com/docs/api/loading#inline-recommended'>Inline Loading</a>
+For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/loading#inline-recommended'>Inline Loading</a>
 
 Name | Description 
 --- | ---

@@ -3,7 +3,7 @@ layout: page
 title: NavigatePage
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/action-components/navigatepage/
-metadesc: Defines a  NavigatePage  action component.   This component helps navigating to a page giving its URL. For more information   <a href='https //ionicfr
+metadesc: Defines a  NavigatePage  action component.   This component helps navigating to a page giving its URL. For more information   <a href='https //ionic-d
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: NavigatePageAction
@@ -14,7 +14,7 @@ topnav: topnavobj
 ##### Defines a <i>NavigatePage</i> action component. <br/>
 
  This component helps navigating to a page giving its URL.<br/>
-For more information : <a href='https://ionicframework.com/docs/angular/navigation'>Navigation</a>.
+For more information : <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/angular/navigation'>Navigation</a>.
 
 Name | Description 
 --- | ---

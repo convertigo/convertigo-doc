@@ -16,7 +16,7 @@ ion-breadcrumbs<br/>
 ##### Defines a <i>Breadcrumbs</i> component.<br/>
 Breadcrumbs are navigation items that are used to indicate where a user is on an app or site. They should be used for large sites and apps with hierarchically arranged pages.<br/>
 Breadcrumbs can be collapsed based on the maximum number that can show, and the collapsed indicator can be clicked on to present a popover with more information or expand the collapsed breadcrumbs.<br/>
-A <i>Breadcrumbs</i> component may contain multiple <i>Breadcrumb</i> components. For more information: <a href='https://ionicframework.com/docs/api/breadcrumbs'>Breadcrumbs</a>.
+A <i>Breadcrumbs</i> component may contain multiple <i>Breadcrumb</i> components. For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/breadcrumbs'>Breadcrumbs</a>.
 
 Name | Description 
 --- | ---
