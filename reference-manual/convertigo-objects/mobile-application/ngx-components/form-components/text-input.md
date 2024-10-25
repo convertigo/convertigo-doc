@@ -23,6 +23,7 @@ Like any other form's inputs, it has a <i>Control name</i> property you may chan
 
 Name | Description 
 --- | ---
+Accept | If the value of the type attribute is 'file', then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
 Autocapitalize | Specifies whether and how the text value should be automatically capitalized as it is entered/edited by the user.
 Autocomplete | Specifies whether the value of the control can be automatically completed by the browser.
 Autocorrect | Specifies whether auto correction should be enabled when the user is entering/editing the text value.
