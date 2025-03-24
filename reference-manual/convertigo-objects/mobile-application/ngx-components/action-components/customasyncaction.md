@@ -20,6 +20,7 @@ Name | Description
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
 Is active | Defines whether the component is active. 
 Application assets | Defines the assets needed by this action.  Add here any additional json to be inserted in the app:architect:build:option:assets[] of angular.json (Ex {"glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/"})
+Application component imports | Defines the imports needed by this action.  Add here any 'Import' statements your code would require to compile.
 Application module NgModules | Defines the modules needed by this action.  Add here any module to be inserted in the @NgModule({Imports[]}) in app.module.ts
 Application module NgProviders | Defines the providers needed by this action.  Add here any provider to be inserted in the @NgModule({Providers[]}) in app.module.ts
 Application module imports | Defines the imports needed by this action.  Add here any 'Import' statements needed in the app.module.ts
