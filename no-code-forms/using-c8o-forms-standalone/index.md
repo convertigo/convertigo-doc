@@ -33,7 +33,7 @@ Linux platform is recommended.
  
 ## Installation guide 
 
-You can access the Form Builder Releases [here](https://github.com/convertigo/C8oForms/releases)
+You can access the No Code Studio Releases [here](https://github.com/convertigo/C8oForms/releases)
 
 First of all, extract tar.gz (This file is given by a download link in a message) :
 ```shell
@@ -85,13 +85,13 @@ After several minutes Go to Convertigo system administration (http://my.dns.name
  * user: admin
  * password admin
 
-To shutdown docker,and stop **Convertigo Form Builder**, run:
+To shutdown docker,and stop **Convertigo No Code Studio**, run:
 ```shell
 $ docker-compose down
 ```
 
 ## Update guide ##
-You can access the Form Builder Repository [here :](https://github.com/convertigo/C8oForms/releases).
+You can access the No Code Studio Repository [here :](https://github.com/convertigo/C8oForms/releases).
 
 First of all, downlaod C8Oforms.car, and then Go to [Convertigo administration](../using-convertigo-administration-console/#projects-page), into projects to import your C8oForms.car
 
@@ -116,7 +116,7 @@ Click on Deploy a project, and then browse file on your system.
   - You can find your _workspace_ into folder _c8oforms_standalone/workspace_.
   - This workspace contains all Convertigo user data: the projects, the configuration files, the logs, etc.
 
-## Create a new  Convertigo Form Builder account 
+## Create a new  Convertigo No Code Studio account 
 Go to [convertigo administration](../using-convertigo-administration-console/#accessing-the-administration-console) and login,
 then navigate to test platform, and click on _lib_UserManager_, execute sequence **AddUser** with user email and password.
 
@@ -201,7 +201,7 @@ lib_oauth.openid.instrospect_url| https\://openid_introspect_url | An optional i
 Directories to save in the event of a machine crash :
 
 - All the _workspace_ directory except logs folder. This contains all the specifics parameters as well as the symbols set.
-- All the _couchdb_ directory. This directory contains all the databases used for Convertigo Form Builder. In particular the definitions of forms, users, rights, ... 
+- All the _couchdb_ directory. This directory contains all the databases used for Convertigo No Code Studio. In particular the definitions of forms, users, rights, ... 
 - The _tomcat/conf_ directory, only if you have changed the configuration like add a certificate store.
 
 Restoration is easy. It consists of replacing the installed directories with those saved. Note that backup can be done while CouchDB is running see this article in CouhcDB documentation [Couchdb Backups](https://docs.couchdb.org/en/stable/maintenance/backups.html)
