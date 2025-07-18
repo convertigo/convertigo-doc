@@ -1,5 +1,5 @@
 ---
-title: Installing Convertigo No Cdoe Studio Standalone
+title: Installing Convertigo No Code Studio Standalone
 keywords: pages, authoring, exclusion, frontmatter, GDPR, RGPD 
 last_updated: 17/04/2020
 summary: "This chapter describes how to install Convertigo No Code StudioStandalone on premises"
@@ -160,30 +160,35 @@ For _NoCode Studio_, you will have to optionally define 1 other symbol:
 _NoCode Studio_ supports OAuth SSO. to set it up configure the following symbols :
 
 **For Microsoft AzureAD (Entra ID)**
+
 Symbol | Sample Value | Desciption
 -------|-------|-----------
 lib_oauth.azuread.clientid|XXX    | The EntraID (AzureAD) cliend ID
 lib_oauth.azuread.tenantid|common | The EntraID tenant ID
 
 **For GitHub OAuth :**
+
 Symbol | Sample Value | Desciption
 -------|-------|-----------
 lib_oauth.github.clientid| XXXX | The GitHub Client id
 lib_oauth.github.keysecret.secret|XXX | The GitHub client secret
 
 **For Google OAuth :**
+
 Symbol | Sample Value | Desciption
 -------|-------|-----------
 lib_oauth.google.clientid| XXXX | The Google Client ID
 lib_oauth.google.keysecret.secret| XXX | The Google Client Secret
 
 **For Linkedin:**
+
  Symbol  | Sample Value | Desciption  
  ------- | ------------ | ----------- 
  lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID 
  lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret
 
 **For OpenID :**
+
 Symbol | Sample Value | Desciption
 -------|-------|-----------
 lib_oauth.openid.clientid|   XXXX | The OpenID Client ID
