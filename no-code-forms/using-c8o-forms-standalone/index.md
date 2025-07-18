@@ -178,11 +178,11 @@ lib_oauth.google.clientid| XXXX | the Google Client ID
 lib_oauth.google.keysecret.secret| XXX | The Google Client Secret
 
 
-**For Linkedin :**
-| Symbol | Sample Value | Desciption|
-| ------- | ------- | ----------- |
-| lib_oauth.linkedin.clientid| XXXX | The Linkedin Client ID |
-| lib_oauth.linkedin.keysecret.secret| XXXX | The Linkedin Client Secret |
+**For Linkedin:**
+| Symbol  | Sample Value | Desciption  |
+| ------- | ------------ | ----------- |
+| lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID |
+| lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret |
 
 **For OpenID :**
 Symbol | Sample Value | Desciption
