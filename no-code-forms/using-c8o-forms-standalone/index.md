@@ -147,7 +147,7 @@ For _lib_UserManager_, you will have to define 5 symbols:
 * lib_UserManager.ldapServer
   * Url of LDAP server such as 'ldap://**LDAP_SERVER**:389'
 * lib_UserManager.ldapBasePath
-  * base path wher users will e search in AD such as 'DC=domain,DC=subdomain,C=US'
+  * Base path where users will search in AD such as 'DC=domain,DC=subdomain,C=US'
 * lib_UserManager.ldapDomainName
   * The default NT Domain such as 'DOMAIN_NAME'
 
@@ -182,10 +182,10 @@ lib_oauth.google.keysecret.secret| XXX | The Google Client Secret
 
 **For Linkedin:**
 
- Symbol  | Sample Value | Desciption  
- ------- | ------------ | ----------- 
- lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID 
- lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret
+Symbol  | Sample Value | Desciption  
+------- | ------------ | ----------- 
+lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID 
+lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret
 
 **For OpenID :**
 
