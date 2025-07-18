@@ -182,7 +182,7 @@ lib_oauth.google.keysecret.secret| XXX | The Google Client Secret
 
 **For Linkedin:**
 
-| Symbol XXXX  | Sample Value | Desciption  |
+| Symbol | Sample Value | Desciption  |
 | -------- | ------------ | ----------- |
 | lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID |
 | lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret |
