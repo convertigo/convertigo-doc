@@ -168,21 +168,20 @@ lib_oauth.azuread.tenantid|common | The EntraID tenant ID
 **For GitHub OAuth :**
 Symbol | Sample Value | Desciption
 -------|-------|-----------
-lib_oauth.github.clientid| XXXX | the GitHub Client id
+lib_oauth.github.clientid| XXXX | The GitHub Client id
 lib_oauth.github.keysecret.secret|XXX | The GitHub client secret
 
 **For Google OAuth :**
 Symbol | Sample Value | Desciption
 -------|-------|-----------
-lib_oauth.google.clientid| XXXX | the Google Client ID
+lib_oauth.google.clientid| XXXX | The Google Client ID
 lib_oauth.google.keysecret.secret| XXX | The Google Client Secret
 
-
 **For Linkedin:**
-| Symbol  | Sample Value | Desciption  |
-| ------- | ------------ | ----------- |
-| lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID |
-| lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret |
+ Symbol  | Sample Value | Desciption  
+ ------- | ------------ | ----------- 
+ lib_oauth.linkedin.clientid | XXXX | The Linkedin Client ID 
+ lib_oauth.linkedin.keysecret.secret | XXXX | The Linkedin Client Secret
 
 **For OpenID :**
 Symbol | Sample Value | Desciption
@@ -190,7 +189,7 @@ Symbol | Sample Value | Desciption
 lib_oauth.openid.clientid|   XXXX | The OpenID Client ID
 lib_oauth.openid.clientsecret.secret| XXXX | The OpenID client secret
 lib_oauth.openid.endpoint| https\://api.login.yahoo.com/oauth2/request_auth | The URL to the end point
-lib_oauth.openid.instrospect_url| https\://openid_introspect_url | and optional introspect URL
+lib_oauth.openid.instrospect_url| https\://openid_introspect_url | An optional introspect URL
 
 ## Backup
 
