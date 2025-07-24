@@ -221,7 +221,7 @@ To do this, Go to [Convertigo administration](../using-convertigo-administration
 
 ## Post install Check
 
-Once installed, you can check that evrything is ok using this check list 
+Once installed, you can check that everything is ok using this check list 
 * Launch the application (url: http://my.dns.name/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
 * Log in with an existing AD account (Use DOMAIN\user) or Login in using SSO (Google, OpenID, or Microsoft Entra ID)
 * Create a user (Use No Code Studio Admin menu)
