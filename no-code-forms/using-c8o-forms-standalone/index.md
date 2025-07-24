@@ -218,3 +218,15 @@ To do this, Go to [Convertigo administration](../using-convertigo-administration
 
 * `C8Oforms.GDRP-MENU` To define the text and show the GDPR menu (1)
 * `C8Oforms.GDRP-TOAST` To define and display the message before creating a new form (2)
+
+## Post install Check
+
+Once installed, you can check that evrything is ok using this check list 
+* Launch the application (url: http://my.dns.name/convertigo/projects/C8Oforms/DisplayObjects/mobile/index.html)
+* Log in with an existing AD account (Use DOMAIN\user) or Login in using SSO (Google, OpenID, or Microsoft Entra ID)
+* Create a user (Use No Code Studio Admin menu)
+* Verify SMTP configuration (Create a sample app with a Submit flow using the Mail Send Action)
+* Create an app from a template (Click on one of the application temaplates)
+* Check access to No Code (Click on the No Code database tab and check that the Database panel is displayed)
+* Publish the application and use it (Using QR Code)
+* Export / import the app
