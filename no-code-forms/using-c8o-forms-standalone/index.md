@@ -75,6 +75,24 @@ Edit the PUBLIC_HOSTNAME to the DNS host name users will type in their browser U
 PUBLIC_HOSTNAME=my.dns.name
 ```
 
+### Configure BR email notification system
+
+No Code Studio uses BR notifications for No Code Databases workspace sharing. Configure this in the **.env** file as is :
+
+
+Name	| Description	 | Defaults
+------| ------------ |------------
+FROM_EMAIL	| The email address BR  will send emails from. |	
+EMAIL_SMTP	|If set to any non empty value then BR  will start sending emails using the configuration options below. If not set then BR  will not send emails and just log them to the Celery worker logs instead.	
+EMAIL_SMTP_USE_TLS	| If set to any non empty value then BR  will attempt to send emails using TLS.Whether to use a TLS (secure) connection when talking to the SMTP server. This is used for explicit TLS connections, generally on port 587. If you are experiencing hanging connections, see the implicit TLS setting EMAIL_SMTP_USE_SSL.	
+EMAIL_SMTP_USE_SSL |	If set to any non empty value then an implicit TLS (secure) connection will be used when talking to the SMTP server. In most email documentation this type of TLS connection is referred to as SSL. It is generally used on port 465. If you are experiencing problems, see the explicit TLS setting EMAIL_SMTP_USE_TLS. Note that EMAIL_SMTP_USE_TLS/EMAIL_SMTP_USE_SSL are mutually exclusive, so only set one of those settings to True.	
+EMAIL_SMTP_HOST	| The host of the external SMTP server that BR  should use to send emails.	
+EMAIL_SMTP_PORT	| The port used to connect to $EMAIL_SMTP_HOST on.	
+EMAIL_SMTP_USER	| The username to authenticate with $EMAIL_SMTP_HOST when sending emails.	
+EMAIL_SMTP_PASSWORD |	The password to authenticate with $EMAIL_SMTP_HOST when sending emails.	
+EMAIL_SMTP_SSL_CERTFILE_PATH	| If EMAIL_SMTP_USE_SSL or EMAIL_SMTP_USE_TLS is set, you can optionally specify the path to a PEM-formatted certificate chain file to use for the SSL connection. If using docker then you will need to mount in this file into all the BR  backend containers.	
+EMAIL_SMTP_SSL_KEYFILE_PATH	|EMAIL_SMTP_USE_SSL or EMAIL_SMTP_USE_TLS is set, you can optionally specify the path to a PEM-formatted private key file to use for the SSL connection. If using docker then you will need to mount in this file into all the BR  backend containers. Note that setting EMAIL_SMTP_SSL_CERTFILE_PATH and EMAIL_SMTP_SSL_KEYFILE_PATH doesn’t result in any certificate checking. They’re passed to the underlying SSL connection. Please refer to the documentation of Python’s ssl.wrap_socket() function for details on how the certificate chain file and private key file are handled.	
+
 Now Start the Convertigo stack  **Convertigo With No Code Studio**, run:
 ```shell
 $ docker-compose up -d
