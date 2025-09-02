@@ -3,7 +3,7 @@ layout: page
 title: Text Input
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/form-components/text-input/
-metadesc: ion-input  Defines a  Text Input  component.  Text Input  is meant for text type inputs only, such as text, password, email, number, search, tel, and 
+metadesc: ion-input  Defines a  Text Input  component.  Text Input  is meant for text type inputs (such as text, password, email, number, search, tel, and url) 
 ObjGroup: Forms
 ObjCatName: form-components
 ObjName: Input
@@ -14,7 +14,8 @@ topnav: topnavobj
 ion-input<br/>
 
 ##### Defines a <i>Text Input</i> component.<br/>
-<i>Text Input</i> is meant for text type inputs only, such as text, password, email, number, search, tel, and url.<br/>
+<i>Text Input</i> is meant for text type inputs (such as text, password, email, number, search, tel, and url) or file.<br/>
+When using <b>file</b>, the <i>Accept</i> property can restrict the file types accepted by the input.<br/>
 Use the <i>Value</i> property to set its value, and the <i>Disabled</i> property to prevent the user from changing the value.<br/>
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a custom validation function.<br/>
  For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/input'>Input</a>.<br/>
