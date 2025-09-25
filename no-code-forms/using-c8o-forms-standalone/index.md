@@ -157,21 +157,25 @@ Now that its done, click on symbols on the left hand side.
 
 {% include image.html file="guide_img/UserManagerSymbols.png" caption="Figure: Symbols UserManager 2" %}
 
-For _lib_UserManager_, you will have to define 5 symbols:  
-* lib_UserManager.adminUser
-  * This servfice account user must be an active directory account, who has at least read only access right, and so can execute research on whole tree (expected synthax is DOMAIN_NAME\USER)
-* lib_UserManager.adminPassword.secret
-  * Service account password of our active directory user
-* lib_UserManager.ldapServer
-  * Url of LDAP server such as 'ldap://**LDAP_SERVER**:389'
-* lib_UserManager.ldapBasePath
-  * Base path where users will search in AD such as 'DC=domain,DC=subdomain,C=US'
-* lib_UserManager.ldapDomainName
-  * The default NT Domain such as 'DOMAIN_NAME'
+## Authenticating with LDAP or Entra ID (Azure AD)
+Relevant symbols for LDAP or Entra ID (Azure AD) configuration:
 
-For _NoCode Studio_, you will have to optionally define 1 other symbol:
-* C8Oforms.loginAdGroup
-  * This group, is used to determine if an active directory user will be able to connect to _No Code Studio_. If symbol is empty, any Active directory user will have acess to _Convertigo Forms_, but if symbol is defined, only users that are members of this group will have acess to _NoCode Studio_.
+| Symbol | Description | Example |
+| --- | --- | --- |
+| `C8Oforms.useGenericLDAP` | Use LDAP login instead of AD login |  |
+| `C8Oforms.loginAdLabel` | Customize login page label to replace "Login with Active directory" |  |
+| `C8Oforms.loginAdGroup` | This group, is used to determine if an active directory user will be able to connect to _No Code Studio_. If symbol is empty, any Active directory user will have acess to _Convertigo Forms_, but if symbol is defined, only users that are members of this group will have acess to _NoCode Studio_. |  |
+| `lib_UserManager.adminUser` | Service account user used to search users |  |
+| `lib_UserManager.adminPassword.secret` | Service account password used to search users |  |
+| `lib_UserManager.ldapServer` | URL to LDAP server | ldap://localhost:389 |
+| `lib_UserManager.ldapBasePath` | Base path used to search LDAP user account | dc=gov |
+| `lib_UserManager.ldapDomainName` | Domain name to prefix to user in case of azure AD | \gov |
+| `lib_UserManager.LDAP_USER_ID_ATTRIBUTE` | User ID attribute to search | uid |
+| `lib_UserManager.LDAP_GROUP_OBJECT_CLASS` | Object class identifying groups | group |
+| `lib_UserManager.ldapBasePathGroup` | Base path used to search for LDAP groups | ou=fr,dc=gov |
+| `lib_UserManager.LDAP_GROUP_DISPLAY_ATTRIBUTE` | The display name attribute for groups | cn |
+
+
 
 ## Authenticating with OAuth or OpenID
 
