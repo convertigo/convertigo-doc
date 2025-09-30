@@ -28,4 +28,5 @@ Name | Description
 Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
 Is active | Defines whether the component is active. 
 Is exposed | Defines whether the component is exposed for public use.  <br/>If exposed, a component can be used by any project. It will be visible in the Ngx palette and documented in the generated readme.md file.<br/>Otherwise, the component can only be used within its own project (through the <i>Shared component</i> picker only). It will not be visible in the Ngx palette, nor documented in the generated readme.md file.
+Shared Module | Defines the name of a shared module where to declare your component if needed (MyProjectModule, ...), otherwise leave empty.  Using a shared module is useful for grouping declarations of multiple components into a single module and for solving circular dependency issues. 
 
