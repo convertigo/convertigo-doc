@@ -24,7 +24,7 @@ Edge | If true, the fab will display on the edge of the header if vertical is 't
 Horizontal | Specifies the horizontal position.
 Slot | Specifies ionic slot mode.
 Vertical | Specifies the vertical position.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

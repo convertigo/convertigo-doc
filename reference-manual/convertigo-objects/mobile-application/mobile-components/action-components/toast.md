@@ -26,6 +26,6 @@ Duration | Defines the toast's duration in milliseconds.
 Message | Defines the toast's message.
 Position | Defines the toast's position.
 Show close button | Whether or not to show a button to close the toast.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

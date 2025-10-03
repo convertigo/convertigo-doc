@@ -25,7 +25,7 @@ Mode | Specifies ionic mode.
 Reversed | If true, reverse the progress bar direction.
 Type | The state of the progress bar, based on if the time the process takes is known or not. Default options are: 'determinate' (no animation), 'indeterminate' (animate from left to right).
 Value | The value determines how much of the active bar should display when the type is 'determinate'. The value should be between [0, 1].
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

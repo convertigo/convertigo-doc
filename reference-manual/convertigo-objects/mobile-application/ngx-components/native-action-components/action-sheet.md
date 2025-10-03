@@ -38,6 +38,6 @@ Position | On an iPad, set the X,Y position.
 Subtitle | The subtitle for the actionsheet.
 Title | The title for the actionsheet.
 Winphone Enable Cancel Button | Enable a cancel on Windows Phone.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

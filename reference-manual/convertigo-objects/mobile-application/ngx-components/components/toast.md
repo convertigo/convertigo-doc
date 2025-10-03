@@ -42,7 +42,7 @@ Position anchor | The element to anchor the toast's position to.<br>Can be set a
 Swipe gesture | If set to 'vertical', the Toast can be dismissed with a swipe gesture.<br/>The swipe direction is determined by the value of the position property:<br> top: The Toast can be swiped up to dismiss.<br> bottom: The Toast can be swiped down to dismiss.<br> middle: The Toast can be swiped up or down to dismiss.<br>
 Translucent | If true, the toast will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
 Trigger | An ID corresponding to the trigger element that causes the toast to open when clicked.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

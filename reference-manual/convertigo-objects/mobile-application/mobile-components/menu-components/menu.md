@@ -18,7 +18,7 @@ A menu helps to navigate through pages. It may contains, or/and:<br/>
  • a <i>MenuAutoItems</i> component to automatically add all your pages<br/>
  • several <i>MenuItem</i> components to add specific pages.<br/>
 <br/>
-<span class='orangetwinsoft'><u>Note:</u></span> different menus may be added to an application but only the first one is used by default.<br/>
+<strong><u>Note:</u></strong> different menus may be added to an application but only the first one is used by default.<br/>
 If you'd like to use a specific menu for a given page, simply specify it in the <i>Menu id</i> property of your <i>Page</i> component.<br/>
 For more information: <a href='https://ionicframework.com/docs/v3/api/components/menu/Menu/'>Menu</a>.
 
@@ -28,7 +28,7 @@ Persistent | Specifies whether the menu is persistent or not on child pages.
 Side | Specifies the menu side.
 Swiping | Specifies whether swiping the menu is enabled.
 Type | Specifies the menu type.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

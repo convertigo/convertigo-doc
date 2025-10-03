@@ -31,7 +31,7 @@ Selected Tab Index | The index of the tab that is selected when the component is
 Tabs placement | Placement of the tabs buttons. Defaults to top.
 Toolbar Color | The color of the text and icons inside the toolbar. See colors for more information.
 Toolbar background | The background color of the toolbar that contains the tab buttons. See colors for more information.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

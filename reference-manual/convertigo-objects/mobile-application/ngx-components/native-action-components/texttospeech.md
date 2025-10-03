@@ -32,6 +32,6 @@ Pitch | Number : the pitch level 0 to 2.
 Rate | Number : the speech speed level 0.1 to 10.
 Text | 'not set' or String : the words to be spoken.
 Volume | Number : the volume level 0 to 1.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

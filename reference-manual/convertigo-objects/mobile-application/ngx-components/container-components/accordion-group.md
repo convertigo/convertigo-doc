@@ -27,7 +27,7 @@ Mode | Specifies ionic mode.
 Multiple | If true, the accordion group can have multiple accordion components expanded at the same time.
 Readonly | If true, the accordion cannot be interacted with, but does not alter the opacity.
 Value | The value of the accordion group.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -24,7 +24,7 @@ Name | Description
 Color | Specifies ionic color.
 Mode | Specifies ionic mode.
 Sticky | Specifies whether the divider will stay visible when it reaches the top of the viewport until the next divider replaces it.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -24,7 +24,7 @@ Disabled | If true the component will be disabled, preventing the the user from 
 Layout | Set the layout of the text and icon in the tab bar. It defaults to 'icon-top'.
 Mode | Specifies ionic mode.
 Value | The value of the segment button.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

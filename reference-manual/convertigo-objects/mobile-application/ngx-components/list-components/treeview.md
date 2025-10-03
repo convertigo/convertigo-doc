@@ -26,7 +26,7 @@ Right to Left | Display direction. Defaults to 'false'.
 Scroll On Select | Whether to scroll to the node to make it visible when it is selected / activated. Defaults to 'true'.
 Tree data | JSON tree nodes
 Use Checkbox | Whether to display a checkbox next to the node or not. Defaults to 'false'.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

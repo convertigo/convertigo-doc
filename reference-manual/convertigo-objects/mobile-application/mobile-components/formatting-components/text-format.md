@@ -29,7 +29,7 @@ No wrap | Dont't wrap text.
 To lower case | Transforms text to all lowercase.
 To upper case | Transforms text to all caps.
 Wrap | Wraps text.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

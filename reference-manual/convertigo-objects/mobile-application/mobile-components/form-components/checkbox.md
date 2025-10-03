@@ -20,7 +20,7 @@ Use the <i>Checked</i> property to set its default value, and the <i>Disabled</i
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/components/#checkbox'>Checkbox</a>.<br/>
 <br/>
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
+<strong><u>Note:</u></strong> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 
 --- | ---
@@ -28,7 +28,7 @@ Checked | If true the component will be checked.
 Control name | The associated declared form's control name.
 Disabled | If true the component will be disabled, preventing the the user from changing the value.
 color | Specifies ionic color.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

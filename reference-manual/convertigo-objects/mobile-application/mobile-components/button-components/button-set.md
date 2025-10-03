@@ -22,7 +22,7 @@ You can define whether buttons are aligned left: <code>start</code> or right: <c
 Name | Description 
 --- | ---
 position | Specifies the position.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

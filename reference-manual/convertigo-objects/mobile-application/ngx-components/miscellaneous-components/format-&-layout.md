@@ -48,7 +48,7 @@ Transformation 1200-over px (xl) | Specifies the kind of transformation which sh
 Transformation 576-768 px (sm) | Specifies the kind of transformation which should be applied on text inside component, for sm screen..
 Transformation 768-992 px (md) | Specifies the kind of transformation which should be applied on text inside component, for md screen..
 Transformation 992-1200 px (lg) | Specifies the kind of transformation which should be applied on text inside component, for lg screen..
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -3,7 +3,7 @@ layout: page
 title: SwitchCase Handler
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/control-components/switchcase-handler/
-metadesc: Defines a  SwitchCase Handler .   A  SwitchCase Handler  must be added inside a  SwitchAction . It helps defining actions to be executed for a given c
+metadesc: Defines a  SwitchCase Handler .    A  SwitchCase Handler  must be added inside a  SwitchAction .  It helps defining actions to be executed for a given
 ObjGroup: Controls
 ObjCatName: control-components
 ObjName: UIActionCaseEvent
@@ -13,14 +13,12 @@ topnav: topnavobj
 ---
 ##### Defines a <i>SwitchCase Handler</i>. <br/>
 
- A <i>SwitchCase Handler</i> must be added inside a <i>SwitchAction</i>.<br/>
-It helps defining actions to be executed for a given case constant value.<br/>
-
+ <p>A <i>SwitchCase Handler</i> must be added inside a <i>SwitchAction</i>.</p><p>It helps defining actions to be executed for a given case constant value.</p>
 
 Name | Description 
 --- | ---
-Case value | Defines the case's value. 
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
-Passthrough | Specifies whether case should continue with next sibling ones until passthrough is false. 
+Case value | Defines the case's value.
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
+Passthrough | Specifies whether case should continue with next sibling ones until passthrough is false.
 

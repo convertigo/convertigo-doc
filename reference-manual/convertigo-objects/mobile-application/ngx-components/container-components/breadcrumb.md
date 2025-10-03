@@ -31,7 +31,7 @@ Mode | Specifies ionic mode.
 Router animation | When using a router, it specifies the transition animation when navigating to another page using <i>URL</i>: ((baseEl: any, opts?: any) => Animation).
 Router direction | Specifies the transition direction when navigating to another page using a <i>URL</i>.
 Separator | If true, show a separator between this breadcrumb and the next. Defaults to true for all breadcrumbs except the last.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

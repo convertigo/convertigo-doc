@@ -45,7 +45,7 @@ Ok Text | The text to display on the ok button. Default: Ok
 Place holder | The text to display when the select is empty.
 Shape | The shape of the select. If 'round' it will have an increased border radius.
 Toggle icon | The toggle icon to use. This icon will be rotated when the select is expanded or collapsed. <a href='https://ionic.io/ionicons'>Preview icons.</a>
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

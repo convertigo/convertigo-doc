@@ -27,7 +27,7 @@ Icon name | Specifies ionic icon name. <a href='https://ionic.io/ionicons'>Previ
 Size | Specifies ionic size.
 Slot | Specifies ionic slot mode.
 Source file URL | The url to a custom external SVG file. Can be absolute (http(s)://) or relative to project (assets/icons/myicon.svg).
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -36,7 +36,7 @@ LabelPlacement | Where to place the label relative to the checkbox.start: The la
 Legacy | Set the legacy property to true to forcibly use the legacy form control markup.Ionic will only opt checkboxes in to the modern form markup when they are using either the aria-label attribute or have text in the default slot.As a result, the legacy property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior.<u>Note</u>: this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
 Mode | Specifies ionic mode.
 Value | The value of the Checkbox does not mean if it's checked or not, use the Checked property for that.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

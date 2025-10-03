@@ -41,6 +41,6 @@ Show Backdrop | If true, a backdrop will be displayed behind the popover.
 Side | Describes which side of the reference point to position the popover on. The 'start' and 'end' values are RTL-aware, and the 'left' and 'right' values are not.
 Size | Describes how to calculate the popover width. If 'cover', the popover width will match the width of the trigger. If 'auto', the popover width will be set to a static default value.
 Translucent | If true, the popover will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

@@ -32,7 +32,7 @@ Mode | Specifies ionic mode.
 Scrollable | If true, the segment buttons will overflow and the user can swipe to see them. In addition, this will disable the gesture to drag the indicator between the buttons in order to swipe to see hidden buttons.
 Select on focus | If true, navigating to an ion-segment-button with the keyboard will focus and select the element. If false, keyboard navigation will only focus the ion-segment-button element.
 Swipe gesture | If true, users will be able to swipe between segment buttons to activate them.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

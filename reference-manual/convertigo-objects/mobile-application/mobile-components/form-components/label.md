@@ -18,7 +18,7 @@ This component acts as the standard HTML label tag.<br/>
 It lets you give a label to a form field.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/label/Label/'>Label</a>.<br/>
 <br/>
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
+<strong><u>Note:</u></strong> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 
 --- | ---
@@ -27,7 +27,7 @@ Floating | Floating labels are labels that animate or 'float' up when the input 
 Range Left | Labels can be placed on either side of the range by adding the range-left or range-right property to the element. The element doesn't have to be an ion-label, it can be added to any element to place it to the left or right of the range.
 Range Right | Labels can be placed on either side of the range by adding the range-left or range-right property to the element. The element doesn't have to be an ion-label, it can be added to any element to place it to the left or right of the range.
 Stacked | A stacked label will always appear on top of the input. Add the stacked attribute to an ion-label to use. Placeholder text can be used in conjunction with an stacked label.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

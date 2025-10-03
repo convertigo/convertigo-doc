@@ -34,7 +34,7 @@ Mode | Specifies ionic mode.
 Subheader | The subtitle in the heading of the action sheet. Displayed under the title.
 Translucent | If true, the action sheet will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
 Trigger | An ID corresponding to the trigger element that causes the action sheet to open.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

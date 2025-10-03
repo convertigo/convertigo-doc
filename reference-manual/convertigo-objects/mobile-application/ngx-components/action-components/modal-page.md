@@ -47,6 +47,6 @@ Sheet breakpoints | (TS mode) The breakpoints to use when creating a sheet modal
 Sheet handle | The horizontal line that displays at the top of a sheet modal. It is true by default when setting the breakpoints and initialBreakpoint properties.
 Sheet initial breakpoint | A decimal value between 0 and 1 that indicates the initial point the modal will open at when creating a sheet modal. This value must also be listed in the breakpoints array.
 Show Backdrop | Show a backdrop (dark background) behind the page. This will only occur if the page is displayed as popup as defined in the <i>Theme</i> component. See <code>$modal-inset-min-width</code>.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

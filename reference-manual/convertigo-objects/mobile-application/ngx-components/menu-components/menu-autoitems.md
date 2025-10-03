@@ -21,8 +21,8 @@ You can not add child components to it except <i>Attr</i> components.
 
 Name | Description 
 --- | ---
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
 I18n translate | Defines whether the text should be translated (for TX mode only)
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -33,6 +33,6 @@ Matches | Number of return matches (default 5, on iOS: maximum number of matches
 Prompt | Displayed prompt of listener popup window (default '' Android only)
 Show partial | Allow partial results to be returned (default false, iOS|Browser only)
 Show popup | Display listener popup window with prompt (default true, Android only)
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

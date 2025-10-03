@@ -48,6 +48,6 @@ Skip | Number of rows to skip before returning. Useful for pagination combined w
 Stale | Can be one of: unspecified (default): Returns the latest results, waiting for the view to build if necessary. 'ok': Returns results immediately, even if they're out-of-date. 'update_after': Returns results immediately, but kicks off a build afterwards.
 StartKey | Get rows with keys in a certain range (inclusive/inclusive) from the start key.
 View | The view to query (in the form Project.database.DesignDoc.view).
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

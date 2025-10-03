@@ -62,7 +62,7 @@ Size | The initial size of the control. This value is in pixels unless the value
 Spellcheck | If true, the element will have its spelling and grammar checked.
 Step | Works with the min and max attributes to limit the increments at which a value can be set.Possible values are: 'any' or a positive floating point number.
 Type | The type of control to display. The default type is text.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

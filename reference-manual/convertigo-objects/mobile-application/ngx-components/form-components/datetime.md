@@ -51,7 +51,7 @@ Show default title | If true, a header will be shown above the calendar picker. 
 Size | If cover, the datetime will expand to cover the full width of its container. If fixed, the datetime will have a fixed width.
 Value | The default datetime value. Use ISO 8601 datetime format like YYYY-MM-DD or hh:mm:ss or YYYY-MM-DDThh:mm:ss. See https://www.w3.org/TR/NOTE-datetime for more formats.
 Year values | Values used to create the list of selectable years. By default the year values range between the min and max datetime inputs. However, to control exactly which years to display, the yearValues input can take either an array of numbers, or string of comma separated numbers. For example, to show upcoming and recent leap years, then this input's value would be yearValues="2024,2020,2016,2012,2008".
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -41,7 +41,7 @@ Sheet handle behavior | The interaction behavior for the sheet modal when the ha
 Sheet initial breakpoint | A decimal value between 0 and 1 that indicates the initial point the modal will open at when creating a sheet modal. This value must also be listed in the breakpoints array.
 Show backdrop | If true, a backdrop will be displayed behind the modal.
 Trigger | An ID corresponding to the trigger element that causes the modal to open.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -24,6 +24,6 @@ Database | Defines the target FullSync Database.
 Disable loading controller | Defines if we want to disable loading controller showing
 Document ID | The Document ID of an existing Document where the attachement is deleted.
 Name | The name of the attachment to be deleted on the document.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

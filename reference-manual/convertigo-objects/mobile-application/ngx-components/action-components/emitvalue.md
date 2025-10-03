@@ -18,6 +18,6 @@ This component helps emiting an input variable value from a shared component.
 Name | Description 
 --- | ---
 Variable | The variable which value will be emited.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

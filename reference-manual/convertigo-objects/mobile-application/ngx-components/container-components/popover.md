@@ -43,7 +43,7 @@ Size | Describes how to calculate the popover width. If 'cover', the popover wid
 Translucent | If true, the popover will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
 Trigger | An ID corresponding to the trigger element that causes the popover to open. Use the trigger-action property to customize the interaction that results in the popover opening.
 Trigger action | Describes what kind of interaction with the trigger that should cause the popover to open. Does not apply when the trigger property is undefined. If 'click', the popover will be presented when the trigger is left clicked. If 'hover', the popover will be presented when a pointer hovers over the trigger. If 'context-menu', the popover will be presented when the trigger is right clicked on desktop and long pressed on mobile. This will also prevent your device's normal context menu from appearing.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

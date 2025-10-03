@@ -42,6 +42,6 @@ Text 1 | Text for the button 1.
 Text 2 | Text for the button 2.
 Text 3 | Text for the button 3.
 Translucent | If true, the sheet will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

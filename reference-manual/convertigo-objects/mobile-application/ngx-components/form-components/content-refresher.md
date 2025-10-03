@@ -23,7 +23,7 @@ Pulling Icon | A static icon or a spinner to display when you begin to pull down
 Pulling Text | The text you want to display when you begin to pull down. pullingText can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example <Ionic> would become &lt;Ionic&gt;
 Refreshing Spinner | An animated SVG spinner that shows when refreshing begins.
 Refreshing Text | The text you want to display when performing a refresh. refreshingText can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example <Ionic> would become &lt;Ionic&gt;
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

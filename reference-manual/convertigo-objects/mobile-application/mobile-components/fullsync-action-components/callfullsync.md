@@ -25,6 +25,6 @@ Disable loading controller | Defines if we want to disable loading controller sh
 Marker | Defines the requestable's marker. Markers are used to differentiate fullsync requests from one to another so you can handle routes more easily.
 Requestable | Defines the FullSync database.
 Verb | Defines the fullsync verb.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

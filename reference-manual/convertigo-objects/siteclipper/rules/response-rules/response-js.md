@@ -3,7 +3,7 @@ layout: page
 title: Response JS
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/siteclipper/rules/response-rules/response-js/
-metadesc: Executes JavaScript code in a Site Clipper response.   The  Response JS  extraction rule executes JavaScript code defined in the  Expression  property
+metadesc: Executes JavaScript code in a Site Clipper response.    The  Response JS  extraction rule executes JavaScript code defined in the  Expression  propert
 ObjGroup: SiteClipper
 ObjCatName: response-rules
 ObjName: Response JS
@@ -11,9 +11,10 @@ ObjClass: com.twinsoft.convertigo.beans.extractionrules.siteclipper.ResponseJava
 ObjIcon: /images/beans/extractionrules/siteclipper/images/responsejavascript_color_32x32.png
 topnav: topnavobj
 ---
-##### Executes JavaScript code in a Site Clipper response. 
+##### Executes JavaScript code in a Site Clipper response.
 
-The <i>Response JS</i> extraction rule executes JavaScript code defined in the <b>Expression</b> property in a Site Clipper response.
+The *Response JS* extraction rule executes JavaScript code defined in the **Expression** property in a Site Clipper response.
+
 
 Property | Type | Category | Description
 --- | --- | --- | ---

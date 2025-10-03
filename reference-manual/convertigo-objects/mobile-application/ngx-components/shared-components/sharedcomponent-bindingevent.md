@@ -3,7 +3,7 @@ layout: page
 title: SharedComponent BindingEvent
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/shared-components/sharedcomponent-bindingevent/
-metadesc: Defines a  SharedComponent BindingEvent  component.  This component stands for Angular's event binding. It helps defining an event a shared component 
+metadesc: Defines a  SharedComponent BindingEvent  component.    This component stands for Angular's event binding.  It helps defining an event a shared compone
 ObjGroup: Shared Components
 ObjCatName: shared-components
 ObjName: UICompEvent
@@ -13,12 +13,10 @@ topnav: topnavobj
 ---
 ##### Defines a <i>SharedComponent BindingEvent</i> component. <br/>
 
-This component stands for Angular's event binding.<br/>
-It helps defining an event a shared component may emit.<br/>
-For more information: <a href='https://angular.io/guide/event-binding' target='_blank'>Event binding</a>
+ <p>This component stands for Angular's event binding.</p><p>It helps defining an event a shared component may emit.</p><p>For more information: <a href='https://angular.io/guide/event-binding' target='_blank'>Event binding</a></p>
 
 Name | Description 
 --- | ---
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

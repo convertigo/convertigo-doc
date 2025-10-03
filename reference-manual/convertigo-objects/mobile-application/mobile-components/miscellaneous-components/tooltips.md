@@ -28,7 +28,7 @@ Showing event | the event to show the tooltip on. Can be either 'hover', 'click'
 Tooltip string | string to be displayed. 'empty string = disabled').
 Top Offset | add this attribute to offset the vertical position of the tooltip. Defaults to 0.
 Vertical Position | specifies the vertical position of the tooltip. Can be either 'top' or 'bottom'.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

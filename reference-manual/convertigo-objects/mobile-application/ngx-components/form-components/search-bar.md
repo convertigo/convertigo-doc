@@ -40,7 +40,7 @@ Show Clear button | Sets the behavior for the clear button. Defaults to 'focus'.
 Spellcheck | Sets the input's spellcheck property.
 Type | Sets the input's type property.
 Value | Sets the value of the searchbar.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

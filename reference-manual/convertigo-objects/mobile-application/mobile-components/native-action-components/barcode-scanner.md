@@ -43,6 +43,6 @@ Torch on | Launch with the torch switched on (if available). Supported on Androi
 mocked cancel response | The mocked cancel response for the barcode action in case of running not supported platform. Must be a boolean.
 mocked format response | The mocked format response for the barcode action in case of running not supported platform. Must be some text.
 mocked text response | The mocked text response for the barcode action in case of running not supported platform. Must be a string.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 
