@@ -20,5 +20,6 @@ Name | Description
 Attr name | Defines the attribute name.
 Attr value | Defines the attribute value.
 Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Event throttle time | Defines the throttle time in ms to be applied. If set it will overrides NgxApp event's throttle time.
 Is active | Defines whether the component is active.
 

@@ -23,4 +23,5 @@ For more information: Event binding
 Property | Type | Category | Description
 --- | --- | --- | ---
 Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
+Event throttle time | String | standard | Defines the throttle time in ms to be applied. If set it will overrides NgxApp event's throttle time.
 Is active | boolean | standard | Defines whether the component is active.
