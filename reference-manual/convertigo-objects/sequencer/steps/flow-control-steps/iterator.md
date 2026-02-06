@@ -28,8 +28,8 @@ They also can access the current iteration index using the JavaScript variable n
 
 **Note:** The current item value can be accessed using the following code statement:
 
-- `item.getTextContent()` if the Node is of Text or Attribute type,
-- `item.getNodeValue()` if the Node is of Element type.
+- `item.getNodeValue()` if the Node is of Text or Attribute type,
+- `item.getTextContent()` if the Node is of Element type.
 
 
 Property | Type | Category | Description
