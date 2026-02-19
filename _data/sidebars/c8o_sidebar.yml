@@ -52,8 +52,8 @@ entries:
     - title: Using Convertigo Administration Console
       url: /operating-guide/using-convertigo-administration-console/
       output: web, pdf
-    - title: Using Convertigo Test Platform
-      url: /operating-guide/using-convertigo-test-platform/
+    - title: Using Convertigo Dashboard
+      url: /operating-guide/using-convertigo-dashboard/
       output: web, pdf
     - title: Appendixes
       url: /operating-guide/appendixes/

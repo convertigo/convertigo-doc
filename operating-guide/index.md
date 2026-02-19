@@ -12,5 +12,5 @@ permalink: /operating-guide/
 - [Installing Convertigo Studio](./installing-convertigo-studio/)
 - [Installing Convertigo Server](./installing-convertigo-server/)
 - [Using Convertigo Administration Console](./using-convertigo-administration-console/)
-- [Using Convertigo Test Platform](./using-convertigo-test-console/)
+- [Using Convertigo Dashboard](./using-convertigo-dashboard/)
 - [Appendixes](./appendixes/)

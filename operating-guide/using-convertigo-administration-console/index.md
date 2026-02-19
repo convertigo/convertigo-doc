@@ -1048,6 +1048,53 @@ For exhaustive property names and defaults, see:
 - [Appendix: Logs](../appendixes/#logs)
 - [Appendix: Logs advance](../appendixes/#logs-advance)
 
+## FullSync
+
+The left menu entry currently labeled **FS** is the FullSync administration page.
+In the menu, this entry is located between **Logs** and **Cache**.
+
+This page is the Administration Console equivalent of **Fauxton** for exploring the CouchDB server configured in **Config > Full sync** settings.
+
+### FullSync page
+
+The FullSync page lets you browse and operate databases available on the configured server.
+
+{% include image.html file="guide_img/fullsyncPage1.png" caption="Figure: Administration Console FullSync page (database list)" %}
+
+Use this page to:
+
+- refresh the database list,
+- search and sort databases,
+- inspect database metrics (**Docs**, **Size**, **Seq**),
+- open selected database details,
+- access related JSON endpoints.
+
+### Exploring a database
+
+Open a database (for example **actions**) from the list to access its explorer view.
+
+{% include image.html file="guide_img/fullsyncTable1.png" caption="Figure: FullSync database explorer (documents and views)" %}
+
+In this view, you can:
+
+- list documents from **All Documents**,
+- browse **Design Documents** and available **Views**,
+- run a view by clicking its name,
+- switch result rendering (**Table**, **Metadata**, **JSON**),
+- access database JSON/help endpoints.
+
+### Editing a document
+
+Click a document ID to open its JSON editor.
+
+{% include image.html file="guide_img/fullsyncTable2.png" caption="Figure: FullSync document editor" %}
+
+Edit the JSON content, then click **Save Changes**.
+
+{{site.data.alerts.important}}
+Deleting a database or a document from FullSync permanently removes its content. Ensure you have a backup before deletion.
+{{site.data.alerts.end}}
+
 ## Cache
 
 The left menu contains a link to the **Cache** page. This page lets you configure how Convertigo stores cached responses.
