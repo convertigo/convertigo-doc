@@ -30,7 +30,7 @@ Property | Type | Category | Description
 --- | --- | --- | ---
 Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
 Progressive Web App | boolean | standard | Defines whether the application is or not a progressive web application. You have to build your application in "production" mode after update to activate PWA.<br/>A PWAs runs in Mobile browser or on a Desktop browser and can be installed locally on the device so it can run offline. PWAs are supported by most browsers on Android and Windows (Chrome for example). PWAs can only be installed on the device if the app's url is secured (https://). PWAs can access most of the devices hardware features such as Camera, GPS or Sensors.
-Split pane layout | String | standard | Defines a split pane layout.<br/>Shows a split-pane when the min-width is xs:0px, sm:576px, md:768px (default), lg:992px, xl: 1200px or a custom expression.<br/><br/>See SplitPane for more informations.
+Split pane layout | String | standard | Defines a split pane layout.<br/>Shows a split-pane when the min-width is xs:0px, sm:576px, md:768px (default), lg:992px, xl: 1200px or a custom expression.<br/><br/>See SplitPane for more information.
 Template project | String | standard | Name of the project that contains the ionicTpl folder to build application.<br/>Templates projects car standard Convertigo projects with an ionicTpl folder containing all the basic needed files to build a standard Ionic project.
 Throttled events | XMLVector | expert | Defines the control events that operate with a throttle.
 Use click for tap | boolean | expert | Defines whether tap events should be replaced by click events.

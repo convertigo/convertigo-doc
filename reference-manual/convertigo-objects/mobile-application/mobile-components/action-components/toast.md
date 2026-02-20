@@ -3,7 +3,7 @@ layout: page
 title: Toast
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/action-components/toast/
-metadesc: Defines a  ToastAction  action component.   This component helps displaying some informations. A Toast is a subtle notification commonly used in moder
+metadesc: Defines a  ToastAction  action component.   This component helps displaying some information. A Toast is a subtle notification commonly used in modern
 ObjGroup: Actions
 ObjCatName: action-components
 ObjName: ToastAction
@@ -13,7 +13,7 @@ topnav: topnavobj
 ---
 ##### Defines a <i>ToastAction</i> action component. <br/>
 
- This component helps displaying some informations.<br/>
+ This component helps displaying some information.<br/>
 A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the applications content, and can be dismissed to resume user interaction with the application.<br/>
 For more information : <a href='https://ionicframework.com/docs/v3/components/#toast'>Toast</a>.
 
