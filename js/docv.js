@@ -1,12 +1,30 @@
 var docVersion;
 $(document).ready(function () {
 	getAllVersions();
-	docVersion = $(".fa-home")[0].href.replace(new RegExp(".*/(.*?)/"), "$1");
+	docVersion = getDocVersion();
 	handleGitHubUrl();
 });
 
+function getDocVersion() {
+	const fromPath = location.pathname.match(/\/documentation\/([^/]+)\//);
+	if (fromPath && fromPath[1]) {
+		return fromPath[1];
+	}
+	const home = $(".fa-home")[0];
+	if (home && home.href) {
+		const fromHome = home.href.replace(new RegExp(".*/(.*?)/"), "$1");
+		if (fromHome && !fromHome.includes(":") && fromHome !== ".." && fromHome !== ".") {
+			return fromHome;
+		}
+	}
+	return "develop";
+}
+
 // This function creates the correct url to link to the file's page on github
 function handleGitHubUrl() {
+	if (!$("#ghlink")[0]) {
+		return;
+	}
 	let gitVersion = docVersion;
 	if (gitVersion == "latest") {
 		gitVersion = "master";
@@ -34,12 +52,22 @@ function handleGitHubUrl() {
 			$("#ghlink")[0].href = newurl;
 		}
 	} else {
-		$("#ghlink")[0].href += location.pathname.replace(new RegExp(".*/" + docVersion), "/" + gitVersion);
-		if (location.pathname.includes("index.html")) {
-			$("#ghlink")[0].href += $("#ghlink")[0].href.replace("index.html","index.md");
-		} else {
-			$("#ghlink")[0].href += "index.md";
+		let baseUrl = $("#ghlink")[0].href.replace(/\/+$/, "");
+		baseUrl = baseUrl.replace(/\/tree(?:\/.*)?$/, "/tree");
+
+		let mdPath = location.pathname;
+		const versionPrefix = "/documentation/" + docVersion + "/";
+		if (mdPath.startsWith(versionPrefix)) {
+			mdPath = "/" + mdPath.substring(versionPrefix.length);
 		}
+		if (mdPath.endsWith("index.html")) {
+			mdPath = mdPath.replace(/index\.html$/, "index.md");
+		} else if (mdPath.endsWith("/")) {
+			mdPath += "index.md";
+		} else if (!mdPath.endsWith(".md")) {
+			mdPath += "/index.md";
+		}
+		$("#ghlink")[0].href = baseUrl + "/" + gitVersion + mdPath;
 	}
 }
 

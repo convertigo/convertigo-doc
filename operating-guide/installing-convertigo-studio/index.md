@@ -380,7 +380,7 @@ The Test Platform home page of the Convertigo Studio opens:
 
 Here, the Test Platform home page contains projects in the list of projects, these projects are those deployed in the Studio. 
 {{site.data.alerts.note}}
-For more information about the Test Platform, you can consult the Using the Test Platform chapter of the User Guide (coming soon).
+For more information about the Dashboard, see [Using Convertigo Dashboard](../using-convertigo-dashboard/).
 {{site.data.alerts.end}}
 
 ##### Convertigo Studio default accounts
@@ -390,7 +390,7 @@ Convertigo Studio declares by default the following accounts:
 - **administrator** account, which user ID/password is *admin/admin*, used to access the Administration Console and the Test Platform,
 - no **tester** account is defined by default, you access the Test Platform as **anonymous** user. 
 {{site.data.alerts.note}}
-For more information about the Test Platform accounts, you can consult the Using the Test Platform chapter of the User Guide (coming soon).
+For more information about Dashboard accounts and access, see [Using Convertigo Dashboard](../using-convertigo-dashboard/).
 {{site.data.alerts.end}}
 
 #### Changing Convertigo Studio default configurations
@@ -525,7 +525,7 @@ A pop-in appears to confirm that the new parameters have been taken into account
 The Test Platform can be accessed authenticating with the **tester** account. The **anonymous** user cannot see any information anymore in the Test Platform. 
 
 {{site.data.alerts.note}}
-For more information about the Test Platform accounts, you can consult the Using the Test Platform chapter of the User Guide (coming soon).
+For more information about Dashboard accounts and access, see [Using Convertigo Dashboard](../using-convertigo-dashboard/).
 {{site.data.alerts.end}}
 
 ## Convertigo Studio uninstallation
