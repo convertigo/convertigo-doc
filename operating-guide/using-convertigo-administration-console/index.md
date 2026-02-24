@@ -1149,8 +1149,6 @@ For more information about configuring Transaction or Sequence objects for cache
 
 **2**. In the database configuration area, select the database engine and fill the required connection, authentication, and table fields:
 
-{% include image.html file="guide_img/cacheTable3.png" caption="Figure: Database configuration panel" %}
-
 **3**. Click **Create Table and Apply** for the first initialization, or click **Apply** if the cache table already exists.
 
 #### Clearing cache entries
