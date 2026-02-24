@@ -33,7 +33,7 @@ For example, for a local Convertigo Studio or Convertigo Server administration:
 - URL = `http://localhost:18080/convertigo/admin/`
 
 When validating the URL, the Administration Console login page opens. You have to be authenticated to access the Administration Console.
-{% include image.html file="guide_img/c8oadmin4.PNG" caption="Figure 4 - 3: Administration Console login page" %}
+{% include image.html file="guide_img/admin-console-01-administration-console-login-page.png" caption="Figure 4 - 3: Administration Console login page" %}
 
 **3**. Enter the Convertigo Server login credentials in the **Username** and **Password** fields.
 
@@ -42,14 +42,14 @@ For example, in case of a Convertigo Studio or a default Convertigo Server insta
 **4**. Click on the **Login** button or press *Enter* on your keyboard.
 
 Once logged in, the Administration Console Home page opens:
-{% include image.html file="guide_img/c8oadmin5.PNG" caption="Figure 4 - 4: Administration Console Home page" %}
+{% include image.html file="guide_img/admin-console-02-administration-console-home-page.png" caption="Figure 4 - 4: Administration Console Home page" %}
 
 ### Home page
 
 The Administration Console Home page displays two main parts:
 
 - the Left menu contains links to the Convertigo Server administration pages, plus shortcuts to Dashboard, Swagger, Test Platform, and documentation resources:
-{% include image.html file="guide_img/c8oadmin6.PNG" caption="Figure 4 - 5: Administration Console left menu" %} 
+{% include image.html file="guide_img/admin-console-03-administration-console-left-menu.png" caption="Figure 4 - 5: Administration Console left menu" %} 
  
 {{site.data.alerts.note}}
 Note that in Convertigo Cloud, some pages are not accessible in the Administration Console, the left menu may look different. For more information, see appendix <a href="../appendixes/#differences-between-convertigo-server-and-convertigo-cloud-in-administration-console">Differences between Convertigo Server and Convertigo Cloud in Administration Console</a>.
@@ -57,17 +57,17 @@ Note that in Convertigo Cloud, some pages are not accessible in the Administrati
 
 - and, a part to the right that contains status cards and monitoring charts:
 - **Status** card
-{% include image.html file="guide_img/c8oadmin7.jpg" caption="Figure 4 - 6: Status card in Administration Console Home page" %}
+{% include image.html file="guide_img/admin-console-04-status-card-in-administration-console-home-page.png" caption="Figure 4 - 6: Status card in Administration Console Home page" %}
 
 This card provides information about the Convertigo engine state, versioning, license, and endpoint, and gives quick access to **Variables** and **Restart** actions.
 
 - **System Information** card
-{% include image.html file="guide_img/c8oadmin8.PNG" caption="Figure 4 - 7: System Information card in Administration Console Home page" %}
+{% include image.html file="guide_img/admin-console-05-system-information-card-in-administration-console-home-page.png" caption="Figure 4 - 7: System Information card in Administration Console Home page" %}
 
 This card presents the system properties of the host and the browser you're using.
 
 - **Monitoring** charts
-{% include image.html file="guide_img/c8oadmin9.PNG" caption="Figure 4 - 8: Monitoring charts in Administration Console Home page" %}
+{% include image.html file="guide_img/admin-console-06-monitoring-charts-in-administration-console-home-page.png" caption="Figure 4 - 8: Monitoring charts in Administration Console Home page" %}
 
 These charts show engine activity in real-time (memory, threads, contexts, request duration, and sessions).
 
@@ -108,23 +108,23 @@ The following procedure explains how to access the Configuration page of the Con
 
 1. Follow the procedure in [Accessing the Administration Console](#accessing-the-administration-console) to access Convertigo Administration Home page.
 2. Click the **Config** button on the Left menu:
-{% include image.html file="guide_img/c8oadmin_config1.PNG" caption="Figure 4 - 9: Accessing Config page" %}
+{% include image.html file="guide_img/admin-console-07-accessing-config-page.png" caption="Figure 4 - 9: Accessing Config page" %}
 
 The Administration Console Configuration page opens:
-{% include image.html file="guide_img/c8oadmin_config2.PNG" caption="Figure 4 - 10: Administration Console Config page" %}
+{% include image.html file="guide_img/admin-console-08-administration-console-config-page.png" caption="Figure 4 - 10: Administration Console Config page" %}
 
 #### Presentation of the Configuration page
 
 The Configuration page allows you to configure specific properties of the Convertigo engine, organized in categories. This page displays two main parts:
 - the left part contains a list of tabs corresponding to configuration categories:
-{% include image.html file="guide_img/c8oadmin_config3.PNG" caption="Figure 4 - 11: Category tabs on the left side of Config page" %}
+{% include image.html file="guide_img/admin-console-09-category-tabs-on-the-left-side-of-config-page.png" caption="Figure 4 - 11: Category tabs on the left side of Config page" %}
 
 {{site.data.alerts.note}}
 Note that in Convertigo Cloud, some categories of configuration are not accessible in the Administration Console. The tabs in the left panel may look different. For more information, see appendix <a href="../appendixes/#differences-between-convertigo-server-and-convertigo-cloud-in-administration-console">Differences between Convertigo Server and Convertigo Cloud in Administration Console</a>.
 {{site.data.alerts.end}}
 
 - and the main area contains the properties of the selected category tab (for example here the Main parameters tab properties):
-{% include image.html file="guide_img/c8oadmin_config4.PNG" caption="Figure 4 - 12: Properties of the Main parameters tab on Config page" %}
+{% include image.html file="guide_img/admin-console-10-properties-of-the-main-parameters-tab-on-config-page.png" caption="Figure 4 - 12: Properties of the Main parameters tab on Config page" %}
  
 #### Using the Configuration page
 
@@ -137,10 +137,10 @@ The following procedures explain:
 ##### To access a configuration category in the Configuration page
 
 1. In the left part of the Configuration page, click on the tab that corresponds to the needed category, for example here click on the XML generation category tab:
-{% include image.html file="guide_img/c8oadmin_config5.PNG" caption="Figure 4 - 13: Selecting a category tab in the left panel on Config page" %}
+{% include image.html file="guide_img/admin-console-11-selecting-a-category-tab-in-the-left-panel-on-config-page.png" caption="Figure 4 - 13: Selecting a category tab in the left panel on Config page" %}
 
 The corresponding properties are displayed in the main area of the page:
-{% include image.html file="guide_img/c8oadmin_config6.PNG" caption="Figure 4 - 14: Category properties in the main area" %}
+{% include image.html file="guide_img/admin-console-12-category-properties-in-the-main-area.png" caption="Figure 4 - 14: Category properties in the main area" %}
 
 The next procedure explains how to access the advanced properties of a category.
 
@@ -148,10 +148,10 @@ The next procedure explains how to access the advanced properties of a category.
 
 1. Access the appropriate category using the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
 2. In the category view, click on the **Advanced Properties** section to expand it:
-{% include image.html file="guide_img/c8oadmin_config7.PNG" caption="Figure 4 - 15: Accessing Advanced Properties on Config page" %}
+{% include image.html file="guide_img/admin-console-13-accessing-advanced-properties-on-config-page.png" caption="Figure 4 - 15: Accessing Advanced Properties on Config page" %}
 
 The advanced properties of the currently selected tab are displayed below the **Advanced Properties** section:
-{% include image.html file="guide_img/c8oadmin_config8.PNG" caption="Figure 4 - 16: Advanced properties for a category" %}
+{% include image.html file="guide_img/admin-console-14-advanced-properties-for-a-category.png" caption="Figure 4 - 16: Advanced properties for a category" %}
 
 The next procedure explains how to edit a Convertigo engine property in the Configuration page.
 
@@ -160,15 +160,15 @@ The next procedure explains how to edit a Convertigo engine property in the Conf
 **1**. Access the category tab that contains the setting you need to change by following one of the procedures [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page) or [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category). For example, here we open the **Accounts and Security** category:
 
 The tab opens (for example here the Accounts and Security tab):
-{% include image.html file="guide_img/c8oadmin_config9.PNG" caption="Figure 4 - 17: Accounts and Security tab" %}
+{% include image.html file="guide_img/admin-console-15-accounts-and-security-tab.png" caption="Figure 4 - 17: Accounts and Security tab" %}
 
 **2**. In the main area of the Configuration page, change the value of the engine property you want to edit in the corresponding field. (For example here we edit the **Admin username** field.)
 
 **3**. Click on the **Save changes** button located at the top of the Configuration page:
-{% include image.html file="guide_img/c8oadmin_config10.PNG" caption="Figure 4 - 18: Setting updated parameters and saving changes" %}
+{% include image.html file="guide_img/admin-console-16-setting-updated-parameters-and-saving-changes.png" caption="Figure 4 - 18: Setting updated parameters and saving changes" %}
 
 A confirmation dialog appears to validate the changes:
-{% include image.html file="guide_img/c8oadmin_config11.PNG" caption="Figure 4 - 19: Confirmation dialog" %}
+{% include image.html file="guide_img/admin-console-17-confirmation-dialog.png" caption="Figure 4 - 19: Confirmation dialog" %}
 
 **4**. Click on **Yes** to confirm and save.
 
@@ -667,7 +667,7 @@ This section introduces the Connections page and its main areas:
 
 The Connections page displays global counters, active HTTP sessions, and active contexts.
 
-{% include image.html file="guide_img/c8oadmin_connec2.PNG" caption="Figure: Administration Console Connections page" %}
+{% include image.html file="guide_img/admin-console-18-administration-console-connections-page.png" caption="Figure: Administration Console Connections page" %}
 
 ### Connections table
 
@@ -711,7 +711,7 @@ This section introduces the Projects page and its main operations:
 ### Projects page
 
 The Projects page displays all deployed projects and available actions.
-{% include image.html file="guide_img/projectsPage2.png" caption="Figure: Administration Console Projects page" %}
+{% include image.html file="guide_img/admin-console-19-administration-console-projects-page.png" caption="Figure: Administration Console Projects page" %}
 
 ### Projects table
 
@@ -843,7 +843,7 @@ The page is organized in two parts:
 - a certificates management table (top),
 - a mappings section (bottom) to associate authentication contexts with certificate entries.
 
-{% include image.html file="guide_img/certificatesPage2.png" caption="Figure: Administration Console Certificates page" %}
+{% include image.html file="guide_img/admin-console-20-administration-console-certificates-page.png" caption="Figure: Administration Console Certificates page" %}
 
 ### Certificates table
 
@@ -871,7 +871,7 @@ Top-level actions are:
 
 **3**. Click **Install**.
 
-{% include image.html file="guide_img/certificatesTable2.png" caption="Figure: Install certificate dialog" %}
+{% include image.html file="guide_img/admin-console-21-install-certificate-dialog.png" caption="Figure: Install certificate dialog" %}
 
 #### Updating or deleting an entry
 
@@ -918,7 +918,7 @@ The Logs page header shows the active timezone and a mode selector:
 - **Purge**
 - **Log Levels**
 
-{% include image.html file="guide_img/logsPage2.png" caption="Figure: Administration Console Logs page (Viewer mode)" %}
+{% include image.html file="guide_img/admin-console-22-administration-console-logs-page-viewer-mode.png" caption="Figure: Administration Console Logs page (Viewer mode)" %}
 
 ### Viewer mode
 
@@ -938,7 +938,7 @@ The main panel provides:
 - navigation actions (scroll top/bottom),
 - an **auto tail** toggle.
 
-{% include image.html file="guide_img/logsTable1.png" caption="Figure: Viewer table and filters" %}
+{% include image.html file="guide_img/admin-console-23-viewer-table-and-filters.png" caption="Figure: Viewer table and filters" %}
 
 #### Log columns
 
@@ -1059,7 +1059,7 @@ This page is the Administration Console equivalent of **Fauxton** for exploring 
 
 The FullSync page lets you browse and operate databases available on the configured server.
 
-{% include image.html file="guide_img/fullsyncPage1.png" caption="Figure: Administration Console FullSync page (database list)" %}
+{% include image.html file="guide_img/admin-console-24-administration-console-fullsync-page-database-list.png" caption="Figure: Administration Console FullSync page (database list)" %}
 
 Use this page to:
 
@@ -1073,7 +1073,7 @@ Use this page to:
 
 Open a database (for example **actions**) from the list to access its explorer view.
 
-{% include image.html file="guide_img/fullsyncTable1.png" caption="Figure: FullSync database explorer (documents and views)" %}
+{% include image.html file="guide_img/admin-console-25-fullsync-database-explorer-documents-and-views.png" caption="Figure: FullSync database explorer (documents and views)" %}
 
 In this view, you can:
 
@@ -1087,7 +1087,7 @@ In this view, you can:
 
 Click a document ID to open its JSON editor.
 
-{% include image.html file="guide_img/fullsyncTable2.png" caption="Figure: FullSync document editor" %}
+{% include image.html file="guide_img/admin-console-26-fullsync-document-editor.png" caption="Figure: FullSync document editor" %}
 
 Edit the JSON content, then click **Save Changes**.
 
@@ -1105,7 +1105,7 @@ This section introduces the Cache page and details the following elements:
 
 The Cache page displays the selected cache mode and, when **Database** mode is selected, additional database settings.
 
-{% include image.html file="guide_img/cachePage2.png" caption="Figure: Administration Console Cache page" %}
+{% include image.html file="guide_img/admin-console-27-administration-console-cache-page.png" caption="Figure: Administration Console Cache page" %}
 
 ### Cache settings
 
@@ -1182,7 +1182,7 @@ The Scheduler page contains three tables:
 - **Schedules**
 - **Scheduled jobs**
 
-{% include image.html file="guide_img/schedulerPage2.jpg" caption="Figure: Administration Console Scheduler page" %}
+{% include image.html file="guide_img/admin-console-28-administration-console-scheduler-page.png" caption="Figure: Administration Console Scheduler page" %}
 
 ### Jobs table
 
@@ -1243,7 +1243,7 @@ This section introduces the Roles page and its main actions:
 
 The page displays existing users, assigned roles, and user management actions.
 
-{% include image.html file="guide_img/rolesPage2.png" caption="Figure: Administration Console Roles page" %}
+{% include image.html file="guide_img/admin-console-29-administration-console-roles-page.png" caption="Figure: Administration Console Roles page" %}
 
 ### Roles table
 
@@ -1279,7 +1279,7 @@ At the top of the page, available actions are:
 
 **5**. Click **Add**.
 
-{% include image.html file="guide_img/rolesTableAdd1.png" caption="Figure: Add user dialog" %}
+{% include image.html file="guide_img/admin-console-30-add-user-dialog.png" caption="Figure: Add user dialog" %}
 
 #### Editing a user
 
@@ -1291,7 +1291,7 @@ At the top of the page, available actions are:
 
 **3**. Click **Edit**.
 
-{% include image.html file="guide_img/rolesTableEdit1.png" caption="Figure: Edit user dialog" %}
+{% include image.html file="guide_img/admin-console-31-edit-user-dialog.png" caption="Figure: Edit user dialog" %}
 
 #### Deleting a user
 
@@ -1301,7 +1301,7 @@ At the top of the page, available actions are:
 
 **2**. Confirm the deletion.
 
-{% include image.html file="guide_img/rolesTableDelete1.png" caption="Figure: User deletion confirmation" %}
+{% include image.html file="guide_img/admin-console-32-user-deletion-confirmation.png" caption="Figure: User deletion confirmation" %}
 
 #### Importing users
 
@@ -1315,7 +1315,7 @@ At the top of the page, available actions are:
 
 **4**. Click **Import**.
 
-{% include image.html file="guide_img/rolesTableImport1.png" caption="Figure: Import users dialog" %}
+{% include image.html file="guide_img/admin-console-33-import-users-dialog.png" caption="Figure: Import users dialog" %}
 
 #### Exporting users
 
@@ -1331,7 +1331,7 @@ Click **Export** to download the current users/roles definition as a `.json` fil
 
 **2**. Confirm the operation.
 
-{% include image.html file="guide_img/rolesTableDeleteAll1.png" caption="Figure: Delete all users confirmation" %}
+{% include image.html file="guide_img/admin-console-34-delete-all-users-confirmation.png" caption="Figure: Delete all users confirmation" %}
 
 ## Keys
 
@@ -1346,7 +1346,7 @@ This section introduces the Keys page and its main actions:
 
 The Keys page displays all keys grouped by category.
 
-{% include image.html file="guide_img/keysPage2.png" caption="Figure: Administration Console Keys page" %}
+{% include image.html file="guide_img/admin-console-35-administration-console-keys-page.png" caption="Figure: Administration Console Keys page" %}
 
 ### Keys table
 
@@ -1364,7 +1364,7 @@ For each category, the page displays:
   - expiration (`Until ...` or `Unlimited`),
   - a delete action.
 
-{% include image.html file="guide_img/keysTable4.png" caption="Figure: Keys category details" %}
+{% include image.html file="guide_img/admin-console-36-keys-category-details.png" caption="Figure: Keys category details" %}
 
 #### Adding a key
 
@@ -1383,7 +1383,7 @@ For each category, the page displays:
 **1**. In the target key row, click the delete action.
 
 **2**. Confirm the deletion:
-{% include image.html file="guide_img/keysTable5.png" caption="Figure: Key deletion confirmation" %}
+{% include image.html file="guide_img/admin-console-37-key-deletion-confirmation.png" caption="Figure: Key deletion confirmation" %}
 
 **3**. Click **Yes** to delete the key or **No** to abort.
 
@@ -1400,7 +1400,7 @@ This section introduces the Symbols page and its main actions:
 
 The page displays symbols, environment variables, and management actions.
 
-{% include image.html file="guide_img/symbolsPage2.png" caption="Figure: Administration Console Symbols page" %}
+{% include image.html file="guide_img/admin-console-38-administration-console-symbols-page.png" caption="Figure: Administration Console Symbols page" %}
 
 ### Global symbols table
 
@@ -1433,7 +1433,7 @@ At the top of the page, available actions are:
 
 The lower table lists system environment variables available for symbol values.
 
-{% include image.html file="guide_img/symbolsTable2.png" caption="Figure: Environment variables table" %}
+{% include image.html file="guide_img/admin-console-39-environment-variables-table.png" caption="Figure: Environment variables table" %}
 
 Use an environment variable in a symbol value with:
 
@@ -1447,8 +1447,8 @@ Use an environment variable in a symbol value with:
 **1**. Click **Add** (or **Add Secret** for a masked value).
 
 **2**. Fill in symbol name and value in the dialog, then click **Add**.
-{% include image.html file="guide_img/symbolsTableAdd2.png" caption="Figure: Add Symbol dialog" %}
-{% include image.html file="guide_img/symbolsTableAdd3.png" caption="Figure: Add Secret Symbol dialog" %}
+{% include image.html file="guide_img/admin-console-40-add-symbol-dialog.png" caption="Figure: Add Symbol dialog" %}
+{% include image.html file="guide_img/admin-console-41-add-secret-symbol-dialog.png" caption="Figure: Add Secret Symbol dialog" %}
 
 **3**. The new symbol appears in the table.
 
@@ -1459,7 +1459,7 @@ Use an environment variable in a symbol value with:
 **1**. In the symbol row, click the edit action.
 
 **2**. Update the value, then click **Save**.
-{% include image.html file="guide_img/symbolsTableEdit1.png" caption="Figure: Edit Symbol dialog" %}
+{% include image.html file="guide_img/admin-console-42-edit-symbol-dialog.png" caption="Figure: Edit Symbol dialog" %}
 
 #### Deleting a symbol
 
@@ -1468,7 +1468,7 @@ Use an environment variable in a symbol value with:
 **1**. In the symbol row, click the delete action.
 
 **2**. Confirm the deletion:
-{% include image.html file="guide_img/symbolsTableDelete1.png" caption="Figure: Symbol deletion confirmation" %}
+{% include image.html file="guide_img/admin-console-43-symbol-deletion-confirmation.png" caption="Figure: Symbol deletion confirmation" %}
 
 **3**. Click **Yes** to delete the symbol or **No** to abort.
 
@@ -1477,7 +1477,7 @@ Use an environment variable in a symbol value with:
 **1**. Click **Delete All** at the top of the page.
 
 **2**. Confirm the deletion:
-{% include image.html file="guide_img/symbolsTableDelete2.png" caption="Figure: Delete all symbols confirmation" %}
+{% include image.html file="guide_img/admin-console-44-delete-all-symbols-confirmation.png" caption="Figure: Delete all symbols confirmation" %}
 
 **3**. Click **Yes** to delete all symbols or **No** to abort.
 
@@ -1494,7 +1494,7 @@ Before import, a backup file of the current symbols configuration is created aut
 **2**. In the import dialog, choose the import policy and conflict priority.
 
 **3**. Select a `.properties` file, then click **Import**.
-{% include image.html file="guide_img/symbolsTableImport1.png" caption="Figure: Symbols import dialog" %}
+{% include image.html file="guide_img/admin-console-45-symbols-import-dialog.png" caption="Figure: Symbols import dialog" %}
 
 #### Exporting symbols
 
@@ -1503,6 +1503,6 @@ Before import, a backup file of the current symbols configuration is created aut
 **1**. Click **Export** to enter selection mode.
 
 **2**. Select symbols individually or use **Select All**.
-{% include image.html file="guide_img/symbolsTableExport2.png" caption="Figure: Symbols selected for export" %}
+{% include image.html file="guide_img/admin-console-46-symbols-selected-for-export.png" caption="Figure: Symbols selected for export" %}
 
 **3**. Click **Export [n]** to download `global_symbols.properties`, or click **Cancel** to leave export mode.

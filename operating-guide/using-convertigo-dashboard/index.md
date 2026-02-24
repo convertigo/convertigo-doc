@@ -24,7 +24,7 @@ Main features:
 - Filter by project type (Backend, Frontend, Library, Project).
 - Open project actions directly: Backend, Frontend, References, Packages (currently labeled `Platforms` in this build), Swagger.
 
-{% include image.html file="guide_img/dashboardPage1.png" caption="Figure: Dashboard page filtered on sampleMobileRetailStore" %}
+{% include image.html file="guide_img/dashboard-01-dashboard-page-filtered-on-samplemobileretailstore.png" caption="Figure: Dashboard page filtered on sampleMobileRetailStore" %}
 
 ## Backend
 
@@ -37,7 +37,7 @@ With `sampleMobileRetailStore`:
 - Choose a response format (`JSON`, `XML`, `BIN`, `CXML`) and run it with **Execute**.
 - Use the visibility filters to show or hide private/hidden/public requestables.
 
-{% include image.html file="guide_img/dashboardBackend1.png" caption="Figure: Backend view for sampleMobileRetailStore" %}
+{% include image.html file="guide_img/dashboard-02-backend-view-for-samplemobileretailstore.png" caption="Figure: Backend view for sampleMobileRetailStore" %}
 
 ## Frontend
 
@@ -49,7 +49,7 @@ With `sampleMobileRetailStore`, you can:
 - Preview the app in the embedded frame.
 - Use navigation, reload, zoom, rotate, and open-in-new-tab controls.
 
-{% include image.html file="guide_img/dashboardFrontend1.png" caption="Figure: Frontend preview for sampleMobileRetailStore" %}
+{% include image.html file="guide_img/dashboard-03-frontend-preview-for-samplemobileretailstore.png" caption="Figure: Frontend preview for sampleMobileRetailStore" %}
 
 ## Packages
 
@@ -62,4 +62,4 @@ With `sampleMobileRetailStore`, this page provides:
 - Download links (for example source package) and QR code access for generated packages.
 - **Build Platform** action to trigger a new build.
 
-{% include image.html file="guide_img/dashboardPackages1.png" caption="Figure: Packages (Platforms) view for sampleMobileRetailStore" %}
+{% include image.html file="guide_img/dashboard-04-packages-platforms-view-for-samplemobileretailstore.png" caption="Figure: Packages (Platforms) view for sampleMobileRetailStore" %}

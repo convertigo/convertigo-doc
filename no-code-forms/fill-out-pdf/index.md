@@ -135,13 +135,13 @@ In the furthers sections, we will show you how to make your PDF a Fillable PDF F
 
 ## Example ##
 
-You can download and import this [form (PDF_Form_demo.c8oforms) ](/images/PDF_Form_demo.c8oforms) and import it into your Convertigo Forms.
+You can download and import this [form (PDF_Form_demo.c8oforms) ](/images/c8oForms/PDF_Form_demo.c8oforms) and import it into your Convertigo Forms.
 
-**Note: that you will have to set again the following [PDF (PDF_Form_tuto.pdf)](/images/PDF_Form_tuto.pdf) into your "Fill out a PDF document" action.**
+**Note: that you will have to set again the following [PDF (PDF_Form_tuto.pdf)](/images/c8oForms/PDF_Form_tuto.pdf) into your "Fill out a PDF document" action.**
 
 Resources:
-* [PDF_Form_tuto.pdf](/images/PDF_Form_tuto.pdf)
-* [PDF_Form_demo.c8oforms](/images/PDF_Form_demo.c8oforms)
+* [PDF_Form_tuto.pdf](/images/c8oForms/PDF_Form_tuto.pdf)
+* [PDF_Form_demo.c8oforms](/images/c8oForms/PDF_Form_demo.c8oforms)
 
 
 

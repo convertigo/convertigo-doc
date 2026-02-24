@@ -376,7 +376,7 @@ Convertigo Studio Test Platform is accessible at the following URL:
 {% include image.html file="guide_img/c8ostudio_default5.jpg" %}
 
 The Test Platform home page of the Convertigo Studio opens:
-{% include image.html file="guide_img/c8ostudio_default6.PNG" caption="Figure 2 - 52: Convertigo Studio Test Platform" %}
+{% include image.html file="guide_img/c8ostudio_default6.png" caption="Figure 2 - 52: Convertigo Studio Test Platform" %}
 
 Here, the Test Platform home page contains projects in the list of projects, these projects are those deployed in the Studio. 
 {{site.data.alerts.note}}
