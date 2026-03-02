@@ -214,7 +214,6 @@ Configuration page of the Administration Console includes categories, in which i
 
 This first list shows the categories of Configuration page that are not available at all in Convertigo Cloud’s Administration Console:
 
-- Legacy Carioca portal management category,
 - Billing system category.
 
 This second list shows the settings that are not available in Convertigo Cloud’s Administration Console, from visible categories of Configuration page:
@@ -276,7 +275,7 @@ requestableName | varchar(255) | The name of the executed transaction or sequenc
 requestableType | varchar(255) | The type (the name of the Java class) of the executed transaction or sequence. For example: GenericSequence, HtmlTransaction, JavelinTransaction, SqlTransaction, XmlHttpTransaction, HttpTransaction, etc.
 responseTime | bigint(20) | The response return date and time (as a timestamp).
 score | bigint(20) | The score calculated for this execution. Depending on the executed object, the score is different and calculated with the following method:<br>• the number of detected screen classes for a transaction executed in one of the connectors with screen classes (Legacy, HTML),<br>• 1 for another transaction execution (SQL, HTTP, ...),<br>• 0 for a sequence execution.
-userName | varchar(255) | The username defined for the execution, which is:<br>• the value of the username property set in the context of execution of the transaction or sequence:<br>• set using the expression context.set("username", "value")<br>• retrieved using the expression context.get("username"),<br>• the Carioca portal username, of if no Carioca portal is used, the default Carioca portal username:<br>• set in the Administration Console Configuration page, in Legacy Carioca portal tab, using property Default user name,<br>• user if no previous value is set.
+userName | varchar(255) | The username defined for the execution, which is:<br>• the value of the username property set in the context of execution of the transaction or sequence:<br>• set using the expression context.set("username", "value")<br>• retrieved using the expression context.get("username"),<br>• otherwise, the default username configured for the server runtime when no explicit value is set.
 
 ## SQL drivers and related jar files
 
@@ -532,6 +531,5 @@ fullsync.couch.url| Couch DB URL for FullSync| http://127.0.0.1:5984
 fullsync.couch.username| Couch DB username for FullSync| 
 fullsync.couch.password| Couch DB password for FullSync|
 fullsync.couch.prefix| Couch DB prefix for all FullSync databases|
-
 
 
