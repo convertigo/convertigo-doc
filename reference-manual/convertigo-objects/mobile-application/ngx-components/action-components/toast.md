@@ -37,6 +37,6 @@ Mode | Specifies ionic mode.
 Position | Defines the toast's position.
 Show close button | Whether or not to show a button to close the toast.
 Translucent | If true, the toast will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

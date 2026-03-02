@@ -18,6 +18,6 @@ For more information : <a href='https://ionicframework.com/docs/v3/components/#n
 
 Name | Description 
 --- | ---
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

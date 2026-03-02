@@ -25,7 +25,7 @@ Controls | If set, the video will have some control buttons displayed.
 Height | The height of the video on the page. Can be Pixels (px) or percentage (%).
 Source | The video Source, can be MPEG4 or any other format read by HTML5 video players. This can be a remote source (http://mysource/myvideo.mp4) or an embedded local source (assets/video/myvideo.mp4).
 Width | The width of the video on the page. Can be Pixels (px) or percentage (%).
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

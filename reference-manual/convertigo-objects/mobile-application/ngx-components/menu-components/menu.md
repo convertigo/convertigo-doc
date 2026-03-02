@@ -28,7 +28,7 @@ Edge threshold | Specifies the edge threshold for dragging the menu open.
 Side | Specifies the menu side.
 Swiping | Specifies whether swiping the menu is enabled.
 Type | Specifies the menu type.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

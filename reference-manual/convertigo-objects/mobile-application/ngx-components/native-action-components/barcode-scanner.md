@@ -43,6 +43,6 @@ Result display duration | Display scanned text for X ms. 0 suppresses it entirel
 Show flip camera button | Show flip camera button. Supported on iOS and Android.
 Show torch button | Show torch  button. Supported on iOS and Android.
 Torch on | Launch with the torch switched on (if available). Supported on Android only.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

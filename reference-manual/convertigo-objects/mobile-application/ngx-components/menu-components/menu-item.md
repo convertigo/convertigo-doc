@@ -21,11 +21,11 @@ You can not add child components to it except <i>Attr</i> components.<br/>
 
 Name | Description 
 --- | ---
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
-Item icon | If set, overrides the associated page's icon.  
-Item icon position | If set, overrides the associated page's icon position.  
-Item page | Defines the associated page.  
-Item title | If set, overrides the associated page's title.  
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
+Item icon | If set, overrides the associated page's icon.
+Item icon position | If set, overrides the associated page's icon position.
+Item page | Defines the associated page.
+Item title | If set, overrides the associated page's title.
 

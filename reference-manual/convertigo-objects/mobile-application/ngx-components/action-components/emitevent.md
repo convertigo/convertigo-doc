@@ -20,6 +20,6 @@ Name | Description
 --- | ---
 Data | The event data Object (be sure to use a json object) in (TS) mode.
 Event | The event to emit.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

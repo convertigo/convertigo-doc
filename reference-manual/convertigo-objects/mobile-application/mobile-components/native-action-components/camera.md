@@ -44,6 +44,6 @@ targetWidth | Width in pixels to scale image. Must be used with targetHeight. As
 width | width (only for iOS).
 x | abscissa (only for iOS).
 y | ordered (only for iOS).
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

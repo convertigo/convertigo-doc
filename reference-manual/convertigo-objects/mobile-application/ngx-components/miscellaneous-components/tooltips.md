@@ -44,7 +44,7 @@ Tooltip content type | The content type passed to the tooltip.
 Trigger event | Specifies how the tooltip is triggered. Control the closing time with 'Hide delay' property.
 Width | Width of the tooltip in pixels. E.g: 150px
 Z-index | Z-index of the tooltip.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

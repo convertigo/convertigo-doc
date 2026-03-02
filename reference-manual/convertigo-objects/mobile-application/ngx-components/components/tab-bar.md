@@ -24,7 +24,7 @@ Mode | Specifies ionic mode.
 Selected tab | The selected tab button.
 Slot | Specifies ionic slot mode.
 Translucent | If true, the tab bar will be translucent. Only applies when the mode is 'ios' and the device supports backdrop-filter.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

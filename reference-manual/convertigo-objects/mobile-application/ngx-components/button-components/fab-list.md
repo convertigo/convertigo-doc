@@ -22,7 +22,7 @@ Name | Description
 --- | ---
 Activated | If true, the fab list will show all fab buttons in the list.
 Side | The side the fab list will show on relative to the main fab button.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -39,7 +39,7 @@ Router direction | Specifies the transition direction when navigating to another
 Show | If true, the fab button will show when in a fab-list.
 Size | Specifies FAB size.
 Translucent | If true, the fab button will be translucent. Only applies when the mode is ios and the device supports backdrop-filter.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

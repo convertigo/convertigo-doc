@@ -29,7 +29,7 @@ Compare with | This property allows developers to specify a custom function or p
 Control name | The associated declared control name.
 Default value | The default value of the radio group.
 Position | Specifies the position.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

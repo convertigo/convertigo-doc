@@ -24,7 +24,7 @@ By setting the <i>Identifier</i> property you can access from your typescript co
 Name | Description 
 --- | ---
 Options | Options object to pass all configuration parameters to the swiper instance. See https://swiperjs.com/swiper-api#parameters for valid parameters.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

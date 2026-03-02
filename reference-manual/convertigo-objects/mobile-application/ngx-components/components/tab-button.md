@@ -30,8 +30,8 @@ Link relationship | Specifies the relationship of the target object to the <i>UR
 Link target | Specifies where to display the <i>URL</i>.
 Mode | Specifies ionic mode.
 Selected | If set to 'true' this tab button will be selected.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
-Page | Defines the associated page.  
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
+Page | Defines the associated page.
 

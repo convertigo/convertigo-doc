@@ -22,7 +22,7 @@ See <i>Variable</i> component
 
 Name | Description 
 --- | ---
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
-Shared action | Defines the target shared action to invoke. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
+Shared action | Defines the target shared action to invoke.
 

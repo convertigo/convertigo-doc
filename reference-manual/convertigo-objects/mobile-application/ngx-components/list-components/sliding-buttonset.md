@@ -20,7 +20,7 @@ A <i>Sliding ButtonSet</i> contains one or more <i>Sliding Button</i>s which rev
 Name | Description 
 --- | ---
 Side | The side the buttons should be on. Possible values: 'start' and 'end'. If you have multiple set, a side must be provided for each.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

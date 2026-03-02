@@ -30,7 +30,7 @@ Chart width | Chart width.
 Data | (Array<number[]>| number[]) - set of points of the chart, it should be Array<number[]> only for line, bar and radar, otherwise number[].
 Data labels |  (Array<any>) - x axis labels. It's necessary for charts: line, bar and radar. And just labels (on hover) for charts: polarArea, pie and doughnut.
 Data sets | (Array<number[]>| number[]) - set of points of the chart, it should be Array<number[]> only for line, bar and radar, otherwise number[].
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

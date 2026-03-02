@@ -27,7 +27,7 @@ Buffer max | The number of pixels worth of buffer to render for when rendering n
 Buffer min | The minimum amount of buffer rendered beyond the viewport (in pixels). If the amount of buffer dips below this number, more items will be rendered. Defaults to 100.
 Item size | The size of the items in the list (in pixels).
 Orientation | The direction the viewport scrolls.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

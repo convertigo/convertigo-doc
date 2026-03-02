@@ -35,7 +35,7 @@ Legacy | Set the legacy property to true to forcibly use the legacy form control
 Mode | Specifies ionic mode.
 Position | Specifies the position.
 Value | The value of the toggle does not mean if it's checked or not, use the Checked property for that.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

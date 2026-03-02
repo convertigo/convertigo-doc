@@ -24,7 +24,7 @@ Enabled | If the refresher is enabled or not. This should be used in place of an
 PullMax | The maximum distance of the pull until the refresher will automatically go into the refreshing state. By default, the pull maximum will be the result of pullMin + 60.
 PullMin | The min distance the user must pull down until the refresher can go into the refreshing state.
 SnapbackDuration | How many milliseconds it takes the refresher to to snap back to the refreshing state.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

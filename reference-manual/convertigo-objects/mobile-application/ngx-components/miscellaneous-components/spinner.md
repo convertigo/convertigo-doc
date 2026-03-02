@@ -22,7 +22,7 @@ Color | Specifies ionic color.
 Duration | Duration of the spinner animation in milliseconds.
 Name | The name of the SVG spinner to use. If a name is not provided, the platform's default spinner will be used.
 Paused | If true, the spinner's animation will be paused.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

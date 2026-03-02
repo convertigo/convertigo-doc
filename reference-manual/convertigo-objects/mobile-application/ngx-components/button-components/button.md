@@ -38,7 +38,7 @@ Shape | Specifies ionic shape.
 Size | Specifies ionic size.
 Slot | Specifies ionic slot mode.
 Strong | Specifies whether to activate a heavier font weight.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

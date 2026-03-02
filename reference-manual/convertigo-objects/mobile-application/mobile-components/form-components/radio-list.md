@@ -20,14 +20,14 @@ Use the <i>Default value</i> property to set its default value. If a radio butto
 Like any other form's inputs, it has a <i>Control name</i> property you may change for a more friendly name to use in a <i>CustomValidator</i>.<br/>
  For more information: <a href='https://ionicframework.com/docs/v3/api/components/radio/RadioGroup/'>Radio Group</a>.<br/>
 <br/>
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure to add each <i>Radio Button</i> under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
+<strong><u>Note:</u></strong> Make sure to add each <i>Radio Button</i> under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.
 
 Name | Description 
 --- | ---
 Control name | The associated declared form's control name.
 Default value | The value to be selected by default.
 List type | The type of list.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

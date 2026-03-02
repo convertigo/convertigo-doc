@@ -29,7 +29,7 @@ Display Height | The Height in pixels (px) or in percentage (%) the map uses on 
 Latitude | Number : The map will be centered at this latitude. Must be a 'number' jSON type (ex: 51.678418).
 Longitude | Number : The map will be centered at this longitude. Must be a 'number' jSON type (ex: 7.809007).
 Zoom level | The zoom level of the map. The default zoom level is 8.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

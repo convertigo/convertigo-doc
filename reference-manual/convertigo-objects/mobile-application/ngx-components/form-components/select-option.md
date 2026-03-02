@@ -23,7 +23,7 @@ Name | Description
 --- | ---
 Disabled | If true the component will be disabled, preventing the the user from changing the value.
 Value | The text value of the option. When this option is selected, the parent select object will have this value.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

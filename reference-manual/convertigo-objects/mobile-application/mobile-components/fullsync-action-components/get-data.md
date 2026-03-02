@@ -24,6 +24,6 @@ Disable loading controller | Defines if we want to disable loading controller sh
 Live | If set to an ID,  will automatically monitor any database change (from continuous replication or from local changes) and re-run the query. Using 'Live' is the best way to refresh automatically your UI when data changes in the database. You can cancel an 'live' view by calling the c8o.cancelLive(id) API.
 Marker | Use Markers to differentiate <i>get</i>s in order to be able to listen to a given <i>get</i> response. Use <code>listen([fs://mydatabase.get#MYMARKER])</code> syntax to listen to a given 'Marked' get.
 Unique ID | The Document ID for this get.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

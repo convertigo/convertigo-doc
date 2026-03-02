@@ -24,7 +24,7 @@ Inset | Specifies whether the list will have margin around it and rounded corner
 Lines | Specifies how the bottom border should be displayed on all items.
 Mode | Specifies ionic mode.
 Slot | Specifies ionic slot mode.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

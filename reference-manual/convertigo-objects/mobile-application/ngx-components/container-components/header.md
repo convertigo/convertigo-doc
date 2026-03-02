@@ -24,7 +24,7 @@ Name | Description
 Collapse | Describes the scroll effect that will be applied to the header. <code>condense</code> only applies when the <i>Mode</i> is ios.
 Mode | Specifies ionic mode.
 Translucent | Specifies whether to make the header translucent. Only applies when the <i>Mode</i> is ios and the device supports backdrop-filter.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

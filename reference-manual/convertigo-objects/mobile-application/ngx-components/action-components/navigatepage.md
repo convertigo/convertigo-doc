@@ -20,6 +20,6 @@ Name | Description
 --- | ---
 Page data | Additional page data object passed to the navigated page. You can access this data in the navigated page by using a (TS) expression <code>this.navParams.data</code>.
 Page url | Defines the target url.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

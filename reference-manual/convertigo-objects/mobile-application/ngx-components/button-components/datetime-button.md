@@ -26,7 +26,7 @@ Color | Specifies ionic color.
 Datetime | The ID of the <i>DateTime</i> instance associated with the datetime button.
 Disabled | If true the component will be disabled, preventing the the user from changing the value.
 Mode | Specifies ionic mode.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -50,6 +50,6 @@ Mocked response logout | The mocked response logout for the GooglePlus login act
 Mocked server auth code login | The mocked response server auth code for the GooglePlus login action in case of running not supported platform. Must be a string.
 Mocked user id | The mocked response user id for the GooglePlus login action in case of running not supported platform. Must be a string.
 Web Client ID | The web client ID (Optional). Has to be set if you want to retrieve an 'idToken' or a 'serverAuthCode'.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

@@ -20,6 +20,6 @@ To work properly the <i>SwitchAction</i> needs <i>SwitchCase Handler</i> and/or 
 Name | Description 
 --- | ---
 Expression | Specify the expression to evaluate for switch
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

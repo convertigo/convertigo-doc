@@ -32,7 +32,7 @@ Mode | Specifies ionic mode.
 Picker buttons | (TS mode) Array of buttons to be displayed at the top of the picker. Type: PickerButton[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/picker#pickerbutton
 Picker columns | (TS mode) Array of columns to be displayed in the picker. Type: PickerColumn[]<br/> See: https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/picker#pickercolumn
 Trigger | An ID corresponding to the trigger element that causes the picker to open.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

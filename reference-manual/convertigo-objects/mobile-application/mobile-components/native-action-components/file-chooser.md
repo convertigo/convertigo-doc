@@ -28,6 +28,6 @@ For more information : <a href='https://ionicframework.com/docs/v3/native/file-c
 Name | Description 
 --- | ---
 mocked response | The mocked response for the File chooser action in case of running not supported platform. Must be a string.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

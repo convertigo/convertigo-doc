@@ -24,7 +24,7 @@ Name | Description
 --- | ---
 Auto hide | Specifies whether to automatically hides the menu button when the corresponding menu is not active.
 Menu id | Specifies the menu's' id to map. Can also be start or end for the menu side.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

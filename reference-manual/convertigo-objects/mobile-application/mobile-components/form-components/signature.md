@@ -16,7 +16,7 @@ c8o-signature. <br/>
  Displays a Signature pad. This component uses an Angular2 component based on the Signature Pad JavaScript library.<br/>
 For more information: <a href='https://www.npmjs.com/package/angular2-signaturepad'>angular2-signaturepad</a>.<br/>
 <br/>
-<span class='orangetwinsoft'><u>Note:</u></span> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.<br/>
+<strong><u>Note:</u></strong> Make sure to add your component under a <i>Generic Item</i> or <code>&lt;ion-item&gt;</code> to make it work properly in form.<br/>
 If you'd like to have some label, add a <i>Text</i> under a <i>Div</i>. Do not use <i>Label</i> component.
 
 Name | Description 
@@ -31,7 +31,7 @@ Line max width | Maximum width of a line. Defaults to 2.5.
 Line min width | Minimum width of a line. Defaults to 0.5.
 Pen color | Color used to draw the lines. Defaults to 'black' or 'rgb(0,0,0)'.
 Velocity weight | Weight used to modify new velocity based on the previous velocity. Defaults to 0.7.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

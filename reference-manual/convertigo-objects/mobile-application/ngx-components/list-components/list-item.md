@@ -38,7 +38,7 @@ Router data | Specifies router optional data.
 Router direction | Specifies the transition direction when navigating to another page using a <i>URL</i>.
 Shape | The shape of the item. If 'round' it will have an increased border radius.
 Slot | Specifies ionic slot mode.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

@@ -55,6 +55,6 @@ Scope | The Scope permissions. If not set, scopes are automatically configured f
 Server LoginSequence | &lt;Project.Sequence&gt;. The MBaaS Server sequence to call for login. If not set, is automatically configured from the 'provider' setting. You may override this setting here.
 Server checkToken | &lt;Project.Sequence&gt;. The MBaaS Server sequence to call for checking tokens. If not set, is automatically configured from the 'provider' setting. You may override this setting here.
 Tenant ID | The AzureAD tenant ID as configured in the AzureAD portal. (AzureAD only) If left empty, will default to 'common'
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Is active | Defines whether the component is active.
 

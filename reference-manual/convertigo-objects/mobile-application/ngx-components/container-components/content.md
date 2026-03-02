@@ -29,7 +29,7 @@ Padding | Specifies a padding for content
 Scroll X | Specifies whether to enable the content scrolling in the X axis.
 Scroll Y | Specifies whether to enable the content scrolling in the Y axis.
 Scroll events | Specifies whether to enable scroll events and start listening from (ionScroll).
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

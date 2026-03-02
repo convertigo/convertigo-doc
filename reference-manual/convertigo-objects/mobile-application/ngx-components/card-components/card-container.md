@@ -34,7 +34,7 @@ Router animation | When using a router, it specifies the transition animation wh
 Router data | Specifies router optional data.
 Router direction | Specifies the transition direction when navigating to another page using a <i>URL</i>.
 Tappable | If true, a button tag will be rendered and the card will be tappable.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 

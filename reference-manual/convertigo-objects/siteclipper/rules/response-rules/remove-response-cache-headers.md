@@ -3,7 +3,7 @@ layout: page
 title: Remove response cache headers
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/siteclipper/rules/response-rules/remove-response-cache-headers/
-metadesc: Removes HTTP cache-related headers from a Site Clipper response.   The  Remove request cache headers  extraction rule removes existing cache-related h
+metadesc: Removes HTTP cache-related headers from a Site Clipper response.    The  Remove request cache headers  extraction rule removes existing cache-related 
 ObjGroup: SiteClipper
 ObjCatName: response-rules
 ObjName: Remove response cache headers
@@ -11,9 +11,14 @@ ObjClass: com.twinsoft.convertigo.beans.extractionrules.siteclipper.RemoveCacheH
 ObjIcon: /images/beans/extractionrules/siteclipper/images/rule_removeCacheheadersResponse_color_32x32.png
 topnav: topnavobj
 ---
-##### Removes HTTP cache-related headers from a Site Clipper response. 
+##### Removes HTTP cache-related headers from a Site Clipper response.
 
-The <i>Remove request cache headers</i> extraction rule removes existing cache-related headers from a response. The following headers are removed: <br/><br/>• <span class="computer">Last-Modified</span>, <br/>• <span class="computer">Cache-Control</span>, <br/>• <span class="computer">ETag</span>.<br/>
+The *Remove request cache headers* extraction rule removes existing cache-related headers from a response. The following headers are removed:
+
+- `Last-Modified`,
+- `Cache-Control`,
+- `ETag`.
+
 
 Property | Type | Category | Description
 --- | --- | --- | ---

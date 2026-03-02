@@ -3,7 +3,7 @@ layout: page
 title: Remove response header
 sidebar: c8o_sidebar
 permalink: reference-manual/convertigo-objects/siteclipper/rules/response-rules/remove-response-header/
-metadesc: Removes an HTTP header from a Site Clipper response.   The  Remove response header  extraction rule removes an existing header from a response. The  n
+metadesc: Removes an HTTP header from a Site Clipper response.    The  Remove response header  extraction rule removes an existing header from a response. The  
 ObjGroup: SiteClipper
 ObjCatName: response-rules
 ObjName: Remove response header
@@ -11,9 +11,12 @@ ObjClass: com.twinsoft.convertigo.beans.extractionrules.siteclipper.RemoveHeader
 ObjIcon: /images/beans/extractionrules/siteclipper/images/rule_removeheaderResponse_color_32x32.png
 topnav: topnavobj
 ---
-##### Removes an HTTP header from a Site Clipper response. 
+##### Removes an HTTP header from a Site Clipper response.
 
-The <i>Remove response header</i> extraction rule removes an existing header from a response. The  name of the header to remove is defined by the <b>Header name</b> property.<br/>If the header defined in the <b>Header name</b> property doesn't exist in the response, the <i>Remove response header</i> extraction rule has no effect.
+The *Remove response header* extraction rule removes an existing header from a response. The  name of the header to remove is defined by the **Header name** property.
+
+If the header defined in the **Header name** property doesn't exist in the response, the *Remove response header* extraction rule has no effect.
+
 
 Property | Type | Category | Description
 --- | --- | --- | ---

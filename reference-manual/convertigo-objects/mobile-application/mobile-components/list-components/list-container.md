@@ -22,7 +22,7 @@ Name | Description
 --- | ---
 Inset | Lists do not have an outside margin by default. To add one, add the inset attribute to ion-list component.
 nolines | Adding the no-lines attribute will hide the dividers between list items.
-Comment | Describes the object comment to include in the documentation report.  This property generally contains an explanation about the object. 
-Identifier | Defines the component identifier.  
-Is active | Defines whether the component is active. 
+Comment | Describes the object comment to include in the documentation report.  <p>This property generally contains an explanation about the object.</p>
+Identifier | Defines the component identifier.
+Is active | Defines whether the component is active.
 
