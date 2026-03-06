@@ -14,7 +14,8 @@ topnav: topnavobj
 ion-back-button<br/>
 
 ##### Defines a <i>Back Button</i> component.<br/>
-A <i>Back Button</i> helps navigating back in the app's history upon click.</br>It is smart enough to know what to render based on the mode and when to show based on the navigation stack.<br/>
+A <i>Back Button</i> helps navigating back in the app's history upon click.<br/>
+It is smart enough to know what to render based on the mode and when to show based on the navigation stack.<br/>
  For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/back-button'>Avatar</a>.
 
 Name | Description 
