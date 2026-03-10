@@ -13,7 +13,8 @@ topnav: topnavobj
 ---
 ##### Defines a <i>EmitEvent</i> action component. <br/>
 
-This component helps emiting an event from a shared component giving its name and optional data Object in (TS) mode, e.g.:</br><code>{user: 'user89', id: 89}</code><br/>
+This component helps emiting an event from a shared component giving its name and optional data Object in (TS) mode, e.g.:<br/>
+<code>{user: 'user89', id: 89}</code><br/>
 The event may be handled by an existing <i>Event</i> component added to a <i>Use Shared</i> component.
 
 Name | Description 

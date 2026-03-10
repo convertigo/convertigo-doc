@@ -15,7 +15,7 @@ ion-item-sliding<br/>
 
 ##### Defines an <i>Sliding Container</i> component.<br/>
 A <i>Sliding Container</i> contains an item that can be dragged to reveal buttons.<br/>
-It requires a <i>List Item</i> or a <Generic Item</i> component as a child.<br/>
+It requires a <i>List Item</i> or a <i>Generic Item</i> component as a child.<br/>
 All <i>Sliding Button</i>s to reveal should be placed in a <i>Sliding ButtonSet</i> component.<br/>
  For more information: <a href='https://ionic-docs-o31kiyk8l-ionic1.vercel.app/docs/api/item-sliding'>Sliding item</a>.
 
