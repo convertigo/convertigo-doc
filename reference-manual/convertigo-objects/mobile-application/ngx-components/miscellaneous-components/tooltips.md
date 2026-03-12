@@ -15,7 +15,11 @@ topnav: topnavobj
 
 ##### Defines a <i>Tooltip</i> component. The <i>Tooltip</i> is a pop-up tip that appears when you hover over an item or click on it.<br/>
  To use it, place the <i>Tooltip</i> inside any component such as <i>Button</i> or <i>Generic item</i>.<br/>
-Usage for the <i>Tooltip content</i> to be displayed according to the <i>Tooltip content type</i> property:</br><ul><li>string:</br>[TX mode] <code>A simple tooltip string</code></li><li>html:</br>[TX mode] <code><span>Hello i'm a <strong>bold</strong> text!</span></code></li><li>template:</br>[TS mode] <code>this.MyNgTemplateIdentifier</li></ul><br/>
+Usage for the <i>Tooltip content</i> to be displayed according to the <i>Tooltip content type</i> property:<br/>
+<ul><li>string:<br/>
+[TX mode] <code>A simple tooltip string</code></li><li>html:<br/>
+[TX mode] <code><span>Hello i'm a <strong>bold</strong> text!</span></code></li><li>template:<br/>
+[TS mode] <code>this.MyNgTemplateIdentifier</code></li></ul><br/>
  For more information: <a href='https://www.npmjs.com/package/ng2-tooltip-directive'>ng2-tooltip-directive</a>.
 
 Name | Description 
@@ -36,9 +40,9 @@ Shadow | Shadow of the tooltip.
 Show delay | The delay in ms before showing the tooltip.
 Theme | Theme of tooltip background and text.
 Tooltip classes | Comma separated class names to be passed to the tooltip.
-Tooltip content | The content to be displayed in the popup according to the <i>Tooltip content type</i> property.<br/>Usage according to content type:</br><li>string:</br>[TX mode] <code>A simple tooltip string</code>
-<li>html:</br>[TX mode] <code><span>Hello i'm a <strong>bold</strong> text!</span></code>
-<li>template:</br>[TS mode] <code>this.MyNgTemplateIdentifier
+Tooltip content | The content to be displayed in the popup according to the <i>Tooltip content type</i> property.<br/>Usage according to content type:<br/><li>string:<br/>[TX mode] <code>A simple tooltip string</code>
+<li>html:<br/>[TX mode] <code><span>Hello i'm a <strong>bold</strong> text!</span></code>
+<li>template:<br/>[TS mode] <code>this.MyNgTemplateIdentifier</code>
 
 Tooltip content type | The content type passed to the tooltip.
 Trigger event | Specifies how the tooltip is triggered. Control the closing time with 'Hide delay' property.
