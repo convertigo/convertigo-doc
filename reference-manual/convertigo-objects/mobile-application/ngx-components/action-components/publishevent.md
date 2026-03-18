@@ -13,7 +13,8 @@ topnav: topnavobj
 ---
 ##### Defines a <i>PublishEvent</i> action component. <br/>
 
-This component helps publishing an event giving its topic and optional data Object in (TS) mode, e.g.:</br><code>{user: 'user89', id: 89}</code><br/>
+This component helps publishing an event giving its topic and optional data Object in (TS) mode, e.g.:<br/>
+<code>{user: 'user89', id: 89}</code><br/>
 The event may be handled by an existing <i>Subscribe Handler</i> component in any available page.
 
 Name | Description 
