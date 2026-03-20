@@ -6,3 +6,4 @@ permalink: reference-manual/convertigo-objects/mobile-application/mobile-compone
 topnav: topnavobj
 ---
 * [Ionic3App](ionic3app/)
+* [NgxApp](ngxapp/)

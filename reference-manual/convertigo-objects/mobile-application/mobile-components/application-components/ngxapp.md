@@ -2,7 +2,7 @@
 layout: page
 title: NgxApp
 sidebar: c8o_sidebar
-permalink: reference-manual/convertigo-objects/mobile-application/ngx-components/application-components/ngxapp/
+permalink: reference-manual/convertigo-objects/mobile-application/mobile-components/application-components/ngxapp/
 metadesc: Defines the mobile  NgxApp  component.   An application represents the whole application with all the components needed to build it (pages, menus, rou
 ObjGroup: Mobile Application
 ObjCatName: application-components
