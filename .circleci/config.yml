@@ -35,8 +35,29 @@ jobs:
           fi
           echo Pushing to -${VERS}-
           s3cmd sync --no-mime-magic -P _site/* ${DESTINATION}/${VERS}/
+  forward_master_manual_changes:
+    docker:
+    - image: cimg/base:stable
+    working_directory: /home/circleci/repo
+    steps:
+    - add_ssh_keys:
+        fingerprints:
+        - "0f:4a:26:54:4c:1d:13:d5:4a:40:08:b8:35:a7:5d:34"
+    - checkout
+    - run:
+        name: Forward master manual documentation changes
+        command: |
+          git config --global user.email "info@convertigo.com"
+          git config --global user.name "$CIRCLE_PROJECT_USERNAME"
+          DOC_FLOW_SOURCE_COMMIT="$CIRCLE_SHA1" .circleci/doc-flow.sh forward-master
 workflows:
   version: 2
   all:
     jobs:
     - build
+    - forward_master_manual_changes:
+        requires:
+        - build
+        filters:
+          branches:
+            only: master
