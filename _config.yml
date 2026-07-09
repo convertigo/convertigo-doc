@@ -39,6 +39,7 @@ exclude:
   - index.php
   - runApache.sh
   - runJekyll.sh
+  - DOC_RELEASE_GUIDE.md
   - README.md
   - vendor
 # these are the files and directories that jekyll will exclude from the build
