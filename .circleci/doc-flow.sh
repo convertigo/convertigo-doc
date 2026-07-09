@@ -39,6 +39,13 @@ run() {
   "$@"
 }
 
+push_branch() {
+  local target="$1"
+  if ! git push "$REMOTE" "HEAD:$target"; then
+    die "push to $target failed; configure DOC_FLOW_GITHUB_TOKEN or a write-enabled SSH key in CircleCI"
+  fi
+}
+
 require_clean_worktree() {
   git diff --quiet || die "working tree has unstaged changes"
   git diff --cached --quiet || die "index has staged changes"
@@ -170,7 +177,7 @@ forward_master() {
 
     after="$(git rev-parse HEAD)"
     if [ "$before" != "$after" ]; then
-      run git push "$REMOTE" "HEAD:$target"
+      push_branch "$target"
     else
       echo "$target: no push needed" >&2
     fi
