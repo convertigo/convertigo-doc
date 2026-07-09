@@ -64,7 +64,7 @@ restore_sidebar_version() {
   [ -f "$SIDEBAR" ] || return 0
 
   local version_line
-  version_line="$(git show "HEAD:$SIDEBAR" 2>/dev/null | sed -n '/^[[:space:]]*version: /{p;q}' || true)"
+  version_line="$(git show "HEAD:$SIDEBAR" 2>/dev/null | awk '/^[[:space:]]*version: / { print; exit }' || true)"
   [ -n "$version_line" ] || return 0
 
   C8O_DOC_TARGET_VERSION="$version_line" perl -0pi -e \
@@ -90,7 +90,8 @@ apply_manual_part_of_commit() {
   local commit="$1"
   local parent
   if ! parent="$(single_parent_of "$commit")"; then
-    die "cannot auto-forward merge/root commit $commit"
+    echo "skip $commit: merge/root commit; ancestry will be recorded separately" >&2
+    return 0
   fi
 
   if ! manual_diff_exists "$parent" "$commit"; then
@@ -122,6 +123,14 @@ apply_manual_part_of_commit() {
   fi
 
   commit_with_original_author "$commit"
+}
+
+record_source_ancestry() {
+  local source_ref="$1"
+  if git merge-base --is-ancestor "$source_ref" HEAD; then
+    return 0
+  fi
+  run git merge -s ours --no-edit "$source_ref"
 }
 
 commits_to_forward() {
@@ -157,6 +166,7 @@ forward_master() {
     for commit in $commits; do
       apply_manual_part_of_commit "$commit"
     done
+    record_source_ancestry "$source_ref"
 
     after="$(git rev-parse HEAD)"
     if [ "$before" != "$after" ]; then
