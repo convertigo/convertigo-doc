@@ -49,6 +49,9 @@ jobs:
         command: |
           git config --global user.email "info@convertigo.com"
           git config --global user.name "$CIRCLE_PROJECT_USERNAME"
+          if [ -n "${DOC_FLOW_GITHUB_TOKEN:-}" ]; then
+            git remote set-url origin "https://x-access-token:${DOC_FLOW_GITHUB_TOKEN}@github.com/convertigo/convertigo-doc.git"
+          fi
           DOC_FLOW_SOURCE_COMMIT="$CIRCLE_SHA1" .circleci/doc-flow.sh forward-master
 workflows:
   version: 2
