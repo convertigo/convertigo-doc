@@ -1,36 +1,36 @@
-# Convertigo Doc release guide
+# Convertigo Documentation Release Guide
 
-Ce depot suit le cycle de release Convertigo avec trois branches principales :
+This repository follows the Convertigo release flow with three long-lived branches:
 
-- `master` : documentation publiee en `latest`.
-- `hotfix` : prochaine mineure ou patch public.
-- `develop` : prochaine majeure.
+- `master`: released documentation, published as `latest`.
+- `hotfix`: documentation for the next patch or minor release.
+- `develop`: documentation for the next major release.
 
-Objectif attendu :
+Expected invariants:
 
-- `master` doit rester ancetre de `hotfix`.
-- `master` doit rester ancetre de `develop`.
-- Les corrections manuelles faites sur `master` sont propagees automatiquement vers `hotfix` et `develop`.
-- Les releases doivent normalement etre des fast-forwards vers `master`.
+- `master` should remain an ancestor of `hotfix`.
+- `master` should remain an ancestor of `develop`.
+- Manual documentation fixes pushed to `master` are automatically forwarded to `hotfix` and `develop`.
+- Release updates to `master` should normally be fast-forwards.
 
-## Zones generees
+## Generated Paths
 
-La documentation generee par Convertigo ne doit pas etre reportee manuellement :
+Convertigo-generated documentation is not manually forwarded:
 
 - `reference-manual/convertigo-objects/**`
 - `images/beans/**`
 
-Le fichier `_data/sidebars/c8o_sidebar.yml` est hybride. Sa ligne `version:` est mise a jour par la generation et est ignoree par les audits de differences manuelles.
+`_data/sidebars/c8o_sidebar.yml` is a hybrid file. Its `version:` line is generated and ignored by manual-difference audits.
 
-## Audit courant
+## Audit
 
-Avant une release ou si le graphe Git parait suspect :
+Run this before a release, or whenever the branch graph looks suspicious:
 
 ```sh
 .circleci/doc-flow.sh audit
 ```
 
-Etat attendu :
+Expected result:
 
 ```text
 origin/master is ancestor of origin/hotfix
@@ -43,41 +43,41 @@ Manual differences: origin/master..origin/develop
 Manual differences: origin/hotfix..origin/develop
 ```
 
-Les sections `Manual differences` doivent etre vides. Les differences generees peuvent exister entre branches.
+The `Manual differences` sections should be empty. Generated differences between branches are expected.
 
-## Correction directe sur master
+## Direct Fixes On Master
 
-Cas admis : correction rapide de doc non generee faite inline sur GitHub dans `master`.
+Direct edits on `master` are allowed for quick documentation fixes that are not tied to the next generated documentation update.
 
-La CI `convertigo-doc` declenche alors le job `forward_master_manual_changes`, qui tente de reporter automatiquement la partie non generee vers :
+On each `master` push, CircleCI runs `forward_master_manual_changes`. That job forwards only the non-generated part of the change to:
 
 - `hotfix`
 - `develop`
 
-Le job :
+The job:
 
-- applique uniquement les changements non generes ;
-- ignore la doc generee ;
-- conserve la ligne `version:` propre a chaque branche ;
-- enregistre aussi l'ascendance de `master` avec un merge `ours` ;
-- echoue en cas de conflit ou de push refuse.
+- applies only non-generated changes;
+- ignores generated documentation;
+- preserves the branch-specific `version:` line in `_data/sidebars/c8o_sidebar.yml`;
+- records `master` ancestry with an `ours` merge;
+- fails on conflicts or rejected pushes.
 
-Le secret CircleCI requis pour pousser est :
+CircleCI needs this environment variable to push forwarded commits:
 
 ```text
 DOC_FLOW_GITHUB_TOKEN
 ```
 
-Le token GitHub doit avoir, sur `convertigo/convertigo-doc`, au minimum :
+The token should be limited to the documentation repository, with:
 
 - `Contents: Read and write`
 - `Metadata: Read-only`
 
-## Release mineure
+## Minor Release
 
-Une release mineure publie `hotfix` vers `master`, puis garde `develop` au courant de cette publication.
+A minor release publishes `hotfix` to `master`, then records that release point in `develop`.
 
-Preparer :
+Prepare:
 
 ```sh
 git switch master
@@ -85,13 +85,13 @@ git fetch --prune origin
 .circleci/doc-flow.sh audit
 ```
 
-Publier :
+Release:
 
 ```sh
 .circleci/doc-flow.sh release-minor
 ```
 
-Ce que fait le helper :
+The helper runs the equivalent of:
 
 ```sh
 git checkout -B master origin/master
@@ -103,13 +103,13 @@ git merge -s ours --no-edit master
 git push origin HEAD:develop
 ```
 
-Si `master` ne peut pas fast-forward vers `hotfix`, le helper s'arrete.
+If `master` cannot fast-forward to `hotfix`, the helper stops.
 
-## Release majeure
+## Major Release
 
-Une release majeure publie `develop` vers `master`, puis realigne `hotfix` sur le nouveau `master`.
+A major release publishes `develop` to `master`, then resets `hotfix` to the new `master`.
 
-Preparer :
+Prepare:
 
 ```sh
 git switch master
@@ -117,13 +117,13 @@ git fetch --prune origin
 .circleci/doc-flow.sh audit
 ```
 
-Publier :
+Release:
 
 ```sh
 DOC_FLOW_CONFIRM_RESET_HOTFIX=1 .circleci/doc-flow.sh release-major
 ```
 
-Ce que fait le helper :
+The helper runs the equivalent of:
 
 ```sh
 git checkout -B master origin/master
@@ -135,51 +135,49 @@ git reset --hard master
 git push --force-with-lease origin HEAD:hotfix
 ```
 
-Le reset de `hotfix` est volontairement protege par `DOC_FLOW_CONFIRM_RESET_HOTFIX=1`.
+The `hotfix` reset is intentionally protected by `DOC_FLOW_CONFIRM_RESET_HOTFIX=1`.
 
-## Build de documentation
+## Generated Documentation Builds
 
-Les builds Convertigo continuent de generer et pousser la doc d'objets dans la branche correspondante :
+Convertigo builds continue to generate and push object documentation to the matching documentation branch:
 
-- Convertigo `hotfix` -> `convertigo-doc` `hotfix`
-- Convertigo `develop` -> `convertigo-doc` `develop`
+- Convertigo `hotfix` -> documentation `hotfix`
+- Convertigo `develop` -> documentation `develop`
 
-Ces builds ne font pas les merges de release. Ils ne doivent gerer que la partie generee.
+Those builds should only handle generated documentation. They do not perform release merges.
 
-## Verification apres release
+## Post-release Checks
 
-Verifier les pipelines CircleCI :
+After a release, check CircleCI:
 
-- `master` doit etre vert et publier `latest`.
-- `hotfix` doit rester vert.
-- `develop` doit rester vert.
+- `master` should be green and publish `latest`.
+- `hotfix` should remain green.
+- `develop` should remain green.
 
-Verifier aussi les URLs publiques :
+Also check the usual public documentation endpoints for:
 
-```text
-http://c8o-documentation.s3-website.eu-west-3.amazonaws.com/documentation/latest/
-http://c8o-documentation.s3-website.eu-west-3.amazonaws.com/documentation/hotfix/
-http://c8o-documentation.s3-website.eu-west-3.amazonaws.com/documentation/develop/
-```
+- `latest`
+- `hotfix`
+- `develop`
 
-## Commandes utiles
+## Useful Commands
 
-Afficher l'aide :
+Show help:
 
 ```sh
 .circleci/doc-flow.sh --help
 ```
 
-Voir les differences non generees entre branches :
+Show non-generated differences between release branches:
 
 ```sh
 .circleci/doc-flow.sh audit
 ```
 
-Reporter manuellement les changements non generes de `master` vers `hotfix` et `develop` :
+Manually forward non-generated `master` changes to `hotfix` and `develop`:
 
 ```sh
 .circleci/doc-flow.sh forward-master
 ```
 
-Cette commande est normalement lancee automatiquement par CircleCI sur chaque push `master`.
+This command is normally run automatically by CircleCI on each `master` push.
