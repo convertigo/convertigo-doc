@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="150" viewBox="0 0 960 150" role="img" aria-labelledby="title desc">
+  <title id="title">Library development and versioning cycle</title>
+  <desc id="desc">Modify the library, increment its Version property, commit and push to MyLibrary_8.4, then update and test the application's dependency.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#44677b"/></marker></defs>
+  <g fill="#eff6f9" stroke="#6e94a8" stroke-width="1.5">
+    <rect x="8" y="30" width="240" height="90" rx="7"/>
+    <rect x="300" y="15" width="350" height="120" rx="7"/>
+    <rect x="702" y="30" width="250" height="90" rx="7"/>
+  </g>
+  <g stroke="#44677b" stroke-width="2" marker-end="url(#arrow)"><path d="M248 75 H291"/><path d="M650 75 H693"/></g>
+  <g fill="#183d52" font-family="Arial, sans-serif" font-size="19" text-anchor="middle">
+    <text x="128" y="82">Modify the library</text>
+    <text x="475" y="51">Increment Version</text>
+    <text x="475" y="79">Commit and push to</text>
+    <text x="475" y="108" font-family="monospace" font-size="18">MyLibrary_8.4</text>
+    <text x="827" y="68">Update dependency</text>
+    <text x="827" y="96">and test application</text>
+  </g>
+</svg>
