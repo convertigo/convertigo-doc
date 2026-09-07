@@ -116,6 +116,10 @@ Click the __Commit and Push__ button. The next wizard read the clipboard to init
  
 Click __Preview >__ button and follow the wizard to the end. If successful, you can Fetch/Push your project with that remote repository.
  
+### Versioning and releases
+
+For library compatibility branches, project versions, immutable dependency tags and tag-triggered CI releases, see [Versioning and release best practices](./versioning-and-releases/).
+
 ## Setting up gradle tasks
  
 To enable __Continuious Integration__ build, you have to add __Gradle__ resources to your Convertigo project. Gradle is a tool use to build and to perform some tasks.

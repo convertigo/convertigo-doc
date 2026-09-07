@@ -77,6 +77,13 @@ entries:
     - title: DevOps
       url: /programming-guide/devops/
       output: web, pdf
+      subfolders:
+      - title: DevOps guides
+        output: web, pdf
+        subfolderitems:
+        - title: Versioning and release best practices
+          url: /programming-guide/devops/versioning-and-releases/
+          output: web, pdf
       
   - title: Convertigo no-code Forms
     output: web, pdf
