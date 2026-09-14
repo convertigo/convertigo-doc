@@ -1,7 +1,7 @@
 ---
 title: Using Convertigo Administration Console
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
+last_updated: 14/09/2026
 summary: "This chapter describes several of the actions and configurations possible with the Convertigo engine Administration Console"
 sidebar: c8o_sidebar
 permalink: /operating-guide/using-convertigo-administration-console/
@@ -9,6 +9,8 @@ permalink: /operating-guide/using-convertigo-administration-console/
 ## General presentation of the Administration Console
 
 Configure Convertigo Studio or Convertigo Server engine settings by using Convertigo Administration Console, a web application that is accessible online and through Convertigo Studio.
+
+Since Convertigo 8.4.0, the Administration Console has been fully rewritten as a modern single-page application (the legacy console is no longer used). All the pages described in this chapter refer to this new console, available under the `/admin/` path of the Convertigo web application; the former Test Platform is replaced by the [Dashboard](../using-convertigo-dashboard/).
 
 This section introduces you to Convertigo Administration Console:
 
@@ -69,11 +71,15 @@ This card presents the system properties of the host and the browser you're usin
 - **Monitoring** charts
 {% include image.html file="guide_img/admin-console-06-monitoring-charts-in-administration-console-home-page.png" caption="Figure 4 - 8: Monitoring charts in Administration Console Home page" %}
 
-These charts show engine activity in real-time (memory, threads, contexts, request duration, and sessions).
+These charts show engine activity in real-time (memory, threads, contexts, request duration, and sessions). They open with the recent server-side history instead of starting empty, and the **Requests Duration** statistics can be reset from the home page.
 
 ## Configuration
 
 The Left menu contains a link to the Config page. This page enables configuring several settings of the Convertigo engine.
+
+{{site.data.alerts.note}}
+Access to the Configuration page is controlled by the dedicated <b>Config</b> roles (see <a href="#roles">Roles</a>): the <b>View</b> permission is required to open the page, and the <b>Config</b> permission is required to save changes. Some categories additionally require the matching feature roles: <b>Logs</b> for the Logs and Real-time activity monitoring categories, <b>Certificates</b> for the SSL category and <b>Cache</b> for the Cache category.
+{{site.data.alerts.end}}
 
 This section explains step by step how to access the Configuration page, browse its categories, edit a Convertigo engine property, and discover the settings that can be configured in the different tabs:
 
@@ -174,6 +180,10 @@ A confirmation dialog appears to validate the changes:
 
 The engine setting is updated. Beware that sometimes, the Convertigo engine needs to be restarted for the new property to be taken into account. This is specified on such properties documentation.
 
+{{site.data.alerts.note}}
+A property overridden from a JVM system property (<code>-Dconvertigo.engine.{property key}</code>, see <a href="../appendixes/#convertigo-java-system-properties">Convertigo Java System Properties</a>) is displayed with a restart hint in the Configuration page: the value saved from the console is persisted in <code>engine.properties</code> but the JVM override keeps precedence until the server is restarted without it.
+{{site.data.alerts.end}}
+
 ### Main parameters
 
 Edit your Convertigo Server main parameters in Main parameters tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
@@ -223,14 +233,16 @@ When one of these limits is reached, every new request to Convertigo is rejected
 - **Enable XSRF protection for projects** : <a id="Enable-XSRF-Projects"></a>XSRF (Cross Site Request Forgery ) is a common attack used on web applications. You can protect your PWA and Web applications by enabling this setting. The protection will be done by issuing a session life-time token that that the Application will use each time it invokes and admin service.
 
 {{site.data.alerts.note}}
-Only applications Developed with Mobile Builder Convertigo 7.8.0 and further versions are compatible with XSRF protection.
+Only applications built with the NGX Builder (Convertigo 8.0 and later) or with the legacy Mobile Builder from Convertigo 7.8.0 are compatible with XSRF protection.
 
-Also Only applications developed on Convertigo Angular/Vue/JS SK Version 3.0.9 and further supports XSRF protection.
+Also, only applications developed with the Convertigo Angular/Vue/JS SDK version 3.0.9 and later support XSRF protection.
 {{site.data.alerts.end}}
 
 
 
 #### Advanced properties
+
+- **Hide product version in generated API specifications** : When activated, the Convertigo version is no longer exposed in generated API specifications (Swagger / OpenAPI) nor in other unauthenticated responses. Available since 8.4.3, for hardened deployments.
 
 - **Product version check** : Activated by default, this option enables the verification of Convertigo version number in projects that attempt to be deployed. This helps users not to deploy projects that were created in a greater version of Convertigo in an older version of Convertigo. Indeed, in this case, the projects may not be compatible, due to the add of objects or objects' properties in the software, that an older version of Convertigo cannot handle. In the opposite case, a new version of Convertigo is always compatible with older version, that makes projects to be importable in newer version of Convertigo, possibly including an automatic migration of projects if need be.
 
@@ -642,18 +654,45 @@ Couch DB username and password properties are set to <b>empty</b> as default val
 
 Edit the session parameters in Session management tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
 
-- **Server-side store for session data (tomcat, redis)** : Chooses where server-side session data is stored.
-- **Redis hostname used by the session manager** : Defines Redis host for session storage.
-- **Redis port used by the session manager** : Defines Redis port for session storage.
-- **Redis username (optional)** : Optional Redis username.
-- **Redis password (optional)** : Optional Redis password.
-- **Redis logical database index** : Redis logical database index used for session storage.
-- **Enable SSL/TLS for the Redis connection** : Enables SSL/TLS on the Redis connection.
-- **Redis command timeout in milliseconds** : Command timeout used for Redis operations.
-- **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions.
-- **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients.
-- **Default session TTL in seconds when no timeout is specified** : Default session lifetime when no explicit timeout is set.
-- **Disable SSL certificate validation for internal admin forwarding** : Disables certificate validation for internal admin forwarding only.
+This category controls where the server-side session data is stored. By default (`tomcat` mode), sessions are held in memory by Tomcat and a load balancer must use sticky sessions. In `redis` mode, sessions are stored in a Redis server so that any Convertigo instance of a cluster can serve any request (stateless deployment). Redis mode is typically configured by the Helm chart (`sessionStore.mode`).
+
+- **Server-side store for session data (tomcat, redis)** : Chooses where server-side session data is stored (`tomcat` by default).
+- **Default session TTL in seconds when no timeout is specified** : Default session lifetime when no explicit timeout is set (1800 by default).
+
+This tab includes an Advanced properties section that can be opened by following the procedure [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category).
+
+#### Advanced properties
+
+Shared workspace synchronization (since 8.4.2):
+
+- **Enable runtime synchronization between instances sharing the same workspace** : When several Convertigo instances share the same workspace (NFS or another `ReadWriteMany` volume), enabling this option propagates project deploy, import from URL and delete, global symbols, engine properties (including logger levels), users and roles, and cache configuration or clear to the other instances without restart. Disabled by default; it must only be enabled when all instances really share the same workspace. See [Installing Convertigo Server](../installing-convertigo-server/#convertigo-workspace).
+
+Redis connection (used when the store mode is `redis`):
+
+- **Redis hostname used by the session manager** : Redis host (`localhost` by default).
+- **Redis port used by the session manager** : Redis port (`6379` by default).
+- **Redis username (optional)** and **Redis password (optional)** : Credentials used for Redis AUTH.
+- **Redis logical database index** : Redis logical database index (`0` by default).
+- **Redis command timeout in milliseconds** : Command timeout used for Redis operations (`5000` by default).
+- **Redis data connection pool size** and **Redis data connection minimum idle size** : Size of the Redis client connection pool shared by the JVM (`128` and `32` by default). Since 8.4.2.
+- **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions (`convertigo:session` by default).
+- **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients (`JSESSIONID` by default).
+
+Redis TLS and mutual TLS (since 8.4.3):
+
+- **Enable SSL/TLS for the Redis connection** : Enables TLS on the Redis connection (`rediss`).
+- **Redis SSL server truststore path** and **Redis SSL server truststore password** : Truststore used to validate the Redis server certificate. It should contain the Redis server certificate, its signing CA, or both. JKS, PKCS#12 and PEM stores are supported.
+- **Redis SSL client keystore path**, **Redis SSL client keystore password** and **Redis SSL client keystore type** : Client keystore (for example `PKCS12`) identifying Convertigo to Redis when the server requires client certificates (mutual TLS).
+- **Redis SSL server certificate verification mode** : `STRICT` (default: validate the certificate chain and the hostname), `CA_ONLY` (validate the certificate chain but ignore hostname verification) or `NONE` (disable certificate verification, not recommended).
+- **Redis SSL/TLS protocol versions** : Optional list of allowed protocol versions, for example `TLSv1.3,TLSv1.2`. Leave it empty for the JVM defaults.
+
+Internal forwarding:
+
+- **Disable SSL certificate validation for internal admin forwarding** : Disables certificate validation for the internal administration calls forwarded between clustered instances only.
+
+{{site.data.alerts.note}}
+In Redis mode, the Convertigo instances must also share the same workspace so that projects and configuration are identical on every instance. Sessions, session counting, billing and clustered administration behave consistently across instances since 8.4.2.
+{{site.data.alerts.end}}
 
 ## Connections
 
@@ -1274,6 +1313,8 @@ At the top of the page, available actions are:
 
 - **View** grants read access,
 - **Config** grants update/configuration rights.
+
+Each line of the matrix corresponds to a feature of the console (Home, Configuration, Connections, Projects, Certificates, Logs, FullSync, Cache, Scheduler, Symbols, Keys, Roles...). Since 8.4.2, the **Configuration** line controls access to the [Configuration](#configuration) page and its services precisely: **View** to consult the engine properties, **Config** to modify them.
 
 **4**. Optionally configure **Test Platform** mode (**No**, **View**, **Hidden**, **Private**).
 
