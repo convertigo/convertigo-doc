@@ -1,7 +1,7 @@
 ---
 title: Convertigo General Architecture
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 02/04/2020
+last_updated: 14/09/2026
 summary: "This chapter describes Convertigo general architecture & concepts. From there you will understand the basic components and how they interact with each other"
 sidebar: c8o_sidebar
 permalink: /programming-guide/general-architecture/
@@ -61,6 +61,8 @@ convertigo-studio-x.y.z-win64.exe | convertigo-studio-x.y.z-macosx.tar.gz | conv
 
 Please refer to the [Studio installation documentation](../../operating-guide/installing-convertigo-studio) for detailed install procedures
 
+Since Convertigo 8.4.0, the Studio includes a **Marketplace** view (menu **Convertigo > Open the Marketplace**, also opened by the **New Project** wizards *Convertigo App Starters from Marketplace*, *Convertigo Samples from Marketplace* and *Convertigo Libraries from Marketplace*). The Marketplace lists the starter, sample and library projects published on [marketplace.convertigo.com](https://marketplace.convertigo.com/) and imports them directly into your workspace. Starter projects imported from the Marketplace are automatically initialized with Git (8.4.1 and later). The Studio also includes a **Convertigo Assistant** view to create Shared Components with AI assistance, see the [Front-end Developers](../frontend-developers/#convertigo-assistant) chapter.
+
 Once your project is developed, you will be able to deploy it on a running Convertigo Server. Your Studio will be automatically "attached" to your Cloud Convertigo server. This is done by the PSC (Personal Server Certificate) you received by email when you registered on Convertigo Cloud.
 
 At any time you will be able to add new servers for your deployments. See the [Deploying Convertigo Projects](../backend-developers#deploying--test-projects-on-servers) section for details.
@@ -110,18 +112,22 @@ To be replicated on a client a document must :
     
     In this last case the document belongs to __groupName1__ and __groupName3__
 
-You must use the lib [FullSyncGrp](https://github.com/convertigo/c8oprj-lib-fullsync-grp) to manage user and groups. To be sure this library will be downloaded and installed in your studio. To do this: 
+You must use the lib [FullSyncGrp](https://github.com/convertigo/c8oprj-lib-fullsync-grp) to manage user and groups. To be sure this library will be downloaded and installed in your studio, add a **Project reference** object to your project: right-click the project root object, select **New > Reference > Project reference** and set its **Project name** property to:
 
 {%- capture code -%}
-<?xml version="1.0" encoding="ISO-8859-1"?><convertigo-clipboard>
-<reference classname="com.twinsoft.convertigo.beans.references.ProjectSchemaReference" priority="0" version="7.8.0.m006">
-<property name="projectName"><java.lang.String value="lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=master"/></property>
-</reference></convertigo-clipboard>
+lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=master
 {%- endcapture -%}
 
-{% include copyCode.md code=code buttonText='Just click to copy and then paste on your Convertigo project root object' %}
+{% include copyCode.md code=code buttonText='Click to copy the Project name value' %}
 
-This will create a project reference object to the [FullSyncGrp](https://github.com/convertigo/c8oprj-lib-fullsync-grp) and the library will be automatically pulled to your studio when you open / refresh the project or when you deploy it to a Convertigo Server.
+In the project sources (`c8oProject.yaml`), the reference then looks like this:
+
+{% highlight yaml %}
+  ↓lib_FullSyncGrp [references.ProjectSchemaReference]: 
+    projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=master
+{% endhighlight %}
+
+This project reference object to the [FullSyncGrp](https://github.com/convertigo/c8oprj-lib-fullsync-grp) makes the library automatically pulled to your studio when you open / refresh the project or when you deploy it to a Convertigo Server (see the **Git container** property of the server configuration).
 
 ### User id specific or anonymous data
 
@@ -164,10 +170,10 @@ But, if you do not want to use the integrated PouchDB server, You can link your 
 
 The same, you can link your Convertigo Server with a CouchDB server. To do this  :
 
-- Launch the admin console on a web browser , url is http://< your server>:28080/convertigo/admin
+- Launch the Administration Console on a web browser, url is http://< your server>:28080/convertigo/admin/
 - Login (By default admin, admin)
-- Click on ‘Config->Full sync’
+- Click on ‘Config->FullSync’
 - Setup the url to access CouchDB server, by default this is set to http://127.0.0.1:5984 to access a CouchDB server running on the same server than your Studio.
 - Setup username and password to access the CouchDB server. By default these are left blank as the default installation of CouchDB server does not require credentials. Of course in a production environment, is it highly recommended to configure CouchDB with credentials and to setup them in the Convertigo configuration for Full Sync.
-- Be sure to configure CouchDB (With the Futon interface) to hold a reasonably small amount of revisions (Ideally 10) as the default (1000) may cause huge client databases, performances losses and out of disk space problems
+- Be sure to configure CouchDB (with the Fauxton interface, also reachable from the FullSync page of the Administration Console) to hold a reasonably small amount of revisions (Ideally 10) as the default (1000) may cause huge client databases, performances losses and out of disk space problems
 
