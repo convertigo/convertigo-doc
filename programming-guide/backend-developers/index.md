@@ -132,17 +132,17 @@ In the Project Explorer view, you will see the SOAP templates in the **soap-temp
 
 The SQL Connector is able to connect to different Database Servers:  
 
-| Supported Database   | Driver                                                           |
-|----------------------|------------------------------------------------------------------|
-| mySQL                | com.mysql.jdbc.Driver / com.mysql.cj.jdbc.Driver (V8+)           |
-| MariaDB              | org.mariadb.jdbc.Driver                                          |
-| Microsoft SQL Server | net.sourceforge.jtds.jdbc.Driver                                 |
-| Oracle               | oracle.jdbc.driver.OracleDriver                                  |
-| PostgreSQL           | org.postgresql.Driver                                            |
-| HSQLDB               | org.hsqldb.jdbcDriver                                            |
-| IBM DB2 on AS/400    | com.ibm.as400.access.AS400JDBCDriver                             |
-| IBM DB2              | com.ibm.db2.jcc.DB2Driver                                        |  
-| ODBC Bridge          | sun.jdbc.odbc.JdbcOdbcDriver                                     |
+| Supported Database   | Driver                                                           | Shipped with Convertigo |
+|----------------------|------------------------------------------------------------------|-------------------------|
+| MariaDB / MySQL      | org.mariadb.jdbc.Driver                                          | yes                     |
+| MySQL                | com.mysql.cj.jdbc.Driver (com.mysql.jdbc.Driver for old drivers) | no (license)            |
+| PostgreSQL           | org.postgresql.Driver                                            | yes                     |
+| Microsoft SQL Server | net.sourceforge.jtds.jdbc.Driver (jTDS)                          | yes                     |
+| Microsoft SQL Server | com.microsoft.sqlserver.jdbc.SQLServerDriver (Microsoft driver)  | no                      |
+| Oracle               | oracle.jdbc.driver.OracleDriver                                  | no (license)            |
+| HSQLDB               | org.hsqldb.jdbcDriver                                            | yes                     |
+| IBM DB2 on AS/400    | com.ibm.as400.access.AS400JDBCDriver                             | yes                     |
+| IBM DB2              | com.ibm.db2.jcc.DB2Driver                                        | no (license)            |
 
 
 **JNDI** Database access is also available. In This case The database has to be referenced in the Application Server definition. This is only to be used in the case Convertigo Servers are deployed in J2EE Application Servers such as IBM WebSphere.
@@ -150,7 +150,7 @@ The SQL Connector is able to connect to different Database Servers:
 You can also add any other JDBC driver dynamically by adding the driver's **JAR** file in the **/libs** folder of your project. When you project will be deployed to the Convertigo server, it will be usable from your project. You will just have to know explicitly the driver URL to access it.
 
 {{site.data.alerts.note}}
-Some Drivers are not shipped with Convertigo due to license restrictions. You will have to provide them in the **/libs** directory of your project. This is the case for the Oracle Driver, the MYSQL Driver and the DB2 Drivers. Alternatively you can use the MariaDB driver instead of the MySQL driver for MySQL databases. This driver is 100% compatible and avoids licensing issues.
+Some Drivers are not shipped with Convertigo due to license restrictions. You will have to provide them in the **/libs** directory of your project (or in the <b>/workspace/lib</b> directory of the Docker image). This is the case for the Oracle Driver, the MySQL Driver, the Microsoft JDBC driver for SQL Server and the DB2 Drivers. Alternatively you can use the MariaDB driver instead of the MySQL driver for MySQL databases. This driver is 100% compatible and avoids licensing issues. The JDBC-ODBC bridge is no longer available in modern Java versions. See <a href="../../operating-guide/appendixes/#sql-drivers-and-related-jar-files">SQL drivers and related jar files</a> for details.
 {{site.data.alerts.end}}
 
 #### Create a SQL Connector based project
