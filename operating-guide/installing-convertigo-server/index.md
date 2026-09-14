@@ -123,6 +123,14 @@ JXMX|Convertigo tries to allocate this amount of memory in the container and wil
 COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined this way:<br><br>_$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo_
 COOKIE_SAMESITE|Allow to configure the SameSite parameter for generated cookies. Can be empty, "none", "lax" or "strict".<br>The default COOKIE_SAMESITE value is empty and can be defined this way: <br /><br>_$ docker run -d --name C8O -e COOKIE_SAMESITE=lax -p 28080:28080 convertigo_
 
+#### Custom certificate authorities
+
+To trust private root or intermediate certificate authorities for outbound TLS connections, mount a directory of certificate files (PEM or DER) read-only at `/cacerts`; the certificates are imported into a dedicated JVM truststore at startup. See the [Convertigo Docker Hub](https://hub.docker.com/_/convertigo) page for details.
+
+```shell
+$ docker run --name C8O -v $(pwd)/custom-ca:/cacerts:ro -d -p 28080:28080 convertigo
+```
+
 ### Pre configurated Docker compose stack
 
 You can use this stack to run a complete Convertigo server with FullSync repository and MySQL analytics in a few command lines:
