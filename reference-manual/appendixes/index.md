@@ -182,6 +182,10 @@ All these symbols don't contain the convertigo host ("my_server:8080") and never
 
 ## Legacy emulator actions table
 
+{{site.data.alerts.note}}
+The following tables only apply to the legacy Javelin connector (mainframe and Videotex emulators). They are kept for the maintenance of existing legacy projects and are not relevant for NGX applications nor for REST, SOAP, SQL or FullSync connectors.
+{{site.data.alerts.end}}
+
 An action is a special keystroke that an emulator can execute as *ENTER* or *SOMMAIRE*. This appendix contains the list of the valid emulator actions Convertigo can send to Javelin emulator, depending on the emulator type.
 
 Table A - 4: Videotex emulator - Actions table

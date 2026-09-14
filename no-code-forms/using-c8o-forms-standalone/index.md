@@ -126,7 +126,7 @@ Click on Deploy a project, and then browse file on your system.
 
 ### Convertigo Server admin console
 
-  - Administration url: [http://**my.dns.name**/convertigo/admin/main.html](http://my.dns.name/convertigo/admin/main.html)<br>login: _admin_  password: _admin_
+  - Administration url: [http://**my.dns.name**/convertigo/admin/](http://my.dns.name/convertigo/admin/)<br>login: _admin_  password: _admin_
 
 
 ### Workspace
@@ -148,7 +148,7 @@ Before configuring symbols ensure that you have write rights on workspace folder
 {{site.data.alerts.end}}
 
 You have to configure project _lib_UserManager_ .
-To do so go to convertigo admin console: http://**my.dns.name**/convertigo/admin/login.html and type [login and password](../using-convertigo-administration-console/#accessing-the-administration-console).
+To do so go to convertigo admin console: http://**my.dns.name**/convertigo/admin/ and type [login and password](../using-convertigo-administration-console/#accessing-the-administration-console).
 Then, click on project on the left hand side to access to project list view. On the left side of _lib_UserManager_ and _C8Oforms_ projects, you will se a red warning icon, click on it to create symbols.
 
 {% include image.html file="guide_img/UserManagerForms.png" caption="Figure: Symbols UserManager 1" %}
