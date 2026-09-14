@@ -1,7 +1,7 @@
 ---
 title: Operating Guide Appendixes
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
+last_updated: 14/09/2026
 summary: "This chapter contains all appendixes related to the Operating Guide"
 sidebar: c8o_sidebar
 permalink: /operating-guide/appendixes/
@@ -18,14 +18,18 @@ For servers, this can be done by customize the **JAVA_OPTS** environment variabl
 
 **{property key}={property value}** are exactly the same as the **{convertigo workspace}/configuration/engine.properties** content.
 
-All keys, description and default values can be found in this source file.
+All keys, descriptions and default values are listed in [List of Convertigo Java System Properties](#list-of-convertigo-java-system-properties) below, and can also be found in the [EnginePropertiesManager](https://github.com/convertigo/convertigo/blob/master/engine/src/com/twinsoft/convertigo/engine/EnginePropertiesManager.java) source file.
 
-Example for change the engine log filename and disable the automatic project zip backup:
+Example for changing the engine log filename and enabling the log output on the standard console:
 
 {% highlight java %}
-export JAVA_OPTS="-Dconvertigo.engine.log4j.appender.CemsAppender.File=/tmp/myConvertigo.log -Dconvertigo.engine.project.zip_backup_old=false"
+export JAVA_OPTS="-Dconvertigo.engine.log4j.appender.CemsAppender.File=/tmp/myConvertigo.log -Dconvertigo.engine.log.stdout.enable=true"
 # then run the convertigo server
 {% endhighlight %}
+
+{{site.data.alerts.note}}
+A property set as a JVM system property takes precedence over the value saved in <code>engine.properties</code>. Since 8.4.3, such overridden properties are flagged with a restart hint in the Configuration page of the Administration Console. With the Docker image, the same properties can be set through the <code>JAVA_OPTS</code> environment variable, see <a href="../installing-convertigo-server/#environment-variables">Installing Convertigo Server</a>.
+{{site.data.alerts.end}}
 
 ## Convertigo workspace
 
@@ -47,8 +51,9 @@ The Convertigo workspace contains the following folders and data:
 
 - **cache**: this folder contains the file cache repository, including the cached responses,
 - **certificates**: this folder contains the Convertigo installed certificates (client or server),
-- **configuration**: this folder contains the configuration files for the Convertigo engine,
+- **configuration**: this folder contains the configuration files for the Convertigo engine (`engine.properties`, `global_symbols.properties`, `user_roles.db`, ...),
 - **databases**: this folder contains HSQLDB databases files,
+- **git**: this folder contains the git repositories cloned for referenced projects (see the **Git container** property),
 - **logs**: this folder contains the Convertigo engine log files,
 - **minime**: this folder contains the default legacy emulator configurations as well as Convertigo licensed keys,
 - **projects**: this folder contains the Convertigo projects, 
@@ -59,11 +64,10 @@ That means that the <em>projects</em> folder is empty in the Studio’s Converti
 The Studio’s Convertigo workspace, containing all the described folders, is located inside the Eclipse workspace, in the <em>.metadata.pluginscom.twinsoft.convertigo.studio</em> folder.
 {{site.data.alerts.end}}
 
-- **studio**: this folder contains some Studio specific configurations,
-- **xulrunner-work**: this folder contains the work directory of embedded xulrunner for HTML connector. 
+- **studio**: this folder contains some Studio specific configurations.
 
 {{site.data.alerts.important}}
-The Convertigo workspace should be different for each installed/running Convertigo: two Convertigo, for example a Studio and a Server, or two Servers, should never share a workspace directory.
+The Convertigo workspace should be different for each installed/running Convertigo: a Studio and a Server should never share a workspace directory. The only supported exception is a farm of identical Servers sharing the same workspace (projects and configuration) on a fast shared file system, with instance-specific cache and log directories; see <a href="../installing-convertigo-server/#convertigo-workspace">Installing Convertigo Server</a>.
 {{site.data.alerts.end}}
 
 
@@ -106,97 +110,19 @@ In left menu, expand **Java and Process management > Process definition** and se
 
 You have to restart WebSphere server for Convertigo to use the new workspace location.
 
-## Connector monitoring windows
+## Connector monitoring window
 
-Two windows are connector monitors: the Legacy connector monitor and the HTML connector monitor.
+The Legacy connector monitor is a window that is used for monitoring the screens that are reached by the legacy (Javelin) connectors. It displays a graphical rendering of the legacy connectors currently in use in the active contexts of the Convertigo Server.
 
-This section presents both windows as well as the requirements needed for displaying these windows on several server environments:
+It is not instantiated by default after a Convertigo Server installation and has to be activated with the **Display running connectors in monitor of Legacy connectors** option of the Administration Console Configuration page, see [Real-time activity monitoring](../using-convertigo-administration-console/#real-time-activity-monitoring). After restarting the server, the Legacy connector monitor appears on the desktop of the account running the server.
 
-### Presentation of the connector monitoring windows
+On a Windows server installed as a service, the service has to be authorized to interact with the desktop for the monitor to be displayed (**Log On** tab of the service properties, **Allow service to interact with desktop** option).
 
-Convertigo Server includes two connector monitoring windows:
+{{site.data.alerts.important}}This window must never be closed as it would cause Convertigo Server to be killed. The monitor is not available in Docker or Kubernetes deployments, nor in Convertigo Cloud; use the <b>Trace in logs the screen dumps of the running Legacy connectors</b> option instead.{{site.data.alerts.end}}
 
-#### Legacy connector monitor
-
-The Legacy connector monitor is a window that is used for monitoring the screens that are reached by the legacy connectors. It displays a graphical rendering of the legacy connectors currently in use in the active contexts of the Convertigo Server.
-
-It is not instantiated by default after a Convertigo Server installation and has to be activated.
-
-#### HTML connector monitor
-
-The HTML connector monitor is a window that is used for monitoring the pages that are reached by the HTML connectors. It displays a graphical rendering of the HTML connectors currently in use in the active contexts of the Convertigo Server.
-
-It is a necessary tool for the HTML connector to work in Convertigo Server. It is not always visible but it always exists after a Convertigo Server installation (using the Windows installer of the Linux installation file).
- 
 {{site.data.alerts.note}}
-Find more information about the activation and display of both connector monitoring windows in <a href="#activate-the-connector-monitors-on-a-windows-based-system">Activate the connector monitors on a Windows-based system</a> and <a href="#activate-the-connector-monitors-on-a-linux-based-system">Activate the connector monitors on a Linux-based system</a>
+The HTML connector monitor, the embedded XulRunner and the Xvnc server used by previous versions no longer exist: the HTML connector has been removed from Convertigo Server.
 {{site.data.alerts.end}}
-
-### Activate the connector monitors on a Windows-based system
-
-This section presents the common configuration to perform on Windows installed Convertigo Server before activating each of the monitors:
-
-- Interaction with desktop
-- HTML connector monitor display
-- Legacy connector monitor display
-
-#### Interaction with desktop
-
-After installing a Convertigo Server on a Windows operating system, the Convertigo Server is installed as a service. To be able to display the connector monitors, the service has to be authorized to interact with the desktop.
-
-**_Activate service’s interaction with desktop on Windows_**
-
-1 Open the properties window of the Convertigo Server service:
-{% include image.html file="guide_img/apendixes_winbased1.jpg" caption="Figure A - 1: Convertigo Server service properties" %}
-
-2 You can also find a shortcut icon in Windows taskbar, named Convertigo Server. 
-Right-click on this icon and select Configure... option:
-{% include image.html file="guide_img/apendixes_winbased2.jpg" caption="Figure A - 2: Convertigo Server Tomcat Configurator" %}
-
-3 Switch to the Log On tab:
-{% include image.html file="guide_img/apendixes_winbased3.jpg" caption="Figure A - 3: Log On tab of Convertigo service properties" %}
-
-4 Check the Allow service to interact with desktop option:
-{% include image.html file="guide_img/apendixes_winbased4.jpg" caption="Figure A - 4: Activation of the desktop interaction on the Log On tab of Convertigo service properties" %}
-
-5 Click on the OK button to validate the option and close the window. 
-
-You may have to restart the service for the property to be completely taken into account.
-
-#### HTML connector monitor display
-
-Now that the service is authorized to interact with the desktop, any transaction execution using an HTML connector displays the HTML connector monitor.
-
-Depending on Windows version, the monitor can appear directly on the desktop or popup indicates that the program wants to display a message. While accessing this message, the HTML connectors monitor appears:
-{% include image.html file="guide_img/apendixes_winbased5.jpg" caption="Figure A - 5: HTML connector monitor" %}
-
-Every context that will use an HTML connector will the be displayed in the same monitor, added in a new a tab:
-{% include image.html file="guide_img/apendixes_winbased6.jpg" caption="Figure A - 6: Several contexts in HTML connector monitor" %} 
-
-This window must never be closed as it would cause Convertigo Server to be killed.
-
-#### Legacy connector monitor display
-
-To display this monitor, an option has to be configured in the Administration Console Configuration page, see [Real-time activity monitoring](../using-convertigo-administration-console/#real-time-activity-monitoring).
-
-After restarting the server, the Legacy connector monitor will appear next to the HTML connector monitor:
-{% include image.html file="guide_img/apendixes_winbased7.jpg" caption="Figure A - 7: Legacy connector monitor" %}
-
-Every context that will use a legacy connector will the be displayed in the same monitor, next to others:
-{% include image.html file="guide_img/apendixes_winbased8.jpg" caption="Figure A - 8: Several contexts in Legacy connector monitor" %} 
-
-{{site.data.alerts.important}}This window must never be closed as it would cause Convertigo Server to be killed.{{site.data.alerts.end}}
-
-### Activate the connector monitors on a Linux-based system
-
-After installing a Convertigo Server on a Linux operating system, the HTML connector monitor is automatically instantiated in an XVNC.
-
-To display the HTML connector monitor, you can directly launch a VNC player on port 5903.
-
-To display the Legacy connector monitor, an option has to be configured in the Administration Console Configuration page, see "Real-time activity monitoring".
-
-After restarting the server, the Legacy connector monitor will appear next to the HTML connector monitor:
-{{site.data.alerts.important}}These windows must never be closed as it would cause Convertigo Server to be killed.{{site.data.alerts.end}}
 
 ## Differences between Convertigo Server and Convertigo Cloud in Administration Console
 
@@ -212,33 +138,39 @@ The following list shows the pages of the Administration Console that are not av
 
 Configuration page of the Administration Console includes categories, in which is proposed the edition of settings.
 
-This first list shows the categories of Configuration page that are not available at all in Convertigo Cloud’s Administration Console:
+This first list shows the categories of Configuration page that are not available at all in Convertigo Cloud's Administration Console:
 
-- Billing system category.
+- Session management category,
+- Analytics category,
+- FullSync category.
 
-This second list shows the settings that are not available in Convertigo Cloud’s Administration Console, from visible categories of Configuration page:
+This second list shows the settings that are not available in Convertigo Cloud's Administration Console, from visible categories of Configuration page:
 
-- in Main configuration parameters category:
-    - Convertigo Server application URL,
-    - (Linux only) Launch Xvnc server using DISPLAY environment variable at startup,
-    - Linux only) Depth parameter for the Xvnc, default is 16,
-    - (Linux only) Geometry parameter for Xvnc, default is 320x240,
+- in Main parameters category:
+    - Convertigo Server local URL,
+    - Convertigo Server endpoint URL,
     - Enable the compatibility mode for projects data (required for JSP usage); engine restart required,
+    - Delegate URL for extra functionality,
+    - Automatically GC on low usage (every 10 min),
 
-- in Log management category:
-    - Log4J default appender,
-    - Log4J default appender file,
-    - Log4J default appender layout,
-    - Log4J audit appender file,
-    - Log4J audit appender layout,
+- in Accounts and security category:
+    - Admin username,
+    - Admin password,
 
-- in HTML parser configuration category:
-    - XulRunner path,
-    - XulRunner work directory,
+- in Logs category:
+    - Log into files,
+    - Log into the standard console output,
+    - Default appender, Default appender file, Default appender layout,
+    - Audit appender file, Audit appender layout,
 
-- in Cache management category:
+- in Real-time activity monitoring category:
+    - Display running connectors in monitor of Legacy connectors,
+
+- in Cache category:
     - Cache manager class,
-    - File cache directory. 
+    - File cache directory.
+
+In the [List of Convertigo Java System Properties](#list-of-convertigo-java-system-properties) below, these settings are marked *not available in Convertigo Cloud*.
 
 {{site.data.alerts.note}}
 For more information about the pages or settings described in this appendix, <a href="../using-convertigo-administration-console/">see Using Convertigo Administration Console</a>.
@@ -287,249 +219,285 @@ When possible, Convertigo directly delivers the jar file needed to run code for 
 
 In this case, Convertigo provides a fake jar instead, already declared in the software. When trying to execute, a log is displayed in the engine logs to warn you about this.
 
-To run your SQL connector correctly, you only need to:
+To run your SQL connector correctly, you only need to get the correct jar file by your own and to make it available to Convertigo:
 
-- get the correct jar file by your own
-- rename it to match the Convertigo jar file name
-- replace the fake jar in Convertigo by the real one:
-    - in Convertigo Studio, jar files are located in < Convertigo Studio installation folder>pluginscom.twinsoft.convertigo.studio_x.y.z.v12345lib
-    - in Convertigo Server, jar files are located in < Convertigo Server installation folder>tomcatwebappsconvertigoWEB-INFlib
-- and re-start Convertigo (Studio or Server).
+- the recommended way is to put the jar file in the **libs** folder of the project using the SQL connector: it is packaged and deployed with the project,
+- in Convertigo Server running with the Docker image, jar files can also be dropped in the **/workspace/lib** directory: they are copied in the web application at each container start (see [Installing Convertigo Server](../installing-convertigo-server/#add-custom-java-libraries-or-classes)),
+- in a war installation, jar files are located in *< Convertigo Server installation folder>/webapps/convertigo/WEB-INF/lib*, and in Convertigo Studio in *< Convertigo Studio installation folder>/plugins/com.twinsoft.convertigo.studio_x.y.z.v12345/lib*; re-start Convertigo (Studio or Server) after adding a jar.
 
 The following table shows the matches between SQL Driver, jar file, and their presence or not in Convertigo for running:
 
 Table A - 2: SQL Drivers and jar files in Convertigo
 
-Driver | Database | jar file name | Delivered
+Driver | Database | jar file | Delivered
 --- | --- | --- | ---
-sun.jdbc.odbc.JdbcOdbcDriver | JDBC-ODBC bridge for accessing ODBC databases | rt.jar (delivered in Java) | true
-com.ibm.as400.access.AS400JDBCDriver | IBM AS400 database | jt400.jar | true
-com.mysql.jdbc.Driver | MySQL database | mysql-connector.jar | false (fake jar)
-net.sourceforge.jtds.jdbc.Driver | Microsoft SQL Server database | jtds-1.2.2.jar | true
-org.hsqldb.jdbcDriver | HSQLDB database | hsqldb.jar | true
-com.ibm.db2.jcc.DB2Driver | IBM DB2 Server database | db2jcc.jar<br> + db2jcc-licence.jar | false (fake jars)
-oracle.jdbc.driver.OracleDriver | ORACLE database | ojdbc5.jar | true
-org.mariadb.jdbc.Driver | MariaDB database, community-developed fork of MySQL | mariadb-java-client-1.1.3.jar | true
+org.mariadb.jdbc.Driver | MariaDB database, also usable for MySQL databases | mariadb-java-client | true
+com.mysql.cj.jdbc.Driver (com.mysql.jdbc.Driver for older drivers) | MySQL database | mysql-connector-j | false (license restriction, use the MariaDB driver or provide the jar)
+org.postgresql.Driver | PostgreSQL database | postgresql | true
+net.sourceforge.jtds.jdbc.Driver | Microsoft SQL Server database (jTDS driver) | jtds | true
+com.microsoft.sqlserver.jdbc.SQLServerDriver | Microsoft SQL Server database (Microsoft JDBC driver) | mssql-jdbc | false (provide the jar)
+oracle.jdbc.driver.OracleDriver | ORACLE database | ojdbc | false (license restriction, provide the jar)
+com.ibm.db2.jcc.DB2Driver | IBM DB2 Server database | db2jcc + db2jcc_license | false (license restriction, provide the jars)
+com.ibm.as400.access.AS400JDBCDriver | IBM DB2 on AS400 / IBM i database | jt400 | true
+org.hsqldb.jdbcDriver | HSQLDB database (used for demos and samples) | hsqldb | true
+
+{{site.data.alerts.note}}
+The JDBC-ODBC bridge (<code>sun.jdbc.odbc.JdbcOdbcDriver</code>) was removed from Java 8 and is no longer available. The <b>JNDI</b> mode is also available to use a data source defined in the application server.
+{{site.data.alerts.end}}
 
 ## List of Convertigo Java System Properties
 
 To set a Java System Property when the JVM is launched, just add -Dconvertigo.engine.{property key}={property value}.
 
+The properties are grouped by category of the Administration Console Configuration page. Advanced properties are the ones displayed in the Advanced properties section of each category. Properties marked *not available in Convertigo Cloud* can only be set on Convertigo Server, see [Differences between Convertigo Server and Convertigo Cloud](#differences-between-convertigo-server-and-convertigo-cloud-in-administration-console).
+
 ### Main properties
 
 property key | description | default value
---- | --- | --- | ---
-application_server.convertigo.url | Convertigo Server local URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL) | http://localhost:18080/convertigo
-application_server.convertigo.endpoint | Convertigo Server endpoint URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-endpoint-URL) | 
-application_server.mashup.url | Mashup composer server base URL | http://localhost:18080/convertigo
-document.threading.max_worker_threads | Maximum number of worker threads <br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-worker-threads) | 100
-convertigo.max_context | Maximum number of contexts <br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-contexts)| 750
-convertigo.git.container |  Git repository for projects’s reference objects<br>[More information on this parameter](../using-convertigo-administration-console/#Git-container)| 
-convertigo.xsrf.admin | Enable XSRF protection for Administration Console <br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Admin) | true
-convertigo.xsrf.projects | Enable XSRF protection for projects <br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Projects)| false
+--- | --- | ---
+application_server.convertigo.url | Convertigo Server local URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-local-URL) *(not available in Convertigo Cloud)* | http://localhost:28080/convertigo (18080 in Studio)
+application_server.convertigo.endpoint | Convertigo Server endpoint URL<br>[More information on this parameter](../using-convertigo-administration-console/#Convertigo-Server-endpoint-URL) *(not available in Convertigo Cloud)* | 
+document.threading.max_worker_threads | Maximum number of worker threads<br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-worker-threads) | 1000
+convertigo.max_context | Maximum number of contexts<br>[More information on this parameter](../using-convertigo-administration-console/#Maximum-number-of-contexts) | 1500
+convertigo.git.container | Git container (autoimport)<br>[More information on this parameter](../using-convertigo-administration-console/#Git-container) | {convertigo workspace}/git
+convertigo.xsrf.admin | Enable XSRF protection for Administration Console<br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Admin) | true
+convertigo.xsrf.projects | Enable XSRF protection for projects<br>[More information on this parameter](../using-convertigo-administration-console/#Enable-XSRF-Projects) | false
 
-### Main advance properties
+### Main advanced properties
 
 property key | description | default value
---- | --- | --- 
+--- | --- | ---
 convertigo.product_version_check | Product version check | true
-document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads (not to be used) | false
-linux.xvnc.launch | (Linux only) Launch Xvnc server using DISPLAY environment variable at startup | true
-linux.xvnc.depth | (Linux only) Depth parameter for the Xvnc, default is 16 | 16
-linux.xvnc.geometry | (Linux only) Geometry parameter for Xvnc | 320x240
-migration.3.0.0 | Migration 3.0.0 ? | false
+hide_product_version_in_api_specs | Hide product version in generated API specifications | false
+document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads | false
 pool.manager.timeout | Time allowed for pool management task in seconds (-1 for disable) | -1
-projects_data.compatibility_mode | Enable the compatibility mode for projects data (required for JSP usage); engine restart required | false
+projects_data.compatibility_mode | Enable the compatibility mode for projects data (required for JSP usage); engine restart required *(not available in Convertigo Cloud)* | false
 sequence.steps.use_same_jsession | Use same JSESSIONID for sequences and steps | true
 soap.request.add_xml_encoding_charset | Add XML encoding charset for SOAP requests | false
 throw_http_500 | Throw HTTP 500 in case of unrecoverable servlet error | false
-hiding_error_information | Hide detailed information in case of unrecoverable servlet error | false
-throw_http_500.soap_fault | Throw HTTP 500 in case of SOAP fault | false
-update.steps | update.steps | false
-crypto.passphrase | Cryptographic services passphrase | A8dkLmsdfkKze0e34FGh
-project.zip_backup_old | Automatically performs a dated zip backup of replaced projects | true
-cors.policy | CORS Policy\n• empty: disallow all\n• '=Origin': use client 'Origin' header\n• 'url1#url2#url3': allow if 'Origin' one of 'url' | =Origin
-delegate.url | Delegate URL for extra functionality | 
+throw_http_500.soap_fault | Throw HTTP 500 in case of SOAP fault | true
+hiding_error_information | Hide all error information | false
+show_error_requestable_information | Show error requestable information | true
+show_error_context_information | Show error context information | false
+show_error_type | Show error type | true
+show_error_code | Show error code | true
+show_error_message | Show error message | true
+show_error_detail | Show error detail | true
+show_error_exception | Show error exception | false
+show_error_stacktrace | Show error stacktrace | false
+project.zip_backup_old | Automatically performs a dated zip backup of replaced projects | false
+cors.policy | CORS Policy<br>• empty: disallow all<br>• '=Origin': use client 'Origin' header<br>• 'url1#url2#url3': allow if 'Origin' one of 'url' | =Origin
+delegate.url | Delegate URL for extra functionality *(not available in Convertigo Cloud)* | 
+auto.gc | Automatically GC on low usage (every 10 min) *(not available in Convertigo Cloud)* | false
 
-### Accounts
+### Accounts and security
 
 property key | description | default value
---- | --- | --- 
-admin.username | Admin username | admin
-admin.password | Admin password encoded | "admin" encoded with PropertyType.PasswordHash
-testplatform.username | Test Platform username (leave it blank for anonymous access) | 
-testplatform.password | Test Platform password | "" encoded with PropertyType.PasswordHash
-security.filter | Activate Security Filter with file security_filter.json| false
-user.password.regexp | RegularExpression used to validate password change for Admin accounts | ``^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\w~@#$%^&*+=`|{}:;!.?\\\"()\\[\\]-]{8,20}$``
-user.password.instruction | Instruction in case of RegularExpression failure for password change | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters
+--- | --- | ---
+admin.username | Admin username *(not available in Convertigo Cloud)* | admin
+admin.password | Admin password *(not available in Convertigo Cloud)* | "admin" hashed (PasswordHash)
+anonymous.dashboard | Allow anonymous access to /dashboard | false (true in Studio)
+security.filter | Security Filter | false
+user.password.regexp | RegularExpression used to validate password change for Admin accounts. | ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w~@#$%^&*+=`\|{}:;!.?\\"()\[\]-]{8,20}$
+user.password.instruction | Instruction in case of RegularExpression failure for password change. | must respect at least 1 lowercase, 1 uppercase, 1 digit and between 8-20 characters.
 
 ### Logs
 
 property key | description | default value
---- | --- | --- 
-log.file.enable | Log into files | true
-log.stdout.enable | Log into the standard console output | false
-log4j.logger.cems | Log4J root logger | INFO
-log4j.logger.cems.Admin| Log4J admin logger| WARN
-log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
-log4j.logger.cems.Beans| Log4J beans logger| INHERITED
-log4j.logger.cems.Billers| Log4J billers logger| WARN
-log4j.logger.cems.CacheManager| Log4J cache manager logger| WARN
-log4j.logger.cems.CertificateManager| Log4J certificate manager logger| WARN
-log4j.logger.cems.Context| Log4J context logger| INHERITED
-log4j.logger.cems.ContextManager| Log4J context manager logger| WARN
-log4j.logger.cems.CouchDbManager| Log4J couch DB manager output logger| WARN
-log4j.logger.cems.DatabaseObjectManager| Log4J database objects manager logger| WARN
-log4j.logger.cems.Devices| Log4J devices output logger| INFO
-log4j.logger.cems.Emulators| Log4J emulators output logger| INFO
-log4j.logger.cems.Engine| Log4J engine logger| INHERITED
-log4j.logger.cems.JobManager| Log4J job manager logger| WARN
-log4j.logger.cems.ProxyManager| Log4J proxy manager logger| INFO
-log4j.logger.cems.Scheduler| Log4J scheduler output logger| INFO
-log4j.logger.cems.SecurityFilter| Log4J security filter output logger| WARN
-log4j.logger.cems.SecurityTokenManager| Log4J security token manager output logger| INFO
-log4j.logger.cems.SiteClipper| Log4J site clipper output logger| INFO
-log4j.logger.cems.Statistics| Log4J statistics logger| INFO
-log4j.logger.cems.Studio| Log4J studio logger| WARN
-log4j.logger.cems.TracePlayerManager| Log4J trace player manager logger| WARN
-log4j.logger.cems.UsageMonitor| Log4J usage monitor logger| WARN
-log4j.logger.cems.Context.User| Log4J user context logger| INHERITED
-log4j.logger.cems.User| Log4J user output logger| INFO
-
+--- | --- | ---
+log4j.logger.cems | Root logger | INFO
+log4j.logger.cems.Admin | Admin logger | WARN
+log4j.logger.cems.Context.Audit | Audit context logger | INFO
+log4j.logger.cems.Beans | Beans logger | INHERITED
+log4j.logger.cems.Billers | Billers logger | WARN
+log4j.logger.cems.CacheManager | Cache manager logger | WARN
+log4j.logger.cems.CertificateManager | Certificate manager logger | WARN
+log4j.logger.cems.Context | Context logger | INHERITED
+log4j.logger.cems.ContextManager | Context manager logger | WARN
+log4j.logger.cems.CouchDbManager | Couch DB manager output logger | WARN
+log4j.logger.cems.DatabaseObjectManager | Database objects manager logger | WARN
+log4j.logger.cems.Devices | Devices output logger | INFO
+log4j.logger.cems.Emulators | Emulators output logger | INFO
+log4j.logger.cems.Engine | Engine logger | INHERITED
+log4j.logger.cems.JobManager | Job manager logger | WARN
+log4j.logger.cems.ProxyManager | Proxy manager logger | INFO
+log4j.logger.cems.Redis | Redis session/store logger | WARN
+log4j.logger.cems.Scheduler | Scheduler output logger | INFO
+log4j.logger.cems.SecurityFilter | Security filter output logger | WARN
+log4j.logger.cems.SecurityTokenManager | Security token manager output logger | INFO
+log4j.logger.cems.SiteClipper | Site clipper output logger | INFO
+log4j.logger.cems.Statistics | Statistics logger | INFO
+log4j.logger.cems.Studio | Studio logger | WARN
+log4j.logger.cems.TracePlayerManager | Trace player manager logger | WARN
+log4j.logger.cems.UsageMonitor | Usage monitor logger | WARN
+log4j.logger.cems.Context.User | User context logger | INHERITED
+log4j.logger.cems.User | User output logger | INFO
+log4j.appender.AuditAppender | Audit appender | org.apache.log4j.RollingFileAppender
+log4j.appender.AuditAppender.File | Audit appender file *(not available in Convertigo Cloud)* | ${log.directory}/audit.log
+log4j.appender.CemsAppender.File | Default appender file *(not available in Convertigo Cloud)* | ${log.directory}/engine.log
 
 The different available values are : FATAL, ERROR, WARN, INFO, DEBUG, TRACE.
-To set INHERITED, put '' (empty). *Inherited from root logger* uses the value from  *Log4J root logger*.
+To set INHERITED, put '' (empty). *Inherited from root logger* uses the value from *Root logger*.
 [To know how to position these values go on this link](../using-convertigo-administration-console/#logs)
 
-
-### Logs advance
-
+### Logs advanced properties
 
 property key | description | default value
---- | --- | --- 
-log.explicit_variables| ? Explicit variables| contextid,project,sequence,connector,<br>transaction,user,clientip,clienthostname,
-log4j.appender.AuditAppender| Log4J audit appender|org.apache.log4j.RollingFileAppender
-log4j.appender.AuditAppender.File| Log4J audit appender file| ${log.directory}/audit.log
-log4j.appender.AuditAppender.layout| Log4J audit appender layout|org.apache.log4j.PatternLayout
-log4j.appender.AuditAppender.layout<br>.ConversionPattern| ? Log4J audit appender layout conversion pattern| ``!%c{1} | %d | %-5p | %m%n``
-log4j.appender.AuditAppender.MaxBackupIndex| Log4J audit appender max backup index| 25
-log4j.appender.AuditAppender.MaxFileSize| Log4J audit appender max file size| 10MB
-log4j.appender.CemsAppender| Log4J default appender| org.apache.log4j.RollingFileAppender
-log4j.appender.CemsAppender.Encoding| Log4J default appender encoding | UTF-8
-log4j.appender.CemsAppender.File| Log4J default appender file| ${log.directory}/engine.log
-log4j.appender.CemsAppender.layout| Log4J default appender layout| org.apache.log4j.PatternLayout
-log4j.appender.CemsAppender.layout<br>.ConversionPattern| ? Log4J default appender layout conversion pattern| ``!%-28c{1} | %d | %-5p | %-32t | %X{ContextualParameters}%m%n``
-log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup index|25
-log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
-log4j.additivity.cems| ? Log4J root logger additivity| false
+--- | --- | ---
+log.file.enable | Log into files *(not available in Convertigo Cloud)* | true
+log.stdout.enable | Log into the standard console output *(not available in Convertigo Cloud)* | false
+log4j.message.truncate | Maximum number of characters per log message before truncation (-1 means unlimited) | -1 (unlimited)
+log4j.appender.AuditAppender.layout | Audit appender layout *(not available in Convertigo Cloud)* | org.apache.log4j.PatternLayout
+log4j.appender.AuditAppender.MaxBackupIndex | Audit appender max backup index | 25
+log4j.appender.AuditAppender.MaxFileSize | Audit appender max file size | 10MB
+log4j.appender.CemsAppender | Default appender *(not available in Convertigo Cloud)* | org.apache.log4j.RollingFileAppender
+log4j.appender.CemsAppender.Encoding | Default appender encoding (requires JVM restart) | UTF-8
+log4j.appender.CemsAppender.layout | Default appender layout *(not available in Convertigo Cloud)* | org.apache.log4j.PatternLayout
+log4j.appender.CemsAppender.MaxBackupIndex | Default appender max backup index | 25
+log4j.appender.CemsAppender.MaxFileSize | Default appender max file size | 10MB
+log4j.additivity.cems | Root logger additivity | false
+
+### Session management
+
+property key | description | default value
+--- | --- | ---
+session.store.mode | Server-side store for session data (tomcat, redis) | tomcat
+session.redis.default.ttl | Default session TTL in seconds when no timeout is specified | 1800
+
+### Session management advanced properties
+
+property key | description | default value
+--- | --- | ---
+session.shared_workspace.sync.enabled | Enable runtime synchronization between instances sharing the same workspace | false
+session.redis.host | Redis hostname used by the session manager | localhost
+session.redis.port | Redis port used by the session manager | 6379
+session.redis.username | Redis username (optional) | 
+session.redis.password | Redis password (optional) | 
+session.redis.database | Redis logical database index | 0
+session.redis.ssl | Enable SSL/TLS for the Redis connection | false
+session.redis.ssl.truststore | Redis SSL server truststore path | 
+session.redis.ssl.truststore.password | Redis SSL server truststore password | 
+session.redis.ssl.keystore | Redis SSL client keystore path | 
+session.redis.ssl.keystore.password | Redis SSL client keystore password | 
+session.redis.ssl.keystore.type | Redis SSL client keystore type | 
+session.redis.ssl.verification.mode | Redis SSL server certificate verification mode | 
+session.redis.ssl.protocols | Redis SSL/TLS protocol versions (for example: TLSv1.3,TLSv1.2) | 
+session.redis.timeout | Redis command timeout in milliseconds | 5000
+session.redis.connection.pool.size | Redis data connection pool size | 128
+session.redis.connection.minimum.idle.size | Redis data connection minimum idle size | 32
+session.redis.prefix | Redis key prefix for stored sessions | convertigo:session
+session.cookie.name | Name of the HTTP cookie carrying the session token | JSESSIONID
+session.forward.ssl.trust_all | Disable SSL certificate validation for internal admin forwarding | false
 
 ### Network
 
 property key | description | default value
---- | --- | --- 
-net.gzip| Enable GZip response for most text responses (need the header Accept-Encoding: gzip)| true
-net.max-age| Set the Cache-Control: max-age value in seconds, for static resources| 10
-net.reverse_dns| Use DNS reverse search for finding host names| false
-net.upload.max_request_size| Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit.| -1
-net.upload.max_request_size| Maximum allowed size of a single uploaded file (in bytes).| 10485760
+--- | --- | ---
+net.gzip | Enable GZip response for most text responses (need the header Accept-Encoding: gzip) | true
+net.max-age | Set the Cache-Control: max-age value in seconds, for static resources | 10
+net.reverse_dns | Use DNS reverse search for finding host names | false
+net.upload.max_request_size | Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit. | -1
+net.upload.max_request_size | Maximum allowed size of a single uploaded file (in bytes). | 10485760
 
 ### HTTP Client
 
 property key | description | default value
---- | --- | --- 
-http_client.max_total_connections| Maximal number of HTTP connections (from 1 to 65535)| 100
-http_client.max_connections_per_host| Maximal number of HTTP connections per host (from 1 to 255)| 50
+--- | --- | ---
+http_client.max_total_connections | Maximal number of HTTP connections (from 1 to 65535) | 100
+http_client.max_connections_per_host | Maximal number of HTTP connections per host (from 1 to 255) | 50
 
-### Connector legacy monitoring
+### Real-time activity monitoring (legacy connectors)
 
 property key | description | default value
 --- | --- | ---
-connectors.monitoring| Display running connectors in monitor of Legacy connectors| false
-document.log.screen_dumps| Trace in logs the screen dumps of the running Legacy connectors | false
+connectors.monitoring | Display running connectors in monitor of Legacy connectors *(not available in Convertigo Cloud)* | false
+document.log.screen_dumps | Trace in logs the screen dumps of the running Legacy connectors | false
 
 ### XML generation
 
 property key | description | default value
 --- | --- | ---
-document.include_statistics| Insert statistics in the generated document| false
-document.xslt_engine| XSLT engine| XsltEngine.xalan_xsltc
-document.namespace.aware| Set namespace aware| false
-document.fromschema.depth| Maximum number of elements for XML sample generation based on schema | 100
+document.include_statistics | Insert statistics in the generated document | false
+document.namespace.aware | Set namespace aware | false
+document.fromschema.depth | Maximum number of elements for XML sample generation based on schema | 100
 
 ### Proxy
 
 property key | description | default value
 --- | --- | ---
-htmlProxy.mode| Proxy mode| ProxyMode.off
-htmlProxy.port| Proxy port| 8080
-htmlProxy.host| Proxy host| localhost
-htmlProxy.bpdomains| Do not apply proxy settings on | localhost,127.0.0.1
-htmlProxy.auto| Autoconfiguration proxy url| 
-htmlProxy.method| Proxy authentication method| ProxyMethod.anonymous
-htmlProxy.user| Username| 
-htmlProxy.password| Password|
+htmlProxy.mode | Proxy mode | off
+htmlProxy.port | Proxy port | 8080
+htmlProxy.host | Proxy host | localhost
+htmlProxy.bpdomains | Do not apply proxy settings on | localhost,127.0.0.1
+htmlProxy.auto | Autoconfiguration proxy url | 
+htmlProxy.method | Proxy authentication method | anonymous
+htmlProxy.user | Username | 
+htmlProxy.password | Password | 
 
 ### SSL
 
 property key | description | default value
 --- | --- | ---
-ssl.debug| SSL debug output ; only available for HTTP connectors | false
-ssl.issuers| SSL issuers|
+ssl.debug | SSL debug output (requires JVM restart); only available for HTTP connectors | false
+ssl.issuers | SSL issuers | 
 
 ### Cache
 
 property key | description | default value
 --- | --- | ---
-cache_manager.class| Cache manager class| com.twinsoft.convertigo.engine.cache.FileCacheManager
-cache_manager.filecache.directory| File cache directory| workspace/cache
-cache_manager.scan_delay| Cache scan delay (in seconds)| 60
-cache_manager.weak| Allow to cache responses in memory until the next GC | false
-disable.cache| Disable Cache | false
+cache_manager.class | Cache manager class *(not available in Convertigo Cloud)* | com.twinsoft.convertigo.engine.cache.FileCacheManager
+cache_manager.filecache.directory | File cache directory *(not available in Convertigo Cloud)* | ${user.workspace}/cache
+cache_manager.scan_delay | Cache scan delay (in seconds) | 60
+cache_manager.weak | Allow to cache responses in memory until the next GC | false
+disable.cache | Disable Cache | false
 
 ### Analytics
 
 property key | description | default value
 --- | --- | ---
-billing.enabled| Enable persistence analytics (JDBC)| false
-billing.google.enabled| Enable google analytics| false
-billing.persistence.dialect| Persistence SQL Dialect| org.hibernate.dialect.MySQL5InnoDBDialect
-billing.persistence.jdbc.driver| Persistence JDBC driver| org.mariadb.jdbc.Driver
-billing.persistence.jdbc.password| Persistence JDBC password| 
-billing.persistence.jdbc.url| Persistence JDBC URL| jdbc:mysql://localhost:3306/c8oAnalytics
-billing.persistence.jdbc.username| Persistence JDBC username|
-billing.persistence.jdbc.maxretry| JDBC max retry on connection failed| 2
-billing.google.analytics.id| Google Analytics ID|
+billing.enabled | Enable persistence analytics (JDBC) | false
+billing.google.enabled | Enable google analytics | false
+billing.persistence.dialect | Persistence SQL Dialect | org.hibernate.dialect.MySQLDialect
+billing.persistence.jdbc.driver | Persistence JDBC driver | org.mariadb.jdbc.Driver
+billing.persistence.jdbc.password | Persistence JDBC password | 
+billing.persistence.jdbc.url | Persistence JDBC URL | jdbc:mariadb://localhost:3306/c8oAnalytics
+billing.persistence.jdbc.username | Persistence JDBC username | 
+billing.persistence.jdbc.maxretry | JDBC max retry on connection failed | 2
+billing.google.analytics.measurement_id | Google Analytics Measurement ID | 
+billing.google.analytics.api_secret | Google Analytics API Secret | 
 
 ### Notifications
 
 property key | description | default value
 --- | --- | ---
-notifications.notify.project_deployment| Notify project deployment| false
-notifications.target_email| Target email| 
-notifications.smtp.host| STMP host|
-notifications.smtp.port| STMP port| 465
-notifications.smtp.user| STMP user| 
-notifications.smtp.password| STMP password|
+notifications.notify.project_deployment | Notify project deployment | false
+notifications.target_email | Target email | 
+notifications.sender_email | Sender email | noreply@convertigo.com
+notifications.subject_prefix | Subject prefix | [convertigo]
+notifications.project_url_prefix | Project URL prefix | 
+notifications.smtp.host | SMTP host | 
+notifications.smtp.port | SMTP port | 465
+notifications.smtp.user | SMTP user | 
+notifications.smtp.password | SMTP password | 
 
 ### Mobile builder
 
 property key | description | default value
 --- | --- | ---
-mobile.builder.auth_token| Mobile builder authentication token|  
-mobile.builder.android_certificate_title| Android certificate title| 
-mobile.builder.android_certificate_pw| Android certificate password|
-mobile.builder.android_keystore_pw| Android keyStore password|
-mobile.builder.ios_certificate_title| iOS certificate title| 
-mobile.builder.ios_certificate_pw| iOS certificate password|
-mobile.builder.platform_url|Mobile builder platform URL|  https://build.convertigo.net/cmb/PhoneGapBuilder
+mobile.builder.auth_token | Mobile builder authentication token | 
+mobile.builder.android_certificate_title | Android certificate title | 
+mobile.builder.android_certificate_pw | Android certificate password | 
+mobile.builder.android_keystore_pw | Android keyStore password | 
+mobile.builder.ios_certificate_title | iOS certificate title | 
+mobile.builder.ios_certificate_pw | iOS certificate password | 
+mobile.builder.platform_url | Mobile builder platform URL | https://build.convertigo.net/cmb/PhoneGapBuilder
 
-### Full Sync
+### FullSync
 
 property key | description | default value
 --- | --- | ---
-fullsync.couch.url| Couch DB URL for FullSync| http://127.0.0.1:5984
-fullsync.couch.username| Couch DB username for FullSync| 
-fullsync.couch.password| Couch DB password for FullSync|
-fullsync.couch.prefix| Couch DB prefix for all FullSync databases|
-
-
+fullsync.pouchdb | Use PouchDB for FullSync (prefer CouchDB for production) *(not available in Convertigo Cloud)* | false (true in Studio)
+fullsync.couch.url | Couch DB URL for FullSync | http://127.0.0.1:5984
+fullsync.couch.username | Couch DB username for FullSync | 
+fullsync.couch.password | Couch DB password for FullSync | 
+fullsync.couch.prefix | Couch DB prefix for all FullSync databases *(not available in Convertigo Cloud)* | 
