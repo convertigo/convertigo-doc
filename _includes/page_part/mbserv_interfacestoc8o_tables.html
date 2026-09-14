@@ -141,6 +141,7 @@
         For example, the following specific parameter can be sent to a transaction: 
         {% highlight js %}__header_test=myTestHeader{% endhighlight %}        
         which results in sending the following header to the target server reached by the HTTP connector: {% highlight http %}test=myTestHeader{% endhighlight %}
+        Since Convertigo 8.4.4, on a Public or Hidden HTTP transaction this parameter is honored only when the transaction declares a variable named <code>__header_< headerName></code> (its default value is sent as the header and the request parameter overrides it); an undeclared header parameter is ignored and a WARN line is written in the engine log. Set the transaction's <strong>Allow Undeclared __header_ Override</strong> property to <code>true</code> to send any <code>__header_</code> parameter. Private transactions keep the legacy behavior.
         </td>
     </tr>
     <tr>
@@ -169,6 +170,7 @@
         <td>__uri</td>
         <td>Allows to dynamically change the value of the Sub path property of the requested HTTP transaction.
             {{site.data.alerts.warning}}At the end of the transaction execution, the Sub path property is set back to its original value{{site.data.alerts.end}}
+            Since Convertigo 8.4.4, this parameter is ignored by default on Public or Hidden HTTP transactions (a WARN line is written in the engine log). It must be enabled with the transaction's <strong>Allowed __uri Override</strong> property: <code>deny</code> (default) ignores the parameter, <code>relative</code> accepts it only as a sub path (a value starting with <code>http</code> is ignored), <code>absolute</code> accepts a full URL. Private transactions keep the legacy behavior.
         </td>
     </tr>
     <tr>
