@@ -333,6 +333,7 @@ convertigo.xsrf.projects | Enable XSRF protection for projects <br>[More informa
 property key | description | default value
 --- | --- | --- 
 convertigo.product_version_check | Product version check | true
+allow_xml_project_loading | Allow loading projects stored in the legacy XML format; when disabled only the YAML project format (c8oProject.yaml) is accepted<br>[More information on this parameter](../using-convertigo-administration-console/#Allow-XML-project-loading) | false
 document.threading.use_stop_method | Use the Java Thread.stop() method in order to finish threads (not to be used) | false
 linux.xvnc.launch | (Linux only) Launch Xvnc server using DISPLAY environment variable at startup | true
 linux.xvnc.depth | (Linux only) Depth parameter for the Xvnc, default is 16 | 16

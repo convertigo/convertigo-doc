@@ -232,6 +232,12 @@ Also Only applications developed on Convertigo Angular/Vue/JS SK Version 3.0.9 a
 
 #### Advanced properties
 
+- **Allow loading projects stored in the legacy XML format** : <a id="Allow-XML-project-loading"></a>Disabled by default since Convertigo 8.4.4. When disabled, only projects stored in the YAML format (`c8oProject.yaml`) are loaded; loading or deploying a legacy XML project (`<Project>/<Project>.xml`) fails and the engine log reports that the legacy XML format is disabled and that the `allow_xml_project_loading` property must be set to `true` to allow it. Enabling this property re-enables the legacy format and is persisted in `engine.properties`.
+
+{{site.data.alerts.tip}}
+Rather than keeping this property enabled, open the legacy project once in a Convertigo Studio: the Studio saves it in the YAML format, which is then accepted by every server.
+{{site.data.alerts.end}}
+
 - **Product version check** : Activated by default, this option enables the verification of Convertigo version number in projects that attempt to be deployed. This helps users not to deploy projects that were created in a greater version of Convertigo in an older version of Convertigo. Indeed, in this case, the projects may not be compatible, due to the add of objects or objects' properties in the software, that an older version of Convertigo cannot handle. In the opposite case, a new version of Convertigo is always compatible with older version, that makes projects to be importable in newer version of Convertigo, possibly including an automatic migration of projects if need be.
 
 - **Use the Java Thread.stop() method in order to finish threads** : When a transaction or sequence timeout is reached, its thread is gracefully stopped. In some case, the transaction/sequence thread is locked (by reading blocking socket, or whatever) and cannot be gracefully stopped. Enabling this property allows Convertigo to use the deprecated Thread.stop() method in these cases to end the transaction/sequence thread.
