@@ -1,7 +1,7 @@
 ---
 title: Front-end Developers
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 02/04/2020
+last_updated: 14/09/2026
 summary: "This chapter describes you how to use Convertigo backend objects to connect your data and build backend services."
 sidebar: c8o_sidebar
 permalink: /programming-guide/frontend-developers/
@@ -19,7 +19,7 @@ It uses a new graphical user interface builder able to build, in a few minutes, 
 
 An application produced with {{site.data.strings.product_name}} is not a “prototype” nor a “quick & dirty” application. Built applications are fully deployable on cross-platform devices and work on complex enterprise data.
 
-{{site.data.strings.product_name}} is based on well-known industry standard technologies such as Cordova, Angular 13 and Ionic 6 frameworks.
+{{site.data.strings.product_name}} is based on well-known industry standard technologies such as Cordova, Angular and Ionic frameworks. Projects created with Convertigo 8.4 use the `mobilebuilder_tpl_8_4_0_ngx` template, based on Angular 20 and Ionic 8, and generate Angular **standalone** applications (see [Standalone applications and Tailwind theme](#standalone-applications-and-tailwind-theme)). Projects created with previous versions keep their own template (Angular 13 / Ionic 6 for 8.0 to 8.3) until you migrate them.
 
 {% include image.html file="man_img/MB-Overview.png" url="images/man_img/MB-Overview.png" alt="Convertigo Builder overview" caption="Convertigo Builder overview" %}
 
@@ -35,7 +35,7 @@ The application you are working on will be displayed in the “**Application Vie
  * Double click on the “NgxApp” component.
  * Hit the “ENTER” key when the “NgxApp” component is selected.
 
-When the application viewer is launched, it will start to build in real time the current application described in your project. For this, the viewer will need to download from Internet all your application dependencies modules. This download is done once from the NPM repository using the standard NPM tool. This is why you should have NPM (NodeJS > 8.X) installed on your workstation to use Builder.
+When the application viewer is launched, it will start to build in real time the current application described in your project. For this, the viewer will need to download from Internet all your application dependencies modules. This download is done once from the NPM repository using the standard NPM tool. Convertigo Studio installs and uses its own Node.js version, defined by the project template (Node.js 24 for the 8.4 template), so you do not need to install Node.js yourself. Since 8.4.2, the NPM install and builds can also run through NTLM corporate proxies with the proxy configured in the Studio preferences.
 
 The NPM install process can last several minutes according to your Internet Bandwith and CPU power. A progress indicator will show you how much data has been downloaded. A typical application will require about 180MB of packages dependencies to be downloaded and installed in your project. In most cases, the NPM install process is done only once in the life of your project, but you can choose to re-install NPM dependencies, or to update them by right-clicking on:
 
@@ -157,6 +157,10 @@ So if you want to display the flight's destination just use a TypeScript express
 this.navParams.data.to
 ```
 To retrieve data from the segment's route, the way of going about it remains the same via the object <code>this.navParams.data</code>.
+
+{{site.data.alerts.note}}
+The Ionic <code>NavParams</code> class is deprecated in recent Ionic versions. Since Convertigo 8.4.0, the 8.4 template provides its own <code>NavParams</code> implementation (built from the Angular route and the page data), so that <code>this.navParams.data</code> keeps working in your bindings and custom code without depending on the deprecated Ionic class.
+{{site.data.alerts.end}}
 
 FIGURE 3 - showing writing navParams and reload with username.
 
@@ -330,6 +334,20 @@ You process the event by dropping ‘Actions’ on the event. The action will be
 
 ## Shared Components
 
+### Convertigo Assistant
+
+Since Convertigo 8.4.0, the **Convertigo Assistant** view (menu **Convertigo > Open the Convertigo Assistant**) helps you create Shared Components using AI-assisted generation. Describe the component you need in the Assistant; it generates the corresponding Shared Component and lets you insert it in the selected project, then edit or refine it in the Studio. The generated components are standard Shared Components you can then use like any other one.
+
+The Assistant is a web application hosted by Convertigo (an Internet connection is required), displayed inside the Studio and connected to the current workspace.
+
+## Standalone applications and Tailwind theme
+
+Since Convertigo 8.4.0, new NGX projects are generated as Angular **standalone** applications: pages, menus and shared components are standalone components importing directly what they need, without `NgModule` declarations. This follows the modern Angular patterns, produces simpler generated imports and avoids unused imports in generated pages and components. Whether a project is standalone or module-based is defined by its template (`standalone` flag of the template `version.json`); existing projects keep their module-based template until they are migrated to the 8.4 template.
+
+Shared Components are also generated and consumed through a dedicated shared Angular module (or as standalone components in standalone projects), so that a component can be reused across pages and across projects.
+
+The 8.4 project template also includes a default **TailwindTheme** (a `Theme` component under the application) providing a utility-like design token layer mapped to the Ionic components: colors, radius, spacing and typography tokens usable in your own styles. You can edit it, replace it by your own theme, or remove it.
+
 ## Theming
 
 Ionic is built on top of Sass, which allows you to set some defaults styles for your application but makes it extremly easy for you to change Ionic defaults.
@@ -447,7 +465,7 @@ When you write some custom code in a custom action or in the page class, you may
 Service | Usage
 --- | ---
 routerProvider : C8oRouter | The CAF (Convertigo Angular Framework) router. Gives access to several utilitiy functions you may use in your code. See https://github.com/convertigo/c8osdk-angular-caf
-navParams: NavParams | The Ionic NavParams. You can access navParams.data to get the data pushed along a page
+navParams: NavParams | The navigation parameters. You can access navParams.data to get the data pushed along a page (provided by the Convertigo template since 8.4, by Ionic in previous templates)
 loadingCtrl: LoadingController | The Ionic NavControler. You can use this to perform your custom navigation, for example to push a Page on the stack.
 sanitizer: DomSanitizer | Angular Utility
 ref: ChangeDetectorRef | Angular Utility
