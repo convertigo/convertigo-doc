@@ -36,6 +36,8 @@ With `sampleMobileRetailStore`:
 - Expand a requestable (for example `fill_server_database`).
 - Choose a response format (`JSON`, `XML`, `BIN`, `CXML`) and run it with **Execute**.
 - Use the visibility filters to show or hide private/hidden/public requestables.
+- Copy a request as a URL, a cURL command, a JavaScript `fetch` call or a POST body to reuse it outside the Dashboard.
+- Expand the result panel to the full available height to read large responses.
 
 {% include image.html file="guide_img/dashboard-02-backend-view-for-samplemobileretailstore.png" caption="Figure: Backend view for sampleMobileRetailStore" %}
 
