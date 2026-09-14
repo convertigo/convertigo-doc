@@ -120,6 +120,23 @@ Click __Preview >__ button and follow the wizard to the end. If successful, you 
 
 For library compatibility branches, project versions, immutable dependency tags and tag-triggered CI releases, see [Versioning and release best practices](./versioning-and-releases/).
 
+## Restricting project files served over HTTP
+
+Files stored in a project folder are served over HTTP under `/convertigo/projects/<ProjectName>/`. The engine already refuses to serve project descriptors (`c8oProject.yaml`, `_c8oProject`), the `libs` and `.git` folders and the `_private` folder.
+
+Since Convertigo 8.4.4, a project can also contain a `.httpignore` file at its root to hide additional files and directories. It uses the same pattern syntax as a `.gitignore` file (one pattern per line, `#` comments, `*` and `**` wildcards, trailing `/` for directories, `!` to negate a pattern). Matching files, and everything under a matching directory, are answered with an HTTP 404 error. The `.httpignore` file itself is never served.
+
+For example:
+
+```
+# never serve documentation sources and test data
+docs/
+*.md
+fixtures/**/*.json
+```
+
+The file is read again automatically when it changes, so no project reload is needed. It is part of the project and can be committed to Git and shipped in the `.car` archive.
+
 ## Setting up gradle tasks
  
 To enable __Continuious Integration__ build, you have to add __Gradle__ resources to your Convertigo project. Gradle is a tool use to build and to perform some tasks.
