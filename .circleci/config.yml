@@ -15,7 +15,7 @@ jobs:
         command: |
           export DEBIAN_FRONTEND=noninteractive
           apt-get update
-          apt-get install -y --no-install-recommends s3cmd
+          apt-get install -y --no-install-recommends s3cmd awscli
           bundle install
     - run:
         name: Build documentation
@@ -35,6 +35,24 @@ jobs:
           fi
           echo Pushing to -${VERS}-
           s3cmd sync --no-mime-magic -P _site/* ${DESTINATION}/${VERS}/
+          echo "export VERS=${VERS}" >> $BASH_ENV
+    - run:
+        name: Invalidate the CloudFront cache
+        command: |
+          if [ -z "${CLOUDFRONT_DISTRIBUTION_ID:-}" ] ; then
+            echo "CLOUDFRONT_DISTRIBUTION_ID is not set, skipping the CloudFront invalidation"
+            exit 0
+          fi
+          PATHS="[\"/documentation/${VERS}/*\"]"
+          if [ "$CIRCLE_BRANCH" = "master" ] ; then
+            PATHS="[\"/documentation/${VERS}/*\", \"/documentation/latest/*\"]"
+          fi
+          QUANTITY=$(echo "$PATHS" | tr -cd ',' | wc -c)
+          QUANTITY=$((QUANTITY + 1))
+          echo "Invalidating ${PATHS} on ${CLOUDFRONT_DISTRIBUTION_ID}"
+          aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
+            --invalidation-batch "{\"Paths\":{\"Quantity\":${QUANTITY},\"Items\":${PATHS}},\"CallerReference\":\"${CIRCLE_BRANCH}-${CIRCLE_SHA1}-${CIRCLE_BUILD_NUM}\"}" \
+            --query "Invalidation.Id" --output text
   forward_master_manual_changes:
     docker:
     - image: cimg/base:stable
@@ -57,7 +75,15 @@ workflows:
   version: 2
   all:
     jobs:
-    - build
+    - build:
+        # Documentation is built and published only for the long-lived branches;
+        # released versions (X.Y.x) are published from master.
+        filters:
+          branches:
+            only:
+            - master
+            - hotfix
+            - develop
     - forward_master_manual_changes:
         requires:
         - build
