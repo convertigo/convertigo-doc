@@ -661,6 +661,10 @@ Edit the session parameters in Session management tab. This tab can be opened by
 - **Default session TTL in seconds when no timeout is specified** : Default session lifetime when no explicit timeout is set.
 - **Disable SSL certificate validation for internal admin forwarding** : Disables certificate validation for internal admin forwarding only.
 
+{{site.data.alerts.note}}
+Since Convertigo 8.4.4, Redis-backed sessions preserve <code>java.util.Properties</code> and W3C DOM values (<code>Document</code>, <code>Element</code>, <code>Node</code>, <code>NodeList</code>) stored as session attributes. Restored DOM values are detached copies of the original nodes.
+{{site.data.alerts.end}}
+
 ## Connections
 
 The left menu contains a link to the **Connections** page. This page displays real-time activity on the Convertigo Server.
@@ -999,6 +1003,10 @@ Use the filter/search icons inside the table toolbar to refine loaded rows witho
 
 {{site.data.alerts.tip}}
 When troubleshooting a single request, start from Connections page actions (open logs for a session/context), then refine in Logs using `contextid`, `uid` or `uuid`.
+{{site.data.alerts.end}}
+
+{{site.data.alerts.note}}
+Since Convertigo 8.4.4, the viewer keeps at most a configurable number of lines in the browser (<b>Maximum loaded lines</b> in the <b>Viewer Configuration</b> block of the <b>Log Levels</b> mode, default <code>100000</code>): the oldest lines are discarded when this limit is reached, so that long live sessions do not grow the memory of the browser without limit. Live viewers also continue seamlessly when the engine log file is rotated.
 {{site.data.alerts.end}}
 
 ### Purge mode
