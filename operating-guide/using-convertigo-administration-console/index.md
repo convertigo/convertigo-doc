@@ -874,6 +874,11 @@ Top-level actions are:
 
 - **Install a new certificate**
 - **Remove a certificate**
+- **Export** and **Import** (since Convertigo 8.4.4)
+
+#### Exporting and importing certificates
+
+Since Convertigo 8.4.4, certificates can be exported as an archive that contains the certificate files together with their configuration (type, password, group) and their project mappings, then imported on another Convertigo Server. When importing, choose either to **Merge** the archive content with the existing entries or to **Replace** them (all current certificate entries and files are replaced by the archive content).
 
 #### Installing a certificate
 
@@ -1229,6 +1234,10 @@ Use this table to:
 - create a **New Scheduled Job** association,
 - enable/disable, edit, or delete existing scheduled jobs,
 - check the **Info** status to see whether the scheduled job is ready to run.
+
+### Exporting and importing the scheduler configuration
+
+Since Convertigo 8.4.4, the Scheduler page provides **Export** and **Import** actions to back up the jobs, schedules and scheduled jobs, or to migrate them to another Convertigo Server. When importing a file, choose either to **Merge** its content with the existing elements (in case of name conflict, the priority is given to the server elements or to the file elements, as selected) or to **Replace** all current scheduler elements by the file content.
 
 ### Typical workflow
 
