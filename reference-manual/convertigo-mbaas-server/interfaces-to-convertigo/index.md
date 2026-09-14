@@ -211,6 +211,10 @@ Table 4 - 5: Web connector-specific engine reserved parameters
 
 {% include /page_part/mbserv_interfacestoc8o_tables.html content='2' %}
 
+{{site.data.alerts.note}}
+Since Convertigo 8.4.4, HTTP transactions (HTTP, XML HTTP, JSON HTTP and Download HTTP) control how a request may override their target. On transactions whose accessibility is <b>Public</b> or <b>Hidden</b>, the <code>__uri</code> parameter is ignored unless the <b>Allowed __uri Override</b> expert property is set to <code>relative</code> or <code>absolute</code>, and a <code>__header_&lt;headerName&gt;</code> parameter is honored only for a declared <code>__header_&lt;headerName&gt;</code> variable unless <b>Allow Undeclared __header_ Override</b> is set to <code>true</code>. Ignored overrides are reported as WARN lines in the engine log, naming the transaction and the property to set. Private transactions, which are only called from sequences, keep the legacy behavior. Download HTTP transactions now always write inside their configured folder: a filename taken from the response <code>Content-Disposition</code> header is reduced to its base name, and a destination resolved outside the folder makes the transaction fail.
+{{site.data.alerts.end}}
+
 See also the *__body* and the *__contentType* reserved HTTP single-valued variable documentation in chapter 2 of this manual.
 
 #### Legacy emulator-specific reserved parameters
