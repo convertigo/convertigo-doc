@@ -775,6 +775,10 @@ In the deploy dialog, either drop a `.car`/`.zip` archive or use file selection.
 
 If a project with the same name already exists, deployment updates the project on the server.
 
+{{site.data.alerts.note}}
+A <code>&lt;ProjectName&gt;.car</code> archive placed in the <code>projects</code> directory of the workspace is still deployed automatically at engine startup. Since Convertigo 8.4.4, a CAR archive found in this directory (or uploaded through the console) is removed after a successful deployment and kept when the deployment fails, so that it is not deployed again at the next restart. Deleting a project also removes the matching CAR archives of this directory, even when their filename carries a version.
+{{site.data.alerts.end}}
+
 #### Importing a project from URL
 
 ##### To import a project from a remote URL
@@ -787,6 +791,10 @@ In the import dialog, enter one of the supported formats:
 - a Convertigo archive HTTP(S) URL
 
 Click **Import** to start the remote import.
+
+{{site.data.alerts.note}}
+Importing a project from a URL requires the <b>Projects</b> <b>Config</b> role (or the Web Admin role). Since Convertigo 8.4.4, the read-only <b>Projects</b> <b>View</b> role can no longer import projects.
+{{site.data.alerts.end}}
 
 #### Reloading a project
 
