@@ -50,7 +50,7 @@ jobs:
           QUANTITY=$(echo "$PATHS" | tr -cd ',' | wc -c)
           QUANTITY=$((QUANTITY + 1))
           echo "Invalidating ${PATHS} on ${CLOUDFRONT_DISTRIBUTION_ID}"
-          aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
+          aws --no-cli-pager cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
             --invalidation-batch "{\"Paths\":{\"Quantity\":${QUANTITY},\"Items\":${PATHS}},\"CallerReference\":\"${CIRCLE_BRANCH}-${CIRCLE_SHA1}-${CIRCLE_BUILD_NUM}\"}" \
             --query "Invalidation.Id" --output text
   forward_master_manual_changes:
