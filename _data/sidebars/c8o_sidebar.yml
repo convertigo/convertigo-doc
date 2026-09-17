@@ -49,6 +49,9 @@ entries:
     - title: Installing Convertigo Server
       url: /operating-guide/installing-convertigo-server/
       output: web, pdf
+    - title: Production deployment recommendations
+      url: /operating-guide/production-deployment-recommendations/
+      output: web, pdf
     - title: Using Convertigo Administration Console
       url: /operating-guide/using-convertigo-administration-console/
       output: web, pdf
