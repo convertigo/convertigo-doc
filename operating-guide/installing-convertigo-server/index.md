@@ -125,10 +125,10 @@ COOKIE_SAMESITE|Allow to configure the SameSite parameter for generated cookies.
 
 #### Custom certificate authorities
 
-To trust private root or intermediate certificate authorities for outbound TLS connections, mount a directory of certificate files (PEM or DER) read-only at `/cacerts`; the certificates are imported into a dedicated JVM truststore at startup. See the [Convertigo Docker Hub](https://hub.docker.com/_/convertigo) page for details.
+To trust private root or intermediate certificate authorities for outbound TLS connections, set the `USE_SYSTEM_CA_CERTS` environment variable and mount the certificates (PEM files with a `.crt` extension) read-only at `/certificates`. The Eclipse Temurin entrypoint of the base image then imports them into a copy of the JVM truststore at startup, without modifying the JDK installation. See the [Convertigo Docker Hub](https://hub.docker.com/_/convertigo) page for details.
 
 ```shell
-$ docker run --name C8O -v $(pwd)/custom-ca:/cacerts:ro -d -p 28080:28080 convertigo
+$ docker run --name C8O -e USE_SYSTEM_CA_CERTS=1 -v $(pwd)/custom-ca:/certificates:ro -d -p 28080:28080 convertigo
 ```
 
 ### Pre configurated Docker compose stack
