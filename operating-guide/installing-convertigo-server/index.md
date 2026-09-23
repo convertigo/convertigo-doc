@@ -57,7 +57,7 @@ If you need fullsync functions, Convertigo FullSync module uses Apache CouchDB a
 Launch CouchDB container and name it ***fullsync***
 
 ```shell
-$ docker run -d --name fullsync couchdb:2.3.1
+$ docker run -d --name fullsync couchdb:3.5
 ```
 
 Then launch Convertigo and link it to the running ***fullsync*** container. Convertigo server will automatically uses it as its fullsync repository:
