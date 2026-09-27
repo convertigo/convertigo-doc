@@ -20,4 +20,4 @@ Property | Type | Category | Description
 --- | --- | --- | ---
 Comment | String | standard | Describes the object comment to include in the documentation report.<br/>This property generally contains an explanation about the object.
 Engine QName | String | standard | Defines the Convertigo project and script used as the Flow engine runtime.
-Engine source | String | standard | Defines the project-level Flow engine source stored in libs/flow/engine.yaml.
+Engine source | String | standard | Defines the project-level Flow engine source stored in _flow/engine.yaml.
