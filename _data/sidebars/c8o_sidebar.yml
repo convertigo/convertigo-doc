@@ -94,6 +94,9 @@ entries:
     - title: Installing Convertigo no-code Forms Standalone
       url: /no-code-forms/using-c8o-forms-standalone/
       output: web, pdf
+    - title: Administering Convertigo No Code Studio
+      url: /no-code-forms/administration/
+      output: web, pdf
     - title: Providing backend services to Convertigo no-code Forms
       url: /no-code-forms/creating-data-for-c8o-forms/
       output: web, pdf
