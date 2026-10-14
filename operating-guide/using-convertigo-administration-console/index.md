@@ -657,12 +657,17 @@ Couch DB username and password properties are set to <b>empty</b> as default val
 Edit the session parameters in Session management tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
 
 - **Server-side store for session data (tomcat, redis)** : Chooses where server-side session data is stored.
-- **Redis hostname used by the session manager** : Defines Redis host for session storage.
-- **Redis port used by the session manager** : Defines Redis port for session storage.
-- **Redis username (optional)** : Optional Redis username.
-- **Redis password (optional)** : Optional Redis password.
+- **Redis topology for sessions and contexts (single, sentinel)** (`session.redis.topology`, 8.4.7+) : Selects a single Redis endpoint or master discovery through Redis Sentinel. The default is `single`.
+- **Redis Sentinel monitored master name (required in sentinel mode)** (`session.redis.sentinel.master`, 8.4.7+) : Name of the master group declared in Sentinel. Empty by default; required for the `sentinel` topology.
+- **Redis Sentinel seed nodes** (`session.redis.sentinel.nodes`, 8.4.7+) : Comma-separated `host:port` addresses used to discover the master and other Sentinels. Empty by default; required for the `sentinel` topology. Whitespace separators and bracketed IPv6 addresses such as `[2001:db8::1]:26379` are also accepted. Do not include credentials in these addresses.
+- **Redis Sentinel ACL username (optional, distinct from the Redis data username)** (`session.redis.sentinel.username`, 8.4.7+) : Optional username for Convertigo to authenticate to Sentinel. Empty by default; independent of the Redis data username.
+- **Redis Sentinel password** (`session.redis.sentinel.password`, 8.4.7+) : Optional password for Convertigo to authenticate to Sentinel. Empty by default; when Sentinel requires authentication, an empty value uses the Redis data password instead. A separate Sentinel password can be configured.
+- **Redis hostname used by the session manager in single mode** (`session.redis.host`) : Defines the Redis host for the `single` topology. Ignored in `sentinel` mode.
+- **Redis port used by the session manager in single mode** (`session.redis.port`) : Defines the Redis port for the `single` topology. Ignored in `sentinel` mode.
+- **Redis username (optional)** (`session.redis.username`) : Optional username for Convertigo to authenticate to Redis data nodes (master and replicas).
+- **Redis password (optional)** (`session.redis.password`) : Password for Convertigo to authenticate to Redis data nodes. Protect Redis with authentication in production.
 - **Redis logical database index** : Redis logical database index used for session storage.
-- **Enable SSL/TLS for the Redis connection** : Enables SSL/TLS on the Redis connection.
+- **Enable SSL/TLS for Redis data nodes and Sentinel connections** (`session.redis.ssl`) : Enables SSL/TLS for all Redis data and Sentinel connections. The existing `session.redis.ssl.*` truststore, client keystore, certificate verification and protocol settings apply to both services.
 - **Redis command timeout in milliseconds** : Command timeout used for Redis operations.
 - **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions.
 - **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients.
@@ -672,6 +677,74 @@ Edit the session parameters in Session management tab. This tab can be opened by
 {{site.data.alerts.note}}
 Since Convertigo 8.4.4, Redis-backed sessions preserve <code>java.util.Properties</code> and W3C DOM values (<code>Document</code>, <code>Element</code>, <code>Node</code>, <code>NodeList</code>) stored as session attributes. Restored DOM values are detached copies of the original nodes.
 {{site.data.alerts.end}}
+
+#### Redis Sentinel (8.4.7+)
+
+Select `redis` as the session store and `sentinel` as the Redis topology to connect
+to an externally managed Redis/Sentinel deployment. The default `single` topology
+keeps the existing behavior. The Sentinel properties are advanced Session
+management settings; follow the procedure [To access the advanced properties of
+a configuration category](#to-access-the-advanced-properties-of-a-configuration-category)
+to display them.
+
+For example, the non-secret JVM connection settings are:
+
+```text
+-Dconvertigo.engine.session.store.mode=redis
+-Dconvertigo.engine.session.redis.topology=sentinel
+-Dconvertigo.engine.session.redis.sentinel.master=mymaster
+-Dconvertigo.engine.session.redis.sentinel.nodes=sentinel-0.redis.svc.cluster.local:26379,sentinel-1.redis.svc.cluster.local:26379,sentinel-2.redis.svc.cluster.local:26379
+```
+
+Also configure `session.redis.password` for the protected Redis data nodes and,
+if Sentinel uses different credentials, `session.redis.sentinel.password` and its
+optional ACL username. These passwords authenticate two separate connections:
+**Convertigo to Redis data nodes** and **Convertigo to Sentinel**. They are not the
+Convertigo administration password or the server cryptographic passphrase.
+Sentinel's own credentials for monitoring Redis (`sentinel auth-user` and
+`sentinel auth-pass`) are configured on the Redis/Sentinel deployment, not in
+Convertigo. Keep secrets out of source control and logs; JVM arguments can be
+logged by the server launcher. Restart the server after changing its Redis
+deployment configuration.
+
+{{site.data.alerts.important}}
+The current Redisson client does not support password-protected Sentinel when
+Redis data nodes have no password. Convertigo explicitly rejects this
+configuration. Use authenticated Redis data nodes in production; their password
+and the Sentinel password may be different. Both services without password
+authentication are supported; reserve unprotected deployments for appropriately
+isolated test environments.
+{{site.data.alerts.end}}
+
+Existing database, command timeout, connection pool and key prefix settings remain
+applicable in Sentinel mode. Reads and subscriptions use the current master.
+Convertigo follows master promotion without restarting its Redis clients; sessions,
+contexts, context locks, in-flight request markers and cluster discovery use this
+same client. The administration service `engine.ListInstances` reports the
+configured topology, monitored master name, seed nodes, current master address and
+Redis reachability. Requests can wait or fail during election.
+
+{{site.data.alerts.warning}}
+Redis replication is asynchronous. A promoted replica can lose acknowledged
+writes that had not yet replicated, including session changes, locks and in-flight
+request markers. Sentinel does not guarantee exactly-once business execution;
+retry-sensitive operations need application-level protection.
+{{site.data.alerts.end}}
+
+All advertised addresses, including promoted replicas and discovered Sentinels,
+must be reachable from Convertigo. With TLS/mTLS, all nodes must expose TLS and
+trust the configured client certificate where required. With strict certificate
+verification, each advertised hostname or IP address must match its certificate.
+Mixed plaintext/TLS data and Sentinel topologies are not supported.
+
+The [Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/develop/stable/convertigo)
+exposes these client settings under `sessionStore.redis.topology` and
+`sessionStore.redis.sentinel.*`. Set `sessionStore.mode=redis` and
+`redis.enabled=false`, and select a Convertigo image supporting Sentinel (8.4.7+).
+Deploy Redis/Sentinel using a dedicated chart or an existing Sentinel service;
+the Convertigo chart does not install Sentinel. A production topology should have
+at least three Sentinels with quorum two, Redis replicas and nodes distributed
+across failure domains. See the [Redis Sentinel documentation](https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/).
 
 ## Connections
 
