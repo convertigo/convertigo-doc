@@ -672,6 +672,8 @@ Edit the session parameters in Session management tab. This tab can be opened by
 - **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions.
 - **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients.
 - **Default session TTL in seconds when no timeout is specified** : Default session lifetime when no explicit timeout is set.
+- **When Redis is unreachable at startup** (`session.redis.startup.fallback`, 8.4.7+) : `none` (default) or `tomcat`. See [Redis unreachable](#redis-unreachable-847).
+- **Seconds Redis can be unreachable before the supervision reports KO** (`session.redis.readiness.grace`, 8.4.7+) : Delay before a lost Redis connection is reported as `convertigo.session.store=KO`. The default is `60`.
 - **Disable SSL certificate validation for internal admin forwarding** : Disables certificate validation for internal admin forwarding only.
 
 {{site.data.alerts.note}}
@@ -775,6 +777,35 @@ Deploy Redis/Sentinel using a dedicated chart or an existing Sentinel service;
 the Convertigo chart does not install Sentinel. A production topology should have
 at least three Sentinels with quorum two, Redis replicas and nodes distributed
 across failure domains. See the [Redis Sentinel documentation](https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/).
+
+#### Redis unreachable (8.4.7+)
+
+When `redis` is the session store, the `engine.Supervision` service
+(`/convertigo/admin/services/engine.Supervision`) reports the state of the store
+in a `convertigo.session.store` line:
+
+- `OK`: sessions are stored in Redis (also reported with the `tomcat` store);
+- `KO`: Redis is not usable, the instance should not receive traffic;
+- `DEGRADED`: the instance uses local sessions after a failed startup (`tomcat` fallback).
+
+If Redis cannot be reached when Convertigo starts, `session.redis.startup.fallback`
+selects the behavior:
+
+| Value | Behavior |
+| --- | --- |
+| `none` (default) | Convertigo retries in background (increasing delay, up to 30 seconds) and reports `KO`. Requests that need a session receive an HTTP `503` with a `Retry-After` header; stateless requests are served. Once Redis is reachable, Convertigo uses it without restart, reports `OK` and shares its sessions with the other instances. |
+| `tomcat` | No retry: Convertigo keeps its sessions in memory until it is restarted and reports `DEGRADED`. Sessions are not shared with the other instances: use it only with a single instance or sticky sessions. |
+
+Once connected, Convertigo keeps reporting `OK` while Redis is unreachable for less
+than `session.redis.readiness.grace` seconds (60 by default), so that a Sentinel
+failover does not remove every instance from the load balancer; it then reports
+`KO` until Redis is reachable again. Requests that need Redis wait during this time.
+
+Use this line for the readiness of the instance, not for its liveness: restarting
+Convertigo does not make Redis reachable. The
+[Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo#redis-unreachable-at-startup)
+configures its readiness probe this way and exposes these settings as
+`sessionStore.redis.startupFallback` and `sessionStore.redis.readinessGrace`.
 
 ## Connections
 
