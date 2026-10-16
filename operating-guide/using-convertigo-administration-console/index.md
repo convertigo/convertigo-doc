@@ -754,6 +754,10 @@ sentinel announce-hostnames yes
 sentinel announce-ip sentinel-1.redis-headless.<namespace>.svc.cluster.local
 ```
 
+A tested Kubernetes example (Redis and Sentinel in mTLS with the CloudPirates Redis
+chart, Convertigo chart values, rolling procedure and measured failover times) is
+available in the [Convertigo Helm repository](https://github.com/convertigo/convertigo-helm/tree/develop/examples/redis-sentinel).
+
 If the Redis deployment cannot advertise host names, set
 `session.redis.ssl.verification.mode=CA_ONLY`: the certificate chain is still
 validated and mTLS still requires the client certificate, but the host name is not
