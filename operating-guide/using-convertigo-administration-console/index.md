@@ -672,8 +672,8 @@ Edit the session parameters in Session management tab. This tab can be opened by
 - **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions.
 - **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients.
 - **Default session TTL in seconds when no timeout is specified** : Default session lifetime when no explicit timeout is set.
-- **When Redis is unreachable at startup** (`session.redis.startup.fallback`, 8.4.7+) : `none` (default) or `tomcat`. See [Redis unreachable](#redis-unreachable-847).
-- **Seconds Redis can be unreachable before the supervision reports KO** (`session.redis.readiness.grace`, 8.4.7+) : Delay before a lost Redis connection is reported as `convertigo.session.store=KO`. The default is `60`.
+- **When Redis is unreachable at startup: none (retry until reachable, not ready meanwhile) or tomcat (local sessions until restart)** (`session.redis.startup.fallback`, 8.4.7+) : Advanced property. The default is `none`. See [Redis unreachable](#redis-unreachable-847).
+- **Seconds Redis can be unreachable, once connected, before the supervision reports the session store as KO** (`session.redis.readiness.grace`, 8.4.7+) : Advanced property. The default is `60`. See [Redis unreachable](#redis-unreachable-847).
 - **Disable SSL certificate validation for internal admin forwarding** : Disables certificate validation for internal admin forwarding only.
 
 {{site.data.alerts.note}}
@@ -789,7 +789,9 @@ in a `convertigo.session.store` line:
 - `DEGRADED`: the instance uses local sessions after a failed startup (`tomcat` fallback).
 
 If Redis cannot be reached when Convertigo starts, `session.redis.startup.fallback`
-selects the behavior:
+selects the behavior. It is an advanced Session management property, applied when
+the session store starts, and can also be set as a JVM option
+(`-Dconvertigo.engine.session.redis.startup.fallback=tomcat`).
 
 | Value | Behavior |
 | --- | --- |
@@ -800,6 +802,8 @@ Once connected, Convertigo keeps reporting `OK` while Redis is unreachable for l
 than `session.redis.readiness.grace` seconds (60 by default), so that a Sentinel
 failover does not remove every instance from the load balancer; it then reports
 `KO` until Redis is reachable again. Requests that need Redis wait during this time.
+A load balancer or a readiness probe removes the instance after this delay plus its
+own failure threshold.
 
 Use this line for the readiness of the instance, not for its liveness: restarting
 Convertigo does not make Redis reachable. The
