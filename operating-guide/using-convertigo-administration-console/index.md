@@ -737,6 +737,32 @@ trust the configured client certificate where required. With strict certificate
 verification, each advertised hostname or IP address must match its certificate.
 Mixed plaintext/TLS data and Sentinel topologies are not supported.
 
+Unless configured otherwise, Sentinel advertises the master, the replicas and the
+other Sentinels by IP address, while certificates usually list host names. With
+the default `STRICT` verification, the connection is then refused and the server
+log shows `No subject alternative names matching IP address ...`. Make every node
+advertise a host name present in its certificate, for example the stable DNS name
+of each pod on Kubernetes:
+
+```text
+# on each Redis node
+replica-announce-ip redis-1.redis-headless.<namespace>.svc.cluster.local
+
+# on each Sentinel
+sentinel resolve-hostnames yes
+sentinel announce-hostnames yes
+sentinel announce-ip sentinel-1.redis-headless.<namespace>.svc.cluster.local
+```
+
+If the Redis deployment cannot advertise host names, set
+`session.redis.ssl.verification.mode=CA_ONLY`: the certificate chain is still
+validated and mTLS still requires the client certificate, but the host name is not
+checked.
+
+The time Redis stays unavailable during a failover mainly depends on the Sentinel
+`down-after-milliseconds` and `failover-timeout` settings. Sessions already
+replicated to the promoted replica are kept: users stay signed in.
+
 The [Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/develop/stable/convertigo)
 exposes these client settings under `sessionStore.redis.topology` and
 `sessionStore.redis.sentinel.*`. Set `sessionStore.mode=redis` and
