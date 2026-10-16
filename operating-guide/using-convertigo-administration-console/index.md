@@ -756,7 +756,7 @@ sentinel announce-ip sentinel-1.redis-headless.<namespace>.svc.cluster.local
 
 A tested Kubernetes example (Redis and Sentinel in mTLS with the CloudPirates Redis
 chart, Convertigo chart values, rolling procedure and measured failover times) is
-available in the [Convertigo Helm repository](https://github.com/convertigo/convertigo-helm/tree/develop/examples/redis-sentinel).
+available in the [Convertigo Helm repository](https://github.com/convertigo/convertigo-helm/tree/hotfix/examples/redis-sentinel).
 
 If the Redis deployment cannot advertise host names, set
 `session.redis.ssl.verification.mode=CA_ONLY`: the certificate chain is still
@@ -767,7 +767,7 @@ The time Redis stays unavailable during a failover mainly depends on the Sentine
 `down-after-milliseconds` and `failover-timeout` settings. Sessions already
 replicated to the promoted replica are kept: users stay signed in.
 
-The [Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/develop/stable/convertigo)
+The [Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo)
 exposes these client settings under `sessionStore.redis.topology` and
 `sessionStore.redis.sentinel.*`. Set `sessionStore.mode=redis` and
 `redis.enabled=false`, and select a Convertigo image supporting Sentinel (8.4.7+).
