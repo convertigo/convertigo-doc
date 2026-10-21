@@ -429,7 +429,7 @@ log4j.additivity.cems| ? Log4J root logger additivity| false
 property key | description | default value
 --- | --- | --- 
 net.gzip| Enable GZip response for most text responses (need the header Accept-Encoding: gzip)| true
-net.max-age| Set the Cache-Control: max-age value in seconds, for static resources| 10
+net.max-age| Browser and shared cache lifetime in seconds for non-fingerprinted static resources; application HTML and fingerprinted assets use automatic policies (8.4.7+; previously 10 seconds). [Static HTTP cache policies](../using-convertigo-administration-console/#static-http-cache-847)| 60
 net.reverse_dns| Use DNS reverse search for finding host names| false
 net.upload.max_request_size| Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit.| -1
 net.upload.max_request_size| Maximum allowed size of a single uploaded file (in bytes).| 10485760

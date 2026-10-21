@@ -535,6 +535,34 @@ To explicitly close a session after a Sequence execution add as the last step a 
 
 #### Creating Views on data
 
+A FullSync view contains a map function and, optionally, a reduce function that
+aggregates the emitted values. CouchDB can call a custom reduce function with
+`rereduce = true` to combine partial results. In that case, `values` contains the
+partial aggregates, not the original emitted values: a count function must sum
+those counts rather than return `values.length` again.
+
+##### Checking legacy count functions (8.4.7+)
+
+The default count reduce created by older Studios ignored `rereduce`. A view could
+therefore appear correct in the Studio but return an incorrect count on CouchDB
+once it indexed enough documents, including when querying grouped results.
+
+Since 8.4.7, newly created default count functions handle partial results, and the
+Studio's embedded FullSync also exercises custom reduce functions with
+`rereduce`. **Existing view functions are not migrated automatically.**
+
+To repair an unchanged old default count function in the Eclipse Studio:
+
+1. Open the FullSync connector's design document and its **Views** folder in the project tree.
+2. Select a view marked `(! legacy reduce ignores rereduce !)`.
+3. Right-click the view and choose **Fix legacy count reduce**, then confirm. An open reduce editor is saved and closed before the replacement is checked.
+4. Save the project and redeploy it to the target server to keep and publish the repaired function.
+
+The action only replaces the recognized old default template. If you have
+customized the function, review its `rereduce` behavior yourself; the Studio does
+not overwrite custom logic. For a simple row count, the built-in `_count` reduce
+is another option supported by CouchDB and PouchDB.
+
 #### Monitoring client data changes
 
 ### Miscellaneous backend steps

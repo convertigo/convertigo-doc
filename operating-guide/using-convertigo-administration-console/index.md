@@ -404,7 +404,7 @@ Edit the network parameters in Network tab. This tab can be opened by following 
 
 - **Enable GZip response for most text responses (need the header Accept-Encoding: gzip)** : Enables gzip compression for eligible text responses when the client supports it.
 
-- **Set the Cache-Control: max-age value in seconds, for static resources** : Sets the `max-age` directive used in Cache-Control headers for static resources.
+- **Browser and shared cache lifetime in seconds for non-fingerprinted static resources; application HTML and fingerprinted assets use automatic policies** (`net.max-age`) : Sets the default static-file cache lifetime in seconds. Since 8.4.7, the default is **60** instead of **10**. HTML entry points, recognized fingerprinted files and the bundled Administration Console use the automatic policies described below.
 
 - **Use DNS reverse search for finding host names** : If checked, this option makes Convertigo perform reverse DNS checks on client IP addresses. Resolved client names will then be used along with IP in log files and Connections page.
 
@@ -419,6 +419,40 @@ Check this option only if you are sure the Convertigo Server is able to reach a 
 Since version 6.1.10, Convertigo allows to receive multi-part requests. The programmers can then develop forms that will be used to upload files to Convertigo as input variables of transactions/sequences.<br><br>
 The transactions/sequences variables can be defined as a file upload using the <b>Is a file upload</b> property.
 {{site.data.alerts.end}}
+
+<a id="static-http-cache-847"></a>
+
+#### Static HTTP cache policies (8.4.7+)
+
+Convertigo applies the following browser and shared-cache policies to built
+application files under `DisplayObjects/mobile` or `DisplayObjects/pwas`, and to
+the bundled Administration Console and Dashboard files:
+
+| Resources | Cache-Control policy |
+| --- | --- |
+| Recognized fingerprinted application, Admin and Monaco files (the filename contains a generated content hash) | `public, max-age=31536000, immutable` |
+| Application and Admin HTML entry points, recognized bootstrap/configuration files, manifests and service workers | `no-cache, must-revalidate` |
+| Other static application files without a fingerprint | `public, max-age=<net.max-age>, must-revalidate` (60 seconds by default) |
+| Other bundled Admin/Dashboard static files without a fingerprint | `public, max-age=60, must-revalidate`, independently of `net.max-age` |
+
+Stable Monaco JavaScript entry points also revalidate because they can reference
+version-specific files. These policies preserve an explicit `Cache-Control`
+header already set by the response, including `no-store` fallback policies. They
+do not change sequence, transaction or REST response caching, or the server-side
+requestable cache configured in the [Cache page](#cache-page).
+
+`no-cache` allows a browser to keep a file, but requires it to check with the
+server before reuse; an unchanged file can receive an HTTP `304` response without
+being downloaded again. Fingerprinted files can be reused for a year because
+their URLs change when their contents change.
+
+After a server update, an open Admin or Dashboard page can still refer to an old
+Svelte or Monaco file. When a required local file is confirmed missing (HTTP
+`404` or `410`), a banner offers to **Reload** the page. Save your changes before
+confirming: reloading can discard unsaved edits. The page address is preserved,
+repeated reloads are limited to one per minute per tab, and backend execution
+requests are not replayed automatically. A general network failure does not
+trigger this missing-file recovery.
 
 ### Proxy
 
