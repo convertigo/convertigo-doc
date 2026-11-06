@@ -176,6 +176,7 @@
         <td>Allows to dynamically change the value of the Sub path property of the requested HTTP transaction.
             {{site.data.alerts.warning}}At the end of the transaction execution, the Sub path property is set back to its original value{{site.data.alerts.end}}
             Since Convertigo 8.4.4, this parameter is ignored by default on Public or Hidden HTTP transactions (a WARN line is written in the engine log). It must be enabled with the transaction's <strong>Allowed __uri Override</strong> property: <code>deny</code> (default) ignores the parameter, <code>relative</code> accepts it only as a sub path (a value starting with <code>http</code> is ignored), <code>absolute</code> accepts a full URL. Private transactions keep the legacy behavior.
+            Since 8.4.7, this property also controls followed HTTP redirects, even without a <code>__uri</code> parameter: see <a href="#http-redirects-847">HTTP transaction redirects</a>.
         </td>
     </tr>
     <tr>

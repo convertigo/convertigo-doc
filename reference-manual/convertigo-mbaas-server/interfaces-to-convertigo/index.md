@@ -239,10 +239,42 @@ Table 4 - 5: Web connector-specific engine reserved parameters
 {% include /page_part/mbserv_interfacestoc8o_tables.html content='2' %}
 
 {{site.data.alerts.note}}
-Since Convertigo 8.4.4, HTTP transactions (HTTP, XML HTTP, JSON HTTP and Download HTTP) control how a request may override their target. On transactions whose accessibility is <b>Public</b> or <b>Hidden</b>, the <code>__uri</code> parameter is ignored unless the <b>Allowed __uri Override</b> expert property is set to <code>relative</code> or <code>absolute</code>, and a <code>__header_&lt;headerName&gt;</code> parameter is honored only for a declared <code>__header_&lt;headerName&gt;</code> variable unless <b>Allow Undeclared __header_ Override</b> is set to <code>true</code>. Ignored overrides are reported as WARN lines in the engine log, naming the transaction and the property to set. Private transactions, which are only called from sequences, keep the legacy behavior. Download HTTP transactions now always write inside their configured folder: a filename taken from the response <code>Content-Disposition</code> header is reduced to its base name, and a destination resolved outside the folder makes the transaction fail.
+Since Convertigo 8.4.4, HTTP transactions (HTTP, XML HTTP, JSON HTTP and Download HTTP) control how a request may override their target. On transactions whose accessibility is <b>Public</b> or <b>Hidden</b>, the <code>__uri</code> parameter is ignored unless the <b>Allowed __uri Override</b> expert property is set to <code>relative</code> or <code>absolute</code>, and a <code>__header_&lt;headerName&gt;</code> parameter is honored only for a declared <code>__header_&lt;headerName&gt;</code> variable unless <b>Allow Undeclared __header_ Override</b> is set to <code>true</code>. Ignored overrides are reported as WARN lines in the engine log, naming the transaction and the property to set. Private transactions keep the legacy override behavior; HTTP calls to them require the administrator session described <a href="#private-requestables-847">above</a>. Download HTTP transactions now always write inside their configured folder: a filename taken from the response <code>Content-Disposition</code> header is reduced to its base name, and a destination resolved outside the folder makes the transaction fail.
 {{site.data.alerts.end}}
 
 See also the *__body* and the *__contentType* reserved HTTP single-valued variable documentation in chapter 2 of this manual.
+
+<a id="http-redirects-847"></a>
+
+##### HTTP transaction redirects (8.4.7+)
+
+The **Follow Redirect** property (`followRedirect`) is `true` by default. Since
+8.4.7, each followed redirect must also satisfy the transaction's **Allowed __uri
+Override** expert property (`allowedUriOverride`), even if the caller has not
+supplied a `__uri` parameter.
+
+For Public and Hidden HTTP, XML HTTP, JSON HTTP and Download HTTP transactions:
+
+| Allowed __uri Override | Followed redirects |
+| --- | --- |
+| `deny` (default) | Only destinations with the same origin as the current request. The caller's `__uri` parameter remains ignored. |
+| `relative` | Only destinations with the same origin. A caller-supplied `__uri` may change the sub path, not the origin. |
+| `absolute` | Destinations on another HTTP or HTTPS origin are also allowed. A caller-supplied `__uri` may replace the whole URL. |
+
+An origin consists of the scheme, host and effective port (80 for HTTP and 443
+for HTTPS when no port is specified). For example, a redirect from HTTP to HTTPS
+changes the origin even when the host stays the same. For a Public or Hidden
+transaction that needs to follow such a redirect, set **Allowed __uri Override**
+to `absolute`; this also permits full URL overrides through `__uri`.
+
+Private transactions can follow redirects to another origin regardless of this
+property. All transactions require redirect destinations to use `http` or
+`https`, have a host and contain no user information (credentials in the URL).
+A destination that does not meet these rules raises an execution error instead
+of being followed.
+
+If **Follow Redirect** is `false`, no redirect is followed. Enable **HTTP info**
+(`httpInfo`) to inspect the response status and headers.
 
 #### Legacy emulator-specific reserved parameters
 
