@@ -256,6 +256,39 @@ The analytics feature is available in Convertigo Server, as well as for the Conv
 
 The analytics feature consists in writing in a database one entry, also known as **ticket**, for each executed transaction or sequence. This is useful to monitor the Convertigo Server’s activity. The analytics feature produces the raw data, but the management and treatment of these data has to be manually performed and personalized by each Convertigo administrator.
 
+<a id="analytics-queues-847"></a>
+
+### Analytics queues (8.4.7+)
+
+Each active analytics ticket manager has its own queue and writer. A slow
+destination can fill its queue without delaying the other managers or making
+application requests wait for analytics writes.
+
+`billing.queue.capacity` limits the number of tickets waiting in **each** queue.
+The default is **100000** tickets per manager. When a queue is full, additional
+tickets for that manager are dropped and counted. The billers log reports these
+drops at most once a minute during normal operation, with a final report when
+the queue closes. Increasing the capacity can absorb a temporary backlog but
+also allows more memory to be used; it does not increase the destination's
+write rate.
+
+This engine property is not displayed in the Administration Console. Set it at
+JVM startup, for example:
+
+```text
+-Dconvertigo.engine.billing.queue.capacity=100000
+```
+
+Use a positive integer. An invalid integer falls back to `100000`; a value less
+than `1` is treated as `1`. The capacity is read when the queues are created;
+restart the engine after changing the startup setting.
+
+Tickets are written asynchronously in batches of up to 500. An idle writer waits
+up to 100 ms for new tickets; a backlog or a slow destination can delay delivery
+further. At engine shutdown or when analytics settings replace the managers,
+each closing queue has a five-second drain period. Tickets still waiting after
+that period are dropped and counted, so delivery at shutdown is not guaranteed.
+
 ### Ticket content
 
 For each execution of a transaction or sequence, a ticket is inserted in the database. The Ticket table contains the following columns:
@@ -493,6 +526,7 @@ property key | description | default value
 --- | --- | ---
 billing.enabled| Enable persistence analytics (JDBC)| false
 billing.google.enabled| Enable google analytics| false
+billing.queue.capacity| Maximum number of analytics tickets waiting per ticket manager (8.4.7+); additional tickets are dropped and counted. [Analytics queues](#analytics-queues-847)| 100000
 billing.persistence.dialect| Persistence SQL Dialect| org.hibernate.dialect.MySQL5InnoDBDialect
 billing.persistence.jdbc.driver| Persistence JDBC driver| org.mariadb.jdbc.Driver
 billing.persistence.jdbc.password| Persistence JDBC password| 

@@ -545,6 +545,11 @@ Cache cleaning process is the deletion of expired cache entries, found using the
 
 Configure analytics persistence and Google Analytics integration in the Analytics tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
 
+Since 8.4.7, each active analytics ticket manager uses a separate bounded queue.
+The engine property `billing.queue.capacity` defaults to `100000` tickets per
+manager and is not displayed in this tab. See [Analytics queues](../appendixes/#analytics-queues-847)
+for configuration, overflow handling and shutdown behavior.
+
 This tab includes an Advanced properties section that can be opened by following the procedure [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category). 
 In the Advanced properties section, configure the advanced parameters of the analytics feature, i.e. all properties defining the database into which the tickets are stored.
 
