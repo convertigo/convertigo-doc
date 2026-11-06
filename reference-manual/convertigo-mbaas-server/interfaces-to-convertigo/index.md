@@ -221,7 +221,14 @@ The following is the engine reserved parameter specific to JSONP requester and i
 Table 4 - 4: JSONP specific engine reserved parameters
 
 Parameter name | Description
-__callback | Defines the name of the client application function to call back after the Convertigo request execution on a cross-domain platform.
+--- | ---
+__callback | Defines the name of the client application function to call back after the Convertigo request execution on a cross-domain platform. Since 8.4.7, only simple or dot-separated JavaScript identifier names are accepted, as described below.
+
+Each part of the callback name must start with an ASCII letter, `_` or `$`,
+followed by zero or more ASCII letters, digits, `_` or `$`. For example, `cb` and
+`app.handlers.done` are accepted. An invalid name is ignored and a warning is
+logged. If `__callback` is omitted or ignored, the response contains JSON without
+a callback wrapper.
 
 #### Web connector-specific reserved parameters
 

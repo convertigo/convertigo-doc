@@ -94,7 +94,12 @@
     </tr>
     <tr>
         <td>__content_type</td>
-        <td>Overrides the Content-type HTTP header value of the Convertigo response for the REST requesters (.xml, .pxml, .json).</td>
+        <td>Overrides the Content-Type HTTP header of the Convertigo response (including the .xml, .pxml, .json and .bin requesters).
+            Since Convertigo 8.4.7, only <code>text/plain</code>, <code>application/json</code> and <code>application/octet-stream</code> are accepted.
+            Matching ignores case and surrounding whitespace; additional MIME parameters such as <code>; charset=UTF-8</code> are not accepted.
+            If the parameter is omitted or its value is not accepted, the response keeps the content type set by the requestable or computed by the engine.
+            This changes the response header, not the response data format.
+        </td>
     </tr>
     <tr>
         <td>__lang</td>
