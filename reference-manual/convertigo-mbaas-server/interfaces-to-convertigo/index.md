@@ -11,6 +11,7 @@ permalink: /reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/
 Convertigo projects contain "requestable" objects, transactions and sequences, that can be invoked by HTTP protocol. This section describes possible URLs to access Convertigo projects and all reserved variables usable in these URLs.
 
 - [Convertigo URLs](#convertigo-urls)
+- [Calling private requestables](#private-requestables-847)
 - [Convertigo reserved parameters](#convertigo-reserved-parameters)
 
 ### Convertigo URLs
@@ -59,6 +60,25 @@ For example, with a project named *test_project* in a local Convertigo Studio:
 - Depending on the HTTP verb used in the request, the response may be different: *HEAD* verb will only return headers in response (following HTTP specifications).
 
 ##### 5. The client (web browser or application) retrieves and manages the response, also depending on the invoked requester and the project’s parametrization.
+
+<a id="private-requestables-847"></a>
+
+#### Calling private requestables (8.4.7+)
+
+A sequence or transaction whose **Accessibility** property is **Private** requires
+an administrator session with the `TEST_PLATFORM_PRIVATE` role when called over
+HTTP. Since 8.4.7, this rule also applies to the engine embedded in the Studio.
+An anonymous caller or an application-authenticated user without this role
+cannot execute a private requestable.
+
+When testing from a script or another HTTP client, authenticate as an
+administrator first and retain that session's cookie for the subsequent calls.
+The Studio's test platform and administration views use an administrator session.
+Execution from Studio editors, scheduled jobs and internal *Call Sequence* or
+*Call Transaction* steps remains available.
+
+This change does not alter the **Accessibility** default (`Public`) or the
+behavior of Public and Hidden requestables.
 
 #### Convertigo Requesters
 
