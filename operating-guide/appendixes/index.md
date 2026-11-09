@@ -348,6 +348,19 @@ org.mariadb.jdbc.Driver | MariaDB database, community-developed fork of MySQL | 
 
 To set a Java System Property when the JVM is launched, just add -Dconvertigo.engine.{property key}={property value}.
 
+### Encrypted engine properties (8.4.7+)
+
+Password properties marked as encrypted are stored encrypted when the engine
+configuration is saved. Since 8.4.7, a value already written as plain text in
+`engine.properties` no longer prevents startup or configuration reload: it is used
+as plain text, and a warning names the property without printing its value.
+An explicitly empty value remains empty. This supports configurations written by
+an earlier version or prepared by a deployment tool.
+
+Save the configuration from the Administration Console to store the password
+values encrypted. Values supplied as Java system properties at JVM startup
+remain plain-text inputs, as before; they are not expected to be pre-encrypted.
+
 ### Main properties
 
 property key | description | default value
