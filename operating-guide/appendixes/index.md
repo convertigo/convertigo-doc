@@ -474,6 +474,11 @@ session.redis.sentinel.password | Optional Sentinel password; when empty, uses t
 session.redis.host | Redis hostname in single mode; ignored in Sentinel mode | localhost
 session.redis.port | Redis port in single mode; ignored in Sentinel mode | 6379
 session.redis.ssl | Enable TLS for both Redis data nodes and Sentinel connections | false
+session.redis.startup.fallback | When Redis is unreachable at startup: `none` retries until reachable; `tomcat` keeps local sessions until restart (8.4.7+) | none
+session.redis.readiness.grace | Seconds Redis may remain unreachable after its first connection before supervision reports the store as `KO` (8.4.7+) | 60
+
+See [Redis unreachable](../using-convertigo-administration-console/#redis-unreachable-847)
+for HTTP 503 responses, readiness and the consequences of selecting local sessions.
 
 ### Network
 
