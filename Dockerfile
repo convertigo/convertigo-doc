@@ -1,14 +1,13 @@
-FROM jekyll/builder
+FROM jekyll/jekyll:4
 
-WORKDIR /tmp
-ADD Gemfile /tmp/
-ADD Gemfile.lock /tmp/
-RUN bundle install
+# Keep the container's gems and lockfile separate from a mounted checkout and
+# from host-specific vendor/bundle installations.
+WORKDIR /opt/jekyll
+COPY Gemfile ./
+RUN bundle install --jobs 2
+ENV BUNDLE_GEMFILE=/opt/jekyll/Gemfile
 
-FROM jekyll/jekyll
-
-VOLUME /src
+WORKDIR /srv/jekyll
 EXPOSE 4000
-
-WORKDIR /src
-ENTRYPOINT ["jekyll", "serve", "-H", "0.0.0.0"]
+ENTRYPOINT ["bundle", "exec", "jekyll"]
+CMD ["serve", "--host", "0.0.0.0"]

@@ -24,6 +24,24 @@ Convertigo-generated documentation is not manually forwarded:
 
 ## Audit
 
+### Local Docker build and preview
+
+Docker installs the repository's `Gemfile` in the image. No host Ruby, host
+`vendor/bundle` or pre-existing `Gemfile.lock` is required. The image keeps its
+own resolved dependencies outside the mounted source directory.
+
+```sh
+docker compose build server
+docker compose run --rm --no-deps server build
+```
+
+This generates the complete site in `_site/`, without starting a server. For a
+preview at `http://localhost:4000`, run `docker compose up server`, or use
+`./runJekyll.sh` for the live-reloading preview. `./runJekyll.sh build` also runs
+a non-interactive build. Rebuild the image after changing the `Gemfile`.
+
+### Branch audit
+
 Run this before a release, or whenever the branch graph looks suspicious:
 
 ```sh
