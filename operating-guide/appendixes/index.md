@@ -457,6 +457,24 @@ log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup in
 log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
 log4j.additivity.cems| ? Log4J root logger additivity| false
 
+### Session management
+
+The following settings select the session store and configure its Redis topology.
+Sentinel settings are available since 8.4.7. See [Session management](../using-convertigo-administration-console/#session-management)
+for the remaining Redis settings, authentication requirements and TLS configuration.
+
+property key | description | default value
+--- | --- | ---
+session.store.mode | Server-side session store: `tomcat` or `redis` | tomcat
+session.redis.topology | Redis topology: `single` or `sentinel` | single
+session.redis.sentinel.master | Monitored master name; required in Sentinel mode | empty
+session.redis.sentinel.nodes | Comma-separated Sentinel seed addresses (`host:port`); required in Sentinel mode | empty
+session.redis.sentinel.username | Optional Sentinel ACL username, independent of the Redis data username | empty
+session.redis.sentinel.password | Optional Sentinel password; when empty, uses the Redis data password if Sentinel requires authentication | empty
+session.redis.host | Redis hostname in single mode; ignored in Sentinel mode | localhost
+session.redis.port | Redis port in single mode; ignored in Sentinel mode | 6379
+session.redis.ssl | Enable TLS for both Redis data nodes and Sentinel connections | false
+
 ### Network
 
 property key | description | default value

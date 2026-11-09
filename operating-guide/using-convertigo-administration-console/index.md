@@ -701,12 +701,12 @@ Edit the session parameters in Session management tab. This tab can be opened by
 - **Redis Sentinel seed nodes** (`session.redis.sentinel.nodes`, 8.4.7+) : Comma-separated `host:port` addresses used to discover the master and other Sentinels. Empty by default; required for the `sentinel` topology. Whitespace separators and bracketed IPv6 addresses such as `[2001:db8::1]:26379` are also accepted. Do not include credentials in these addresses.
 - **Redis Sentinel ACL username (optional, distinct from the Redis data username)** (`session.redis.sentinel.username`, 8.4.7+) : Optional username for Convertigo to authenticate to Sentinel. Empty by default; independent of the Redis data username.
 - **Redis Sentinel password** (`session.redis.sentinel.password`, 8.4.7+) : Optional password for Convertigo to authenticate to Sentinel. Empty by default; when Sentinel requires authentication, an empty value uses the Redis data password instead. A separate Sentinel password can be configured.
-- **Redis hostname used by the session manager in single mode** (`session.redis.host`) : Defines the Redis host for the `single` topology. Ignored in `sentinel` mode.
-- **Redis port used by the session manager in single mode** (`session.redis.port`) : Defines the Redis port for the `single` topology. Ignored in `sentinel` mode.
+- **Redis hostname used by the session manager in single mode** (`session.redis.host`) : Defines the Redis host for the `single` topology. The default is `localhost`. Ignored in `sentinel` mode.
+- **Redis port used by the session manager in single mode** (`session.redis.port`) : Defines the Redis port for the `single` topology. The default is `6379`. Ignored in `sentinel` mode.
 - **Redis username (optional)** (`session.redis.username`) : Optional username for Convertigo to authenticate to Redis data nodes (master and replicas).
 - **Redis password (optional)** (`session.redis.password`) : Password for Convertigo to authenticate to Redis data nodes. Protect Redis with authentication in production.
 - **Redis logical database index** : Redis logical database index used for session storage.
-- **Enable SSL/TLS for Redis data nodes and Sentinel connections** (`session.redis.ssl`) : Enables SSL/TLS for all Redis data and Sentinel connections. The existing `session.redis.ssl.*` truststore, client keystore, certificate verification and protocol settings apply to both services.
+- **Enable SSL/TLS for Redis data nodes and Sentinel connections** (`session.redis.ssl`) : Enables SSL/TLS for all Redis data and Sentinel connections. The default is `false`. The existing `session.redis.ssl.*` truststore, client keystore, certificate verification and protocol settings apply to both services.
 - **Redis command timeout in milliseconds** : Command timeout used for Redis operations.
 - **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions.
 - **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients.
