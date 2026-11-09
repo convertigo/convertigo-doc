@@ -143,6 +143,7 @@ Extension | Description
 .xml | Convertigo sends the transaction / sequence XML as response, possibly including the reference to the XSL file to use for the transformation (defined in the Convertigo project). Then, the client (web browser or application) should perform the XSL transformation.
 .cxml | Abbreviation for Convertigo-XML. Convertigo performs the XSL transformation on server side, if a style sheet is defined in the Convertigo project. Then, it sends the result as response to the client.
 .pxml | Abbreviation for Pure-XML. Convertigo sends the transaction / sequence XML as response, no XSL transformation is performed nor referenced, whatever is defined in the project.
+.cpdf | Abbreviation for Convertigo-PDF. Convertigo performs the XSL:FO transformation on server side, if an XSL:FO style sheet is defined in the Convertigo project. Then, it sends the result as PDF file to the client.
 
 <a id="xslt-project-cache-847"></a>
 
@@ -161,7 +162,6 @@ Transformations already running can finish using the templates they acquired.
 
 This rule concerns transformations performed by the server, not browser-side
 stylesheets referenced by `.xml` responses.
-.cpdf | Abbreviation for Convertigo-PDF. Convertigo performs the XSL:FO transformation on server side, if an XSL:FO style sheet is defined in the Convertigo project. Then, it sends the result as PDF file to the client.
 
 Using these requesters, the client interacts directly with Convertigo engine.
 
