@@ -19,7 +19,22 @@ Convertigo Server installation is available as 2 packaging types  :<br>
 
 ### Convertigo war file
 
-Convertigo war file can be used with application servers in 64bits environments. It can be installed on Apache Tomcat. The minimum version of java must be 11, and for Tomcat 9.
+Convertigo WAR files run in a 64-bit environment on Apache Tomcat. Use the
+runtime generation matching the Convertigo release:
+
+{% assign doc_version_parts = site.data.sidebars.c8o_sidebar.entries[0].version | split: '.' %}
+{% assign doc_major = doc_version_parts[0] | plus: 0 %}
+{% assign doc_minor = doc_version_parts[1] | plus: 0 %}
+{% if doc_major > 8 or doc_major == 8 and doc_minor >= 5 %}
+- **Convertigo 8.5:** Java **25** and Tomcat **11** (Jakarta Servlet).
+  A Tomcat 9 installation cannot host this WAR.
+{% else %}
+- **Convertigo 8.4:** Java **17** and Tomcat **9** (`javax.servlet`).
+  Use the matching 8.4 WAR rather than deploying it unchanged on Tomcat 11.
+{% endif %}
+
+The official Docker image includes its matching runtime. These requirements
+apply when deploying the WAR to a separately managed Tomcat.
 
 The war file, convertigo-X.Y.Z.war, is available on [https://github.com/convertigo/convertigo/releases](https://github.com/convertigo/convertigo/releases)
 
