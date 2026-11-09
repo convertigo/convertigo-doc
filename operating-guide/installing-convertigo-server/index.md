@@ -123,6 +123,19 @@ JXMX|Convertigo tries to allocate this amount of memory in the container and wil
 COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined this way:<br><br>_$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo_
 COOKIE_SAMESITE|Allow to configure the SameSite parameter for generated cookies. Can be empty, "none", "lax" or "strict".<br>The default COOKIE_SAMESITE value is empty and can be defined this way: <br /><br>_$ docker run -d --name C8O -e COOKIE_SAMESITE=lax -p 28080:28080 convertigo_
 
+#### JVM arguments in startup logs (8.4.7+)
+
+The Convertigo Docker image disables argument logging in Tomcat's
+`VersionLoggerListener` (`logArgs="false"`). Tomcat still reports its version,
+the JVM and the operating system, but no longer lists the JVM startup arguments.
+This also applies to the arguments supplied through `JAVA_OPTS`, which may
+contain configuration passwords.
+
+This image setting does not change a separately installed Tomcat or another
+launcher. It does not remove arguments from process inspection or from output
+produced by other launch scripts; keep credentials out of source control and
+shared diagnostic reports.
+
 #### Custom certificate authorities
 
 To trust private root or intermediate certificate authorities for outbound TLS connections, set the `USE_SYSTEM_CA_CERTS` environment variable and mount the certificates (PEM files with a `.crt` extension) read-only at `/certificates`. The Eclipse Temurin entrypoint of the base image then imports them into a copy of the JVM truststore at startup, without modifying the JDK installation. See the [Convertigo Docker Hub](https://hub.docker.com/_/convertigo) page for details.
