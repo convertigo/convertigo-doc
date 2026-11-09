@@ -52,10 +52,17 @@
         <td>If true, the requested transaction/sequence response is retrieved from the stub response (if a stub response is present for this transaction/sequence in the project).
         {{site.data.alerts.note}}
         <ul>        
-            <li>When executing a transaction/sequence from stub, the Authenticated context required property of the transaction/sequence is ignored: the context would never be authenticated as the transaction/sequence setting the context as authenticated could also be executed from stub</li>
+            <li>Since 8.4.7, outside the Studio, stub requests follow the requestable's <strong>Authenticated context required</strong> property and custom controller checks. Studio mode and sessions holding the <code>TEST_PLATFORM_PRIVATE</code> role retain access for testing.</li>
             <li>In Convertigo Studio, a stub response can be easily created for a transaction/sequence. To do so, execute the transaction/sequence, possibly using a test case. Then, right-click on the transaction/sequence and select the Create stub from current generated XML option. A stub file is created from the current response XML for the transaction/sequence.</li>
         </ul>
         {{site.data.alerts.end}}
+        </td>
+    </tr>
+    <tr>
+        <td>__stub_filename</td>
+        <td>With <code>__stub=true</code>, selects a response file relative to the project's <code>stubs</code> directory.
+            If omitted, the requestable's default stub filename is used.
+            Since 8.4.7, all stub files must resolve inside this directory; a missing file or a location outside it produces an execution error.
         </td>
     </tr>
     <tr>
@@ -71,7 +78,7 @@
         Allows to dynamically change the value of the Response life-time property of the requested transaction / sequence.
         <ul>        
             <li>If empty, the requested transaction / sequence response is not retrieved from the cache (in the case of a cached transaction / sequence). Convertigo ignores the cached response and returns a freshly built response.</li>
-            <li>If filled, the requested transaction / sequence response is retrieved from the cache if it exist and has not expired, otherwise it is rebuild and stored in cache.When executing a transaction/sequence from stub, the Authenticated context required property of the transaction/sequence is ignored: the context would never be authenticated as the transaction/sequence setting the context as authenticated could also be executed from stub</li>
+            <li>If filled, the requested transaction / sequence response is retrieved from the cache if it exists and has not expired; otherwise it is rebuilt and stored in cache.</li>
         </ul>
         For more information about transaction / sequence cache parametrization, see Response life-time property documentation in chapter 2 of this manual.
         {{site.data.alerts.warning}}At the end of the transaction / sequence execution, the Response life-time property is set back to its original value.{{site.data.alerts.end}}
@@ -94,7 +101,12 @@
     </tr>
     <tr>
         <td>__content_type</td>
-        <td>Overrides the Content-type HTTP header value of the Convertigo response for the REST requesters (.xml, .pxml, .json).</td>
+        <td>Overrides the Content-Type HTTP header of the Convertigo response (including the .xml, .pxml, .json and .bin requesters).
+            Since Convertigo 8.4.7, only <code>text/plain</code>, <code>application/json</code> and <code>application/octet-stream</code> are accepted.
+            Matching ignores case and surrounding whitespace; additional MIME parameters such as <code>; charset=UTF-8</code> are not accepted.
+            If the parameter is omitted or its value is not accepted, the response keeps the content type set by the requestable or computed by the engine.
+            This changes the response header, not the response data format.
+        </td>
     </tr>
     <tr>
         <td>__lang</td>
@@ -171,6 +183,7 @@
         <td>Allows to dynamically change the value of the Sub path property of the requested HTTP transaction.
             {{site.data.alerts.warning}}At the end of the transaction execution, the Sub path property is set back to its original value{{site.data.alerts.end}}
             Since Convertigo 8.4.4, this parameter is ignored by default on Public or Hidden HTTP transactions (a WARN line is written in the engine log). It must be enabled with the transaction's <strong>Allowed __uri Override</strong> property: <code>deny</code> (default) ignores the parameter, <code>relative</code> accepts it only as a sub path (a value starting with <code>http</code> is ignored), <code>absolute</code> accepts a full URL. Private transactions keep the legacy behavior.
+            Since 8.4.7, this property also controls followed HTTP redirects, even without a <code>__uri</code> parameter: see <a href="#http-redirects-847">HTTP transaction redirects</a>.
         </td>
     </tr>
     <tr>

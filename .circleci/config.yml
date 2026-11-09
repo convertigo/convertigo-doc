@@ -71,11 +71,40 @@ jobs:
             git remote set-url origin "https://x-access-token:${DOC_FLOW_GITHUB_TOKEN}@github.com/convertigo/convertigo-doc.git"
           fi
           DOC_FLOW_SOURCE_COMMIT="$CIRCLE_SHA1" .circleci/doc-flow.sh forward-master
+  forward_hotfix_manual_changes:
+    docker:
+    - image: cimg/base:stable
+    working_directory: /home/circleci/repo
+    steps:
+    - add_ssh_keys:
+        fingerprints:
+        - "0f:4a:26:54:4c:1d:13:d5:4a:40:08:b8:35:a7:5d:34"
+    - checkout
+    - run:
+        name: Forward hotfix manual documentation changes
+        command: |
+          git config --global user.email "info@convertigo.com"
+          git config --global user.name "$CIRCLE_PROJECT_USERNAME"
+          if [ -n "${DOC_FLOW_GITHUB_TOKEN:-}" ]; then
+            git remote set-url origin "https://x-access-token:${DOC_FLOW_GITHUB_TOKEN}@github.com/convertigo/convertigo-doc.git"
+          fi
+          DOC_FLOW_SOURCE_COMMIT="$CIRCLE_SHA1" .circleci/doc-flow.sh forward-hotfix
+  test_doc_flow:
+    docker:
+    - image: cimg/python:3.12
+    steps:
+    - checkout
+    - run:
+        name: Test documentation forwarding with local repositories
+        command: python3 .circleci/test-doc-flow.py
 workflows:
   version: 2
   all:
     jobs:
+    - test_doc_flow
     - build:
+        requires:
+        - test_doc_flow
         # Documentation is built and published only for the long-lived branches;
         # released versions (X.Y.x) are published from master.
         filters:
@@ -85,8 +114,16 @@ workflows:
             - hotfix
             - develop
     - forward_master_manual_changes:
+        serial-group: << pipeline.project.slug >>/doc-forward
         requires:
         - build
         filters:
           branches:
             only: master
+    - forward_hotfix_manual_changes:
+        serial-group: << pipeline.project.slug >>/doc-forward
+        requires:
+        - build
+        filters:
+          branches:
+            only: hotfix

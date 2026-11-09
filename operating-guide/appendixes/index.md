@@ -256,6 +256,37 @@ The analytics feature is available in Convertigo Server, as well as for the Conv
 
 The analytics feature consists in writing in a database one entry, also known as **ticket**, for each executed transaction or sequence. This is useful to monitor the Convertigo Server’s activity. The analytics feature produces the raw data, but the management and treatment of these data has to be manually performed and personalized by each Convertigo administrator.
 
+### Analytics queues (8.4.7+)
+
+Each active analytics ticket manager has its own queue and writer. A slow
+destination can fill its queue without delaying the other managers or making
+application requests wait for analytics writes.
+
+`billing.queue.capacity` limits the number of tickets waiting in **each** queue.
+The default is **100000** tickets per manager. When a queue is full, additional
+tickets for that manager are dropped and counted. The billers log reports these
+drops at most once a minute during normal operation, with a final report when
+the queue closes. Increasing the capacity can absorb a temporary backlog but
+also allows more memory to be used; it does not increase the destination's
+write rate.
+
+This engine property is not displayed in the Administration Console. Set it at
+JVM startup, for example:
+
+```text
+-Dconvertigo.engine.billing.queue.capacity=100000
+```
+
+Use a positive integer. An invalid integer falls back to `100000`; a value less
+than `1` is treated as `1`. The capacity is read when the queues are created;
+restart the engine after changing the startup setting.
+
+Tickets are written asynchronously in batches of up to 500. An idle writer waits
+up to 100 ms for new tickets; a backlog or a slow destination can delay delivery
+further. At engine shutdown or when analytics settings replace the managers,
+each closing queue has a five-second drain period. Tickets still waiting after
+that period are dropped and counted, so delivery at shutdown is not guaranteed.
+
 ### Ticket content
 
 For each execution of a transaction or sequence, a ticket is inserted in the database. The Ticket table contains the following columns:
@@ -314,6 +345,19 @@ org.mariadb.jdbc.Driver | MariaDB database, community-developed fork of MySQL | 
 ## List of Convertigo Java System Properties
 
 To set a Java System Property when the JVM is launched, just add -Dconvertigo.engine.{property key}={property value}.
+
+### Encrypted engine properties (8.4.7+)
+
+Password properties marked as encrypted are stored encrypted when the engine
+configuration is saved. Since 8.4.7, a value already written as plain text in
+`engine.properties` no longer prevents startup or configuration reload: it is used
+as plain text, and a warning names the property without printing its value.
+An explicitly empty value remains empty. This supports configurations written by
+an earlier version or prepared by a deployment tool.
+
+Save the configuration from the Administration Console to store the password
+values encrypted. Values supplied as Java system properties at JVM startup
+remain plain-text inputs, as before; they are not expected to be pre-encrypted.
 
 ### Main properties
 
@@ -424,12 +468,35 @@ log4j.appender.CemsAppender.MaxBackupIndex| Log4J default appender max backup in
 log4j.appender.CemsAppender.MaxFileSize| Log4J default appender max file size|10MB
 log4j.additivity.cems| ? Log4J root logger additivity| false
 
+### Session management
+
+The following settings select the session store and configure its Redis topology.
+Sentinel settings are available since 8.4.7. See [Session management](../using-convertigo-administration-console/#session-management)
+for the remaining Redis settings, authentication requirements and TLS configuration.
+
+property key | description | default value
+--- | --- | ---
+session.store.mode | Server-side session store: `tomcat` or `redis` | tomcat
+session.redis.topology | Redis topology: `single` or `sentinel` | single
+session.redis.sentinel.master | Monitored master name; required in Sentinel mode | empty
+session.redis.sentinel.nodes | Comma-separated Sentinel seed addresses (`host:port`); required in Sentinel mode | empty
+session.redis.sentinel.username | Optional Sentinel ACL username, independent of the Redis data username | empty
+session.redis.sentinel.password | Optional Sentinel password; when empty, uses the Redis data password if Sentinel requires authentication | empty
+session.redis.host | Redis hostname in single mode; ignored in Sentinel mode | localhost
+session.redis.port | Redis port in single mode; ignored in Sentinel mode | 6379
+session.redis.ssl | Enable TLS for both Redis data nodes and Sentinel connections | false
+session.redis.startup.fallback | When Redis is unreachable at startup: `none` retries until reachable; `tomcat` keeps local sessions until restart (8.4.7+) | none
+session.redis.readiness.grace | Seconds Redis may remain unreachable after its first connection before supervision reports the store as `KO` (8.4.7+) | 60
+
+See [Redis unreachable](../using-convertigo-administration-console/#redis-unreachable-847)
+for HTTP 503 responses, readiness and the consequences of selecting local sessions.
+
 ### Network
 
 property key | description | default value
 --- | --- | --- 
 net.gzip| Enable GZip response for most text responses (need the header Accept-Encoding: gzip)| true
-net.max-age| Set the Cache-Control: max-age value in seconds, for static resources| 10
+net.max-age| Browser and shared cache lifetime in seconds for non-fingerprinted static resources; application HTML and fingerprinted assets use automatic policies (8.4.7+; previously 10 seconds). [Static HTTP cache policies](../using-convertigo-administration-console/#static-http-cache-847)| 60
 net.reverse_dns| Use DNS reverse search for finding host names| false
 net.upload.max_request_size| Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit.| -1
 net.upload.max_request_size| Maximum allowed size of a single uploaded file (in bytes).| 10485760
@@ -493,6 +560,7 @@ property key | description | default value
 --- | --- | ---
 billing.enabled| Enable persistence analytics (JDBC)| false
 billing.google.enabled| Enable google analytics| false
+billing.queue.capacity| Maximum number of analytics tickets waiting per ticket manager (8.4.7+); additional tickets are dropped and counted. [Analytics queues](#analytics-queues-847)| 100000
 billing.persistence.dialect| Persistence SQL Dialect| org.hibernate.dialect.MySQL5InnoDBDialect
 billing.persistence.jdbc.driver| Persistence JDBC driver| org.mariadb.jdbc.Driver
 billing.persistence.jdbc.password| Persistence JDBC password| 

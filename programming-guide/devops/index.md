@@ -124,6 +124,11 @@ For library compatibility branches, project versions, immutable dependency tags 
 
 Files stored in a project folder are served over HTTP under `/convertigo/projects/<ProjectName>/`. The engine already refuses to serve project descriptors (`c8oProject.yaml`, `_c8oProject`), the `libs` and `.git` folders and the `_private` folder.
 
+Since 8.4.7, Eclipse `.project` files and `.settings` directories are also hidden,
+at the project root and in nested folders. Requests for them return HTTP 404,
+even without a `.httpignore` file. A negation rule in `.httpignore` cannot expose
+these metadata files.
+
 Since Convertigo 8.4.4, a project can also contain a `.httpignore` file at its root to hide additional files and directories. It uses the same pattern syntax as a `.gitignore` file (one pattern per line, `#` comments, `*` and `**` wildcards, trailing `/` for directories, `!` to negate a pattern). Matching files, and everything under a matching directory, are answered with an HTTP 404 error. The `.httpignore` file itself is never served.
 
 For example:
@@ -136,6 +141,31 @@ fixtures/**/*.json
 ```
 
 The file is read again automatically when it changes, so no project reload is needed. It is part of the project and can be committed to Git and shipped in the `.car` archive.
+
+## Eclipse metadata in archives and Git (8.4.7+)
+
+The Studio's `.project` description and `.settings` preferences belong to the
+local Eclipse workspace. Convertigo excludes them from exported `.car` archives,
+including metadata in nested folders, regardless of the export options.
+
+Older archives containing Eclipse metadata remain importable. Importing a
+project under another name updates its Eclipse description to the new name and
+preserves its preferences. The Studio creates missing project descriptions when
+opening projects and restores a missing description for a project already
+registered in the workspace.
+
+The Studio project templates supply Git ignore rules for `.project` and
+`.settings`. Existing projects keep their own `.gitignore`; the engine does not
+rewrite it. For an older project, check that the root metadata is ignored:
+
+```text
+/.project
+/.settings/
+```
+
+Ignore rules do not remove files already tracked by Git. If these files were
+committed, remove them from Git tracking while keeping the local copies. The
+archive and HTTP exclusions apply independently of the project's Git rules.
 
 ## Setting up gradle tasks
  

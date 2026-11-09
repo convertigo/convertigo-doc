@@ -1,11 +1,10 @@
-version: '2'
 services:
   server:
     build:
       context: .
       dockerfile: Dockerfile
-    image: result/latest
+    image: convertigo-doc-jekyll:local
     ports:
       - "4000:4000"
     volumes:
-      - ".:/src"
+      - ".:/srv/jekyll"

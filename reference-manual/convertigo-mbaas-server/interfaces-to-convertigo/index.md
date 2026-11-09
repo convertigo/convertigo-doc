@@ -11,6 +11,7 @@ permalink: /reference-manual/convertigo-mbaas-server/interfaces-to-convertigo/
 Convertigo projects contain "requestable" objects, transactions and sequences, that can be invoked by HTTP protocol. This section describes possible URLs to access Convertigo projects and all reserved variables usable in these URLs.
 
 - [Convertigo URLs](#convertigo-urls)
+- [Calling private requestables](#private-requestables-847)
 - [Convertigo reserved parameters](#convertigo-reserved-parameters)
 
 ### Convertigo URLs
@@ -59,6 +60,25 @@ For example, with a project named *test_project* in a local Convertigo Studio:
 - Depending on the HTTP verb used in the request, the response may be different: *HEAD* verb will only return headers in response (following HTTP specifications).
 
 ##### 5. The client (web browser or application) retrieves and manages the response, also depending on the invoked requester and the project’s parametrization.
+
+<a id="private-requestables-847"></a>
+
+#### Calling private requestables (8.4.7+)
+
+A sequence or transaction whose **Accessibility** property is **Private** requires
+an administrator session with the `TEST_PLATFORM_PRIVATE` role when called over
+HTTP. Since 8.4.7, this rule also applies to the engine embedded in the Studio.
+An anonymous caller or an application-authenticated user without this role
+cannot execute a private requestable.
+
+When testing from a script or another HTTP client, authenticate as an
+administrator first and retain that session's cookie for the subsequent calls.
+The Studio's test platform and administration views use an administrator session.
+Execution from Studio editors, scheduled jobs and internal *Call Sequence* or
+*Call Transaction* steps remains available.
+
+This change does not alter the **Accessibility** default (`Public`) or the
+behavior of Public and Hidden requestables.
 
 #### Convertigo Requesters
 
@@ -124,6 +144,24 @@ Extension | Description
 .cxml | Abbreviation for Convertigo-XML. Convertigo performs the XSL transformation on server side, if a style sheet is defined in the Convertigo project. Then, it sends the result as response to the client.
 .pxml | Abbreviation for Pure-XML. Convertigo sends the transaction / sequence XML as response, no XSL transformation is performed nor referenced, whatever is defined in the project.
 .cpdf | Abbreviation for Convertigo-PDF. Convertigo performs the XSL:FO transformation on server side, if an XSL:FO style sheet is defined in the Convertigo project. Then, it sends the result as PDF file to the client.
+
+<a id="xslt-project-cache-847"></a>
+
+##### Refreshing server-side XSLT stylesheets (8.4.7+)
+
+For server-side transformations such as `.cxml` responses, Convertigo caches the
+compiled XSLT stylesheets separately for each project. Reloading, redeploying or
+removing a project clears that project's cache without clearing the other
+projects' stylesheets. The next transformation compiles the stylesheet again,
+including its `xsl:include` and `xsl:import` dependencies.
+
+After changing a stylesheet on disk, **reload or redeploy the project**. This
+applies to the main stylesheet as well as included or imported files: changing a
+file's contents or modification date alone no longer refreshes the cache.
+Transformations already running can finish using the templates they acquired.
+
+This rule concerns transformations performed by the server, not browser-side
+stylesheets referenced by `.xml` responses.
 
 Using these requesters, the client interacts directly with Convertigo engine.
 
@@ -201,7 +239,14 @@ The following is the engine reserved parameter specific to JSONP requester and i
 Table 4 - 4: JSONP specific engine reserved parameters
 
 Parameter name | Description
-__callback | Defines the name of the client application function to call back after the Convertigo request execution on a cross-domain platform.
+--- | ---
+__callback | Defines the name of the client application function to call back after the Convertigo request execution on a cross-domain platform. Since 8.4.7, only simple or dot-separated JavaScript identifier names are accepted, as described below.
+
+Each part of the callback name must start with an ASCII letter, `_` or `$`,
+followed by zero or more ASCII letters, digits, `_` or `$`. For example, `cb` and
+`app.handlers.done` are accepted. An invalid name is ignored and a warning is
+logged. If `__callback` is omitted or ignored, the response contains JSON without
+a callback wrapper.
 
 #### Web connector-specific reserved parameters
 
@@ -212,10 +257,42 @@ Table 4 - 5: Web connector-specific engine reserved parameters
 {% include /page_part/mbserv_interfacestoc8o_tables.html content='2' %}
 
 {{site.data.alerts.note}}
-Since Convertigo 8.4.4, HTTP transactions (HTTP, XML HTTP, JSON HTTP and Download HTTP) control how a request may override their target. On transactions whose accessibility is <b>Public</b> or <b>Hidden</b>, the <code>__uri</code> parameter is ignored unless the <b>Allowed __uri Override</b> expert property is set to <code>relative</code> or <code>absolute</code>, and a <code>__header_&lt;headerName&gt;</code> parameter is honored only for a declared <code>__header_&lt;headerName&gt;</code> variable unless <b>Allow Undeclared __header_ Override</b> is set to <code>true</code>. Ignored overrides are reported as WARN lines in the engine log, naming the transaction and the property to set. Private transactions, which are only called from sequences, keep the legacy behavior. Download HTTP transactions now always write inside their configured folder: a filename taken from the response <code>Content-Disposition</code> header is reduced to its base name, and a destination resolved outside the folder makes the transaction fail.
+Since Convertigo 8.4.4, HTTP transactions (HTTP, XML HTTP, JSON HTTP and Download HTTP) control how a request may override their target. On transactions whose accessibility is <b>Public</b> or <b>Hidden</b>, the <code>__uri</code> parameter is ignored unless the <b>Allowed __uri Override</b> expert property is set to <code>relative</code> or <code>absolute</code>, and a <code>__header_&lt;headerName&gt;</code> parameter is honored only for a declared <code>__header_&lt;headerName&gt;</code> variable unless <b>Allow Undeclared __header_ Override</b> is set to <code>true</code>. Ignored overrides are reported as WARN lines in the engine log, naming the transaction and the property to set. Private transactions keep the legacy override behavior; HTTP calls to them require the administrator session described <a href="#private-requestables-847">above</a>. Download HTTP transactions now always write inside their configured folder: a filename taken from the response <code>Content-Disposition</code> header is reduced to its base name, and a destination resolved outside the folder makes the transaction fail.
 {{site.data.alerts.end}}
 
 See also the *__body* and the *__contentType* reserved HTTP single-valued variable documentation in chapter 2 of this manual.
+
+<a id="http-redirects-847"></a>
+
+##### HTTP transaction redirects (8.4.7+)
+
+The **Follow Redirect** property (`followRedirect`) is `true` by default. Since
+8.4.7, each followed redirect must also satisfy the transaction's **Allowed __uri
+Override** expert property (`allowedUriOverride`), even if the caller has not
+supplied a `__uri` parameter.
+
+For Public and Hidden HTTP, XML HTTP, JSON HTTP and Download HTTP transactions:
+
+| Allowed __uri Override | Followed redirects |
+| --- | --- |
+| `deny` (default) | Only destinations with the same origin as the current request. The caller's `__uri` parameter remains ignored. |
+| `relative` | Only destinations with the same origin. A caller-supplied `__uri` may change the sub path, not the origin. |
+| `absolute` | Destinations on another HTTP or HTTPS origin are also allowed. A caller-supplied `__uri` may replace the whole URL. |
+
+An origin consists of the scheme, host and effective port (80 for HTTP and 443
+for HTTPS when no port is specified). For example, a redirect from HTTP to HTTPS
+changes the origin even when the host stays the same. For a Public or Hidden
+transaction that needs to follow such a redirect, set **Allowed __uri Override**
+to `absolute`; this also permits full URL overrides through `__uri`.
+
+Private transactions can follow redirects to another origin regardless of this
+property. All transactions require redirect destinations to use `http` or
+`https`, have a host and contain no user information (credentials in the URL).
+A destination that does not meet these rules raises an execution error instead
+of being followed.
+
+If **Follow Redirect** is `false`, no redirect is followed. Enable **HTTP info**
+(`httpInfo`) to inspect the response status and headers.
 
 #### Legacy emulator-specific reserved parameters
 
@@ -361,3 +438,13 @@ If you are using Microsoft .NET web service client, use this code construction (
 #### Case of REST calls
 
 For REST web service calls, be sure that the HTTP client will maintain session cookies with Convertigo.
+
+Since 8.4.7, a URL-mapped REST operation passes its declared parameters, mapped
+variable names and path variables to its target requestable. Engine routing
+parameters come from the URL mapping itself. Other caller-supplied reserved
+parameters starting with `__`, such as `__context`, are not forwarded unless the
+operation declares them. Multipart fields follow the same declaration rules as
+other operation parameters.
+
+The target requestable's **Secure connection required** property also applies
+to calls through a REST operation: use HTTPS when that property is enabled.

@@ -404,7 +404,7 @@ Edit the network parameters in Network tab. This tab can be opened by following 
 
 - **Enable GZip response for most text responses (need the header Accept-Encoding: gzip)** : Enables gzip compression for eligible text responses when the client supports it.
 
-- **Set the Cache-Control: max-age value in seconds, for static resources** : Sets the `max-age` directive used in Cache-Control headers for static resources.
+- **Browser and shared cache lifetime in seconds for non-fingerprinted static resources; application HTML and fingerprinted assets use automatic policies** (`net.max-age`) : Sets the default static-file cache lifetime in seconds. Since 8.4.7, the default is **60** instead of **10**. HTML entry points, recognized fingerprinted files and the bundled Administration Console use the automatic policies described below.
 
 - **Use DNS reverse search for finding host names** : If checked, this option makes Convertigo perform reverse DNS checks on client IP addresses. Resolved client names will then be used along with IP in log files and Connections page.
 
@@ -419,6 +419,40 @@ Check this option only if you are sure the Convertigo Server is able to reach a 
 Since version 6.1.10, Convertigo allows to receive multi-part requests. The programmers can then develop forms that will be used to upload files to Convertigo as input variables of transactions/sequences.<br><br>
 The transactions/sequences variables can be defined as a file upload using the <b>Is a file upload</b> property.
 {{site.data.alerts.end}}
+
+<a id="static-http-cache-847"></a>
+
+#### Static HTTP cache policies (8.4.7+)
+
+Convertigo applies the following browser and shared-cache policies to built
+application files under `DisplayObjects/mobile` or `DisplayObjects/pwas`, and to
+the bundled Administration Console and Dashboard files:
+
+| Resources | Cache-Control policy |
+| --- | --- |
+| Recognized fingerprinted application, Admin and Monaco files (the filename contains a generated content hash) | `public, max-age=31536000, immutable` |
+| Application and Admin HTML entry points, recognized bootstrap/configuration files, manifests and service workers | `no-cache, must-revalidate` |
+| Other static application files without a fingerprint | `public, max-age=<net.max-age>, must-revalidate` (60 seconds by default) |
+| Other bundled Admin/Dashboard static files without a fingerprint | `public, max-age=60, must-revalidate`, independently of `net.max-age` |
+
+Stable Monaco JavaScript entry points also revalidate because they can reference
+version-specific files. These policies preserve an explicit `Cache-Control`
+header already set by the response, including `no-store` fallback policies. They
+do not change sequence, transaction or REST response caching, or the server-side
+requestable cache configured in the [Cache page](#cache-page).
+
+`no-cache` allows a browser to keep a file, but requires it to check with the
+server before reuse; an unchanged file can receive an HTTP `304` response without
+being downloaded again. Fingerprinted files can be reused for a year because
+their URLs change when their contents change.
+
+After a server update, an open Admin or Dashboard page can still refer to an old
+Svelte or Monaco file. When a required local file is confirmed missing (HTTP
+`404` or `410`), a banner offers to **Reload** the page. Save your changes before
+confirming: reloading can discard unsaved edits. The page address is preserved,
+repeated reloads are limited to one per minute per tab, and backend execution
+requests are not replayed automatically. A general network failure does not
+trigger this missing-file recovery.
 
 ### Proxy
 
@@ -510,6 +544,11 @@ Cache cleaning process is the deletion of expired cache entries, found using the
 ### Analytics
 
 Configure analytics persistence and Google Analytics integration in the Analytics tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
+
+Since 8.4.7, each active analytics ticket manager uses a separate bounded queue.
+The engine property `billing.queue.capacity` defaults to `100000` tickets per
+manager and is not displayed in this tab. See [Analytics queues](../appendixes/#analytics-queues-847)
+for configuration, overflow handling and shutdown behavior.
 
 This tab includes an Advanced properties section that can be opened by following the procedure [To access the advanced properties of a configuration category](#to-access-the-advanced-properties-of-a-configuration-category). 
 In the Advanced properties section, configure the advanced parameters of the analytics feature, i.e. all properties defining the database into which the tickets are stored.
@@ -657,21 +696,173 @@ Couch DB username and password properties are set to <b>empty</b> as default val
 Edit the session parameters in Session management tab. This tab can be opened by following the procedure [To access a configuration category in the Configuration page](#to-access-a-configuration-category-in-the-configuration-page).
 
 - **Server-side store for session data (tomcat, redis)** : Chooses where server-side session data is stored.
-- **Redis hostname used by the session manager** : Defines Redis host for session storage.
-- **Redis port used by the session manager** : Defines Redis port for session storage.
-- **Redis username (optional)** : Optional Redis username.
-- **Redis password (optional)** : Optional Redis password.
+- **Redis topology for sessions and contexts (single, sentinel)** (`session.redis.topology`, 8.4.7+) : Selects a single Redis endpoint or master discovery through Redis Sentinel. The default is `single`.
+- **Redis Sentinel monitored master name (required in sentinel mode)** (`session.redis.sentinel.master`, 8.4.7+) : Name of the master group declared in Sentinel. Empty by default; required for the `sentinel` topology.
+- **Redis Sentinel seed nodes** (`session.redis.sentinel.nodes`, 8.4.7+) : Comma-separated `host:port` addresses used to discover the master and other Sentinels. Empty by default; required for the `sentinel` topology. Whitespace separators and bracketed IPv6 addresses such as `[2001:db8::1]:26379` are also accepted. Do not include credentials in these addresses.
+- **Redis Sentinel ACL username (optional, distinct from the Redis data username)** (`session.redis.sentinel.username`, 8.4.7+) : Optional username for Convertigo to authenticate to Sentinel. Empty by default; independent of the Redis data username.
+- **Redis Sentinel password** (`session.redis.sentinel.password`, 8.4.7+) : Optional password for Convertigo to authenticate to Sentinel. Empty by default; when Sentinel requires authentication, an empty value uses the Redis data password instead. A separate Sentinel password can be configured.
+- **Redis hostname used by the session manager in single mode** (`session.redis.host`) : Defines the Redis host for the `single` topology. The default is `localhost`. Ignored in `sentinel` mode.
+- **Redis port used by the session manager in single mode** (`session.redis.port`) : Defines the Redis port for the `single` topology. The default is `6379`. Ignored in `sentinel` mode.
+- **Redis username (optional)** (`session.redis.username`) : Optional username for Convertigo to authenticate to Redis data nodes (master and replicas).
+- **Redis password (optional)** (`session.redis.password`) : Password for Convertigo to authenticate to Redis data nodes. Protect Redis with authentication in production.
 - **Redis logical database index** : Redis logical database index used for session storage.
-- **Enable SSL/TLS for the Redis connection** : Enables SSL/TLS on the Redis connection.
+- **Enable SSL/TLS for Redis data nodes and Sentinel connections** (`session.redis.ssl`) : Enables SSL/TLS for all Redis data and Sentinel connections. The default is `false`. The existing `session.redis.ssl.*` truststore, client keystore, certificate verification and protocol settings apply to both services.
 - **Redis command timeout in milliseconds** : Command timeout used for Redis operations.
 - **Redis key prefix for stored sessions** : Prefix added to Redis keys storing sessions.
 - **Name of the HTTP cookie carrying the session token** : Name of the session cookie exposed to clients.
 - **Default session TTL in seconds when no timeout is specified** : Default session lifetime when no explicit timeout is set.
+- **When Redis is unreachable at startup: none (retry until reachable, not ready meanwhile) or tomcat (local sessions until restart)** (`session.redis.startup.fallback`, 8.4.7+) : Advanced property. The default is `none`. See [Redis unreachable](#redis-unreachable-847).
+- **Seconds Redis can be unreachable, once connected, before the supervision reports the session store as KO** (`session.redis.readiness.grace`, 8.4.7+) : Advanced property. The default is `60`. See [Redis unreachable](#redis-unreachable-847).
 - **Disable SSL certificate validation for internal admin forwarding** : Disables certificate validation for internal admin forwarding only.
 
 {{site.data.alerts.note}}
 Since Convertigo 8.4.4, Redis-backed sessions preserve <code>java.util.Properties</code> and W3C DOM values (<code>Document</code>, <code>Element</code>, <code>Node</code>, <code>NodeList</code>) stored as session attributes. Restored DOM values are detached copies of the original nodes.
 {{site.data.alerts.end}}
+
+#### Redis Sentinel (8.4.7+)
+
+Select `redis` as the session store and `sentinel` as the Redis topology to connect
+to an externally managed Redis/Sentinel deployment. The default `single` topology
+keeps the existing behavior. The Sentinel properties are advanced Session
+management settings; follow the procedure [To access the advanced properties of
+a configuration category](#to-access-the-advanced-properties-of-a-configuration-category)
+to display them.
+
+For example, the non-secret JVM connection settings are:
+
+```text
+-Dconvertigo.engine.session.store.mode=redis
+-Dconvertigo.engine.session.redis.topology=sentinel
+-Dconvertigo.engine.session.redis.sentinel.master=mymaster
+-Dconvertigo.engine.session.redis.sentinel.nodes=sentinel-0.redis.svc.cluster.local:26379,sentinel-1.redis.svc.cluster.local:26379,sentinel-2.redis.svc.cluster.local:26379
+```
+
+Also configure `session.redis.password` for the protected Redis data nodes and,
+if Sentinel uses different credentials, `session.redis.sentinel.password` and its
+optional ACL username. These passwords authenticate two separate connections:
+**Convertigo to Redis data nodes** and **Convertigo to Sentinel**. They are not the
+Convertigo administration password or the server cryptographic passphrase.
+Sentinel's own credentials for monitoring Redis (`sentinel auth-user` and
+`sentinel auth-pass`) are configured on the Redis/Sentinel deployment, not in
+Convertigo. Keep secrets out of source control and logs; JVM arguments can be
+logged by the server launcher. Restart the server after changing its Redis
+deployment configuration.
+
+{{site.data.alerts.important}}
+The current Redisson client does not support password-protected Sentinel when
+Redis data nodes have no password. Convertigo explicitly rejects this
+configuration. Use authenticated Redis data nodes in production; their password
+and the Sentinel password may be different. Both services without password
+authentication are supported; reserve unprotected deployments for appropriately
+isolated test environments.
+{{site.data.alerts.end}}
+
+Existing database, command timeout, connection pool and key prefix settings remain
+applicable in Sentinel mode. Reads and subscriptions use the current master.
+Convertigo follows master promotion without restarting its Redis clients; sessions,
+contexts, context locks, in-flight request markers and cluster discovery use this
+same client. The administration service `engine.ListInstances` reports the
+configured topology, monitored master name, seed nodes, current master address and
+Redis reachability. Requests can wait or fail during election.
+
+{{site.data.alerts.warning}}
+Redis replication is asynchronous. A promoted replica can lose acknowledged
+writes that had not yet replicated, including session changes, locks and in-flight
+request markers. Sentinel does not guarantee exactly-once business execution;
+retry-sensitive operations need application-level protection.
+{{site.data.alerts.end}}
+
+All advertised addresses, including promoted replicas and discovered Sentinels,
+must be reachable from Convertigo. With TLS/mTLS, all nodes must expose TLS and
+trust the configured client certificate where required. With strict certificate
+verification, each advertised hostname or IP address must match its certificate.
+Mixed plaintext/TLS data and Sentinel topologies are not supported.
+
+Unless configured otherwise, Sentinel advertises the master, the replicas and the
+other Sentinels by IP address, while certificates usually list host names. With
+the default `STRICT` verification, the connection is then refused and the server
+log shows `No subject alternative names matching IP address ...`. Make every node
+advertise a host name present in its certificate, for example the stable DNS name
+of each pod on Kubernetes:
+
+```text
+# on each Redis node
+replica-announce-ip redis-1.redis-headless.<namespace>.svc.cluster.local
+
+# on each Sentinel
+sentinel resolve-hostnames yes
+sentinel announce-hostnames yes
+sentinel announce-ip sentinel-1.redis-headless.<namespace>.svc.cluster.local
+```
+
+A tested Kubernetes example (Redis and Sentinel in mTLS with the CloudPirates Redis
+chart, Convertigo chart values, rolling procedure and measured failover times) is
+available in the [Convertigo Helm repository](https://github.com/convertigo/convertigo-helm/tree/hotfix/examples/redis-sentinel).
+
+If the Redis deployment cannot advertise host names, set
+`session.redis.ssl.verification.mode=CA_ONLY`: the certificate chain is still
+validated and mTLS still requires the client certificate, but the host name is not
+checked.
+
+The time Redis stays unavailable during a failover mainly depends on the Sentinel
+`down-after-milliseconds` and `failover-timeout` settings. Sessions already
+replicated to the promoted replica are kept: users stay signed in.
+
+The [Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo)
+exposes these client settings under `sessionStore.redis.topology` and
+`sessionStore.redis.sentinel.*`. Set `sessionStore.mode=redis` and
+`redis.enabled=false`, and select a Convertigo image supporting Sentinel (8.4.7+).
+Deploy Redis/Sentinel using a dedicated chart or an existing Sentinel service;
+the Convertigo chart does not install Sentinel. A production topology should have
+at least three Sentinels with quorum two, Redis replicas and nodes distributed
+across failure domains. See the [Redis Sentinel documentation](https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/).
+
+#### Redis unreachable (8.4.7+)
+
+When `redis` is the session store, the `engine.Supervision` service
+(`/convertigo/admin/services/engine.Supervision`) reports the state of the store
+in a `convertigo.session.store` line:
+
+- `OK`: sessions are stored in Redis (also reported with the `tomcat` store);
+- `KO`: Redis is not usable, the instance should not receive traffic;
+- `DEGRADED`: the instance uses local sessions after a failed startup (`tomcat` fallback).
+
+If Redis cannot be reached when Convertigo starts, `session.redis.startup.fallback`
+selects the behavior. It is an advanced Session management property, applied when
+the session store starts, and can also be set as a JVM option
+(`-Dconvertigo.engine.session.redis.startup.fallback=tomcat`).
+
+| Value | Behavior |
+| --- | --- |
+| `none` (default) | Convertigo retries in background (increasing delay, up to 30 seconds) and reports `KO`. Requests that need a session receive an HTTP `503` with a `Retry-After` header; stateless requests are served. Once Redis is reachable, Convertigo uses it without restart, reports `OK` and shares its sessions with the other instances. |
+| `tomcat` | No retry: Convertigo keeps its sessions in memory until it is restarted and reports `DEGRADED`. Sessions are not shared with the other instances: use it only with a single instance or sticky sessions. |
+
+Once connected, Convertigo keeps reporting `OK` while Redis is unreachable for less
+than `session.redis.readiness.grace` seconds (60 by default), so that a Sentinel
+failover does not remove every instance from the load balancer; it then reports
+`KO` until Redis is reachable again. Requests that need Redis wait during this time.
+A load balancer or a readiness probe removes the instance after this delay plus its
+own failure threshold.
+
+Use this line for the readiness of the instance, not for its liveness: restarting
+Convertigo does not make Redis reachable. The
+[Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo#redis-unreachable-at-startup)
+configures its readiness probe this way and exposes these settings as
+`sessionStore.redis.startupFallback` and `sessionStore.redis.readinessGrace`.
+
+#### Projects loading and readiness (8.4.7+)
+
+The same `engine.Supervision` response also reports `convertigo.projects=KO`
+while the server loads or migrates the projects in its workspace, then
+`convertigo.projects=OK` when loading has finished. A readiness probe must wait
+for this line as well as the engine and session store: a running engine cannot
+yet serve a project still being loaded. Studio and CLI modes, which do not run
+this background loading phase, report `OK`.
+
+The Convertigo Helm chart waits while `convertigo.projects=KO`, while remaining
+compatible with older images that do not report this line. The supervision HTTP
+status alone is not a readiness verdict: the service remains available for
+liveness and diagnosis during project loading or Redis startup retries.
 
 ## Connections
 

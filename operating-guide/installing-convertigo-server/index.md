@@ -19,7 +19,22 @@ Convertigo Server installation is available as 2 packaging types  :<br>
 
 ### Convertigo war file
 
-Convertigo war file can be used with application servers in 64bits environments. It can be installed on Apache Tomcat. The minimum version of java must be 11, and for Tomcat 9.
+Convertigo WAR files run in a 64-bit environment on Apache Tomcat. Use the
+runtime generation matching the Convertigo release:
+
+{% assign doc_version_parts = site.data.sidebars.c8o_sidebar.entries[0].version | split: '.' %}
+{% assign doc_major = doc_version_parts[0] | plus: 0 %}
+{% assign doc_minor = doc_version_parts[1] | plus: 0 %}
+{% if doc_major > 8 or doc_major == 8 and doc_minor >= 5 %}
+- **Convertigo 8.5:** Java **25** and Tomcat **11** (Jakarta Servlet).
+  A Tomcat 9 installation cannot host this WAR.
+{% else %}
+- **Convertigo 8.4:** Java **17** and Tomcat **9** (`javax.servlet`).
+  Use the matching 8.4 WAR rather than deploying it unchanged on Tomcat 11.
+{% endif %}
+
+The official Docker image includes its matching runtime. These requirements
+apply when deploying the WAR to a separately managed Tomcat.
 
 The war file, convertigo-X.Y.Z.war, is available on [https://github.com/convertigo/convertigo/releases](https://github.com/convertigo/convertigo/releases)
 
@@ -122,6 +137,19 @@ JAVA_OPTS  |Add any Java JVM options such as -D[something] : <br><br>_$ docker r
 JXMX|Convertigo tries to allocate this amount of memory in the container and will automatically reduce it until the value is compatible for the Docker memory constraints. Once the best value found, it is used as -Xmx={JXMX}m parameter for the JVM.<br>The default JXMX value is 2048 and can be defined :<br><br>_$ docker run -d --name C8O -e JXMX="4096" -p 28080:28080 convertigo_
 COOKIE_PATH|Convertigo generates a JSESSIONID to maintain the user session and stores in a cookie. The cookie is set for the server path / by default. In case of a front server with multiple services for different paths, you can set a path restriction for the cookie with the JSESSIONID. Just define the COOKIE_PATH environment variable with a compatible path.<br>The default COOKIE_PATH value is / and can be defined this way:<br><br>_$ docker run -d --name C8O -e COOKIE_PATH="/convertigo" -p 28080:28080 convertigo_
 COOKIE_SAMESITE|Allow to configure the SameSite parameter for generated cookies. Can be empty, "none", "lax" or "strict".<br>The default COOKIE_SAMESITE value is empty and can be defined this way: <br /><br>_$ docker run -d --name C8O -e COOKIE_SAMESITE=lax -p 28080:28080 convertigo_
+
+#### JVM arguments in startup logs (8.4.7+)
+
+The Convertigo Docker image disables argument logging in Tomcat's
+`VersionLoggerListener` (`logArgs="false"`). Tomcat still reports its version,
+the JVM and the operating system, but no longer lists the JVM startup arguments.
+This also applies to the arguments supplied through `JAVA_OPTS`, which may
+contain configuration passwords.
+
+This image setting does not change a separately installed Tomcat or another
+launcher. It does not remove arguments from process inspection or from output
+produced by other launch scripts; keep credentials out of source control and
+shared diagnostic reports.
 
 #### Custom certificate authorities
 
