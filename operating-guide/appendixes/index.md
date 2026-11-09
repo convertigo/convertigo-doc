@@ -256,8 +256,6 @@ The analytics feature is available in Convertigo Server, as well as for the Conv
 
 The analytics feature consists in writing in a database one entry, also known as **ticket**, for each executed transaction or sequence. This is useful to monitor the Convertigo Server’s activity. The analytics feature produces the raw data, but the management and treatment of these data has to be manually performed and personalized by each Convertigo administrator.
 
-<a id="analytics-queues-847"></a>
-
 ### Analytics queues (8.4.7+)
 
 Each active analytics ticket manager has its own queue and writer. A slow
