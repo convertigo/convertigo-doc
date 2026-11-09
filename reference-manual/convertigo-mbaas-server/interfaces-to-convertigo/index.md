@@ -438,3 +438,13 @@ If you are using Microsoft .NET web service client, use this code construction (
 #### Case of REST calls
 
 For REST web service calls, be sure that the HTTP client will maintain session cookies with Convertigo.
+
+Since 8.4.7, a URL-mapped REST operation passes its declared parameters, mapped
+variable names and path variables to its target requestable. Engine routing
+parameters come from the URL mapping itself. Other caller-supplied reserved
+parameters starting with `__`, such as `__context`, are not forwarded unless the
+operation declares them. Multipart fields follow the same declaration rules as
+other operation parameters.
+
+The target requestable's **Secure connection required** property also applies
+to calls through a REST operation: use HTTPS when that property is enabled.
