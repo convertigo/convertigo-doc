@@ -850,6 +850,20 @@ Convertigo does not make Redis reachable. The
 configures its readiness probe this way and exposes these settings as
 `sessionStore.redis.startupFallback` and `sessionStore.redis.readinessGrace`.
 
+#### Projects loading and readiness (8.4.7+)
+
+The same `engine.Supervision` response also reports `convertigo.projects=KO`
+while the server loads or migrates the projects in its workspace, then
+`convertigo.projects=OK` when loading has finished. A readiness probe must wait
+for this line as well as the engine and session store: a running engine cannot
+yet serve a project still being loaded. Studio and CLI modes, which do not run
+this background loading phase, report `OK`.
+
+The Convertigo Helm chart waits while `convertigo.projects=KO`, while remaining
+compatible with older images that do not report this line. The supervision HTTP
+status alone is not a readiness verdict: the service remains available for
+liveness and diagnosis during project loading or Redis startup retries.
+
 ## Connections
 
 The left menu contains a link to the **Connections** page. This page displays real-time activity on the Convertigo Server.
