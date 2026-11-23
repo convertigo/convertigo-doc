@@ -6,19 +6,19 @@ summary: "A large upload or a long operation crosses every component between the
 sidebar: c8o_sidebar
 permalink: /operating-guide/large-files-and-timeouts/
 ---
-A project bundle uploaded from the administration console, a file sent to a sequence, a sequence that runs for minutes or a large export all cross the same chain: a CDN or a WAF, a load balancer, a reverse proxy, a Kubernetes ingress or Gateway, Tomcat, then Convertigo. **The smallest limit of the chain wins**, and the component that refuses a request is not always the one that seems to fail. The Convertigo properties are only one link of this chain: check every component at each installation, and keep the values in the installation file.
+A project bundle uploaded from the administration console, a file sent to a sequence, a sequence that runs for minutes or a large export all cross the same chain: a CDN or a WAF, a load balancer, a reverse proxy, a Kubernetes ingress or Gateway, Tomcat, then Convertigo. **The smallest limit of the chain wins**, and the component that refuses a request is not always the one that seems to fail. By default, Convertigo does not limit the size of the administration uploads: the frontend in front of it sets that limit. The Convertigo properties are only one link of this chain: check every component at each installation, and keep the values in the installation file.
 
 ## Sizes: units and envelope
 
 * Convertigo properties are in bytes. 1 MiB is 1,048,576 bytes and 1 GiB is 1,073,741,824 bytes. The `m` and `g` suffixes of NGINX are MiB and GiB: `1025m` is 1,074,790,400 bytes. Cloud consoles often use MB and GB (10<sup>6</sup> and 10<sup>9</sup> bytes): check the unit of each setting.
-* A file is uploaded in a multipart request, which is larger than the file: boundaries, part headers and form fields come on top of it. Since 8.4.8, Convertigo accepts 1 MiB of envelope above its administration upload limit. Size the frontends on the **request**: 1025 MiB for the default 1 GiB of archives.
+* A file is uploaded in a multipart request, which is larger than the file: boundaries, part headers and form fields come on top of it. Size the frontends on the **request**: 1025 MiB to accept 1 GiB of archives. When the optional Convertigo limit `net.upload.admin.max_size` is set, the request can exceed it by 1 MiB of envelope.
 * A request body limit does not limit downloads (exports, files returned by a sequence). Downloads are limited by timeouts, buffering and disk space instead.
 
 ## Four paths, four sets of limits
 
 | Path | Requests | Convertigo limit | Notes |
 | --- | --- | --- | --- |
-| Administration uploads | Console: deploy a project, several projects or a bundle; import certificates, global symbols, roles or scheduler jobs. Studio: deployment to a remote server. | `net.upload.admin.max_size` (8.4.8+): 1 GiB of files per request by default, plus 1 MiB of envelope. | Over the limit: HTTP 413 with a message naming the property. |
+| Administration uploads | Console: deploy a project, several projects or a bundle; import certificates, global symbols, roles or scheduler jobs. Studio: deployment to a remote server. | None by default. Optional `net.upload.admin.max_size` (8.4.8+, `-1` by default): limit of the files of one request, plus 1 MiB of envelope. | The frontend sets the limit (1025m in the Helm chart). Over the optional limit: HTTP 413 with a message naming the property. |
 | Business requests with files | Multipart requests to transactions and sequences (`/convertigo/projects/...`), multipart REST operations of the URL mapper. | `net.upload.max_file_size` per file (10 MiB by default), `net.upload.max_request_size` per request (`-1`: no limit). | Kept small by default on purpose: raise them only for the applications that need it. |
 | Import from URL or Git | Console: **Import a Remote Project URL**. | No size property. | The server downloads the archive itself: the frontends do not carry it, but the console waits for the download and the import, so their read timeouts apply. |
 | Downloads | Export of a project or of a bundle, files returned by sequences. | No size property. | An export is built on the server before its first byte is sent: the read timeouts must cover that time. The console receives the whole file before saving it: very large exports depend on the memory of the browser. |
@@ -26,7 +26,7 @@ A project bundle uploaded from the administration console, a file sent to a sequ
 Before 8.4.8:
 
 * `net.upload.max_file_size` did not exist: the maximum file size and the maximum request size were both stored under `net.upload.max_request_size`, so setting one of them set both. A configuration that only sets `net.upload.max_request_size` keeps applying its value to each uploaded file. Changing the request limit afterwards keeps the current file limit.
-* The administration uploads had no size limit in Convertigo, except with several instances sharing Redis sessions: the administration requests that the console sends to another instance were limited to 256 MiB, and refused with HTTP 502 as if that instance were unreachable. Since 8.4.8 they are limited to 1 GiB by default: raise `net.upload.admin.max_size` to deploy a larger project archive.
+* With several instances sharing Redis sessions, the administration requests that the console sends to another instance were limited to 256 MiB, and refused with HTTP 502 as if that instance were unreachable. Since 8.4.8 this forward has no size limit of its own, and never answers 502 for a body it refused or could not store.
 
 ### Setting the properties
 
@@ -37,11 +37,11 @@ Set them in the administration console (**Configuration** > **Network**), or at 
 -Dconvertigo.engine.net.upload.max_file_size=52428800
 ```
 
-When you raise a Convertigo limit, raise every frontend above it (plus the envelope) and plan the disk space accordingly. With several instances, set the same values on all of them: the instance that receives a request and the instance that processes it apply the same administration limit.
+Set `net.upload.admin.max_size` only when no frontend limits the requests, for example a Tomcat exposed directly, or to protect the disk space of a shared server; keep the frontends above it plus the envelope. With several instances, set the same values on all of them: the instance that receives a request and the instance that processes it apply the same administration limit.
 
 ### Bundle quotas
 
-A bundle that crosses the network can still be refused by the checks of its content, which do not depend on the transport: at most 64 uploaded files, 200 projects and 200,000 entries, 4 GiB of expanded content for the outer and inner archives together, 1 GiB per entry, and an expansion ratio of 200 for the entries larger than 1 MiB. These quotas are fixed. They are reported with HTTP 500 and an explicit message, for example `The bundle exceeds its expanded size limit`. Very compressible content can be refused even when the archive is small. A bundle exported by the console is checked with the same quotas and size limit before it is offered for download. See [Deploying several projects or a bundle](../using-convertigo-administration-console/#deploying-several-projects-or-a-bundle).
+A bundle that crosses the network can still be refused by the checks of its content, which do not depend on the transport: at most 64 uploaded files, 200 projects and 200,000 entries, 4 GiB of expanded content for the outer and inner archives together, 1 GiB per entry, and an expansion ratio of 200 for the entries larger than 1 MiB. These quotas are fixed: they protect the server, whatever the transport. They are reported with HTTP 500 and an explicit message, for example `The bundle exceeds its expanded size limit`. Very compressible content can be refused even when the archive is small. A bundle exported by the console is checked with the same quotas, and the optional size limit, before it is offered for download. See [Deploying several projects or a bundle](../using-convertigo-administration-console/#deploying-several-projects-or-a-bundle).
 
 ## Tomcat
 
@@ -60,14 +60,12 @@ To change them, edit `conf/server.xml` of your Tomcat (war installation), or bui
 
 The [Convertigo Helm chart](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo) sets on its ingress (ingress-nginx):
 
-* `nginx.ingress.kubernetes.io/proxy-body-size: 1025m` since chart 8.4.8 (`500m` in earlier charts), the default administration limit plus its envelope;
+* `nginx.ingress.kubernetes.io/proxy-body-size: 1025m` since chart 8.4.8 (`500m` in earlier charts): 1 GiB of archives plus the envelope. It is the size limit of the administration uploads, as Convertigo has none of its own by default;
 * `nginx.ingress.kubernetes.io/proxy-read-timeout` and `proxy-send-timeout` to `"3600"` seconds.
 
-The other ingress-nginx defaults apply: 5 s to connect to Convertigo, request buffering on (the controller writes the body to its disk before sending it), and 60 s between two reads of a request body (`client-body-timeout`, a setting of the controller ConfigMap, not an Ingress annotation). Values set in your own `ingress.annotations` are kept across upgrades. Example raising the administration limit to 2 GiB:
+The other ingress-nginx defaults apply: 5 s to connect to Convertigo, request buffering on (the controller writes the body to its disk before sending it), and 60 s between two reads of a request body (`client-body-timeout`, a setting of the controller ConfigMap, not an Ingress annotation). Values set in your own `ingress.annotations` are kept across upgrades. Example accepting 2 GiB of archives:
 
 ```yaml
-additionalJavaOpts:
-  - "-Dconvertigo.engine.net.upload.admin.max_size=2147483648"
 ingress:
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 2049m
@@ -116,18 +114,18 @@ Raising timeouts has a limit: connections held for long tie up threads and conne
 
 | Status | Usually returned by | Meaning and what to check |
 | --- | --- | --- |
-| 413 | A frontend (its own HTML page) or Convertigo (an XML or JSON error document; for the administration uploads, its message names `net.upload.admin.max_size`) | The body is larger than a limit. When a frontend refuses, Convertigo logs nothing: the format of the answer and the logs tell which component refused. |
+| 413 | A frontend (its own HTML page) or Convertigo (an XML or JSON error document; for the administration uploads, when `net.upload.admin.max_size` is set, its message names it) | The body is larger than a limit. When a frontend refuses, Convertigo logs nothing: the format of the answer and the logs tell which component refused. |
 | 404 | IIS request filtering | Body larger than `maxAllowedContentLength`. |
 | 408 | NGINX, Apache httpd, HAProxy | The client paused longer than allowed while sending its body: slow or interrupted upload. |
 | 499 | NGINX logs only | The client closed the connection before the answer. The work goes on in Convertigo. |
-| 502 | A frontend | Convertigo could not be reached or closed the connection: restart, pod not ready, crash, or a frontend time-out (IIS ARR 502.3). Check the Convertigo logs and readiness. In the console of several instances, a 502 with the `X-C8O-Instance-Unreachable` header means that the selected instance cannot be reached from the instance that received the request. Before 8.4.8, an administration upload over 256 MiB sent to another instance got the same 502 although that instance was reachable. |
+| 502 | A frontend | Convertigo could not be reached or closed the connection: restart, pod not ready, crash, or a frontend time-out (IIS ARR 502.3). Check the Convertigo logs and readiness. In the console of several instances, a 502 with the `X-C8O-Instance-Unreachable` header means that the selected instance cannot be reached from the instance that received the request. Before 8.4.8, an administration upload over 256 MiB sent to another instance got the same 502 although that instance was reachable; since 8.4.8, the forward never answers 502 for the size of a body. |
 | 504, 524 | A frontend | Its read timeout elapsed while Convertigo was still working: compare the time of the error with the timeouts of the chain, and check the result before trying again. |
 | 500 with an XML error | An administration service | The content was refused: bundle quotas, too many archives, invalid archive, full disk. The message tells which. |
 | Connection reset, empty reply | Tomcat or a frontend | A request refused before its body was read, without a buffering frontend (see `maxSwallowSize`), or a frontend that resets instead of answering. |
 
 ## Disk space and concurrency
 
-Each buffering component writes the body to its disk: the reverse proxy or the ingress controller pod (NGINX request buffering), then Convertigo: upload temporary files, a copy on the instance that forwards an administration request to another instance, staging and extraction of a bundle, backups of the replaced projects. Plan several times the size of the archive plus its expanded size, both on the frontends (ephemeral storage of the ingress pods) and on Convertigo (temporary directory and workspace), and avoid simultaneous large deployments. Keep these buffers on disk: do not turn them into 1 GiB memory buffers.
+Without a Convertigo limit, the frontend limit and the disk space bound the administration uploads. Each buffering component writes the body to its disk: the reverse proxy or the ingress controller pod (NGINX request buffering), then Convertigo: upload temporary files, a copy on the instance that forwards an administration request to another instance, staging and extraction of a bundle, backups of the replaced projects. Plan several times the size of the archive plus its expanded size, both on the frontends (ephemeral storage of the ingress pods) and on Convertigo (temporary directory and workspace), and avoid simultaneous large deployments. Keep these buffers on disk: do not turn them into 1 GiB memory buffers.
 
 An upload is a single request: an interrupted upload starts again from the beginning. A bundle deployment is not a transaction: if a project fails, the projects already deployed stay in place. For large transfers, compare the size and a checksum (for example SHA-256) of the file on both sides.
 
@@ -135,8 +133,8 @@ An upload is a single request: an interrupted upload starts again from the begin
 
 1. Draw the chain: client, CDN or WAF, load balancer, reverse proxy, ingress or Gateway, Tomcat, Convertigo. Note where TLS ends.
 2. For each component, note its body size limit, its body pause timeout, its read timeout and its idle timeout.
-3. Body sizes: at least `net.upload.admin.max_size` plus 1 MiB (1025 MiB by default) on `/convertigo/admin/`; for the applications that receive files, above their largest request, consistent with `net.upload.max_file_size` and `net.upload.max_request_size`.
+3. Body sizes: on `/convertigo/admin/`, the largest archive or bundle you deploy plus 1 MiB (1025 MiB in the Helm chart), as Convertigo does not limit it unless `net.upload.admin.max_size` is set; for the applications that receive files, above their largest request, consistent with `net.upload.max_file_size` and `net.upload.max_request_size`.
 4. Timeouts: above the longest Response timeout of the exposed sequences and the longest administration operation. Beyond a few minutes, prefer a tracked processing.
 5. Temporary disk space on the frontends and on Convertigo for several copies of the largest archive.
-6. Test through the real chain: an archive just below the limit (deployed), one just above (a readable 413 from Convertigo, not from a frontend), a test sequence longer than the shortest default timeout of the chain (for example 90 s, with its Response timeout raised), and with several instances a deployment on another instance selected in the console. Read the logs of each component.
+6. Test through the real chain: an archive just below the frontend limit (deployed), one just above (refused with 413 by the frontend, nothing in the Convertigo logs), a test sequence longer than the shortest default timeout of the chain (for example 90 s, with its Response timeout raised), and with several instances a deployment on another instance selected in the console. Read the logs of each component.
 7. Keep these values in the installation file: a change of proxy or load balancer brings back its defaults.
