@@ -1,7 +1,7 @@
 ---
 title: Backend Developers
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 02/04/2020
+last_updated: 23/11/2026
 summary: "This chapter describes you how to use Convertigo backend objects to connect your data and build backend services."
 sidebar: c8o_sidebar
 permalink: /programming-guide/backend-developers/
@@ -642,3 +642,45 @@ The Sequence response will also be displayed step by step.
 Finally, when reaching the last Step in Sequence you will get the response in the viewer.
 
 ![Debug Mode Step 6](../../images/pguide_img/backend/debug/debug_mode_step_06.png)
+
+
+## Building a project bundle with Gradle
+
+Since Convertigo **8.4.8**, the Convertigo Gradle plugin provides the
+`projectBundle` task. It produces the same ZIP of project CAR files and
+`bundle.json` manifest as the
+[Administration Console bundle export]({{site.baseurl}}/operating-guide/using-convertigo-administration-console/#exporting-several-projects-as-a-bundle).
+Use version **8.4.8 or later** of the plugin with the matching Convertigo engine.
+
+In a project already configured to use the Convertigo Gradle plugin, add:
+
+```groovy
+projectBundle {
+    projects = ['MyApplication']
+    includeDependencies = true
+    excludeProjects = ['SharedLibrary']
+    destinationFile = file('build/application-bundle.zip')
+    includeTestCases = false
+    includeStubs = true
+}
+```
+
+Then run:
+
+```shell
+./gradlew projectBundle
+```
+
+An empty `projects` list uses the current project. The task saves that project
+before exporting, and every selected or referenced project to include must be
+available to the engine used by the build. With `includeDependencies = true`,
+selection follows declared references recursively. `includeProjects` can add
+other project roots, for example projects whose names are used only in scripts.
+`excludeProjects` omits selected dependencies; a root project cannot also be
+excluded. Every omitted dependency must already be available on the destination
+server. These choices do not edit the project references.
+
+Choose a destination under `build` or outside project sources. The existing
+`car`, `deploy` and `exportDependencies` tasks retain their behavior. For all
+bundle options and the import limits, see the
+[Gradle plugin bundle reference](https://github.com/convertigo/convertigo/blob/hotfix/gradle-plugin/README.md).
