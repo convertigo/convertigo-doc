@@ -1,7 +1,7 @@
 ---
 title: Installing Convertigo Server
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 03/04/2020
+last_updated: 23/11/2026
 summary: "This chapter describes how to install Convertigo Server in several qualified environments and operating systems."
 sidebar: c8o_sidebar
 permalink: /operating-guide/installing-convertigo-server/
@@ -171,6 +171,36 @@ $ docker-compose up -d
 ```
 
 ### Use Convertigo with kubernetes
+
+#### Helm installations (8.4.8 and later)
+
+For a Helm-managed installation, use the
+[Convertigo chart and its configuration reference](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo).
+The 8.4.8 chart changes how fresh workspaces and initial accounts are prepared:
+
+- Project setup runs before the engine starts, under a shared-workspace lock.
+  A completion marker is written only after setup and ownership repair complete.
+  Interrupted setup can resume, and the configurable startup probe gives the
+  engine time to load its projects before liveness checks apply. With several
+  replicas on an RWX workspace, the storage driver must support cross-node
+  advisory locking.
+- A fresh installation generates administration and service credentials, or
+  uses the Kubernetes Secrets you select. It also creates the initial Baserow
+  administrator before the HTTP service starts, with public and invitation
+  sign-ups closed. Keep the generated Secrets with the persistent-data backups.
+  Use these credentials to sign in to the console rather than the image's
+  default administration credentials.
+- AWS Marketplace metering is opt-in through `awsMarketplace.enabled=true`.
+  Ordinary Helm upgrades retain existing credentials, accounts and workspace
+  configuration. They do not rotate passwords or generate an encryption phrase;
+  a custom cryptographic passphrase remains an explicit choice.
+
+See [workspace startup and administrator provisioning](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo#workspace-startup-and-administrator-provisioning)
+and [installation credentials and upgrades](https://github.com/convertigo/convertigo-helm/tree/hotfix/stable/convertigo#installation-credentials-and-upgrades)
+for the chart settings. The [installation credentials guide](https://github.com/convertigo/convertigo-helm/blob/hotfix/docs/installation-credentials.md)
+explains Secret keys, existing installations and upgrade behavior.
+
+#### Custom Kubernetes manifests
 
 Kubernetes objects are represented in the Kubernetes API, and can be used with file in ***.yaml*** format.
 For a Kubernetes deployment, we need to create a ***deployment.yaml*** file which include all information about the application.

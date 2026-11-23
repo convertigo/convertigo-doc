@@ -39,6 +39,11 @@ When validating the URL, the Administration Console login page opens. You have t
 
 For example, in case of a Convertigo Studio or a default Convertigo Server installation, default username/password is admin/admin. In case of a private Convertigo Cloud, credentials were delivered to you by email.
 
+For a fresh installation with the **8.4.8 or later Helm chart**, use its generated
+or configured administration credentials. The image's default administration
+credentials do not apply. See
+[Helm installation credentials]({{site.baseurl}}/operating-guide/installing-convertigo-server/#helm-installations-848-and-later).
+
 **4**. Click on the **Login** button or press *Enter* on your keyboard.
 
 Once logged in, the Administration Console Home page opens:
