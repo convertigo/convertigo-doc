@@ -177,6 +177,10 @@ Equivalent settings for other collectors:
 * The `Audit` and `Context.Audit` loggers trace administration actions and deployments; they can be routed to a dedicated index with a longer retention.
 * Tomcat access logs are not written to the standard output by default. If they are needed, declare in `server.xml` an `AccessLogValve` with `directory="/dev" prefix="stdout" suffix="" rotatable="false"`, or keep its file output and let the collector read it.
 
+## Size limits and timeouts of the frontends
+
+Every reverse proxy, load balancer, ingress or WAF in front of Convertigo has its own request size limit and timeouts, usually lower than what uploads of project bundles or long sequences need. Check them at each installation: see [Large files and timeouts](../large-files-and-timeouts/).
+
 ## Setting engine properties at deployment time
 
 Every property above can be set in the administration console, or at startup with a Java system property prefixed by `convertigo.engine.`, which suits containers and automated deployments:

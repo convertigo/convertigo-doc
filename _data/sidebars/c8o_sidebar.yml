@@ -52,6 +52,9 @@ entries:
     - title: Production deployment recommendations
       url: /operating-guide/production-deployment-recommendations/
       output: web, pdf
+    - title: Large files and timeouts
+      url: /operating-guide/large-files-and-timeouts/
+      output: web, pdf
     - title: Using Convertigo Administration Console
       url: /operating-guide/using-convertigo-administration-console/
       output: web, pdf

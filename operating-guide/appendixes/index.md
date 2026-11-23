@@ -499,7 +499,8 @@ net.gzip| Enable GZip response for most text responses (need the header Accept-E
 net.max-age| Browser and shared cache lifetime in seconds for non-fingerprinted static resources; application HTML and fingerprinted assets use automatic policies (8.4.7+; previously 10 seconds). [Static HTTP cache policies](../using-convertigo-administration-console/#static-http-cache-847)| 60
 net.reverse_dns| Use DNS reverse search for finding host names| false
 net.upload.max_request_size| Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit.| -1
-net.upload.max_request_size| Maximum allowed size of a single uploaded file (in bytes).| 10485760
+net.upload.max_file_size| Maximum allowed size of a single uploaded file (in bytes). 8.4.8+; previously stored under net.upload.max_request_size, which still applies to each file when net.upload.max_file_size is not set. [Large files and timeouts](../large-files-and-timeouts/)| 10485760
+net.upload.admin.max_size| Maximum total size of the files of one administration upload: project archives, bundles, imports (in bytes). Also applies to the administration requests forwarded to another instance. 8.4.8+. [Large files and timeouts](../large-files-and-timeouts/)| 1073741824
 
 ### HTTP Client
 
