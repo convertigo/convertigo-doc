@@ -418,12 +418,15 @@ Check this option only if you are sure the Convertigo Server is able to reach a 
 {{site.data.alerts.end}}
 
 - **Maximum allowed size of a complete multipart request (in bytes). Value -1 indicates no limit** : This parameter allows to define the maximum allowed size of a multipart request to Convertigo, in bytes. Default value is -1, indicating that the request size is not limited.
-- **Maximum allowed size of a single uploaded file (in bytes)** : This parameter allows to define the maximum allowed size of one uploaded file when sending a multipart request to Convertigo, in bytes. 
+- **Maximum allowed size of a single uploaded file (in bytes)** : This parameter allows to define the maximum allowed size of one uploaded file when sending a multipart request to Convertigo, in bytes. Default value is 10485760 (10 MiB). Since 8.4.8 it is stored under its own key, `net.upload.max_file_size`; a configuration that only sets `net.upload.max_request_size` keeps applying that value to each file.
+- **Maximum total size of the files of one administration upload** (`net.upload.admin.max_size`, 8.4.8+) : Limits the files of one upload to the administration console: project archives, bundles and imports, including the deployments from the Studio. Default value is 1073741824 (1 GiB); the request can exceed it by 1 MiB of multipart envelope. With several instances, it also applies to the requests that the console sends to another instance. An upload over the limit is refused with HTTP 413.
 
 {{site.data.alerts.note}}
 Since version 6.1.10, Convertigo allows to receive multi-part requests. The programmers can then develop forms that will be used to upload files to Convertigo as input variables of transactions/sequences.<br><br>
 The transactions/sequences variables can be defined as a file upload using the <b>Is a file upload</b> property.
 {{site.data.alerts.end}}
+
+The reverse proxies, load balancers and ingress in front of Convertigo apply their own size limits and timeouts: see [Large files and timeouts](../large-files-and-timeouts/).
 
 <a id="static-http-cache-847"></a>
 
@@ -1024,6 +1027,9 @@ There is no rollback of the whole bundle. The result distinguishes **Deployed**,
 The bundle import accepts at most 64 uploaded files, 1 GiB of uploaded archive
 data, 200 projects and 200,000 entries. The combined expanded content of outer
 and inner archives is limited to 4 GiB, with a maximum of 1 GiB per entry.
+The uploaded size is the `net.upload.admin.max_size` engine property, and the
+reverse proxies or ingress in front of the server must accept the request, 1 MiB
+larger: see [Large files and timeouts](../large-files-and-timeouts/).
 
 #### Importing a project from URL
 
