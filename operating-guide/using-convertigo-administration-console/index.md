@@ -1,7 +1,7 @@
 ---
 title: Using Convertigo Administration Console
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 21/03/2019
+last_updated: 23/11/2026
 summary: "This chapter describes several of the actions and configurations possible with the Convertigo engine Administration Console"
 sidebar: c8o_sidebar
 permalink: /operating-guide/using-convertigo-administration-console/
@@ -930,9 +930,11 @@ This section is separated in the following paragraphs:
 
 - [Description of the Projects table](#description-of-the-projects-table)
 - [Deploying a project](#deploying-a-project)
+- [Deploying several projects or a bundle](#deploying-several-projects-or-a-bundle)
 - [Importing a project from URL](#importing-a-project-from-url)
 - [Reloading a project](#reloading-a-project)
 - [Exporting a project](#exporting-a-project)
+- [Exporting several projects as a bundle](#exporting-several-projects-as-a-bundle)
 - [Editing a project](#editing-a-project)
 - [Deleting a project](#deleting-a-project)
 - [Testing a project](#testing-a-project)
@@ -956,8 +958,9 @@ For each project, the table includes:
 
 At the top of the page:
 
-- **Deploy project** opens a dialog to upload a `.car`/`.zip` file.
+- **Deploy project** opens a dialog to upload a `.car`/`.zip` file or, since 8.4.8, several project archives or a bundle.
 - **Import a Remote Project URL** opens a dialog to import from a remote Git/HTTP source.
+- **Export projects** (since 8.4.8) selects several projects to download together as a bundle.
 
 {{site.data.alerts.note}}
 Project actions can be disabled depending on user permissions and project state.
@@ -981,6 +984,41 @@ If a project with the same name already exists, deployment updates the project o
 {{site.data.alerts.note}}
 A <code>&lt;ProjectName&gt;.car</code> archive placed in the <code>projects</code> directory of the workspace is still deployed automatically at engine startup. Since Convertigo 8.4.4, a CAR archive found in this directory (or uploaded through the console) is removed after a successful deployment and kept when the deployment fails, so that it is not deployed again at the next restart. Deleting a project also removes the matching CAR archives of this directory, even when their filename carries a version.
 {{site.data.alerts.end}}
+
+#### Deploying several projects or a bundle
+
+Since Convertigo **8.4.8**, the console can deploy an application made of several
+projects in one operation. The existing single-project deployment remains available.
+
+1. Click **Deploy project**, then enable **Deploy several projects or a bundle**.
+2. Drop or choose the files to deploy. You can select several `.car` or project
+   `.zip` files together, or choose one distribution `.zip` containing project
+   archives or project folders. Only one outer bundle level is expanded; archives
+   inside a project remain its files.
+3. If needed, enable **Assemble XSL files included in style sheets when deploying**.
+4. Click **Deploy** and read the **Bundle deployment result**. It lists each
+   project's name, version, status and details, together with any warnings.
+
+A bundle exported by the console contains one `.car` per project and a
+`bundle.json` manifest recording the projects, versions and dependency order.
+Distribution ZIP files that already contain project archives can be deployed
+without repacking them; the manifest is optional for import.
+
+The complete selection is checked before existing projects are replaced. Duplicate
+project names or missing declared dependencies are reported before deployment.
+A dependency left out of the bundle must already be available on the destination
+server. Projects are loaded in dependency order. Cyclic dependency groups are
+accepted with a warning: all their sources are installed before loading the group.
+
+Deployment uses the server's normal replacement, backup and automatic-start
+settings. It does not enable backups automatically. If a project fails, deployment
+stops: projects already deployed and sources already installed remain in place.
+There is no rollback of the whole bundle. The result distinguishes **Deployed**,
+**Failed**, **Installed, not finalized** and **Not attempted** projects.
+
+The bundle import accepts at most 64 uploaded files, 1 GiB of uploaded archive
+data, 200 projects and 200,000 entries. The combined expanded content of outer
+and inner archives is limited to 4 GiB, with a maximum of 1 GiB per entry.
 
 #### Importing a project from URL
 
@@ -1016,6 +1054,32 @@ In the project row, click the **Reload project** action, then confirm.
 In the project row, click the **Export project** action.
 
 A project archive (`.car`) is generated and downloaded.
+
+#### Exporting several projects as a bundle
+
+Since Convertigo **8.4.8**, use **Export projects** in the Projects page header to
+enter selection mode. Select the projects to export, then click **Export [n]**
+to open the bundle export dialog.
+
+- Enable **Include declared dependencies** to list the projects referenced by
+  your selection, including indirect references. All listed dependencies are
+  initially selected; uncheck any that must stay outside this export.
+- Check the total project count and the **Excluded dependencies** summary.
+  Excluded dependencies must already be available on the destination server;
+  excluding one does not remove the reference from a project or make it optional.
+- Choose the normal project archive options and click **Export**. The downloaded
+  ZIP contains one `.car` per project and a `bundle.json` manifest. The **Bundle
+  export result** confirms which projects were included and which dependencies
+  were excluded.
+
+Dependency selection follows declared project references. A project name used
+only in a script or assembled dynamically is not discovered automatically: select
+that project explicitly when it belongs in the distribution.
+
+The same bundle can be produced during a build with the
+[Gradle projectBundle task]({{site.baseurl}}/programming-guide/backend-developers/#building-a-project-bundle-with-gradle).
+The export action on an individual project row still downloads a single `.car`;
+the Eclipse Studio's single-project export is unchanged.
 
 #### Editing a project
 
