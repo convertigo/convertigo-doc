@@ -414,6 +414,7 @@ property key | description | default value
 --- | --- | --- 
 log.file.enable | Log into files | true
 log.stdout.enable | Log into the standard console output | false
+log.stdout.format | Format of the standard console output: text (the lines of engine.log) or json (one JSON object per line, since 8.4.8); engine.log keeps its format | text
 log4j.logger.cems | Log4J root logger | INFO
 log4j.logger.cems.Admin| Log4J admin logger| WARN
 log4j.logger.cems.Context.Audit| Log4J audit context logger| INFO
