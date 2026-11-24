@@ -26,7 +26,7 @@ A project bundle uploaded from the administration console, a file sent to a sequ
 Before 8.4.8:
 
 * `net.upload.max_file_size` did not exist: the maximum file size and the maximum request size were both stored under `net.upload.max_request_size`, so setting one of them set both. A configuration that only sets `net.upload.max_request_size` keeps applying its value to each uploaded file. Changing the request limit afterwards keeps the current file limit.
-* With several instances sharing Redis sessions, the administration requests that the console sends to another instance were limited to 256 MiB, and refused with HTTP 502 as if that instance were unreachable. Since 8.4.8 this forward has no size limit of its own, and never answers 502 for a body it refused or could not store.
+* With several instances sharing Redis sessions, the administration requests that the console sends to another instance were limited to 256 MiB, and refused with HTTP 502 as if that instance were unreachable. Since 8.4.8 this forward streams the request to the selected instance without storing it, has no size limit of its own, and never answers 502 for a body it refused.
 
 ### Setting the properties
 
@@ -125,7 +125,7 @@ Raising timeouts has a limit: connections held for long tie up threads and conne
 
 ## Disk space and concurrency
 
-Without a Convertigo limit, the frontend limit and the disk space bound the administration uploads. Each buffering component writes the body to its disk: the reverse proxy or the ingress controller pod (NGINX request buffering), then Convertigo: upload temporary files, a copy on the instance that forwards an administration request to another instance, staging and extraction of a bundle, backups of the replaced projects. Plan several times the size of the archive plus its expanded size, both on the frontends (ephemeral storage of the ingress pods) and on Convertigo (temporary directory and workspace), and avoid simultaneous large deployments. Keep these buffers on disk: do not turn them into 1 GiB memory buffers.
+Without a Convertigo limit, the frontend limit and the disk space bound the administration uploads. Each buffering component writes the body to its disk: the reverse proxy or the ingress controller pod (NGINX request buffering), then Convertigo: upload temporary files, staging and extraction of a bundle, backups of the replaced projects. Plan several times the size of the archive plus its expanded size, both on the frontends (ephemeral storage of the ingress pods) and on Convertigo (temporary directory and workspace), and avoid simultaneous large deployments. Keep these buffers on disk: do not turn them into 1 GiB memory buffers.
 
 An upload is a single request: an interrupted upload starts again from the beginning. A bundle deployment is not a transaction: if a project fails, the projects already deployed stay in place. For large transfers, compare the size and a checksum (for example SHA-256) of the file on both sides.
 
