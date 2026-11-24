@@ -83,7 +83,7 @@ Convertigo writes its logs with Log4j. On a server installed from the war file t
 | Setting | Recommended value | Effect |
 | --- | --- | --- |
 | `log.stdout.enable` (Docker: `LOG_STDOUT`) | `true` | Adds a console appender: the logs reach the standard output of the process, hence `docker logs` / `kubectl logs` and the platform collector. |
-| `log.stdout.format` (Docker: `LOG_STDOUT_FORMAT`, since 8.4.8) | `json` if the log platform indexes JSON lines, `text` (default) otherwise | Format of the standard output only: see [JSON format](#json-format). `engine.log` keeps the text format. |
+| `log.stdout.format` (Docker: `LOG_STDOUT_FORMAT`, since 8.4.8) | `json-ecs` for Elasticsearch or a platform with Elastic Common Schema mappings, `json` for another platform that indexes JSON lines, `text` (default) otherwise | Format of the standard output only: see [JSON formats](#json-formats). `engine.log` keeps the text format. |
 | `log.file.enable` (Docker: `LOG_FILE`) | `false`, or `true` to keep the **Logs** view of the administration console | Enables `engine.log` on disk. With `true`, keep the log directory on a storage local to the instance (the Helm chart does it with `-Dlog.directory=/tmp/convertigo-logs`). |
 | `log4j.logger.cems` | `INFO` (default) | Root level of the Convertigo loggers. Avoid `DEBUG` on a production server that ships its logs: the volume is considerable. |
 
@@ -112,34 +112,54 @@ The fields are separated by ` | `:
 5. optional contextual parameters, each as `$key=value | `: `$clientip`, `$clienthostname`, `$contextid`, `$user`, `$project`, `$connector`, `$transaction`, `$sequence`, `$uid`, `$uuid`. They are the keys to index, as they let you follow a user session or a project across lines;
 6. the message.
 
-A log record is often **multi-line**: stack traces, the request statistics table, XML or JSON payloads. Every line that does not start with `!` continues the previous record, so the collector must be configured with a multi-line rule whose start pattern is `^!`. Since 8.4.8, the standard output can be written in JSON instead, one line per record: see [JSON format](#json-format). The pattern above can also be changed if your platform prefers another layout, and the change applies to both the file and the console appenders.
+A log record is often **multi-line**: stack traces, the request statistics table, XML or JSON payloads. Every line that does not start with `!` continues the previous record, so the collector must be configured with a multi-line rule whose start pattern is `^!`. Since 8.4.8, the standard output can be written in JSON instead, one line per record: see [JSON formats](#json-formats). The pattern above can also be changed if your platform prefers another layout, and the change applies to both the file and the console appenders.
 
-### JSON format
+### JSON formats
 
-Since 8.4.8, `log.stdout.format=json` writes one JSON object per line on the standard output, for the log platforms that split JSON lines into fields without a parser of their own. In Docker, set `LOG_STDOUT_FORMAT=json` together with `LOG_STDOUT=true`; with the Helm chart, set `logs.stdoutFormat: json`. Only the standard output changes: `engine.log` keeps the text format, which the **Logs** view of the administration console reads. The property can be changed at runtime from the **Configuration** page of the administration console, unless it is set by a JVM property (`-Dconvertigo.engine.log.stdout.format=json`) or by the Docker variable.
+Since 8.4.8, `log.stdout.format` can write one JSON object per line on the standard output, for the log platforms that split JSON lines into fields without a parser of their own. Two formats carry the same information:
 
-Each record is a single line, stack trace included, so the collector needs no multi-line rule. An error, then the statistics line that ends the same request (messages shortened):
+* `json`: Convertigo field names (`time`, `level`, `project`, `user`...);
+* `json-ecs`: the field names of the [Elastic Common Schema](https://www.elastic.co/guide/en/ecs/current/index.html) 9.5.0, written as flat dotted keys with `@timestamp`, `log.level` and `message` first, as the ECS logging libraries do. The parameters that have no ECS field go under `convertigo.*`. Choose it for Elasticsearch and Kibana, Elastic Agent or Filebeat, or any platform whose indices use the ECS mappings.
+
+In Docker, set `LOG_STDOUT_FORMAT=json` or `LOG_STDOUT_FORMAT=json-ecs` together with `LOG_STDOUT=true`; with the Helm chart, set `logs.stdoutFormat`. Only the standard output changes: `engine.log` keeps the text format, which the **Logs** view of the administration console reads. The format can be changed at runtime from the **Configuration** page of the administration console (**Logs**, advanced properties); when it is set by a JVM property (`-Dconvertigo.engine.log.stdout.format=json`) or by the Docker variable, such a change lasts until the next restart.
+
+Each record is a single line, stack trace included, so the collector needs no multi-line rule. With `json`, an error, then the statistics line that ends the same request (messages shortened):
 
 ```json
 {"time":"2026-11-24T09:12:33.247Z","level":"ERROR","logger":"cems.Context","thread":"http-nio-28080-exec-7","message":"[Engine.getDocument()] Context ID#8F3A61C2D9E04B7A915C2E6F0B1D4A77_default - Unable to build the XML document.\n[com.twinsoft.convertigo.engine.EngineException] Authentication required","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"(anonymous)","app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
 {"time":"2026-11-24T09:12:33.251Z","level":"INFO","logger":"cems.Statistics","thread":"http-nio-28080-exec-7","message":"Statistics:\n ====...","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"(anonymous)","duration_ms":4,"app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
 ```
 
-| Field | Content |
-| --- | --- |
-| `time` | Time of the record, in ISO 8601 with milliseconds and the offset of the JVM time zone (`Z` in UTC). |
-| `level` | `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` or `FATAL`. |
-| `logger` | Full logger name: `cems.Engine`, `cems.Context`, `cems.Statistics`, `cems.Admin`... |
-| `thread` | Thread name. |
-| `message` | The message, with its line breaks escaped (XML documents, statistics table). |
-| `exception_class`, `exception` | When the record logs an exception: its class, and the whole stack trace with its `Caused by` sections. |
-| `project`, `sequence`, `transaction`, `connector`, `user`, `contextid`, `clientip`, `clienthostname`, `uid`, `uuid` | The contextual parameters set for the record, one field each. `user` is written without quotes, or `(anonymous)`. A parameter without value is left out. `uid` identifies one request. |
-| `context` | Object holding the other contextual parameters, such as the environment that the mobile applications send with their logs. |
-| `duration_ms` | On the `cems.Statistics` records only: total time of the request in milliseconds, the `Total` line of the statistics table. |
-| `app` | Always `convertigo`, to isolate the Convertigo records in an index shared with other applications. |
-| `instance` | Host name of the instance (the `HOSTNAME` variable): the pod name in Kubernetes. |
+The same statistics line with `json-ecs`:
 
-The lines written at startup before the engine configures its logs (image entrypoint, workspace initialization) and the Tomcat lines on the standard error stay in text.
+```json
+{"@timestamp":"2026-11-24T09:12:33.251Z","log.level":"INFO","message":"Statistics:\n ====...","ecs.version":"9.5.0","service.name":"convertigo","event.dataset":"convertigo.log","service.node.name":"convertigo-6c8d7f9b44-q7xkz","process.thread.name":"http-nio-28080-exec-7","log.logger":"cems.Statistics","client.ip":"203.0.113.42","convertigo.contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","convertigo.project":"demoOrders","convertigo.sequence":"GetOrders","convertigo.uid":"1d4e9f50baf","user.name":"(anonymous)","event.duration":4000000,"convertigo.duration_ms":4}
+```
+
+| Content | `json` | `json-ecs` |
+| --- | --- | --- |
+| Time of the record, ISO 8601 with milliseconds | `time`, with the offset of the JVM time zone (`Z` in UTC) | `@timestamp`, in UTC |
+| Level: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` or `FATAL` | `level` | `log.level` |
+| Full logger name: `cems.Engine`, `cems.Context`, `cems.Statistics`... | `logger` | `log.logger` |
+| Thread name | `thread` | `process.thread.name` |
+| Message, with its line breaks escaped (XML documents, statistics table) | `message` | `message` |
+| Class of the logged exception | `exception_class` | `error.type` |
+| Message of the logged exception | | `error.message` |
+| Whole stack trace, with its `Caused by` sections | `exception` | `error.stack_trace` |
+| Project, sequence, transaction and connector called | `project`, `sequence`, `transaction`, `connector` | `convertigo.project`, `convertigo.sequence`, `convertigo.transaction`, `convertigo.connector` |
+| Authenticated user, without quotes, or `(anonymous)` | `user` | `user.name` |
+| Address of the client | `clientip` | `client.ip`, or `client.address` when the value is not an IP address |
+| Host name of the client (`net.reverse_dns`) | `clienthostname` | `client.domain` |
+| Context: `<session id>_<context name>` | `contextid` | `convertigo.contextid` |
+| Identifier of one request, shared by all its records | `uid` | `convertigo.uid` |
+| Identifier of the device (mobile and web applications) | `uuid` | `convertigo.uuid` |
+| Other contextual parameters, such as the environment that the mobile applications send with their logs (object) | `context` | `convertigo.context` |
+| Total time of the request, on the `cems.Statistics` records only | `duration_ms`, in milliseconds | `event.duration`, in nanoseconds, and `convertigo.duration_ms` |
+| Application | `app`: `convertigo` | `service.name`: `convertigo`, and `event.dataset`: `convertigo.log` |
+| Host name of the instance (`HOSTNAME`), the pod name in Kubernetes | `instance` | `service.node.name` |
+| Version of the schema | | `ecs.version`: `9.5.0` |
+
+A contextual parameter without value is left out. The lines written at startup before the engine configures its logs (image entrypoint, workspace initialization) and the Tomcat lines on the standard error stay in text.
 
 ### Collector configuration
 
