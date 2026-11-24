@@ -83,10 +83,11 @@ Convertigo writes its logs with Log4j. On a server installed from the war file t
 | Setting | Recommended value | Effect |
 | --- | --- | --- |
 | `log.stdout.enable` (Docker: `LOG_STDOUT`) | `true` | Adds a console appender: the logs reach the standard output of the process, hence `docker logs` / `kubectl logs` and the platform collector. |
+| `log.stdout.format` (Docker: `LOG_STDOUT_FORMAT`, since 8.4.8) | `json` if the log platform indexes JSON lines, `text` (default) otherwise | Format of the standard output only: see [JSON format](#json-format). `engine.log` keeps the text format. |
 | `log.file.enable` (Docker: `LOG_FILE`) | `false`, or `true` to keep the **Logs** view of the administration console | Enables `engine.log` on disk. With `true`, keep the log directory on a storage local to the instance (the Helm chart does it with `-Dlog.directory=/tmp/convertigo-logs`). |
 | `log4j.logger.cems` | `INFO` (default) | Root level of the Convertigo loggers. Avoid `DEBUG` on a production server that ships its logs: the volume is considerable. |
 
-The Docker image exposes the first two as the `LOG_STDOUT` and `LOG_FILE` environment variables, and the Helm chart sets `LOG_STDOUT=true` and `LOG_FILE=true` by default.
+The Docker image exposes the first three as the `LOG_STDOUT`, `LOG_STDOUT_FORMAT` and `LOG_FILE` environment variables. The Helm chart sets `LOG_STDOUT=true` and `LOG_FILE=true` by default, and `LOG_STDOUT_FORMAT=json` with the `logs.stdoutFormat: json` value.
 
 ### Format of a log line
 
@@ -111,7 +112,34 @@ The fields are separated by ` | `:
 5. optional contextual parameters, each as `$key=value | `: `$clientip`, `$clienthostname`, `$contextid`, `$user`, `$project`, `$connector`, `$transaction`, `$sequence`, `$uid`, `$uuid`. They are the keys to index, as they let you follow a user session or a project across lines;
 6. the message.
 
-A log record is often **multi-line**: stack traces, the request statistics table, XML or JSON payloads. Every line that does not start with `!` continues the previous record, so the collector must be configured with a multi-line rule whose start pattern is `^!`. Convertigo does not emit JSON logs; the pattern above can be changed if your platform prefers another layout, and the change applies to both the file and the console appenders.
+A log record is often **multi-line**: stack traces, the request statistics table, XML or JSON payloads. Every line that does not start with `!` continues the previous record, so the collector must be configured with a multi-line rule whose start pattern is `^!`. Since 8.4.8, the standard output can be written in JSON instead, one line per record: see [JSON format](#json-format). The pattern above can also be changed if your platform prefers another layout, and the change applies to both the file and the console appenders.
+
+### JSON format
+
+Since 8.4.8, `log.stdout.format=json` writes one JSON object per line on the standard output, for the log platforms that split JSON lines into fields without a parser of their own. In Docker, set `LOG_STDOUT_FORMAT=json` together with `LOG_STDOUT=true`; with the Helm chart, set `logs.stdoutFormat: json`. Only the standard output changes: `engine.log` keeps the text format, which the **Logs** view of the administration console reads. The property can be changed at runtime from the **Configuration** page of the administration console, unless it is set by a JVM property (`-Dconvertigo.engine.log.stdout.format=json`) or by the Docker variable.
+
+Each record is a single line, stack trace included, so the collector needs no multi-line rule. An error, then the statistics line that ends the same request (messages shortened):
+
+```json
+{"time":"2026-11-24T09:12:33.247Z","level":"ERROR","logger":"cems.Context","thread":"http-nio-28080-exec-7","message":"[Engine.getDocument()] Context ID#8F3A61C2D9E04B7A915C2E6F0B1D4A77_default - Unable to build the XML document.\n[com.twinsoft.convertigo.engine.EngineException] Authentication required","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"(anonymous)","app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
+{"time":"2026-11-24T09:12:33.251Z","level":"INFO","logger":"cems.Statistics","thread":"http-nio-28080-exec-7","message":"Statistics:\n ====...","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"(anonymous)","duration_ms":4,"app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
+```
+
+| Field | Content |
+| --- | --- |
+| `time` | Time of the record, in ISO 8601 with milliseconds and the offset of the JVM time zone (`Z` in UTC). |
+| `level` | `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` or `FATAL`. |
+| `logger` | Full logger name: `cems.Engine`, `cems.Context`, `cems.Statistics`, `cems.Admin`... |
+| `thread` | Thread name. |
+| `message` | The message, with its line breaks escaped (XML documents, statistics table). |
+| `exception_class`, `exception` | When the record logs an exception: its class, and the whole stack trace with its `Caused by` sections. |
+| `project`, `sequence`, `transaction`, `connector`, `user`, `contextid`, `clientip`, `clienthostname`, `uid`, `uuid` | The contextual parameters set for the record, one field each. `user` is written without quotes, or `(anonymous)`. A parameter without value is left out. `uid` identifies one request. |
+| `context` | Object holding the other contextual parameters, such as the environment that the mobile applications send with their logs. |
+| `duration_ms` | On the `cems.Statistics` records only: total time of the request in milliseconds, the `Total` line of the statistics table. |
+| `app` | Always `convertigo`, to isolate the Convertigo records in an index shared with other applications. |
+| `instance` | Host name of the instance (the `HOSTNAME` variable): the pod name in Kubernetes. |
+
+The lines written at startup before the engine configures its logs (image entrypoint, workspace initialization) and the Tomcat lines on the standard error stay in text.
 
 ### Collector configuration
 
