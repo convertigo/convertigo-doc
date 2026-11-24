@@ -123,17 +123,16 @@ Since 8.4.8, `log.stdout.format` can write one JSON object per line on the stand
 
 In Docker, set `LOG_STDOUT_FORMAT=json` or `LOG_STDOUT_FORMAT=json-ecs` together with `LOG_STDOUT=true`; with the Helm chart, set `logs.stdoutFormat`. Only the standard output changes: `engine.log` keeps the text format, which the **Logs** view of the administration console reads. The format can be changed at runtime from the **Configuration** page of the administration console (**Logs**, advanced properties); when it is set by a JVM property (`-Dconvertigo.engine.log.stdout.format=json`) or by the Docker variable, such a change lasts until the next restart.
 
-Each record is a single line, stack trace included, so the collector needs no multi-line rule. With `json`, an error, then the statistics line that ends the same request (messages shortened):
+Each record is a single line, stack trace included, so the collector needs no multi-line rule. The statistics line that ends a request, with `json` (message shortened):
 
 ```json
-{"time":"2026-11-24T09:12:33.247Z","level":"ERROR","logger":"cems.Context","thread":"http-nio-28080-exec-7","message":"[Engine.getDocument()] Context ID#8F3A61C2D9E04B7A915C2E6F0B1D4A77_default - Unable to build the XML document.\n[com.twinsoft.convertigo.engine.EngineException] Authentication required","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"(anonymous)","app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
-{"time":"2026-11-24T09:12:33.251Z","level":"INFO","logger":"cems.Statistics","thread":"http-nio-28080-exec-7","message":"Statistics:\n ====...","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"(anonymous)","duration_ms":4,"app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
+{"time":"2026-11-24T09:12:33.251Z","level":"INFO","logger":"cems.Statistics","thread":"http-nio-28080-exec-7","message":"Statistics:\n ====...","clientip":"203.0.113.42","contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","project":"demoOrders","sequence":"GetOrders","uid":"1d4e9f50baf","user":"jdoe","duration_ms":4,"app":"convertigo","instance":"convertigo-6c8d7f9b44-q7xkz"}
 ```
 
-The same statistics line with `json-ecs`:
+The same line with `json-ecs`:
 
 ```json
-{"@timestamp":"2026-11-24T09:12:33.251Z","log.level":"INFO","message":"Statistics:\n ====...","ecs.version":"9.5.0","service.name":"convertigo","event.dataset":"convertigo.log","service.node.name":"convertigo-6c8d7f9b44-q7xkz","process.thread.name":"http-nio-28080-exec-7","log.logger":"cems.Statistics","client.ip":"203.0.113.42","convertigo.contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","convertigo.project":"demoOrders","convertigo.sequence":"GetOrders","convertigo.uid":"1d4e9f50baf","user.name":"(anonymous)","event.duration":4000000,"convertigo.duration_ms":4}
+{"@timestamp":"2026-11-24T09:12:33.251Z","log.level":"INFO","message":"Statistics:\n ====...","ecs.version":"9.5.0","service.name":"convertigo","event.dataset":"convertigo.log","service.node.name":"convertigo-6c8d7f9b44-q7xkz","process.thread.name":"http-nio-28080-exec-7","log.logger":"cems.Statistics","client.ip":"203.0.113.42","convertigo.contextid":"8F3A61C2D9E04B7A915C2E6F0B1D4A77_default","convertigo.project":"demoOrders","convertigo.sequence":"GetOrders","convertigo.uid":"1d4e9f50baf","user.name":"jdoe","event.duration":4000000,"convertigo.duration_ms":4}
 ```
 
 | Content | `json` | `json-ecs` |
