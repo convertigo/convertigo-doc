@@ -127,6 +127,8 @@ Raising timeouts has a limit: connections held for long tie up threads and conne
 
 Without a Convertigo limit, the frontend limit and the disk space bound the administration uploads. Each buffering component writes the body to its disk: the reverse proxy or the ingress controller pod (NGINX request buffering), then Convertigo: upload temporary files, staging and extraction of a bundle, backups of the replaced projects. Plan several times the size of the archive plus its expanded size, both on the frontends (ephemeral storage of the ingress pods) and on Convertigo (temporary directory and workspace), and avoid simultaneous large deployments. Keep these buffers on disk: do not turn them into 1 GiB memory buffers.
 
+Building or importing a bundle also needs temporary space of several times its size on the instance that does it: a 1 GiB bundle used up to about 5 GiB of temporary disk during its export, and as much during its import, released at the end. Size the disk, or the `ephemeral-storage` of the pods, accordingly.
+
 An upload is a single request: an interrupted upload starts again from the beginning. A bundle deployment is not a transaction: if a project fails, the projects already deployed stay in place. For large transfers, compare the size and a checksum (for example SHA-256) of the file on both sides.
 
 ## At each installation
