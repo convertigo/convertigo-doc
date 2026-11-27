@@ -74,6 +74,14 @@ The Mobile Builder has several controls you can use to help you running the app 
 - **Save Dataset**: Saves current data in the app as a dataset
 - **Delete Dataset**: Deletes a dataset
 
+### JavaScript dialogs
+
+Since 8.4.8, the NGX and Mobile application viewers show JavaScript dialogs in a bar above the preview. The Studio stays usable while the bar is open.
+
+- `alert()` lets the application continue immediately. Click **OK** to dismiss the message. When several alerts arrive, the bar shows the latest message and the number of alerts. Earlier messages are available in the Studio log.
+- `confirm()` waits for **OK** or **Cancel** in the viewer bar.
+- `prompt()` opens a text field with the supplied default value. Enter a value and click **OK**, or click **Cancel**. The application script waits for the answer while the Studio remains available.
+
 ### NGX Palette
 
 The Builder comes with a “NGX Palette” containing the main components useful for creating the content of your application pages. Components are grouped by categories, but you can quickly find a component using the search bar. When you select a component, help for its use is displayed in the right pane. Simply drag and drop your components from the palette into the tree view of your pages.
