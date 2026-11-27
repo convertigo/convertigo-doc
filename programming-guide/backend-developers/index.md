@@ -1,7 +1,7 @@
 ---
 title: Backend Developers
 keywords: pages, authoring, exclusion, frontmatter
-last_updated: 23/11/2026
+last_updated: 27/11/2026
 summary: "This chapter describes you how to use Convertigo backend objects to connect your data and build backend services."
 sidebar: c8o_sidebar
 permalink: /programming-guide/backend-developers/
@@ -216,6 +216,10 @@ To update transaction schema to be used in Sequence **Source picker**, execute t
 Double-click your **Call Transaction** Step to refresh and display schema in the Source picker tab
 
 ![SQL transaction updated schema](../../images/pguide_img/backend/sql/14_sql_source_picker_updated.png)
+
+#### Generate a CRUD interface from a SQL table
+
+Since 8.4.8, the SQL connector's **Design** tab can generate transactions, sequences and a reusable NGX grid and form. See [Generate an NGX CRUD interface](./sql-crud-ui/) for the generation options and component bindings.
 
 ### Connect to NoSQL Databases
 
