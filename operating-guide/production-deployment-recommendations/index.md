@@ -224,6 +224,12 @@ Equivalent settings for other collectors:
 * The `Audit` and `Context.Audit` loggers trace administration actions and deployments; they can be routed to a dedicated index with a longer retention.
 * Tomcat access logs are not written to the standard output by default. If they are needed, declare in `server.xml` an `AccessLogValve` with `directory="/dev" prefix="stdout" suffix="" rotatable="false"`, or keep its file output and let the collector read it.
 
+### Reading sequence request statistics
+
+Since 8.4.8, `ExecuteSequenceSteps` measures the elapsed time of the sequence's step execution once, from the start of the step loop to its end. It includes nested steps, loop iterations and the time spent waiting for parallel branches to finish.
+
+`ExecuteSequenceCalls` measures the time during which at least one HTTP call from a **Call Transaction** or **Call Sequence** step is running. Overlap counts once. For example, if one call runs from 0 to 120 ms and another runs from 80 to 200 ms, the reported call time is 200 ms. Internal calls are included in step execution time. `ExecuteSequenceCalls` is a detail of `ExecuteSequenceSteps` and is already accounted for when the engine computes `(others)` from `GetDocument`.
+
 ## Size limits and timeouts of the frontends
 
 Every reverse proxy, load balancer, ingress or WAF in front of Convertigo has its own request size limit and timeouts, usually lower than what uploads of project bundles or long sequences need. Check them at each installation: see [Large files and timeouts](../large-files-and-timeouts/).
