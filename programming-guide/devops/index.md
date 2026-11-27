@@ -154,6 +154,12 @@ preserves its preferences. The Studio creates missing project descriptions when
 opening projects and restores a missing description for a project already
 registered in the workspace.
 
+Since 8.4.8, **Reload your project** in the Studio project context menu reopens
+the existing Eclipse project at the same location and keeps its workspace
+properties. When Studio registers the folder `<workspace>/<project name>`, it
+uses Eclipse's default project location. Projects stored elsewhere keep their
+own location.
+
 The Studio project templates supply Git ignore rules for `.project` and
 `.settings`. Existing projects keep their own `.gitignore`; the engine does not
 rewrite it. For an older project, check that the root metadata is ignored:
