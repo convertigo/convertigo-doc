@@ -77,6 +77,13 @@ entries:
     - title: BackEnd Developers
       url: /programming-guide/backend-developers/
       output: web, pdf
+      subfolders:
+      - title: Backend guides
+        output: web, pdf
+        subfolderitems:
+        - title: Generate an NGX CRUD interface
+          url: /programming-guide/backend-developers/sql-crud-ui/
+          output: web, pdf
     - title: FrontEnd Developers
       url: /programming-guide/frontend-developers/
       output: web, pdf
